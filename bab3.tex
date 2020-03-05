@@ -587,10 +587,14 @@ Namun jika tidak dapat dibagi secara merata maka dilakukan terlebih dahulu prose
 \end{equation}
 \vspace{1ex}
 
-Munculah pertanyaan berapakah jumlah level pada dua \textit{cluster} level tengah pada kasus $LC_{N}$ dengan nilai genap, dan berapakah jumlah level pada \textit{cluster} level pada bagian tengah untuk kasus $LC_{N}$ dengan nilai ganjil. Seperti pada persamaan \ref{eq:enemy_levels1} jika pada kondisi genap maka 2 \textit{cluster} level bagian tengah diisi dengan level sejumlah hasil pembagian $LN$ dengan $LC_{N}$ yang dibulatkan ke atas atau \textit{ceil}, sedangkan pada kondisi ganjil maka 1 \textit{cluster} level bagian tengahlah yang diisi dengan hasil pembagian tersebut. Kemudian untuk jumlah level pada \textit{cluster} yang lain diisi dengan pembagian $LN$ dengan $LC_{N}$ yang dibulatkan ke bawah atau \textit{floor}. Jika $SL_{N}$ adalah jumlah \textit{cluster} level, maka perlu dicari juga jumlah cluster untuk musuh dengan menggunakan persamaan \ref{eq:enemy_levels2} dengan cara yang sama dengan pencarian jumlah \textit{cluster} level. 
+Munculah pertanyaan berapakah jumlah level pada dua \textit{cluster} level tengah pada kasus $LC_{N}$ dengan nilai genap, dan berapakah jumlah level pada \textit{cluster} level pada bagian tengah untuk kasus $LC_{N}$ dengan nilai ganjil. Seperti pada persamaan \ref{eq:enemy_levels1} jika pada kondisi genap maka dua \textit{cluster} level bagian tengah diisi dengan level sejumlah hasil pembagian $LN$ dengan $LC_{N}$ yang dibulatkan ke atas atau \textit{ceil}, sedangkan pada kondisi ganjil maka 1 \textit{cluster} level bagian tengahlah yang diisi dengan hasil pembagian tersebut. Kemudian untuk jumlah level pada \textit{cluster} yang lain diisi dengan pembagian $LN$ dengan $LC_{N}$ yang dibulatkan ke bawah atau \textit{floor}. Jika $SL_{N}$ adalah jumlah \textit{cluster} level, maka perlu dicari juga jumlah cluster untuk musuh dengan menggunakan persamaan \ref{eq:enemy_levels2} dengan cara yang sama dengan pencarian jumlah \textit{cluster} level. 
 \vspace{1ex}
 
-Dalam proses pencarian $SE_{N}$ atau \textit{cluster} musuh pada persamaan \ref{eq:enemy_levels2} sama seperti cara perhitungan dengan persamaan \ref{eq:enemy_levels1} dengan membagi jumlah musuh ke dalam tiga bagian, dan dilanjutkan dengan pengambilan beberapa keputusan yang harus dijalankan. Sama seperti pada perhitungan hasil bagi antara $LN$ dan $LC_{N}$ pada persamaan \ref{eq:enemy_levels1}, nilai pembagian $EN$ atau jumlah musuh yang ingin dihasilkan dengan $LC_{N}$ atau jumlah \textit{cluster} musuh yang ingin dibuat dengan tiga tingkatan ``\textit{Easy}", ``\textit{Medium}" dan ``\textit{Hard}" yang juga harus bernilai bilangan bulat positif, kemudian dilakukan juga proses pembulatan jumlah musuh terlebih dahulu dikarenakan jumlah musuh tidak boleh bernilai angka yang tidak bulat. 
+Dalam proses pencarian $SE_{N}$ atau \textit{cluster} musuh pada persamaan \ref{eq:enemy_levels2} digunakan cara yang sama seperti cara perhitungan pada persamaan \ref{eq:enemy_levels1} dengan membagi jumlah musuh ke dalam tiga bagian, dan dilanjutkan dengan pengambilan beberapa keputusan yang harus dijalankan. Sama seperti pada perhitungan hasil bagi antara $LN$ dan $LC_{N}$ pada persamaan \ref{eq:enemy_levels1}, nilai pembagian $EN$ atau jumlah musuh yang ingin dihasilkan dengan $LC_{N}$ atau jumlah \textit{cluster} musuh yang ingin dibuat dengan tiga tingkatan ``\textit{Easy}", ``\textit{Medium}" dan ``\textit{Hard}" yang juga harus bernilai bilangan bulat positif, kemudian dilakukan juga proses pembulatan jumlah musuh terlebih dahulu dikarenakan jumlah musuh tidak boleh bernilai angka yang tidak bulat. 
+\vspace{1ex}
+
+Sepeti pada persamaan \ref{eq:enemy_levels1} pada persamaan \ref{eq:enemy_levels2} juga dilakukan pengujian apakah dapat dibulatkan atau tidak maka dilakukan operasi modulus atau $mod$, jika habis maka $SE_{N}$ akan diisi secara merata oleh hasil bagi antara $EN$ dan $LC_{N}$. Maka jumlah \textit{cluster} sebanyak $N$ pada $LC_{N}$ dan banyaknya musuh adalah sebesar $EN$ yang dibagi dengan $LC_{N}$, kemudian hasil akhir tersebut disimpan dalam variabel $SE_{N}$. Untuk penjelasan langkah selanjutnya pada persamaan \ref{eq:enemy_levels2} sama persis dengan persamaan \ref{eq:enemy_levels1} yang sudah dijelaskan pada bagian sebelumnya, hanya saja objek pada persamaan \ref{eq:enemy_levels1} adalah level sedangkan pada persamaan \ref{eq:enemy_levels2} adalah musuh. Setelah $SL_{N}$ dan $SE_{N}$ diperoleh maka saatnya menuju bagian yang lebih dalam dan detail lagi. Bagaimana dengan pemberian level untuk setiap musuh, maka digunakanlah persamaan \ref{eq:sub_enemy_levels1} dan persamaan \ref{eq:sub_enemy_levels2} dengan penjelasan sebagai berikut.
+\vspace{1ex}
 
 \begin{equation}\label{eq:sub_enemy_levels1}
 \resizebox{\columnwidth}{!}{%
@@ -609,22 +613,18 @@ Dalam proses pencarian $SE_{N}$ atau \textit{cluster} musuh pada persamaan \ref{
 	\end{matrix}\right.$%
 }
 \end{equation}
-\vspace{1ex}
-
-Sepeti pada persamaan \ref{eq:enemy_levels1} pada persamaan \ref{eq:enemy_levels2} juga dilakukan pengujian apakah dapat dibulatkan atau tidak maka dilakukan operasi modulus atau $mod$, jika habis maka $SE_{N}$ akan diisi secara merata oleh hasil bagi antara $EN$ dan $LC_{N}$. Maka jumlah \textit{cluster} sebanyak $N$ pada $LC_{N}$ dan banyaknya musuh adalah sebesar $EN$ yang dibagi dengan $LC_{N}$, kemudian hasil akhir tersebut disimpan dalam variabel $SE_{N}$. Untuk penjelasan langkah selanjutnya pada persamaan \ref{eq:enemy_levels2} sama persis dengan persamaan \ref{eq:enemy_levels1} yang sudah dijelaskan pada bagian sebelumnya, hanya saja subjek pada persamaan \ref{eq:enemy_levels1} adalah level sedangkan pada persamaan \ref{eq:enemy_levels2} adalah musuh. Setelah $SL_{N}$ dan $SE_{N}$ diperoleh maka saatnya menuju bagian yang lebih dalam dan detail lagi. Bagaimana dengan pemberian level untuk sejumlah musuh tersebut, maka dari itu digunakanlah persamaan \ref{eq:sub_enemy_levels1} dan persamaan \ref{eq:sub_enemy_levels2} dengan penjelasan sebagai berikut.
-\vspace{1ex}
 
 \begin{equation}\label{eq:sub_enemy_levels2}
 \resizebox{\columnwidth}{!}{%
 	$SSE_{N} = \left\{\begin{matrix}
-	\sum_{i = 0}^{N}\ \frac{SE}{Sc} & Saat\ 0 \equiv SE\ (mod\ Sc) & \\
+	\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{SE}{Sc} & Saat\ 0 \equiv SE\ (mod\ Sc) & \\
 	
-	\sum_{i = 0}^{N}\ \frac{SE}{Sc} & Saat\ 0 \hspace{0.3em} \not\equiv SE\ (mod\ Sc), & \\
+	\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{SE}{Sc} & Saat\ 0 \hspace{0.3em} \not\equiv SE\ (mod\ Sc), & \\
 	&\hspace{1.3em}  0 \not\equiv Sc\ (mod\ 2) & \hspace{-4.5em} \Rightarrow\ SSE_{(\left \lceil N/2 \right \rceil)}  = \left \lceil \frac{SE}{Sc} \right \rceil &\\
 	
 	& & \hspace{-6.6em} \Rightarrow\ SSE_{i}  = \left \lfloor \frac{SE}{Sc} \right \rfloor &\\
 	
-	\sum_{i = 0}^{N}\ \frac{SE}{Sc} & Saat\ 0 \not\equiv SE\ (mod\ Sc), & \\
+	\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{SE}{Sc} & Saat\ 0 \not\equiv SE\ (mod\ Sc), & \\
 	&\hspace{1.2em}  0 \equiv Sc\ (mod\ 2) & \Rightarrow\ SSE_{N/2},\ SSE_{(N/2) + 1}  = \left \lceil \frac{SE}{Sc} \right \rceil &\\
 	
 	& & \hspace{-6.6em} \Rightarrow\ SSE_{i}  = \left \lfloor \frac{SE}{Sc} \right \rfloor &\\
@@ -633,7 +633,7 @@ Sepeti pada persamaan \ref{eq:enemy_levels1} pada persamaan \ref{eq:enemy_levels
 \end{equation}
 \vspace{1ex}
 
-Setelah diperolehnya $SL_{N}$ dan $SE_{N}$ yang masing-masing adalah cluster \textit{level} dan \textit{cluster} jumlah pada musuh, maka dicarilah $SSL_{N}$ atau \textit{sub-cluster} level pada persamaan \ref{eq:sub_enemy_levels1} hal ini betujuan untuk mempersempit range dalam pembagian level musuh. Seperti pada penjelasan sebelumnya terdapat satu variabel lagi yang mempengaruhi proses ini, variabel tersebut adalah $SC$ atau skala yang mentukkan kerapatan pembagian level pada setiap musuh. Pada kasus ini $SSL_{N}$ adalah jumlah \textit{sub-cluster} dari setiap level \textit{cluster} atau $SL_{N}$, jadi pada dasarnya persamaan \ref{eq:sub_enemy_levels1} dijalankan setelah nilai $SL_{N}$ diperoleh dan nilai $SSL_{N}$ selalu berubah-ubah mengikuti skala atau \textit{Sc} yang menjadi salah satu masukan untuk fungsi pada program ini. Perhitungan $SSL_{N}$ atau jumlah \textit{sub-cluster} level pada dasarnya sama dengan perhitungan dalam mencari $SL_{N}$ atau $SE_{N}$ pada bagian sebelumnya, hanya saja pada bagian sebelumnya jumlah \textit{cluster} level dan musuh dipengaruhi oleh $LC_{N}$ sedangkan pada $SSL_{N}$ jumlah \textit{sub-cluster} level dipengaruhi oleh $Sc$. Kemudian dilakukan juga pengecekan dengan operasi modulus atau $mod$ antara $SL$ dengan $SC$, apakah $SL$ akan habis jika dibagi dengan $SC$. Jika ternyata $SL$ habis dibagi dengan $Sc$, maka level pada range $SSL$ atau \textit{sub-cluster} tersebut akan langsung dibagi secara merata. Sedangkan pada kondisi sebaliknya yaitu saat $SE$ tidak habis dibagi dengan $Sc$ maka akan dilakukan proses pembulatan ganjil dan genap yang dibulatkan ke atas atau \textit{ceil} seperti pada persamaan \ref{eq:enemy_levels1} dan persamaan \ref{eq:enemy_levels2}, kemudian untuk nilai yang lain dibulatkan ke bawah atau \textit{floor}.
+Setelah diperolehnya $SL_{N}$ dan $SE_{N}$ yang masing-masing adalah cluster \textit{level} dan \textit{cluster} musuh, maka dicarilah $SSL_{N}$ atau \textit{sub-cluster} level pada persamaan \ref{eq:sub_enemy_levels1} hal ini betujuan untuk mempersempit \textit{range} dalam pembagian level musuh. Seperti pada penjelasan sebelumnya terdapat satu variabel lagi yang mempengaruhi proses ini, variabel tersebut adalah $SC$ atau skala yang mentukkan kerapatan pembagian level pada setiap musuh. Pada kasus ini $SSL_{N}$ adalah jumlah \textit{sub-cluster} dari setiap level \textit{cluster} atau $SL_{N}$, jadi pada dasarnya persamaan \ref{eq:sub_enemy_levels1} dijalankan setelah nilai $SL_{N}$ diperoleh dan nilai $SSL_{N}$ selalu berubah-ubah mengikuti skala atau \textit{Sc} yang menjadi salah satu masukan untuk fungsi pada program ini. Perhitungan $SSL_{N}$ atau jumlah \textit{sub-cluster} level pada dasarnya sama dengan perhitungan dalam mencari $SL_{N}$ atau $SE_{N}$ pada bagian sebelumnya, hanya saja pada bagian sebelumnya jumlah \textit{cluster} level dan musuh dipengaruhi oleh $LC_{N}$ sedangkan pada $SSL_{N}$ jumlah \textit{sub-cluster} level dipengaruhi oleh $Sc$. Kemudian dilakukan juga pengecekan dengan operasi modulus atau $mod$ antara $SL$ dengan $SC$, apakah $SL$ akan habis jika dibagi dengan $SC$. Jika ternyata $SL$ habis dibagi dengan $Sc$, maka level pada range $SSL$ atau \textit{sub-cluster} tersebut akan langsung dibagi secara merata. Sedangkan pada kondisi sebaliknya yaitu saat $SE$ tidak habis dibagi dengan $Sc$ maka akan dilakukan proses pembulatan ganjil dan genap yang dibulatkan ke atas atau \textit{ceil} seperti pada persamaan \ref{eq:enemy_levels1} dan persamaan \ref{eq:enemy_levels2}, kemudian untuk nilai yang lain dibulatkan ke bawah atau \textit{floor}.
 \vspace{1ex}
 
 Kemudian untuk persamaan \ref{eq:sub_enemy_levels2} sama seperti persamaan \ref{eq:sub_enemy_levels2} hanya saja yang menjadi subjek disini adalah $SSE_{N}$ atau \textit{sub-cluster} jumlah musuh. Kemudian cara perhitungannya sama seperti persamaan \ref{eq:sub_enemy_levels1}, yang dibagi adalah \textit{cluster} $SE$ dari musuh dibagi dengan skala atau $Sc$. Saat semua sudah selesai dilakukan, khususnya yang ada pada persamaan \ref{eq:enemy_levels1} dan persamaan \ref{eq:enemy_levels1}. Kemudian dieksekusi setiap \textit{cluster} level dan musuh ke dalam setiap \textit{sub-cluster}, pada setiap \textit{sub-cluster} tersebutlah proses pemberian level pada setiap musuh dilakukan. Pada persamaan \ref{eq:probability_enemy_levels} adalah penjelasan tentang peluang diperolehnya level pada setiap musuh, yang beracuan pada metode \textit{Naive Bayes}, lebih tepatnya lagi adalah tentang peluang marginal.
@@ -887,13 +887,13 @@ Pada dasarnya satu karakter musuh tidak akan menggunakan seluruh elemen yang ada
 Sedangkan pada persamaan \ref{eq:damage_name_number} variabel $DmgNu$ adalah respon terhadap serangan yang yang dikonversi menjadi angka, yang pada mulanya berupa nama respon atau status setelah diserang. Kemudian hasil pemilihan tersebut disimpan pada variabel $DmgNu$ yang dapat dinyatakan dengan persamaan \ref{eq:damage_number_prob}.
 
 \begin{equation}\label{eq:damage_number_prob}
-P(DmgNu) = \frac{DmgNu}{\sum_{i = 0}^{N} DmgNa_{(i - 1)}}
+P(DmgNu) = \frac{DmgNu}{\sum_{i = 0}^{N}\ DmgNa_{(i - 1)}}
 \end{equation}
 
 Pada persamaan \ref{eq:damage_name_number} variabel $DmgNa$ yang dipilih secara acak sebagai elemen yang memiliki respon khusus terhadap serangan yang kemudian disimpan pada variabel $DmgNu$, selanjutnya angka yang dipilih akan disimpan pada variabel $DmgNu$ yang selanjutnya dinyatakan dengan persamaan \ref{eq:damage_number_prob}. Jadi dari $DmgNa$ akan dipilih satu sampai dengan tiga elemen secara acak yang kemudian menjadi kelemahan atau kekebalan dari karakter musuh tersebut.
 
 \begin{equation}\label{eq:multi_damage_num_prob}
-P(DmgNu)_{M} = \sum_{i = 0}^{M} \frac{DmgNu_{i}}{\sum_{j = 0}^{N} DmgNa_{j - 1}}
+P(DmgNu)_{M} = \sum_{i = 0}^{M}\ \frac{DmgNu_{i}}{\sum_{j = 0}^{N}\ DmgNa_{j - 1}}
 \end{equation}
 
 Sedangkan pada persamaan \ref{eq:multi_damage_num_prob} adalah penjelasan tentang proses munculnya setiap $DmgNu$ pada satu karakter musuh, sehingga variabel tersebut berubah menjadi $DmgNu_{i}$. Seperti penjelasan sebelumnya bahwa pada sebuah karakter musuh dapat memiliki lebih dari satu kelemahan atau kekebalan $DmgNu$ terhadap $DmgNa$ yang diset secara acak seperti yang sudah dijelaskan pada bagian sebelumnya.
@@ -902,7 +902,38 @@ Sedangkan pada persamaan \ref{eq:multi_damage_num_prob} adalah penjelasan tentan
 DmgEN_{M} = \sum_{i = 0}^{M}\sum_{j = 0}^{N} DmgNu_{ij}
 \end{equation}
 
-Selanjutnya adalah proses penerapan persamaan \ref{eq:multi_damage_num_prob} ke seluruh karakter musuh $DmgEN_{M}$ seperti pada persamaan \ref{eq:all_enemies_damage}. Sesuai dengan persamaan \ref{eq:all_enemies_damage} yang mana $M$ adalah jumlah musuh sedangkan $N$ adalah jumlah $DmgNu$ pada satu musuh yang berjumlah satu sampai dengan tiga seperti yang sudah dijelaskan pada paragraf sebelumnya Sub-bab ini. Hasil dari proses yang sebelumnya dijelaskan pada Sub-bab ini menghasilkan persebaran kelemahan dan kekebalan musuh yang ditunjukkan pada Gambar \ref{fig:enemy_weak_distrib} dibawah ini.
+Selanjutnya adalah proses penerapan persamaan \ref{eq:multi_damage_num_prob} ke seluruh karakter musuh $DmgEN_{M}$ seperti pada persamaan \ref{eq:all_enemies_damage}. Sesuai dengan persamaan \ref{eq:all_enemies_damage}, yang mana $M$ adalah jumlah musuh sedangkan $N$ adalah jumlah $DmgNu$ pada satu musuh yang berjumlah satu sampai dengan tiga seperti yang sudah dijelaskan pada paragraf sebelumnya pada Sub-bab ini. Hasil dari proses dari keseluruhhan proses yang dijelaskan pada Sub-bab ini menghasilkan persebaran kelemahan dan kekebalan musuh yang ditunjukkan pada Tabel \ref{tb:enemy_weak_distrib}.
+\vspace{1ex}
+
+\begin{table}[!h]
+	\centering
+	\caption{Hasil level yang dibuat untuk musuh.}
+	\label{tb:enemy_weak_distrib}
+	\begin{tabular}{|l|l|l|l|l|l|l|}
+		\hline
+		\textbf{No.} & \textbf{Name} & \textbf{Phys} & \textbf{Water} & \textbf{Wind} & \textbf{Earth} & \textbf{Fire} \\ \hline
+		1 & Enemy 1 & 1 & 0 & 1 & 1 & 0 \\ \hline
+		2 & Enemy 2 & 0 & 0 & 0 & 0 & 0 \\ \hline
+		3 & Enemy 3 & 0 & 2 & 1 & 1 & 1 \\ \hline
+		4 & Enemy 4 & 1 & 1 & 0 & 0 & 0 \\ \hline
+		5 & Enemy 5 & 0 & 2 & 1 & 0 & 1 \\ \hline
+		6 & Enemy 6 & 1 & 1 & 1 & 1 & 0 \\ \hline
+		7 & Enemy 7 & 1 & 2 & 0 & 0 & 0 \\ \hline
+		8 & Enemy 8 & 0 & 0 & 0 & 0 & 1 \\ \hline
+		9 & Enemy 9 & 1 & 2 & 1 & 0 & 0 \\ \hline
+		10 & Enemy 10 & 0 & 2 & 0 & 0 & 0 \\ \hline
+		11 & Enemy 11 & 1 & 4 & 0 & 1 & 0 \\ \hline
+		12 & Enemy 12 & 0 & 0 & 0 & 0 & 1 \\ \hline
+		13 & Enemy 13 & 0 & 0 & 0 & 1 & 0 \\ \hline
+		14 & Enemy 14 & 0 & 4 & 1 & 0 & 0 \\ \hline
+		15 & Enemy 15 & 0 & 4 & 2 & 1 & 0 \\ \hline
+		... & ... & ... & ... & ... & ... & ... \\ \hline
+		\textbf{400} & \textbf{Enemy 400} & \textbf{0} & \textbf{0} & \textbf{2} & \textbf{1} & \textbf{0} \\ \hline
+	\end{tabular}
+\end{table}
+\vspace{1ex}
+
+Jika melihat Tabel \ref{tb:enemy_weak_distrib} Hasil dari proses yang sebelumnya dijelaskan pada Sub-bab ini menghasilkan persebaran kelemahan dan kekebalan musuh yang ditunjukkan pada Gambar \ref{fig:enemy_weak_distrib} dibawah ini.
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.50]{img/EnemyWeakDistrib.png}
