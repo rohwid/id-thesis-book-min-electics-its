@@ -179,7 +179,7 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 		Biasanya pada permaianan \textit{turn-based} RPG terdapat sebuah peta besar tentang lokasi yang merupakan latar dari cerita, tersebarlah berbagai jenis musuh yang relatif mudah dikalahkan. Kemudian ditampilkan juga beberapa \textit{dungeon} yang akan terbuka satu demi satu, yang mana \textit{dungeon} tersebut memiliki tingkat kesulitan dan kerumitan yang terus meningkat sampai dengan bertemu dengan Bos. Secara keseluruhan tingkat kesulitan juga akan terus meningkat sampai dengan akhir permaian seperti yang dicontohkan oleh Gambar \ref{fig:story_dungeon}.
 		
 		\begin{figure} [!h] \centering
-			\includegraphics[scale=0.68]{img/story_dungeon.png}
+			\includegraphics[scale=0.75]{img/story_dungeon.png}
 			\caption{Pengaruh cerita terhadap tingkat kesulitan.}
 			\label{fig:story_dungeon}
 		\end{figure}
@@ -206,9 +206,10 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 		\end{enumerate}
 		
 		Pada penelitian ini keseimbangan permainan dirancang terus meningkat seperti yang dibahas pada bagian sebelumnya, dalam permainan ini sebagian besar waktu (asumsikan saja 80\%) akan dihabiskan bertarung di dalam \textit{dungeon}. Kemudian 20\% dari waktu pertempuran akan digunakan untuk bertarung melawan bos. Sedangkan sisanya 60\% dari waktu bertarung akan dibagi antara pertarungan melawan musuh yang lemah dan juga kuat, bila digambarkan pembagian tersebut akan seperti pada Gambar \ref{fig:enemy_difficulty_percentage}.
+		\vspace{1ex}
 		
 		\begin{figure} [!h] \centering
-			\includegraphics[scale=0.12]{img/enemy_type_distribution.png}
+			\includegraphics[scale=0.15]{img/enemy_type_distribution.png}
 			\caption{Distribusi jenis musuh sesuai dengan cerita.}
 			\label{fig:enemy_difficulty_percentage}
 		\end{figure}
@@ -217,7 +218,6 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 		\vspace{1ex}
 		
 		Misalnya, dalam permaian RPG, bos pertama idealnya akan membutuhkan 3 menit bagi pemain yang kompeten untuk mengalahkan, dan bos terakhir menghabiskan waktu 20 menit. Kemudian terjadi peningkatan kompleksitas pada bos di level menengah, untuk terdapat dua bos yang masing-masing membutuhkan waktu sekitar 10 menit untuk dikalahkan, dan bos kedua membutuhkan waktu 7 menit.
-		\vspace{1ex}
 		
 		\begin{equation}
 		\label{eq: total_fight}
@@ -304,7 +304,6 @@ Berdasarkan Tabel \ref{tb:player_input_variable} level untuk karakter pemain dim
 \vspace{1ex}
 
 Cara semacam itu juga berlaku untuk perhitungan MP pada programm ini, dengan pola masukan yang sama dengan HP yaitu \textit{Start} MP dan \textit{Next} MP. Pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} adalah contoh persamaan yang digunakan untuk mencari nilai HP dan MP selanjutnya.
-\vspace{1ex}
 
 \begin{equation}\label{eq:hp_player}
 	\begin{split}
@@ -317,10 +316,8 @@ Cara semacam itu juga berlaku untuk perhitungan MP pada programm ini, dengan pol
 		MP(N) = \sum_{n = 0}^{N} MP(n + 1) + \left(MP(n + 1) - MP(n) \right)
 	\end{split}
 \end{equation}
-\vspace{1ex}
 
 Pada persamaan \ref{eq:hp_player} dan persamaan \ref{eq:mp_player} HP tetap dinyatakan sebagain HP, begitu juga dengan MP. Kemudian $HP(N)$ adalah nilai HP yang dicari, yang mana $N$ adalah level maksimum, $n$ adalah level mulai dan $n + 1$ adalah level selanjutnya. Jadi pada tahap ini seperti yang dijelaska pada Tabel \ref{tb:player_input_variable} yang mana nilai $n$ dan $n + 1$ sudah diketahui sebagai inisialisasi, masing-masing adalah $HP(n)$ dan $HP(n + 1)$. Penjelasan ini juga berlaku untuk mencari nilai $MP(N)$ yaitu nilai MP yang dicari. Hasil contoh perhitungan dari persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dengan masukan dari Tabel \ref{tb:player_input_variable} dapat hasilnya dapat dilihat pada Tabel \ref{tb:player_hp_mp}. 
-\vspace{1ex}
 
 \begin{table}[h!]
 	\centering
@@ -342,9 +339,9 @@ Pada persamaan \ref{eq:hp_player} dan persamaan \ref{eq:mp_player} HP tetap diny
 		\textbf{100} & \textbf{555} & \textbf{485} \\ \hline
 	\end{tabular}
 \end{table}
-\vspace{1ex}
 
 Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP dan MP terus naik secara konstan ke atas sesuai dengan kenaikan levelnya seperti yang direpresentasikan pada Gambar \ref{fig:hp_player} dan Gambar \ref{fig:mp_player}.
+\vspace{1ex}
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.5]{img/PlayerHpDistrib.png}
@@ -352,7 +349,6 @@ Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP da
 	\vspace{1ex}
 	\label{fig:hp_player}
 \end{figure}
-\vspace{3ex}
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.5]{img/PlayerMpDistrib.png}
@@ -814,6 +810,7 @@ Melanjutkan persamaan \ref{eq:enemy_types_rest_probability}, yang mana didistrib
 \begin{table}[!h]
 	\centering
 	\caption{Hasil level yang dibuat untuk musuh.}
+	\vspace{-2ex}
 	\label{tb:enemy_type_distrib}
 	\begin{tabular}{|l|l|l|l|}
 		\hline
@@ -908,6 +905,7 @@ Selanjutnya adalah proses penerapan persamaan \ref{eq:multi_damage_num_prob} ke 
 \begin{table}[!h]
 	\centering
 	\caption{Hasil level yang dibuat untuk musuh.}
+	\vspace{-2ex}
 	\label{tb:enemy_weak_distrib}
 	\begin{tabular}{|l|l|l|l|l|l|l|}
 		\hline
@@ -1095,10 +1093,51 @@ Sedikit berbeda dengan persamaan \ref{eq:enemy_types_prob_hp} pada persaamaan \r
 P(HP_{i}) = \sum_{i=0}^{N}\ \frac{HP_{i}}{bHP_{i} - tHP_{i}}
 \end{equation}
 
-Kemudian perhitungan probabilitas $P(HP_{i})$ atau munculnya HP pada setiap karakter musuh pada persamaan \ref{eq:enemy_types_prob_hp_mix}. HP dari setiap karakter musuh itu sendiri dinyatakan dengen $HP_{i}$. Kemudian range nilai dari $HP_{i}$ yang akan muncul terhitung mulai dari $bHP_{i}$ sampai dengan $tHP_{i}$. Persamaan tersebut masih sama dengan probabilitas kemunculan HP dari \textit{range} antara $bHP$ dengan $tHP$ pada persamaan \ref{eq:enemy_types_prob_hp}.
+Kemudian perhitungan probabilitas $P(HP_{i})$ atau munculnya HP pada setiap karakter musuh pada persamaan \ref{eq:enemy_types_prob_hp_mix}. HP dari setiap karakter musuh itu sendiri dinyatakan dengen $HP_{i}$. Kemudian range nilai dari $HP_{i}$ yang akan muncul terhitung mulai dari $bHP_{i}$ sampai dengan $tHP_{i}$. Persamaan tersebut masih sama dengan probabilitas kemunculan HP dari \textit{range} antara $bHP$ dengan $tHP$ pada persamaan \ref{eq:enemy_types_prob_hp}. Kemudian \textit{Stats} untuk HP dan MP dari setiap karakter musuh berhasil dibuat melalui beberapa langkah pada Sub-bab ini. Dari keseluruhan \textit{stats} tersebut bila digabungkan maka hasilnya dapat dilihat pada Tabel \ref{tb:enemy_weak_stats}.
+\vspace{-3ex}
+
+\begin{longtable}{|l|l|l|l|l|}
+	\caption{Distribusi \textit{Stats} HP dan MP musuh.}
+	\label{tb:enemy_weak_stats}\\
+	\hline
+	\textbf{No.} & \textbf{Name} & \textbf{Levels} & \textbf{HP} & \textbf{MP} \\ \hline
+	1 & Enemy 1 & 1 & 42 & 45 \\ \hline
+	2 & Enemy 2 & 1 & 84 & 21 \\ \hline
+	3 & Enemy 3 & 1 & 43 & 51 \\ \hline
+	4 & Enemy 4 & 1 & 44 & 231 \\ \hline
+	5 & Enemy 5 & 2 & 40 & 40 \\ \hline
+	6 & Enemy 6 & 2 & 44 & 208 \\ \hline
+	7 & Enemy 7 & 2 & 44 & 47 \\ \hline
+	8 & Enemy 8 & 2 & 42 & 53 \\ \hline
+	9 & Enemy 9 & 2 & 49 & 53 \\ \hline
+	10 & Enemy 10 & 2 & 42 & 49 \\ \hline
+	11 & Enemy 11 & 2 & 44 & 23 \\ \hline
+	12 & Enemy 12 & 2 & 79 & 27 \\ \hline
+	13 & Enemy 13 & 2 & 41 & 26 \\ \hline
+	14 & Enemy 14 & 3 & 50 & 34 \\ \hline
+	15 & Enemy 15 & 3 & 54 & 20 \\ \hline
+	... & ... & ... & ... & ... \\ \hline
+	\textbf{400} & \textbf{Enemy 400} & \textbf{78} & \textbf{389} & \textbf{161} \\ \hline
+\end{longtable}
+
+Pada Tabel \ref{tb:enemy_weak_stats} hanya sebagian data saja yang ditampilkan, untuk selengkapnya dapat dilihat pada Tabel \ref{tb:enemies_all_stats_1} sampai dengan Tabel \ref{tb:enemies_all_stats_15} pada kolom HP dan MP. Selanjutnya adalah penggambaran persebaran \textit{stats} HP dan MP yang masing-masing digambarkan pada Gambar \ref{fig:enemy_hp_distrib} dan Gambar \ref{fig:enemy_mp_distrib}.
 \vspace{1ex}
 
-Selain pembuatan \textit{stats} HP dan MP, \textit{stats} lain seperti halnya \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck} juga harus dicari. Daftar dari \textit{stats} tersebut dicontohkan pada Tabel \ref{tb:enemy_input_variable} dengan nama variabel \textit{List Stats Name}. Dalam kasus pembuatan \textit{stats} musuh terdapat beberapa variabel lain digunakan selain \textit{List Stats Name} diantaranya adalah \textit{Max Stats Value} dan \textit{Min Stats Value}, seperti yang ditunjukan pada Tabel \ref{tb:enemy_input_variable}. Dalam pembuatan \textit{stats} musuh tersebut digunakanlah persamaan yang mirip dengan persamaan \ref{eq:enemy_types_prob_bhp}, \ref{eq:enemy_types_prob_thp}, dan persamaan \ref{eq:enemy_types_prob_hp}, hanya saja dilakukan sedikit perubahan pada persamaan tersebut seperti yang dinyatakan pada persamaan \ref{eq:enemy_types_prob_bst1}, \ref{eq:enemy_types_prob_bst2}, \ref{eq:enemy_types_prob_tst1}, \ref{eq:enemy_types_prob_tst2}, dan persamaan \ref{eq:enemy_types_prob_st}.
+\begin{figure} [!h] \centering
+	\centering
+	\includegraphics[scale=0.57]{img/EnemyHpDistrib.png}
+	\caption{Distribusi \textit{stats} HP musuh.}
+	\label{fig:enemy_hp_distrib}
+\end{figure}
+
+\begin{figure} [!h] \centering
+	\centering
+	\includegraphics[scale=0.57]{img/EnemyMpDistrib.png}
+	\caption{Distribusi \textit{stats} MP musuh.}
+	\label{fig:enemy_mp_distrib}
+\end{figure}
+
+Pada Gambar \ref{fig:enemy_hp_distrib} dan Gambar \ref{fig:enemy_mp_distrib} adalah visualisasi data HP dan MP dalam bentuk tiga dimensi, hal tersebut dilakukan agar terciptanya perbandingan antara level, jumlah musuh, dan tingkat tingginya nilai \textit{stats} yang bersangkutan. Selain pembuatan \textit{stats} HP dan MP, \textit{stats} lain seperti halnya \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck} juga harus dicari. Daftar dari \textit{stats} tersebut dicontohkan pada Tabel \ref{tb:enemy_input_variable} dengan nama variabel \textit{List Stats Name}. Dalam kasus pembuatan \textit{stats} musuh terdapat beberapa variabel lain digunakan selain \textit{List Stats Name} diantaranya adalah \textit{Max Stats Value} dan \textit{Min Stats Value}, seperti yang ditunjukan pada Tabel \ref{tb:enemy_input_variable}. Dalam pembuatan \textit{stats} musuh tersebut digunakanlah persamaan yang mirip dengan persamaan \ref{eq:enemy_types_prob_bhp}, \ref{eq:enemy_types_prob_thp}, dan persamaan \ref{eq:enemy_types_prob_hp}, hanya saja dilakukan sedikit perubahan pada persamaan tersebut seperti yang dinyatakan pada persamaan \ref{eq:enemy_types_prob_bst1}, \ref{eq:enemy_types_prob_bst2}, \ref{eq:enemy_types_prob_tst1}, \ref{eq:enemy_types_prob_tst2}, dan persamaan \ref{eq:enemy_types_prob_st}.
 
 \begin{equation}\label{eq:enemy_types_prob_bst1}
 bSt = minSt
@@ -1129,83 +1168,58 @@ P(St_{i}) = \sum_{i=0}^{N}\ \frac{St_{i}}{bSt_{i} - tSt_{i}}
 \end{equation}
 
 Kemudian pada persamaan \ref{eq:enemy_types_prob_st} adalah probabilitas $P(St_{i})$ saat munculnya \textit{stats} $St_{i}$ dari batas bawah \textit{stats} $bSt_{i}$ sampai batas atas \textit{stats} $tSt_{i}$. \textit{Stats} dari setiap karakter musuh berhasil dibuat melalui banyak langkah pada Sub-bab ini, diantaranya adalah \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed}, dan \textit{Luck}. Dari keseluruhan \textit{stats} tersebut bila digabungkan maka hasilnya dapat dilihat pada Tabel \ref{tb:enemy_weak_stats}.
-\vspace{-1ex}
+\vspace{-2ex}
 
-\begin{longtable}{|l|l|l|l|l|}
-	\caption{My data}
-	\label{tb:enemy_weak_stats}\\
+\begin{longtable}{|l|l|l|l|l|l|l|l|}
+	\caption{Distribusi \textit{Stats} musuh.}
+	\label{tb:enemy_stats}\\
 	\hline
-	\textbf{No.} & \textbf{Name} & \textbf{Levels} & \textbf{HP} & \textbf{MP} \\ \hline
-	1 & Enemy 1 & 1 & 42 & 45 \\ \hline
-	2 & Enemy 2 & 1 & 84 & 21 \\ \hline
-	3 & Enemy 3 & 1 & 43 & 51 \\ \hline
-	4 & Enemy 4 & 1 & 44 & 231 \\ \hline
-	5 & Enemy 5 & 2 & 40 & 40 \\ \hline
-	6 & Enemy 6 & 2 & 44 & 208 \\ \hline
-	7 & Enemy 7 & 2 & 44 & 47 \\ \hline
-	8 & Enemy 8 & 2 & 42 & 53 \\ \hline
-	9 & Enemy 9 & 2 & 49 & 53 \\ \hline
-	10 & Enemy 10 & 2 & 42 & 49 \\ \hline
-	11 & Enemy 11 & 2 & 44 & 23 \\ \hline
-	12 & Enemy 12 & 2 & 79 & 27 \\ \hline
-	13 & Enemy 13 & 2 & 41 & 26 \\ \hline
-	14 & Enemy 14 & 3 & 50 & 34 \\ \hline
-	15 & Enemy 15 & 3 & 54 & 20 \\ \hline
-	... & ... & ... & ... & ... \\ \hline
-	\textbf{400} & \textbf{Enemy 400} & \textbf{78} & \textbf{389} & \textbf{161} \\ \hline
+	\textbf{No.} & \textbf{Name} & \textbf{Lv.} & \textbf{Str} & \textbf{Mag} & \textbf{Endr} & \textbf{Spd} & \textbf{Luck} \\ \hline
+	1 & Enemy 1 & 1 & 2 & 2 & 2 & 2 & 2 \\ \hline
+	2 & Enemy 2 & 1 & 2 & 2 & 2 & 2 & 2 \\ \hline
+	3 & Enemy 3 & 1 & 2 & 2 & 6 & 2 & 2 \\ \hline
+	4 & Enemy 4 & 1 & 2 & 2 & 6 & 2 & 2 \\ \hline
+	5 & Enemy 5 & 2 & 2 & 3 & 6 & 3 & 2 \\ \hline
+	6 & Enemy 6 & 2 & 2 & 3 & 9 & 2 & 2 \\ \hline
+	7 & Enemy 7 & 2 & 2 & 3 & 6 & 2 & 2 \\ \hline
+	8 & Enemy 8 & 2 & 2 & 3 & 2 & 2 & 2 \\ \hline
+	9 & Enemy 9 & 2 & 2 & 3 & 10 & 3 & 2 \\ \hline
+	10 & Enemy 10 & 2 & 2 & 3 & 11 & 3 & 2 \\ \hline
+	11 & Enemy 11 & 2 & 2 & 3 & 2 & 2 & 2 \\ \hline
+	12 & Enemy 12 & 2 & 2 & 3 & 12 & 3 & 2 \\ \hline
+	13 & Enemy 13 & 2 & 2 & 3 & 6 & 2 & 2 \\ \hline
+	14 & Enemy 14 & 3 & 2 & 8 & 2 & 2 & 2 \\ \hline
+	15 & Enemy 15 & 3 & 3 & 11 & 2 & 3 & 2 \\ \hline
+	... & ... & ... & ... & ... & ... & ... & ... \\ \hline
+	\textbf{400} & \textbf{Enemy 400} & \textbf{78} & \textbf{30} & \textbf{15} & \textbf{11} & \textbf{36} & \textbf{22} \\ \hline
 \end{longtable}
-\vspace{1ex}
 
-Pada Tabel \ref{tb:enemy_weak_stats} hanya sebagian data saja yang ditampilkan, untuk selengkapnya dapat dilihat pada Tabel \ref{tb:enemies_all_stats_1} sampai dengan Tabel \ref{tb:enemies_all_stats_15} pada kolom HP dan MP.
+Selanjutnya adalah penggambaran persebaran \textit{stats} yang disebutkan pada Tabel \ref{tb:enemy_stats} yang digambarkan pada Gambar \ref{fig:enemy_stats_distrib}.
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.59]{img/EnemyStatsDistrib.png}
+	\includegraphics[scale=0.58]{img/EnemyStatsDistrib.png}
 	\caption{Distribusi \textit{stats} musuh secara keseluruhan.}
-	\label{fig:enemy_all_stats_distrib}
+	\label{fig:enemy_stats_distrib}
 \end{figure}
 
-Selanjutnya adalah penggambaran persebaran \textit{stats} HP dan MP yang masing-masing dijabarkan pada persamaan \ref{fig:enemy_hp_distrib} dan persamaan \ref{fig:enemy_mp_distrib}. Sama seperti pada persamaan \ref{fig:enemy_all_stats_distrib}, yang mana pada persamaan \ref{fig:enemy_hp_distrib} dan persamaan \ref{fig:enemy_mp_distrib} divisualisasikan secara ke dalam bentuk tiga dimensi. Hal tersebut dilakukan agar terciptanya perbandingan antara level, jumlah musuh, dan tingkat tingginya nilai \textit{stats} yang bersangkutan.
+Pada Gambar \ref{fig:enemy_str_distrib}, \ref{fig:enemy_mag_distrib}, \ref{fig:enemy_endr_distrib}, \ref{fig:enemy_spd_distrib} dan Gambar \ref{fig:enemy_luck_distrib} adalah pecahan dari Gambar \ref{fig:enemy_stats_distrib} secara berurutan diantaranya adalah \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck}.
 
-\begin{figure} [!h]
-\begin{minipage}[t]{1.0\linewidth}
-	\centering
-	\includegraphics[scale=0.58]{img/EnemyHpDistrib.png}
-	\caption{Distribusi \textit{stats} HP musuh.}
-	\label{fig:enemy_hp_distrib}
-	\vspace{2ex}
-\end{minipage}
-\vfill
-\begin{minipage}[t]{1.0\linewidth}
-	\centering
-	\includegraphics[scale=0.58]{img/EnemyMpDistrib.png}
-	\caption{Distribusi \textit{stats} MP musuh.}
-	\label{fig:enemy_mp_distrib}
-\end{minipage} 
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.55]{img/EnemyStrengthDistrib.png}
+	\caption{Distribusi \textit{Strength} musuh.}
+	\label{fig:enemy_str_distrib}
 \end{figure}
-\vspace{1ex}
 
-Pada Gambar \ref{fig:enemy_str_distrib}, \ref{fig:enemy_mag_distrib}, \ref{fig:enemy_endr_distrib}, \ref{fig:enemy_spd_distrib} dan Gambar \ref{fig:enemy_luck_distrib} adalah pecahan dari Gambar \ref{fig:enemy_all_stats_distrib} secara berurutan diantaranya adalah \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck}.
-
-\begin{figure} [!h]
-	\begin{minipage}[t]{1.0\linewidth}
-		\centering
-		\includegraphics[scale=0.57]{img/EnemyStrengthDistrib.png}
-		\caption{Distribusi \textit{Strength} musuh.}
-		\label{fig:enemy_str_distrib}
-		\vspace{2ex}
-	\end{minipage}
-	\vfill
-	\begin{minipage}[t]{1.0\linewidth}
-		\centering
-		\includegraphics[scale=0.57]{img/EnemyMagicDistrib.png}
-		\caption{Distribusi \textit{Magic} musuh.}
-		\label{fig:enemy_mag_distrib}
-	\end{minipage} 
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.55]{img/EnemyMagicDistrib.png}
+	\caption{Distribusi \textit{Magic} musuh.}
+	\label{fig:enemy_mag_distrib}
 \end{figure}
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.58]{img/EnemyEnduranceDistrib.png}
 	\caption{Distribusi \textit{Endurance} musuh.}
+	\vspace{2ex}
 	\label{fig:enemy_endr_distrib}
 \end{figure}
 
@@ -1220,3 +1234,5 @@ Pada Gambar \ref{fig:enemy_str_distrib}, \ref{fig:enemy_mag_distrib}, \ref{fig:e
 	\caption{Distribusi \textit{Luck} musuh.}
 	\label{fig:enemy_luck_distrib}
 \end{figure}
+
+Data \textit{Stats} selengkapnya dapat dilihat pada Tabel \ref{tb:enemies_all_stats_1} sampai dengan Tabel \ref{tb:enemies_all_stats_15} pada kolom \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed}, \textit{Luck} dan \textit{stats} yang lain jika dilakukan penambahan \textit{stats} pada program. 
