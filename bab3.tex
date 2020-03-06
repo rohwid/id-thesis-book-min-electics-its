@@ -912,28 +912,28 @@ Selanjutnya adalah proses penerapan persamaan \ref{eq:multi_damage_num_prob} ke 
 	\begin{tabular}{|l|l|l|l|l|l|l|}
 		\hline
 		\textbf{No.} & \textbf{Name} & \textbf{Phys} & \textbf{Water} & \textbf{Wind} & \textbf{Earth} & \textbf{Fire} \\ \hline
-		1 & Enemy 1 & 1 & 0 & 1 & 1 & 0 \\ \hline
+		1 & Enemy 1 & 1 & 1 & 0 & 1 & 0 \\ \hline
 		2 & Enemy 2 & 0 & 0 & 0 & 0 & 0 \\ \hline
-		3 & Enemy 3 & 0 & 2 & 1 & 1 & 1 \\ \hline
-		4 & Enemy 4 & 1 & 1 & 0 & 0 & 0 \\ \hline
-		5 & Enemy 5 & 0 & 2 & 1 & 0 & 1 \\ \hline
-		6 & Enemy 6 & 1 & 1 & 1 & 1 & 0 \\ \hline
-		7 & Enemy 7 & 1 & 2 & 0 & 0 & 0 \\ \hline
+		3 & Enemy 3 & 0 & 1 & 0 & 1 & 1 \\ \hline
+		4 & Enemy 4 & 1 & 0 & 1 & 0 & 0 \\ \hline
+		5 & Enemy 5 & 0 & 1 & 0 & 0 & 1 \\ \hline
+		6 & Enemy 6 & 1 & 1 & 0 & 1 & 0 \\ \hline
+		7 & Enemy 7 & 1 & 0 & 0 & 0 & 0 \\ \hline
 		8 & Enemy 8 & 0 & 0 & 0 & 0 & 1 \\ \hline
-		9 & Enemy 9 & 1 & 2 & 1 & 0 & 0 \\ \hline
-		10 & Enemy 10 & 0 & 2 & 0 & 0 & 0 \\ \hline
-		11 & Enemy 11 & 1 & 4 & 0 & 1 & 0 \\ \hline
+		9 & Enemy 9 & 1 & 1 & 0 & 0 & 0 \\ \hline
+		10 & Enemy 10 & 0 & 0 & 0 & 0 & 0 \\ \hline
+		11 & Enemy 11 & 1 & 0 & 0 & 1 & 0 \\ \hline
 		12 & Enemy 12 & 0 & 0 & 0 & 0 & 1 \\ \hline
-		13 & Enemy 13 & 0 & 0 & 0 & 1 & 0 \\ \hline
-		14 & Enemy 14 & 0 & 4 & 1 & 0 & 0 \\ \hline
-		15 & Enemy 15 & 0 & 4 & 2 & 1 & 0 \\ \hline
+		13 & Enemy 13 & 0 & 0 & 2 & 1 & 0 \\ \hline
+		14 & Enemy 14 & 0 & 1 & 0 & 0 & 0 \\ \hline
+		15 & Enemy 15 & 0 & 2 & 0 & 1 & 0 \\ \hline
 		... & ... & ... & ... & ... & ... & ... \\ \hline
 		\textbf{400} & \textbf{Enemy 400} & \textbf{0} & \textbf{0} & \textbf{2} & \textbf{1} & \textbf{0} \\ \hline
 	\end{tabular}
 \end{table}
 \vspace{1ex}
 
-Jika melihat Tabel \ref{tb:enemy_weak_distrib} Hasil dari proses yang sebelumnya dijelaskan pada Sub-bab ini menghasilkan persebaran kelemahan dan kekebalan musuh yang ditunjukkan pada Gambar \ref{fig:enemy_weak_distrib} dibawah ini.
+Jika melihat Tabel \ref{tb:enemy_weak_distrib} dengan melihat pada kolom \textit{Phys}, \textit{Water}, \textit{Wind}, \textit{Earth}, dan \textit{Fire}, isi dari kolom tersebut berupa angka nol sampai dengan dua adalah hasil dari pembuatan \textit{stats} kelemahan musuh pada variabel $DmgEN_{M}$ atau untuk $DmgEN_{M} = \left \{ DmgNu_{0}, DmgNu_{1}, DmgNu_{2},..., DmgNu_{M} \right \}$ jika jumlah kelemahan musuh lebih dari tiga atau yang dicontohkan pada Tabel \ref{tb:enemy_input_variable} dalam variabel \textit{List Damage}. Hasil dari proses yang sebelumnya dijelaskan pada Sub-bab ini menghasilkan persebaran kelemahan dan kekebalan musuh yang ditunjukkan pada Gambar \ref{fig:enemy_weak_distrib} dibawah ini.
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.50]{img/EnemyWeakDistrib.png}
@@ -1128,7 +1128,35 @@ Dalam pencarian nilai batas atas $tSt_{i}$ tentunya harus melibatkan batas bawah
 P(St_{i}) = \sum_{i=0}^{N}\ \frac{St_{i}}{bSt_{i} - tSt_{i}}
 \end{equation}
 
-Kemudian pada persamaan \ref{eq:enemy_types_prob_st} adalah probabilitas $P(St_{i})$ saat munculnya \textit{stats} $St_{i}$ dari batas bawah \textit{stats} $bSt_{i}$ sampai batas atas \textit{stats} $tSt_{i}$. \textit{Stats} dari setiap karakter musuh berhasil dibuat melalui banyak langkah pada Sub-bab ini, diantaranya adalah \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed}, dan \textit{Luck}. Dari keseluruhan \textit{stats} tersebut bila digabungkan maka hasilnya dapat dilihat pada Gambar \ref{fig:enemy_all_stats_distrib}.
+Kemudian pada persamaan \ref{eq:enemy_types_prob_st} adalah probabilitas $P(St_{i})$ saat munculnya \textit{stats} $St_{i}$ dari batas bawah \textit{stats} $bSt_{i}$ sampai batas atas \textit{stats} $tSt_{i}$. \textit{Stats} dari setiap karakter musuh berhasil dibuat melalui banyak langkah pada Sub-bab ini, diantaranya adalah \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed}, dan \textit{Luck}. Dari keseluruhan \textit{stats} tersebut bila digabungkan maka hasilnya dapat dilihat pada Tabel \ref{tb:enemy_weak_stats}.
+\vspace{-1ex}
+
+\begin{longtable}{|l|l|l|l|l|}
+	\caption{My data}
+	\label{tb:enemy_weak_stats}\\
+	\hline
+	\textbf{No.} & \textbf{Name} & \textbf{Levels} & \textbf{HP} & \textbf{MP} \\ \hline
+	1 & Enemy 1 & 1 & 42 & 45 \\ \hline
+	2 & Enemy 2 & 1 & 84 & 21 \\ \hline
+	3 & Enemy 3 & 1 & 43 & 51 \\ \hline
+	4 & Enemy 4 & 1 & 44 & 231 \\ \hline
+	5 & Enemy 5 & 2 & 40 & 40 \\ \hline
+	6 & Enemy 6 & 2 & 44 & 208 \\ \hline
+	7 & Enemy 7 & 2 & 44 & 47 \\ \hline
+	8 & Enemy 8 & 2 & 42 & 53 \\ \hline
+	9 & Enemy 9 & 2 & 49 & 53 \\ \hline
+	10 & Enemy 10 & 2 & 42 & 49 \\ \hline
+	11 & Enemy 11 & 2 & 44 & 23 \\ \hline
+	12 & Enemy 12 & 2 & 79 & 27 \\ \hline
+	13 & Enemy 13 & 2 & 41 & 26 \\ \hline
+	14 & Enemy 14 & 3 & 50 & 34 \\ \hline
+	15 & Enemy 15 & 3 & 54 & 20 \\ \hline
+	... & ... & ... & ... & ... \\ \hline
+	\textbf{400} & \textbf{Enemy 400} & \textbf{78} & \textbf{389} & \textbf{161} \\ \hline
+\end{longtable}
+\vspace{1ex}
+
+Pada Tabel \ref{tb:enemy_weak_stats} hanya sebagian data saja yang ditampilkan, untuk selengkapnya dapat dilihat pada Tabel \ref{tb:enemies_all_stats_1} sampai dengan Tabel \ref{tb:enemies_all_stats_15} pada kolom HP dan MP.
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.59]{img/EnemyStatsDistrib.png}
