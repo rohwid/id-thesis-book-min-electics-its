@@ -3,50 +3,58 @@ BERBASIS K-NN DAN NAIVE BAYES DENGAN DEEP LEARNING MULTICLASS CLASSIFICATION
 
 Validasi Pengaturan Stats Otomatis pada Permainan Action dan Turn-Based RPG Berbasis K-NN dan Naive Bayes dengan Deep Learning Multiclass Classification
 
-Game Design Section to Cite:
-2.2.1 Penempatan Peluang pada Permainan
-a). Menunda atau Mencegah Penyelesaian Masalah
-b). Membuat Permainan Lebih Kompetitif
-c). Meningkatkan Keberagaman 
-    - Analisa Komponen Permainan Action dan Turn-based RPG (3.1)
-      -> Banyaknya variasi musuh berikut dengan kelemahan dan kelebihannya.
-    - Distribusi Tipe musuh
-    - Distribusi Elemen dan Kelemahan Musuh
-    - Distribusi HP, MP dan Stats Musuh
-d). Menciptakan momen dramatis 
-    - Desain Skenario Pertarungan (3.1.1)
-      -> Penyusunan strategi pada turn-based RPG dan Building character pada Action RPG
-      -> Kompleksitas kombinasi dari musuh
-      -> Peluang terjadinya kondisi kritis saat terjadinya serangan dari pemain
-    - Distribusi Tipe musuh 
-      -> Dalam membentuk formasi
-    - Distribusi Elemen dan Kelemahan Musuh
-      -> Dalam membentuk formasi
-    - Distribusi Elemen dan Kelemahan Musuh
-      -> Terciptanya kondisi puzzle
-    - Distribusi HP, MP dan Stats Musuh 
-      -> Keanekaragaman stats dari tipe musuh -> Distribusi Tipe musuh (BAB 3)
+Game Design yang sudah tersiatasi:
+	2.2.1 Penempatan Peluang pada Permainan
+	a). Menunda atau mencegah penyelesaian masalah: 
+	b). Membuat permainan lebih kompetitif: 
+	c). Meningkatkan keberagaman : 
+		- Analisa Komponen Permainan Action dan Turn-based RPG (3.1)
+		  -> Banyaknya variasi musuh berikut dengan kelemahan dan kelebihannya.
+		- Distribusi Tipe musuh
+		- Distribusi Elemen dan Kelemahan Musuh
+		- Distribusi HP, MP dan Stats Musuh
+	d). Menciptakan momen dramatis:
+		- Desain Skenario Pertarungan (3.1.1)
+		  -> Penyusunan strategi pada turn-based RPG dan Building character pada Action RPG
+		  -> Kompleksitas kombinasi dari musuh
+		  -> Peluang terjadinya kondisi kritis saat terjadinya serangan dari pemain
+		- Distribusi Tipe musuh 
+		  -> Dalam membentuk formasi
+		- Distribusi Elemen dan Kelemahan Musuh
+		  -> Dalam membentuk formasi
+		- Distribusi Elemen dan Kelemahan Musuh
+		  -> Terciptanya kondisi puzzle
+		- Distribusi HP, MP dan Stats Musuh 
+		  -> Keanekaragaman stats dari tipe musuh -> Distribusi Tipe musuh (BAB 3)
 
-e). Meningkatkan pengambilan keputusan -> Semakin banyak musuh makan akan semakin banyak keputusan yang harus di ambil oleh pemain
-    - Desain Skenario Pertarungan (3.1)
-      -> Semakin banyak musuh makan akan semakin banyak keputusan yang harus di ambil oleh pemain
+	e). Meningkatkan pengambilan keputusan: Semakin banyak musuh makan akan semakin banyak keputusan yang harus di ambil oleh pemain
+		- Desain Skenario Pertarungan (3.1)
+		  -> Semakin banyak musuh makan akan semakin banyak keputusan yang harus di ambil oleh pemain
 
-2.2.2 Elemen Keterampilan Strategi
-a). Peran dari Keterampilan pada Permainan
-    - Desain Skenario Pertarungan (3.1.1)
-      -> Pada permainan tersebut lebih mengandalkan ketangkasan dari pemain dalam memainkan karakter.
-b). Peran dan Keterampilan Strategi dan Taktik
-    - Desain Skenario Pertarungan (3.1.1)  
-      -> Pada sisi pemain dapat memhangun karakternya sedemikian hingga demi memberi efek status ke pada musuh saat berlangsunnya pertarungan 
-c). Game Berbasis Keterampilan Sepenuhnya
-    - Desain Skenario Pertarungan (3.1.1)
-      -> Action yang lebih mengandalkan keterampilan dari pemain dalam memaikan karakternya 
+2.2.2 Elemen Keterampilan Strategi:
+	a). Peran dari Keterampilan pada Permainan:
+		- Desain Skenario Pertarungan (3.1.1)
+		  -> Pada permainan tersebut lebih mengandalkan ketangkasan dari pemain dalam memainkan karakter.
+	b). Peran dan Keterampilan Strategi dan Taktik:
+		- Desain Skenario Pertarungan (3.1.1)  
+		  -> Pada sisi pemain dapat memhangun karakternya sedemikian hingga demi memberi efek status ke pada musuh saat berlangsunnya pertarungan 
+	c). Game Berbasis Keterampilan Sepenuhnya:
+		- Desain Skenario Pertarungan (3.1.1)
+		  -> Action yang lebih mengandalkan keterampilan dari pemain dalam memaikan karakternya 
 
-2.2.3 Menemukan Keseimbangan
+2.2.3 Menemukan Keseimbangan:
 	- Desain Skenario Pertarungan (3.1)
       -> Kebebasan desain semacam ini yang nantinya akan memudahkan penyeimbangan permainan.
 	- Distribusi HP, MP dan Stats Musuh (3.3.4)
 	  ->  Melihat nilai MP pada setiap karakter musuh dengan tipe tersebut sudah tergolong tinggi.
+
+
+Algoritma yang sudah tercitasi:
+2.3.1 K-Nearest Neighbour
+2.3.2 Naive Bayes
+2.3.3 Klasifikasi dengan Naive Bayes
+2.3.4 Gaussian Naive Bayes
+
 
 Trivial things to do:
 + Format Buku (v)
@@ -56,12 +64,14 @@ Trivial things to do:
 + Tambahkan inflict damage, jika sempat (Edit Program)
 + Tambahkan dynamic HP/MP player assign with K-NN, jika sempat (Edit Program) 
 
+
 Notes for Book Documentation:
 + Tambahkan dokumentasi untuk include cover format ".pdf" dengan versi max 1.5
 + Tambahkan dokumentasi untuk update data tabel dengan menggunakan website "https://www.tablesgenerator.com/"
   + Tabel pada buku ini disimpan pada folder:
     - "tables" untuk keseluruhan data penelitian
     - "lainnya/tables" untuk format tanda tangan pengesahan
+
 
 [BAB 2]
 + Desain permainan dan beberapa komponennya (v)
@@ -76,6 +86,8 @@ Notes for Book Documentation:
   - Level distribution -> Player meet enemy
   - Puzzle type dengan FSM (Finite State Machine) (Persona like)
   - Berbasi keputusan dengan Decision tree atau Behavior tree (Pokemon Like)
+
+
 
 [BAB 3]
 + Intro penjelasan alur penelitian (v)
