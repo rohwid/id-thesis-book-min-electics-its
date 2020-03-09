@@ -5,28 +5,48 @@ Validasi Pengaturan Stats Otomatis pada Permainan Action dan Turn-Based RPG Berb
 
 Game Design Section to Cite:
 2.2.1 Penempatan Peluang pada Permainan
-1). Menunda atau Mencegah Penyelesaian Masalah
-2). Membuat Permainan Lebih Kompetitif
-3). Meningkatkan Keberagaman -> Variasi musuh yang disusun secara acak
-    - Variasi kelemahan dan kelebihan (3.1)-> Analisa Komponen Permainan Action dan Turn-based Role-Playing Game (RPG)
-    - Distribusi Tipe musuh (BAB 3)
-    - Distribusi Elemen dan Kelemahan Musuh (BAB 3)
-    - Distribusi HP, MP dan Stats Musuh (BAB 3)
-4). Menciptakan momen dramatis -> Penyusunan strategi pada turn-based RPG dan Building character pada Action RPG
-    - Kombinasi musuh melawan pemain (BAB3)
-    - Formasi pertarungan (BAB 3)
-    - Distribusi Tipe musuh (BAB 3) -> Dalam membentuk formasi
-    - Distribusi Elemen dan Kelemahan Musuh (BAB 3) -> Dalam membentuk formasi
-    - Distribusi Elemen dan Kelemahan Musuh (BAB 3) -> Terciptanya kondisi puzzle
-    - Distribusi HP, MP dan Stats Musuh (BAB 3) -> Keanekaragaman stats dari tipe musuh -> Distribusi Tipe musuh (BAB 3)
-3). Meningkatkan pengambilan keputusan -> Semakin banyak musuh makan akan semakin banyak keputusan yang harus di ambil oleh pemain
-    - Desain Skenario Pertarungan (3.1) -> Semakin banyak musuh makan akan semakin banyak keputusan yang harus di ambil oleh pemain
-2.2.2 Elemen Keterampilan Strategi
-1). Peran dari Keterampilan pada Permainan -> Bagaimana cara pemain dalam menghadapi musuh yang sudah didesain sedemikian rupa.
-4). Strategi dan Taktik -> Bagaimana strategi dan taktik pemain dalam menyelesaikan permasalahn ini -> Turn-based RPG. 
-5). Game Berbasis Keterampilan Sepenuhnya -> Bagaimana pemain memainkan permainan dalam melawan musuh -> Action RPG.
+a). Menunda atau Mencegah Penyelesaian Masalah
+b). Membuat Permainan Lebih Kompetitif
+c). Meningkatkan Keberagaman 
+    - Analisa Komponen Permainan Action dan Turn-based RPG (3.1)
+      -> Banyaknya variasi musuh berikut dengan kelemahan dan kelebihannya.
+    - Distribusi Tipe musuh
+    - Distribusi Elemen dan Kelemahan Musuh
+    - Distribusi HP, MP dan Stats Musuh
+d). Menciptakan momen dramatis 
+    - Desain Skenario Pertarungan (3.1.1)
+      -> Penyusunan strategi pada turn-based RPG dan Building character pada Action RPG
+      -> Kompleksitas kombinasi dari musuh
+      -> Peluang terjadinya kondisi kritis saat terjadinya serangan dari pemain
+    - Distribusi Tipe musuh 
+      -> Dalam membentuk formasi
+    - Distribusi Elemen dan Kelemahan Musuh
+      -> Dalam membentuk formasi
+    - Distribusi Elemen dan Kelemahan Musuh
+      -> Terciptanya kondisi puzzle
+    - Distribusi HP, MP dan Stats Musuh 
+      -> Keanekaragaman stats dari tipe musuh -> Distribusi Tipe musuh (BAB 3)
 
-2.2.3 Menemukan Keseimbangan -> Keseimbangan dalam permainan secara keseluruhan bagian.
+e). Meningkatkan pengambilan keputusan -> Semakin banyak musuh makan akan semakin banyak keputusan yang harus di ambil oleh pemain
+    - Desain Skenario Pertarungan (3.1)
+      -> Semakin banyak musuh makan akan semakin banyak keputusan yang harus di ambil oleh pemain
+
+2.2.2 Elemen Keterampilan Strategi
+a). Peran dari Keterampilan pada Permainan
+    - Desain Skenario Pertarungan (3.1.1)
+      -> Pada permainan tersebut lebih mengandalkan ketangkasan dari pemain dalam memainkan karakter.
+b). Peran dan Keterampilan Strategi dan Taktik
+    - Desain Skenario Pertarungan (3.1.1)  
+      -> Pada sisi pemain dapat memhangun karakternya sedemikian hingga demi memberi efek status ke pada musuh saat berlangsunnya pertarungan 
+c). Game Berbasis Keterampilan Sepenuhnya
+    - Desain Skenario Pertarungan (3.1.1)
+      -> Action yang lebih mengandalkan keterampilan dari pemain dalam memaikan karakternya 
+
+2.2.3 Menemukan Keseimbangan
+	- Desain Skenario Pertarungan (3.1)
+      -> Kebebasan desain semacam ini yang nantinya akan memudahkan penyeimbangan permainan.
+	- Distribusi HP, MP dan Stats Musuh (3.3.4)
+	  ->  Melihat nilai MP pada setiap karakter musuh dengan tipe tersebut sudah tergolong tinggi.
 
 Trivial things to do:
 + Format Buku (v)
