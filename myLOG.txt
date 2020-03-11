@@ -3,17 +3,25 @@ BERBASIS K-NN DAN NAIVE BAYES DENGAN DEEP LEARNING MULTICLASS CLASSIFICATION
 
 Validasi Pengaturan Stats Otomatis pada Permainan Action dan Turn-Based RPG Berbasis K-NN dan Naive Bayes dengan Deep Learning Multiclass Classification
 
+
 Game Design yang sudah tersiatasi:
-	2.2.1 Penempatan Peluang pada Permainan
-	a). Menunda atau mencegah penyelesaian masalah: 
-	b). Membuat permainan lebih kompetitif: 
-	c). Meningkatkan keberagaman : 
+
+2.2.1 Penempatan Peluang pada Permainan: Pada dasarnya permainan yang memasukan unsur keberuntungan dapat dimainkan dan dimenangkan oleh khalayak luas.
+
+	a). Menunda atau mencegah penyelesaian masalah: pemain tidak terlalu menguasai permainan, karena saat pemain membuat keputusan yang sama persis dapat memberi hasil yang berbeda. Hal tersebut tentunya juga berpengaruh pada tingkat rasa bosan pemain dalam memainkan sebuah permainan, jika pola yang sama terus muncul.
+	
+	b). Membuat permainan lebih kompetitif: Elemen acak yang sesekali memungkinkan pemain yang kurang berpengalaman untuk menang. Pertama adalah selalu ada peluang kemenangan bagi setiap pemain. Kemudian yang kedua adalah efek dari kekalahan berkurang ketika seorang pemain bisa menyalahkan nasib buruknya sendiri atas kekalahannya. 
+	
+	c). Meningkatkan keberagaman: Permainan tanpa elemen acak selalu dimulai dengan cara yang sama dan pola-pola tertentu seperti langkah awal pada permainan Catur. Akibatnya, pemain dapat memiliki pengalaman yang sama dari satu pertandingan ke pertandingan yang lain, dan para pemain dapat mejatuhkan pilihannya untuk selalu memakai strategi yang sama.
+	
 		- Analisa Komponen Permainan Action dan Turn-based RPG (3.1)
 		  -> Banyaknya variasi musuh berikut dengan kelemahan dan kelebihannya.
 		- Distribusi Tipe musuh
 		- Distribusi Elemen dan Kelemahan Musuh
 		- Distribusi HP, MP dan Stats Musuh
-	d). Menciptakan momen dramatis:
+		
+	d). Menciptakan momen dramatis: Ketika seorang pemain dengan hati-hati menyusun strategi dan kemudian harus bergantung pada lemparan dadu atau apa pun yang bersifat acak untuk melihat apakah rencana tersebut berhasil, momen tersebut bisa menjadi sangat menegangkan. 
+	
 		- Desain Skenario Pertarungan (3.1.1)
 		  -> Penyusunan strategi pada turn-based RPG dan Building character pada Action RPG
 		  -> Kompleksitas kombinasi dari musuh
@@ -27,27 +35,35 @@ Game Design yang sudah tersiatasi:
 		- Distribusi HP, MP dan Stats Musuh 
 		  -> Keanekaragaman stats dari tipe musuh -> Distribusi Tipe musuh (BAB 3)
 
-	e). Meningkatkan pengambilan keputusan: Semakin banyak musuh makan akan semakin banyak keputusan yang harus di ambil oleh pemain
+	e). Meningkatkan pengambilan keputusan: Ketika elemen acak ada dalam permainan, tidak ada lagi strategi yang selalu benar. Beberapa gerakan mungkin memiliki peluang kegagalan yang tinggi tetapi juga potensi hasil yang besar, hal tersebut menjadikannya sebuah pilihan berisiko, gerakan lainnya mungkin aman tetapi menghasilkan sedikit keuntungan.
+		
 		- Desain Skenario Pertarungan (3.1)
 		  -> Semakin banyak musuh makan akan semakin banyak keputusan yang harus di ambil oleh pemain
 
-2.2.2 Elemen Keterampilan Strategi:
-	a). Peran dari Keterampilan pada Permainan:
+2.2.2 Elemen Keterampilan Strategi: salah satu kekuatan yang dapat dilakukan oleh para pemain. Karena hal tersebutlah yang membuat para pemain tetap bermain. Pemain bermain game dan menikmati setiap prosesnya karena mereka berusaha untuk menguasai pola dalamnya.
+	
+	a). Peran dari Keterampilan pada Permainan: Permainan yang bagus dibangun dari serangkaian keputusan menarik, membangun unit untuk menyerang atau bertahan, mencari tahu apa yang harus dilakukan oleh unit tersebut selanjutnya, apa saja kelemahannya dan lain sebagainya. Permainan yang bagus menyebabkan pemain sering melatih kemampuannya dan memberi reward atau bonus dengan pola timbal balik yang jelas. Kemudian sepanjang permainan pemain bertanyatanya tentang apa yang harus dilakukan selanjutnya. Masuklah mereka ke dalam istilah yang disebut dengan "lingkaran sihir" sebuah video game, melalui monitor atau TV sebagai medianya terseraplah mereke ke dalam dunia game.
+	
 		- Desain Skenario Pertarungan (3.1.1)
 		  -> Pada permainan tersebut lebih mengandalkan ketangkasan dari pemain dalam memainkan karakter.
-	b). Peran dan Keterampilan Strategi dan Taktik:
+		  
+	b). Peran dan Keterampilan Strategi dan Taktik:  keseluruhan cara untuk mencapai tujuan akhir jangka panjang (misalnya, kemenangan dalam permainan). Strategi utama terdiri dari beberapa strategi pendukung dengan tujuan jangka pendek atau menengah yang harus dilakukan untuk mencapai strategi besar (misalkan dalam peperangan besar, pilihan untuk bertarung dalam pertempuran tertentu adalah sebuah pilihan strategis).
+	
 		- Desain Skenario Pertarungan (3.1.1)  
-		  -> Pada sisi pemain dapat memhangun karakternya sedemikian hingga demi memberi efek status ke pada musuh saat berlangsunnya pertarungan 
-	c). Game Berbasis Keterampilan Sepenuhnya:
+		  -> Pada sisi pemain dapat memhangun karakternya sedemikian hingga demi memberi efek status ke pada musuh saat berlangsunnya pertarungan
+		  
+	c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video game0 petualangan, mereka dapat diselesaikan, dan keputusan-keputusan yang tadinya bervariasi kemudian menjadi keputusan-keputusan yang jelas. Misalkan dalam membuat keputusan pada akhirnya hanya ada satu gerakan atau pilihan benar.
+	
+	
 		- Desain Skenario Pertarungan (3.1.1)
 		  -> Action yang lebih mengandalkan keterampilan dari pemain dalam memaikan karakternya 
 
-2.2.3 Menemukan Keseimbangan:
+2.2.3 Menemukan Keseimbangan: Hal ini memberi mereka kesempatan untuk bermain satu lawan satu dengan pemain lain, mencocokan setiap pemikiran menjadi sebuah strategi, refleks melawan refleks, strategi melawan strategi.
+
 	- Desain Skenario Pertarungan (3.1)
       -> Kebebasan desain semacam ini yang nantinya akan memudahkan penyeimbangan permainan.
 	- Distribusi HP, MP dan Stats Musuh (3.3.4)
-	  ->  Melihat nilai MP pada setiap karakter musuh dengan tipe tersebut sudah tergolong tinggi.
-
+	  -> Melihat nilai MP pada setiap karakter musuh dengan tipe tersebut sudah tergolong tinggi.
 
 Algoritma yang sudah tercitasi:
 2.3.1 K-Nearest Neighbour
@@ -86,7 +102,6 @@ Notes for Book Documentation:
   - Level distribution -> Player meet enemy
   - Puzzle type dengan FSM (Finite State Machine) (Persona like)
   - Berbasi keputusan dengan Decision tree atau Behavior tree (Pokemon Like)
-
 
 
 [BAB 3]
