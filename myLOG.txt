@@ -4,6 +4,23 @@ BERBASIS K-NN DAN NAIVE BAYES DENGAN DEEP LEARNING MULTICLASS CLASSIFICATION
 Validasi Pengaturan Stats Otomatis pada Permainan Action dan Turn-Based RPG Berbasis K-NN dan Naive Bayes dengan Deep Learning Multiclass Classification
 
 
+Notes for Book Documentation:
++ Tambahkan dokumentasi untuk include cover format ".pdf" dengan versi max 1.5
++ Tambahkan dokumentasi untuk update data tabel dengan menggunakan website "https://www.tablesgenerator.com/"
+  + Tabel pada buku ini disimpan pada folder:
+    - "tables" untuk keseluruhan data penelitian
+    - "lainnya/tables" untuk format tanda tangan pengesahan
+
+
+Trivial things to do:
++ Format Buku (v)
+  - Benarkan antara "Halaman sengaja dikosongkan" dan halaman kosong setelah cover (v)
++ Nomenklatur perbaiki
+  - Perjelas variabel huruf M, N, L, i, j dan k pada persamaan dan perjelas pada paragraf isi
++ Tambahkan inflict damage, jika sempat (Edit Program)
++ Tambahkan dynamic HP/MP player assign with K-NN, jika sempat (Edit Program)
+
+
 Game Design yang sudah tersiatasi:
 
 2.2.1 Penempatan Peluang pada Permainan: Pada dasarnya permainan yang memasukan unsur keberuntungan dapat dimainkan dan dimenangkan oleh khalayak luas.
@@ -67,26 +84,29 @@ Game Design yang sudah tersiatasi:
 
 Algoritma yang sudah tercitasi:
 2.3.1 K-Nearest Neighbour
+	- Klasifikasi
+	- Regresi
+	- Cross-Validation
+	- Jarak Metrik
+	- Prediksi
+	- Pembobotan Jarak
+	
 2.3.2 Naive Bayes
+
 2.3.3 Klasifikasi dengan Naive Bayes
-2.3.4 Gaussian Naive Bayes
+	- Representasi dari Naive Bayes adalah Probabilitas
+	  -> Class probabilities
+	  -> Conditional probabilities
+	  -> Marginal probabilities
+	- Proses Learning Data dengan Naive Bayes
+	- Perhitungan pada Class Probabilities
+	- Perhitungan Conditional Probability
+	- Membuat Prediksi dengan Naive Bayes
 
-
-Trivial things to do:
-+ Format Buku (v)
-  - Benarkan antara "Halaman sengaja dikosongkan" dan halaman kosong setelah cover (v)
-+ Nomenklatur perbaiki
-  - Perjelas variabel huruf M, N, L, i, j dan k pada persamaan dan perjelas pada paragraf isi
-+ Tambahkan inflict damage, jika sempat (Edit Program)
-+ Tambahkan dynamic HP/MP player assign with K-NN, jika sempat (Edit Program) 
-
-
-Notes for Book Documentation:
-+ Tambahkan dokumentasi untuk include cover format ".pdf" dengan versi max 1.5
-+ Tambahkan dokumentasi untuk update data tabel dengan menggunakan website "https://www.tablesgenerator.com/"
-  + Tabel pada buku ini disimpan pada folder:
-    - "tables" untuk keseluruhan data penelitian
-    - "lainnya/tables" untuk format tanda tangan pengesahan
+2.3.4 Gaussian Naive Bayes 
+	- Representasi Gaussian Naive Bayes
+	- Proses Learning Data dengan Gaussian Naive Bayes
+	- Prediksi dengan Model Gaussian Naive Bayes
 
 
 [BAB 2]
@@ -127,11 +147,13 @@ Notes for Book Documentation:
   + Set elemen pada karakter pemain -> Penjelasan -> Bayes (Random Assign) (v)
   + Set stats pada karakter pemain yang dibuat -> Penjelasan -> Equation (K-NN) (v)
 
+
 [BAB 4]
 + Stats pemain untuk genre permainan turn-based -> Referensikan dengan Persona 4 -> Pada BAB 2
 + Stats pemain untuk genre permainan -> Referensikan dengan Witcher 3 -> Pada BAB 2
 + Coba buat desain stats pertarungan lain
 + Coba ubah jumlah musuh
+
 
 [BAB 5]
 + Simpulkan saja
