@@ -629,11 +629,13 @@ P(Elv_{k}) = \sum_{i = 0}^{M} \sum_{j = 0}^{N} \sum_{k = 0}^{L}\ \frac{Elv_{k}}{
 \end{equation}
 
 Pada persamaan \ref{eq:probability_enemy_levels} $P(Elv_{k})$ adalah peluang munculnya $Elv$ ke $k$, sedangkan $Lv$ ke $j$ adalah batas bawah range level yang dapat diambil oleh musuh. Kemudian $SSL_{N}$ sepeerti yang sudah dijelaskan pada bagian sebelumnya, variabel itu adalah \textit{sub-cluster} dari level. Variabel tersebut dapat digunakan untuk mengubah jarak level saat terjadi perubahan nilai \textit{sub-cluster} yang juga menentukan nilai dari $Elv$ ke $k$. Setelah melalui sekian tahapan yang sudah dijelaskan sebelumnya dan dengan masukan variabeel pada Tabel \ref{tb:enemy_input_variable} maka level yang dihasilkan akan terlihat seperti pada Tabel \ref{tb:enemy_level_distrib}.
+\vspace{1ex}
 
 \begin{longtable}{|l|l|l|}
 	\caption{Hasil level yang dibuat untuk musuh.}
 	\label{tb:enemy_level_distrib}\\
 	\hline
+	\rowcolor[HTML]{C0C0C0} 
 	\textbf{No.} & \textbf{Name} & \textbf{Levels} \\ \hline
 	1 & Enemy 1 & 1 \\ \hline
 	2 & Enemy 2 & 1 \\ \hline
@@ -653,9 +655,9 @@ Pada persamaan \ref{eq:probability_enemy_levels} $P(Elv_{k})$ adalah peluang mun
 	... & ... & ... \\ \hline
 	\textbf{400} & \textbf{Enemy 400} & \textbf{78} \\ \hline
 \end{longtable}
-\vspace{1ex}
 
 Pada Tabel \ref{tb:enemy_level_distrib} adalah sebagian data dari level yang dihasilkan oleh program, untuk hasil lebih lengkapnya bisa dilihat pada Bagian \nameref{chap:chap6_attachment} pada Tabel \ref{tb:enemies_all_stats_1} sampai dengan Tabel \ref{tb:enemies_all_stats_15} di kolom \textit{Levels}. Kemudian persebaran level yang dihasilkan tersebut bila divisualisasikan maka hasilnya akan seperti yang ditujukkkan pada Gambar \ref{fig:enemy_level_distrib}. Grafik atau histogram yang ditunjukan pada Gambar \ref{fig:enemy_level_distrib} tersebut sangatlah tidak merata, hal tersebut dikarenakan proses penentuan level yang ditentukan secara acak.
+\vspace{1ex}
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.5]{img/EnemyLevelDistrib.png}
@@ -788,6 +790,7 @@ Melanjutkan persamaan \ref{eq:enemy_types_rest_probability}, yang mana didistrib
 	\caption{Hasil level yang dibuat untuk musuh.}
 	\label{tb:enemy_type_distrib}\\
 	\hline
+	\rowcolor[HTML]{C0C0C0} 
 	\textbf{No.} & \textbf{Name} & \textbf{Levels} & \textbf{Type} \\ \hline
 	1 & Enemy 1 & 1 & 0 \\ \hline
 	2 & Enemy 2 & 1 & 0 \\ \hline
@@ -877,6 +880,7 @@ Selanjutnya adalah proses penerapan persamaan \ref{eq:multi_damage_num_prob} ke 
 	\caption{Hasil level yang dibuat untuk musuh.}
 	\label{tb:enemy_weak_distrib}\\
 	\hline
+	\rowcolor[HTML]{C0C0C0} 
 	\textbf{No.} & \textbf{Name} & \textbf{Phys} & \textbf{Water} & \textbf{Wind} & \textbf{Earth} & \textbf{Fire} \\ \hline
 	1 & Enemy 1 & 1 & 1 & 0 & 1 & 0 \\ \hline
 	2 & Enemy 2 & 0 & 0 & 0 & 0 & 0 \\ \hline
@@ -1071,6 +1075,7 @@ Kemudian perhitungan probabilitas $P(HP_{i})$ atau munculnya HP pada setiap kara
 	\caption{Distribusi \textit{Stats} HP dan MP musuh.}
 	\label{tb:enemy_weak_stats}\\
 	\hline
+	\rowcolor[HTML]{C0C0C0} 
 	\textbf{No.} & \textbf{Name} & \textbf{Levels} & \textbf{HP} & \textbf{MP} \\ \hline
 	1 & Enemy 1 & 1 & 42 & 45 \\ \hline
 	2 & Enemy 2 & 1 & 84 & 21 \\ \hline
@@ -1146,6 +1151,7 @@ Kemudian pada persamaan \ref{eq:enemy_types_prob_st} adalah probabilitas $P(St_{
 	\caption{Distribusi \textit{Stats} musuh.}
 	\label{tb:enemy_stats}\\
 	\hline
+	\rowcolor[HTML]{C0C0C0} 
 	\textbf{No.} & \textbf{Name} & \textbf{Lv.} & \textbf{Str} & \textbf{Mag} & \textbf{Endr} & \textbf{Spd} & \textbf{Luck} \\ \hline
 	1 & Enemy 1 & 1 & 2 & 2 & 2 & 2 & 2 \\ \hline
 	2 & Enemy 2 & 1 & 2 & 2 & 2 & 2 & 2 \\ \hline

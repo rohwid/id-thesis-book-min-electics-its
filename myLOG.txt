@@ -149,12 +149,27 @@ Algoritma yang sudah tercitasi:
 
 
 [BAB 4]
-+ Stats pemain untuk genre permainan turn-based -> Referensikan dengan Persona 4 -> Pada BAB 2
-+ Stats pemain untuk genre permainan -> Referensikan dengan Witcher 3 -> Pada BAB 2
-+ Coba buat desain stats pertarungan lain
-+ Coba ubah jumlah musuh
++ Stats pemain untuk genre permainan turn-based RPG -> Referensikan dengan Persona 4 -> Pada BAB 2 Sub-bab 2.4
+  - Distibusi level, HP, dan MP pemain
+  - Distribusi elemen dan kelemahan pemain
+  - Distibusi stats pemain
 
++ Stats musuh untuk genre permainan turn-based RPG -> Referensikan dengan Persona 4 -> Pada BAB 2 Sub-bab 2.4
+  - Distibusi level musuh
+  - Distribusi tipe musuh
+  - Distibusi elemen dan kelemahan musuh
+  - Distribusi HP, MP, dan stats musuh
 
++ Stats pemain untuk genre permainan action RPG -> Referensikan dengan Witcher 3 -> Pada BAB 2 Sub-bab 2.4
+  - Distibusi level, HP, dan MP pemain
+  - Distribusi elemen dan kelemahan pemain
+  - Distibusi stats pemain
+
++ Stats musuh untuk genre permainan action RPG -> Referensikan dengan Witcher 3 -> Pada BAB 2 Sub-bab 2.4
+  - Distibusi level musuh
+  - Distribusi tipe musuh
+  - Distribusi HP dan stats musuh
+  
 [BAB 5]
 + Simpulkan saja
 
