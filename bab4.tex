@@ -17,7 +17,41 @@ Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \re
 \label{sec:sub_sec4_eval_dist_hp_mp_level}
 \vspace{1ex}
 
-Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian dengan genre \textit{turn-based} RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya.
+Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}, dimana pada bagian ini membahas tentang pembuatan level, HP dan MP pemain untuk permaian dengan genre \textit{turn-based} RPG. Berikut adalah hasil dari prosess pembuatan Level, HP, dan MP yang dipeeroleh dari perhitungan pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dengan data masukan pada Tabel \ref{tb:player_input_variable} yang kemudian menghasilkan data seperti yang ditunjukkan pada Tabel \ref{tb:player_hp_mp}. 
+
+\begin{longtable}{|l|l|l|}
+	\caption{Hasil Perhitungan HP dan MP}
+	\label{tb:player_hp_mp}\\
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	\textbf{Levels} & \textbf{HP} & \textbf{MP} \\ \hline
+	1 & 159 & 89 \\ \hline
+	2 & 163 & 93 \\ \hline
+	3 & 167 & 97 \\ \hline
+	4 & 171 & 101 \\ \hline
+	5 & 175 & 105 \\ \hline
+	6 & 179 & 109 \\ \hline
+	7 & 183 & 113 \\ \hline
+	... & ... & ... \\ \hline
+	\textbf{100} & \textbf{555} & \textbf{485} \\ \hline
+\end{longtable}
+\vspace{1ex}
+
+Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP dan MP terus naik secara konstan ke atas sesuai dengan kenaikan levelnya seperti yang direpresentasikan pada Gambar \ref{fig:hp_player} dan Gambar \ref{fig:mp_player}.
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.45]{img/PlayerHpDistrib.png}
+	\caption{Kenaikan HP setiap levelnya.}
+	\label{fig:hp_player}
+\end{figure}
+
+Jika melihat Gambar \ref{fig:hp_player} dengan jumlah HP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} HP dan \textit{Next} HP. Variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:hp_player} agar membentuk pola kenaikan HP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:hp_player}. Sama seperti pada Gambar \ref{fig:hp_player}, pada Gambar \ref{fig:mp_player} dengan jumlah MP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} MP dan \textit{Next} MP. Kemudian variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:mp_player} agar membentuk pola kenaikan MP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:mp_player}.
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.45]{img/PlayerMpDistrib.png}
+	\caption{Kenaikan MP setiap levelnya.}
+	\label{fig:mp_player}
+\end{figure}
 \vspace{1ex}
 
 \subsection{Distribusi Elemen dan Kelemahan Pemain}

@@ -313,44 +313,7 @@ Cara semacam itu juga berlaku untuk perhitungan MP pada programm ini, dengan pol
 	\end{split}
 \end{equation}
 
-Pada persamaan \ref{eq:hp_player} dan persamaan \ref{eq:mp_player} HP tetap dinyatakan sebagain HP, begitu juga dengan MP. Kemudian $HP(N)$ adalah nilai HP yang dicari, yang mana $N$ adalah level maksimum, $n$ adalah level mulai dan $n + 1$ adalah level selanjutnya. Jadi pada tahap ini seperti yang dijelaska pada Tabel \ref{tb:player_input_variable} yang mana nilai $n$ dan $n + 1$ sudah diketahui sebagai inisialisasi, masing-masing adalah $HP(n)$ dan $HP(n + 1)$. Penjelasan ini juga berlaku untuk mencari nilai $MP(N)$ yaitu nilai MP yang dicari. Hasil contoh perhitungan dari persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dengan masukan dari Tabel \ref{tb:player_input_variable} dapat hasilnya dapat dilihat pada Tabel \ref{tb:player_hp_mp}. 
-
-\begin{longtable}{|l|l|l|}
-	\caption{Hasil Perhitungan HP dan MP}
-	\label{tb:player_hp_mp}\\
-	\hline
-	\rowcolor[HTML]{C0C0C0} 
-	\textbf{Levels} & \textbf{HP} & \textbf{MP} \\ \hline
-	1 & 159 & 89 \\ \hline
-	2 & 163 & 93 \\ \hline
-	3 & 167 & 97 \\ \hline
-	4 & 171 & 101 \\ \hline
-	5 & 175 & 105 \\ \hline
-	6 & 179 & 109 \\ \hline
-	7 & 183 & 113 \\ \hline
-	... & ... & ... \\ \hline
-	\textbf{100} & \textbf{555} & \textbf{485} \\ \hline
-\end{longtable}
-\vspace{1ex}
-
-Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP dan MP terus naik secara konstan ke atas sesuai dengan kenaikan levelnya seperti yang direpresentasikan pada Gambar \ref{fig:hp_player} dan Gambar \ref{fig:mp_player}.
-
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.45]{img/PlayerHpDistrib.png}
-	\caption{Kenaikan HP setiap levelnya.}
-	\label{fig:hp_player}
-\end{figure}
-
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.45]{img/PlayerMpDistrib.png}
-	\caption{Kenaikan MP setiap levelnya.}
-	\label{fig:mp_player}
-\end{figure}
-
-Jika melihat Gambar \ref{fig:hp_player} dengan jumlah HP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} HP dan \textit{Next} HP. Variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:hp_player} agar membentuk pola kenaikan HP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:hp_player}.
-\vspace{1ex}
-
-Sama seperti pada Gambar \ref{fig:hp_player}, pada Gambar \ref{fig:mp_player} dengan jumlah MP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} MP dan \textit{Next} MP. Kemudian variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:mp_player} agar membentuk pola kenaikan MP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:mp_player}.
+Pada persamaan \ref{eq:hp_player} dan persamaan \ref{eq:mp_player} HP tetap dinyatakan sebagain HP, begitu juga dengan MP. Kemudian $HP(N)$ adalah nilai HP yang dicari, yang mana $N$ adalah level maksimum, $n$ adalah level mulai dan $n + 1$ adalah level selanjutnya. Jadi pada tahap ini seperti yang dijelaska pada Tabel \ref{tb:player_input_variable} yang mana nilai $n$ dan $n + 1$ sudah diketahui sebagai inisialisasi, masing-masing adalah $HP(n)$ dan $HP(n + 1)$. Penjelasan ini juga berlaku untuk mencari nilai $MP(N)$ yaitu nilai MP yang dicari.
 \vspace{1ex}
 
 \subsection{Distribusi Elemen dan Kelemahan Pemain}
@@ -1012,7 +975,7 @@ Pada persamaan \ref{eq:enemy_types_prob_bhp} adalah penentuan batas bawah untuk 
 tHP = \sum_{i=0}^{N}\ bHP + \left |\ \frac{Elv_{i}}{100} \times maxHP\ \right |
 \end{equation}
 
-Selanjutnya dilanjutkan dengan pencarian batas atas untuk HP atau $tHP$. Pada persamaan \ref{eq:enemy_types_prob_thp} terdapat beberapa variabel yang berpengaruh terhadap nilai dari $tHP$ diantaranya adalah $bHP$ yang merupakan batas bawah dari $HP$, $Elv_{i}$ yang merupakan level dari setiap karakter musuh dengan tipenya masing-masing, dan $maxHP$ sendiri yang merupakan batas atas dicontohkan pada Tabel \ref{tb:enemy_input_variable} dengan nama variabel $max$ HP. Pencarian batas atas dilakukan dengan dilakukannya penjumlahan antara $bHP$ dengan presentase dari $maxHP$ yang disesuaikan dengan $Elv_{i}$. Jadi dari perhitungan tersebut HP dari karakter musuh akan menyesuikan dengan level pada karakter musuh tersebut. 
+Selanjutnya dilanjutkan dengan pencarian batas atas untuk HP atau $tHP$. Pada persamaan \ref{eq:enemy_types_prob_thp} terdapat beberapa variabel yang berpengaruh terhadap nilai dari $tHP$ diantaranya adalah $bHP$ yang merupakan batas bawah dari $HP$, $Elv_{i}$ yang merupakan level dari setiap karakter musuh dengan tipenya masing-masing, dan $maxHP$ sendiri yang merupakan batas atas dicontohkan pada Tabel \ref{tb:enemy_input_variable} dengan nama variabel $max$ HP. Pencarian batas atas dilakukan dengan dilakukannya penjumlahan antara $bHP$ dengan presentase dari $maxHP$ yang disesuaikan dengan $Elv_{i}$. Jadi dari perhitungan tersebut, HP dari karakter musuh akan menyesuikan dengan levelnya. 
 
 \begin{equation}\label{eq:enemy_types_prob_hp}
 P(HP_{i}) = \sum_{i=0}^{N}\ \frac{HP_{i}}{bHP_{i} - tHP_{i}}
