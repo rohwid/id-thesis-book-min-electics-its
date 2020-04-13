@@ -392,37 +392,7 @@ MaxSt = \left\{\begin{matrix}
 \end{equation}
 \vspace{1ex}
 
-Sedangakan pada persamaan \ref{eq:nbayes_class_stats_1}, \ref{eq:KNN_distance_stats_1} dan \ref{eq:KNN_bayes_player_stats_1} digunakan saat jumlah atau dimensi \textit{Stats to Assign} lebih dari 2. Selanjutnya melalui persamaan \ref{eq:KNN_bayes_player_stats} dan beberapa persamaan yang digunakan sebelumnya dihasilkan data seperti yang ditunjukan pada Tabel \ref{tb:player_battle_stats}, dan bila divisualisasikan hasilnya akan tampak seperti pada Gambar \ref{fig:stats_player}.
-
-\begin{longtable}{|l|l|l|l|l|l|}
-	\caption{Sampel hasil perhitungan dan distribusi stats dengan $k-$NN}
-	\label{tb:player_battle_stats}\\
-	\hline
-	\rowcolor[HTML]{C0C0C0} 
-	\textbf{Levels} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
-	1 & 1 & 2 & 0 & 0 & 1 \\ \hline
-	2 & 0 & 2 & 0 & 2 & 0 \\ \hline
-	3 & 1 & 0 & 0 & 0 & 0 \\ \hline
-	4 & 1 & 1 & 0 & 0 & 0 \\ \hline
-	5 & 1 & 1 & 0 & 0 & 0 \\ \hline
-	6 & 1 & 1 & 0 & 2 & 1 \\ \hline
-	7 & 0 & 0 & 0 & 0 & 1 \\ \hline
-	8 & 1 & 0 & 0 & 0 & 0 \\ \hline
-	... & ... & ... & ... & ... & ... \\ \hline
-	\textbf{100} & \textbf{1} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{0} \\ \hline
-\end{longtable}
-\vspace{-1ex}
-
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.51]{img/PlayerStatsDistrib.png}
-	\caption{Kenaikan stats pemain setiap levelnya.}
-	\label{fig:stats_player}
-	\vspace{4ex}
-\end{figure}
-
-
-Pada Tabel \ref{tb:player_battle_stats} adalah data \textit{stats} dari pemain yang dihasilakn melalui penambahan nilai pada \textit{stats} secara acak pada setiap \textit{stats}. Seperti yang dijelaskan pada persaamaan \ref{eq:nbayes_class}, \ref{eq:KNN_distance_stats}, dan persamaan \ref{eq:KNN_bayes_player_stats} saat nilai \textit{stats} di tambahkan secara acak dari 1 sampai dengan 2 pada level yang berjarak antara 1 sampai dengan 100. Selanjutnya representasi dari hasil penambahan \textit{stats} tersebut yang ditunjukan melalui Gambar \ref{fig:stats_player} yang mana nilai dari setiap \textit{stats} terus naik sesuai dengan level pemain yang juga terus naik. 
-\vspace{1ex}
+Sedangakan pada persamaan \ref{eq:nbayes_class_stats_1}, \ref{eq:KNN_distance_stats_1} dan \ref{eq:KNN_bayes_player_stats_1} digunakan saat jumlah atau dimensi \textit{Stats to Assign} lebih dari 2. Selanjutnya melalui persamaan \ref{eq:KNN_bayes_player_stats} dan beberapa persamaan yang digunakan sebelumnya pada Sub-bab \ref{sec:sub_sec3_stat_pemain} dihasilkan data seperti yang ditunjukan pada Sub-bab \ref{sec:sub_sec4_pengujian_player_stats}.
 
 \section{Desain Level dan Stats pada Karakter Musuh}
 \label{sec:sec3_enemy_stats}

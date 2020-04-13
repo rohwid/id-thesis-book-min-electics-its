@@ -54,18 +54,37 @@ Jika melihat Gambar \ref{fig:hp_player} dengan jumlah HP dari pemain yang terus 
 \end{figure}
 \vspace{1ex}
 
-\subsection{Distribusi Elemen dan Kelemahan Pemain}
-\label{sec:sub_sec4_eval_weak}
+\subsection{Distibusi Stats Pemain}
+\label{sec:sub_sec4_pengujian_player_stats}
 \vspace{1ex}
 
-Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian dengan genre \textit{turn-based} RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya.
-\vspace{1ex}
+Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian dengan genre \textit{turn-based} RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, melalui persamaan \ref{eq:KNN_bayes_player_stats} dan beberapa persamaan yang digunakan sebelumnya pada Sub-bab \ref{sec:sub_sec3_stat_pemain} dihasilkan data seperti yang ditunjukan pada Tabel \ref{tb:player_battle_stats}, dan bila divisualisasikan hasilnya akan tampak seperti pada Gambar \ref{fig:stats_player}.
 
-\subsection{Distibusi stats pemain}
-\label{sec:sub_sec4_eval_stats}
-\vspace{1ex}
+\begin{longtable}{|l|l|l|l|l|l|}
+	\caption{Sampel hasil perhitungan dan distribusi stats dengan $k-$NN}
+	\label{tb:player_battle_stats}\\
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	\textbf{Levels} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+	1 & 1 & 2 & 0 & 0 & 1 \\ \hline
+	2 & 0 & 2 & 0 & 2 & 0 \\ \hline
+	3 & 1 & 0 & 0 & 0 & 0 \\ \hline
+	4 & 1 & 1 & 0 & 0 & 0 \\ \hline
+	5 & 1 & 1 & 0 & 0 & 0 \\ \hline
+	6 & 1 & 1 & 0 & 2 & 1 \\ \hline
+	7 & 0 & 0 & 0 & 0 & 1 \\ \hline
+	8 & 1 & 0 & 0 & 0 & 0 \\ \hline
+	... & ... & ... & ... & ... & ... \\ \hline
+	\textbf{100} & \textbf{1} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{0} \\ \hline
+\end{longtable}
 
-Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian dengan genre \textit{turn-based} RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya.
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.50]{img/PlayerStatsDistrib.png}
+	\caption{Kenaikan stats pemain setiap levelnya.}
+	\label{fig:stats_player}
+\end{figure}
+
+Pada Tabel \ref{tb:player_battle_stats} adalah data \textit{stats} dari pemain yang dihasilakn melalui penambahan nilai pada \textit{stats} secara acak pada setiap \textit{stats}. Seperti yang dijelaskan pada persaamaan \ref{eq:nbayes_class}, \ref{eq:KNN_distance_stats}, dan persamaan \ref{eq:KNN_bayes_player_stats} saat nilai \textit{stats} di tambahkan secara acak dari 1 sampai dengan 2 pada level yang berjarak antara 1 sampai dengan 100. Selanjutnya representasi dari hasil penambahan \textit{stats} tersebut yang ditunjukan melalui Gambar \ref{fig:stats_player} yang mana nilai dari setiap \textit{stats} terus naik sesuai dengan level pemain yang juga terus naik. 
 \vspace{1ex}
 
 \section{Pengujian dalam Pembuatan \textit{Stats} Musuh pada Permainan dengan Genre \textit{Turn-based} RPG}
