@@ -419,7 +419,7 @@ Selanjutnya adalah \textit{Element Name} yang berisi daftar elemen apa saja yang
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.28]{img/enemy_uml.png}
+	\includegraphics[scale=0.30]{img/enemy_uml.png}
 	\caption{\textit{Class} diagram untuk \textit{stats} musuh.}
 	\label{fig:enemy_uml}
 \end{figure}
@@ -645,12 +645,14 @@ Selanjutnya adalah operasi pembagian musuh dan levelnya setelah ditemukannya $DN
 \vspace{1ex}
 
 Kemudian pada persamaan \ref{eq:enemy_types_dist_level} dicarilah nilai $DL_{N}$ yang berisi urutan distribusi musuh $DN_{i}$ yang dibagi dengan jumlah presentase tipe $DP_{N}$ seperti pada persamaan \ref{eq:enemy_types_percentage}. Hal tersebut sejatinya akan membentu sebuah \textit{cluster} kecil yang berisi distribusi musuh dan tipenya. Bila membagi setiap musuh dengan jumlah presetase tipe maka tidak semua musuh dapat terbagi secara merata atau habis, maka dari itu juga dicari sisa hasil pembagian antara distribusi musuh $DN_{i}$ dengan jumlah presentase tipe $DP_{N}$ pada persamaan \ref{eq:enemy_types_rest_dist_level} pada persamaan \ref{eq:enemy_types_rest_dist_level}.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_rest_dist_level}
 rDL_{N} \equiv \sum_{i = 0}^{N}\ DN_{i}\ (mod\ DP_{N})
 \end{equation}
 
 Pada persamaan \ref{eq:enemy_types_rest_dist_level} diperolehlah sisa musuh yang tidak terdistribusi atau sisa dari jumlah musuh yang tidak habis saat dibagi dengan jumlah presentase tipe $DP_{N}$. Musuh yang belum terdistribusi nantinya akan ditambahan atau didistribusi ke tipe sesuai urutan hasil yang tersimpan pada variabel \ref{eq:enemy_types_rest_dist_level} pada persamaan \ref{eq:enemy_types_rest_dist_level}.
+\vspace{2ex}
 
 \begin{equation}\label{eq:enemy_types_probability}
 P(ET_{i}) = \sum_{i = 0}^{M} \sum_{j = 0}^{N}\ \frac{ET_{i}}{\sum_{k = 0}^{L}DL_{k}}\
@@ -661,12 +663,14 @@ Saat\ DL_{(j-1)} < ET_{i} \leq DL_{j}
 \end{equation}
 
 Dari jumlah musuh yang terdistribusi kedalam \textit{cluster} level tersebutlah kemudian dilakukan pemetaan tipe, pada kasus ini digunakanlah konsep probabilitas marginal seperti yang dijelaskan pada persamaan \ref{sec:sub_sec2_bayes} poin ke 1, bila disesuaikan dengan kasus ini maka persamaan yang diperoleh akan menjadi seperti pada persamaan \ref{eq:enemy_types_probability}. Pada setiap karakter musuh $ET_{i}$ akan meilih satu tipe yang akan digunakannya, tipe tersebut akan menentukan \textit{stats} atau data statistiknya yang akan dijelaskan pada bagian selanjutnya. Kemudian probabilitas tipe yang dipilih $ET_{i}$ dinyatakan dengan variabel $P(ET_{i})$, kisaran kemunculan nilai atau tipe musuh $ET_{i}$ diperoleh dari sekumpulan data distribusi level $DL_{N}$.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_rest_types}
 rET = \sum_{i = 0}^{M} \sum_{j = 0}^{N}\ EN_{M} - ET_{N}
 \end{equation}
 
 Selanjutnya pada persamaan \ref{eq:enemy_rest_types} adalah langkah untuk melihat apakah ada sisa musuh yang belum terdistribusi $rET$ dengan cara melakukan pengurangaan antara jumlah musuh $EN_{M}$ yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_level}, yang mana $M$ pada variabel tersebut menandakan jumlah musuh sedangan $ET$ adalah tipe dengan  $N$ sebagai jumlah musuh yang sudah memiliki tipe. Pada persamaan \ref{eq:enemy_rest_types} variabel $rET$ dapat bernilai 0 saat semua musuh $DN$ habis terbagi kedalam jumlah presentase dari tipe $DP_{N}$ seperti pada persamaaan \ref{eq:enemy_types_dist_level} dengan sisa musuh yang belum terdistribusi atau memiliki level disimpan pada variabel $rDL_{N}$ pada persamaan \ref{eq:enemy_types_rest_dist_level}. Kemudian selanjutnya adalah mendistribusikan sisa musuh yang belum memilliki tipe tersebut, seperti yang dilakukan oleh persaman \ref{eq:enemy_types_rest_probability}.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_rest_probability}
 \begin{split}
@@ -688,7 +692,11 @@ Melanjutkan persamaan \ref{eq:enemy_types_rest_probability}, yang mana didistrib
 \label{sec:sub_sec3_enemy_weak}
 \vspace{1ex}
 
-Pada persamaan \ref{eq:enemy_element} adalah penjelasan elemen yang digunakan oleh musuh seperti dideskripsikan pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{List Element}, di mana pada elemen teresebut terdapat kelemahan atau \textit{weaknesses} dan kekebalan atau \textit{repel} seperti yang dideskripsikan pada variabel \textit{List Damage} pada Tabel \ref{tb:enemy_input_variable}.  Seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_design_skenario} poin ke dua tentang Elemen dan Efektifitas Serangan. Pada bagian ini elemen tersebut akan dibagi ke setiap musuh dengan kondisi yang berbeda, maksudnya nanti akan ada musuh yang memiliki kelemahan dan kekebalan yang berbeda antara musuh satu dengan musuh yang lain. Misalkan \textit{Enemy 1} memiliki kelemahan api atau \textit{fire} yang mana HP akan berkurang dua kali jika diserang dengan menggunakan elemen api dan memiliki kekebalan air atau \textit{water} yang mana karakter tersebut kebal saat diserang dengan \textit{skill} dari elemen air. Kemudian pada \textit{Enemy 2} berbeda dengan \textit{Enemy 1}, misalnya pada \textit{Enemy 1} memiliki kelemahan api sedangkan pada \textit{Enemy 2} memiliki kelemahan air misal dan kebal terhadap angin atau \textit{wind}.
+Pada persamaan \ref{eq:enemy_element} adalah penjelasan elemen yang digunakan oleh musuh seperti dideskripsikan pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{List Element}, di mana pada elemen teresebut terdapat kelemahan atau \textit{weaknesses} dan kekebalan atau \textit{repel} seperti yang dideskripsikan pada variabel \textit{List Damage} pada Tabel \ref{tb:enemy_input_variable}.  Seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_design_skenario} poin ke dua tentang Elemen dan Efektifitas Serangan. 
+\vspace{1ex}
+
+Pada bagian ini elemen tersebut akan dibagi ke setiap musuh dengan kondisi yang berbeda, maksudnya nanti akan ada musuh yang memiliki kelemahan dan kekebalan yang berbeda antara musuh satu dengan musuh yang lain. Misalkan \textit{Enemy 1} memiliki kelemahan api atau \textit{fire} yang mana HP akan berkurang dua kali jika diserang dengan menggunakan elemen api dan memiliki kekebalan air atau \textit{water} yang mana karakter tersebut kebal saat diserang dengan \textit{skill} dari elemen air. Kemudian pada \textit{Enemy 2} berbeda dengan \textit{Enemy 1}, misalnya pada \textit{Enemy 1} memiliki kelemahan api sedangkan pada \textit{Enemy 2} memiliki kelemahan air misal dan kebal terhadap angin atau \textit{wind}.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_element}
 \resizebox{0.2\textwidth}{!}{%
@@ -705,6 +713,7 @@ Pada persamaan \ref{eq:enemy_element} adalah penjelasan elemen yang digunakan ol
 \end{equation}
 
 Pada dasarnya satu karakter musuh tidak akan menggunakan seluruh elemen yang ada pada persamaan \ref{eq:enemy_element} yang merupakan penggambaran dari varaibel \textit{List Element} pada Tabel \ref{tb:enemy_input_variable}, mungkin hanya sekitar satu sampai dengan tiga. Maka dari itu kondisi tersebut dapat dinyatakan dengan kondisi $DmgNa \in ElN$, yang mana seluruh elemen bisa menjadi kelemahan atau kekebalan dari musuh. Sama seperti pada persamaan \ref{eq:enemy_element} yang mana $ElN$ adalah nama elemen, sedangkan $DmgNa$ adalah \textit{damage name} atau nama dari efek serangan yang dilakukan. Di mana pada persamaan \ref{eq:damage_name_number} $DmgNa$ akan dipilih secara acak dengan persamaan \ref{eq:damage_number_prob}, yang akan menjadi kelemahan atau kekebalan terhadap serangan dari pemain seperti pada persamaan \ref{eq:damage_name_number}. Pada persamaan \ref{eq:damage_name_number} sendiri adalah penggambaran dari variabel \textit{List Damage} pada Tabel \ref{tb:enemy_input_variable}. 
+\vspace{1ex}
 
 \begin{equation}\label{eq:damage_name_number}
 \resizebox{0.5\textwidth}{!}{%
@@ -719,68 +728,36 @@ Pada dasarnya satu karakter musuh tidak akan menggunakan seluruh elemen yang ada
 \end{equation}
 
 Sedangkan pada persamaan \ref{eq:damage_name_number} variabel $DmgNu$ adalah respon terhadap serangan yang yang dikonversi menjadi angka, yang pada mulanya berupa nama respon atau status setelah diserang. Kemudian hasil pemilihan tersebut disimpan pada variabel $DmgNu$ yang dapat dinyatakan dengan persamaan \ref{eq:damage_number_prob}.
+\vspace{1ex}
 
 \begin{equation}\label{eq:damage_number_prob}
 P(DmgNu) = \frac{DmgNu}{\sum_{i = 0}^{N}\ DmgNa_{(i - 1)}}
 \end{equation}
 
 Pada persamaan \ref{eq:damage_name_number} variabel $DmgNa$ yang dipilih secara acak sebagai elemen yang memiliki respon khusus terhadap serangan yang kemudian disimpan pada variabel $DmgNu$, selanjutnya angka yang dipilih akan disimpan pada variabel $DmgNu$ yang selanjutnya dinyatakan dengan persamaan \ref{eq:damage_number_prob}. Jadi dari $DmgNa$ akan dipilih satu sampai dengan tiga elemen secara acak yang kemudian menjadi kelemahan atau kekebalan dari karakter musuh tersebut.
+\vspace{1ex}
 
 \begin{equation}\label{eq:multi_damage_num_prob}
 P(DmgNu)_{M} = \sum_{i = 0}^{M}\ \frac{DmgNu_{i}}{\sum_{j = 0}^{N}\ DmgNa_{j - 1}}
 \end{equation}
 
 Sedangkan pada persamaan \ref{eq:multi_damage_num_prob} adalah penjelasan tentang proses munculnya setiap $DmgNu$ pada satu karakter musuh, sehingga variabel tersebut berubah menjadi $DmgNu_{i}$. Seperti penjelasan sebelumnya bahwa pada sebuah karakter musuh dapat memiliki lebih dari satu kelemahan atau kekebalan $DmgNu$ terhadap $DmgNa$ yang diset secara acak seperti yang sudah dijelaskan pada bagian sebelumnya.
+\vspace{1ex}
 
 \begin{equation}\label{eq:all_enemies_damage}
 DmgEN_{M} = \sum_{i = 0}^{M}\sum_{j = 0}^{N} DmgNu_{ij}
 \end{equation}
 
-Selanjutnya adalah proses penerapan persamaan \ref{eq:multi_damage_num_prob} ke seluruh karakter musuh $DmgEN_{M}$ seperti pada persamaan \ref{eq:all_enemies_damage}. Sesuai dengan persamaan \ref{eq:all_enemies_damage}, yang mana $M$ adalah jumlah musuh sedangkan $N$ adalah jumlah $DmgNu$ pada satu musuh yang berjumlah satu sampai dengan tiga seperti yang sudah dijelaskan pada paragraf sebelumnya pada Sub-bab ini. Hasil dari proses dari keseluruhhan proses yang dijelaskan pada Sub-bab ini menghasilkan persebaran kelemahan dan kekebalan musuh yang ditunjukkan pada Tabel \ref{tb:enemy_weak_distrib}.
-
-\begin{longtable}{|l|l|l|l|l|l|l|}
-	\caption{Hasil level yang dibuat untuk musuh.}
-	\label{tb:enemy_weak_distrib}\\
-	\hline
-	\rowcolor[HTML]{C0C0C0} 
-	\textbf{No.} & \textbf{Name} & \textbf{Phys} & \textbf{Water} & \textbf{Wind} & \textbf{Earth} & \textbf{Fire} \\ \hline
-	1 & Enemy 1 & 1 & 1 & 0 & 1 & 0 \\ \hline
-	2 & Enemy 2 & 0 & 0 & 0 & 0 & 0 \\ \hline
-	3 & Enemy 3 & 0 & 1 & 0 & 1 & 1 \\ \hline
-	4 & Enemy 4 & 1 & 0 & 1 & 0 & 0 \\ \hline
-	5 & Enemy 5 & 0 & 1 & 0 & 0 & 1 \\ \hline
-	6 & Enemy 6 & 1 & 1 & 0 & 1 & 0 \\ \hline
-	7 & Enemy 7 & 1 & 0 & 0 & 0 & 0 \\ \hline
-	8 & Enemy 8 & 0 & 0 & 0 & 0 & 1 \\ \hline
-	9 & Enemy 9 & 1 & 1 & 0 & 0 & 0 \\ \hline
-	10 & Enemy 10 & 0 & 0 & 0 & 0 & 0 \\ \hline
-	11 & Enemy 11 & 1 & 0 & 0 & 1 & 0 \\ \hline
-	12 & Enemy 12 & 0 & 0 & 0 & 0 & 1 \\ \hline
-	13 & Enemy 13 & 0 & 0 & 2 & 1 & 0 \\ \hline
-	... & ... & ... & ... & ... & ... & ... \\ \hline
-	\textbf{400} & \textbf{Enemy 400} & \textbf{0} & \textbf{0} & \textbf{2} & \textbf{1} & \textbf{0} \\ \hline
-\end{longtable}
+Selanjutnya adalah proses penerapan persamaan \ref{eq:multi_damage_num_prob} ke seluruh karakter musuh $DmgEN_{M}$ seperti pada persamaan \ref{eq:all_enemies_damage}. Sesuai dengan persamaan \ref{eq:all_enemies_damage}, yang mana $M$ adalah jumlah musuh sedangkan $N$ adalah jumlah $DmgNu$ pada satu musuh yang berjumlah satu sampai dengan tiga seperti yang sudah dijelaskan pada paragraf sebelumnya pada Sub-bab ini.
 \vspace{1ex}
 
-Jika melihat Tabel \ref{tb:enemy_weak_distrib} dengan melihat pada kolom \textit{Phys}, \textit{Water}, \textit{Wind}, \textit{Earth}, dan \textit{Fire}, isi dari kolom tersebut berupa angka nol sampai dengan dua adalah hasil dari pembuatan \textit{stats} kelemahan musuh pada variabel $DmgEN_{M}$ atau untuk $DmgEN_{M} = \left \{ DmgNu_{0}, DmgNu_{1}, DmgNu_{2},..., DmgNu_{M} \right \}$ jika jumlah kelemahan musuh lebih dari tiga atau yang dicontohkan pada Tabel \ref{tb:enemy_input_variable} dalam variabel \textit{List Damage}. Hasil dari proses yang sebelumnya dijelaskan pada Sub-bab ini menghasilkan persebaran kelemahan dan kekebalan musuh yang ditunjukkan pada Gambar \ref{fig:enemy_weak_distrib} dibawah ini.
-
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.50]{img/EnemyWeakDistrib.png}
-	\caption{Distribusi kelemahan musuh.}
-	\label{fig:enemy_weak_distrib}
-\end{figure}
-
-Pada Gambar \ref{fig:enemy_weak_distrib} dapat dilihat distribusi musuh dengan kelemahan dan kekebalannya. Terlihat pada kondisi tersebut jumlah musuh dengan kondisi \textit{Normal} memiliki nilai paling tunggi pada setiap kelemahan, hal tersebut dapat diartikan bahwa sebagian besar elemen dari musuh dapat memperoleh \textit{damage} secara normal jika diserang. Kemudian jumlah musuh pada kondisi \textit{Repel} berjumlah terbanyak kedua, hal tersebut dapat diartikan musuh memmiliki jumlah kekebalan terhadap serangan sejumlah angka pada setiap elemen pada Gambar \ref{fig:enemy_weak_distrib}. Begitu juga dengan kondisi \textit{Weaknesses} dengan jumlah paling sedikit, hal tersebut bertujuan agar menjadikan pertarungan antara pemain dan musuh menjadi tidak mudah dimenangkan oleh pemain. Tidak hanya dengan efek \textit{Weaknesses}, efek \textit{Repel} juga sangat berpengaruh dalam menjadikan permainan seperti layaknya sebuah \textit{puzzle} atau teka-teki.
-\vspace{1ex}
-
-Sedangkan pada persamaan \ref{eq:multi_damage_num_prob} adalah penjelasan tentang proses munculnya setiap $DmgNu$ pada satu karakter musuh, sehingga variabel tersebut berubah menjadi $DmgNu_{i}$. Seperti penjelasan sebelumnya bahwa pada sebuah karakter musuh dapat memiliki lebih dari satu kelemahan atau kekebalan $DmgNu$ terhadap $DmgNa$ yang diset secara acak seperti yang sudah dijelaskan pada bagian sebelumnya. 
-\vspace{1ex}
 
 \subsection{Distribusi HP, MP dan Stats Musuh}
 \label{sec:sub_sec3_enemy_hp_mp_stats}
 \vspace{1ex}
 
 Bila melihat pada Tabel \ref{tb:enemy_input_variable} terdapat beberapa variabel seperti \textit{List Stats Name}, \textit{Max Stats Value}, dan \textit{Min Stats Value}. Variabel tersebut akan digunakan untuk membuat \textit{stats} dari musuh dengan basis algorima Naive Bayes. Di awali dengan persamaan \ref{eq:enemy_types_stats_ex} yang menjadi pembagi setiap operasi pembagian \textit{stats} berdasarkan tipenya $ET_{i}$.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_stats_ex}
 \resizebox{0.4\textwidth}{!}{%	
@@ -834,6 +811,7 @@ Mx_{N} = \sum_{i= 0}^{N} Mx_{i} \left\{\begin{matrix}
 \end{equation}
 
 Selanjutnya adalah perhitungan probabilitas diperolehnya tipe musuh dari keseluruhan tipe musuh yang berada pada variabel masukan. Misal pada kasus yang ditunjukan pada persamaan \ref{eq:enemy_types_prob_ex}, jumlah tipe musuh tentunya mengacu pada Tabel \ref{tb:enemy_input_variable}. Dalam menyelesaikan kasus tersebut digunakanlah Naive bayes yang berbasis pada \textit{conditional probability} seperti yangg dijelaskan pada Sub-bab \ref{sec:sub_sec2_class_bayes}, yang mana pada persamaan \ref{eq:enemy_types_prob_ex} proses kemunculan tipe musuh tertentu misal $ET_{0}$, $ET_{1}$, $ET_{2}$, $ET_{3}$, $ET_{4}$ yang mana seluruh tipe musuh dimuat pada variabel $ET_{N}$.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_ex}
 \resizebox{0.35\textwidth}{!}{%
@@ -848,6 +826,7 @@ Selanjutnya adalah perhitungan probabilitas diperolehnya tipe musuh dari keselur
 \end{equation}
 
 Sedangkan jika jumlah tipe musuh tidak beracuan pada Tabel \ref{tb:enemy_input_variable} atau tipe musuh berjumlah lebih dari empat maka persamaan \ref{eq:enemy_types_prob_ex} akan berubah menjadi persamaan \ref{eq:enemy_types_prob_adv}. Semula berawal dari variabel $ET_{0}$ sampai $ET_{4}$ pada persamaan \ref{eq:enemy_types_prob_ex} yang kemudian berubah dari variabel $ET_{0}$ sampai $ET_{n}$ dengan $n$ adalah batas akhir jumlah tipe musuh.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_adv}
 \resizebox{0.35\textwidth}{!}{%
@@ -862,6 +841,7 @@ Sedangkan jika jumlah tipe musuh tidak beracuan pada Tabel \ref{tb:enemy_input_v
 \end{equation}
 
 Saat sudah diperolehnya tipe musuh pada seperti yang dijelaskan pada persamaan \ref{eq:enemy_types_prob_adv} maka selanjutnya yang harus dibuat adalah stats dari musuh itu sendiri, seperti halnya HP, MP, Strength, Magic dan lain sebagainya seperti yang tercantum pada Tabel \ref{tb:enemy_input_variable} pada variabel $List Stats Name$ yang ditambah dengan variabel HP dan MP.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_bhp}
 bHP = minHP
@@ -875,26 +855,28 @@ tHP = \sum_{i=0}^{N}\ bHP + \left |\ \frac{Elv_{i}}{100} \times maxHP\ \right |
 \end{equation}
 
 Selanjutnya dilanjutkan dengan pencarian batas atas untuk HP atau $tHP$. Pada persamaan \ref{eq:enemy_types_prob_thp} terdapat beberapa variabel yang berpengaruh terhadap nilai dari $tHP$ diantaranya adalah $bHP$ yang merupakan batas bawah dari $HP$, $Elv_{i}$ yang merupakan level dari setiap karakter musuh dengan tipenya masing-masing, dan $maxHP$ sendiri yang merupakan batas atas dicontohkan pada Tabel \ref{tb:enemy_input_variable} dengan nama variabel $max$ HP. Pencarian batas atas dilakukan dengan dilakukannya penjumlahan antara $bHP$ dengan presentase dari $maxHP$ yang disesuaikan dengan $Elv_{i}$. Jadi dari perhitungan tersebut, HP dari karakter musuh akan menyesuikan dengan levelnya. 
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_hp}
 P(HP_{i}) = \sum_{i=0}^{N}\ \frac{HP_{i}}{bHP_{i} - tHP_{i}}
 \end{equation}
 
 Kemdian dilanjutkan dengan perhitungan probabilitas $P(HP_{i})$ atau munculnya HP pada setiap karakter musuh pada persamaan \ref{eq:enemy_types_prob_hp}. HP dari setiap karakter musuh itu sendiri dinyatakan dengen $HP_{i}$. Kemudian range nilai dari $HP_{i}$ yang akan muncul terhitung mulai dari $bHP_{i}$ sampai dengan $tHP_{i}$ dari setiap karakter musuh. Variabel $i$ pada persamaan tersebut merepresentasikan setiap musuh dengan variabel $N$ yang menyatakan batas atau jumlah dari musuh yang ingin dibuat.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_bmp}
 bMP = minMP
 \end{equation}
 
 Mengulang persamaan \ref{eq:enemy_types_prob_bhp} pada persamaan \ref{eq:enemy_types_prob_bmp}, hanya mengganti variabelnya saja. Jika pada persamaan \ref{eq:enemy_types_prob_bhp} kasus yang ingin diselesaikan adalah pencariaan \textit{stats} HP, maka pada persamaan \ref{eq:enemy_types_prob_bmp} kasus yang ingin diselesaikan adalah pencarian \textit{stats} MP. Pada persamaan \ref{eq:enemy_types_prob_bhp} dengan variabel $bHP$ diganti dengan $bMP$ dan variabel $minHP$ diganti dengan $minMP$ yang mana pada Tabel \ref{tb:enemy_input_variable} dicontohkan dengan variabel $Min$ MP.
-\vspace{1ex}
+\vspace{2ex}
 
 \begin{equation}\label{eq:enemy_types_prob_tmp}
 tMP = \sum_{i=0}^{N}\ bMP + \left |\ \frac{Elv_{i}}{100} \times maxMP\ \right |
 \end{equation}
 
 Masih sama seperti penjelasan sebelumnya dimana pada persaamaan \ref{eq:enemy_types_prob_bmp} pada persamaan \ref{eq:enemy_types_prob_tmp} juga sama dengan persamaan \ref{eq:enemy_types_prob_thp}. Di lakukannya penggantian variabel HP menjadi MP, sudah dijelaskan juga pada bagian sebelumnya tentang variabel $Elv_{i}$, dan pada variabel $maxMP$ yang merupakan variabel yang dicontohkan pada Tabel \ref{tb:enemy_input_variable} dengan nama \textit{Max} MP.
-\vspace{1ex}
+\vspace{2ex}
 
 \begin{equation}\label{eq:enemy_types_prob_mp}
 P(MP_{i}) = \sum_{i=0}^{N}\ \frac{MP_{i}}{bMP_{i} - tMP_{i}}
@@ -910,14 +892,17 @@ Pada bagian ini akan membahas secara khusus untuk kondisi \textit{mixed} melanju
 Mx_{1} = P(Mx_{{N}}|Mx_{1}) \times P(Mx_{1})
 \end{equation}
 
-Maka $Mx_{N}$ adalah seluruh musuh yang bertipe $mixed$, kemudian dipilihlah musuh dengan tipe mixed yang berfokus pada HP atau $Mx_{1}$. Beracuan pada konsep \textit{conditional probability} yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec2_bayes}.
+Maka $Mx_{N}$ adalah seluruh musuh yang bertipe $mixed$, kemudian dipilihlah musuh dengan tipe mixed yang berfokus pada HP atau $Mx_{1}$. Beracuan pada konsep \textit{conditional probability} yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_bayes}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_mx2}
 Mx_{2} = P(Mx_{{N}}|Mx_{2}) \times P(Mx_{2})
 \end{equation}
 
-Jika $Mx_{1}$ adalah HP \textit{focused} maka  $Mx_{2}$ adalah MP \textit{focused} maka sama seperti persamaan \ref{eq:enemy_types_prob_mx1} dengan $Mx_{N}$ adalah seluruh musuh yang bertipe $mixed$, kemudian dipilihlah musuh dengan tipe \textit{mixed} yang berfokus pada MP atau $Mx_{2}$. Pembahasan secara khusus lainnya adalah penambahan \textit{stats} HP untuk musuh dengan tipe \textit{mixed} yang berfokus pada HP seperti yang dinyatakan pada persamaan \ref{eq:enemy_types_prob_thp_mix}. Sedangkan pada musuh dengan tipe \textit{mixed} yang berfokus pada MP tidak perlu diberi perlakuan khusus seperti tipe \textit{mixed} yang berfokus pada HP, hal tersebut dikarenakan dengan melihat nilai MP pada setiap karakter musuh dengan tipe tersebut sudah tergolong tinggi. Kondisi ini beracuan terhadap konsep keseimbangan dalam mendesain seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_keseimbangan} dan Sub-bab \ref{sec:sub_sec3_story} tentang penyesuaian keseimbangan dalam pertarungan antara pemain dengan musuh berikut juga dengan cerita dari permainan tersebut.
+Jika $Mx_{1}$ adalah HP \textit{focused} maka  $Mx_{2}$ adalah MP \textit{focused} maka sama seperti persamaan \ref{eq:enemy_types_prob_mx1} dengan $Mx_{N}$ adalah seluruh musuh yang bertipe $mixed$, kemudian dipilihlah musuh dengan tipe \textit{mixed} yang berfokus pada MP atau $Mx_{2}$. Pembahasan secara khusus lainnya adalah penambahan \textit{stats} HP untuk musuh dengan tipe \textit{mixed} yang berfokus pada HP seperti yang dinyatakan pada persamaan \ref{eq:enemy_types_prob_thp_mix}. 
+\vspace{1ex}
+
+Sedangkan pada musuh dengan tipe \textit{mixed} yang berfokus pada MP tidak perlu diberi perlakuan khusus seperti tipe \textit{mixed} yang berfokus pada HP, hal tersebut dikarenakan dengan melihat nilai MP pada setiap karakter musuh dengan tipe tersebut sudah tergolong tinggi. Kondisi ini beracuan terhadap konsep keseimbangan dalam mendesain seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_keseimbangan} dan Sub-bab \ref{sec:sub_sec3_story} tentang penyesuaian keseimbangan dalam pertarungan antara pemain dengan musuh berikut juga dengan cerita dari permainan tersebut.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_thp_mix}
@@ -925,69 +910,31 @@ tHP = \sum_{i=0}^{N}\ bHP + bHP + \left | \frac{Elv_{i}}{100} \times maxHP \righ
 \end{equation}
 
 Sedikit berbeda dengan persamaan \ref{eq:enemy_types_prob_hp} pada persaamaan \ref{eq:enemy_types_prob_thp_mix} dilakukan penambahan dua kali pada variabel $bHP$ atau batas bawah HP. Hal tersebut dilakukan agar angka \textit{stats} HP pada musuh dengan tipe \textit{mixed} yang berfokus terhadap HP memiliki nilai HP yang lebih tinggi jika dibandingkan dengan tipe \textit{mixed} yang berfokus MP.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_hp_mix}
 P(HP_{i}) = \sum_{i=0}^{N}\ \frac{HP_{i}}{bHP_{i} - tHP_{i}}
 \end{equation}
 
-Kemudian perhitungan probabilitas $P(HP_{i})$ atau munculnya HP pada setiap karakter musuh pada persamaan \ref{eq:enemy_types_prob_hp_mix}. HP dari setiap karakter musuh itu sendiri dinyatakan dengen $HP_{i}$. Kemudian range nilai dari $HP_{i}$ yang akan muncul terhitung mulai dari $bHP_{i}$ sampai dengan $tHP_{i}$. Persamaan tersebut masih sama dengan probabilitas kemunculan HP dari \textit{range} antara $bHP$ dengan $tHP$ pada persamaan \ref{eq:enemy_types_prob_hp}. Kemudian \textit{Stats} untuk HP dan MP dari setiap karakter musuh berhasil dibuat melalui beberapa langkah pada Sub-bab ini. Dari keseluruhan \textit{stats} tersebut bila digabungkan maka hasilnya dapat dilihat pada Tabel \ref{tb:enemy_weak_stats}.
-\vspace{-3ex}
-
-\begin{longtable}{|l|l|l|l|l|}
-	\caption{Distribusi \textit{Stats} HP dan MP musuh.}
-	\label{tb:enemy_weak_stats}\\
-	\hline
-	\rowcolor[HTML]{C0C0C0} 
-	\textbf{No.} & \textbf{Name} & \textbf{Levels} & \textbf{HP} & \textbf{MP} \\ \hline
-	1 & Enemy 1 & 1 & 42 & 45 \\ \hline
-	2 & Enemy 2 & 1 & 84 & 21 \\ \hline
-	3 & Enemy 3 & 1 & 43 & 51 \\ \hline
-	4 & Enemy 4 & 1 & 44 & 231 \\ \hline
-	5 & Enemy 5 & 2 & 40 & 40 \\ \hline
-	6 & Enemy 6 & 2 & 44 & 208 \\ \hline
-	7 & Enemy 7 & 2 & 44 & 47 \\ \hline
-	8 & Enemy 8 & 2 & 42 & 53 \\ \hline
-	9 & Enemy 9 & 2 & 49 & 53 \\ \hline
-	10 & Enemy 10 & 2 & 42 & 49 \\ \hline
-	11 & Enemy 11 & 2 & 44 & 23 \\ \hline
-	12 & Enemy 12 & 2 & 79 & 27 \\ \hline
-	13 & Enemy 13 & 2 & 41 & 26 \\ \hline
-	14 & Enemy 14 & 3 & 50 & 34 \\ \hline
-	15 & Enemy 15 & 3 & 54 & 20 \\ \hline
-	... & ... & ... & ... & ... \\ \hline
-	\textbf{400} & \textbf{Enemy 400} & \textbf{78} & \textbf{389} & \textbf{161} \\ \hline
-\end{longtable}
-
-Pada Tabel \ref{tb:enemy_weak_stats} hanya sebagian data saja yang ditampilkan, untuk selengkapnya dapat dilihat pada Tabel \ref{tb:enemies_all_stats_1} sampai dengan Tabel \ref{tb:enemies_all_stats_15} pada kolom HP dan MP. Selanjutnya adalah penggambaran persebaran \textit{stats} HP dan MP yang masing-masing digambarkan pada Gambar \ref{fig:enemy_hp_distrib} dan Gambar \ref{fig:enemy_mp_distrib}.
+Kemudian perhitungan probabilitas $P(HP_{i})$ atau munculnya HP pada setiap karakter musuh pada persamaan \ref{eq:enemy_types_prob_hp_mix}. HP dari setiap karakter musuh itu sendiri dinyatakan dengen $HP_{i}$. Kemudian range nilai dari $HP_{i}$ yang akan muncul terhitung mulai dari $bHP_{i}$ sampai dengan $tHP_{i}$. Persamaan tersebut masih sama dengan probabilitas kemunculan HP dari \textit{range} antara $bHP$ dengan $tHP$ pada persamaan \ref{eq:enemy_types_prob_hp}.
 \vspace{1ex}
 
-\begin{figure} [!h] \centering
-	\centering
-	\includegraphics[scale=0.57]{img/EnemyHpDistrib.png}
-	\caption{Distribusi \textit{stats} HP musuh.}
-	\label{fig:enemy_hp_distrib}
-\end{figure}
-
-\begin{figure} [!h] \centering
-	\centering
-	\includegraphics[scale=0.57]{img/EnemyMpDistrib.png}
-	\caption{Distribusi \textit{stats} MP musuh.}
-	\label{fig:enemy_mp_distrib}
-\end{figure}
-
-Pada Gambar \ref{fig:enemy_hp_distrib} dan Gambar \ref{fig:enemy_mp_distrib} adalah visualisasi data HP dan MP dalam bentuk tiga dimensi, hal tersebut dilakukan agar terciptanya perbandingan antara level, jumlah musuh, dan tingkat tingginya nilai \textit{stats} yang bersangkutan. Selain pembuatan \textit{stats} HP dan MP, \textit{stats} lain seperti halnya \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck} juga harus dicari. Daftar dari \textit{stats} tersebut dicontohkan pada Tabel \ref{tb:enemy_input_variable} dengan nama variabel \textit{List Stats Name}. Dalam kasus pembuatan \textit{stats} musuh terdapat beberapa variabel lain digunakan selain \textit{List Stats Name} diantaranya adalah \textit{Max Stats Value} dan \textit{Min Stats Value}, seperti yang ditunjukan pada Tabel \ref{tb:enemy_input_variable}. Dalam pembuatan \textit{stats} musuh tersebut digunakanlah persamaan yang mirip dengan persamaan \ref{eq:enemy_types_prob_bhp}, \ref{eq:enemy_types_prob_thp}, dan persamaan \ref{eq:enemy_types_prob_hp}, hanya saja dilakukan sedikit perubahan pada persamaan tersebut seperti yang dinyatakan pada persamaan \ref{eq:enemy_types_prob_bst1}, \ref{eq:enemy_types_prob_bst2}, \ref{eq:enemy_types_prob_tst1}, \ref{eq:enemy_types_prob_tst2}, dan persamaan \ref{eq:enemy_types_prob_st}.
+Selain pembuatan \textit{stats} HP dan MP, \textit{stats} lain seperti halnya \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck} juga harus dicari. Daftar dari \textit{stats} tersebut dicontohkan pada Tabel \ref{tb:enemy_input_variable} dengan nama variabel \textit{List Stats Name}. Dalam kasus pembuatan \textit{stats} musuh terdapat beberapa variabel lain digunakan selain \textit{List Stats Name} diantaranya adalah \textit{Max Stats Value} dan \textit{Min Stats Value}, seperti yang ditunjukan pada Tabel \ref{tb:enemy_input_variable}. Dalam pembuatan \textit{stats} musuh tersebut digunakanlah persamaan yang mirip dengan persamaan \ref{eq:enemy_types_prob_bhp}, \ref{eq:enemy_types_prob_thp}, dan persamaan \ref{eq:enemy_types_prob_hp}, hanya saja dilakukan sedikit perubahan pada persamaan tersebut seperti yang dinyatakan pada persamaan \ref{eq:enemy_types_prob_bst1} sampai dengan persamaan \ref{eq:enemy_types_prob_st}.
+\vspace{-1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_bst1}
 bSt = minSt
 \end{equation}
 
 Jika hanya berlaku satu \textit{stats} saja maka dapat digunakan persamaan \ref{eq:enemy_types_prob_bst1} yang pada dasarnya sama seperti persamaan-persamaan sebelumnya dalam mencari batas bawah dari HP pada $bHP$ dan MP pada $bMP$. Sedangkan pada persamaan \ref{eq:enemy_types_prob_bst1} batas bawahnya adalah $bSt$ yang diisi dengan nilai minimum dari \textit{stats} atau $minSt$.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_bst2}
 bSt_{i} = \sum_{i=0}^{N}\ minSt_{i}
 \end{equation}
 
 Di karenakan \textit{stats} dari musuh berjumlah lebih dari satu maka persamaan \ref{eq:enemy_types_prob_bst1} harus disesuaikan dengan jumlah \textit{stats} tersebut. Jumlah stats dari musuh sendiri berjumlah lima buah seperti yang tertulis pada variabel \textit{List Stats Name}, maka persamaan \ref{eq:enemy_types_prob_bst1} disesuaikan menjadi seperti persamaan \ref{eq:enemy_types_prob_bst2}. Dengan variabel $N$ adalah batas maksimal dari jumlah \textit{stats}, dengan nilai minimum \textit{stats} atau $minSt$ yang jumlahnya mengikuti jumlah maksimal \textit{stats} menjadi $minSt_{i}$ dan disimpan dalam setiap variabel $bSt$ ke $i$. Kemudian selanjutnya adalah pencarian batas atas untuk masing-masing \textit{stats}, sama halnya dengan pencarian batas bawah dari setiap \textit{stats} dalam cara pencarian batas atas pada dasarnya juga sama dengan pencarian batas dari HP pada $tHP$ dan MP pada $tMP$.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_tst1}
 tSt_{i} = \sum_{i=0}^{N}\ bSt + \left |\ \frac{Elv_{i}}{100} \times maxSt_{i}\ \right |
@@ -1000,77 +947,10 @@ Pada persamaan \ref{eq:enemy_types_prob_tst1} batas atasnya adalah $tSt$ yang di
 tSt_{i} = \sum_{i=0}^{N}\ bSt_{i} + \left |\ \frac{Elv_{i}}{100} \times maxSt_{i}\ \right |
 \end{equation}
 
-Dalam pencarian nilai batas atas $tSt_{i}$ tentunya harus melibatkan batas bawah. Jika melihat pada persamaan \ref{eq:enemy_types_prob_tst1} maka terdapat variabel $bSt$, tapi pada variabel tersebut masih bersifat statis atau tidak menyesuaikan dengan jumlah \textit{stats} musuh. Digabunglah persamaan \ref{eq:enemy_types_prob_bst2} dengan persamaan \ref{eq:enemy_types_prob_tst1} sehingga diperolehnya persamaan \ref{eq:enemy_types_prob_tst2} dengan variabel $bSt$ yang mengikuti jumlah \textit{stats} musuh menjadi $bSt_{i}$ dengan variabel $N$ sebagai batasan maksimal jumlah \textit{stats}. Dengan varaiabel $i$ yang merepresentasikan urutan \textit{stats} musuh yang sedang diproeses. Penjelasan untuk persamaan ini sebenarnya sama seperti persamaan \ref{eq:enemy_types_prob_thp} hanya saja jumlah \textit{stats} yang dibuat lebih banyak.
+Dalam pencarian nilai batas atas $tSt_{i}$ tentunya harus melibatkan batas bawah. Jika melihat pada persamaan \ref{eq:enemy_types_prob_tst1} maka terdapat variabel $bSt$, tapi pada variabel tersebut masih bersifat statis atau tidak menyesuaikan dengan jumlah \textit{stats} musuh. Digabunglah persamaan \ref{eq:enemy_types_prob_bst2} dengan persamaan \ref{eq:enemy_types_prob_tst1} sehingga diperolehnya persamaan \ref{eq:enemy_types_prob_tst2} dengan variabel $bSt$ yang mengikuti jumlah \textit{stats} musuh menjadi $bSt_{i}$ dengan variabel $N$ sebagai batasan maksimal jumlah \textit{stats}. Dengan varaiabel $i$ yang merepresentasikan urutan \textit{stats} musuh yang sedang diproeses. Penjelasan untuk persamaan ini sebenarnya sama seperti persamaan \ref{eq:enemy_types_prob_thp} hanya saja jumlah \textit{stats} yang dibuat berjumlah lebih banyak.
 
 \begin{equation}\label{eq:enemy_types_prob_st}
 P(St_{i}) = \sum_{i=0}^{N}\ \frac{St_{i}}{bSt_{i} - tSt_{i}}
 \end{equation}
 
-Kemudian pada persamaan \ref{eq:enemy_types_prob_st} adalah probabilitas $P(St_{i})$ saat munculnya \textit{stats} $St_{i}$ dari batas bawah \textit{stats} $bSt_{i}$ sampai batas atas \textit{stats} $tSt_{i}$. \textit{Stats} dari setiap karakter musuh berhasil dibuat melalui banyak langkah pada Sub-bab ini, diantaranya adalah \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed}, dan \textit{Luck}. Dari keseluruhan \textit{stats} tersebut bila digabungkan maka hasilnya dapat dilihat pada Tabel \ref{tb:enemy_weak_stats}.
-\vspace{-2ex}
-
-\begin{longtable}{|l|l|l|l|l|l|l|l|}
-	\caption{Distribusi \textit{Stats} musuh.}
-	\label{tb:enemy_stats}\\
-	\hline
-	\rowcolor[HTML]{C0C0C0} 
-	\textbf{No.} & \textbf{Name} & \textbf{Lv.} & \textbf{Str} & \textbf{Mag} & \textbf{Endr} & \textbf{Spd} & \textbf{Luck} \\ \hline
-	1 & Enemy 1 & 1 & 2 & 2 & 2 & 2 & 2 \\ \hline
-	2 & Enemy 2 & 1 & 2 & 2 & 2 & 2 & 2 \\ \hline
-	3 & Enemy 3 & 1 & 2 & 2 & 6 & 2 & 2 \\ \hline
-	4 & Enemy 4 & 1 & 2 & 2 & 6 & 2 & 2 \\ \hline
-	5 & Enemy 5 & 2 & 2 & 3 & 6 & 3 & 2 \\ \hline
-	6 & Enemy 6 & 2 & 2 & 3 & 9 & 2 & 2 \\ \hline
-	7 & Enemy 7 & 2 & 2 & 3 & 6 & 2 & 2 \\ \hline
-	8 & Enemy 8 & 2 & 2 & 3 & 2 & 2 & 2 \\ \hline
-	9 & Enemy 9 & 2 & 2 & 3 & 10 & 3 & 2 \\ \hline
-	10 & Enemy 10 & 2 & 2 & 3 & 11 & 3 & 2 \\ \hline
-	11 & Enemy 11 & 2 & 2 & 3 & 2 & 2 & 2 \\ \hline
-	12 & Enemy 12 & 2 & 2 & 3 & 12 & 3 & 2 \\ \hline
-	13 & Enemy 13 & 2 & 2 & 3 & 6 & 2 & 2 \\ \hline
-	14 & Enemy 14 & 3 & 2 & 8 & 2 & 2 & 2 \\ \hline
-	15 & Enemy 15 & 3 & 3 & 11 & 2 & 3 & 2 \\ \hline
-	... & ... & ... & ... & ... & ... & ... & ... \\ \hline
-	\textbf{400} & \textbf{Enemy 400} & \textbf{78} & \textbf{30} & \textbf{15} & \textbf{11} & \textbf{36} & \textbf{22} \\ \hline
-\end{longtable}
-
-Selanjutnya adalah penggambaran persebaran \textit{stats} yang disebutkan pada Tabel \ref{tb:enemy_stats} yang digambarkan pada Gambar \ref{fig:enemy_stats_distrib}. Pada Gambar \ref{fig:enemy_str_distrib}, \ref{fig:enemy_mag_distrib}, \ref{fig:enemy_endr_distrib}, \ref{fig:enemy_spd_distrib} dan Gambar \ref{fig:enemy_luck_distrib} adalah pecahan dari Gambar \ref{fig:enemy_stats_distrib} secara berurutan diantaranya adalah \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck}. Data \textit{Stats} selengkapnya dapat dilihat pada Tabel \ref{tb:enemies_all_stats_1} sampai dengan Tabel \ref{tb:enemies_all_stats_15} pada kolom \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed}, \textit{Luck} dan \textit{stats} yang lain jika dilakukan penambahan \textit{stats} pada program. 
-
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.58]{img/EnemyStatsDistrib.png}
-	\caption{Distribusi \textit{stats} musuh secara keseluruhan.}
-	\label{fig:enemy_stats_distrib}
-	\vspace{1ex}
-\end{figure}
-
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.58]{img/EnemyStrengthDistrib.png}
-	\caption{Distribusi \textit{Strength} musuh.}
-	\label{fig:enemy_str_distrib}
-\end{figure}
-
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.58]{img/EnemyMagicDistrib.png}
-	\caption{Distribusi \textit{Magic} musuh.}
-	\label{fig:enemy_mag_distrib}
-	\vspace{1ex}
-\end{figure}
-
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.58]{img/EnemyEnduranceDistrib.png}
-	\caption{Distribusi \textit{Endurance} musuh.}
-	\label{fig:enemy_endr_distrib}
-\end{figure}
-
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.58]{img/EnemySpeedDistrib.png}
-	\caption{Distribusi \textit{Speed} musuh.}
-	\label{fig:enemy_spd_distrib}
-	\vspace{1ex}
-\end{figure}
-
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.58]{img/EnemyLuckDistrib.png}
-	\caption{Distribusi \textit{Luck} musuh.}
-	\label{fig:enemy_luck_distrib}
-\end{figure}
+Kemudian pada persamaan \ref{eq:enemy_types_prob_st} adalah probabilitas $P(St_{i})$ saat munculnya \textit{stats} $St_{i}$ dari batas bawah \textit{stats} $bSt_{i}$ sampai batas atas \textit{stats} $tSt_{i}$.
