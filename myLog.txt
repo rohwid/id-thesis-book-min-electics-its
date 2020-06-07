@@ -1,7 +1,5 @@
-VALIDASI PENGATURAN STATS OTOMATIS PADA PERMAINAN ACTION DAN TURN-BASED RPG (ROLE-PLAYING GAME) 
+VALIDASI PENGATURAN STATS OTOMATIS PADA PERMAINAN ROLE-PLAYING GAME (RPG) 
 BERBASIS K-NN DAN NAIVE BAYES DENGAN DEEP LEARNING MULTICLASS CLASSIFICATION
-
-Validasi Pengaturan Stats Otomatis pada Permainan Action dan Turn-Based RPG Berbasis K-NN dan Naive Bayes dengan Deep Learning Multiclass Classification
 
 
 Notes for Book Documentation:
@@ -121,13 +119,11 @@ ALGORITMA YANG SUDAH TERCITASI KE BAB 3:
 + Naive Bayes -> Random enemy level and stats distribution -> Threshold (v)
   - Tambahkan citation
   - Tambahkan marjinal probability
-+ Turn-Based RPG -> Baca buku tesis dari chalmers university
++ Turn-Based RPG -> Baca buku tesis dari chalmers university (v)
   - Stats player -> Level balancing -> Nearest Max Level Threshold
   - Stats enemy -> Random enemy level and stats distribution -> Threshold number of enemy
   - Player and Enemy skill
   - Level distribution -> Player meet enemy
-  - Puzzle type dengan FSM (Finite State Machine) (Persona like)
-  - Berbasi keputusan dengan Decision tree atau Behavior tree (Pokemon Like)
 
 
 [BAB 3]
