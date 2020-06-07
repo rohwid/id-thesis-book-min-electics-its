@@ -2,7 +2,7 @@
 \label{chap:chap2_kajian_pustaka}
 
 \section*{}
-Demi mendukung penelitian ini, dibutuhkan beberapa teori penunjang sebagai bahan acuan dan referensi. Berikut ini akan dipaparkan teori dasar meliputi komponen-komponen desain permainan, penjelasan permainan \textit{turn-based} dan \textit{action} RPG, \textit{Machine Learning} dan \textit{Deep Learning}.
+Demi mendukung penelitian ini, dibutuhkan beberapa teori penunjang sebagai bahan acuan dan referensi. Berikut ini akan dipaparkan teori dasar meliputi komponen-komponen desain permainan, \textit{machine learning} yang akan digunakan, dan penjelasan genre permainan RPG (\textit{Role-Playing Game}).
 \vspace{1ex}
 
 \section{Kajian penelitian terkait}
@@ -21,11 +21,11 @@ Beberapa penelitan sebelumnya yang berkaitan dengan penelitian ini dan mendukung
 	\item Paper dengan judul ``\textit{Generating an Attribute Space for analyzing Balance in Single Unit RTS Game Combat}" yang ditulis oleh Shaun Bangay dan Owen Makin tahun 2014. Fokus pada tulisan ini adalah tentang pencapaian keseimbangan dalam permainan \textit{Real Time Strategy} (RTS), dengan dibuatnya sebuah framework yang dinamakan dengan \textit{attribute space}. Pendekatan ini dievaluasi dan direpresentasikan untuk pertarungan \textit{single unit} atau satu lawan satu pada permainan RTS. Melalui proses tersebut kemudian dibuatlah model prediksi terhadap simulasi pertarungan tersebut, dengan menggunakan attribut atau data statistik pada permainan tersebut seperti halnya \textit{speed}, \textit{range}, \textit{health} dan \textit{damage}.
 \end{enumerate}
 
-\section{Desain Permainan Turn-based RPG dan Beberapa Komponennya}
+\section{Desain Permainan RPG dan Komponennya}
 \label{sec:sec2_gdd}
 \vspace{1ex}
 
-Desain permainan adalah proses menciptakan konten dan aturan permainan. Desain permainan yang baik adalah proses menciptakan tujuan agar seorang pemain merasa termotivasi untuk mencapainya dan aturan yang dibuat dapat diikuti oleh seorang pemain saat membuat keputusan untuk mengejar tujuan-tujuan tersebut \citep{Brathwaite2009}. Berikut adalah sebagian elemen dari desain permainan yang akan digunakan pada permainan dengan genre \textit{action} dan \textit{Turn-based} RPG pada penelitian ini.
+Desain permainan adalah proses menciptakan konten dan aturan permainan. Desain permainan yang baik adalah proses menciptakan tujuan agar seorang pemain merasa termotivasi untuk mencapainya dan aturan yang dibuat dapat diikuti oleh seorang pemain saat membuat keputusan untuk mengejar tujuan-tujuan tersebut \citep{Brathwaite2009}. Berikut adalah sebagian elemen dari desain permainan yang akan digunakan pada permainan dengan genre RPG pada penelitian ini.
 \vspace{1ex}
 
 \begin{subs}
@@ -541,29 +541,126 @@ Pada penelitian ini akan digunakan beberapa algoritma \textit{machine learning} 
 	\end{enumerate}
 \end{subs}
 
-\section{RPG (Role-Playing Game)}
+\section{Role-Playing Game}
 \label{sec:sec2_turn_based_rpg}
 \vspace{1ex}
 
-Permainan berbasis \textit{turn-based} \citep{Panumate2015} adalah permainan yang memanfaatkan waktu secara diskrit, yang mana alur dari permainan khususnya pertarungan terbagi menjadi beberapa bagian yang disebut dengan giliran. Pada setiap giliran, pemain akan memiliki waktu yang terbatas atau tidak terbatas dalam berpikir dalam membuat keputusan setiap langkahnya. Kemudian sistem dari permainan akan memproses tindakan dari pemain. Kemudian permainan dilanjutkan oleh pemain berikutnya atau musuh yang berupa AI akan melakukan giliran selanjutnya seperti pada Gambar \ref{fig:turn_based}.
-\vspace{1ex}
+\textit{Role-playing Game} (RPG) \citep{Panumate2015} adalah jenis permainan yang mana pemain memainkan peran karakter dalam latar fiktif. Selain itu pemain juga bertanggung jawab untuk memainkan peran sesuai narasi cerita, baik melalui adegan secara literal atau melalui proses pembuatan keputusan dalam setiap adegannya yang berujung pada pengembangan karakter. Salah satu contoh permainan digital bagian dari genre RPG yang populer adalah \textit{Western} RPG yang mana pemain memerankan sebuah karakter dan menjalankan cerita dari permainan tersebut seperti pada Gambar \ref{fig:action_rpg}.
+\vspace{2ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.39]{img/duelyst.png}
-	\caption{Contoh permainan digital dengan genre \textit{turn-based}.}
-	\label{fig:turn_based}
-\end{figure}
-
-\textit{Role-playing Game} (RPG) \citep{Panumate2015} adalah jenis permainan yang mana pemain memainkan peran karakter dalam latar fiktif. Selain itu pemain juga bertanggung jawab untuk memainkan peran sesuai narasi cerita, baik melalui adegan secara literal atau melalui proses pembuatan keputusan dalam setiap adegannya yang berujung pada pengembangan karakter. Salah satu contoh permainan digital bagian dari genre RPG yang populer adalah \textit{action} RPG yang mana pemain memerankan sebuah karakter dan menjalankan cerita dari permainan tersebut seperti pada Gambar \ref{fig:action_rpg}.
-\vspace{1ex}
-
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.18]{img/whitcher.jpg}
-	\caption{Contoh permainan digital dengan genre \textit{RPG}.}
+	\includegraphics[scale=0.20]{img/whitcher.jpg}
+	\caption{Contoh \textit{video game} dengan genre \textit{RPG}.}
 	\label{fig:action_rpg}
 \end{figure}
-
-Pada dasarnya \textit{turn-based} RPG \citep{Panumate2015} adalah bagian dari genre RPG. Pada \textit{turn-based} RPG, pertarungan dilakukan secara bergantian yang mana pemain memerintahkan karakternya untuk melakukan berbagai tindakan dalam mengalahkan lawan. Jika dilihat maka \textit{turn-based} RPG adalah kombinasi dari permainan \textit{turn-based} dan RPG. Biasanya game dijalankan dengan model yang sama seperti RPG biasa. Saat terjadinya pertarungan dengan musuh, mode permainan akan berubah dari sistem RPG menjadi sistem \textit{turn-based}, dengan memilih tindakan yang ingin dilakukan pada setiap giliran seperti serangan, pertahanan dan sebagainya.
 \vspace{1ex}
 
-Inti dari mode pertarungan atau \textit{battle stage} tersebut adalah sama seperti pada permainan \textit{turn-based} pada umumnya. Saat pertempuran berakhir, permainan akan berubah dari sistem \textit{turn-based} menjadi sistem RPG. Kemudian saat \textit{mode} RPG seseorang harus mengikuti cerita seperti melakukan pencarian atau menemukan barang dan segala sesuatu yang dilakukan dalam sistem RPG. Hal tersebut mempengaruhi setiap attribut atau fungsional yang dipakai saat mode pertempuran dengan sistem \textit{turn-based}.
+Pada dasarnya permainan dengan genre RPG (\textit{Role-Playing Game}) khususnya video game terbagi menjadi banyak kategori diantaranya adalah WRPG, JRPG, ARPG, TRPG, SRPG, dan MMORPG \citep{stenstrom2012}. Berikut adalah penjelasan selengkapnya:
+\vspace{1ex}
+
+\begin{subs}
+	\subsection{WRPG}
+	\label{sec:sub_sec2_wrpg}
+	
+	Deskripsi tentang genre WRPG (\textit{Western Role-Playing Game}) ini diambil dari \textit{Dungeons and Desktops: The History of Computer-Role-playing Games} oleh Barton. Namun seperti yang direpresenatasikan oleh Barton menggunakan istilah CRPG, sedangkan dalam penelitian ini istilah WRPG yang akan digunakan.
+	\vspace{1ex}
+	
+	Pada WRPG pemain dapat bebas mengkostumisasi karakternya dengan leluasa seperti jenis kelamin, wajah dan lain sebagainya. Kemudian pemain juga dapat memilih kemampuannya yang direalisasikan dalam bentuk atribut atau stats dari karakter pemain tersebut \citep{barton2019}. Pada umumnya hal yang dipilih oleh pemain biasanya berupa suku atau fraksi seperti pada \textit{video game} berjudul \textit{The Elder Scroll V: Skyrim}, Bethesda (2011) seperti pada Gambar \ref{fig:skyrim}.
+	\vspace{1ex}
+	
+	\begin{figure} [!h] \centering
+		\includegraphics[scale=0.18]{img/skyrim.jpg}
+		\caption{Contoh WRPG.}
+		\label{fig:skyrim}
+	\end{figure}
+
+	Sekumpulan musuh akan muncul sebelum permainan dimulai, dan pemain dapat menyiapkan perangkap atau membuat langkah kongkrit untuk mengalahkan sekumpulan  musuh tersebut. Sekumpulan musuh tersebut biasanya tersebar jumlahnya lebih banyak dari pemain. Atau mungkin pemain hanya berjumlah 1 dengan musuh yang berjumlah lebih dari itu, kemudian tugas dari pemain adalah mengalahkan sekumpulan musuh yang tersebar tersebut dengan melakukan pertarungan secara langsung atau \textit{real-time}, hal ini sangat identik dengan ARPG (akan dibahas pada poin selanjutnya).
+	\vspace{1ex}
+	
+	Biasanya juga pada WRPG terapat banyak \textit{side quest} atau cerita sampingan yang berbeda dengan cerita utama. Hal ini memberikan pilihan jalan cerita untuk pemain dalam menyelesaikan permainan, selain itu karakter musuh dan juga boss dari musuh berbeda dengan misi atau cerita utama. Pada \textit{video game} berjudul \textit{The Witcher 3}, CD Pojekt (2015) memiliki banyak sekali cerita sampingan bahkan bisa dibilang cerita sampingan dari permainan tersebut tidak kalah bagusnya dengan cerita utama. Sekilas mengenai \textit{video game} berjudul \textit{The Witcher 3} dapat dilihat pada Gambar \ref{fig:action_rpg} pada bagian sebelumnya, yang mana dilakukan pertarungan secara \textit{real-time} melawan monster.
+	\vspace{1ex}
+	
+	\subsection{JRPG}
+	\label{sec:sub_sec2_jrpg}
+	
+	Pada mulanya permaian dengan genre JRPG (\textit{Japanese Role-Playing Game}) tidak begitu banyak mengandung kustomisasi karakter layaknya WRPG. Tetapi pada permainan RPG dengan genre ini berfokus pada beberapa karakter atau biasa disebut dengan istilah \textit{party member} yang dapat disusun oleh pemain. Sama seperti pada WRPG dimana pemain dapat mengkustomisasi kemampuan dari setiap \textit{party member} sesuai dengan peran masing-masing dengan tujuan untuk mengalahkan musuh. Dalam kostumisasi karakter pemain, biasanya diwujudkan dalam penambahan \textit{stats} dan penambahan jurus seperti pada \textit{video game} berjudul \textit{Shin Megami Tensei: Digital Devil Saga 1} dan \textit{2}, Atlus (2004, 2005) seperti yang ditunjukan pada Gambar \ref{fig:dds}.
+	\vspace{1ex}
+	
+	\begin{figure} [!h] \centering
+		\includegraphics[scale=0.45]{img/dds.jpg}
+		\caption{Contoh kustomisasi \textit{stats} pada JRPG.}
+		\label{fig:dds}
+	\end{figure}
+	
+	Pada mulanya pada permainan JRPG, pemain tidak mengetahui akan kedatangan musuh. Kedatangan musuh muncul secara tiba-tiba saat pemain melakukan pergerakan dalam peta permainan, hal ini biasa disebut denga istilah \textit{random encounter}. Contoh pada kondisi tersebut terdapat pada \textit{video game Shin Megami Tensei: Digital Devi Saga 1} dan \textit{2}. Jumlah musuh yang harus dilawan oleh \textit{party member} juga berjumlah lebih dari satu, sama-sama membentuk \textit{party member}.
+	\vspace{1ex}
+	
+	Namun pada beberapa \textit{video game} JRPG, \textit{random encounter} juga direpresentasikan seperti monster atau bayangan yang mengejar representasi dari karakter pemain yang mewakili \textit{party member} dalam menjelajah dunia (eksplorasi). Setelah mereka bertabrakan maka terjadilah pertarungan antara \textit{party member} pemain dan musuh, seperti pada \textit{video game} berjudul \textit{Tales of Zestiria}, Bandai Namco (2015) dan juga \textit{Persona 4}, Atlus (2008).
+	\vspace{1ex}
+	
+	Penataan strategi pada \textit{genre} JRPG bersifat sangat krusial, jika pada genre WRPG, ARPG dan SRPG pemain dapat mengganti perlalatan perangnya tetapi tidak pada genre JRPG. Pemain harus mempersiapkan segala seuatu dengan benar, apa saja yang dibutuhkan untuk mengalahkan musuh. Dalam mode pertarungan pada genre JRPG ada yang bersifat \textit{turn-based} seperti TRPG (akan dibahas pada poin selanjutnya) dan ada pula yang bersifat \textit{real-time} seperti WRPG.
+	\vspace{1ex}
+	
+	Permainan berbasis \textit{turn-based} \citep{Panumate2015} adalah permainan yang memanfaatkan waktu secara diskrit, yang mana alur dari permainan khususnya pertarungan terbagi menjadi beberapa bagian yang disebut dengan giliran. Pada setiap giliran, pemain akan memiliki waktu yang terbatas atau tidak terbatas dalam berpikir dalam membuat keputusan setiap langkahnya. Kemudian sistem dari permainan akan memproses tindakan dari pemain. Kemudian permainan dilanjutkan oleh pemain berikutnya atau musuh yang berupa AI akan melakukan giliran selanjutnya seperti pada Gambar \ref{fig:turn_based}.
+	\vspace{2ex}
+	
+	\begin{figure} [!h] \centering
+		\includegraphics[scale=0.42]{img/duelyst.png}
+		\caption{Contoh permainan digital dengan genre \textit{turn-based}.}
+		\label{fig:turn_based}
+	\end{figure}
+
+	Pada Gambar \ref{fig:persona4} adalah mode pertarungan JRPG secara \textit{turn-based} yang dicontohkan oleh \textit{Persona 4}, Atlus (2008). Di mana para karakter yang dimainkan oleh pemain harus melakukan serangan secara bergatian yang kemudian baru dilanjutkan dengan serangan dari musuh.
+	\vspace{1ex}
+	
+	\begin{figure} [!h] \centering
+		\includegraphics[scale=0.35]{img/persona4.jpg}
+		\caption{Mode pertarungan \textit{turn-based} pada JRPG.}
+		\label{fig:persona4}
+	\end{figure}
+	
+	Pada Gambar \ref{fig:tales} adalah mode pertarungan JRPG secara \textit{real-time} yang dicontohkan oleh \textit{Tales of Zestiria}, Bandai Namco (2015). Di mana pemain menentukan formasi dalam party member, siapa saja karakter yang akan bertarung dan \textit{skill} apa saja yang dibutuhkan untuk mengalahkan musuh. Saat berlangsungnya pertarungan hanya satu karakter yang dapat dijalankan oleh pemain, tetapi pemain diberikan kelebihan untuk berganti karakter dalam pertarungan atau \textit{switch}.
+	\vspace{1ex}
+	
+	\begin{figure} [!h] \centering
+		\includegraphics[scale=0.26]{img/tales.png}
+		\caption{Mode pertarungan \textit{real-time} pada JRPG.}
+		\label{fig:tales}
+	\end{figure}
+	
+	Sama seperti dengan WRPG pada JRPG juga memiliki \textit{side-quest} tetapi biasanya hanya berupa permainan kecil saja, yang bersifat memainkan permainan lain diluar pertarungan antar \textit{party member}. Selain itu juga terdapat \textit{secret boss} yang bersifat sangat kuat dan sulit dikalahkan. Kemudian adanya \textit{new game+}, yang memungkinkan pemain untuk tetap memainkan karakter dengan kemampuan yang sama seperti permainan sebelumnya dan adanya penambahan konten untuk dimainkan (biasanya \textit{boss} yang lebih banyak).
+	\vspace{1ex}
+	
+	\subsection{ARPG}
+	\label{sec:sub_sec2_arpg}
+	
+	Biasanya genre ini disebut juga dengan ``\textit{Hack and Slash}" atau ``\textit{Dungeon crawl RPG's}" \citep{moore2016}. Kenapa sampai diberi sebutan ``\textit{Hack and Slash}", hal ini mengacu dari kesederhanaan dari beberapa permainan ARPG. Pada permainan RPG jenis ini (khususnya \textit{video game}) berfokus pada aksi atau ketangkasan seperti memukul, menghindar, mengeluarkan jurus dan lain sebagainya dibandingkan dengan pengaturan strategi atau penyusunan \textit{stats}. Jika melihat cara bertarung pada permainan jenis ini, maka akan sangat mirip sekali dengan WRPG yang mana pemain fokus dalam bertarung dan berekplorasi. Contoh genre ini adalah \textit{Diablo}, Blizzard (1997) dan \textit{Final Fantasy 12}, Square Enix (2006).
+	\vspace{1ex}
+	
+	\subsection{TRPG}
+	\label{sec:sub_sec2_trpg}
+	
+	Pada RPG jenis ini tidak memiliki dunia atau maps yang digunakan untuk bereksploarsi sama sekali. Jadi pemain tidak perlu berkeliling sama sekali, sedangakan untuk sisi cerita pemain hanya melihat interaksi antar karakter atau interaksi antara karakter pemain dengan karakter musuh yang membentuk sebuah cerita.
+	\vspace{1ex}
+	
+	Jumlah karakter yang dimainkan oleh pemain biasanya berjumlah sangat banyak dan terpapar dalam sebuah panel isometrik atau kotak, dan disanalah dilakukannya pertarungan antara karakter-karakter dari pemain melawan musuh-musuh. Pada RPG genre ini sangat berbanding terbalik dengan ARPG, yang mana pada TRPG sama sekali tidak membutuhkan aksi. Dalam artian tidak diperlukannya ketangkasan dalam melakukan serangan atau dalam menghindari serangan musuh, yang sangat diperlukan adalah 100\% perencanaan dan strategi. Pertarungan benar-benar dilakukan secara bergantian antara pemain dan musuh dalam melakukan serangan \citep{moore2016}. Contoh dari permainan dengan genre ini adalah \textit{Advance Wars}, Nintendo (2001). Penjelasan dari \textit{turn-based} atau bergantian sudah dijelaskan juga pada Sub-Bab \ref{sec:sub_sec2_jrpg} dan juga dicontohkan dengan \textit{video game} yang berjudul \textit{Duelyst}, Counterplay Games (2016).
+	\vspace{1ex}
+	
+	Hampir sebagian besar permainan dengan genre ini berasal dari pengembang \textit{video game} asal jepang selayaknya JRPG. Terdapat juga versi lain TRPG, dengan adanya penambahan atribut \textit{speed} atau kecepatan yang menentukan karakter mana yang akan melakukan aksi terlebih dahulu. Contoh dari permainan tersebut terdapat pada \textit{Final Fantasy Tactics}, Square (1997).
+	\vspace{1ex}
+	
+	\subsection{SRPG}
+	\label{sec:sub_sec2_srpg}
+	
+	Genre RPG ini adalah termasuk yang paling modern, pada penelitian ini \textit{shooter} RPG dipersingkat menjadi SRPG. Biasanya istilah SRPG rancu dengan TRPG, yang mana S tersebut diartikan menjadi \textit{strategy}. SRPG sangat mirip sekali dengan ARPG hanya saja senjata utama dari permain ini menggunakan senapan atau panahan. Mengingat RPG jenis ini adalah \textit{shooter}, bukan berarti prespektif dari permainan ini adalah FPS (\textit{First Person Shooter}). Bisa jadi juga prespektifnya adalah \textit{third person} atau bahkan pemain bisa memilih mode yang mereka inginkan seperti pada \textit{video game} berjudul \textit{Fallout 4}, Bethesda (2015).
+	\vspace{1ex}
+	
+	\subsection{MMORPG}
+	\label{sec:sub_sec2_mmorpg}
+	
+	Kebanyakan \textit{gameplay} dari MMORPG (\textit{Masive Multiplayer Online Role-Playing Game}) terbagi menjadi dua jenis. Pertama adalah \textit{gameplay} yang mengedepankan kenaikan level dan selanjutnya adalah \textit{gameplay} yang mengedepankan penguatan karakter berdasarkan item yang dimiliki dalam memperankan perannya. Genre ini sangat mirip dengan WRPG dan JRPG, namun dijalankan secara \textit{online} atau daring yang mempertemukan banyak pemain.
+	\vspace{1ex}
+	
+	Pada MMORPG yang mirip dengan WRPG, terdapat pada bagian pembuatan karakter, dan pertempuran secara \textit{real-time} meskipun tidak benar-benar \textit{real-time}. Selain itu, pada MMORPG yang memiliki pola permainan khas JRPG \citep{moore2016}. Di contohkan dengan adanya \textit{boss} dan banyak musuh dengan susunan dan kemampuan yang sudah terpola. Pertempuran sering kali mengharuskan para pemain untuk bergerak dan menghindari kemampuan musuh, kemudian melakukan serangan disaat yang tepat.
+	
+\end{subs}

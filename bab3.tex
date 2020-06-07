@@ -2,22 +2,24 @@
 \label{chap:chap3_metodologi}
 
 \section*{}
-Pada penelitian ini nantinya akan terdiri dari lima langkah utama yaitu analisa komponen permainan \textit{action} dan \textit{turn-based} RPG, desain level \textit{stats} atau data statisktik pada karakter pemain, desain level dan \textit{stats} pada setiap karakter musuh, dilanjutkan pengujian dengan berbagai parameter untuk stats pemain, kemudian dilakukan lagi pengujuin untuk validasi dengan \textit{deep learning mullticlass classification}. Di lanjutkan dengan beberapa langkah dibawahnya yang merupakan langkah-langkah detail dalam pengerjaanya seperti pada Gambar \ref{fig:metodologi_2}.
+Pada penelitian ini nantinya akan terdiri dari lima langkah utama yaitu analisa komponen permainan RPG, desain level dan \textit{stats} atau data statisktik pada karakter pemain, desain level dan \textit{stats} pada setiap karakter musuh, dilanjutkan pengujian hasil stats pada karakter pemain dan musuh, kemudian dilakukan validasi dengan \textit{Neural Network Mullticlass Classification}. Setiap langkah yang dilakukan dibawahnya merupakan detail dalam pengerjaan seperti yang direpresentasikan pada Gambar \ref{fig:metodologi}.
+\vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.17]{img/metodologi_new.png}
+	\includegraphics[scale=0.115]{img/metodologi_3.png}
 	\caption{Urutan metodologi.}
-	\label{fig:metodologi_2}    
+	\label{fig:metodologi}
 \end{figure}
+\vspace{1ex}
 
 Tujuan umum dari penelitian ini adalah membuat \textit{stats} atau statistik untuk pemain dan musuh, sehingga dalam pembuatan permaian. Tujuan khusus dan fokus pada penelitian ini adalah untuk membuat data statistik untuk karakter pemain dan musuh dengan menggunakan metode $k-$NN dan \textit{Naive Bayes} yang kemudian dilakukan validasi dengan menggunakan metode \textit{Deep Learning} (\textit{Multiclass Classification}).
 \vspace{1ex}
 
-\section{Analisa Komponen Permainan Action dan Turn-based Role-Playing Game (RPG)}
+\section{Analisa Komponen Permainan RPG}
 \label{sec:sec3_design_komponen}
 \vspace{1ex}
 
-Pada bagian ini terdapat beberapa langkah yang akan menjelaskan penyusunan skenario pertarungan pada permainan RPG \textit{turn-based}. Pertama yang akan dilakukan adalah pembuatan skenario pertarungan pada permainan \textit{turn-based} RPG. Dari skenario tersebut tentunya harus ada hubungan dengan cerita dari permainan, apa saja parameter yang berpengaruh dari cerita terhadap skenario.
+Pada bagian ini terdapat beberapa langkah yang akan menjelaskan penyusunan skenario pertarungan pada permainan RPG \textit{turn-based}. Pertama yang akan dilakukan adalah pembuatan skenario pertarungan pada permainan \textit{turn-based} RPG. Dari skenario tersebut tentunya harus ada hubungan dengan cerita dari permainan, apa saja parameter yang berpengaruh dari cerita terhadap skenario. Dalam proses analisa ini cukup dilakukan pada RPG yang tergolong \textit{turn-based}, karena hal tersebut dianggap paling ideal. Saat karakter pemain dan musuh saling serang secara bergantian.
 \vspace{1ex}
 
 Di lanjutkan dengan desain level dan \textit{stats} dari pemain, selain itu digunakannya algoritma $k-$\textit{Nearest Neighbor} ($k-$NN) untuk mempercepat proses pembuatannya. Kemudian dilanjutkan dengan desain level dan \textit{stats} musuh yang juga dibuat secara otomatis dengan algoritma yang sama dengan pemain, namun tetap dipolakan oleh \textit{gaussian naive bayes} atau distribusi normal. 
@@ -31,11 +33,11 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 	\label{sec:sub_sec3_design_skenario}
 	\vspace{1ex}
 	
-	Di umpamakan jumlah karakter yang rencananya akan digunakan berjumlah satu (\textit{action} RPG) sampai tiga karakter (\textit{turn-based} RPG) bergantung dengan alur cerita dari permainan dan jumlah musuh juga dimisalkan berjumlah antara satu sampai dengan enam, bergantung kepada tingkat kesulitannya seperti pada Gambar \ref{fig:battle_player}. 
+	Di umpamakan jumlah karakter yang rencananya akan digunakan berjumlah tunggal (WRPG, ARPG, SRPG, MMORPG) sampai tiga karakter atau jamak (TRPG dan JRPG) bergantung dengan alur cerita dari permainan dan jumlah musuh juga dimisalkan berjumlah antara satu sampai dengan enam, bergantung kepada tingkat kesulitannya seperti pada Gambar \ref{fig:battle_player}. 
 	\vspace{1ex}
 	
 	\begin{figure} [!h] \centering
-		\includegraphics[scale=0.5]{img/battle_player_new.png}
+		\includegraphics[scale=0.48]{img/battle_player_new.png}
 		\caption{Skema pertarungan antar pemain.}
 		\label{fig:battle_player}
 	\end{figure}
@@ -43,7 +45,7 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 	Sebelumnya pernah dijelaskan pada Sub-bab \ref{sec:sub_sec2_kesempatan} tentang meningkatnya pengambilan keputusan, pada kondisi semakin banyak musuh makan semakin banyak keputusan yang harus diambil oleh pemain. Selain itu setiap pemain memiliki elemen dan \textit{skill}, setiap elemen dapat menjadi kelemahan dan kelebihan dari setiap karakter. Hal tersebut akan membangun sebuah momen dramatis berdasarkan kompleksitas kombinasi dari musuh, hal tersebut dibahas pada Sub-bab \ref{sec:sub_sec2_kesempatan} tentang momen dramatis pada desain permainan.
 	\vspace{1ex}
 	
-	Pada bagian ini dijelaskan contoh perancangan dari skenario pertarungan dengan genre \textit{action} dan \textit{turn-based} yang dibandingkan secara langsung. Pada Gambar \ref{fig:battle_player} jika dipecah dan dijelaskan lebih lanjut maka setiap karakter yang dimainkan oleh pemain atau musuh dalam bentuk NPC (\textit{Non Playable Character}) maka bagian-bagian tersebut akan menjadi seperti beberapa poin dibawah ini.
+	Pada bagian ini dijelaskan contoh perancangan dari skenario pertarungan dengan jumlah karakter tunggal dan karakter pemain yang berjumlah lebih dari satu dengan dibandingkan secara langsung. Pada Gambar \ref{fig:battle_player} jika dipecah dan dijelaskan lebih lanjut maka setiap karakter yang dimainkan oleh pemain atau musuh dalam bentuk NPC (\textit{Non Playable Character}) maka bagian-bagian tersebut akan menjadi seperti beberapa poin dibawah ini.
 	\vspace{1ex}
 	
 	\begin{enumerate}[label=\textbf{\arabic*).}]
@@ -55,8 +57,8 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 		\vspace{1ex}
 		
 		\begin{figure} [!h] \centering
-			\includegraphics[scale=0.68]{img/player_stats.png}
-			\caption{Status dari pemain pada permainan \textit{turn-based}.}
+			\includegraphics[scale=0.6]{img/player_stats.png}
+			\caption{Status dari pemain pada permainan bergenre RPG.}
 			\label{fig:player_stats}
 		\end{figure}
 		
@@ -84,7 +86,7 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 		Di lanjutkan lagi dengan perhitungan dengan membandingkan \textit{Speed}, dan \textit{Luck} antara karakter pemain dengan musuh, pada proses tersebutlah yang menentukan apakah serangan dari pemain dapat diterima atau meleset terhadap musuh dan sebaliknya. Tingginya \textit{Speed} pada masing-masing karakter dapat diartikan perbandingn antara kecepatan untuk menyerang dan menghindar, sedangkan \textit{Luck} adalah faktor keberuntungan yang mempengaruhi serangan tersebut. Kemudian dilanjutkan lagi dengan kalkulasi \textit{attack} dan \textit{defense} antara karakter yang menyerang dan target. Dari hasil kalkulasi tersebut akan berpengaruh pada jumlah HP dari karakter yang menjadi target.
 		\vspace{1ex}
 		
-		Kemudian pada permainan RPG dengan genre \textit{action} tidak membutuhkan skema berurutan serumit \textit{turn-based}. Pada permainan tersebut lebih mengandalkan ketangkasan dari pemain dalam memainkan karakter yang ingin dimainkan sepeti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_strategi} pada bagian Peran dari keterampilan pada permainan. Maka terjadilah momen saling serang secara langsung antara pemain dan musuh.
+		Baik pada permainan RPG yang dimainkan secara \textit{real-time} atau \textit{turn-based}, keduanya melakukan mekanisme sama seperti yang dijelaskan dengan kondisi di atas. Hanya saja permainan RPG secara \textit{real-time} lebih mengandalkan ketangkasan dari pemain dalam memainkan karakter yang ingin dimainkan sepeti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_strategi} pada bagian Peran dari keterampilan pada permainan. Maka terjadilah momen saling serang secara langsung antara pemain dan musuh.
 		\vspace{1ex}
 		
 		\begin{figure} [!h] 
@@ -96,12 +98,12 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 		
 		\item \textbf{Elemen dan Efektifitas Serangan}
 		
-		Pada Gambar \ref{fig:elemen} adalah contoh elemen yang digunakan dalam permainan dengan mode \textit{turn-based}. Jumlah dari elemen dapat ditambah atau dikurangi sesuai dengan kebutuhan. Biasanya jumlah dari elemen ditentukan berdasarkan cerita. Mengapa terdapat elemen tersebut, bagaimana asal-usulnya dan sebagainya seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_story}.
+		Pada Gambar \ref{fig:elemen} adalah contoh elemen yang biasa digunakan dalam permainan RPG. Jumlah dari elemen dapat ditambah atau dikurangi sesuai dengan kebutuhan. Biasanya jumlah dari elemen ditentukan berdasarkan cerita. Mengapa terdapat elemen tersebut, bagaimana asal-usulnya dan sebagainya seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_story}.
 		\vspace{1ex}
 		
 		\begin{figure} [!h] \centering
-			\includegraphics[scale=0.48]{img/element.png}
-			\caption{Elemen pada permainan dengan mode pertarungan \textit{turn-based}.}
+			\includegraphics[scale=0.40]{img/element.png}
+			\caption{Elemen pada permainan RPG.}
 			\label{fig:elemen}
 		\end{figure}
 		
@@ -109,7 +111,7 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 		\vspace{1ex}
 		
 		\begin{figure} [!h] \centering
-			\includegraphics[scale=0.65]{img/efektifitas.png}
+			\includegraphics[scale=0.60]{img/efektifitas.png}
 			\caption{Pengaruh elemen pada efektifitas serangan.}
 			\label{fig:efektifitas}
 		\end{figure}
@@ -117,7 +119,7 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 		Jika melihat pada Gambar \ref{fig:efektifitas} dapat disimpukan bahwa beberapa element yang saling berlawanan kemudian efektifitas menjadi 2 kali lipat, contohnya pada elemen air terhadap api dan tanah terhadap angin begitu juga sebaliknya. Jika elemen yang sama saling bertarung maka efektifitasnya berkurang $1/2$ dari yang seharunya. Kemudian pada elemen lain yang belum disebutkan berlaku efektifitas normal atau 1 kali. Pembagian elemen pada pemain dan musuh akan dibahas lebih detail pada Sub-bab \ref{sec:sec3_player_stats}.
 		\vspace{1ex}
 		
-		Kebanyakan elemen dan efektifitas serangan berlaku pada permainan RPG dengan genre \textit{turn-based}, berbeda halnya dengan \textit{action} yang lebih mengandalkan keterampilan dari pemain dalam memaikan karakternya seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_strategi} pada bagian pemain berbasis keterampilan sepenuhnya.
+		Kebanyakan elemen dan efektifitas serangan berlaku pada permainan RPG yang tergolong \textit{turn-based}, berbeda halnya dengan \textit{real-time} yang lebih mengandalkan keterampilan dari pemain dalam memaikan karakternya seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_strategi} pada bagian pemain berbasis keterampilan sepenuhnya.
 		\vspace{1ex}
 		
 		\item \textbf{Efek Status}
@@ -141,7 +143,7 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 		Tidak semua kemampuan pemain dapat memberi efek status, hal tersebut mengacu pada desain permainan yang mengatur keseluruhan \textit{skill}, tidak hanya pada karakter utama melainkan juga pada musuh. Tetapi dalam penelitian ini, hal tersebut masih belum terpakai dikarenakan masih menyelesaikan perihal desain \textit{stats} dari pemain dan musuh. Hal ini baru semacam perkiraan saja saat mendesain sebuah permainan.
 		\vspace{1ex}
 		
-		Pada bagian efek status juga berlaku pada permainan RPG dengan genre \textit{action}, setelah berlangsungnya pertarungan antara pemain dan musuh. Di mana pada sisi pemain dapat memhangun karakternya sedemikian hingga demi memberi efek status ke pada musuh saat berlangsunnya pertarungan seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_strategi} tentang peran dan keterampilan pemain serta strategi dan taktik.
+		Pada bagian efek status juga berlaku pada permainan RPG dengan jumlah karakter tunggal, setelah berlangsungnya pertarungan antara pemain dan musuh. Di mana pada sisi pemain dapat memhangun karakternya sedemikian hingga demi memberi efek status ke pada musuh saat berlangsunnya pertarungan seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_strategi} tentang peran dan keterampilan pemain serta strategi dan taktik.
 		\vspace{1ex}
 		
 		\item \textbf{Kondisi Kritis pada Serangan}
@@ -158,7 +160,7 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 	\label{sec:sub_sec3_story}
 	\vspace{1ex}
 	
-	Pada setiap permainan RPG khususnya \textit{action} dan \textit{turn-based} RPG pasti memiliki cerita yang menjadi latar belakang permainan seperti yang dijelaskan pada Sub-bab \ref{sec:sec2_turn_based_rpg}. Tentunya cerita tersebut juga memiliki pengaruh penting terhadap jumlah karakter yang dapat dimainkan oleh pemain, jumlah musuh, elemen apa saja yang akan dipakai, total waktu permainan, jumlah musuh yang harus dilawan dan lain sebagainya. Pada penelitian ini hal semacam itu akan dibuat menjadi sebuah estimasi yang kemudian disimulasikan ke dalam mode pertarungan dengan berbagai macam estimasi sebagaimana penjelasan berikut.
+	Pada setiap permainan RPG khususnya \textit{real-time} dan \textit{turn-based} RPG pasti memiliki cerita yang menjadi latar belakang permainan seperti yang dijelaskan pada Sub-bab \ref{sec:sec2_turn_based_rpg}. Tentunya cerita tersebut juga memiliki pengaruh penting terhadap jumlah karakter yang dapat dimainkan oleh pemain, jumlah musuh, elemen apa saja yang akan dipakai, total waktu permainan, jumlah musuh yang harus dilawan dan lain sebagainya. Pada penelitian ini hal semacam itu akan dibuat menjadi sebuah estimasi yang kemudian disimulasikan ke dalam mode pertarungan dengan berbagai macam estimasi sebagaimana penjelasan berikut.
 	\vspace{1ex}
 	
 	\begin{enumerate}[label=\textbf{\arabic*).}]
@@ -170,13 +172,13 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 		
 		\begin{enumerate}[label=\alph*).]
 			\item Haruskah kebanyakan pemain nantinya dapat menyelesaikan permainan tanpa melakukan \textit{side quest} (misi sampingan) atau melakukan \textit{grinding} (menaikan kemampuan karakter) diluar standar perkembangannya?
-			\item Berapa banyak bos yang akan dilawan oleh pemain pada permainan ini, dan seberapa jauh jaraknya? Dan bagaimana dengan penambahan bos?
+			\item Berapa banyak bos yang akan dilawan oleh pemain, dan seberapa jauh jaraknya? Dan bagaimana dengan penambahan bos?
 			\item Berapa banyak \textit{dungeon} (tempat muncul dan bertemu dengan musuh) yang akan disajikan, dan seberapa besar \textit{dungeon} tersebut?
 			\item Akankah pemain bisa menyimpan progres permainan kapan saja, atau hanya di titik penyimpanan tertentu yang sudah ditentukan?
 		\end{enumerate}
 		\vspace{1ex}
 	
-		Biasanya pada permaianan \textit{turn-based} RPG terdapat sebuah peta besar tentang lokasi yang merupakan latar dari cerita, tersebarlah berbagai jenis musuh yang relatif mudah dikalahkan. Kemudian ditampilkan juga beberapa \textit{dungeon} yang akan terbuka satu demi satu, yang mana \textit{dungeon} tersebut memiliki tingkat kesulitan dan kerumitan yang terus meningkat sampai dengan bertemu dengan Bos. Secara keseluruhan tingkat kesulitan juga akan terus meningkat sampai dengan akhir permaian seperti yang dicontohkan oleh Gambar \ref{fig:story_dungeon}.
+		Biasanya pada permaianan RPG terdapat sebuah peta besar tentang lokasi yang merupakan latar dari cerita, tersebarlah berbagai jenis musuh yang relatif mudah dikalahkan. Kemudian ditampilkan juga beberapa \textit{dungeon} yang akan terbuka satu demi satu, yang mana \textit{dungeon} tersebut memiliki tingkat kesulitan dan kerumitan yang terus meningkat sampai dengan bertemu dengan Bos. Secara keseluruhan tingkat kesulitan juga akan terus meningkat sampai dengan akhir permaian seperti yang dicontohkan oleh Gambar \ref{fig:story_dungeon}.
 		
 		\begin{figure} [!h] \centering
 			\includegraphics[scale=0.7]{img/story_dungeon.png}
@@ -192,7 +194,7 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 	
 		\item \textbf{Waktu yang Diperlukan untuk Kalahkan Musuh}
 	
-		Musuh pada permainan \textit{turn-based} RPG umumnya terbagi menjadi empat kategori diantaranya adalah:
+		Musuh pada permainan RPG umumnya terbagi menjadi empat kategori diantaranya adalah:
 		
 		\begin{enumerate}[label=\Alph*).]
 			\item \textit{Trash Mobs} adalah musuh yang tersebar pada seluruh area atau map.
@@ -255,7 +257,7 @@ Di buatlah sebuah program yang secara otomatis dapat membuat \textit{stats} dari
 	\label{fig:player_stats_generator}
 \end{figure}
 
-Pada permainan dengan genre \textit{turn-based} RPG dengan jumlah karakter yang dapat dimainkan berjumlah lebih dari satu, maka program yang ditunjukan melalui proses pada Gambar \ref{fig:player_stats_generator} akan dijalankan lebih dari satu kali. Hal tersebut dilakukan dengan tujuan agar karakter utama atau yang dapat dimainkan oleh pemain berjumlah lebih dari satu. Lain halnya dengan \textit{action} RPG, cukup hanya dengan satu kali menjalankan program maka sudah diperolehnya \textit{stats} dari karakter yang dibuat. Hal tersebut dikarenakan biasanya permainan dengan genre action RPG, jumlah karakternya hanya satu.
+Pada permainan dengan genre RPG dengan jumlah karakter yang dapat dimainkan berjumlah lebih dari satu, maka program yang ditunjukan melalui proses pada Gambar \ref{fig:player_stats_generator} akan dijalankan lebih dari satu kali. Hal tersebut dilakukan dengan tujuan agar karakter utama atau yang dapat dimainkan oleh pemain berjumlah lebih dari satu. Lain halnya dengan \textit{action} RPG, cukup hanya dengan satu kali menjalankan program maka sudah diperolehnya \textit{stats} dari karakter yang dibuat. Hal tersebut dikarenakan biasanya permainan dengan genre action RPG, jumlah karakternya hanya satu.
 \vspace{1ex}
 
 Pada Gambar \ref{fig:player_stats_generator} disisi masukan program terdapat banyak sekali masukan variabel seperti \textit{Max Level} yang berupa maksimum level yang di inginkan, kemudian \textit{Start Level} yang berupa level awal dari pemain, kemudian HP yang berupa \textit{range} atau jarak antara HP terendah dengan HP terendah setelah itu. Sama halnya dengan HP, dalam perhitungan \textit{range} atau jarak pada \textit{MP} juga menggunakan cara tersebut. Kemudian \textit{Element Name} berisi daftar elemen apa saja yang ingin digunakan, begitu juga dengan \textit{Name Stats}. Kemudian untuk \textit{Range Stats} berisikan \textit{stats} awal atau inisialisasi dan maksimum \textit{stats}. Lebih detail tentang program yang dibuat dapat dilihat pada Gambar \ref{fig:player_uml}, yang merupakan \textit{class} diagram untuk membuat \textit{stats} pemain.
@@ -270,7 +272,7 @@ Pada Gambar \ref{fig:player_stats_generator} disisi masukan program terdapat ban
 Karena program ini dibangun menggunakan OOP (\textit{Object Oriented Programming}) maka program ini dapat dijabarkan menggunakan Gambar \ref{fig:player_uml}. Selain itu program ini juga dapat secara mudah dimodifikasi untuk keperluan pengembangan kedepannya, dengan fungsi-fungsi yang ada sangat memungkinkan dilakukan \textit{override} atau pembuatan fungsi yang sama dengan isi atau proses yang berbeda.
 \vspace{1ex}
 
-Dalam menjelaskan proses pada BAB ini maka diambilah sebuah kasus dalam desain permainan, khususnya dalam penyusunan \textit{stats} untuk pemain dengan \textit{genre} permaian \textit{turn-based} dan \textit{action} RPG. Pada Tabel \ref{tb:player_input_variable} adalah masukan untuk menguji program yang akan dijelaskan pada bagian selanjutnya, yang mana masukan pada Tabel \ref{tb:player_input_variable} akan menghasilkan \textit{stats} pada sebuah karakter untuk pemain. Hal ini merupakan perwujudan dari Sub-bab \ref{sec:sub_sec3_design_skenario} bila diwujudkan dalam bentuk yang lebih teknis.
+Dalam menjelaskan proses pada BAB ini maka diambilah sebuah kasus dalam desain permainan, khususnya dalam penyusunan \textit{stats} untuk karakter dari pemain pada permainan RPG, baik itu permainan RPG yang tergolong \textit{real-time} atau \textit{turn-based}. Pada Tabel \ref{tb:player_input_variable} adalah masukan untuk menguji program yang akan dijelaskan pada bagian selanjutnya, yang mana masukan pada Tabel \ref{tb:player_input_variable} akan menghasilkan \textit{stats} pada sebuah karakter untuk pemain. Hal ini merupakan perwujudan dari Sub-bab \ref{sec:sub_sec3_design_skenario} bila diwujudkan dalam bentuk yang lebih teknis.
 \vspace{-1ex}
 
 \begin{longtable}{|l|l|}
@@ -366,7 +368,7 @@ MaxSt = \left\{\begin{matrix}
 \end{split}
 \end{equation}
 
-Pada persamaan \ref{eq:nbayes_class}, variabel $P(C_{St = 1})$ adalah probabilitas munculnya \textit{Stats To Assign} ke 1 dan $P(C_{St = 2})$ adalah probabilitas munculnya \textit{Stats To Assign} ke 2, kemudian $C_{St = 1}$ adalah jumlah angka satu dan $C_{St = 2}$ adalah jumlah angka satu pada \textit{Stats To Assign}. Setiap stats hasil pengacakan tentunya juga akan dibatasi jumlahnya dengan melakukan \textit{checking} pada maksimum stats, hal tersebut dijelaskan pada persamaan \ref{eq:KNN_distance_stats} yang mana $x$ adalah maksimum stats, $D$ adalah maksimum stats dan $p$ adalah stats saat ini. Kemudian nilai $MaxSt$ pada persamaan \ref{eq:KNN_bayes_player_stats} adalah nilai maksimum stats yang ingin dicapai dengan jumlah $St_{(n)}$ yang dihitung melalui persamaan \ref{eq:KNN_distance_stats} dan \ref{eq:nbayes_class_stats}.
+Pada persamaan \ref{eq:nbayes_class}, variabel $P(C_{St = 1})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 1 dan $P(C_{St = 2})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 2, kemudian $C_{St = 1}$ adalah jumlah angka satu dan $C_{St = 2}$ adalah jumlah angka satu pada \textit{Stats to Assign}. Setiap stats hasil pengacakan tentunya juga akan dibatasi jumlahnya dengan melakukan \textit{checking} pada maksimum stats, hal tersebut dijelaskan pada persamaan \ref{eq:KNN_distance_stats} yang mana $x$ adalah maksimum stats, $D$ adalah maksimum stats dan $p$ adalah stats saat ini. Kemudian nilai $MaxSt$ pada persamaan \ref{eq:KNN_bayes_player_stats} adalah nilai maksimum stats yang ingin dicapai dengan jumlah $St_{(n)}$ yang dihitung melalui persamaan \ref{eq:KNN_distance_stats} dan \ref{eq:nbayes_class_stats}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:nbayes_class_stats_1}
@@ -409,7 +411,7 @@ Sama halnya dengan karakter pemain maka dibuatlah sebuah program yang secara oto
 	\label{fig:enemy_stats_generator}
 \end{figure}
 
-Pada permainan dengan genre \textit{turn-based} RPG dengan jumlah yang sangat banyak dan beragam, maka program yang ditunjukan melalui proses pada Gambar \ref{fig:enemy_stats_generator} dapat dijalankan satu kali saja, dan menghasilkan banyak musuh. Kecuali ingin menghasilkan kombinasi musuh yang berbeda, misalnya pada proses \textit{generate} yang pertama menghasilkan musuh yang memiliki kemampuan \textit{magic} dan kelemahan sedangkan pada kombinasi musuh selanjutnya tidak memiliki kemampuan \textit{magic}, hanya mengandalkan kemampuan fisik saja. Sama halnya dengan permainan \textit{action} RPG saat proses pembuatan stats musuh.
+Pada permainan bergenre RPG yang memiliki jumlah yang sangat banyak dan beragam, maka program yang ditunjukan melalui proses pada Gambar \ref{fig:enemy_stats_generator} dapat dijalankan satu kali saja, dan menghasilkan banyak musuh. Kecuali ingin menghasilkan kombinasi musuh yang berbeda, misalnya pada proses \textit{generate} yang pertama menghasilkan musuh yang memiliki kemampuan \textit{magic} dan kelemahan sedangkan pada kombinasi musuh selanjutnya tidak memiliki kemampuan \textit{magic}, hanya mengandalkan kemampuan fisik saja. Sama halnya dengan permainan \textit{action} RPG saat proses pembuatan stats musuh.
 \vspace{1ex}
 
 Pada Gambar \ref{fig:enemy_stats_generator} di sisi masukan program terdapat banyak sekali masukan variabel seperti \textit{Max Level} yang berupa maksimum level yang diinginkan, kemudian \textit{Min Level} yang berupa minimum level dari musuh, kemudian HP yang berupa \textit{range} atau jarak antara HP minimum dengan HP tertinggi. Sama halnya dengan HP, dalam perhitungan \textit{range} atau jarak, pada \textit{MP} juga menggunakan perhitungan dengan cara tersebut. Kemudian \textit{Enemy Type} yang berisi klasifikasi jenis stats musuh, tergolong musuh seperti apakah stats yang dihasilkan tersebut. 
