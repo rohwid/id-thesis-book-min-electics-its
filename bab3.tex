@@ -264,7 +264,7 @@ Pada Gambar \ref{fig:player_stats_generator} disisi masukan program terdapat ban
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.30]{img/player_uml.png}
+	\includegraphics[scale=0.28]{img/player_uml.png}
 	\caption{\textit{Class} diagram untuk \textit{stats} pemain.}
 	\label{fig:player_uml}
 \end{figure}
@@ -342,7 +342,10 @@ Pada bagian selanjutnya adalah pembahasan mengenai pembagian \textit{stats} jika
 \label{sec:sub_sec3_stat_pemain}
 \vspace{1ex}
 
-Pada bagian ini akan dibahas tentang pembagian \textit{stats} dengan beracuan pada Tabel \ref{tb:player_input_variable} dengan variabel \textit{List Stats Name} yang berisi nama atau info \textit{stats} dari pemain yang akan digunakan. Kemudian diikuti dengan variabel \textit{Max Stats Value} yang berisi nilai maksimum \textit{stats} yang akan dihasilkan. Pada tahap ini digunakannya metode $k-$Nearest Neighbor atau $k-$NN seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec2_knn} dan Naive Bayes yang juga sudah dijelaskan pada Sub-bab \ref{sec:sub_sec2_bayes}. Pada persamaan \ref{eq:KNN_distance_metrics} yang kemudian disesuaikan dengan pertambahan nilai \textit{Stats to Assign} dari Tabel \ref{tb:player_input_variable}, yang mana nilai tersebut ditambahkan secara acak antara 2 dan 1 dengan perhitungan \textit{class probability} pada persamaan \ref{eq:nbayes_class} yang disesuaikan menjadi persamaan \ref{eq:nbayes_class_stats}. Hasil proses acak tersebut juga harus dibatasi jumlahnya dengan persamaan \ref{eq:KNN_distance_stats}. Maka hasil dari proses acak pada persamaan tersebut akan sangat menentukan perhitungan dari persamaan \ref{eq:KNN_bayes_player_stats}.
+Pada bagian ini akan dibahas tentang pembagian \textit{stats} dengan beracuan pada Tabel \ref{tb:player_input_variable} dengan variabel \textit{List Stats Name} yang berisi nama atau info \textit{stats} dari pemain yang akan digunakan. Kemudian diikuti dengan variabel \textit{Max Stats Value} yang berisi nilai maksimum \textit{stats} yang akan dihasilkan. Pada tahap ini digunakannya metode $k-$Nearest Neighbor atau $k-$NN seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec2_knn} dan Naive Bayes yang juga sudah dijelaskan pada Sub-bab \ref{sec:sub_sec2_bayes}. 
+\vspace{1ex}
+
+Pada persamaan \ref{eq:KNN_distance_metrics} yang kemudian disesuaikan dengan pertambahan nilai \textit{Stats to Assign} dari Tabel \ref{tb:player_input_variable}, yang mana nilai tersebut ditambahkan secara acak antara 2 dan 1 dengan perhitungan \textit{class probability} pada persamaan \ref{eq:nbayes_class} yang disesuaikan menjadi persamaan \ref{eq:nbayes_class_stats}. Hasil proses acak tersebut juga harus dibatasi jumlahnya dengan persamaan \ref{eq:KNN_distance_stats}. Maka hasil dari proses acak pada persamaan tersebut akan sangat menentukan perhitungan dari persamaan \ref{eq:KNN_bayes_player_stats}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:nbayes_class_stats}
@@ -406,12 +409,12 @@ Sama halnya dengan karakter pemain maka dibuatlah sebuah program yang secara oto
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.06]{img/enemy_stats_generator.png}
+	\includegraphics[scale=0.09]{img/enemy_stats_generator.png}
 	\caption{Proses pembuatan stats untuk karakter musuh.}
 	\label{fig:enemy_stats_generator}
 \end{figure}
 
-Pada permainan bergenre RPG yang memiliki jumlah yang sangat banyak dan beragam, maka program yang ditunjukan melalui proses pada Gambar \ref{fig:enemy_stats_generator} dapat dijalankan satu kali saja, dan menghasilkan banyak musuh. Kecuali ingin menghasilkan kombinasi musuh yang berbeda, misalnya pada proses \textit{generate} yang pertama menghasilkan musuh yang memiliki kemampuan \textit{magic} dan kelemahan sedangkan pada kombinasi musuh selanjutnya tidak memiliki kemampuan \textit{magic}, hanya mengandalkan kemampuan fisik saja. Sama halnya dengan permainan \textit{action} RPG saat proses pembuatan stats musuh.
+Pada permainan bergenre RPG yang memiliki jumlah yang sangat banyak dan beragam, maka program yang ditunjukan melalui proses pada Gambar \ref{fig:enemy_stats_generator} dapat dijalankan satu kali saja, dan menghasilkan banyak musuh. Kecuali ingin menghasilkan kombinasi musuh yang berbeda, misalnya pada proses \textit{generate} yang pertama menghasilkan musuh yang memiliki kemampuan \textit{magic} dan kelemahan sedangkan pada kombinasi musuh selanjutnya tidak memiliki kemampuan \textit{magic}, hanya mengandalkan kemampuan fisik saja.
 \vspace{1ex}
 
 Pada Gambar \ref{fig:enemy_stats_generator} di sisi masukan program terdapat banyak sekali masukan variabel seperti \textit{Max Level} yang berupa maksimum level yang diinginkan, kemudian \textit{Min Level} yang berupa minimum level dari musuh, kemudian HP yang berupa \textit{range} atau jarak antara HP minimum dengan HP tertinggi. Sama halnya dengan HP, dalam perhitungan \textit{range} atau jarak, pada \textit{MP} juga menggunakan perhitungan dengan cara tersebut. Kemudian \textit{Enemy Type} yang berisi klasifikasi jenis stats musuh, tergolong musuh seperti apakah stats yang dihasilkan tersebut. 

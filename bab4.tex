@@ -7,28 +7,25 @@
 Inti dari BAB \ref{chap:chap4_eval} pada penelitian ini adalah pengujian dengan berbagai parameter \textit{stats} yang dihasilkan untuk pemain dan musuh. Jika pada BAB \ref{chap:chap3_metodologi} dalam proses analisan desain permainan RPG, permainan RPG digolongkan berdasarkan pertarungan menjadi \textit{real-time} dan \textit{turn-based}. 
 \vspace{1ex}
 
-Kemudian jika melihat jumlah karakter yang dimainkan oleh pemain maka permainan RPG dapat digolongkan menjadi \textit{single-character} dan \textit{multi-character}. Hal ini diperlukan dalam pengujian pembuatan \textit{stats} yang dihasilkan, permainan RPG yang termasuk \textit{single-character} adalah WRPG, ARPG, SRPG dan MMORPG, sedangkan yang termasuk \textit{multi-character} adalah TRPG dan JRPG. 
+Kemudian jika melihat jumlah karakter yang dimainkan oleh pemain maka permainan RPG dapat digolongkan menjadi \textit{single-character} dan \textit{multi-character}. Hal ini diperlukan dalam pengujian pembuatan \textit{stats} yang dihasilkan, permainan RPG yang termasuk \textit{single-character} adalah WRPG, ARPG, SRPG dan MMORPG, sedangkan yang termasuk \textit{multi-character} adalah TRPG dan JRPG. Sedangkan untuk karakter musuh dianggap sama, hanya saja dalam beberapa permainan bergenre RPG pemain dan musuh tidak menggunakan sistem elemen sebagai kelemahan. Biasanya pada permainan RPG dengan genre ARPG, SRPG dan sebagian WRPG, sedangkan untuk TRPG dan JRPG hampir sebagian besar memakai sistem elemen sebagai kelemahan dalam sistem pertarungan.
 \vspace{1ex}
 
-Sedangkan untuk karakter musuh dianggap sama, hanya saja dalam beberapa permainan bergenre RPG pemain dan musuh tidak menggunakan sistem elemen sebagai kelemahan. Biasanya pada permainan RPG dengan genre ARPG, SRPG dan sebagian WRPG, sedangkan untuk TRPG dan JRPG hampir sebagian besar memakai sistem elemen sebagai kelemahan dalam sistem pertarungan.
+\section{Pembuatan Stats Single-Character untuk Pemain}
+\label{sec:sec4_eval_single-character_player}
 \vspace{1ex}
 
-\section{Pengujian dalam Pembuatan \textit{Stats} Pemain pada Permainan dengan Genre \textit{Turn-based} RPG}
-\label{sec:sec4_eval_turn-based_player}
+Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian bergenre RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya. Maksud dari \textit{single-character} disini adalah pemain hanya menjalankan satu buah karakter saja selama permainan, contoh dari RPG jenis ini biasanya ada pada WRPG, SRPG, ARPG, dan MMORPG.
 \vspace{1ex}
 
-Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian dengan genre \textit{turn-based} RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya.
+\subsection{Distibusi Level, HP, dan MP Pemain}
+\label{sec:sub_sec4_eval_dist_hp_mp_level_single-character}
 \vspace{1ex}
 
-
-\subsection{Pengujian Distibusi Level, HP, dan MP Pemain}
-\label{sec:sub_sec4_eval_dist_hp_mp_level}
-\vspace{1ex}
-
-Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}, dimana pada bagian ini membahas tentang pembuatan level, HP dan MP pemain untuk permaian dengan genre \textit{turn-based} RPG. Berikut adalah hasil dari prosess pembuatan Level, HP, dan MP yang dipeeroleh dari perhitungan pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dengan data masukan pada Tabel \ref{tb:player_input_variable} yang kemudian menghasilkan data seperti yang ditunjukkan pada Tabel \ref{tb:player_hp_mp}.
+Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}, dimana pada bagian ini membahas tentang pembuatan level, HP dan MP pemain untuk permaian dengan genre RPG. Berikut adalah hasil dari prosess pembuatan Level, HP, dan MP yang dipeeroleh dari perhitungan pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dengan data masukan pada Tabel \ref{tb:player_input_variable} yang kemudian menghasilkan data seperti yang ditunjukkan pada Tabel \ref{tb:player_hp_mp}.
 
 \begin{longtable}{|l|l|l|}
 	\caption{Hasil Perhitungan HP dan MP}
+	\vspace{1ex}
 	\label{tb:player_hp_mp}\\
 	\hline
 	\rowcolor[HTML]{C0C0C0} 
@@ -45,26 +42,24 @@ Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats},
 \end{longtable}
 \vspace{1ex}
 
-Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP dan MP terus naik secara konstan ke atas sesuai dengan kenaikan levelnya seperti yang direpresentasikan pada Gambar \ref{fig:hp_player} dan Gambar \ref{fig:mp_player}.
+Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP dan MP terus naik secara konstan ke atas sesuai dengan kenaikan levelnya seperti yang direpresentasikan pada Gambar \ref{fig:hp_player} dan Gambar \ref{fig:mp_player}. Jika melihat Gambar \ref{fig:hp_player} dengan jumlah HP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} HP dan \textit{Next} HP. Variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:hp_player} agar membentuk pola kenaikan HP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:hp_player}. Sama seperti pada Gambar \ref{fig:hp_player}, pada Gambar \ref{fig:mp_player} dengan jumlah MP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} MP dan \textit{Next} MP. Kemudian variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:mp_player} agar membentuk pola kenaikan MP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:mp_player}.
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.45]{img/PlayerHpDistrib.png}
 	\caption{Kenaikan HP setiap levelnya.}
+	\vspace{-2ex}
 	\label{fig:hp_player}
 \end{figure}
-
-Jika melihat Gambar \ref{fig:hp_player} dengan jumlah HP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} HP dan \textit{Next} HP. Variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:hp_player} agar membentuk pola kenaikan HP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:hp_player}. Sama seperti pada Gambar \ref{fig:hp_player}, pada Gambar \ref{fig:mp_player} dengan jumlah MP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} MP dan \textit{Next} MP. Kemudian variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:mp_player} agar membentuk pola kenaikan MP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:mp_player}.
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.45]{img/PlayerMpDistrib.png}
 	\caption{Kenaikan MP setiap levelnya.}
+	\vspace{-2ex}
 	\label{fig:mp_player}
 \end{figure}
-\vspace{1ex}
-
 
 \subsection{Pengujian Distibusi Stats Pemain}
-\label{sec:sub_sec4_eval_player_stats}
+\label{sec:sub_sec4_eval_single-character_stats}
 \vspace{1ex}
 
 Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian dengan genre \textit{turn-based} RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, melalui persamaan \ref{eq:KNN_bayes_player_stats} dan beberapa persamaan yang digunakan sebelumnya pada Sub-bab \ref{sec:sub_sec3_stat_pemain} dihasilkan data seperti yang ditunjukan pada Tabel \ref{tb:player_battle_stats}, dan bila divisualisasikan hasilnya akan tampak seperti pada Gambar \ref{fig:stats_player}.
@@ -97,8 +92,19 @@ Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \re
 Pada Tabel \ref{tb:player_battle_stats} adalah data \textit{stats} dari pemain yang dihasilakn melalui penambahan nilai pada \textit{stats} secara acak pada setiap \textit{stats}. Seperti yang dijelaskan pada persaamaan \ref{eq:nbayes_class}, \ref{eq:KNN_distance_stats}, dan persamaan \ref{eq:KNN_bayes_player_stats} saat nilai \textit{stats} di tambahkan secara acak dari 1 sampai dengan 2 pada level yang berjarak antara 1 sampai dengan 100. Selanjutnya representasi dari hasil penambahan \textit{stats} tersebut yang ditunjukan melalui Gambar \ref{fig:stats_player} yang mana nilai dari setiap \textit{stats} terus naik sesuai dengan level pemain yang juga terus naik. 
 \vspace{1ex}
 
+\section{Pembuatan Stats Multi-Character untuk Pemain}
+\label{sec:sec4_eval_multi-character_player}
+\vspace{1ex}
 
-\section{Pengujian dalam Pembuatan \textit{Stats} Musuh pada Permainan dengan Genre \textit{Turn-based} RPG}
+Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian dengan genre RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya.
+\vspace{1ex}
+
+
+\subsection{Distibusi Level, HP, dan MP Pemain}
+\label{sec:sub_sec4_eval_dist_hp_mp_level_multi-character}
+\vspace{1ex}
+
+\section{Pembuatan Stats Musuh}
 \label{sec:sec4_eval_turn-based_enemy}
 \vspace{1ex}
 
@@ -369,17 +375,3 @@ Selanjutnya adalah penggambaran persebaran \textit{stats} yang disebutkan pada T
 	\label{fig:enemy_luck_distrib}
 \end{figure}
 \vspace{1ex}
-
-\section{Pengujian dalam Pembuatan \textit{Stas} Pemain untuk Permainan dengan Genre \textit{Action} RPG}
-\label{sec:sec4_eval_action_player}
-\vspace{1ex}
-
-Sama seperti pengujian yang dilakukan pada Sub-bab \ref{sec:sec4_eval_turn-based_player} yang mana langkahnya sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, hanya saja pada bagian ini membahas tentang pembuatan dan penyesuaian \textit{stats} pada permaian untuk genre \textit{action} RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec4_eval_turn-based_player} tentang \textit{turn-based} RPG, hanya saja pada bagian ini tidak memerlukan elemen yang menggambarkan kelemahan dari karakter pemain yang mana hal inilah yang disebut dengan penyesuaian. Melalui beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya.
-\vspace{1ex}
-
-
-\section{Pengujian dalam Pembuatan \textit{Stas} Musuh untuk Permainan dengan Genre \textit{Action} RPG}
-\label{sec:sec4_eval_action_enemy}
-\vspace{1ex}
-
-Sama seperti pengujian yang dilakukan pada Sub-bab \ref{sec:sec4_eval_turn-based_player} yang mana langkahnya sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, hanya saja pada bagian ini membahas tentang pembuatan dan penyesuaian \textit{stats} pada permaian untuk genre \textit{action} RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec4_eval_turn-based_player} tentang \textit{turn-based} RPG, hanya saja pada bagian ini tidak memerlukan elemen yang menggambarkan kelemahan dari karakter pemain yang mana hal inilah yang disebut dengan penyesuaian. Melalui beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya.
