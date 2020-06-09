@@ -9,11 +9,11 @@
 Permainan dengan basis \textit{Role-Playing Game} (RPG) adalah permainan yang mana pemain memerankan sebuah karakter khusus dalam sebuah cerita. Pada permainan tersebut, pemain memiliki tujuan untuk menjalankan misi dan mengikuti alur cerita dari permainan tersebut sampai selesai. Terdapat berbagai macam variasi jenis dari RPG, diantaranya adalah WRPG, JRPG, ARPG, SRPG dan MMORPG \citep{stenstrom2012}. 
 \vspace{1ex}
 
-Pada Gambar \ref{fig:rpg_turn_based} adalah representasi dari JRPG, yang mana pemain dapat memainkan satu karakter atau lebih. Karakter tersebut melakukan serangan secara bergantian atau \textit{turn-based} antara pemain atau musuh, biasanya musuh yang dilawan berupa \textit{Non-Player Character} (NPC). Bila ditarik garis besar dari jenis permainan RPG tersebut maka dapat digolongkan menjadi 2 yaitu \textit{turn-based} dan \textit{real-time}. Baru saja dijelaskan mengenai \textit{turn-based} sedang untuk \textit{real-time} adalah pertarungan antara pemain dengan musuh dilakukan secara langsung tanpa bergantian. Tipe RPG yang tergolong \textit{turn-based} adalah TRPG dan sebagian JRPG, kemudian yang termasuk ke dalam \textit{real-time} adalah WRPG, ARPG, SRPG dan sebagian JRPG.
+Pada Gambar \ref{fig:rpg_turn_based} adalah representasi dari JRPG, yang mana pemain dapat memainkan satu karakter atau lebih. Karakter tersebut melakukan serangan secara bergantian atau \textit{turn-based} antara pemain atau musuh, biasanya musuh yang dilawan berupa \textit{Non-Player Character} (NPC). Bila ditarik garis besar dari jenis permainan RPG tersebut maka dapat digolongkan menjadi 2 yaitu \textit{turn-based} dan \textit{real-time}. Baru saja dijelaskan mengenai \textit{turn-based} sedang untuk \textit{real-time} adalah pertarungan antara pemain dengan musuh dilakukan secara langsung tanpa bergantian. Tipe RPG yang tergolong \textit{turn-based} adalah TRPG dan sebagian JRPG, sedangkan yang tergolong ke dalam \textit{real-time} adalah WRPG, ARPG, SRPG, MMORPG, dan sebagian JRPG.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.42]{img/turn_based.png}
+	\includegraphics[scale=0.45]{img/turn_based.png}
 	\caption{Ilustrasi \textit{Turned-based} JRPG}
 	\label{fig:rpg_turn_based}
 \end{figure}
@@ -21,10 +21,13 @@ Pada Gambar \ref{fig:rpg_turn_based} adalah representasi dari JRPG, yang mana pe
 Pada permainan dengan genre RPG yang terdiri dari banyak karakter baik itu karakter pemain dan musuh. Di mana \textit{stats} tersebutlah yang akan menentukan jalannya pertarungan antara pemain dan musuh. Kemudian \textit{stats} juga menunjukan tingkat kesulitan dari musuh, kelemahan dari musuh, daya tahan musuh terhadap serangan dan lain-lain. Hal ini juga merupakan bagian utama dari desain permainan, yang mana nominal pada \textit{stats}, jumlah pemain dan musuh dapat menentukan beberapa faktor penting lain seperti halnya lamanya permainan dan alur cerita. 
 \vspace{1ex}
 
+Maka dari itu jenis permainan RPG dapat digolongkan juga menjadi 2 golongan lagi berdasar jumlah karakter yang dapat dimainkan oleh pemain yaitu \textit{single-character} dan \textit{multi-character}. Hal ini sangat berkaitan erat dengan penelitian ini saat dilakukannya pengujian, dalam pembuatan \textit{stats} untuk pemain harus dibedakan. Tipe RPG yang tergolong \textit{multi-character} adalah TRPG dan JRPG, sedangkan yang tergolong dalam \textit{single-character} adalah WRPG, ARPG, SRPG dan MMORPG.
+\vspace{1ex}
+
 Banyak penelitian yang mengaplikasikan berbagai bentuk algoritma dan metode untuk mempercepat pembuatan \textit{video games} sepeti halnya pengukuran tingkat kesulitan dengan menggunakan challenging rate (CR) pada permainan 2D \textit{Real Time Strategy} (RTS) \citep{Christyowidiasmoro2016}, pembuatan \textit{game engine} yang berorientasi pada \textit{multi-agent systems} \citep{Marin-Lora2020}, pembuatan level secara otomatis pada permainan secara prosedular dengan tingkat kesulitan tertentu \citep{Wu2018}, ada juga ada yang memakai metode yang dapat menghasilkan \textit{attribute space} untuk menganalisa keseimbangan dalam pertarungan \textit{single unit} pada permainan RTS \citep{Bangay2014}. Berdasarkan beberapa penelitian tersebutlah maka penelitian ini dibuat guna memudahkan desainer permainan dalam mendesain sebuah permainan dengan genre \textit{action} dan \textit{turn-based} RPG.
 \vspace{1ex}
 
-Penggunaan berbagai metode seperti $k-$NN, Distribusi Normal dan Naive bayes yang kemudian dilanjutkan dengan diperolehnya data statistik dari untuk pemain dan musuh yang siap digunakan. Kemudian dilanjutkan dengan proses validasi data statistik tersebut apakah sudah sesuai dengan apa yang direncanakan. Pada proses tersebut digunakanlah \textit{Deep Learning} dengan basis \textit{Neural Network} untuk \textit{Multiclass Classification}.
+Penggunaan berbagai metode seperti $k-$NN, Distribusi Normal dan Naive bayes yang kemudian dilanjutkan dengan diperolehnya data statistik dari untuk pemain dan musuh yang siap digunakan. Kemudian dilanjutkan dengan proses validasi data statistik tersebut apakah sudah sesuai dengan apa yang direncanakan. Pada proses tersebut digunakanlah \textit{Neural Network Multiclass Classification}.
 \vspace{1ex}
 
 \section{Rumusan Masalah}
@@ -56,7 +59,7 @@ Berdasrkan fokus permasalahan pada bagian sebelumnyaa, kemudian diambilah bebera
 
 	\item Metode yang digunakan dalam proses pembuatan data statistik pemain dan musuh diantaranya adalah $k-$NN, Distribusi Normal dan Naive Bayes.
 	
-	\item Sedangkan metode yang digunakan untuk menguji tingkat ke validitas dari data yang dibuat tadi digunakanlah metode \textit{deep learning} berbasis \textit{Neural Network} dengan \textit{Multiclass Classification}.
+	\item Sedangkan metode yang digunakan untuk menguji tingkat ke validitas data yang dibuat, maka digunakanlah metode \textit{Neural Network Multiclass Classification}.
 \end{enumerate}
 
 \section{Kontribusi}

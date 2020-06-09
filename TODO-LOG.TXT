@@ -1,29 +1,11 @@
-VALIDASI PENGATURAN STATS OTOMATIS PADA PERMAINAN ROLE-PLAYING GAME (RPG) 
-BERBASIS K-NN DAN NAIVE BAYES DENGAN DEEP LEARNING MULTICLASS CLASSIFICATION
+VALIDASI PENGATURAN STATS OTOMATIS PADA PERMAINAN ROLE-PLAYING GAME (RPG) BERBASIS K-NN DAN NAIVE BAYES DENGAN DEEP LEARNING MULTICLASS CLASSIFICATION
 
 
-Notes for Book Documentation:
-+ Tambahkan dokumentasi untuk include cover format ".pdf" dengan versi max 1.5
-+ Tambahkan dokumentasi untuk update data tabel dengan menggunakan website "https://www.tablesgenerator.com/"
-  + Tabel pada buku ini disimpan pada folder:
-    - "tables" untuk keseluruhan data penelitian
-    - "lainnya/tables" untuk format tanda tangan pengesahan
+#
+# PENGECEKAN CITASI
+#
 
-
-Trivial things to do:
-+ Format Buku (v)
-  - Benarkan antara "Halaman sengaja dikosongkan" dan halaman kosong setelah cover (v)
-+ Nomenklatur perbaiki
-  - Perjelas variabel huruf M, N, L, i, j dan k pada persamaan dan perjelas pada paragraf isi
-+ Tambahkan inflict damage, jika sempat (Edit Program)
-+ Tambahkan dynamic HP/MP player assign with K-NN, jika sempat (Edit Program)
-
-
-
-
-[LOG CITASI KE BAB 3 dan BAB 4]
-
-GAME DESIGN YANG SUDAH TERCITASI KE BAB 3:
+[GAME DESIGN YANG SUDAH TERCITASI KE BAB 3]
 
 2.2.1 Penempatan Peluang pada Permainan: Pada dasarnya permainan yang memasukan unsur keberuntungan dapat dimainkan dan dimenangkan oleh khalayak luas. (v)
 
@@ -83,7 +65,7 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
 - Melihat nilai MP pada setiap karakter musuh dengan tipe tersebut sudah tergolong tinggi.
 
 
-ALGORITMA YANG SUDAH TERCITASI KE BAB 3:
+[ALGORITMA YANG SUDAH TERCITASI KE BAB 3]
 
 2.3.1 K-Nearest Neighbour (v)
 - Klasifikasi
@@ -111,6 +93,26 @@ ALGORITMA YANG SUDAH TERCITASI KE BAB 3:
 - Prediksi dengan Model Gaussian Naive Bayes
 
 
+#
+# TODO LIST PENGERJAAN
+#
+
+
+[NOTES FOR BOOK DOCUMENTATION]
++ Tambahkan dokumentasi untuk include cover format ".pdf" dengan versi max 1.5
++ Tambahkan dokumentasi untuk update data tabel dengan menggunakan website "https://www.tablesgenerator.com/"
+  + Tabel pada buku ini disimpan pada folder:
+    - "tables" untuk keseluruhan data penelitian
+    - "lainnya/tables" untuk format tanda tangan pengesahan
+
+
+[TRIVIAL THINGS TODO]
++ Format Buku (v)
+  - Benarkan antara "Halaman sengaja dikosongkan" dan halaman kosong setelah cover (v)
++ Nomenklatur perbaiki
+  - Perjelas variabel huruf M, N, L, i, j dan k pada persamaan dan perjelas pada paragraf isi
++ Tambahkan inflict damage, jika sempat (Edit Program)
++ Tambahkan dynamic HP/MP player assign with K-NN, jika sempat (Edit Program)
 
 
 [BAB 2]
@@ -119,7 +121,11 @@ ALGORITMA YANG SUDAH TERCITASI KE BAB 3:
 + Naive Bayes -> Random enemy level and stats distribution -> Threshold (v)
   - Tambahkan citation
   - Tambahkan marjinal probability
-+ Turn-Based RPG -> Baca buku tesis dari chalmers university (v)
++ RPG
+  - Penjelasan Permainan RPG (v)
+  - Tipe Permainan RPG -> Baca buku tesis dari chalmers university (v)
+  - Penjelasan Turn-Based RPG (v)
+  - Penjelasan Real-Time RPG
   - Stats player -> Level balancing -> Nearest Max Level Threshold
   - Stats enemy -> Random enemy level and stats distribution -> Threshold number of enemy
   - Player and Enemy skill
@@ -151,29 +157,62 @@ ALGORITMA YANG SUDAH TERCITASI KE BAB 3:
 
 
 [BAB 4]
-+ Stats pemain untuk genre permainan turn-based RPG -> Referensikan dengan Persona 4 -> Pada BAB 2 Sub-bab 2.4
-  - Distibusi level, HP, dan MP pemain (v)
-  - Distribusi elemen dan kelemahan pemain (v)
-  - Distibusi stats pemain (v)
++ Pembuatan Stats Single-Character untuk Pemain -> Referensikan dengan WRPG, ARPG, SRPG, dan MMORPG -> Pada BAB 2 Sub-bab 2.4
+  + Distibusi level, HP, dan MP pemain (v)
+  	- Tabel (v)
+  	- Pembahasan Hasil
+	- Graph
+  + Distribusi Elemen dan Kelemahan Pemain -> Referensikan dengan WRPG dan MMORPG -> Mana yang pakai dan tidak (v)
+	- Tabel
+  	- Pembahasan Hasil
+	- Graph
+  - Distibusi Stats Pemain
+	- Tabel
+  	- Pembahasan Hasil
+	- Graph
 
-+ Stats musuh untuk genre permainan turn-based RPG -> Referensikan dengan Persona 4 -> Pada BAB 2 Sub-bab 2.4
-  - Distibusi level musuh (v)
-  - Distribusi tipe musuh (v)
-  - Distibusi elemen dan kelemahan musuh (v)
-  - Distribusi HP, MP, dan stats musuh
++ Pembuatan Stats Multi-Character untuk Pemain -> Referensikan dengan TRPG dan JRPG -> Pada BAB 2 Sub-bab 2.4
+  + Distibusi level, HP, dan MP pemain (v)
+  	- Tabel
+  	- Pembahasan Hasil
+	- Graph
+  + Distribusi Elemen dan Kelemahan Pemain -> Referensikan dengan JRPG dan TRPG -> Mana yang pakai dan tidak (v)
+	- Tabel
+  	- Pembahasan Hasil
+	- Graph
+  - Distibusi Stats Pemain
+	- Tabel
+  	- Pembahasan Hasil
+	- Graph
 
-+ Stats pemain untuk genre permainan action RPG -> Referensikan dengan Witcher 3 -> Pada BAB 2 Sub-bab 2.4
-  - Distibusi level, HP, dan MP pemain
-  - Distribusi elemen dan kelemahan pemain
-  - Distibusi stats pemain
++ Pembuatan Stats Musuh -> Pada BAB 2 Sub-bab 2.4
+  + Distibusi level musuh
+  	- Tabel
+  	- Pembahasan Hasil
+	- Graph
+  + Distribusi Tipe Musuh
+	- Tabel
+  	- Pembahasan Hasil
+	- Graph
+  + Distribusi Elemen dan Kelemahan Pemain -> Mana yang pakai dan tidak (v)
+	- Tabel
+  	- Pembahasan Hasil
+	- Graph
+  - Distribusi HP, MP, dan Stats musuh
+	- Tabel
+  	- Pembahasan Hasil
+	- Graph
 
-+ Stats musuh untuk genre permainan action RPG -> Referensikan dengan Witcher 3 -> Pada BAB 2 Sub-bab 2.4
-  - Distibusi level musuh
-  - Distribusi tipe musuh
-  - Distribusi HP dan stats musuh
-  
+
 [BAB 5]
-+ Simpulkan saja
++ Simpulkan dari yang Dikerjakan!
++ Sarankan apa yang Nanti Perlu Di kerjakan!
+
+
+#
+# CATATAN RANDOM PENGERJAAN BUKU
+#
+
 
 [Stats Visualization Color]
 + Strength  -> Merah

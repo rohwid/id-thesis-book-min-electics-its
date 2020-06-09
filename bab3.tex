@@ -1,4 +1,4 @@
-\chapter{METODOLOGI}
+\chapter{METODOLOGI PENELITIAN}
 \label{chap:chap3_metodologi}
 
 \section*{}
@@ -12,7 +12,7 @@ Pada penelitian ini nantinya akan terdiri dari lima langkah utama yaitu analisa 
 \end{figure}
 \vspace{1ex}
 
-Tujuan umum dari penelitian ini adalah membuat \textit{stats} atau statistik untuk pemain dan musuh, sehingga dalam pembuatan permaian. Tujuan khusus dan fokus pada penelitian ini adalah untuk membuat data statistik untuk karakter pemain dan musuh dengan menggunakan metode $k-$NN dan \textit{Naive Bayes} yang kemudian dilakukan validasi dengan menggunakan metode \textit{Deep Learning} (\textit{Multiclass Classification}).
+Tujuan umum dari penelitian ini adalah membuat \textit{stats} atau statistik untuk pemain dan musuh, sehingga dalam pembuatan permaian. Tujuan khusus dan fokus pada penelitian ini adalah untuk membuat data statistik untuk karakter pemain dan musuh dengan menggunakan metode $k-$NN dan \textit{Naive Bayes} yang kemudian dilakukan validasi dengan menggunakan metode \textit{Neural Network} \textit{Multiclass Classification}.
 \vspace{1ex}
 
 \section{Analisa Komponen Permainan RPG}
@@ -22,7 +22,7 @@ Tujuan umum dari penelitian ini adalah membuat \textit{stats} atau statistik unt
 Pada bagian ini terdapat beberapa langkah yang akan menjelaskan penyusunan skenario pertarungan pada permainan RPG \textit{turn-based}. Pertama yang akan dilakukan adalah pembuatan skenario pertarungan pada permainan \textit{turn-based} RPG. Dari skenario tersebut tentunya harus ada hubungan dengan cerita dari permainan, apa saja parameter yang berpengaruh dari cerita terhadap skenario. Dalam proses analisa ini cukup dilakukan pada RPG yang tergolong \textit{turn-based}, karena hal tersebut dianggap paling ideal. Saat karakter pemain dan musuh saling serang secara bergantian.
 \vspace{1ex}
 
-Di lanjutkan dengan desain level dan \textit{stats} dari pemain, selain itu digunakannya algoritma $k-$\textit{Nearest Neighbor} ($k-$NN) untuk mempercepat proses pembuatannya. Kemudian dilanjutkan dengan desain level dan \textit{stats} musuh yang juga dibuat secara otomatis dengan algoritma yang sama dengan pemain, namun tetap dipolakan oleh \textit{gaussian naive bayes} atau distribusi normal. 
+Di lanjutkan dengan desain level dan \textit{stats} dari pemain, selain itu digunakannya algoritma $k-$NN (\textit{Nearest Neighbor}) untuk mempercepat proses pembuatannya. Kemudian dilanjutkan dengan desain level dan \textit{stats} musuh yang juga dibuat secara otomatis dengan algoritma yang sama dengan pemain, namun tetap dipolakan oleh \textit{gaussian naive bayes} atau distribusi normal. 
 \vspace{1ex}
 
 Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk kelebihan atau kekurangan pada masing-masing karakter. Pembagian elemen pada karakter yang dapat dimainkan oleh pemain dilakukan sesuai dengan cerita, sedangkan pembagian elemen pada musuh disebar secara acak berdasarkan \textit{stats} yang telah dibuat. Hal ini berkaitan erat dengan penjelasan pada Sub-bab \ref{sec:sub_sec2_kesempatan} tentang meningkatnya keberagaman, yang dibuktikan dengan banyaknya variasi musuh berikut dengan kelemahan dan kelebihannya.
@@ -33,7 +33,7 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 	\label{sec:sub_sec3_design_skenario}
 	\vspace{1ex}
 	
-	Di umpamakan jumlah karakter yang rencananya akan digunakan berjumlah tunggal (WRPG, ARPG, SRPG, MMORPG) sampai tiga karakter atau jamak (TRPG dan JRPG) bergantung dengan alur cerita dari permainan dan jumlah musuh juga dimisalkan berjumlah antara satu sampai dengan enam, bergantung kepada tingkat kesulitannya seperti pada Gambar \ref{fig:battle_player}. 
+	Di umpamakan jumlah karakter yang rencananya akan digunakan berjumlah tunggal atau \textit{single-character} (WRPG, ARPG, SRPG, dan MMORPG) sampai tiga karakter atau jamak atau \textit{multi-character} (TRPG dan JRPG) bergantung dengan alur cerita dari permainan dan jumlah musuh juga dimisalkan berjumlah antara satu sampai dengan enam, bergantung kepada tingkat kesulitannya seperti pada Gambar \ref{fig:battle_player}. 
 	\vspace{1ex}
 	
 	\begin{figure} [!h] \centering
@@ -111,7 +111,7 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 		\vspace{1ex}
 		
 		\begin{figure} [!h] \centering
-			\includegraphics[scale=0.60]{img/efektifitas.png}
+			\includegraphics[scale=0.62]{img/efektifitas.png}
 			\caption{Pengaruh elemen pada efektifitas serangan.}
 			\label{fig:efektifitas}
 		\end{figure}
@@ -345,12 +345,17 @@ Pada bagian selanjutnya adalah pembahasan mengenai pembagian \textit{stats} jika
 Pada bagian ini akan dibahas tentang pembagian \textit{stats} dengan beracuan pada Tabel \ref{tb:player_input_variable} dengan variabel \textit{List Stats Name} yang berisi nama atau info \textit{stats} dari pemain yang akan digunakan. Kemudian diikuti dengan variabel \textit{Max Stats Value} yang berisi nilai maksimum \textit{stats} yang akan dihasilkan. Pada tahap ini digunakannya metode $k-$Nearest Neighbor atau $k-$NN seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec2_knn} dan Naive Bayes yang juga sudah dijelaskan pada Sub-bab \ref{sec:sub_sec2_bayes}. 
 \vspace{1ex}
 
-Pada persamaan \ref{eq:KNN_distance_metrics} yang kemudian disesuaikan dengan pertambahan nilai \textit{Stats to Assign} dari Tabel \ref{tb:player_input_variable}, yang mana nilai tersebut ditambahkan secara acak antara 2 dan 1 dengan perhitungan \textit{class probability} pada persamaan \ref{eq:nbayes_class} yang disesuaikan menjadi persamaan \ref{eq:nbayes_class_stats}. Hasil proses acak tersebut juga harus dibatasi jumlahnya dengan persamaan \ref{eq:KNN_distance_stats}. Maka hasil dari proses acak pada persamaan tersebut akan sangat menentukan perhitungan dari persamaan \ref{eq:KNN_bayes_player_stats}.
+Pada persamaan \ref{eq:KNN_distance_metrics} yang kemudian disesuaikan dengan pertambahan nilai \textit{Stats to Assign} dari Tabel \ref{tb:player_input_variable}, yang mana nilai tersebut ditambahkan secara acak antara 2 dan 1 dengan perhitungan \textit{class probability} pada persamaan \ref{eq:nbayes_class} yang disesuaikan menjadi persamaan \ref{eq:nbayes_class_stats_a} dan \ref{eq:nbayes_class_stats_b}. Hasil proses acak tersebut juga harus dibatasi jumlahnya dengan persamaan \ref{eq:KNN_distance_stats}. Maka hasil dari proses acak pada persamaan tersebut akan sangat menentukan perhitungan dari persamaan \ref{eq:KNN_bayes_player_stats}.
 \vspace{1ex}
 
-\begin{equation}\label{eq:nbayes_class_stats}
+\begin{equation}\label{eq:nbayes_class_stats_a}
 \begin{split}
-P(C_{St = 1}) = \frac{C_{St = 1}}{(C_{St = 1}\ +\ C_{St = 2})} \\
+P(C_{St = 1}) = \frac{C_{St = 1}}{(C_{St = 1}\ +\ C_{St = 2})}
+\end{split}
+\end{equation}
+
+\begin{equation}\label{eq:nbayes_class_stats_b}
+\begin{split}
 P(C_{St = 2}) = \frac{C_{St = 2}}{(C_{St = 1}\ +\ C_{St = 2})}
 \end{split}
 \end{equation}
@@ -371,7 +376,7 @@ MaxSt = \left\{\begin{matrix}
 \end{split}
 \end{equation}
 
-Pada persamaan \ref{eq:nbayes_class}, variabel $P(C_{St = 1})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 1 dan $P(C_{St = 2})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 2, kemudian $C_{St = 1}$ adalah jumlah angka satu dan $C_{St = 2}$ adalah jumlah angka satu pada \textit{Stats to Assign}. Setiap stats hasil pengacakan tentunya juga akan dibatasi jumlahnya dengan melakukan \textit{checking} pada maksimum stats, hal tersebut dijelaskan pada persamaan \ref{eq:KNN_distance_stats} yang mana $x$ adalah maksimum stats, $D$ adalah maksimum stats dan $p$ adalah stats saat ini. Kemudian nilai $MaxSt$ pada persamaan \ref{eq:KNN_bayes_player_stats} adalah nilai maksimum stats yang ingin dicapai dengan jumlah $St_{(n)}$ yang dihitung melalui persamaan \ref{eq:KNN_distance_stats} dan \ref{eq:nbayes_class_stats}.
+Pada persamaan \ref{eq:nbayes_class}, variabel $P(C_{St = 1})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 1 dan $P(C_{St = 2})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 2, kemudian $C_{St = 1}$ adalah jumlah angka satu dan $C_{St = 2}$ adalah jumlah angka satu pada \textit{Stats to Assign}. Setiap stats hasil pengacakan tentunya juga akan dibatasi jumlahnya dengan melakukan \textit{checking} pada maksimum stats, hal tersebut dijelaskan pada persamaan \ref{eq:KNN_distance_stats} yang mana $x$ adalah maksimum stats, $D$ adalah maksimum stats dan $p$ adalah stats saat ini. Kemudian nilai $MaxSt$ pada persamaan \ref{eq:KNN_bayes_player_stats} adalah nilai maksimum stats yang ingin dicapai dengan jumlah $St_{(n)}$ yang dihitung oleh persamaan \ref{eq:nbayes_class_stats_a}, \ref{eq:nbayes_class_stats_b} dan \ref{eq:KNN_distance_stats}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:nbayes_class_stats_1}

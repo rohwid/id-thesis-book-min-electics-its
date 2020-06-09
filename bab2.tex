@@ -2,7 +2,7 @@
 \label{chap:chap2_kajian_pustaka}
 
 \section*{}
-Demi mendukung penelitian ini, dibutuhkan beberapa teori penunjang sebagai bahan acuan dan referensi. Berikut ini akan dipaparkan teori dasar meliputi komponen-komponen desain permainan, \textit{machine learning} yang akan digunakan, dan penjelasan genre permainan RPG (\textit{Role-Playing Game}).
+Demi mendukung penelitian ini, dibutuhkan beberapa teori penunjang sebagai bahan acuan dan referensi. Berikut adalah paparan teori dasar meliputi komponen desain permainan, \textit{machine learning}, dan penjelasan permainan genre RPG (\textit{Role-Playing Game}).
 \vspace{1ex}
 
 \section{Kajian penelitian terkait}
@@ -64,10 +64,7 @@ Desain permainan adalah proses menciptakan konten dan aturan permainan. Desain p
 	
 		\item \textbf{Meningkatkan Pengambilan Keputusan}
 	
-		Inti dari sebagian besar permainan adalah keputusan yang dibuat para pemain. Dalam permainan strategi, pemain memiliki informasi lengkap dan tahu hasil pasti dari setiap gerakan yang mereka lakukan. Karena semua variabel diketahui, beberapa keputusan menjadi tidak terlalu menarik, jika ada kesempatan untuk membunuh ratu lawan pada permainan catur secara cuma-cuma tanpa ada yang perlu dikorbankan, hal tersebut bukan merupakan keputusan yang menarik karena adanya jawaban ``benar" yang jelas.
-		\vspace{1ex}
-	
-		Ketika elemen acak ada dalam permainan, tidak ada lagi strategi yang selalu benar. Beberapa gerakan mungkin memiliki peluang kegagalan yang tinggi tetapi juga potensi hasil yang besar, hal tersebut menjadikannya sebuah pilihan berisiko, gerakan lainnya mungkin aman tetapi menghasilkan sedikit keuntungan. Hal tersebut menjadikan pemain akan melakukan analisis gerakan dengan cara yang berbeda berikut risiko dan keutungan yang akan didapat, kemudian tidak lupa mempertimbangkan posisi pemain tersebut dalam permainan atau langkah selanjutnya.
+		Inti dari sebagian besar permainan adalah keputusan yang dibuat para pemain. Dalam permainan strategi, pemain memiliki informasi lengkap dan tahu hasil pasti dari setiap gerakan yang mereka lakukan. Karena semua variabel diketahui, beberapa keputusan menjadi tidak terlalu menarik, jika ada kesempatan untuk membunuh ratu lawan pada permainan catur secara cuma-cuma tanpa ada yang perlu dikorbankan, hal tersebut bukan merupakan keputusan yang menarik karena adanya jawaban ``benar" yang jelas. Ketika elemen acak ada dalam permainan, tidak ada lagi strategi yang selalu benar. Beberapa gerakan mungkin memiliki peluang kegagalan yang tinggi tetapi juga potensi hasil yang besar, hal tersebut menjadikannya sebuah pilihan berisiko, gerakan lainnya mungkin aman tetapi menghasilkan sedikit keuntungan. Hal tersebut menjadikan pemain akan melakukan analisis gerakan dengan cara yang berbeda berikut risiko dan keutungan yang akan didapat, kemudian tidak lupa mempertimbangkan posisi pemain tersebut dalam permainan atau langkah selanjutnya.
 		\vspace{1ex}
 		
 	\end{enumerate}
@@ -76,7 +73,10 @@ Desain permainan adalah proses menciptakan konten dan aturan permainan. Desain p
 	\label{sec:sub_sec2_strategi}
 	\vspace{1ex}
 	
-	Strategi adalah salah satu kekuatan yang dapat dilakukan oleh para pemain. Karena hal tersebutlah yang membuat para pemain tetap bermain. Pemain bermain \textit{game} dan menikmati setiap prosesnya karena mereka berusaha untuk menguasai pola dalamnya \citep{Koster2013}. Saat pola berhasil dikuasai, maka selanjutnya pemain akan terus bersenang-senang. Mereka juga membentuk strategi berdasarkan pemahaman mereka tentang dinamika permainan. Penguasaan, pengembangan strategi, hal tersebut terjadi bukan karena ketidak sengajaan. Hal ini adalah tujuan dari desainer permainan atas penggunaan mekanika untuk menciptakan strategi dan taktik dalam permainan yang mereka buat \cite{Brathwaite2009}. Berikut beberapa poin penting pada penelitian ini yang mengacu tentang pentingnya Elemen Keterampilan Strategi.
+	Strategi adalah salah satu kekuatan yang dapat dilakukan oleh para pemain. Karena hal tersebutlah yang membuat para pemain tetap bermain. Pemain bermain \textit{game} dan menikmati setiap prosesnya karena mereka berusaha untuk menguasai pola dalamnya \citep{Koster2013}. Saat pola berhasil dikuasai, maka selanjutnya pemain akan terus bersenang-senang. Mereka juga membentuk strategi berdasarkan pemahaman mereka tentang dinamika permainan. Penguasaan, pengembangan strategi, hal tersebut terjadi bukan karena ketidak sengajaan. 
+	\vspace{1ex}
+	
+	Hal ini adalah tujuan dari desainer permainan atas penggunaan mekanika untuk menciptakan strategi dan taktik dalam permainan yang mereka buat \cite{Brathwaite2009}. Berikut beberapa poin penting pada penelitian ini yang mengacu tentang pentingnya Elemen Keterampilan Strategi.
 	\vspace{1ex}
 
 	\begin{enumerate}[label=\textbf{\alph*).}]
@@ -212,7 +212,7 @@ Pada penelitian ini akan digunakan beberapa algoritma \textit{machine learning} 
 		
 		\item \textbf{Cross-Validation}
 		
-		\textit{Cross-validation} adalah teknik yang dapat digunakan untuk mendapatkan estimasi model parameter yang tidak diketahui. Pembahasan ini bertujuan untuk menerapan teknik dalam memperkirakan $k$. 
+		\textit{Cross-validation} adalah teknik yang dapat digunakan untuk mendapatkan estimasi model parameter yang tidak diketahui. Pembahasan ini bertujuan untuk menerapan teknik dalam memperkirakan nilai $k$. 
 		\vspace{1ex}
 		
 		Gagasan umum dari metode ini adalah untuk membagi sampel data ke dalam sejumlah kelompok atau \textit{cluster} (diambil secara acak, \textit{sub-samples} atau bagian-bagian yang terpisah). Untuk nilai tetap pada $k$, digunakanlah $k-$NN untuk membuat prediksi pada bagian ke $v$ (mislahnya dengan penggunaan bagian $v-1$ sebagai contoh) dan kemudian digunakan untuk evaluasi kesalahan. Metode paling umum untuk analsia kesalahan pada regresi adalah dengan jumlah kuadrat atau \textit{sum of square} dan pada klasifikasi hal tersebut didefinisikan sebagai akurasi atau tingkat kebenaran klasifikasi.
@@ -570,7 +570,7 @@ Pada dasarnya permainan dengan genre RPG (\textit{Role-Playing Game}) khususnya 
 	
 	\begin{figure} [!h] \centering
 		\includegraphics[scale=0.18]{img/skyrim.jpg}
-		\caption{Contoh WRPG.}
+		\caption{Contoh kustomisasi karakter pada WRPG.}
 		\label{fig:skyrim}
 	\end{figure}
 
@@ -587,7 +587,7 @@ Pada dasarnya permainan dengan genre RPG (\textit{Role-Playing Game}) khususnya 
 	\vspace{1ex}
 	
 	\begin{figure} [!h] \centering
-		\includegraphics[scale=0.45]{img/dds.jpg}
+		\includegraphics[scale=0.48]{img/dds.jpg}
 		\caption{Contoh kustomisasi \textit{stats} pada JRPG.}
 		\label{fig:dds}
 	\end{figure}
