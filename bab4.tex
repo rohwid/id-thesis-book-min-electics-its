@@ -4,7 +4,7 @@
 
 
 \section*{}
-Inti dari BAB \ref{chap:chap4_eval} pada penelitian ini adalah pengujian dengan berbagai parameter \textit{stats} yang dihasilkan untuk pemain dan musuh. Jika pada BAB \ref{chap:chap3_metodologi} dalam proses analisan desain permainan RPG, permainan RPG digolongkan berdasarkan pertarungan menjadi \textit{real-time} dan \textit{turn-based}. 
+Inti dari BAB \ref{chap:chap4_eval} pada penelitian ini adalah pengujian dengan berbagai parameter \textit{stats} yang dihasilkan untuk pemain dan musuh. Jika pada BAB \ref{chap:chap3_metodologi} dalam proses analisan desain permainan RPG, permainan RPG digolongkan berdasarkan pertarungan menjadi \textit{real-time} dan \textit{turn-based}.
 \vspace{1ex}
 
 Kemudian jika melihat jumlah karakter yang dimainkan oleh pemain maka permainan RPG dapat digolongkan menjadi \textit{single-character} dan \textit{multi-character}. Hal ini diperlukan dalam pengujian pembuatan \textit{stats} yang dihasilkan, permainan RPG yang termasuk \textit{single-character} adalah WRPG, ARPG, SRPG dan MMORPG, sedangkan yang termasuk \textit{multi-character} adalah TRPG dan JRPG. Sedangkan untuk karakter musuh dianggap sama, hanya saja dalam beberapa permainan bergenre RPG pemain dan musuh tidak menggunakan sistem elemen sebagai kelemahan. Biasanya pada permainan RPG dengan genre ARPG, SRPG dan sebagian WRPG, sedangkan untuk TRPG dan JRPG hampir sebagian besar memakai sistem elemen sebagai kelemahan dalam sistem pertarungan.
@@ -62,18 +62,36 @@ Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP da
 \label{sec:sub_sec4_eval_dist_element_single-character}
 \vspace{1ex}
 
-Pada bagian ini hanya akan diulas saja tentang distribusi elemen dan kelemahan pemain, yang sejatinya didefinisikan secara manual pada program.
-\vspace{1ex}
+Pada bagian ini hanya akan mengulas tentang distribusi elemen dan kelemahan pemain pada Sub-Bab \ref{sec:sub_sec3_list_element_player}, yang sejatinya didefinisikan secara manual pada program yang dibuat dan dijelaskan pada Sub-Bab \ref{sec:sec3_player_stats}. Di mana elemen pada permainan RPG bersifat opsional, tidak dibatasi apakah permainan RPG tersebut tergolong ke dalam \textit{turn-base} atau \textit{real-time}, tergolong \textit{singe-character} atau \textit{multi-character}. Hal tersebut murni bergantung pada pengembang dan desainer permainan. Maka dari itu melalui program yang dibuat pada Sub-Bab \ref{sec:sec3_player_stats} hal ini diwujudkan dalam bentuk opsi yang dapat digunakan atau ditinggalkan, sesuai kebutuhan pengembang atau desainer permainan. Bila opsi distribusi elemen digunakan maka hasilnya akan tampak seperti pada Tabel \ref{tb:player_element}, dengan asumsi tidak adanya perubahan elemen dari pemain dalam permainan.
+
+\begin{longtable}{|l|l|l|l|l|l|}
+	\caption{Distribusi elemen pada karakter pemain}
+	\vspace{1ex}
+	\label{tb:player_element}\\
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	\multicolumn{1}{|c|}{\cellcolor[HTML]{C0C0C0}\textbf{Levels}} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\textbf{Water}} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\textbf{Wind}} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\textbf{Earth}} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\textbf{Fire}} \\ \hline
+	1 & 2 & 0 & 0 & 1 \\ \hline
+	2 & 2 & 0 & 0 & 1 \\ \hline
+	3 & 2 & 0 & 0 & 1 \\ \hline
+	4 & 2 & 0 & 0 & 1 \\ \hline
+	5 & 2 & 0 & 0 & 1 \\ \hline
+	6 & 2 & 0 & 0 & 1 \\ \hline
+	7 & 2 & 0 & 0 & 1 \\ \hline
+	... & ... & ... & ... & ... \\ \hline
+	\textbf{100} & \textbf{2} & \textbf{0} & \textbf{0} & \textbf{1} \\ \hline
+\end{longtable}
 
 \subsection{Pengujian Distibusi Stats Pemain}
 \label{sec:sub_sec4_eval_single-character_stats}
 \vspace{1ex}
 
-Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian dengan genre \textit{turn-based} RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, melalui persamaan \ref{eq:KNN_bayes_player_stats} dan beberapa persamaan yang digunakan sebelumnya pada Sub-bab \ref{sec:sub_sec3_stat_pemain} dihasilkan data seperti yang ditunjukan pada Tabel \ref{tb:player_battle_stats}, dan bila divisualisasikan hasilnya akan tampak seperti pada Gambar \ref{fig:stats_player}.
+Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, melalui persamaan \ref{eq:KNN_bayes_player_stats} dan beberapa persamaan yang digunakan sebelumnya pada Sub-bab \ref{sec:sub_sec3_stat_pemain} dihasilkan data seperti yang ditunjukan pada Tabel \ref{tb:player_battle_stats}.
 \vspace{-1ex}
 
 \begin{longtable}{|l|l|l|l|l|l|}
-	\caption{Sampel hasil perhitungan dan distribusi stats dengan $k-$NN}
+	\caption{Distribusi stats pada karakter pemain}
+	\vspace{1ex}
 	\label{tb:player_battle_stats}\\
 	\hline
 	\rowcolor[HTML]{C0C0C0} 
@@ -85,10 +103,13 @@ Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \re
 	5 & 1 & 1 & 0 & 0 & 0 \\ \hline
 	6 & 1 & 1 & 0 & 2 & 1 \\ \hline
 	7 & 0 & 0 & 0 & 0 & 1 \\ \hline
-	8 & 1 & 0 & 0 & 0 & 0 \\ \hline
 	... & ... & ... & ... & ... & ... \\ \hline
 	\textbf{100} & \textbf{1} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{0} \\ \hline
 \end{longtable}
+\vspace{1ex}
+
+Pada Tabel \ref{tb:player_battle_stats} adalah data \textit{stats} dari pemain yang dihasilakn melalui penambahan nilai pada \textit{stats} secara acak pada setiap \textit{stats}. Seperti yang dijelaskan pada persaamaan \ref{eq:nbayes_class}, \ref{eq:KNN_distance_stats}, dan persamaan \ref{eq:KNN_bayes_player_stats} saat nilai \textit{stats} di tambahkan secara acak dari 1 sampai dengan 2 pada level yang berjarak antara 1 sampai dengan 100. Selanjutnya representasi dari hasil penambahan \textit{stats} tersebut yang ditunjukan melalui Gambar \ref{fig:stats_player} yang mana nilai dari setiap \textit{stats} terus naik sesuai dengan level pemain yang juga terus naik. 
+\vspace{1ex}
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.50]{img/PlayerStatsDistrib.png}
@@ -96,19 +117,90 @@ Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \re
 	\label{fig:stats_player}
 \end{figure}
 
-Pada Tabel \ref{tb:player_battle_stats} adalah data \textit{stats} dari pemain yang dihasilakn melalui penambahan nilai pada \textit{stats} secara acak pada setiap \textit{stats}. Seperti yang dijelaskan pada persaamaan \ref{eq:nbayes_class}, \ref{eq:KNN_distance_stats}, dan persamaan \ref{eq:KNN_bayes_player_stats} saat nilai \textit{stats} di tambahkan secara acak dari 1 sampai dengan 2 pada level yang berjarak antara 1 sampai dengan 100. Selanjutnya representasi dari hasil penambahan \textit{stats} tersebut yang ditunjukan melalui Gambar \ref{fig:stats_player} yang mana nilai dari setiap \textit{stats} terus naik sesuai dengan level pemain yang juga terus naik. 
-\vspace{1ex}
-
 \section{Pembuatan Stats Multi-Character untuk Pemain}
 \label{sec:sec4_eval_multi-character_player}
 \vspace{1ex}
 
-Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian dengan genre RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya. Maksud dari Multi-Character disini adalah pemain dapat menjalankan 
-\vspace{1ex}
+Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian dengan genre RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya. Maksud dari Multi-Character disini adalah pemain dapat menjalankan beberapa karakter sekaligus, menjalankan dengan mode \textit{turn-based} atau \textit{switch} antar karakter seperti yang dijelaskan pada Sub-Bab \ref{sec:sub_sec2_jrpg}. Maka dari itu dibuatlah Tabel masukan baru pada Tabel \ref{tb:player_input_variable_eval_1}, \ref{tb:player_input_variable_eval_2}, dan Tabel \ref{tb:player_input_variable_eval_3} yang mirip seperti Tabel \ref{tb:player_input_variable}. Hal ini bertujuan untuk membandingkan perbedaan \textit{stats} yang dihasilkan untuk tiga karakter pemain.
+\vspace{-1ex}
 
+\begin{longtable}{|l|l|}
+	\caption{Data masukan untuk pembuatan \textit{stats} pemain 1.}
+	\vspace{1ex}
+	\label{tb:player_input_variable_eval_1}\\
+	\hline
+	\rowcolor[HTML]{9B9B9B} 
+	\multicolumn{1}{|c|}{\cellcolor[HTML]{9B9B9B}\textbf{Variabel}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{Input}} \\ \hline
+	\textit{Max} Level & 100 \\ \hline
+	\textit{Start} Level & 1 \\ \hline
+	\textit{Start} HP & 159 \\ \hline
+	\textit{Next} HP & 163 \\ \hline
+	\textit{Start} MP & 89 \\ \hline
+	\textit{Next} MP & 93 \\ \hline
+	\textit{List Element} & {[} `Phys', `Water', `Wind', `Earth', `Fire' {]} \\ \hline
+	\textit{List Weaknesess} & {[} 1, 2, 1, 1, 0 {]} \\ \hline
+	\textit{List Stats Name} & {[} `Strength', `Magic', `Endurance', `Speed', `Luck' {]} \\ \hline
+	\textit{Max Stats Value} & {[} 74, 38, 63, 65, 60 {]} \\ \hline
+	\textit{Stats to Assign} & {[} 2, 1 {]} \\ \hline
+\end{longtable}
+\vspace{-1ex}
+
+
+\begin{longtable}{|l|l|}
+	\caption{Data masukan untuk pembuatan \textit{stats} pemain 2.}
+	\vspace{1ex}
+	\label{tb:player_input_variable_eval_2}\\
+	\hline
+	\rowcolor[HTML]{9B9B9B} 
+	\multicolumn{1}{|c|}{\cellcolor[HTML]{9B9B9B}\textbf{Variabel}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{Input}} \\ \hline
+	\textit{Max} Level & 100 \\ \hline
+	\textit{Start} Level & 1 \\ \hline
+	\textit{Start} HP & 159 \\ \hline
+	\textit{Next} HP & 163 \\ \hline
+	\textit{Start} MP & 89 \\ \hline
+	\textit{Next} MP & 93 \\ \hline
+	\textit{List Element} & {[} `Phys', `Water', `Wind', `Earth', `Fire' {]} \\ \hline
+	\textit{List Weaknesess} & {[} 1, 2, 1, 1, 0 {]} \\ \hline
+	\textit{List Stats Name} & {[} `Strength', `Magic', `Endurance', `Speed', `Luck' {]} \\ \hline
+	\textit{Max Stats Value} & {[} 74, 38, 63, 65, 60 {]} \\ \hline
+	\textit{Stats to Assign} & {[} 2, 1 {]} \\ \hline
+\end{longtable}
+\vspace{-1ex}
+
+
+\begin{longtable}{|l|l|}
+	\caption{Data masukan untuk pembuatan \textit{stats} pemain 3.}
+	\vspace{1ex}
+	\label{tb:player_input_variable_eval_3}\\
+	\hline
+	\rowcolor[HTML]{9B9B9B} 
+	\multicolumn{1}{|c|}{\cellcolor[HTML]{9B9B9B}\textbf{Variabel}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{Input}} \\ \hline
+	\textit{Max} Level & 100 \\ \hline
+	\textit{Start} Level & 1 \\ \hline
+	\textit{Start} HP & 159 \\ \hline
+	\textit{Next} HP & 163 \\ \hline
+	\textit{Start} MP & 89 \\ \hline
+	\textit{Next} MP & 93 \\ \hline
+	\textit{List Element} & {[} `Phys', `Water', `Wind', `Earth', `Fire' {]} \\ \hline
+	\textit{List Weaknesess} & {[} 1, 2, 1, 1, 0 {]} \\ \hline
+	\textit{List Stats Name} & {[} `Strength', `Magic', `Endurance', `Speed', `Luck' {]} \\ \hline
+	\textit{Max Stats Value} & {[} 74, 38, 63, 65, 60 {]} \\ \hline
+	\textit{Stats to Assign} & {[} 2, 1 {]} \\ \hline
+\end{longtable}
+
+Kemudian dari Tabel \ref{tb:player_input_variable_eval_1}, \ref{tb:player_input_variable_eval_2}, dan Tabel \ref{tb:player_input_variable_eval_3} dihasilkan tiga stats yang berbeda untuk tiga karakter dari pemain. Penjelasaan dari ketiga stats tersebut akan diperjelas pada beberapa Sub-bab berikut ini.
+\vspace{1ex}
 
 \subsection{Distibusi Level, HP, dan MP Pemain}
 \label{sec:sub_sec4_eval_dist_hp_mp_level_multi-character}
+\vspace{1ex}
+
+\subsection{Distibusi Elemen dan Kelemahan Pemain}
+\label{sec:sub_sec4_eval_dist_element_multi-character}
+\vspace{1ex}
+
+\subsection{Pengujian Distibusi Stats Pemain}
+\label{sec:sub_sec4_eval_multi-character_stats}
 \vspace{1ex}
 
 \section{Pembuatan Stats Musuh}
