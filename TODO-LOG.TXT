@@ -106,9 +106,10 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
     - "lainnya/tables" untuk format tanda tangan pengesahan
 
 
-[TRIVIAL THINGS TODO]
+[REMINDER SAAT PENGERJAAN]
 + Format Buku (v)
   - Benarkan antara "Halaman sengaja dikosongkan" dan halaman kosong setelah cover (v)
++ Grafik metodologi betulkan untuk single-character dan multi-character
 + Nomenklatur perbaiki
   - Perjelas variabel huruf M, N, L, i, j dan k pada persamaan dan perjelas pada paragraf isi
 + Tambahkan inflict damage, jika sempat (Edit Program)
@@ -160,8 +161,8 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
 + Pembuatan Stats Single-Character untuk Pemain -> Referensikan dengan WRPG, ARPG, SRPG, dan MMORPG -> Pada BAB 2 Sub-bab 2.4
   + Distibusi level, HP, dan MP pemain (v)
   	- Tabel (v)
-  	- Pembahasan Hasil
-	- Graph
+  	- Pembahasan Hasil (v)
+	- Graph (v)
   + Distribusi Elemen dan Kelemahan Pemain -> Referensikan dengan WRPG dan MMORPG -> Mana yang pakai dan tidak (v)
 	- Tabel
   	- Pembahasan Hasil
