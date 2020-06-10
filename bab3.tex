@@ -277,23 +277,23 @@ Dalam menjelaskan proses pada BAB ini maka diambilah sebuah kasus dalam desain p
 
 \begin{longtable}{|l|l|}
 	\caption{Data masukan untuk pembuatan \textit{stats} pemain.}
+	\vspace{1ex}
 	\label{tb:player_input_variable}\\
 	\hline
 	\rowcolor[HTML]{9B9B9B} 
 	\multicolumn{1}{|c|}{\cellcolor[HTML]{9B9B9B}\textbf{Variabel}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{Input}} \\ \hline
-	\textit{Max} Level & 100 \\ \hline
 	\textit{Start} Level & 1 \\ \hline
+	\textit{Max} Level & 100 \\ \hline
 	\textit{Start} HP & 159 \\ \hline
 	\textit{Next} HP & 163 \\ \hline
 	\textit{Start} MP & 89 \\ \hline
 	\textit{Next} MP & 93 \\ \hline
 	\textit{List Element} & {[} `Phys', `Water', `Wind', `Earth', `Fire' {]} \\ \hline
-	\textit{List Weaknesess} & {[} 1, 2, 1, 1, 0 {]} \\ \hline
+	\textit{List Weaknesess} & {[} 0, 0, 1, 2, 0 {]} \\ \hline
 	\textit{List Stats Name} & {[} `Strength', `Magic', `Endurance', `Speed', `Luck' {]} \\ \hline
 	\textit{Max Stats Value} & {[} 74, 38, 63, 65, 60 {]} \\ \hline
 	\textit{Stats to Assign} & {[} 2, 1 {]} \\ \hline
 \end{longtable}
-\vspace{-1ex}
 
 \subsection{Distribusi Level, HP dan MP Pemain}
 \label{sec:sub_sec3_player_level_hp_mp}
@@ -429,15 +429,17 @@ Selanjutnya adalah \textit{Element Name} yang berisi daftar elemen apa saja yang
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.30]{img/enemy_uml.png}
+	\includegraphics[scale=0.28]{img/enemy_uml.png}
 	\caption{\textit{Class} diagram untuk \textit{stats} musuh.}
 	\label{fig:enemy_uml}
 \end{figure}
 
 Karena program ini dibangun menggunakan OOP (\textit{Object Oriented Programming}) maka program ini dapat dijabarkan menggunakan Gambar \ref{fig:enemy_uml}. Selain itu program ini juga dapat secara mudah dimodifikasi untuk keperluan pengembangan kedepannya, dengan fungsi-fungsi yang ada sangat memungkinkan dilakukan \textit{override} atau pembuatan fungsi yang sama dengan isi atau proses yang berbeda seperti pada penjelasan dibagian pemain pada Sub-bab \ref{sec:sec3_player_stats}. Seperti pada bagian sebelumnya maka dibuatlah Tabel \ref{tb:enemy_input_variable} yang berupa masukan untuk menguji program yang akan dijelaskan pada bagian-bagian selanjutnya, yang mana masukan pada tabel tersebut akan menghasilkan stats pada sebuah karakter untuk pemain. Sama seperti pada Sub-bab \ref{sec:sec3_player_stats} sebelumnya, yang mana pada bagian ini juga merupakan perwujudan teknis dari Sub-bab \ref{sec:sub_sec3_design_skenario} dalam bentuk yang lebih teknis.
+\vspace{-1ex}
 
 \begin{longtable}{|l|l|}
 	\caption{Data masukan untuk pembuatan program pada musuh.}
+	\vspace{1ex}
 	\label{tb:enemy_input_variable}\\
 	\hline
 	\rowcolor[HTML]{9B9B9B} 

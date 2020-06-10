@@ -42,7 +42,7 @@ Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_level_hp_mp}
 \end{longtable}
 \vspace{1ex}
 
-Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP dan MP terus naik secara konstan ke atas sesuai dengan kenaikan levelnya seperti yang direpresentasikan pada Gambar \ref{fig:hp_player} dan Gambar \ref{fig:mp_player}. Jika melihat Gambar \ref{fig:hp_player} dengan jumlah HP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} HP dan \textit{Next} HP. Variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:hp_player} agar membentuk pola kenaikan HP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:hp_player}. Sama seperti pada Gambar \ref{fig:hp_player}, pada Gambar \ref{fig:mp_player} dengan jumlah MP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} MP dan \textit{Next} MP. Kemudian variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:mp_player} agar membentuk pola kenaikan MP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:mp_player}.
+Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP dan MP terus naik secara konstan ke atas sesuai dengan kenaikan levelnya seperti yang direpresentasikan pada Gambar \ref{fig:hp_player} dan Gambar \ref{fig:mp_player}. Jika melihat Gambar \ref{fig:hp_player} dengan jumlah HP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} HP dan \textit{Next} HP. Variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:hp_player} agar membentuk pola kenaikan HP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:hp_player}. Sama seperti pada Gambar \ref{fig:hp_player}, pada Gambar \ref{fig:mp_player} dengan jumlah MP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} MP dan \textit{Next} MP. Kemudian variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:mp_player} agar membentuk pola kenaikan MP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:mp_player}. 
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.45]{img/PlayerHpDistrib.png}
@@ -58,11 +58,15 @@ Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP da
 	\label{fig:mp_player}
 \end{figure}
 
+Pada setiap proses pengujian dalam Sub-bab ini, yang dihasilkan pada Tabel \ref{tb:player_hp_mp} menyajikan sebagian data saja. Hasil selengkapnya dapat dilihat pada Tabel \ref{tb:player_hp_mp_all} pada LAMPIRAN yang kemudian keseluruhan hasil tersebut divisualisasikan pada Gambar \ref{fig:hp_player}.
+\vspace{1ex}
+
 \subsection{Distibusi Elemen dan Kelemahan Pemain}
 \label{sec:sub_sec4_eval_dist_element_single-character}
 \vspace{1ex}
 
 Pada bagian ini hanya akan mengulas tentang distribusi elemen dan kelemahan pemain pada Sub-Bab \ref{sec:sub_sec3_list_element_player}, yang sejatinya didefinisikan secara manual pada program yang dibuat dan dijelaskan pada Sub-Bab \ref{sec:sec3_player_stats}. Di mana elemen pada permainan RPG bersifat opsional, tidak dibatasi apakah permainan RPG tersebut tergolong ke dalam \textit{turn-base} atau \textit{real-time}, tergolong \textit{singe-character} atau \textit{multi-character}. Hal tersebut murni bergantung pada pengembang dan desainer permainan. Maka dari itu melalui program yang dibuat pada Sub-Bab \ref{sec:sec3_player_stats} hal ini diwujudkan dalam bentuk opsi yang dapat digunakan atau ditinggalkan, sesuai kebutuhan pengembang atau desainer permainan. Bila opsi distribusi elemen digunakan maka hasilnya akan tampak seperti pada Tabel \ref{tb:player_element}, dengan asumsi tidak adanya perubahan elemen dari pemain dalam permainan.
+\vspace{-1ex}
 
 \begin{longtable}{|l|l|l|l|l|l|}
 	\caption{Distribusi elemen pada karakter pemain}
@@ -81,6 +85,9 @@ Pada bagian ini hanya akan mengulas tentang distribusi elemen dan kelemahan pema
 	... & ... & ... & ... & ... \\ \hline
 	\textbf{100} & \textbf{2} & \textbf{0} & \textbf{0} & \textbf{1} \\ \hline
 \end{longtable}
+
+Pada setiap proses pengujian dalam Sub-bab ini, yang dihasilkan pada Tabel \ref{tb:player_element} menyajikan sebagian data saja. Hasil selengkapnya dapat dilihat pada Tabel \ref{tb:player_all_stats_1} sampai dengan Tabel \ref{tb:player_all_stats_4} pada LAMPIRAN. Hal seperti penggunaan elemen pada pemain seperti pembahasan pada Sub-bab ini an sebelumnya, biasanya dijumpai pada permain RPG dengan Sub-genre JRPG, TRPG, WRPG dan MMORPG. Namun itu juga tidak semua permainan RPG dengan Sub-genre tersebut menggunakannya, hanya yang sering dijumpai saja.
+\vspace{1ex}
 
 \subsection{Pengujian Distibusi Stats Pemain}
 \label{sec:sub_sec4_eval_single-character_stats}
@@ -117,6 +124,9 @@ Pada Tabel \ref{tb:player_battle_stats} adalah data \textit{stats} dari pemain y
 	\label{fig:stats_player}
 \end{figure}
 
+Pada setiap proses pengujian dalam Sub-bab ini, yang dihasilkan pada Tabel \ref{tb:player_battle_stats} menyajikan sebagian data saja. Hasil selengkapnya dapat dilihat pada Tabel \ref{tb:player_all_stats_1} sampai dengan Tabel \ref{tb:player_all_stats_4} pada LAMPIRAN yang kemudian keseluruhan hasil tersebut divisualisasikan pada Gambar \ref{fig:stats_player}.
+\vspace{1ex}
+
 \section{Pembuatan Stats Multi-Character untuk Pemain}
 \label{sec:sec4_eval_multi-character_player}
 \vspace{1ex}
@@ -131,16 +141,16 @@ Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \re
 	\hline
 	\rowcolor[HTML]{9B9B9B} 
 	\multicolumn{1}{|c|}{\cellcolor[HTML]{9B9B9B}\textbf{Variabel}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{Input}} \\ \hline
-	\textit{Max} Level & 100 \\ \hline
 	\textit{Start} Level & 1 \\ \hline
-	\textit{Start} HP & 159 \\ \hline
-	\textit{Next} HP & 163 \\ \hline
-	\textit{Start} MP & 89 \\ \hline
-	\textit{Next} MP & 93 \\ \hline
+	\textit{Max} Level & 100 \\ \hline
+	\textit{Start} HP & 224 \\ \hline
+	\textit{Next} HP & 228 \\ \hline
+	\textit{Start} MP & 100 \\ \hline
+	\textit{Next} MP & 102 \\ \hline
 	\textit{List Element} & {[} `Phys', `Water', `Wind', `Earth', `Fire' {]} \\ \hline
-	\textit{List Weaknesess} & {[} 1, 2, 1, 1, 0 {]} \\ \hline
+	\textit{List Weaknesess} & {[} 0, 0, 2, 1, 0 {]} \\ \hline
 	\textit{List Stats Name} & {[} `Strength', `Magic', `Endurance', `Speed', `Luck' {]} \\ \hline
-	\textit{Max Stats Value} & {[} 74, 38, 63, 65, 60 {]} \\ \hline
+	\textit{Max Stats Value} & {[} 88, 32, 81, 43, 56 {]} \\ \hline
 	\textit{Stats to Assign} & {[} 2, 1 {]} \\ \hline
 \end{longtable}
 \vspace{-1ex}
@@ -153,16 +163,16 @@ Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \re
 	\hline
 	\rowcolor[HTML]{9B9B9B} 
 	\multicolumn{1}{|c|}{\cellcolor[HTML]{9B9B9B}\textbf{Variabel}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{Input}} \\ \hline
-	\textit{Max} Level & 100 \\ \hline
 	\textit{Start} Level & 1 \\ \hline
-	\textit{Start} HP & 159 \\ \hline
-	\textit{Next} HP & 163 \\ \hline
-	\textit{Start} MP & 89 \\ \hline
-	\textit{Next} MP & 93 \\ \hline
+	\textit{Max} Level & 100 \\ \hline
+	\textit{Start} HP & 223 \\ \hline
+	\textit{Next} HP & 226 \\ \hline
+	\textit{Start} MP & 154 \\ \hline
+	\textit{Next} MP & 158 \\ \hline
 	\textit{List Element} & {[} `Phys', `Water', `Wind', `Earth', `Fire' {]} \\ \hline
-	\textit{List Weaknesess} & {[} 1, 2, 1, 1, 0 {]} \\ \hline
+	\textit{List Weaknesess} & {[} 0, 1, 0, 0, 2 {]} \\ \hline
 	\textit{List Stats Name} & {[} `Strength', `Magic', `Endurance', `Speed', `Luck' {]} \\ \hline
-	\textit{Max Stats Value} & {[} 74, 38, 63, 65, 60 {]} \\ \hline
+	\textit{Max Stats Value} & {[} 60, 68, 57, 58, 57 {]} \\ \hline
 	\textit{Stats to Assign} & {[} 2, 1 {]} \\ \hline
 \end{longtable}
 \vspace{-1ex}
@@ -175,25 +185,140 @@ Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \re
 	\hline
 	\rowcolor[HTML]{9B9B9B} 
 	\multicolumn{1}{|c|}{\cellcolor[HTML]{9B9B9B}\textbf{Variabel}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{Input}} \\ \hline
-	\textit{Max} Level & 100 \\ \hline
 	\textit{Start} Level & 1 \\ \hline
-	\textit{Start} HP & 159 \\ \hline
-	\textit{Next} HP & 163 \\ \hline
-	\textit{Start} MP & 89 \\ \hline
-	\textit{Next} MP & 93 \\ \hline
+	\textit{Max} Level & 100 \\ \hline
+	\textit{Start} HP & 173 \\ \hline
+	\textit{Next} HP & 176 \\ \hline
+	\textit{Start} MP & 127 \\ \hline
+	\textit{Next} MP & 130 \\ \hline
 	\textit{List Element} & {[} `Phys', `Water', `Wind', `Earth', `Fire' {]} \\ \hline
-	\textit{List Weaknesess} & {[} 1, 2, 1, 1, 0 {]} \\ \hline
+	\textit{List Weaknesess} & {[} 0, 0, 1, 2, 0 {]} \\ \hline
 	\textit{List Stats Name} & {[} `Strength', `Magic', `Endurance', `Speed', `Luck' {]} \\ \hline
-	\textit{Max Stats Value} & {[} 74, 38, 63, 65, 60 {]} \\ \hline
+	\textit{Max Stats Value} & {[} 49, 55, 48, 72, 76 {]} \\ \hline
+	\textit{Stats to Assign} & {[} 2, 1 {]} \\ \hline
+\end{longtable}
+\vspace{-1ex}
+
+\begin{longtable}{|l|l|}
+	\caption{Data masukan untuk pembuatan \textit{stats} pemain 4.}
+	\vspace{1ex}
+	\label{tb:player_input_variable_eval_4}\\
+	\hline
+	\rowcolor[HTML]{9B9B9B} 
+	\multicolumn{1}{|c|}{\cellcolor[HTML]{9B9B9B}\textbf{Variabel}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{Input}} \\ \hline
+	\textit{Start} Level & 1 \\ \hline
+	\textit{Max} Level & 100 \\ \hline
+	\textit{Start} HP & 203 \\ \hline
+	\textit{Next} HP & 206 \\ \hline
+	\textit{Start} MP & 134 \\ \hline
+	\textit{Next} MP & 138 \\ \hline
+	\textit{List Element} & {[} `Phys', `Water', `Wind', `Earth', `Fire' {]} \\ \hline
+	\textit{List Weaknesess} & {[} 0, 2, 0, 1, 0 {]} \\ \hline
+	\textit{List Stats Name} & {[} `Strength', `Magic', `Endurance', `Speed', `Luck' {]} \\ \hline
+	\textit{Max Stats Value} & {[} 56, 72, 53, 62, 57 {]} \\ \hline
 	\textit{Stats to Assign} & {[} 2, 1 {]} \\ \hline
 \end{longtable}
 
-Kemudian dari Tabel \ref{tb:player_input_variable_eval_1}, \ref{tb:player_input_variable_eval_2}, dan Tabel \ref{tb:player_input_variable_eval_3} dihasilkan tiga stats yang berbeda untuk tiga karakter dari pemain. Penjelasaan dari ketiga stats tersebut akan diperjelas pada beberapa Sub-bab berikut ini.
+Kemudian dari Tabel \ref{tb:player_input_variable_eval_1}, \ref{tb:player_input_variable_eval_2}, \ref{tb:player_input_variable_eval_3}, dan Tabel \ref{tb:player_input_variable_eval_4} dihasilkan tiga stats yang berbeda untuk empat karakter dari pemain. Pada mulanya pemilihan stats pemain yang dinyatakan pada ke empat Table tersebut bukanlah tidak beralasan, bila melihat pada Tabel yang sebelumnya dipakai untuk pengujian \textit{single-character} pada Sub-bab \ref{sec:sec4_eval_single-character_player} dan penjabaran metodologi pembuatan \textit{stats} karakter pemain pada Sub-bab \ref{sec:sec3_player_stats} tentu saja masih berkaitan. Kelima \textit{stats} tersebut membentuk sebuah \textit{party member} dalam permainan JRPG atau mungkin TRPG, hal ini sengaja dibuat dikarenakan hanya genre permainan RPG itu yang memungkinkan pemain menggunakan lebih dari satu karakter. Penjelasaan dan penggunaan dari ke empat \textit{stats} tersebut akan diperjelas pada beberapa Sub-bab berikut ini.
 \vspace{1ex}
 
 \subsection{Distibusi Level, HP, dan MP Pemain}
 \label{sec:sub_sec4_eval_dist_hp_mp_level_multi-character}
 \vspace{1ex}
+
+Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_level_hp_mp}, dimana pada bagian ini membahas tentang pembuatan level, HP dan MP pemain untuk permaian dengan genre RPG. Berikut adalah hasil dari prosess pembuatan Level, HP, dan MP yang diperoleh dari perhitungan pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dengan data masukan pada Tabel \ref{tb:player_input_variable_eval_1}, \ref{tb:player_input_variable_eval_2}, \ref{tb:player_input_variable_eval_3}, dan Tabel \ref{tb:player_input_variable_eval_4} yang kemudian menghasilkan data seperti yang ditunjukkan pada Tabel \ref{tb:player_hp_mp_1}, \ref{tb:player_hp_mp_2}, \ref{tb:player_hp_mp_3}, dan Tabel \ref{tb:player_hp_mp_4}.
+
+\begin{longtable}{|l|l|l|l|l|l|}
+	\caption{Distribusi stats pada karakter pemain}
+	\vspace{1ex}
+	\label{tb:player_hp_mp_1}\\
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	\textbf{Levels} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+	1 & 1 & 2 & 0 & 0 & 1 \\ \hline
+	2 & 0 & 2 & 0 & 2 & 0 \\ \hline
+	3 & 1 & 0 & 0 & 0 & 0 \\ \hline
+	4 & 1 & 1 & 0 & 0 & 0 \\ \hline
+	5 & 1 & 1 & 0 & 0 & 0 \\ \hline
+	6 & 1 & 1 & 0 & 2 & 1 \\ \hline
+	7 & 0 & 0 & 0 & 0 & 1 \\ \hline
+	... & ... & ... & ... & ... & ... \\ \hline
+	\textbf{100} & \textbf{1} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{0} \\ \hline
+\end{longtable}
+\vspace{-1ex}
+
+\begin{longtable}{|l|l|l|l|l|l|}
+	\caption{Distribusi stats pada karakter pemain}
+	\vspace{1ex}
+	\label{tb:player_hp_mp_2}\\
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	\textbf{Levels} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+	1 & 1 & 2 & 0 & 0 & 1 \\ \hline
+	2 & 0 & 2 & 0 & 2 & 0 \\ \hline
+	3 & 1 & 0 & 0 & 0 & 0 \\ \hline
+	4 & 1 & 1 & 0 & 0 & 0 \\ \hline
+	5 & 1 & 1 & 0 & 0 & 0 \\ \hline
+	6 & 1 & 1 & 0 & 2 & 1 \\ \hline
+	7 & 0 & 0 & 0 & 0 & 1 \\ \hline
+	... & ... & ... & ... & ... & ... \\ \hline
+	\textbf{100} & \textbf{1} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{0} \\ \hline
+\end{longtable}
+\vspace{-1ex}
+
+\begin{longtable}{|l|l|l|l|l|l|}
+	\caption{Distribusi stats pada karakter pemain}
+	\vspace{1ex}
+	\label{tb:player_hp_mp_3}\\
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	\textbf{Levels} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+	1 & 1 & 2 & 0 & 0 & 1 \\ \hline
+	2 & 0 & 2 & 0 & 2 & 0 \\ \hline
+	3 & 1 & 0 & 0 & 0 & 0 \\ \hline
+	4 & 1 & 1 & 0 & 0 & 0 \\ \hline
+	5 & 1 & 1 & 0 & 0 & 0 \\ \hline
+	6 & 1 & 1 & 0 & 2 & 1 \\ \hline
+	7 & 0 & 0 & 0 & 0 & 1 \\ \hline
+	... & ... & ... & ... & ... & ... \\ \hline
+	\textbf{100} & \textbf{1} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{0} \\ \hline
+\end{longtable}
+\vspace{-1ex}
+
+\begin{longtable}{|l|l|l|l|l|l|}
+	\caption{Distribusi stats pada karakter pemain}
+	\vspace{1ex}
+	\label{tb:player_hp_mp_4}\\
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	\textbf{Levels} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+	1 & 1 & 2 & 0 & 0 & 1 \\ \hline
+	2 & 0 & 2 & 0 & 2 & 0 \\ \hline
+	3 & 1 & 0 & 0 & 0 & 0 \\ \hline
+	4 & 1 & 1 & 0 & 0 & 0 \\ \hline
+	5 & 1 & 1 & 0 & 0 & 0 \\ \hline
+	6 & 1 & 1 & 0 & 2 & 1 \\ \hline
+	7 & 0 & 0 & 0 & 0 & 1 \\ \hline
+	... & ... & ... & ... & ... & ... \\ \hline
+	\textbf{100} & \textbf{1} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{0} \\ \hline
+\end{longtable}
+\vspace{1ex}
+
+Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP dan MP terus naik secara konstan ke atas sesuai dengan kenaikan levelnya seperti yang direpresentasikan pada Gambar \ref{fig:hp_player} dan Gambar \ref{fig:mp_player}. Jika melihat Gambar \ref{fig:hp_player} dengan jumlah HP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} HP dan \textit{Next} HP. Variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:hp_player} agar membentuk pola kenaikan HP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:hp_player}. Sama seperti pada Gambar \ref{fig:hp_player}, pada Gambar \ref{fig:mp_player} dengan jumlah MP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} MP dan \textit{Next} MP. Kemudian variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:mp_player} agar membentuk pola kenaikan MP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:mp_player}. 
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.45]{img/PlayerHpDistrib.png}
+	\caption{Kenaikan HP setiap levelnya.}
+	\vspace{-2ex}
+	\label{fig:hp_player_1}
+\end{figure}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.45]{img/PlayerMpDistrib.png}
+	\caption{Kenaikan MP setiap levelnya.}
+	\vspace{-2ex}
+	\label{fig:mp_player_1}
+\end{figure}
 
 \subsection{Distibusi Elemen dan Kelemahan Pemain}
 \label{sec:sub_sec4_eval_dist_element_multi-character}
