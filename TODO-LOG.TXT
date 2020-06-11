@@ -35,7 +35,7 @@ d). Menciptakan momen dramatis: Ketika seorang pemain dengan hati-hati menyusun 
 + Distribusi HP, MP dan Stats Musuh 
 - Keanekaragaman stats dari tipe musuh -> Distribusi Tipe musuh (BAB 3)
 
-e). Meningkatkan pengambilan keputusan: Ketika elemen acak ada dalam permainan, tidak ada lagi strategi yang selalu benar. Beberapa gerakan mungkin memiliki peluang kegagalan yang tinggi tetapi juga potensi hasil yang besar, hal tersebut menjadikannya sebuah pilihan berisiko, gerakan lainnya mungkin aman tetapi menghasilkan sedikit keuntungan. (v)
+e). Meningkatkan pengambilan keputusan: Ketika elemen acak ada dalam permainan, tidak ada lagi strategi yang selalu benar. Beberapa gerakan mungkin memiliki peluang kegagalan yang tinggi tetapi juga potensi hasil yang besar, hal tersebut menjadikannya sebuah pilihan berisiko, gerakan lainnya mungkin aman tetapi menghasilkan sedikit keuntungan.
 		
 + Desain Skenario Pertarungan (3.1)
 - Semakin banyak musuh makan akan semakin banyak keputusan yang harus di ambil oleh pemain
@@ -68,29 +68,29 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
 [ALGORITMA YANG SUDAH TERCITASI KE BAB 3]
 
 2.3.1 K-Nearest Neighbour (v)
-- Klasifikasi
-- Regresi
-- Cross-Validation
-- Jarak Metrik
-- Prediksi
-- Pembobotan Jarak
+- Klasifikasi (v)
+- Regresi (v)
+- Cross-Validation (v)
+- Jarak Metrik (v)
+- Prediksi (v)
+- Pembobotan Jarak (v)
 	
 2.3.2 Naive Bayes (v)
 
 2.3.3 Klasifikasi dengan Naive Bayes (v)
-- Representasi dari Naive Bayes adalah Probabilitas
-  -> Class probabilities
-  -> Conditional probabilities
-  -> Marginal probabilities
-- Proses Learning Data dengan Naive Bayes
-- Perhitungan pada Class Probabilities
-- Perhitungan Conditional Probability
-- Membuat Prediksi dengan Naive Bayes
+- Representasi dari Naive Bayes adalah Probabilitas (v)
+  -> Class probabilities (v)
+  -> Conditional probabilities (v)
+  -> Marginal probabilities (v)
+- Proses Learning Data dengan Naive Bayes (v)
+- Perhitungan pada Class Probabilities (v)
+- Perhitungan Conditional Probability (v)
+- Membuat Prediksi dengan Naive Bayes (v)
 
 2.3.4 Gaussian Naive Bayes (v)
-- Representasi Gaussian Naive Bayes
-- Proses Learning Data dengan Gaussian Naive Bayes
-- Prediksi dengan Model Gaussian Naive Bayes
+- Representasi Gaussian Naive Bayes (v)
+- Proses Learning Data dengan Gaussian Naive Bayes (v)
+- Prediksi dengan Model Gaussian Naive Bayes (v)
 
 
 #
@@ -106,10 +106,10 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
     - "lainnya/tables" untuk format tanda tangan pengesahan
 
 
-[REMINDER SAAT PENGERJAAN]
+[REMINDER SAAT PENGERJAAN ~ TERAKHIR SAJA]
 + Format Buku (v)
   - Benarkan antara "Halaman sengaja dikosongkan" dan halaman kosong setelah cover (v)
-+ Grafik metodologi betulkan untuk single-character dan multi-character
++ Grafik metodologi betulkan untuk single-character dan multi-character (v)
 + Nomenklatur perbaiki
   - Perjelas variabel huruf M, N, L, i, j dan k pada persamaan dan perjelas pada paragraf isi
 + Tambahkan inflict damage, jika sempat (Edit Program)
@@ -120,7 +120,7 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
 + Desain permainan dan beberapa komponennya (v)
 + K-Nearest Neighbour (KNN) -> Level balancing -> Threshold (v)
 + Naive Bayes -> Random enemy level and stats distribution -> Threshold (v)
-  - Tambahkan citation
+  - Tambahkan citasi
   - Tambahkan marjinal probability
 + RPG
   - Penjelasan Permainan RPG (v)
@@ -164,45 +164,45 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
   	- Pembahasan Hasil (v)
 	- Graph (v)
   + Distribusi Elemen dan Kelemahan Pemain -> Referensikan dengan WRPG dan MMORPG -> Mana yang pakai dan tidak (v)
-	- Tabel
-  	- Pembahasan Hasil
-	- Graph
-  - Distibusi Stats Pemain
-	- Tabel
-  	- Pembahasan Hasil
-	- Graph
+	- Tabel (v)
+  	- Pembahasan Hasil (v)
+	- Graph (v)
+  - Distibusi Stats Pemain (v)
+	- Tabel (v)
+  	- Pembahasan Hasil (v)
+	- Graph (v)
 
-+ Pembuatan Stats Multi-Character untuk Pemain -> Referensikan dengan TRPG dan JRPG -> Pada BAB 2 Sub-bab 2.4
++ Pembuatan Stats Multi-Character untuk Pemain -> Referensikan dengan TRPG dan JRPG -> Pada BAB 2 Sub-bab 2.4 (v)
   + Distibusi level, HP, dan MP pemain (v)
-  	- Tabel
-  	- Pembahasan Hasil
-	- Graph
+  	- Tabel (v)
+  	- Pembahasan Hasil (v)
+	- Graph (v)
   + Distribusi Elemen dan Kelemahan Pemain -> Referensikan dengan JRPG dan TRPG -> Mana yang pakai dan tidak (v)
-	- Tabel
-  	- Pembahasan Hasil
-	- Graph
-  - Distibusi Stats Pemain
-	- Tabel
-  	- Pembahasan Hasil
-	- Graph
+	- Tabel (v)
+  	- Pembahasan Hasil (v)
+	- Graph (v)
+  - Distibusi Stats Pemain (v)
+	- Tabel (v)
+  	- Pembahasan Hasil (v)
+	- Graph (v)
 
-+ Pembuatan Stats Musuh -> Pada BAB 2 Sub-bab 2.4
-  + Distibusi level musuh
-  	- Tabel
-  	- Pembahasan Hasil
-	- Graph
-  + Distribusi Tipe Musuh
-	- Tabel
-  	- Pembahasan Hasil
-	- Graph
++ Pembuatan Stats Musuh -> Pada BAB 2 Sub-bab 2.4 (v)
+  + Distibusi level musuh (v)
+  	- Tabel (v)
+  	- Pembahasan Hasil (v)
+	- Graph (v)
+  + Distribusi Tipe Musuh (v)
+	- Tabel (v)
+  	- Pembahasan Hasil (v)
+	- Graph (v)
   + Distribusi Elemen dan Kelemahan Pemain -> Mana yang pakai dan tidak (v)
-	- Tabel
-  	- Pembahasan Hasil
-	- Graph
-  - Distribusi HP, MP, dan Stats musuh
-	- Tabel
-  	- Pembahasan Hasil
-	- Graph
+	- Tabel (v)
+  	- Pembahasan Hasil (v)
+	- Graph (v)
+  - Distribusi HP, MP, dan Stats musuh (v)
+	- Tabel (v)
+  	- Pembahasan Hasil (v)
+	- Graph (v)
 
 
 [BAB 5]
