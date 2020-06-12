@@ -131,6 +131,8 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
   - Stats enemy -> Random enemy level and stats distribution -> Threshold number of enemy
   - Player and Enemy skill
   - Level distribution -> Player meet enemy
++ Fitur Corelation
++ Neural Network Multiclass Classification
 
 
 [BAB 3]

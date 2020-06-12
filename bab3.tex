@@ -963,3 +963,104 @@ P(St_{i}) = \sum_{i=0}^{N}\ \frac{St_{i}}{bSt_{i} - tSt_{i}}
 \end{equation}
 
 Kemudian pada persamaan \ref{eq:enemy_types_prob_st} adalah probabilitas $P(St_{i})$ saat munculnya \textit{stats} $St_{i}$ dari batas bawah \textit{stats} $bSt_{i}$ sampai batas atas \textit{stats} $tSt_{i}$.
+
+\section{Klasifikasi Hero permainan Dota 2 dengan Neural Network Multiclass Classification}
+\label{sec:sec3_dota2_method}
+\vspace{1ex}
+
+Pada permaian Dota 2, \textit{hero} (sebutan khusus untuk karakter pada Dota 2) terbagi menjadi 2 kelompok yaitu \textit{Strength} (STR), \textit{Agility} (AGI) dan \textit{Intelligent} (INT). Tiap \textit{hero} memiliki \textit{stats} yang berbeda-beda seperti \textit{Base} STR, \textit{Base} AGI, \textit{Base} INT, STR \textit{Growth}, Min DMG atau \textit{minimum damage}, Max DMG atau \textit{maximum damage}, \textit{Movement Speed}, dan lain-lain. Data tersebutlah yang nantinya yang akan digunakan pada penelitian ini, seluruh data tersebut terangkum dalam situs \textit{Table of Hero Attribute} \citep{dota2020}.
+\vspace{1ex}
+
+Dalam kasus ini diambil contoh Centaur, hero tersebut adalah bertipe STR, jika dilihat nilai \textit{Base} STR dan STR \textit{Growth} pada hero ini sangat tinggi, namun ada cukup banyak hero lain yang mempunyai nilai \textit{stats} tinggi pada salah satu atribut tapi bukan merupakan \textit{hero} dengan tipe tersebut. Seperti Ogre Magi, \textit{hero} tersebut adalah type INT, tapi memililki nilai \textit{Base} STR, STR \textit{Growth} dan Max STR lebih tinggi dari pada \textit{stats} \textit{intelligent} seperti yang terlihat pada Gambar \ref{fig:centa}. 
+\vspace{1ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.53]{img/centa.jpg}
+	\caption{\textit{Stats} pada \textit{hero} Centaur.}
+	\label{fig:centa}
+\end{figure}
+
+Maka hal yang akan dilakukan disini adalah mencoba melakukan klasifikasi semua untuk \textit{hero} berdasarkan \textit{stats} yang ada, dataset dari hero Dota 2 dapat dilihat pada Tabel \ref{tb:dota2_hero_pt1} dan \ref{tb:dota2_hero_pt2} untuk data \textit{training} dan Tabel \ref{tb:dota2_hero_pt3} untuk data testing. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:dota2_class_proc}.
+\vspace{1ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.032]{img/dota2_nn_classification.png}
+	\caption{Proses klasifikasi \textit{hero} pada permainan Dota 2.}
+	\label{fig:dota2_class_proc}
+\end{figure}
+
+\subsection{Data Pre-processing}
+\label{sec:sub_sec3_dota2_pre_proc}
+\vspace{1ex}
+
+Di lakukan \textit{parsing} halaman tersebut \citep{dota2020} dan dilakukan konversi dari tabel HTML menjadi CSV. Maka diperolehlah 115 buah data. Jika melihat Gambar \ref{fig:dota2_gameplay} terdapat beberapa data yang sifatnya spesifik untuk interaksi pada \textit{hero} tersebut didalam permainan. Hal tersebut ikut tercantum dalam dataset, maka akan dibuang, karena dianggap kurang relevan seperti \textit{Day Vision}, \textit{Night Vision}, \textit{Collision Size}, dan \textit{Legs}. Sehingga diperoleh 22 fitur yang akan digunakan untuk melakukan klasifikasi. Tipe hero akan digunakan sebagai target dikategorikan dalam bentuk angka menjadi 0 untuk STR, 1 untuk AGI dan 2 untuk INT.
+\vspace{1ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.13]{img/dota2_gameplay.jpg}
+	\caption{Proses klasifikasi \textit{hero} pada permainan Dota 2.}
+	\label{fig:dota2_gameplay}
+\end{figure}
+
+Dari seluruh data hero tersebut, enam belas \textit{hero} nantinya akan diambil sebagai data validasi yang tercantum pada Tabel \ref{tb:dota2_hero_pt3} dan sisanya digunakan sebagai data \textit{training} pada Tabel \ref{tb:dota2_hero_pt1} dan Tabel \ref{tb:dota2_hero_pt2} yang semuanya terlampir pada \nameref{chap:chap6_attachment}. Untuk data validasi pada Tabel \ref{tb:dota2_hero_pt3}, diambilah beberapa hero yang memiliki \textit{stats} aneh seperti Jakiro, Winter Wyvern (STR tinggi tetapi masuk ke dalam kategori INT hero), Phoenix, IO (STR rendah tetapi termasuk ke dalam kategori STR hero), Bloodseeker, Undying, dan lain-lain.
+\vspace{1ex}
+
+\subsection{Korelasi Fitur}
+\label{sec:sub_sec3_dota2_feature_corel}
+\vspace{1ex}
+
+Dari 22 fitur yang dibahas pada Sub-bab \ref{sec:sub_sec3_dota2_pre_proc}, bisa jadi tidak semua fitur mempunyai kontribusi terhadap tipe \textit{hero} atau bisa dibilang proses naik-turun sebuah fitur tersebut tidak memberikan pengaruh terhadap proses klasifikasi tipe \textit{hero}. Dalam pencarian fitur tersebut digunakanlah \textit{korelasi matrix} pada setiap variabel, hasil perhitungan korelasi matrix dari stats Dota 2 yang dijadikan fitur dapat dilihat pada Tabel \ref{tb:dota2_matrix_corel}.
+\vspace{-1ex}
+
+\begin{longtable}{|l|l|}
+	\caption{Hasil perhitungan korelasi matrix untuk fitur}
+	\vspace{1ex}
+	\label{tb:dota2_matrix_corel}\\
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	\textbf{Fitur} & \textbf{Korelasi Matrix} \\ \hline
+	\textbf{baseStr} & -0.542666 \\ \hline
+	\textbf{strGrowth} & -0.542322 \\ \hline
+	\textbf{maxStr} & -0.581514 \\ \hline
+	\textbf{baseAgi} & -0.038086 \\ \hline
+	\textbf{agiGrowth} & -0.123072 \\ \hline
+	\textbf{maxAgi} & -0.110488 \\ \hline
+	\textbf{baseInt} & 0.688410 \\ \hline
+	\textbf{intGrowth} & 0.657814 \\ \hline
+	\textbf{maxInt} & 0.699666 \\ \hline
+	\textbf{totalBaseAttr} & 0.179483 \\ \hline
+	\textbf{totalAttrGrowth} & 0.063110 \\ \hline
+	\textbf{totalMaxAttr} & 0.114713 \\ \hline
+	\textbf{moveSpeed} & 0.067136 \\ \hline
+	\textbf{baseArmor} & -0.113657 \\ \hline
+	\textbf{minDmg} & -0.384719 \\ \hline
+	\textbf{maxDmg} & -0.312799 \\ \hline
+	\textbf{range} & 0.687704 \\ \hline
+	\textbf{baseAttackTime} & -0.297982 \\ \hline
+	\textbf{attackPoint} & -0.106053 \\ \hline
+	\textbf{attackBackswing} & 0.011558 \\ \hline
+	\textbf{turnRate} & -0.034759 \\ \hline
+	\textbf{regeneration} & -0.090677 \\ \hline
+\end{longtable}
+\vspace{1ex}
+
+Berikut penjelasan sederhana mengenai \textit{korelasi matrix}, hal tersebut membahas tentang sebuah variabel yang memuat nilai antara $-1$ dan $+1$. Sebagai contoh jika ada korelasi antara variabel $X$ dan $Y $yang benilai -1, maka pada saat nilai $X$ turun, nilai $Y$ akan naik. Jika bernilai $+1$, maka hubungan antara $X$ dan $Y$ adalah linear. Namun jika nilai korelasi semakin dekat dengan 0, maka variabel tersebut bisa dikatakan tidak mempengaruhi satu dengan yang lain.
+\vspace{1ex}
+
+Selanjutnya akan dibuang semua fitur yang memiliki nilai korelasi lebih kecil dari $0.1$ atau $-0.1$ seperti \textit{regeneration rate}, \textit{turn rate}, \textit{movement speed} dan yang paling aneh adalah fitur \textit{base} AGI, AGI \textit{growth} dan \textit{max} AGI memiliki nilai yang sangat kecil. Padahal fitur tersebut adalah termasuk kemampuan dasar dari \textit{hero}, sehingga didapatkan 16 fitur yang akan digunakan sebagai masukan untuk \textit{Neural Network}.
+\vspace{1ex}
+
+\subsection{Pembuatan Model}
+\label{sec:sub_sec3_dota2_model}
+\vspace{1ex}
+
+Arsitektur \textit{Neural Network} yang akan dibuat mempunyai enam belas \textit{neuron} pada layer masukan, sepuluh \textit{neuron} pada \textit{hidden layer} dengan fungsi aktivasi \textit{sigmoid} dan tiga \textit{neuron} yang mewakili (STR, AGI dan INT) pada layer keluaran dengan fungsi aktivasi \textit{Softmax} karena keluaran dari model yang dibuat bersifat distribusi probabilitas dari seluruh nilai target. Misalkan model kita 100\% yakin jika \textit{hero} A adalah STR, maka output dari model adalah $\left[1,\ 0,\ 0 \right]$ dan jika model kita 50\% yakin jika hero B adalah AGI, 25\% yakin jika hero B adalah STR atau INT, maka output dari model kita adalah $\left[0.25,\ 0.5,\ 0.25 \right]$. Harus diingat bahwa total nilai dari distribusi probabilitas untuk semua target adalah 1.
+\vspace{1ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.08]{img/nn_dota2.png}
+	\caption{Arsitektur \textit{Neural Network} untuk klasifikasi \textit{hero} Dota 2.}
+	\label{fig:nn_dota2}
+\end{figure}
+
+Sedangkan untuk \textit{loss function} yang digunakan adalah \textit{Cross Entropy} dan \textit{Optimizer} yang digunakan adalah SGD dengan \textit{learning rate} sebesar 0.001. Sebagai catatan penambahkan \textit{metrics accuracy} bertujuan untuk melihat seberapa bagus model ini dalam melakukan klasifikasi.
