@@ -5,7 +5,7 @@ Ikuti langkah berikut untuk membuat cover buku tesis.
 + Microsoft Word 365.
 
 ### Langkah pembuatan:
-+ Buka file `cover_word.docx` dengan **MS Word 365** untuk melakukan edit Nama, NRP, Bidang Studi dan lain-lain. Pake dari punya ITS ya kalau tidak punya yang original, unduh di [sini](https://integra.its.ac.id/app.php) pada menu Office 365. Ingat! Pakai softaware bajakan itu dosa :D
++ Buka file `cover_word.docx` dengan **MS Word 365** untuk melakukan edit Nama, NRP, Bidang Studi dan lain-lain. Pake dari punya ITS ya kalau tidak punya yang original, unduh di [sini](https://integra.its.ac.id/app.php) pada menu Office 365. Ingat! Pakai softaware bajakan itu dosa!
 + Mohon biarkan file *cover* tersebut **4 halaman** ya!
   + 1 *cover* utama warna biru
   + 1 halaman kosong

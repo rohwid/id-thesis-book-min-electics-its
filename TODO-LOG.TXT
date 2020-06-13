@@ -97,13 +97,12 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
 # TODO LIST PENGERJAAN
 #
 
-
 [NOTES FOR BOOK DOCUMENTATION]
-+ Tambahkan dokumentasi untuk include cover format ".pdf" dengan versi max 1.5
-+ Tambahkan dokumentasi untuk update data tabel dengan menggunakan website "https://www.tablesgenerator.com/"
++ Tambahkan dokumentasi untuk include cover format ".pdf" dengan versi max 1.5 (v)
++ Tambahkan dokumentasi untuk update data tabel dengan menggunakan website "https://www.tablesgenerator.com/" (v)
   + Tabel pada buku ini disimpan pada folder:
-    - "tables" untuk keseluruhan data penelitian
-    - "lainnya/tables" untuk format tanda tangan pengesahan
+    - "tables" untuk keseluruhan data penelitian (v)
+    - "lainnya/tables" untuk format tanda tangan pengesahan (v)
 
 
 [REMINDER SAAT PENGERJAAN ~ TERAKHIR SAJA]
@@ -215,7 +214,6 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
 #
 # CATATAN RANDOM PENGERJAAN BUKU
 #
-
 
 [Stats Visualization Color]
 + Strength  -> Merah
