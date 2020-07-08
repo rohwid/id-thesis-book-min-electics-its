@@ -125,7 +125,7 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
   - Penjelasan Permainan RPG (v)
   - Tipe Permainan RPG -> Baca buku tesis dari chalmers university (v)
   - Penjelasan Turn-Based RPG (v)
-  - Penjelasan Real-Time RPG
+  - Penjelasan Real-Time RPG (v)
   - Stats player -> Level balancing -> Nearest Max Level Threshold
   - Stats enemy -> Random enemy level and stats distribution -> Threshold number of enemy
   - Player and Enemy skill

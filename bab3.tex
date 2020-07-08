@@ -968,7 +968,7 @@ Kemudian pada persamaan \ref{eq:enemy_types_prob_st} adalah probabilitas $P(St_{
 \label{sec:sec3_dota2_method}
 \vspace{1ex}
 
-Pada permaian Dota 2, \textit{hero} (sebutan khusus untuk karakter pada Dota 2) terbagi menjadi 2 kelompok yaitu \textit{Strength} (STR), \textit{Agility} (AGI) dan \textit{Intelligent} (INT). Tiap \textit{hero} memiliki \textit{stats} yang berbeda-beda seperti \textit{Base} STR, \textit{Base} AGI, \textit{Base} INT, STR \textit{Growth}, Min DMG atau \textit{minimum damage}, Max DMG atau \textit{maximum damage}, \textit{Movement Speed}, dan lain-lain. Data tersebutlah yang nantinya yang akan digunakan pada penelitian ini, seluruh data tersebut terangkum dalam situs \textit{Table of Hero Attribute} \citep{dota2020}.
+Pada permaian Dota 2, \textit{hero} (sebutan khusus untuk karakter pada Dota 2) terbagi menjadi 3 kelompok yaitu \textit{Strength} (STR), \textit{Agility} (AGI) dan \textit{Intelligent} (INT). Tiap \textit{hero} memiliki \textit{stats} yang berbeda-beda seperti \textit{Base} STR, \textit{Base} AGI, \textit{Base} INT, STR \textit{Growth}, Min DMG atau \textit{minimum damage}, Max DMG atau \textit{maximum damage}, \textit{Movement Speed}, dan lain-lain. Data tersebutlah yang nantinya yang akan digunakan pada penelitian ini, seluruh data tersebut terangkum dalam situs \textit{Table of Hero Attribute} \citep{dota2020}.
 \vspace{1ex}
 
 Dalam kasus ini diambil contoh Centaur, hero tersebut adalah bertipe STR, jika dilihat nilai \textit{Base} STR dan STR \textit{Growth} pada hero ini sangat tinggi, namun ada cukup banyak hero lain yang mempunyai nilai \textit{stats} tinggi pada salah satu atribut tapi bukan merupakan \textit{hero} dengan tipe tersebut. Seperti Ogre Magi, \textit{hero} tersebut adalah type INT, tapi memililki nilai \textit{Base} STR, STR \textit{Growth} dan Max STR lebih tinggi dari pada \textit{stats} \textit{intelligent} seperti yang terlihat pada Gambar \ref{fig:centa}. 
@@ -980,7 +980,7 @@ Dalam kasus ini diambil contoh Centaur, hero tersebut adalah bertipe STR, jika d
 	\label{fig:centa}
 \end{figure}
 
-Maka hal yang akan dilakukan disini adalah mencoba melakukan klasifikasi semua untuk \textit{hero} berdasarkan \textit{stats} yang ada, dataset dari hero Dota 2 dapat dilihat pada Tabel \ref{tb:dota2_hero_pt1} dan \ref{tb:dota2_hero_pt2} untuk data \textit{training} dan Tabel \ref{tb:dota2_hero_pt3} untuk data testing. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:dota2_class_proc}.
+Maka hal yang akan dilakukan disini adalah mencoba melakukan klasifikasi \textit{hero} berdasarkan \textit{stats} yang ada, dataset dari hero Dota 2 dapat dilihat pada Tabel \ref{tb:dota2_hero_pt1} dan \ref{tb:dota2_hero_pt2} untuk data \textit{training} dan Tabel \ref{tb:dota2_hero_pt3} untuk data testing. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:dota2_class_proc}.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
@@ -1002,7 +1002,7 @@ Di lakukan \textit{parsing} halaman tersebut \citep{dota2020} dan dilakukan konv
 	\label{fig:dota2_gameplay}
 \end{figure}
 
-Dari seluruh data hero tersebut, enam belas \textit{hero} nantinya akan diambil sebagai data validasi yang tercantum pada Tabel \ref{tb:dota2_hero_pt3} dan sisanya digunakan sebagai data \textit{training} pada Tabel \ref{tb:dota2_hero_pt1} dan Tabel \ref{tb:dota2_hero_pt2} yang semuanya terlampir pada \nameref{chap:chap6_attachment}. Untuk data validasi pada Tabel \ref{tb:dota2_hero_pt3}, diambilah beberapa hero yang memiliki \textit{stats} aneh seperti Jakiro, Winter Wyvern (STR tinggi tetapi masuk ke dalam kategori INT hero), Phoenix, IO (STR rendah tetapi termasuk ke dalam kategori STR hero), Bloodseeker, Undying, dan lain-lain.
+Dari seluruh data hero tersebut, enam belas \textit{hero} nantinya akan diambil sebagai data validasi yang tercantum pada Tabel \ref{tb:dota2_hero_pt3} dan sisanya digunakan sebagai data \textit{training} pada Tabel \ref{tb:dota2_hero_pt1} dan Tabel \ref{tb:dota2_hero_pt2} yang semua terlampir dalam \nameref{chap:chap6_attachment}. Untuk data validasi pada Tabel \ref{tb:dota2_hero_pt3}, diambilah beberapa hero yang memiliki \textit{stats} aneh seperti Jakiro, Winter Wyvern (STR tinggi tetapi masuk ke dalam kategori INT hero), Phoenix, IO (STR rendah tetapi termasuk ke dalam kategori STR hero), Bloodseeker, Undying, dan lain-lain.
 \vspace{1ex}
 
 \subsection{Korelasi Fitur}
@@ -1044,23 +1044,121 @@ Dari 22 fitur yang dibahas pada Sub-bab \ref{sec:sub_sec3_dota2_pre_proc}, bisa 
 \end{longtable}
 \vspace{1ex}
 
-Berikut penjelasan sederhana mengenai \textit{korelasi matrix}, hal tersebut membahas tentang sebuah variabel yang memuat nilai antara $-1$ dan $+1$. Sebagai contoh jika ada korelasi antara variabel $X$ dan $Y $yang benilai -1, maka pada saat nilai $X$ turun, nilai $Y$ akan naik. Jika bernilai $+1$, maka hubungan antara $X$ dan $Y$ adalah linear. Namun jika nilai korelasi semakin dekat dengan 0, maka variabel tersebut bisa dikatakan tidak mempengaruhi satu dengan yang lain.
+Berikut penjelasan sederhana mengenai \textit{korelasi matrix}, hal tersebut membahas tentang sebuah variabel yang memuat nilai antara $-1$ dan $+1$. Sebagai contoh jika ada korelasi antara variabel $X$ dan $Y$ yang benilai $-1$, maka pada saat nilai $X$ turun, nilai $Y$ akan naik. Jika bernilai $+1$, maka hubungan antara $X$ dan $Y$ adalah linear. Namun jika nilai korelasi semakin dekat dengan $0$, maka variabel tersebut bisa dikatakan tidak mempengaruhi satu dengan yang lain.
 \vspace{1ex}
 
 Selanjutnya akan dibuang semua fitur yang memiliki nilai korelasi lebih kecil dari $0.1$ atau $-0.1$ seperti \textit{regeneration rate}, \textit{turn rate}, \textit{movement speed} dan yang paling aneh adalah fitur \textit{base} AGI, AGI \textit{growth} dan \textit{max} AGI memiliki nilai yang sangat kecil. Padahal fitur tersebut adalah termasuk kemampuan dasar dari \textit{hero}, sehingga didapatkan 16 fitur yang akan digunakan sebagai masukan untuk \textit{Neural Network}.
 \vspace{1ex}
 
-\subsection{Pembuatan Model}
-\label{sec:sub_sec3_dota2_model}
+\subsection{Desain Arsitektur Neural Network}
+\label{sec:sub_sec3_dota2_arch}
 \vspace{1ex}
 
 Arsitektur \textit{Neural Network} yang akan dibuat mempunyai enam belas \textit{neuron} pada layer masukan, sepuluh \textit{neuron} pada \textit{hidden layer} dengan fungsi aktivasi \textit{sigmoid} dan tiga \textit{neuron} yang mewakili (STR, AGI dan INT) pada layer keluaran dengan fungsi aktivasi \textit{Softmax} karena keluaran dari model yang dibuat bersifat distribusi probabilitas dari seluruh nilai target. Misalkan model kita 100\% yakin jika \textit{hero} A adalah STR, maka output dari model adalah $\left[1,\ 0,\ 0 \right]$ dan jika model kita 50\% yakin jika hero B adalah AGI, 25\% yakin jika hero B adalah STR atau INT, maka output dari model kita adalah $\left[0.25,\ 0.5,\ 0.25 \right]$. Harus diingat bahwa total nilai dari distribusi probabilitas untuk semua target adalah 1.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.08]{img/nn_dota2.png}
+	\includegraphics[scale=0.068]{img/nn_dota2.png}
 	\caption{Arsitektur \textit{Neural Network} untuk klasifikasi \textit{hero} Dota 2.}
 	\label{fig:nn_dota2}
 \end{figure}
 
-Sedangkan untuk \textit{loss function} yang digunakan adalah \textit{Cross Entropy} dan \textit{Optimizer} yang digunakan adalah SGD dengan \textit{learning rate} sebesar 0.001. Sebagai catatan penambahkan \textit{metrics accuracy} bertujuan untuk melihat seberapa bagus model ini dalam melakukan klasifikasi.
+Sedangkan untuk \textit{loss function} yang digunakan adalah \textit{Cross Entropy} dan \textit{Optimizer} yang digunakan adalah SGD (\textit{Stochasstic Gradient Descent}) dengan \textit{learning rate} sebesar 0.001. Sebagai catatan penambahkan \textit{metrics accuracy} bertujuan untuk melihat seberapa bagus model ini dalam melakukan klasifikasi.
+\vspace{1ex}
+
+\subsection{Training}
+\label{sec:sub_sec3_dota2_train}
+\vspace{1ex}
+
+Data hasil dari korelasi fitur pada Sub-bab \ref{sec:sub_sec3_dota2_feature_corel}, karena tipe yang ditunjukan pada kolom ke 1 dengan kepala bertuliskan \textit{type} adalah hasil prediksi maka tidak akan diikutkan proses \textit{training}. Pada kolom \textit{type} tipe karakter dinyatakan dengan 0, 1, dan 2 yang nantinya keluaran dari hasil training yang menunjukan prediksi tipe dari karakter dinyatakan dalam bentuk \textit{one-hot vector}: STR $\rightarrow [1, 0, 0]$, AGI $\rightarrow [0, 1, 0]$ dan INT $\rightarrow [0, 0, 1]$. 
+\vspace{1ex}
+
+Pada proses \textit{training} hasil prediksi akan dibandingkan dengan data validasi untuk mendapatkan nilai \textit{loss}/\textit{error} dan validasi untuk melihat performa model neural network yang dibuat. Nilai \textit{loss} kemudian digunakan untuk meningkatkan akurasi model. Proses \textit{training} dilakukan untuk mendapatkan model dengan akurasi optimal dan tidak \textit{overfitting}.
+\vspace{1ex}
+
+Penentuan nilai \textit{batch size} dan \textit{learning rate} berperan penting dalam peningkatan akurasi hal ini biasa disebut dengan \textit{hyperparameter tuning}. Dengan \textit{Batch size} yang besar akan dapat memberikan jenis data yang bervariasi sehingga saat dilakukan perhitungan \textit{loss}, nilai perhitungan \textit{loss} yang diperoleh dapat mewakili variasi dataset secara keseluruhan. Sebaliknya \textit{batch size} yang kecil hanya dapat memberikan perwakilan sedikit dataset sehingga nilai perubahan \textit{loss} untuk memperoleh nilai yang stabil akan semakin sulit. Karena itu \textit{batch size} yang besar dapat diberikan \textit{learning rate} yang besar karena arah perpindahan \textit{loss} yang lebih stabil. Sedangkan \textit{batch size} yang kecil harus diberikan \textit{learning rate} yang kecil juga agar perpindahannya tidak berpindah pindah terlalu jauh.
+\vspace{1ex}
+
+Proses \textit{training} akan dilakukan sebanyak $2 \times 10^{4}$ \textit{epoch}/iterasi. Untuk satu \textit{epoch} dataset akan dibagi menjadi 16 \textit{batch size} tiap \textit{batch} hingga semua data terproses. Nilai \textit{learning rate} sebesar $1 \times 10^{-3}$ dan jika nilai \textit{loss} tidak mengalami perubahan maka \textit{learning rate} akan diperkecil sampai dengan $1 \times 10^{-4}$ seperti pada Gambar \ref{fig:nn_dota2_lr}. Namun dalam kasus ini digunakannya optimasi untuk menurunkan \textit{learning rate} saat nilai \textit{loss} tidak terjadi penurunan dan pemberhentian proses \textit{training} tanpa menunggu keseluruhan \textit{epoch} selesai. Pada Gambar \ref{fig:nn_dota2_val_loss_20k} adalah hasil \textit{training} tanpa menggunakan perubahan learning rate secara otomatis, sedangkan pada Gambar \ref{fig:nn_dota2_val_loss_callback} adalah hasil \textit{training} dengan perubahan \textit{learning rate} otomatis.
+\vspace{1ex}
+
+\begin{figure} [!htb] \centering
+	\includegraphics[scale=0.3975]{img/callback_lr_chap3.png}
+	\caption{Proses pengurangan \textit{learning rate} saat \textit{training}.}
+	\label{fig:nn_dota2_lr}
+	\vspace{1ex}
+\end{figure}
+
+\begin{figure} [!htb] \centering
+	\includegraphics[scale=0.3975]{img/hyperparam_val_loss_chap3.png}
+	\caption{Validasi \textit{loss} saat $2 \times 10^{4}$ \textit{epoch}.}
+	\label{fig:nn_dota2_val_loss_20k}
+	\vspace{1ex}
+\end{figure}
+
+\begin{figure} [!htb] \centering
+	\includegraphics[scale=0.3975]{img/callback_val_loss_chap3.png}
+	\caption{Validasi \textit{loss} dengan pemberhentian otomatis.}
+	\label{fig:nn_dota2_val_loss_callback}
+\end{figure}
+\vspace{1ex}
+
+Pemberhentian proses \textit{training} tersebut dilakukan bukan tanpa alasan, jika terjadi kenaikan \textit{loss} khususnya pada proses validasi yang rawan terjadi kenaikan \textit{loss} atau \textit{loss validation} seperti pada Gambar \ref{fig:nn_dota2_val_loss_20k}. Saat terjadinya kenaikan \textit{loss} juga diberikan toleransi sebesar 1500 \textit{epoch}, hal tersebut bertujuan untuk mendeteksi apakah dalam \textit{range} 1500 \textit{epoch} akan terjadi penurunan \textit{loss} yang lebih kecil dari sebelumnya. Jika tidak terjadi penurunan dalam kurun 1500 \textit{epoch} tersebut, maka proses \textit{training} akan dihentikan seperti pada Gambar \ref{fig:nn_dota2_val_loss_callback}. Dapat dilihat pada Gambar \ref{fig:nn_dota2_val_loss_callback} \textit{training} dihentikan pada \textit{epoch} antara $7 \times 10^{3}$ dan $8 \times 10^{3}$.
+\vspace{1ex}
+
+\subsection{Pembuatan Model}
+\label{sec:sub_sec3_dota2_model}
+\vspace{1ex}
+
+Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train} dapat digunakan untuk menguji atau menampilkan hasil klasifikasi pada data validasi, hasil tersebut akan ditampilkan dan dibahas pada \ref{sec:sec4_eval_dota2}. Pada Sub-bab ini akan lebih membahas mengenai model terbaik yang dihasilkan dari proses \textit{training}. Melanjutkan pembahasan sebelumnya pada Sub-bab \ref{sec:sec4_eval_dota2} tentang \textit{training} yang telah dilakukan meliputi penurunan \textit{learning rate}, pemberhentian \textit{training}, toleransi \textit{epoch} saat tidak terjadinya penurunan \textit{learing rate} dan yang paling berkataitan dengan Sub-bab ini pengambilan model terbaik. Pengambilan tersebut dilakukan pada saat \textit{epoch} dikurangi dengan 1500, dengan asumsi model terbaik diperoleh saat presentase \textit{validation loss} paling rendah dan 1500 tersebut adalah toleransi \textit{epoch}. Selama 1500 \textit{epoch} tersebut, kemudian \textit{training} berhenti, berarti tidak ditemukannya \textit{validation loss} yang lebih rendah dalam \textit{range} 1500 \textit{epoch} tersebut.
+\vspace{1ex}
+
+\section{Klasifikasi Karakter Pemain dengan Neural Network Multiclass Classification}
+\label{sec:sec3_char_method}
+\vspace{1ex}
+
+Terdapat banyak sekali jenis permainan RPG seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sec2_rpg}, tidak semua karakter yang dapat dimainkan oleh pemain berjumlah sangat banyak. Hanya beberapa genre RPG saja yang dapat menggunakan karakter pemain dengan jumlah sangat banyak. Jika mengacu genre permainan pada Sub-bab \ref{sec:sec2_rpg} dan judul permainan dijumpai saat ini permainan dengan genre JRPG dan MMORPG yang memungkinkan untuk memainkan banyak karakter dari pemain.
+\vspace{1ex}
+
+Pada pembahasan sebelumnya pada Sub-bab \ref{sec:sec3_dota2_method}, Dota 2 adalah permainan dengan genre MOBA (\textit{Multiplayer Online Battle Arena}) dengan beraneka karakter yang masing-masing dapat dipilih dan dimainkan oleh pemain. Jika dibandingkan dengan RPG yang dibahas pada Sub-bab \ref{sec:sec2_rpg}, mungkin RPG dengan banyak karakter yang dapat dilakukan proses validasi. Maka genre yang memungkinkan dilakukan proses validasi adalah JRPG, TRPG dan MMORPG dengan gameplay yang mirip dengan JRPG. Sedangkan untuk WRPG, ARPG, SRPG, dan MMORPG dengan \textit{gameplay} karakter tunggal yang tidak mirip dengan JRPG atau TRPG.
+\vspace{1ex}
+
+Maka digunakanlah data masukan yang digunakan untuk membuat karakter yang sebelumnya sudah dibahas pada Sub-bab \ref{sec:sec3_player_stats} pada Tabel \ref{tb:player_input_variable}. Namun tentu saja data tersebut dibuat skenario seakan mendesain sebuah permainan. Pada permainan yang sebelumnya sempat dibahas pada Sub-bab \ref{sec:sec2_rpg} pasti terdapat juga karakter yang memiliki HP, \textit{strength} yang tinggi dan biasa diikuti dengan \textit{vitality} yang lumayan tinggi tetapi memiliki kecepatan atau \textit{agility} rendah. Kemudian mungkin terdapat juga karakter yang memiliki HP sedang, \textit{strength} yang rendah memiliki \textit{magic} dan \textit{agility} yang tinggi. Berikut adalah contoh skenario lain yang digunakan untuk mendesain karakter pada penelitian ini:
+
+\begin{enumerate}[label=\arabic*).]
+	\item Misalkan terdapat karakter dengan HP, \textit{strength} yang tinggi dan biasa diikuti dengan \textit{vitality} yang lumayan tinggi tetapi memiliki kecepatan atau \textit{agility} rendah, maka dalam skenario ini dikategorikan sebagai \textit{knight} yang berfungsi sebagai penahan serangan dan bisa juga melakukan serangan. 
+	
+	\item Kemudian terdapat karakter yang memiliki \textit{strength} yang tidak begitu tinggi, tetapi memiliki \textit{vitality} yang cukup tinggi diikuti dengan \textit{magic} yang tinggi tetapi \textit{agility} rendah. Pada Skenario ini karakter tersebut adalah \textit{priest} yang bertugas untuk menyembuhkan \textit{party member} yang terluka atau mengalami pengurangan HP. 
+	
+	\item Karakter dengan \textit{agility} atau kecepatan dan ketepatan yang tinggi dengan tingkat \textit{luck} atau keberuntungan yang tinggi mengakibatkan berlipat gandanya \textit{strength} atau kekuatan saat melakukan serangan. Pada skenario ini, karakter tersebut adalah \textit{assassin} yang berperan sebagai penyerang dari \textit{party} yang dapat membunuh karakter musuh dengan cepat dengan kemampuan fisik. 
+	
+	\item Terdapat juga karakter yang memiliki HP sedang, \textit{strength} yang rendah, mungkin dengan \textit{endurance} yang sedang juga, tetapi memiliki \textit{magic} dan \textit{agility} yang tinggi. Dalam skenario ini, karakter tersebut adalah \textit{magician} yang berperan sebagai penyerang dari \textit{party} dengan kemampuan \textit{magic}.
+\end{enumerate}
+
+Maka hal yang akan dilakukan disini adalah mencoba melakukan klasifikasi karakter berdasarkan \textit{stats} yang ada, dataset dari karakter pemain dapat dilihat pada Tabel \textbf{[DATA TRAINING PEMAIN]} untuk data \textit{training} dan Tabel \textbf{[DATA TESTING PEMAIN]} untuk data validasi dan \textit{testing}. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:char_class_proc}. 
+\vspace{1ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.032]{img/player_char_nn_classification.png}
+	\caption{Proses klasifikasi Karakter Pemain.}
+	\label{fig:char_class_proc}
+\end{figure}
+
+Pada dasarnya Gambar \ref{fig:char_class_proc} mirip dengan Gambar \ref{fig:dota2_class_proc}, dikarenakan proses yang dilalui sama persis, hanya saja pada bagian proses training dan pembuatan model yang ditandai dengan warna abu-abu akan dilewati saja dikarenakan proses tersebut akan sama persis dengan Gambar \ref{fig:dota2_class_proc} yang kemudian dijelaskan pada Sub-bab \ref{sec:sub_sec3_dota2_arch} dan Sub-bab \ref{sec:sub_sec3_dota2_model}. Kemudian pada Gambar \ref{fig:dota2_class_proc}, data pre-processing diganti menjadi data preparation dikarenakan data dibuat secara manual sesuai dengan masukan data dalam membuat karakter pemain yang sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}.
+\vspace{1ex}
+
+\section{Klasifikasi Karakter Musuh dengan Neural Network Multiclass Classification}
+\label{sec:sec3_enemy_method}
+\vspace{1ex}
+
+Hal yang akan dilakukan disini adalah langsung melakukan klasifikasi karakter musuh berdasarkan \textit{stats} yang ada, dataset dari karakter musuh dapat dilihat pada Tabel \textbf{[DATA TRAINING MUSUH]} untuk data \textit{training} dan Tabel \textbf{[DATA TESTING MUSUH]} untuk data validasi dan \textit{testing}. Tanpa perlu adanya skenario dikarenakan jumlah musuh yang tentunya sudah sangat banyak dan beraneka ragam dan sudah dibuat melalui serangkaian proses yang dibuat pada Sub-bab \ref{sec:sec3_enemy_stats}. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:enemy_class_proc}. 
+\vspace{1ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.032]{img/player_char_nn_classification.png}
+	\caption{Proses klasifikasi Karakter Pemain.}
+	\label{fig:enemy_class_proc}
+\end{figure}
+
+Pada dasarnya Gambar \ref{fig:enemy_class_proc} mirip dengan Gambar \ref{fig:dota2_class_proc}, dikarenakan proses yang dilalui sama persis, hanya saja pada bagian proses training dan pembuatan model yang ditandai dengan warna abu-abu akan dilewati saja dikarenakan proses tersebut akan sama persis dengan Gambar \ref{fig:dota2_class_proc} yang kemudian dijelaskan pada Sub-bab \ref{sec:sub_sec3_dota2_arch} dan Sub-bab \ref{sec:sub_sec3_dota2_model}. Kemudian pada Gambar \ref{fig:dota2_class_proc}, data pre-processing diganti menjadi data preparation dikarenakan data dibuat secara manual sesuai dengan masukan data dalam membuat karakter pemain yang sudah dijelaskan pada Sub-bab \ref{sec:sec3_enemy_stats}.
+\vspace{1ex}
