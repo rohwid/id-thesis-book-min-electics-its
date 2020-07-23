@@ -1382,3 +1382,797 @@
 	\end{tabular}}
 \end{sidewaystable}
 \clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter pemain untuk \textit{training}.}
+	\vspace{1ex}
+	\label{tb:player_char_train}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{name} & \textbf{type} & \textbf{minHP} & \textbf{maxHp} & \textbf{hpGrowth} & \textbf{minMP} & \textbf{maxMp} & \textbf{mpGrowth} & \textbf{minStr} & \textbf{maxStr} & \textbf{strGrowth} & \textbf{minMag} & \textbf{maxMag} & \textbf{magGrowth} & \textbf{minEnd} & \textbf{maxEnd} & \textbf{endGrowth} & \textbf{minSpd} & \textbf{maxSpd} & \textbf{spdGrowth} & \textbf{minLuck} & \textbf{maxLuck} & \textbf{luckGrowth} \\ \hline
+			Knight 1 & 0 & 224 & 620 & 4 & 100 & 298 & 2 & 1 & 88 & 0.87 & 1 & 32 & 0.31 & 1 & 81 & 0.8 & 1 & 43 & 0.42 & 1 & 56 & 0.55 \\ \hline
+			Priest 1 & 1 & 223 & 520 & 3 & 154 & 550 & 4 & 1 & 60 & 0.59 & 1 & 68 & 0.67 & 1 & 57 & 0.56 & 1 & 58 & 0.57 & 1 & 57 & 0.56 \\ \hline
+			Assassin 1 & 2 & 173 & 470 & 3 & 127 & 424 & 3 & 1 & 49 & 0.48 & 1 & 55 & 0.54 & 1 & 48 & 0.47 & 1 & 72 & 0.71 & 1 & 76 & 0.75 \\ \hline
+			Magician 1 & 3 & 203 & 500 & 3 & 134 & 530 & 4 & 1 & 56 & 0.55 & 1 & 72 & 0.71 & 1 & 53 & 0.52 & 1 & 62 & 0.61 & 1 & 57 & 0.56 \\ \hline
+			Knight 2 & 0 & 283 & 580 & 3 & 130 & 427 & 3 & 1 & 75 & 0.74 & 1 & 45 & 0.44 & 1 & 85 & 0.84 & 1 & 45 & 0.44 & 1 & 58 & 0.57 \\ \hline
+			Priest 2 & 1 & 193 & 490 & 3 & 160 & 556 & 4 & 1 & 50 & 0.49 & 1 & 70 & 0.69 & 1 & 60 & 0.59 & 1 & 62 & 0.61 & 1 & 60 & 0.59 \\ \hline
+		\end{tabular}
+	}
+	\vspace{1ex}
+	
+	\centering
+	\caption{Dataset karakter pemain untuk validasi dan \textit{testing}.}
+	\vspace{1ex}
+	\label{tb:player_char_test}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{name} & \textbf{type} & \textbf{minHP} & \textbf{maxHp} & \textbf{hpGrowth} & \textbf{minMP} & \textbf{maxMp} & \textbf{mpGrowth} & \textbf{minStr} & \textbf{maxStr} & \textbf{strGrowth} & \textbf{minMag} & \textbf{maxMag} & \textbf{magGrowth} & \textbf{minEnd} & \textbf{maxEnd} & \textbf{endGrowth} & \textbf{minSpd} & \textbf{maxSpd} & \textbf{spdGrowth} & \textbf{minLuck} & \textbf{maxLuck} & \textbf{luckGrowth} \\ \hline
+			Assassin 2 & 2 & 177 & 573 & 4 & 121 & 418 & 3 & 1 & 75 & 0.74 & 1 & 47 & 0.46 & 1 & 63 & 0.62 & 1 & 64 & 0.63 & 1 & 67 & 0.66 \\ \hline
+			Magician 2 & 3 & 220 & 517 & 3 & 150 & 546 & 4 & 1 & 41 & 0.4 & 1 & 74 & 0.73 & 1 & 55 & 0.54 & 1 & 53 & 0.52 & 1 & 52 & 0.51 \\ \hline
+		\end{tabular}
+	}
+	\vspace{1ex}
+
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 1).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt1}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 1 & 0 & 1 & 42 & 45 & 2 & 2 & 2 & 2 & 2 \\ \hline
+			Enemy 2 & 0 & 1 & 84 & 21 & 2 & 2 & 2 & 2 & 2 \\ \hline
+			Enemy 3 & 2 & 1 & 43 & 51 & 2 & 2 & 6 & 2 & 2 \\ \hline
+			Enemy 4 & 1 & 1 & 44 & 231 & 2 & 2 & 6 & 2 & 2 \\ \hline
+			Enemy 5 & 2 & 2 & 40 & 40 & 2 & 3 & 6 & 3 & 2 \\ \hline
+			Enemy 6 & 1 & 2 & 44 & 208 & 2 & 3 & 9 & 2 & 2 \\ \hline
+			Enemy 7 & 2 & 2 & 44 & 47 & 2 & 3 & 6 & 2 & 2 \\ \hline
+			Enemy 8 & 0 & 2 & 42 & 53 & 2 & 3 & 2 & 2 & 2 \\ \hline
+			Enemy 9 & 2 & 2 & 49 & 53 & 2 & 3 & 10 & 3 & 2 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 2).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt2}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 10 & 2 & 2 & 42 & 49 & 2 & 3 & 11 & 3 & 2 \\ \hline
+			Enemy 11 & 4 & 2 & 44 & 23 & 2 & 3 & 2 & 2 & 2 \\ \hline
+			Enemy 12 & 0 & 2 & 79 & 27 & 2 & 3 & 12 & 3 & 2 \\ \hline
+			Enemy 13 & 0 & 2 & 41 & 26 & 2 & 3 & 6 & 2 & 2 \\ \hline
+			Enemy 14 & 4 & 3 & 50 & 34 & 2 & 8 & 2 & 2 & 2 \\ \hline
+			Enemy 15 & 4 & 3 & 54 & 20 & 3 & 11 & 2 & 3 & 2 \\ \hline
+			Enemy 16 & 2 & 3 & 50 & 53 & 2 & 2 & 11 & 2 & 2 \\ \hline
+			Enemy 17 & 0 & 3 & 50 & 75 & 2 & 3 & 2 & 2 & 2 \\ \hline
+			Enemy 18 & 0 & 3 & 55 & 83 & 2 & 11 & 3 & 3 & 3 \\ \hline
+			Enemy 19 & 0 & 3 & 42 & 73 & 3 & 9 & 3 & 2 & 2 \\ \hline
+			Enemy 20 & 0 & 3 & 49 & 95 & 3 & 4 & 3 & 3 & 3 \\ \hline
+			Enemy 21 & 4 & 4 & 48 & 28 & 3 & 3 & 2 & 4 & 3 \\ \hline
+			Enemy 22 & 0 & 4 & 58 & 85 & 3 & 4 & 2 & 2 & 3 \\ \hline
+			Enemy 23 & 2 & 4 & 57 & 63 & 2 & 4 & 3 & 2 & 2 \\ \hline
+			Enemy 24 & 3 & 4 & 45 & 31 & 2 & 3 & 2 & 3 & 2 \\ \hline
+			Enemy 25 & 4 & 4 & 50 & 30 & 2 & 4 & 3 & 2 & 3 \\ \hline
+			Enemy 26 & 0 & 4 & 52 & 65 & 2 & 4 & 3 & 4 & 3 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 3).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt3}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 27 & 3 & 5 & 65 & 26 & 4 & 10 & 2 & 4 & 2 \\ \hline
+			Enemy 28 & 0 & 5 & 44 & 57 & 4 & 9 & 3 & 2 & 4 \\ \hline
+			Enemy 29 & 2 & 5 & 44 & 53 & 3 & 2 & 8 & 2 & 3 \\ \hline
+			Enemy 30 & 4 & 6 & 56 & 29 & 4 & 7 & 3 & 2 & 3 \\ \hline
+			Enemy 31 & 4 & 6 & 60 & 26 & 4 & 7 & 3 & 4 & 3 \\ \hline
+			Enemy 32 & 4 & 6 & 65 & 31 & 4 & 11 & 3 & 2 & 2 \\ \hline
+			Enemy 33 & 0 & 6 & 53 & 41 & 2 & 3 & 6 & 4 & 2 \\ \hline
+			Enemy 34 & 2 & 6 & 44 & 48 & 3 & 4 & 5 & 4 & 4 \\ \hline
+			Enemy 35 & 1 & 6 & 45 & 327 & 2 & 4 & 9 & 3 & 2 \\ \hline
+			Enemy 36 & 3 & 7 & 63 & 44 & 2 & 6 & 2 & 2 & 4 \\ \hline
+			Enemy 37 & 2 & 7 & 51 & 56 & 4 & 3 & 5 & 3 & 3 \\ \hline
+			Enemy 38 & 4 & 7 & 49 & 43 & 5 & 5 & 4 & 4 & 5 \\ \hline
+			Enemy 39 & 0 & 7 & 42 & 51 & 3 & 8 & 3 & 3 & 2 \\ \hline
+			Enemy 40 & 4 & 7 & 57 & 22 & 3 & 3 & 2 & 2 & 5 \\ \hline
+			Enemy 41 & 0 & 8 & 79 & 82 & 2 & 4 & 4 & 2 & 3 \\ \hline
+			Enemy 42 & 0 & 8 & 60 & 44 & 2 & 5 & 11 & 5 & 4 \\ \hline
+			Enemy 43 & 3 & 8 & 66 & 47 & 4 & 8 & 2 & 2 & 3 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 4).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt4}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 44 & 1 & 8 & 53 & 288 & 4 & 5 & 8 & 6 & 4 \\ \hline
+			Enemy 45 & 1 & 9 & 60 & 250 & 4 & 2 & 7 & 4 & 3 \\ \hline
+			Enemy 46 & 0 & 9 & 61 & 44 & 4 & 7 & 15 & 4 & 5 \\ \hline
+			Enemy 47 & 0 & 9 & 86 & 121 & 3 & 5 & 3 & 6 & 6 \\ \hline
+			Enemy 48 & 0 & 9 & 104 & 62 & 3 & 7 & 17 & 6 & 5 \\ \hline
+			Enemy 49 & 0 & 9 & 57 & 57 & 2 & 7 & 18 & 4 & 4 \\ \hline
+			Enemy 50 & 3 & 9 & 59 & 54 & 3 & 12 & 4 & 2 & 6 \\ \hline
+			Enemy 51 & 2 & 10 & 42 & 49 & 2 & 5 & 4 & 7 & 2 \\ \hline
+			Enemy 52 & 2 & 10 & 73 & 75 & 4 & 5 & 4 & 5 & 4 \\ \hline
+			Enemy 53 & 4 & 10 & 46 & 38 & 3 & 3 & 2 & 5 & 3 \\ \hline
+			Enemy 54 & 2 & 11 & 40 & 42 & 5 & 7 & 6 & 4 & 5 \\ \hline
+			Enemy 55 & 0 & 11 & 93 & 138 & 2 & 8 & 6 & 8 & 5 \\ \hline
+			Enemy 56 & 0 & 11 & 64 & 61 & 2 & 2 & 6 & 2 & 4 \\ \hline
+			Enemy 57 & 4 & 11 & 64 & 30 & 7 & 6 & 5 & 6 & 2 \\ \hline
+			Enemy 58 & 3 & 12 & 72 & 62 & 4 & 8 & 4 & 3 & 6 \\ \hline
+			Enemy 59 & 0 & 12 & 139 & 34 & 6 & 7 & 10 & 8 & 2 \\ \hline
+			Enemy 60 & 3 & 12 & 331 & 73 & 6 & 4 & 3 & 5 & 5 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 5).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt5}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 61 & 4 & 12 & 100 & 78 & 6 & 5 & 4 & 2 & 4 \\ \hline
+			Enemy 62 & 2 & 12 & 54 & 57 & 3 & 5 & 6 & 7 & 6 \\ \hline
+			Enemy 63 & 3 & 12 & 64 & 53 & 7 & 15 & 6 & 7 & 4 \\ \hline
+			Enemy 64 & 0 & 12 & 111 & 25 & 6 & 6 & 12 & 7 & 7 \\ \hline
+			Enemy 65 & 4 & 13 & 87 & 82 & 2 & 2 & 2 & 4 & 7 \\ \hline
+			Enemy 66 & 1 & 13 & 64 & 174 & 6 & 9 & 14 & 7 & 7 \\ \hline
+			Enemy 67 & 0 & 13 & 80 & 131 & 6 & 7 & 7 & 9 & 3 \\ \hline
+			Enemy 68 & 2 & 13 & 80 & 83 & 8 & 6 & 7 & 5 & 4 \\ \hline
+			Enemy 69 & 1 & 14 & 102 & 361 & 5 & 2 & 12 & 8 & 6 \\ \hline
+			Enemy 70 & 1 & 14 & 70 & 224 & 3 & 5 & 6 & 6 & 8 \\ \hline
+			Enemy 71 & 0 & 15 & 51 & 67 & 7 & 11 & 7 & 5 & 5 \\ \hline
+			Enemy 72 & 2 & 15 & 59 & 85 & 8 & 10 & 11 & 10 & 2 \\ \hline
+			Enemy 73 & 4 & 15 & 51 & 44 & 8 & 4 & 7 & 4 & 8 \\ \hline
+			Enemy 74 & 4 & 15 & 66 & 50 & 2 & 6 & 3 & 9 & 2 \\ \hline
+			Enemy 75 & 1 & 15 & 59 & 82 & 8 & 6 & 12 & 8 & 7 \\ \hline
+			Enemy 76 & 0 & 15 & 69 & 87 & 3 & 8 & 7 & 6 & 4 \\ \hline
+			Enemy 77 & 1 & 16 & 106 & 331 & 9 & 2 & 7 & 9 & 6 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 6).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt6}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 78 & 3 & 16 & 210 & 83 & 5 & 3 & 3 & 3 & 9 \\ \hline
+			Enemy 79 & 3 & 16 & 55 & 21 & 9 & 14 & 7 & 10 & 5 \\ \hline
+			Enemy 80 & 0 & 16 & 90 & 91 & 3 & 12 & 4 & 3 & 8 \\ \hline
+			Enemy 81 & 2 & 16 & 47 & 69 & 2 & 3 & 11 & 8 & 5 \\ \hline
+			Enemy 82 & 3 & 16 & 119 & 52 & 5 & 12 & 2 & 10 & 6 \\ \hline
+			Enemy 83 & 1 & 16 & 63 & 64 & 9 & 11 & 16 & 6 & 2 \\ \hline
+			Enemy 84 & 2 & 16 & 120 & 125 & 5 & 10 & 4 & 5 & 5 \\ \hline
+			Enemy 85 & 1 & 17 & 56 & 206 & 6 & 9 & 9 & 7 & 6 \\ \hline
+			Enemy 86 & 0 & 17 & 76 & 89 & 5 & 10 & 7 & 10 & 3 \\ \hline
+			Enemy 87 & 2 & 17 & 94 & 101 & 3 & 9 & 2 & 11 & 6 \\ \hline
+			Enemy 88 & 2 & 17 & 96 & 102 & 5 & 7 & 11 & 2 & 3 \\ \hline
+			Enemy 89 & 3 & 17 & 388 & 94 & 4 & 20 & 6 & 11 & 4 \\ \hline
+			Enemy 90 & 0 & 17 & 113 & 24 & 3 & 4 & 4 & 10 & 4 \\ \hline
+			Enemy 91 & 1 & 17 & 48 & 83 & 4 & 4 & 11 & 3 & 8 \\ \hline
+			Enemy 92 & 4 & 17 & 119 & 47 & 8 & 6 & 5 & 8 & 4 \\ \hline
+			Enemy 93 & 0 & 18 & 78 & 165 & 4 & 9 & 6 & 10 & 3 \\ \hline
+			Enemy 94 & 2 & 18 & 41 & 44 & 6 & 6 & 9 & 2 & 2 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 7).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt7}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 95 & 0 & 18 & 77 & 82 & 8 & 6 & 6 & 2 & 9 \\ \hline
+			Enemy 96 & 4 & 18 & 102 & 102 & 9 & 7 & 2 & 8 & 4 \\ \hline
+			Enemy 97 & 2 & 18 & 117 & 123 & 6 & 5 & 6 & 7 & 2 \\ \hline
+			Enemy 98 & 0 & 18 & 81 & 97 & 3 & 11 & 7 & 4 & 6 \\ \hline
+			Enemy 99 & 4 & 18 & 106 & 99 & 4 & 8 & 3 & 2 & 5 \\ \hline
+			Enemy 100 & 2 & 19 & 91 & 102 & 9 & 6 & 11 & 7 & 9 \\ \hline
+			Enemy 101 & 0 & 19 & 83 & 91 & 8 & 5 & 4 & 12 & 10 \\ \hline
+			Enemy 102 & 1 & 19 & 137 & 256 & 6 & 12 & 17 & 6 & 8 \\ \hline
+			Enemy 103 & 2 & 20 & 95 & 97 & 6 & 13 & 2 & 10 & 3 \\ \hline
+			Enemy 104 & 4 & 20 & 136 & 44 & 8 & 10 & 5 & 6 & 4 \\ \hline
+			Enemy 105 & 3 & 20 & 113 & 37 & 5 & 14 & 5 & 8 & 5 \\ \hline
+			Enemy 106 & 2 & 21 & 47 & 116 & 6 & 3 & 9 & 13 & 5 \\ \hline
+			Enemy 107 & 0 & 21 & 126 & 188 & 8 & 8 & 2 & 8 & 8 \\ \hline
+			Enemy 108 & 0 & 21 & 136 & 166 & 5 & 11 & 5 & 8 & 6 \\ \hline
+			Enemy 109 & 4 & 21 & 86 & 44 & 6 & 14 & 10 & 11 & 9 \\ \hline
+			Enemy 110 & 1 & 21 & 103 & 251 & 7 & 12 & 15 & 11 & 4 \\ \hline
+			Enemy 111 & 2 & 21 & 65 & 75 & 8 & 10 & 8 & 4 & 8 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 8).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt8}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 112 & 4 & 22 & 116 & 47 & 10 & 6 & 7 & 13 & 8 \\ \hline
+			Enemy 113 & 0 & 22 & 171 & 125 & 7 & 4 & 13 & 12 & 5 \\ \hline
+			Enemy 114 & 3 & 22 & 120 & 61 & 9 & 14 & 4 & 7 & 7 \\ \hline
+			Enemy 115 & 2 & 22 & 50 & 108 & 10 & 7 & 10 & 4 & 5 \\ \hline
+			Enemy 116 & 0 & 22 & 187 & 36 & 8 & 13 & 19 & 3 & 4 \\ \hline
+			Enemy 117 & 4 & 23 & 108 & 28 & 2 & 14 & 5 & 6 & 12 \\ \hline
+			Enemy 118 & 3 & 23 & 380 & 95 & 12 & 19 & 4 & 14 & 2 \\ \hline
+			Enemy 119 & 0 & 23 & 91 & 48 & 13 & 13 & 16 & 4 & 5 \\ \hline
+			Enemy 120 & 1 & 23 & 128 & 289 & 3 & 8 & 14 & 9 & 9 \\ \hline
+			Enemy 121 & 0 & 23 & 121 & 50 & 6 & 14 & 17 & 2 & 12 \\ \hline
+			Enemy 122 & 0 & 23 & 52 & 106 & 5 & 8 & 4 & 12 & 10 \\ \hline
+			Enemy 123 & 2 & 23 & 65 & 70 & 2 & 14 & 3 & 8 & 11 \\ \hline
+			Enemy 124 & 4 & 23 & 135 & 72 & 8 & 9 & 3 & 9 & 9 \\ \hline
+			Enemy 125 & 4 & 23 & 100 & 83 & 8 & 9 & 6 & 8 & 9 \\ \hline
+			Enemy 126 & 1 & 23 & 119 & 383 & 9 & 7 & 9 & 12 & 11 \\ \hline
+			Enemy 127 & 4 & 24 & 71 & 42 & 4 & 6 & 4 & 3 & 4 \\ \hline
+			Enemy 128 & 0 & 24 & 55 & 79 & 4 & 11 & 5 & 8 & 3 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 9).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt9}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 129 & 1 & 24 & 157 & 402 & 9 & 7 & 17 & 7 & 8 \\ \hline
+			Enemy 130 & 0 & 24 & 125 & 108 & 10 & 15 & 31 & 12 & 11 \\ \hline
+			Enemy 131 & 4 & 24 & 135 & 130 & 3 & 14 & 10 & 8 & 12 \\ \hline
+			Enemy 132 & 4 & 24 & 158 & 33 & 4 & 4 & 8 & 12 & 4 \\ \hline
+			Enemy 133 & 0 & 24 & 190 & 50 & 6 & 11 & 28 & 15 & 2 \\ \hline
+			Enemy 134 & 2 & 25 & 54 & 128 & 12 & 7 & 8 & 14 & 8 \\ \hline
+			Enemy 135 & 2 & 25 & 58 & 99 & 12 & 11 & 5 & 11 & 5 \\ \hline
+			Enemy 136 & 0 & 25 & 84 & 101 & 9 & 11 & 7 & 14 & 10 \\ \hline
+			Enemy 137 & 0 & 25 & 176 & 141 & 8 & 9 & 11 & 2 & 5 \\ \hline
+			Enemy 138 & 0 & 25 & 104 & 97 & 6 & 16 & 27 & 12 & 8 \\ \hline
+			Enemy 139 & 0 & 25 & 194 & 133 & 9 & 7 & 13 & 3 & 2 \\ \hline
+			Enemy 140 & 2 & 25 & 156 & 160 & 13 & 4 & 8 & 12 & 4 \\ \hline
+			Enemy 141 & 3 & 26 & 77 & 61 & 3 & 19 & 11 & 16 & 12 \\ \hline
+			Enemy 142 & 0 & 26 & 189 & 62 & 6 & 6 & 10 & 8 & 7 \\ \hline
+			Enemy 143 & 0 & 26 & 145 & 144 & 13 & 13 & 29 & 15 & 12 \\ \hline
+			Enemy 144 & 3 & 26 & 125 & 62 & 11 & 17 & 10 & 11 & 9 \\ \hline
+			Enemy 145 & 0 & 26 & 188 & 72 & 13 & 17 & 41 & 9 & 5 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 10).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt10}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 146 & 0 & 27 & 126 & 169 & 13 & 18 & 10 & 14 & 9 \\ \hline
+			Enemy 147 & 0 & 27 & 164 & 44 & 12 & 13 & 18 & 15 & 13 \\ \hline
+			Enemy 148 & 2 & 28 & 46 & 136 & 8 & 17 & 5 & 2 & 7 \\ \hline
+			Enemy 149 & 0 & 28 & 77 & 70 & 16 & 6 & 21 & 12 & 14 \\ \hline
+			Enemy 150 & 3 & 28 & 264 & 113 & 10 & 19 & 10 & 15 & 4 \\ \hline
+			Enemy 151 & 1 & 28 & 47 & 137 & 14 & 4 & 14 & 4 & 7 \\ \hline
+			Enemy 152 & 1 & 28 & 61 & 357 & 14 & 2 & 12 & 14 & 2 \\ \hline
+			Enemy 153 & 4 & 29 & 60 & 57 & 9 & 9 & 11 & 10 & 7 \\ \hline
+			Enemy 154 & 4 & 29 & 170 & 61 & 9 & 10 & 5 & 11 & 5 \\ \hline
+			Enemy 155 & 3 & 29 & 162 & 117 & 5 & 7 & 4 & 3 & 11 \\ \hline
+			Enemy 156 & 4 & 29 & 131 & 131 & 13 & 18 & 8 & 11 & 5 \\ \hline
+			Enemy 157 & 3 & 29 & 273 & 147 & 13 & 27 & 11 & 16 & 4 \\ \hline
+			Enemy 158 & 4 & 29 & 111 & 107 & 2 & 13 & 4 & 11 & 7 \\ \hline
+			Enemy 159 & 3 & 30 & 281 & 72 & 12 & 26 & 9 & 16 & 3 \\ \hline
+			Enemy 160 & 0 & 30 & 147 & 144 & 7 & 8 & 18 & 7 & 5 \\ \hline
+			Enemy 161 & 3 & 30 & 352 & 74 & 14 & 12 & 8 & 3 & 10 \\ \hline
+			Enemy 162 & 2 & 30 & 84 & 98 & 14 & 7 & 10 & 11 & 11 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 11).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt11}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 163 & 0 & 30 & 169 & 23 & 6 & 4 & 10 & 2 & 12 \\ \hline
+			Enemy 164 & 3 & 30 & 164 & 110 & 2 & 7 & 4 & 11 & 15 \\ \hline
+			Enemy 165 & 4 & 31 & 105 & 100 & 4 & 17 & 12 & 13 & 15 \\ \hline
+			Enemy 166 & 2 & 31 & 174 & 183 & 4 & 2 & 3 & 19 & 13 \\ \hline
+			Enemy 167 & 1 & 31 & 127 & 228 & 11 & 5 & 7 & 13 & 3 \\ \hline
+			Enemy 168 & 4 & 31 & 182 & 111 & 3 & 10 & 4 & 6 & 8 \\ \hline
+			Enemy 169 & 4 & 32 & 186 & 129 & 12 & 21 & 3 & 7 & 7 \\ \hline
+			Enemy 170 & 4 & 32 & 131 & 22 & 16 & 18 & 2 & 11 & 14 \\ \hline
+			Enemy 171 & 1 & 32 & 127 & 287 & 4 & 10 & 14 & 5 & 15 \\ \hline
+			Enemy 172 & 3 & 32 & 182 & 136 & 11 & 19 & 11 & 2 & 5 \\ \hline
+			Enemy 173 & 0 & 33 & 203 & 291 & 17 & 21 & 4 & 17 & 16 \\ \hline
+			Enemy 174 & 0 & 33 & 184 & 327 & 13 & 21 & 13 & 20 & 4 \\ \hline
+			Enemy 175 & 4 & 33 & 134 & 129 & 8 & 7 & 12 & 11 & 13 \\ \hline
+			Enemy 176 & 1 & 33 & 89 & 151 & 8 & 7 & 20 & 11 & 7 \\ \hline
+			Enemy 177 & 2 & 33 & 60 & 80 & 18 & 21 & 2 & 2 & 5 \\ \hline
+			Enemy 178 & 0 & 35 & 193 & 208 & 19 & 11 & 4 & 11 & 8 \\ \hline
+			Enemy 179 & 0 & 35 & 202 & 20 & 18 & 3 & 7 & 12 & 8 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 12).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt12}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 180 & 0 & 35 & 207 & 126 & 15 & 19 & 31 & 18 & 16 \\ \hline
+			Enemy 181 & 4 & 35 & 129 & 120 & 6 & 11 & 10 & 7 & 16 \\ \hline
+			Enemy 182 & 0 & 35 & 166 & 199 & 11 & 14 & 7 & 7 & 8 \\ \hline
+			Enemy 183 & 1 & 36 & 98 & 155 & 7 & 13 & 20 & 6 & 12 \\ \hline
+			Enemy 184 & 1 & 36 & 69 & 82 & 16 & 19 & 20 & 5 & 14 \\ \hline
+			Enemy 185 & 2 & 36 & 140 & 145 & 19 & 17 & 11 & 6 & 18 \\ \hline
+			Enemy 186 & 0 & 36 & 165 & 174 & 4 & 14 & 4 & 20 & 14 \\ \hline
+			Enemy 187 & 3 & 37 & 154 & 103 & 13 & 11 & 9 & 14 & 8 \\ \hline
+			Enemy 188 & 0 & 37 & 124 & 244 & 15 & 23 & 9 & 4 & 17 \\ \hline
+			Enemy 189 & 0 & 37 & 266 & 182 & 4 & 13 & 27 & 13 & 15 \\ \hline
+			Enemy 190 & 2 & 37 & 54 & 146 & 9 & 3 & 15 & 4 & 10 \\ \hline
+			Enemy 191 & 0 & 38 & 99 & 23 & 6 & 6 & 13 & 2 & 16 \\ \hline
+			Enemy 192 & 4 & 38 & 168 & 164 & 9 & 14 & 6 & 9 & 12 \\ \hline
+			Enemy 193 & 4 & 38 & 224 & 101 & 16 & 8 & 5 & 7 & 17 \\ \hline
+			Enemy 194 & 1 & 38 & 172 & 402 & 10 & 9 & 12 & 12 & 6 \\ \hline
+			Enemy 195 & 1 & 38 & 102 & 173 & 6 & 9 & 16 & 19 & 16 \\ \hline
+			Enemy 196 & 1 & 38 & 76 & 119 & 10 & 17 & 24 & 18 & 2 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 13).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt13}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 197 & 3 & 38 & 469 & 205 & 15 & 20 & 12 & 21 & 3 \\ \hline
+			Enemy 198 & 0 & 39 & 77 & 99 & 11 & 17 & 11 & 14 & 3 \\ \hline
+			Enemy 199 & 2 & 39 & 150 & 159 & 6 & 10 & 11 & 20 & 16 \\ \hline
+			Enemy 200 & 2 & 39 & 109 & 114 & 11 & 22 & 6 & 16 & 8 \\ \hline
+			Enemy 201 & 0 & 39 & 152 & 118 & 16 & 21 & 51 & 14 & 16 \\ \hline
+			Enemy 202 & 2 & 40 & 83 & 89 & 20 & 25 & 6 & 12 & 6 \\ \hline
+			Enemy 203 & 0 & 40 & 174 & 169 & 13 & 6 & 12 & 23 & 14 \\ \hline
+			Enemy 204 & 1 & 40 & 223 & 394 & 12 & 19 & 23 & 18 & 6 \\ \hline
+			Enemy 205 & 3 & 40 & 237 & 54 & 9 & 25 & 15 & 5 & 11 \\ \hline
+			Enemy 206 & 2 & 41 & 112 & 117 & 2 & 19 & 8 & 15 & 13 \\ \hline
+			Enemy 207 & 0 & 41 & 212 & 183 & 15 & 15 & 21 & 8 & 2 \\ \hline
+			Enemy 208 & 4 & 41 & 198 & 192 & 7 & 3 & 16 & 12 & 17 \\ \hline
+			Enemy 209 & 0 & 41 & 183 & 210 & 16 & 7 & 5 & 8 & 17 \\ \hline
+			Enemy 210 & 2 & 41 & 104 & 104 & 13 & 19 & 9 & 19 & 2 \\ \hline
+			Enemy 211 & 0 & 41 & 44 & 90 & 5 & 13 & 3 & 6 & 6 \\ \hline
+			Enemy 212 & 4 & 42 & 124 & 117 & 7 & 21 & 13 & 22 & 17 \\ \hline
+			Enemy 213 & 0 & 42 & 124 & 129 & 20 & 23 & 9 & 25 & 20 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 14).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt14}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 214 & 0 & 42 & 98 & 134 & 17 & 20 & 16 & 15 & 3 \\ \hline
+			Enemy 215 & 0 & 42 & 78 & 210 & 3 & 17 & 12 & 25 & 8 \\ \hline
+			Enemy 216 & 2 & 43 & 119 & 125 & 13 & 3 & 5 & 5 & 12 \\ \hline
+			Enemy 217 & 3 & 43 & 276 & 142 & 2 & 15 & 2 & 22 & 4 \\ \hline
+			Enemy 218 & 0 & 43 & 50 & 35 & 8 & 4 & 10 & 18 & 12 \\ \hline
+			Enemy 219 & 0 & 43 & 289 & 130 & 23 & 15 & 29 & 17 & 6 \\ \hline
+			Enemy 220 & 0 & 44 & 192 & 215 & 17 & 22 & 13 & 3 & 5 \\ \hline
+			Enemy 221 & 4 & 44 & 184 & 142 & 14 & 13 & 10 & 19 & 19 \\ \hline
+			Enemy 222 & 2 & 44 & 138 & 140 & 16 & 4 & 16 & 2 & 13 \\ \hline
+			Enemy 223 & 2 & 44 & 201 & 206 & 5 & 2 & 4 & 3 & 16 \\ \hline
+			Enemy 224 & 4 & 45 & 196 & 119 & 12 & 5 & 18 & 17 & 10 \\ \hline
+			Enemy 225 & 2 & 45 & 190 & 195 & 16 & 13 & 4 & 11 & 17 \\ \hline
+			Enemy 226 & 4 & 45 & 100 & 91 & 19 & 5 & 6 & 19 & 2 \\ \hline
+			Enemy 227 & 2 & 45 & 222 & 224 & 8 & 13 & 19 & 14 & 21 \\ \hline
+			Enemy 228 & 3 & 45 & 148 & 123 & 23 & 15 & 4 & 8 & 19 \\ \hline
+			Enemy 229 & 0 & 45 & 262 & 344 & 3 & 27 & 19 & 23 & 7 \\ \hline
+			Enemy 230 & 2 & 46 & 233 & 235 & 20 & 17 & 11 & 22 & 18 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 15).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt15}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 231 & 3 & 46 & 69 & 28 & 5 & 32 & 17 & 3 & 8 \\ \hline
+			Enemy 232 & 1 & 46 & 170 & 414 & 12 & 18 & 26 & 27 & 3 \\ \hline
+			Enemy 233 & 4 & 46 & 202 & 195 & 23 & 9 & 5 & 4 & 6 \\ \hline
+			Enemy 234 & 0 & 46 & 79 & 244 & 2 & 7 & 4 & 5 & 14 \\ \hline
+			Enemy 235 & 4 & 46 & 233 & 37 & 16 & 9 & 8 & 7 & 15 \\ \hline
+			Enemy 236 & 0 & 47 & 252 & 319 & 3 & 18 & 15 & 3 & 19 \\ \hline
+			Enemy 237 & 4 & 47 & 192 & 187 & 14 & 11 & 17 & 18 & 7 \\ \hline
+			Enemy 238 & 3 & 47 & 177 & 163 & 16 & 19 & 18 & 7 & 11 \\ \hline
+			Enemy 239 & 3 & 47 & 201 & 168 & 10 & 34 & 19 & 16 & 4 \\ \hline
+			Enemy 240 & 3 & 47 & 132 & 98 & 7 & 28 & 11 & 12 & 5 \\ \hline
+			Enemy 241 & 0 & 47 & 191 & 183 & 24 & 28 & 52 & 3 & 12 \\ \hline
+			Enemy 242 & 2 & 47 & 205 & 227 & 9 & 22 & 11 & 22 & 5 \\ \hline
+			Enemy 243 & 2 & 47 & 138 & 146 & 4 & 29 & 6 & 16 & 4 \\ \hline
+			Enemy 244 & 0 & 47 & 251 & 245 & 8 & 4 & 13 & 13 & 22 \\ \hline
+			Enemy 245 & 2 & 47 & 123 & 216 & 12 & 10 & 12 & 8 & 20 \\ \hline
+			Enemy 246 & 4 & 48 & 210 & 206 & 8 & 2 & 9 & 26 & 3 \\ \hline
+			Enemy 247 & 4 & 48 & 216 & 216 & 23 & 16 & 7 & 20 & 15 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 16).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt16}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 248 & 4 & 48 & 235 & 166 & 3 & 30 & 15 & 5 & 15 \\ \hline
+			Enemy 249 & 4 & 48 & 232 & 77 & 24 & 4 & 3 & 9 & 9 \\ \hline
+			Enemy 250 & 0 & 49 & 58 & 72 & 12 & 25 & 8 & 22 & 17 \\ \hline
+			Enemy 251 & 0 & 49 & 92 & 157 & 4 & 12 & 11 & 20 & 2 \\ \hline
+			Enemy 252 & 4 & 50 & 68 & 57 & 6 & 11 & 18 & 23 & 20 \\ \hline
+			Enemy 253 & 0 & 50 & 262 & 160 & 2 & 13 & 19 & 12 & 9 \\ \hline
+			Enemy 254 & 1 & 50 & 159 & 185 & 13 & 19 & 22 & 28 & 17 \\ \hline
+			Enemy 255 & 4 & 50 & 298 & 159 & 3 & 11 & 3 & 3 & 3 \\ \hline
+			Enemy 256 & 2 & 51 & 199 & 267 & 18 & 5 & 22 & 27 & 19 \\ \hline
+			Enemy 257 & 3 & 51 & 292 & 218 & 6 & 24 & 14 & 28 & 2 \\ \hline
+			Enemy 258 & 1 & 51 & 124 & 314 & 8 & 20 & 22 & 20 & 6 \\ \hline
+			Enemy 259 & 4 & 52 & 306 & 164 & 17 & 7 & 16 & 14 & 6 \\ \hline
+			Enemy 260 & 4 & 52 & 171 & 97 & 9 & 9 & 20 & 12 & 18 \\ \hline
+			Enemy 261 & 2 & 52 & 88 & 199 & 15 & 18 & 5 & 29 & 21 \\ \hline
+			Enemy 262 & 0 & 53 & 42 & 108 & 16 & 15 & 11 & 17 & 3 \\ \hline
+			Enemy 263 & 0 & 53 & 230 & 435 & 10 & 20 & 5 & 11 & 19 \\ \hline
+			Enemy 264 & 4 & 53 & 245 & 54 & 19 & 13 & 6 & 3 & 11 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{training} (Bag. 17).}
+	\vspace{1ex}
+	\label{tb:enemy_char_train_pt17}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 265 & 0 & 53 & 183 & 183 & 3 & 28 & 50 & 23 & 2 \\ \hline
+			Enemy 266 & 3 & 53 & 291 & 246 & 27 & 27 & 17 & 31 & 5 \\ \hline
+			Enemy 267 & 4 & 53 & 119 & 116 & 4 & 18 & 13 & 29 & 20 \\ \hline
+			Enemy 268 & 0 & 55 & 236 & 432 & 25 & 26 & 15 & 3 & 4 \\ \hline
+			Enemy 269 & 0 & 55 & 148 & 269 & 5 & 28 & 20 & 11 & 11 \\ \hline
+			Enemy 270 & 2 & 55 & 306 & 311 & 11 & 7 & 4 & 10 & 18 \\ \hline
+			Enemy 271 & 1 & 56 & 297 & 468 & 25 & 25 & 29 & 11 & 6 \\ \hline
+			Enemy 272 & 3 & 56 & 218 & 113 & 8 & 22 & 12 & 13 & 19 \\ \hline
+			Enemy 273 & 4 & 56 & 95 & 94 & 12 & 26 & 10 & 32 & 8 \\ \hline
+			Enemy 274 & 3 & 56 & 466 & 216 & 23 & 34 & 17 & 14 & 20 \\ \hline
+			Enemy 275 & 3 & 56 & 255 & 151 & 15 & 33 & 17 & 18 & 24 \\ \hline
+			Enemy 276 & 2 & 56 & 257 & 293 & 13 & 4 & 11 & 28 & 23 \\ \hline
+			Enemy 277 & 3 & 56 & 295 & 79 & 5 & 16 & 4 & 2 & 16 \\ \hline
+			Enemy 278 & 4 & 57 & 272 & 68 & 14 & 25 & 2 & 14 & 22 \\ \hline
+			Enemy 279 & 4 & 57 & 94 & 81 & 24 & 32 & 22 & 22 & 8 \\ \hline
+			Enemy 280 & 0 & 57 & 182 & 289 & 8 & 23 & 15 & 9 & 4 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{validasi} dan \textit{testing} (Bag. 1).}
+	\vspace{1ex}
+	\label{tb:enemy_char_test_pt1}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 281 & 2 & 57 & 91 & 92 & 18 & 3 & 11 & 33 & 27 \\ \hline
+			Enemy 282 & 0 & 57 & 245 & 33 & 22 & 33 & 55 & 31 & 22 \\ \hline
+			Enemy 283 & 2 & 57 & 246 & 249 & 5 & 18 & 5 & 21 & 24 \\ \hline
+			Enemy 284 & 1 & 57 & 271 & 414 & 30 & 20 & 26 & 23 & 13 \\ \hline
+			Enemy 285 & 4 & 58 & 136 & 81 & 22 & 4 & 25 & 15 & 13 \\ \hline
+			Enemy 286 & 0 & 58 & 339 & 404 & 3 & 24 & 2 & 16 & 23 \\ \hline
+			Enemy 287 & 1 & 58 & 291 & 514 & 19 & 19 & 23 & 31 & 24 \\ \hline
+			Enemy 288 & 0 & 58 & 60 & 124 & 26 & 29 & 3 & 18 & 2 \\ \hline
+			Enemy 289 & 2 & 58 & 181 & 182 & 26 & 16 & 18 & 13 & 14 \\ \hline
+			Enemy 290 & 0 & 58 & 89 & 291 & 12 & 30 & 20 & 15 & 28 \\ \hline
+			Enemy 291 & 1 & 59 & 41 & 113 & 11 & 29 & 29 & 3 & 28 \\ \hline
+			Enemy 292 & 0 & 59 & 313 & 100 & 10 & 20 & 33 & 10 & 16 \\ \hline
+			Enemy 293 & 0 & 59 & 199 & 257 & 24 & 30 & 21 & 23 & 13 \\ \hline
+			Enemy 294 & 2 & 59 & 229 & 232 & 5 & 13 & 25 & 7 & 28 \\ \hline
+			Enemy 295 & 0 & 60 & 151 & 235 & 6 & 22 & 5 & 32 & 18 \\ \hline
+			Enemy 296 & 0 & 60 & 263 & 259 & 20 & 28 & 62 & 19 & 2 \\ \hline
+			Enemy 297 & 0 & 60 & 154 & 251 & 18 & 35 & 23 & 4 & 9 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{validasi} dan \textit{testing} (Bag. 2).}
+	\vspace{1ex}
+	\label{tb:enemy_char_test_pt2}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 298 & 1 & 60 & 110 & 111 & 17 & 32 & 38 & 28 & 9 \\ \hline
+			Enemy 299 & 2 & 61 & 273 & 294 & 21 & 34 & 2 & 6 & 5 \\ \hline
+			Enemy 300 & 3 & 61 & 348 & 304 & 6 & 35 & 20 & 9 & 22 \\ \hline
+			Enemy 301 & 4 & 61 & 307 & 143 & 23 & 28 & 24 & 31 & 13 \\ \hline
+			Enemy 302 & 0 & 61 & 292 & 292 & 7 & 16 & 17 & 20 & 24 \\ \hline
+			Enemy 303 & 2 & 61 & 161 & 268 & 17 & 35 & 8 & 6 & 2 \\ \hline
+			Enemy 304 & 0 & 61 & 220 & 282 & 6 & 11 & 11 & 23 & 14 \\ \hline
+			Enemy 305 & 1 & 61 & 253 & 426 & 30 & 30 & 34 & 33 & 17 \\ \hline
+			Enemy 306 & 0 & 62 & 338 & 198 & 29 & 38 & 47 & 24 & 3 \\ \hline
+			Enemy 307 & 2 & 62 & 258 & 260 & 12 & 6 & 7 & 7 & 21 \\ \hline
+			Enemy 308 & 1 & 62 & 56 & 260 & 28 & 11 & 20 & 17 & 4 \\ \hline
+			Enemy 309 & 0 & 62 & 48 & 100 & 27 & 22 & 17 & 14 & 2 \\ \hline
+			Enemy 310 & 0 & 62 & 383 & 205 & 10 & 26 & 49 & 25 & 10 \\ \hline
+			Enemy 311 & 1 & 62 & 128 & 306 & 16 & 14 & 23 & 9 & 27 \\ \hline
+			Enemy 312 & 0 & 63 & 261 & 223 & 14 & 18 & 42 & 6 & 14 \\ \hline
+			Enemy 313 & 2 & 63 & 150 & 157 & 5 & 7 & 12 & 14 & 17 \\ \hline
+			Enemy 314 & 4 & 63 & 277 & 90 & 4 & 32 & 7 & 3 & 4 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{validasi} dan \textit{testing} (Bag. 3).}
+	\vspace{1ex}
+	\label{tb:enemy_char_test_pt3}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 315 & 0 & 63 & 263 & 254 & 3 & 35 & 68 & 24 & 15 \\ \hline
+			Enemy 316 & 2 & 63 & 316 & 316 & 17 & 11 & 13 & 14 & 3 \\ \hline
+			Enemy 317 & 1 & 63 & 288 & 586 & 9 & 20 & 24 & 7 & 3 \\ \hline
+			Enemy 318 & 0 & 63 & 256 & 254 & 31 & 13 & 31 & 23 & 2 \\ \hline
+			Enemy 319 & 2 & 63 & 44 & 68 & 4 & 23 & 4 & 21 & 7 \\ \hline
+			Enemy 320 & 3 & 64 & 554 & 288 & 33 & 32 & 26 & 35 & 15 \\ \hline
+			Enemy 321 & 2 & 64 & 108 & 124 & 15 & 22 & 8 & 35 & 3 \\ \hline
+			Enemy 322 & 0 & 64 & 391 & 137 & 5 & 31 & 63 & 37 & 10 \\ \hline
+			Enemy 323 & 2 & 64 & 343 & 348 & 6 & 14 & 7 & 25 & 30 \\ \hline
+			Enemy 324 & 4 & 64 & 314 & 305 & 23 & 27 & 23 & 28 & 17 \\ \hline
+			Enemy 325 & 4 & 65 & 246 & 47 & 9 & 10 & 12 & 13 & 26 \\ \hline
+			Enemy 326 & 3 & 65 & 147 & 128 & 4 & 19 & 15 & 27 & 16 \\ \hline
+			Enemy 327 & 0 & 66 & 184 & 151 & 3 & 36 & 66 & 9 & 21 \\ \hline
+			Enemy 328 & 2 & 66 & 357 & 364 & 2 & 26 & 4 & 13 & 19 \\ \hline
+			Enemy 329 & 4 & 66 & 176 & 168 & 32 & 6 & 23 & 25 & 17 \\ \hline
+			Enemy 330 & 2 & 66 & 354 & 360 & 31 & 40 & 8 & 38 & 16 \\ \hline
+			Enemy 331 & 0 & 66 & 224 & 242 & 22 & 39 & 12 & 15 & 2 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{validasi} dan \textit{testing} (Bag. 4).}
+	\vspace{1ex}
+	\label{tb:enemy_char_test_pt4}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 332 & 1 & 67 & 79 & 206 & 32 & 26 & 30 & 23 & 3 \\ \hline
+			Enemy 333 & 0 & 67 & 271 & 267 & 19 & 42 & 42 & 4 & 26 \\ \hline
+			Enemy 334 & 1 & 68 & 176 & 285 & 21 & 16 & 21 & 6 & 9 \\ \hline
+			Enemy 335 & 0 & 68 & 426 & 323 & 2 & 22 & 24 & 13 & 18 \\ \hline
+			Enemy 336 & 4 & 68 & 301 & 99 & 4 & 3 & 8 & 13 & 21 \\ \hline
+			Enemy 337 & 0 & 69 & 381 & 671 & 11 & 38 & 22 & 23 & 11 \\ \hline
+			Enemy 338 & 4 & 69 & 250 & 106 & 17 & 41 & 21 & 24 & 10 \\ \hline
+			Enemy 339 & 0 & 69 & 392 & 493 & 23 & 17 & 10 & 34 & 21 \\ \hline
+			Enemy 340 & 0 & 70 & 399 & 122 & 18 & 41 & 55 & 9 & 33 \\ \hline
+			Enemy 341 & 0 & 70 & 186 & 343 & 4 & 22 & 10 & 33 & 30 \\ \hline
+			Enemy 342 & 2 & 70 & 212 & 214 & 2 & 11 & 3 & 2 & 27 \\ \hline
+			Enemy 343 & 0 & 70 & 292 & 414 & 14 & 17 & 9 & 9 & 22 \\ \hline
+			Enemy 344 & 3 & 71 & 412 & 275 & 36 & 8 & 4 & 12 & 28 \\ \hline
+			Enemy 345 & 2 & 71 & 245 & 246 & 36 & 20 & 9 & 27 & 15 \\ \hline
+			Enemy 346 & 2 & 71 & 111 & 170 & 20 & 2 & 8 & 35 & 21 \\ \hline
+			Enemy 347 & 3 & 71 & 521 & 329 & 26 & 36 & 22 & 22 & 17 \\ \hline
+			Enemy 348 & 0 & 71 & 201 & 196 & 18 & 33 & 45 & 16 & 2 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{validasi} dan \textit{testing} (Bag. 5).}
+	\vspace{1ex}
+	\label{tb:enemy_char_test_pt5}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 349 & 4 & 71 & 260 & 132 & 30 & 29 & 21 & 13 & 19 \\ \hline
+			Enemy 350 & 2 & 71 & 86 & 89 & 12 & 34 & 7 & 13 & 19 \\ \hline
+			Enemy 351 & 4 & 71 & 349 & 20 & 14 & 32 & 20 & 22 & 33 \\ \hline
+			Enemy 352 & 2 & 72 & 108 & 109 & 9 & 29 & 2 & 25 & 3 \\ \hline
+			Enemy 353 & 1 & 72 & 250 & 415 & 13 & 13 & 20 & 5 & 8 \\ \hline
+			Enemy 354 & 0 & 72 & 274 & 272 & 33 & 39 & 49 & 30 & 29 \\ \hline
+			Enemy 355 & 0 & 72 & 184 & 56 & 2 & 44 & 81 & 13 & 13 \\ \hline
+			Enemy 356 & 2 & 72 & 117 & 301 & 9 & 12 & 19 & 39 & 33 \\ \hline
+			Enemy 357 & 3 & 72 & 396 & 98 & 36 & 28 & 21 & 30 & 29 \\ \hline
+			Enemy 358 & 0 & 72 & 292 & 180 & 9 & 12 & 14 & 32 & 14 \\ \hline
+			Enemy 359 & 4 & 72 & 317 & 168 & 20 & 22 & 19 & 29 & 5 \\ \hline
+			Enemy 360 & 0 & 72 & 242 & 240 & 22 & 4 & 9 & 23 & 28 \\ \hline
+			Enemy 361 & 2 & 74 & 290 & 296 & 34 & 17 & 9 & 21 & 29 \\ \hline
+			Enemy 362 & 2 & 74 & 170 & 179 & 19 & 6 & 30 & 2 & 23 \\ \hline
+			Enemy 363 & 1 & 74 & 91 & 387 & 36 & 28 & 30 & 19 & 4 \\ \hline
+			Enemy 364 & 0 & 74 & 421 & 199 & 7 & 8 & 22 & 25 & 11 \\ \hline
+			Enemy 365 & 2 & 74 & 268 & 269 & 23 & 42 & 6 & 12 & 16 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{validasi} dan \textit{testing} (Bag. 6).}
+	\vspace{1ex}
+	\label{tb:enemy_char_test_pt6}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 366 & 4 & 74 & 190 & 190 & 7 & 6 & 21 & 32 & 8 \\ \hline
+			Enemy 367 & 0 & 74 & 99 & 274 & 32 & 20 & 12 & 6 & 10 \\ \hline
+			Enemy 368 & 3 & 75 & 427 & 89 & 29 & 24 & 17 & 23 & 22 \\ \hline
+			Enemy 369 & 4 & 75 & 385 & 113 & 28 & 2 & 27 & 41 & 13 \\ \hline
+			Enemy 370 & 4 & 75 & 122 & 45 & 34 & 27 & 22 & 25 & 30 \\ \hline
+			Enemy 371 & 0 & 75 & 62 & 44 & 33 & 24 & 29 & 18 & 7 \\ \hline
+			Enemy 372 & 0 & 75 & 116 & 114 & 8 & 20 & 22 & 37 & 10 \\ \hline
+			Enemy 373 & 0 & 75 & 175 & 176 & 19 & 30 & 27 & 36 & 33 \\ \hline
+			Enemy 374 & 1 & 75 & 378 & 551 & 28 & 40 & 46 & 33 & 24 \\ \hline
+			Enemy 375 & 1 & 75 & 274 & 425 & 23 & 11 & 27 & 8 & 5 \\ \hline
+			Enemy 376 & 0 & 75 & 415 & 264 & 25 & 32 & 64 & 41 & 7 \\ \hline
+			Enemy 377 & 0 & 75 & 66 & 382 & 31 & 19 & 13 & 33 & 13 \\ \hline
+			Enemy 378 & 4 & 75 & 341 & 334 & 37 & 45 & 26 & 36 & 27 \\ \hline
+			Enemy 379 & 4 & 75 & 390 & 89 & 10 & 30 & 15 & 6 & 31 \\ \hline
+			Enemy 380 & 2 & 76 & 321 & 325 & 13 & 16 & 11 & 2 & 3 \\ \hline
+			Enemy 381 & 0 & 76 & 67 & 363 & 25 & 20 & 13 & 35 & 23 \\ \hline
+			Enemy 382 & 2 & 76 & 375 & 376 & 9 & 5 & 20 & 22 & 26 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[!h]
+	\centering
+	\caption{Dataset karakter musuh untuk \textit{validasi} dan \textit{testing} (Bag. 7).}
+	\vspace{1ex}
+	\label{tb:enemy_char_test_pt7}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+			\hline
+			\rowcolor[HTML]{C0C0C0} 
+			\textbf{Name} & \textbf{Type} & \textbf{Levels} & \textbf{HP} & \textbf{MP} & \textbf{Strength} & \textbf{Magic} & \textbf{Endurance} & \textbf{Speed} & \textbf{Luck} \\ \hline
+			Enemy 383 & 3 & 76 & 75 & 73 & 34 & 27 & 24 & 6 & 19 \\ \hline
+			Enemy 384 & 0 & 76 & 426 & 82 & 6 & 2 & 11 & 39 & 21 \\ \hline
+			Enemy 385 & 3 & 76 & 277 & 76 & 14 & 38 & 2 & 34 & 30 \\ \hline
+			Enemy 386 & 3 & 76 & 632 & 339 & 7 & 40 & 23 & 4 & 31 \\ \hline
+			Enemy 387 & 1 & 76 & 244 & 519 & 15 & 28 & 30 & 14 & 19 \\ \hline
+			Enemy 388 & 3 & 77 & 420 & 186 & 10 & 35 & 25 & 39 & 5 \\ \hline
+			Enemy 389 & 0 & 77 & 332 & 332 & 28 & 20 & 35 & 38 & 3 \\ \hline
+			Enemy 390 & 1 & 77 & 80 & 348 & 18 & 20 & 31 & 33 & 18 \\ \hline
+			Enemy 391 & 4 & 77 & 385 & 376 & 18 & 21 & 18 & 25 & 12 \\ \hline
+			Enemy 392 & 1 & 77 & 205 & 389 & 5 & 17 & 26 & 25 & 35 \\ \hline
+			Enemy 393 & 4 & 78 & 430 & 265 & 36 & 38 & 31 & 23 & 3 \\ \hline
+			Enemy 394 & 4 & 78 & 243 & 200 & 4 & 4 & 10 & 33 & 36 \\ \hline
+			Enemy 395 & 0 & 78 & 65 & 227 & 12 & 32 & 32 & 22 & 14 \\ \hline
+			Enemy 396 & 0 & 78 & 349 & 146 & 16 & 17 & 28 & 36 & 28 \\ \hline
+			Enemy 397 & 1 & 78 & 266 & 438 & 22 & 45 & 52 & 44 & 4 \\ \hline
+			Enemy 398 & 1 & 78 & 136 & 341 & 37 & 20 & 32 & 33 & 5 \\ \hline
+			Enemy 399 & 3 & 78 & 422 & 167 & 21 & 38 & 14 & 11 & 22 \\ \hline
+			Enemy 400 & 3 & 78 & 389 & 161 & 30 & 15 & 11 & 36 & 22 \\ \hline
+		\end{tabular}
+	}
+\end{sidewaystable}
+\clearpage
