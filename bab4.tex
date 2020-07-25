@@ -385,6 +385,7 @@ Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_level}, diman
 
 \begin{longtable}{|l|l|l|}
 	\caption{Hasil level yang dibuat untuk musuh.}
+	\vspace{1ex}
 	\label{tb:enemy_level_distrib}\\
 	\hline
 	\rowcolor[HTML]{C0C0C0} 
@@ -438,6 +439,7 @@ Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_type}, dimana
 
 \begin{longtable}{|l|l|l|l|}
 	\caption{Hasil level yang dibuat untuk musuh.}
+	\vspace{1ex}
 	\label{tb:enemy_type_distrib}\\
 	\hline
 	\rowcolor[HTML]{C0C0C0} 
@@ -462,7 +464,7 @@ Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_type}, dimana
 	\textbf{400} & \textbf{Enemy 400} & \textbf{78} & \textbf{3} \\ \hline
 \end{longtable}
 
-Dari data yang tedapat pada Tabel \ref{tb:enemy_type_distrib} hanya sebagian data saja, lebih lengkapnya dapat dilihat langsung pada \nameref{chap:chap6_attachment} dalam Tabel \ref{tb:enemies_all_stats_1} sampai dengan Tabel \ref{tb:enemies_all_stats_15} di kolom \textit{Type}. Pada Tabel \ref{tb:enemy_type_distrib} dan tabel lain yang memuat tentang \textit{Type} yang berisi data $ET_{i}$ atau jenis musuh yang diisi dengan angka 0 sampai dengan 4, maksud dari angka tersebut adalah untuk mewakili indeks dari variabel \textit{Enemy Type} pada Tabel \ref{tb:enemy_input_variable}. Secara berurutan dari 0 sampai dengan 4 adalah \textit{Mixed}, \textit{Hard Magic}, \textit{Soft Magic}, \textit{Hard Strength}, dan \textit{Soft Magic}. Seluruh data tersebut jika divisualisasikan maka hasilnya seperti Gambar \ref{fig:enemy_type_distrib} sesuai yang ditargetkan oleh variabel \textit{Distribute Percentage} pada Tabel \ref{tb:enemy_input_variable} atau variabel $DP$ pada persamaan \ref{eq:enemy_types_percentage}.
+Dari data yang tedapat pada Tabel \ref{tb:enemy_type_distrib} hanya sebagian data saja, lebih lengkapnya dapat dilihat langsung pada \nameref{chap:chap6_attachment} dalam Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} di kolom \textit{Type}. Pada Tabel \ref{tb:enemy_type_distrib} dan tabel lain yang memuat tentang \textit{Type} yang berisi data $ET_{i}$ atau jenis musuh yang diisi dengan angka 0 sampai dengan 4, maksud dari angka tersebut adalah untuk mewakili indeks dari variabel \textit{Enemy Type} pada Tabel \ref{tb:enemy_input_variable}. Secara berurutan dari 0 sampai dengan 4 adalah \textit{Mixed}, \textit{Hard Magic}, \textit{Soft Magic}, \textit{Hard Strength}, dan \textit{Soft Magic}. Seluruh data tersebut jika divisualisasikan maka hasilnya seperti Gambar \ref{fig:enemy_type_distrib} sesuai yang ditargetkan oleh variabel \textit{Distribute Percentage} pada Tabel \ref{tb:enemy_input_variable} atau variabel $DP$ pada persamaan \ref{eq:enemy_types_percentage}.
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.5]{img/EnemyTypeDistrib.png}
@@ -477,11 +479,12 @@ Kemudian pada Gambar \ref{fig:enemy_type_distrib} adalah hasil dari proses pembu
 \label{sec:sub_sec4_eval_dist_enemy_element_and_weak}
 \vspace{1ex}
 
-Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_weak}, dimana pada bagian ini membahas tentang pendistribusian elemen dan kelemahan musuh untuk permaian dengan genre \textit{turn-based} RPG. Berikut adalah hasil dari proses distribusi tipe musuh yang diperoleh dari perhitungan pada persamaan \ref{eq:enemy_element}, \ref{eq:damage_name_number}, \ref{eq:damage_number_prob}, \ref{eq:multi_damage_num_prob}, dan \ref{eq:all_enemies_damage}. Setelah melalui tahapan tersebut dengan variabel masukan pada Tabel \ref{tb:enemy_input_variable} maka hasil persebaran kelemahan dan kekebalan musuh ditunjukkan pada Tabel \ref{tb:enemy_weak_distrib} dan selengkapnya dapat dilihat pada \nameref{chap:chap6_attachment} dalam Tabel \ref{tb:enemies_all_stats_1} sampai dengan Tabel \ref{tb:enemies_all_stats_15}.
+Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_weak}, dimana pada bagian ini membahas tentang pendistribusian elemen dan kelemahan musuh untuk permaian dengan genre \textit{turn-based} RPG. Berikut adalah hasil dari proses distribusi tipe musuh yang diperoleh dari perhitungan pada persamaan \ref{eq:enemy_element}, \ref{eq:damage_name_number}, \ref{eq:damage_number_prob}, \ref{eq:multi_damage_num_prob}, dan \ref{eq:all_enemies_damage}. Setelah melalui tahapan tersebut dengan variabel masukan pada Tabel \ref{tb:enemy_input_variable} maka hasil persebaran kelemahan dan kekebalan musuh ditunjukkan pada Tabel \ref{tb:enemy_weak_distrib} dan selengkapnya dapat dilihat pada \nameref{chap:chap6_attachment} dalam Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15}.
 \vspace{-1ex}
 
 \begin{longtable}{|l|l|l|l|l|l|l|}
 	\caption{Hasil level yang dibuat untuk musuh.}
+	\vspace{1ex}
 	\label{tb:enemy_weak_distrib}\\
 	\hline
 	\rowcolor[HTML]{C0C0C0} 
@@ -529,6 +532,7 @@ pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}, dimana pada bagian ini membah
 
 \begin{longtable}{|l|l|l|l|l|}
 	\caption{Distribusi \textit{Stats} HP dan MP musuh.}
+	\vspace{1ex}
 	\label{tb:enemy_weak_stats}\\
 	\hline
 	\rowcolor[HTML]{C0C0C0} 
@@ -553,7 +557,7 @@ pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}, dimana pada bagian ini membah
 \end{longtable}
 \vspace{1ex}
 
-Pada Tabel \ref{tb:enemy_weak_stats} hanya sebagian data saja yang ditampilkan, untuk selengkapnya dapat dilihat pada \nameref{chap:chap6_attachment} dalam Tabel \ref{tb:enemies_all_stats_1} sampai dengan Tabel \ref{tb:enemies_all_stats_15} pada kolom HP dan MP. Selanjutnya adalah penggambaran persebaran \textit{stats} HP dan MP yang masing-masing digambarkan pada Gambar \ref{fig:enemy_hp_distrib} dan Gambar \ref{fig:enemy_mp_distrib}.
+Pada Tabel \ref{tb:enemy_weak_stats} hanya sebagian data saja yang ditampilkan, untuk selengkapnya dapat dilihat pada \nameref{chap:chap6_attachment} dalam Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} pada kolom HP dan MP. Selanjutnya adalah penggambaran persebaran \textit{stats} HP dan MP yang masing-masing digambarkan pada Gambar \ref{fig:enemy_hp_distrib} dan Gambar \ref{fig:enemy_mp_distrib}.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
@@ -576,6 +580,7 @@ Masih pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}, dimana pada bagian ini 
 
 \begin{longtable}{|l|l|l|l|l|l|l|l|}
 	\caption{Distribusi \textit{Stats} musuh.}
+	\vspace{1ex}
 	\label{tb:enemy_stats}\\
 	\hline
 	\rowcolor[HTML]{C0C0C0} 
@@ -601,7 +606,7 @@ Masih pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}, dimana pada bagian ini 
 \end{longtable}
 \vspace{1ex}
 
-Selanjutnya adalah penggambaran persebaran \textit{stats} yang disebutkan pada Tabel \ref{tb:enemy_stats} yang digambarkan pada Gambar \ref{fig:enemy_stats_distrib}. Pada Gambar \ref{fig:enemy_str_distrib}, \ref{fig:enemy_mag_distrib}, \ref{fig:enemy_endr_distrib}, \ref{fig:enemy_spd_distrib} dan Gambar \ref{fig:enemy_luck_distrib} adalah pecahan dari Gambar \ref{fig:enemy_stats_distrib} secara berurutan diantaranya adalah \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck}. Data \textit{Stats} selengkapnya dapat dilihat pada \nameref{chap:chap6_attachment} dalam Tabel \ref{tb:enemies_all_stats_1} sampai dengan Tabel \ref{tb:enemies_all_stats_15} pada kolom \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed}, \textit{Luck} dan \textit{stats} yang lain jika dilakukan penambahan \textit{stats} pada program. 
+Selanjutnya adalah penggambaran persebaran \textit{stats} yang disebutkan pada Tabel \ref{tb:enemy_stats} yang digambarkan pada Gambar \ref{fig:enemy_stats_distrib}. Pada Gambar \ref{fig:enemy_str_distrib}, \ref{fig:enemy_mag_distrib}, \ref{fig:enemy_endr_distrib}, \ref{fig:enemy_spd_distrib} dan Gambar \ref{fig:enemy_luck_distrib} adalah pecahan dari Gambar \ref{fig:enemy_stats_distrib} secara berurutan diantaranya adalah \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck}. Data \textit{Stats} selengkapnya dapat dilihat pada \nameref{chap:chap6_attachment} dalam Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} pada kolom \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed}, \textit{Luck} dan \textit{stats} yang lain jika dilakukan penambahan \textit{stats} pada program. 
 \clearpage
 
 \begin{figure} [!h] \centering
@@ -644,41 +649,36 @@ Selanjutnya adalah penggambaran persebaran \textit{stats} yang disebutkan pada T
 \vspace{1ex}
 
 Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_dota2_method}, bila dijelaskan melalui diagram blok pada Gambar \ref{fig:dota2_class_proc} maka bagian yang akan dibahas pada Sub-bab ini adalah validasi. Grafik hasil training dapat dilihat pada Gambar \ref{fig:nn_dota2_acc_chap4}, \ref{fig:nn_dota2_loss_chap4}, \ref{fig:nn_dota2_lr_chap4}, \ref{fig:nn_dota2_val_acc_chap4}, dan Gambar \ref{fig:nn_dota2_val_loss_chap4}. Masing-masing dari Gambar tersebut secara berurutan diantaranya adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat validasi dan \textit{loss} saat validasi. 
-\vspace{1ex}
+\vspace{2ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.39]{img/callback_acc_chap4.png}
-	\caption{Akurasi saat \textit{training}.}
+	\includegraphics[scale=0.4]{img/callback_acc_chap4.png}
+	\caption{Akurasi saat \textit{training} pada \textit{hero} Dota 2.}
 	\label{fig:nn_dota2_acc_chap4}
-\end{figure}
+	\vspace{4ex}
 
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.39]{img/callback_loss_chap4.png}
-	\caption{\textit{Loss} saat \textit{training}.}
+	\includegraphics[scale=0.4]{img/callback_loss_chap4.png}
+	\caption{\textit{Loss} saat \textit{training} pada \textit{hero} Dota 2.}
 	\label{fig:nn_dota2_loss_chap4}
-	\vspace{1ex}
 \end{figure}
+\clearpage
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.39]{img/callback_lr_chap4.png}
+	\includegraphics[scale=0.4]{img/callback_lr_chap4.png}
 	\caption{Proses penurunan \textit{learning rate} saat \textit{training}.}
 	\label{fig:nn_dota2_lr_chap4}
-	\vspace{1ex}
-\end{figure}
+	\vspace{4ex}
 
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.39]{img/callback_val_acc_chap4.png}
+	\includegraphics[scale=0.4]{img/callback_val_acc_chap4.png}
 	\caption{Akurasi pada saat proses validasi.}
 	\label{fig:nn_dota2_val_acc_chap4}
-	\vspace{1ex}
-\end{figure}
+	\vspace{4ex}
 
-\begin{figure} [!h] \centering
-	\includegraphics[scale=0.39]{img/callback_val_loss_chap4.png}
+	\includegraphics[scale=0.4]{img/callback_val_loss_chap4.png}
 	\caption{\textit{Loss} saat proses validasi.}
 	\label{fig:nn_dota2_val_loss_chap4}
-	\vspace{1ex}
 \end{figure}
+\clearpage
 
 Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train}, \textit{training} berlangsung selama kurang lebih $1 \times 10^{4}$ sampai $11 \times 10^{3}$. Akurasi saat \textit{training} mampu mencapai 0.9 dan \textit{loss} sebesar 0.55, kemudian akurasi saat validasi mampu mencapai 0.75 dan \textit{loss} saat validasi sebesar 0.86. Hasil klasifikasi dari data \textit{stats} karakter atau \textit{hero} Dota 2 yang dijadikan sebagai data validasi dapat dilihat pada Tabel \ref{tb:dota2_hero_pt3} yang kemudian digunakan pada proses validasi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:dota2_valid_result}.
 \vspace{-2ex}
@@ -687,6 +687,89 @@ Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_se
 	\caption{Hasil proses validasi atau testing dengan data validasi.}
 	\vspace{1ex}
 	\label{tb:dota2_valid_result}\\
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	\textbf{Hero Name} & \textbf{Strength} & \textbf{Agility} & \textbf{Intelligent} \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{ArcWarden} & 0.053558 & 0.206808 & {\color[HTML]{FE0000} 0.739634} \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{Jakiro} & 0.205992 & 0.241550 & {\color[HTML]{036400} 0.552458} \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{WinterWyvern} & 0.205992 & 0.241552 & {\color[HTML]{036400} 0.552456} \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{Bloodseeker} & 0.161604 & {\color[HTML]{036400} 0.760779} & 0.077617 \\ \hline
+	\rowcolor[HTML]{FFFFFF}
+	\textbf{Phoenix} & 0.053562 & 0.206812 & {\color[HTML]{FE0000} 0.739627} \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{Io} & 0.053558 & 0.206813 & {\color[HTML]{FE0000} 0.739629} \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{Leshrac} & 0.053559 & 0.206871 & {\color[HTML]{036400} 0.739570} \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{OutworldDevourer} & 0.205848 & 0.245712 & {\color[HTML]{036400} 0.548440} \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{Brewmaster} & {\color[HTML]{036400} 0.624197} & 0.189504 & 0.186300 \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{Tusk} & 0.377984 & {\color[HTML]{FE0000} 0.510914} & 0.111102 \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{Weaver} & 0.098899 & {\color[HTML]{036400} 0.560487} & 0.340614 \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{Undying} & {\color[HTML]{036400} 0.645770} & 0.127254 & 0.226976 \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{Alchemist} & {\color[HTML]{036400} 0.643663} & 0.126769 & 0.229569 \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{Phantom Lancer} & 0.154832 & {\color[HTML]{036400} 0.768835} & 0.076333 \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{CrystalMaiden} & 0.053558 & 0.206809 & {\color[HTML]{036400} 0.739633} \\ \hline
+	\rowcolor[HTML]{FFFFFF} 
+	\textbf{Invoker} & 0.053558 & 0.206809 & {\color[HTML]{036400} 0.739633} \\ \hline
+\end{longtable}
+
+Cara membaca hasil klasifikasi pada Tabel \ref{tb:dota2_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_dota2_arch} dan Sub-bab \ref{sec:sub_sec3_dota2_train}. Hasil ditampilkan pada Tabel \ref{tb:dota2_valid_result} terdapat empat \textit{hero} yang mengalami salah klasifikasi yang kemudian diberi warna merah, dengan beracuan pada Tabel \ref{tb:dota2_hero_pt3} pada bagian kolom \textit{type}. Maka dari 16 \textit{hero} terdapat 4 hero yang mengalami salah klasifikasi, bila dinyatakan dalam presentase menjadi 64\% \textit{hero} berhasil terklasifikasi.
+\vspace{1ex}
+
+\section{Hasil Klasifikasi Karakter untuk Karakter Pemain}
+\label{sec:sec4_eval_player}
+\vspace{1ex}
+
+Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_dota2_method}, bila dijelaskan melalui diagram blok pada Gambar \ref{fig:dota2_class_proc} maka bagian yang akan dibahas pada Sub-bab ini adalah validasi. Grafik hasil training dapat dilihat pada Gambar \ref{fig:nn_player_acc_chap4}, \ref{fig:nn_player_loss_chap4}, \ref{fig:nn_player_lr_chap4}, \ref{fig:nn_player_val_acc_chap4}, dan Gambar \ref{fig:nn_player_val_loss_chap4}. Masing-masing dari Gambar tersebut secara berurutan diantaranya adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat validasi dan \textit{loss} saat validasi. 
+\vspace{2ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.4]{img/callback_acc_chap4.png}
+	\caption{Akurasi saat \textit{training} pada \textit{hero} Dota 2.}
+	\label{fig:nn_player_acc_chap4}
+	\vspace{4ex}
+	
+	\includegraphics[scale=0.4]{img/callback_loss_chap4.png}
+	\caption{\textit{Loss} saat \textit{training} pada \textit{hero} Dota 2.}
+	\label{fig:nn_player_loss_chap4}
+\end{figure}
+\clearpage
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.4]{img/callback_lr_chap4.png}
+	\caption{Proses penurunan \textit{learning rate} saat \textit{training}.}
+	\label{fig:nn_player_lr_chap4}
+	\vspace{4ex}
+	
+	\includegraphics[scale=0.4]{img/callback_val_acc_chap4.png}
+	\caption{Akurasi pada saat proses validasi.}
+	\label{fig:nn_player_val_acc_chap4}
+	\vspace{4ex}
+	
+	\includegraphics[scale=0.4]{img/callback_val_loss_chap4.png}
+	\caption{\textit{Loss} saat proses validasi.}
+	\label{fig:nn_player_val_loss_chap4}
+\end{figure}
+\clearpage
+
+Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_player_char_train}, \textit{training} berlangsung selama kurang lebih $1 \times 10^{4}$ sampai $11 \times 10^{3}$. Akurasi saat \textit{training} mampu mencapai 0.9 dan \textit{loss} sebesar 0.55, kemudian akurasi saat validasi mampu mencapai 0.75 dan \textit{loss} saat validasi sebesar 0.86. Hasil klasifikasi dari data \textit{stats} karakter atau \textit{hero} Dota 2 yang dijadikan sebagai data validasi dapat dilihat pada Tabel \ref{tb:player_char_test} yang kemudian digunakan pada proses validasi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:player_valid_result}.
+\vspace{-2ex}
+
+\begin{longtable}{|l|l|l|l|}
+	\caption{Hasil proses validasi atau testing dengan data validasi.}
+	\vspace{1ex}
+	\label{tb:player_valid_result}\\
 	\hline
 	\rowcolor[HTML]{C0C0C0} 
 	\textbf{Hero Name} & \textbf{Strength} & \textbf{Agility} & \textbf{Intelligent} \\ \hline
@@ -724,4 +807,4 @@ Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_se
 	\textbf{Invoker} & 0.053558 & 0.206809 & {\color[HTML]{036400} 0.739633} \\ \hline
 \end{longtable}
 
-Cara membaca hasil klasifikasi pada Tabel \ref{tb:dota2_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_dota2_arch} dan Sub-bab \ref{sec:sub_sec3_dota2_train}. Hasil ditampilkan pada Tabel \ref{tb:dota2_valid_result} terdapat empat \textit{hero} yang mengalami salah klasifikasi yang kemudian diberi warna merah, dengan beracuan pada Tabel \ref{tb:dota2_hero_pt3} pada bagian kolom \textit{type}. Maka dari 16 \textit{hero} terdapat 4 hero yang mengalami salah klasifikasi, bila dinyatakan dalam presentase menjadi 64\% \textit{hero} berhasil terklasifikasi.
+Cara membaca hasil klasifikasi pada Tabel \ref{tb:player_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_arch} dan Sub-bab \ref{sec:sub_sec3_player_char_train}. Hasil ditampilkan pada Tabel \ref{tb:player_valid_result} terdapat empat \textit{hero} yang mengalami salah klasifikasi yang kemudian diberi warna merah, dengan beracuan pada Tabel \ref{tb:player_char_test} pada bagian kolom \textit{type}. Maka dari 16 \textit{hero} terdapat 4 hero yang mengalami salah klasifikasi, bila dinyatakan dalam presentase menjadi 64\% \textit{hero} berhasil terklasifikasi.

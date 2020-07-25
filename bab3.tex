@@ -449,7 +449,7 @@ Karena program ini dibangun menggunakan OOP (\textit{Object Oriented Programming
 	\textit{Enemy Numbers} & 400 \\ \hline
 	\textit{Max Level} & 80 \\ \hline
 	\textit{Min Level} & 1 \\ \hline
-	\textit{Level Class} & {[} `\textit{Easy}', `\textit{Medium}', `\textit{High}' {]} \\ \hline
+	\textit{Level Class} & {[} `\textit{Easy}', `\textit{Medium}', `\textit{Hard}' {]} \\ \hline
 	\textit{Min} HP & 159 \\ \hline
 	\textit{Max} HP & 163 \\ \hline
 	\textit{Min} MP & 89 \\ \hline
@@ -1021,6 +1021,7 @@ Dari 22 fitur yang dibahas pada Sub-bab \ref{sec:sub_sec3_dota2_pre_proc}, bisa 
 	\hline
 	\rowcolor[HTML]{C0C0C0} 
 	\textbf{Fitur} & \textbf{Korelasi Matrix} \\ \hline
+	\textbf{type} & 1.000000 \\ \hline
 	\textbf{baseStr} & -0.542666 \\ \hline
 	\textbf{strGrowth} & -0.542322 \\ \hline
 	\textbf{maxStr} & -0.581514 \\ \hline
@@ -1057,10 +1058,9 @@ Selanjutnya akan dibuang semua fitur yang memiliki nilai korelasi lebih kecil da
 \vspace{1ex}
 
 Arsitektur \textit{Neural Network} yang akan dibuat mempunyai enam belas \textit{neuron} pada layer masukan, delapan belas \textit{neuron} pada \textit{hidden layer} dengan fungsi aktivasi \textit{sigmoid} dan tiga \textit{neuron} yang mewakili (STR, AGI dan INT) pada layer keluaran seperti pada Gambar \ref{fig:nn_dota2} dengan fungsi aktivasi \textit{Softmax} karena keluaran dari model yang dibuat bersifat distribusi probabilitas dari seluruh nilai target. Misalkan model 100\% yakin jika \textit{hero} A adalah STR, maka keluaran dari model adalah $\left[1,\ 0,\ 0 \right]$ dan jika model tersenut 50\% yakin jika \textit{hero} B adalah AGI, 25\% yakin jika hero B adalah STR atau INT, maka keluaran dari model ini adalah $\left[0.25,\ 0.5,\ 0.25 \right]$. Harus diingat bahwa total nilai dari distribusi probabilitas untuk semua target adalah 1.
-\vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.068]{img/nn_dota2.png}
+	\includegraphics[scale=0.08]{img/nn_dota2.png}
 	\caption{Arsitektur \textit{Neural Network} untuk klasifikasi \textit{hero} Dota 2.}
 	\label{fig:nn_dota2}
 \end{figure}
@@ -1072,7 +1072,7 @@ Sedangkan untuk \textit{loss function} yang digunakan adalah \textit{Cross Entro
 \label{sec:sub_sec3_dota2_train}
 \vspace{1ex}
 
-Data hasil dari korelasi fitur pada Sub-bab \ref{sec:sub_sec3_dota2_feature_corel}, karena tipe yang ditunjukan pada kolom ke 1 dengan kepala bertuliskan \textit{type} adalah hasil prediksi maka tidak akan diikutkan proses \textit{training}. Pada kolom \textit{type} tipe karakter dinyatakan dengan 0, 1, dan 2 yang nantinya keluaran dari hasil training yang menunjukan prediksi tipe dari karakter dinyatakan dalam bentuk \textit{one-hot vector}: STR $\rightarrow [1, 0, 0]$, AGI $\rightarrow [0, 1, 0]$ dan INT $\rightarrow [0, 0, 1]$. 
+Data hasil dari korelasi fitur pada Sub-bab \ref{sec:sub_sec3_dota2_feature_corel}, karena tipe yang ditunjukan pada kolom ke satu dengan kepala yang bertuliskan ``Fitur" adalah pedoman hasil prediksi maka tidak akan diikutkan proses \textit{training}. Pada kolom \textit{type} tipe karakter dinyatakan dengan 0, 1, dan 2 yang menyatakan STR, AGI, dan INT. Nantinya keluaran dari hasil \textit{training} yang menunjukan prediksi tipe dari karakter dinyatakan dalam bentuk \textit{one-hot vector}: STR $\rightarrow [1, 0, 0]$, AGI $\rightarrow [0, 1, 0]$ dan INT $\rightarrow [0, 0, 1]$. 
 \vspace{1ex}
 
 Pada proses \textit{training} hasil prediksi akan dibandingkan dengan data validasi untuk mendapatkan nilai \textit{loss}/\textit{error} dan validasi untuk melihat performa model \textit{neural network} yang dibuat. Nilai \textit{loss} kemudian digunakan untuk meningkatkan akurasi model. Proses \textit{training} dilakukan untuk mendapatkan model dengan akurasi optimal dan tidak \textit{overfitting}.
@@ -1082,28 +1082,25 @@ Penentuan nilai \textit{batch size} dan \textit{learning rate} berperan penting 
 \vspace{1ex}
 
 Proses \textit{training} akan dilakukan sebanyak $2 \times 10^{4}$ \textit{epoch}/iterasi. Untuk satu \textit{epoch} dataset akan dibagi menjadi 16 \textit{batch size} tiap \textit{batch} hingga semua data terproses. Nilai \textit{learning rate} sebesar $1 \times 10^{-3}$ dan jika nilai \textit{loss} tidak mengalami perubahan maka \textit{learning rate} akan diperkecil sampai dengan $1 \times 10^{-4}$ seperti pada Gambar \ref{fig:nn_dota2_lr}. Namun dalam kasus ini digunakannya optimasi untuk menurunkan \textit{learning rate} saat nilai \textit{loss} tidak terjadi penurunan dan pemberhentian proses \textit{training} tanpa menunggu keseluruhan \textit{epoch} selesai. Pada Gambar \ref{fig:nn_dota2_val_loss_20k} adalah hasil \textit{training} tanpa menggunakan perubahan learning rate secara otomatis, sedangkan pada Gambar \ref{fig:nn_dota2_val_loss_callback} adalah hasil \textit{training} dengan perubahan \textit{learning rate} otomatis.
-\vspace{1ex}
+\clearpage
 
 \begin{figure} [!htb] \centering
-	\includegraphics[scale=0.3975]{img/callback_lr_chap3.png}
+	\includegraphics[scale=0.4]{img/callback_lr_chap3.png}
 	\caption{Proses pengurangan \textit{learning rate} saat \textit{training}.}
 	\label{fig:nn_dota2_lr}
-	\vspace{1ex}
-\end{figure}
+	\vspace{4ex}
 
-\begin{figure} [!htb] \centering
-	\includegraphics[scale=0.3975]{img/hyperparam_val_loss_chap3.png}
+	\includegraphics[scale=0.4]{img/hyperparam_val_loss_chap3.png}
 	\caption{Validasi \textit{loss} saat $2 \times 10^{4}$ \textit{epoch}.}
 	\label{fig:nn_dota2_val_loss_20k}
-	\vspace{1ex}
-\end{figure}
+	\vspace{4ex}
 
-\begin{figure} [!htb] \centering
-	\includegraphics[scale=0.3975]{img/callback_val_loss_chap3.png}
+	\includegraphics[scale=0.4]{img/callback_val_loss_chap3.png}
 	\caption{Validasi \textit{loss} dengan pemberhentian otomatis.}
 	\label{fig:nn_dota2_val_loss_callback}
 \end{figure}
-\vspace{1ex}
+
+\clearpage
 
 Pemberhentian proses \textit{training} tersebut dilakukan bukan tanpa alasan, jika terjadi kenaikan \textit{loss} khususnya pada proses validasi yang rawan terjadi kenaikan \textit{loss} atau \textit{loss validation} seperti pada Gambar \ref{fig:nn_dota2_val_loss_20k}. Saat terjadinya kenaikan \textit{loss} juga diberikan toleransi sebesar 1500 \textit{epoch}, hal tersebut bertujuan untuk mendeteksi apakah dalam \textit{range} 1500 \textit{epoch} akan terjadi penurunan \textit{loss} yang lebih kecil dari sebelumnya. Jika tidak terjadi penurunan dalam kurun 1500 \textit{epoch} tersebut, maka proses \textit{training} akan dihentikan seperti pada Gambar \ref{fig:nn_dota2_val_loss_callback}. Dapat dilihat pada Gambar \ref{fig:nn_dota2_val_loss_callback} \textit{training} dihentikan pada \textit{epoch} antara $7 \times 10^{3}$ dan $8 \times 10^{3}$.
 \vspace{1ex}
@@ -1112,7 +1109,7 @@ Pemberhentian proses \textit{training} tersebut dilakukan bukan tanpa alasan, ji
 \label{sec:sub_sec3_dota2_model}
 \vspace{1ex}
 
-Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train} dapat digunakan untuk menguji atau menampilkan hasil klasifikasi pada data validasi, hasil tersebut akan ditampilkan dan dibahas pada \ref{sec:sec4_eval_dota2}. Pada Sub-bab ini akan lebih membahas mengenai model terbaik yang dihasilkan dari proses \textit{training}. Melanjutkan pembahasan sebelumnya pada Sub-bab \ref{sec:sec4_eval_dota2} tentang \textit{training} yang telah dilakukan meliputi penurunan \textit{learning rate}, pemberhentian \textit{training}, toleransi \textit{epoch} saat tidak terjadinya penurunan \textit{learing rate} dan yang paling berkataitan dengan Sub-bab ini pengambilan model terbaik. Pengambilan tersebut dilakukan pada saat \textit{epoch} dikurangi dengan 1500, dengan asumsi model terbaik diperoleh saat presentase \textit{validation loss} paling rendah dan 1500 tersebut adalah toleransi \textit{epoch}. Selama 1500 \textit{epoch} tersebut, kemudian \textit{training} berhenti, berarti tidak ditemukannya \textit{validation loss} yang lebih rendah dalam \textit{range} 1500 \textit{epoch} tersebut.
+Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train} dapat digunakan untuk menguji atau menampilkan hasil klasifikasi pada data validasi, hasil tersebut akan ditampilkan dan dibahas pada Sub-bab \ref{sec:sec4_eval_dota2}. Pada Sub-bab ini akan lebih membahas mengenai model terbaik yang dihasilkan dari proses \textit{training}. Melanjutkan pembahasan sebelumnya pada Sub-bab \ref{sec:sec4_eval_dota2} tentang \textit{training} yang telah dilakukan meliputi penurunan \textit{learning rate}, pemberhentian \textit{training}, toleransi \textit{epoch} saat tidak terjadinya penurunan \textit{learing rate} dan yang paling berkataitan dengan Sub-bab ini pengambilan model terbaik. Pengambilan tersebut dilakukan pada saat \textit{epoch} dikurangi dengan 1500, dengan asumsi model terbaik diperoleh saat presentase \textit{validation loss} paling rendah dan 1500 tersebut adalah toleransi \textit{epoch}. Selama 1500 \textit{epoch} tersebut, kemudian \textit{training} berhenti, berarti tidak ditemukannya \textit{validation loss} yang lebih rendah dalam \textit{range} 1500 \textit{epoch} tersebut.
 \vspace{1ex}
 
 \section{Klasifikasi Karakter Pemain dengan Neural Network Multiclass Classification}
@@ -1125,12 +1122,12 @@ Terdapat banyak sekali jenis permainan RPG seperti yang sudah dijelaskan pada Su
 Pada pembahasan sebelumnya pada Sub-bab \ref{sec:sec3_dota2_method}, Dota 2 adalah permainan dengan genre MOBA (\textit{Multiplayer Online Battle Arena}) dengan beraneka karakter yang masing-masing dapat dipilih dan dimainkan oleh pemain. Jika dibandingkan dengan RPG yang dibahas pada Sub-bab \ref{sec:sec2_rpg}, mungkin RPG dengan banyak karakter yang dapat dilakukan proses validasi. Maka genre yang memungkinkan dilakukan proses validasi adalah JRPG, TRPG dan MMORPG dengan \textit{gameplay} yang mirip dengan JRPG. Sedangkan untuk WRPG, ARPG, SRPG, dan MMORPG dengan \textit{gameplay} karakter tunggal yang tidak mirip dengan JRPG atau TRPG.
 \vspace{1ex}
 
-Maka digunakanlah data masukan yang digunakan untuk membuat karakter yang sebelumnya sudah dibahas pada Sub-bab \ref{sec:sec3_player_stats} pada Tabel \ref{tb:player_input_variable}. Namun tentu saja data tersebut dibuat skenario seakan mendesain sebuah permainan. Pada permainan yang sebelumnya sempat dibahas pada Sub-bab \ref{sec:sec2_rpg} pasti terdapat juga karakter yang memiliki HP, \textit{strength} yang tinggi dan biasa diikuti dengan \textit{vitality} yang lumayan tinggi tetapi memiliki kecepatan atau \textit{agility} rendah. Kemudian mungkin terdapat juga karakter yang memiliki HP sedang, \textit{strength} yang rendah memiliki \textit{magic} dan \textit{agility} yang tinggi. Berikut adalah contoh skenario lain yang digunakan untuk mendesain karakter pada penelitian ini:
+Maka digunakanlah data masukan yang digunakan untuk membuat karakter pemain yang sebelumnya sudah dibahas pada Sub-bab \ref{sec:sec3_player_stats} pada Tabel \ref{tb:player_input_variable}. Data tersebut dibuat berdsarkan skenario seolah mendesain sebuah permainan. Pada permainan yang sebelumnya sempat dibahas pada Sub-bab \ref{sec:sec2_rpg} pasti terdapat juga karakter yang memiliki HP, \textit{strength} yang tinggi dan biasa diikuti dengan \textit{vitality} yang lumayan tinggi tetapi memiliki kecepatan atau \textit{agility} rendah. Kemudian mungkin terdapat juga karakter yang memiliki HP sedang, \textit{strength} yang rendah memiliki \textit{magic} dan \textit{agility} yang tinggi. Berikut adalah contoh skenario yang digunakan untuk mendesain karakter pemain berdasarkan tipe pada penelitian ini:
 
 \begin{enumerate}[label=\arabic*).]
-	\item Misalkan terdapat karakter dengan HP, \textit{strength} yang tinggi dan biasa diikuti dengan \textit{vitality} yang lumayan tinggi tetapi memiliki kecepatan atau \textit{agility} rendah, maka dalam skenario ini dikategorikan sebagai \textbf{\textit{knight}} yang berfungsi sebagai penahan serangan dan bisa juga melakukan serangan. 
+	\item Misalkan terdapat karakter dengan HP, \textit{strength} yang tinggi dan biasa diikuti dengan \textit{endurance} yang lumayan tinggi tetapi memiliki kecepatan atau \textit{agility} dan \textit{magic} rendah, maka dalam skenario ini dikategorikan sebagai \textbf{\textit{knight}} yang berfungsi sebagai penahan serangan dan bisa juga melakukan serangan. 
 	
-	\item Kemudian terdapat karakter yang memiliki \textit{strength} yang tidak begitu tinggi, tetapi memiliki \textit{vitality} yang cukup tinggi diikuti dengan \textit{magic} yang tinggi tetapi \textit{agility} rendah. Pada Skenario ini karakter tersebut adalah \textbf{\textit{priest}} yang bertugas untuk menyembuhkan \textit{party member} yang terluka atau mengalami pengurangan HP. 
+	\item Kemudian terdapat karakter yang memiliki \textit{strength} yang tidak begitu tinggi, tetapi memiliki \textit{endurance} yang cukup tinggi diikuti dengan \textit{magic} yang tinggi tetapi \textit{agility} rendah. Pada Skenario ini karakter tersebut adalah \textbf{\textit{priest}} yang bertugas untuk menyembuhkan \textit{party member} yang terluka atau mengalami pengurangan HP. 
 	
 	\item Karakter dengan \textit{agility} atau kecepatan dan ketepatan yang tinggi dengan tingkat \textit{luck} atau keberuntungan yang tinggi mengakibatkan berlipat gandanya \textit{strength} atau kekuatan saat melakukan serangan. Pada skenario ini, karakter tersebut adalah \textbf{\textit{assassin}} yang berperan sebagai penyerang dari \textit{party} yang dapat membunuh karakter musuh dengan cepat dengan kemampuan fisik.
 	
@@ -1141,7 +1138,7 @@ Maka hal yang akan dilakukan disini adalah mencoba melakukan klasifikasi karakte
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.032]{img/player_char_nn_classification.png}
+	\includegraphics[scale=0.039]{img/player_char_nn_classification.png}
 	\caption{Proses klasifikasi Karakter Pemain.}
 	\label{fig:char_class_proc}
 \end{figure}
@@ -1164,7 +1161,7 @@ Dilakukan proses korelasi fitur seperti yang dilakukan pada Sub-bab \ref{sec:sub
 \vspace{-1ex}
 
 \begin{longtable}{|l|l|}
-	\caption{Hasil perhitungan korelasi matrix untuk fitur}
+	\caption{Hasil perhitungan korelasi matrix pada data pemain}
 	\vspace{1ex}
 	\label{tb:player_matrix_corel}\\
 	\hline
@@ -1193,39 +1190,37 @@ Dilakukan proses korelasi fitur seperti yang dilakukan pada Sub-bab \ref{sec:sub
 	\textbf{maxLuck} & 0.338762 \\ \hline
 	\textbf{luckGrowth} & 0.338762 \\ \hline
 \end{longtable}
+\vspace{1ex}
 
 \subsection{Desain Arsitektur Neural Network}
 \label{sec:sub_sec3_player_arch}
 \vspace{1ex}
 
-Arsitektur \textit{Neural Network} yang akan dibuat mempunyai enam belas \textit{neuron} pada layer masukan, delapan belas \textit{neuron} pada \textit{hidden layer} dengan fungsi aktivasi \textit{sigmoid} dan lima \textit{neuron} yang mewakili (\textit{Knight}, \textit{Priest}, \textit{Assassin}, dan \textit{Magician}) pada layer keluaran seperti pada Gambar \ref{fig:nn_player} dengan fungsi aktivasi \textit{Softmax} karena keluaran dari model yang dibuat bersifat distribusi probabilitas dari seluruh nilai target. Misalkan model kita 100\% yakin jika karakter A adalah \textit{Knight}, maka keluaran dari model adalah $\left[1,\ 0,\ 0,\ 0 \right]$ dan jika model kita 50\% yakin jika hero B adalah \textit{Priest}, 25\% yakin jika hero B adalah \textit{Knight} atau \textit{Magician}, maka output dari model ini adalah $\left[0.25,\ 0.5,\ 0.25, \ 0 \right]$. Harus diingat bahwa total nilai dari distribusi probabilitas untuk semua target adalah 1.
+Arsitektur \textit{Neural Network} yang akan dibuat mempunyai enam belas \textit{neuron} pada layer masukan, delapan belas \textit{neuron} pada \textit{hidden layer} dengan fungsi aktivasi \textit{sigmoid} dan lima \textit{neuron} yang mewakili (\textit{Knight}, \textit{Priest}, \textit{Assassin}, dan \textit{Magician}) pada layer keluaran seperti pada Gambar \ref{fig:nn_player} dengan fungsi aktivasi \textit{Softmax} karena keluaran dari model yang dibuat bersifat distribusi probabilitas dari seluruh nilai target. Misalkan model kita 100\% yakin jika karakter A adalah \textit{Knight}, maka keluaran dari model adalah $\left[1,\ 0,\ 0,\ 0 \right]$ dan jika model kita 50\% yakin jika hero B adalah \textit{Priest}, 25\% yakin jika hero B adalah \textit{Knight} atau \textit{Magician}, maka output dari model ini adalah $\left[0.25,\ 0.5,\ 0.25, \ 0 \right]$. Harus diingat bahwa total nilai dari distribusi probabilitas untuk semua target adalah 1. Sedangkan untuk \textit{loss function} yang digunakan adalah \textit{Cross Entropy} dan \textit{Optimizer} yang digunakan adalah SGD (\textit{Stochasstic Gradient Descent}) dengan \textit{learning rate} sebesar 0.001. Sebagai catatan penambahkan \textit{metrics accuracy} bertujuan untuk melihat seberapa bagus model ini dalam melakukan klasifikasi.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.07]{img/nn_player_character.png}
+	\includegraphics[scale=0.08]{img/nn_player_character.png}
 	\caption{Arsitektur \textit{Neural Network} untuk klasifikasi karakter pemain.}
 	\label{fig:nn_player}
 \end{figure}
-
-Sedangkan untuk \textit{loss function} yang digunakan adalah \textit{Cross Entropy} dan \textit{Optimizer} yang digunakan adalah SGD (\textit{Stochasstic Gradient Descent}) dengan \textit{learning rate} sebesar 0.001. Sebagai catatan penambahkan \textit{metrics accuracy} bertujuan untuk melihat seberapa bagus model ini dalam melakukan klasifikasi.
-\vspace{1ex}
 
 \subsection{Training dan Pembuatan Model}
 \label{sec:sub_sec3_player_char_train}
 \vspace{1ex}
 
-Data hasil dari korelasi fitur pada Sub-bab \ref{sec:sub_sec3_player_feature_corel}, karena tipe yang ditunjukan pada kolom ke 1 dengan kepala bertuliskan \textit{type} adalah hasil prediksi maka tidak akan diikutkan proses \textit{training}. Pada kolom \textit{type} tipe karakter dinyatakan dengan 0, 1, 2, dan 3 yang nantinya keluaran dari hasil \textit{training} yang menunjukan prediksi tipe dari karakter dinyatakan dalam bentuk \textit{one-hot vector}: \textit{Knight} $\rightarrow [1, 0, 0, 0]$, \textit{Priest} $\rightarrow [0, 1, 0, 0]$, \textit{Assassin} $\rightarrow [0, 0, 1, 0]$ dan \textit{Magician} $\rightarrow [0, 0, 0, 1]$. Kemudian untuk optimasi dan pembuatan model masih sama seperti yang dilakukan saat proses sebelumnya pada Sub-bab \ref{sec:sub_sec3_dota2_train} dan Sub-bab \ref{sec:sub_sec3_dota2_model}.
+Data hasil dari korelasi fitur pada Sub-bab \ref{sec:sub_sec3_player_feature_corel}, karena tipe yang ditunjukan pada kolom ke satu dengan kepala bertuliskan ``Fitur" adalah pedoman hasil prediksi maka tidak akan diikutkan proses \textit{training}. Pada kolom \textit{type} tipe karakter dinyatakan dengan 0, 1, 2, dan 3 yang menyatakan \textit{Knight}, \textit{Priest}, \textit{Assassin} dan \textit{Magician}. Nantinya keluaran dari hasil \textit{training} yang menunjukan prediksi tipe dari karakter dinyatakan dalam bentuk \textit{one-hot vector}: \textit{Knight} $\rightarrow [1, 0, 0, 0]$, \textit{Priest} $\rightarrow [0, 1, 0, 0]$, \textit{Assassin} $\rightarrow [0, 0, 1, 0]$ dan \textit{Magician} $\rightarrow [0, 0, 0, 1]$. Kemudian untuk optimasi dan pembuatan model sama seperti Sub-bab \ref{sec:sub_sec3_dota2_model}. Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_player_char_train} dapat digunakan untuk menguji atau menampilkan hasil klasifikasi pada data validasi yang dibahas pada Sub-bab \ref{sec:sec4_eval_dota2}.
 \vspace{1ex}
 
 \section{Klasifikasi Karakter Musuh dengan Neural Network Multiclass Classification}
 \label{sec:sec3_enemy_method}
 \vspace{1ex}
 
-Hal yang akan dilakukan disini adalah langsung melakukan klasifikasi karakter musuh berdasarkan \textit{stats} yang ada, dataset dari karakter musuh dapat dilihat pada Tabel \ref{tb:enemy_char_train_pt1} sampai dengan Tabel \ref{tb:enemy_char_train_pt17} untuk data \textit{training} dan Tabel \ref{tb:enemy_char_test_pt1} sampai dengan Tabel \ref{tb:enemy_char_test_pt7} untuk data validasi dan \textit{testing}. Tanpa perlu adanya skenario dikarenakan jumlah musuh yang tentunya sudah sangat banyak dan bermacam-macam yang telah dibuat melalui serangkaian proses pada Sub-bab \ref{sec:sec3_enemy_stats}. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:enemy_class_proc}.
+Hal yang akan dilakukan disini adalah langsung melakukan klasifikasi karakter musuh berdasarkan \textit{stats} yang ada, dataset dari karakter musuh dapat dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 1 sampai 280 digunakan sebagai data \textit{training} dan Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai paling akhir digunakan sebagai data validasi dan \textit{testing}. Tanpa perlu adanya skenario dikarenakan jumlah musuh yang tentunya sudah sangat banyak dan bermacam-macam yang telah dibuat melalui serangkaian proses pada Sub-bab \ref{sec:sec3_enemy_stats}. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:enemy_class_proc}.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.032]{img/player_char_nn_classification.png}
+	\includegraphics[scale=0.039]{img/player_char_nn_classification.png}
 	\caption{Proses klasifikasi Karakter Musuh.}
 	\label{fig:enemy_class_proc}
 \end{figure}
@@ -1237,8 +1232,22 @@ Pada dasarnya Gambar \ref{fig:enemy_class_proc} mirip dengan Gambar \ref{fig:dot
 \label{sec:sub_sec3_enemy_data_prep}
 \vspace{1ex}
 
-Dataset dari karakter musuh dapat dilihat pada Tabel \ref{tb:enemy_char_train_pt1} sampai dengan Tabel \ref{tb:enemy_char_train_pt17} untuk data \textit{training} dan Tabel \ref{tb:enemy_char_test_pt1} sampai dengan Tabel \ref{tb:enemy_char_test_pt7} untuk data validasi dan \textit{testing}. Data tersebut diperoleh dari Tabel \ref{tb:enemy_input_variable} yang kemudian dijelaskan setiap proses pembuatan data tersebut melalui Sub-bab \ref{sec:sec3_player_stats}. Kemudian untuk kelemahan dari pemain tidak diguanakan sebagai fitur sama seperti pada karakter pemain, hal tersebut dikarenakan nilainya yang cenderung kurang bervariasi yang mengakibatkan akan semakin mendekati nol saat dilakukan korelasi fitur.
+Dataset dari karakter musuh dapat dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 1 sampai 280 digunakan sebagai data \textit{training} dan Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai paling akhir digunakan sebagai data validasi dan \textit{testing}. Data tersebut diperoleh dari Tabel \ref{tb:enemy_input_variable} yang kemudian dijelaskan setiap proses pembuatan data tersebut pada Sub-bab \ref{sec:sec3_player_stats}. Kemudian untuk kelemahan dari musuh tidak diguanakan sebagai fitur sama seperti pada karakter pemain, hal tersebut dikarenakan nilainya yang cenderung kurang bervariasi yang mengakibatkan akan semakin mendekati nol saat dilakukan korelasi fitur.
 \vspace{1ex}
+
+Maka digunakanlah data masukan yang digunakan untuk membuat karakter musuh yang sebelumnya sudah dibahas pada Sub-bab \ref{sec:sec3_enemy_stats} pada Tabel \ref{tb:enemy_input_variable}. Data tersebut dibuat berdasarkan skenario seolah mendesain sebuah permainan. Pada permainan yang sebelumnya sempat dibahas pada Sub-bab \ref{sec:sub_sec3_story} pasti terdapat juga karakter musuh yang susah atau mudah dikalahkan, memiliki kemampuan \textit{magic} yang tinggi, sedang, atau rendah, memiliki kemampuan \textit{strength} yang tinggi, sedang, atau rendah, dan lain sebagainya. Berikut adalah contoh skenario yang digunakan untuk mendesain karakter musuh berdasarkan tipe pada penelitian ini:
+
+\begin{enumerate}[label=\arabic*).]
+	\item Misalkan terdapat karakter dengan HP, \textit{strength} yang sangat tinggi sampai dengan sedang dan biasa diikuti dengan \textit{endurance} juga tetapi memiliki kecepatan atau \textit{agility} dan \textit{magic} rendah, maka dalam skenario ini dikategorikan sebagai \textbf{\textit{Hard Strength}}. 
+	
+	\item Misalkan terdapat karakter dengan HP, \textit{strength} yang lumayan tinggi sampai dengan sedang dan biasa diikuti dengan \textit{endurance} juga tetapi memiliki kecepatan atau \textit{agility} dan \textit{magic} rendah, maka dalam skenario ini dikategorikan sebagai \textbf{\textit{Soft Strength}}.
+	
+	\item Misalkan terdapat karakter dengan \textit{strength} dari sedang sampai dengan rendah dan biasa diikuti dengan \textit{endurance} juga tetapi memiliki \textit{magic} yang sangat tinggi, maka dalam skenario ini dikategorikan sebagai \textbf{\textit{Hard Magic}}.
+	
+	\item Misalkan terdapat karakter dengan \textit{strength} dari sedang sampai dengan rendah dan biasa diikuti dengan \textit{endurance} juga tetapi memiliki \textit{magic} yang lumayan tinggi sampai dengan sedang, maka dalam skenario ini dikategorikan sebagai \textbf{\textit{Soft Magic}}.
+	
+	\item Misalkan terdapat karakter nilai \textit{stats} yang tidak menentu dengan \textit{strength} dari rendah sampai dengan tinggi, begitu juga dengan magic, namum dalam distribusi stats tetap seimbang. Maka dalam skenario ini dikategorikan sebagai \textbf{\textit{Mixed}}.
+\end{enumerate}
 
 \subsection{Korelasi Fitur}
 \label{sec:sub_sec3_enemy_feature_corel}
@@ -1248,36 +1257,47 @@ Dilakukan proses korelasi fitur seperti yang dilakukan pada Sub-bab \ref{sec:sub
 \vspace{-1ex}
 
 \begin{longtable}{|l|l|}
-	\caption{Hasil perhitungan korelasi matrix untuk fitur}
+	\caption{Hasil perhitungan korelasi matrix pada data musuh}
 	\vspace{1ex}
 	\label{tb:enemy_matrix_corel}\\
 	\hline
 	\rowcolor[HTML]{C0C0C0}
-	\textbf{Fitur} & \textbf{Korelasi Matix} \\ \hline
+	\textbf{Fitur} & \textbf{Korelasi Matrix} \\ \hline
 	\textbf{type} & 1.000000 \\ \hline
-	\textbf{minHP} & -0.629568 \\ \hline
-	\textbf{maxHp} & -0.678790 \\ \hline
-	\textbf{hpGrowth} & -0.408248 \\ \hline
-	\textbf{minMP} & 0.481794 \\ \hline
-	\textbf{maxMp} & 0.619225 \\ \hline
-	\textbf{mpGrowth} & 0.653197 \\ \hline
-	\textbf{minStr} & NaN \\ \hline
-	\textbf{maxStr} & -0.745061 \\ \hline
-	\textbf{strGrowth} & -0.745061 \\ \hline
-	\textbf{minMag} & NaN \\ \hline
-	\textbf{maxMag} & 0.723322 \\ \hline
-	\textbf{magGrowth} & 0.723322 \\ \hline
-	\textbf{minEnd} & NaN \\ \hline
-	\textbf{maxEnd} & -0.842417 \\ \hline
-	\textbf{endGrowth} & -0.842417 \\ \hline
-	\textbf{minSpd} & NaN \\ \hline
-	\textbf{maxSpd} & 0.668815 \\ \hline
-	\textbf{spdGrowth} & 0.668815 \\ \hline
-	\textbf{minLuck} & NaN \\ \hline
-	\textbf{maxLuck} & 0.338762 \\ \hline
-	\textbf{luckGrowth} & 0.338762 \\ \hline
+	\textbf{Levels} & 0.089835 \\ \hline
+	\textbf{HP} & 0.140933 \\ \hline
+	\textbf{MP} & -0.250142 \\ \hline
+	\textbf{Strength} & 0.056565 \\ \hline
+	\textbf{Magic} & 0.051114 \\ \hline
+	\textbf{Endurance} & -0.290492 \\ \hline
+	\textbf{Speed} & 0.043601 \\ \hline
+	\textbf{Luck} & 0.076972 \\ \hline
 \end{longtable}
+
+Selanjutnya akan dibuang semua fitur yang memiliki nilai korelasi lebih kecil dari $0.1$, $-0.1$ dan $NaN$ sehingga yang mampu dijadikan sebagai fitur hanya HP, MP dan \textit{Endurance}. Sehingga didapatkan 3 fitur yang akan digunakan sebagai masukan untuk \textit{Neural Network}.
 \vspace{1ex}
 
-Selanjutnya akan dibuang semua fitur yang memiliki nilai korelasi lebih kecil dari $0.1$, $-0.1$ dan $NaN$ seperti minStr atau \textit{minimum strength}, minMag atau \textit{minimum Magic}, minEnd atau \textit{minimum endurance}, minSpd atau \textit{minimum speed}, dan minLuck atau \textit{minimum luck}. Sehingga didapatkan 16 fitur yang akan digunakan sebagai masukan untuk \textit{Neural Network}.
+\subsection{Desain Arsitektur Neural Network}
+\label{sec:sub_sec3_enemy_arch}
+\vspace{1ex}
+
+Arsitektur \textit{Neural Network} yang akan dibuat mempunyai tiga \textit{neuron} pada layer masukan, enam \textit{neuron} pada \textit{hidden layer} dengan fungsi aktivasi \textit{sigmoid} dan lima \textit{neuron} yang mewakili (\textit{Knight}, \textit{Priest}, \textit{Assassin}, dan \textit{Magician}) pada layer keluaran seperti pada Gambar \ref{fig:nn_enemy} dengan fungsi aktivasi \textit{Softmax} karena keluaran dari model yang dibuat bersifat distribusi probabilitas dari seluruh nilai target.
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.08]{img/nn_enemy_character.png}
+	\caption{Arsitektur \textit{Neural Network} untuk klasifikasi karakter pemain.}
+	\label{fig:nn_enemy}
+\end{figure}
+
+Misalkan model kita 100\% yakin jika karakter A adalah \textit{Hard Strength}, maka keluaran dari model adalah $\left[1,\ 0,\ 0,\ 0,\ 0 \right]$ dan jika model kita 50\% yakin jika hero B adalah \textit{Soft Strength}, 25\% yakin jika hero B adalah \textit{Hard Strength} atau \textit{Hard Magic}, maka keluaran dari model ini adalah $\left[0.25,\ 0.5,\ 0.25, \ 0, \ 0 \right]$. Harus diingat bahwa total nilai dari distribusi probabilitas untuk semua target adalah 1.
+\vspace{1ex}
+
+Sedangkan untuk \textit{loss function} yang digunakan adalah \textit{Cross Entropy} dan \textit{Optimizer} yang digunakan adalah SGD (\textit{Stochasstic Gradient Descent}) dengan \textit{learning rate} sebesar 0.001. Sebagai catatan penambahkan \textit{metrics accuracy} bertujuan untuk melihat seberapa bagus model ini dalam melakukan klasifikasi.
+\vspace{1ex}
+
+\subsection{Training dan Pembuatan Model}
+\label{sec:sub_sec3_enemy_char_train}
+\vspace{1ex}
+
+Data hasil dari korelasi fitur pada Sub-bab \ref{sec:sub_sec3_enemy_feature_corel}, karena tipe yang ditunjukan pada kolom ke satu dengan kepala bertuliskan ``Fitur" adalah pedoman hasil prediksi maka tidak akan diikutkan proses \textit{training}. Pada kolom \textit{type} tipe karakter dinyatakan dengan 0, 1, 2, 3, dan 4 yang menyatakan \textit{Mixed}, \textit{Hard Strength}, \textit{Soft Strength}, \textit{Hard Magic} dan \textit{Soft Magic}. Nantinya keluaran dari hasil \textit{training} yang menunjukan prediksi tipe dari karakter dinyatakan dalam bentuk \textit{one-hot vector}: \textit{Mixed} $\rightarrow [1, 0, 0, 0, 0]$, \textit{Hard Strength} $\rightarrow [0, 1, 0, 0, 0]$, \textit{Soft Strength} $\rightarrow [0, 0, 1, 0, 0]$, \textit{Hard Magic} $\rightarrow [0, 0, 0, 1, 0]$, dan \textit{Soft Magic} $\rightarrow [0, 0, 0, 0, 1]$. Kemudian untuk optimasi dan pembuatan model sama seperti Sub-bab \ref{sec:sub_sec3_dota2_model}. Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_enemy_char_train} dapat digunakan untuk menguji atau menampilkan hasil klasifikasi pada data validasi yang dibahas pada Sub-bab \ref{sec:sec4_eval_dota2}.
 \vspace{1ex}
