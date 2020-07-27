@@ -306,7 +306,7 @@ Pada penelitian ini akan digunakan beberapa algoritma \textit{machine learning} 
 	\label{sec:sub_sec2_bayes}
 	\vspace{1ex}
 	
-	Pada \textit{machine learning} sering digunakannya hipotesis terbaik $(h)$ dari data yang akan diproses $(d)$. Dalam klasifikasi dengan menggunakan \textit{naive bayes}, hipotesis $(h)$ mungkin dapat dijadikan sebagai kelas untuk mengklasifikasi data baru $(d)$.
+	Pada \textit{machine learning} sering digunakannya hipotesis terbaik $(h)$ dari data yang akan diproses $(d)$. Dalam klasifikasi dengan menggunakan Naive Bayes, hipotesis $(h)$ mungkin dapat dijadikan sebagai kelas untuk mengklasifikasi data baru $(d)$.
 	\vspace{1ex}
 	
 	Salah satu cara termudah untuk memilih hipotesis yang memungkinkan adalah dengan menggunkan data yang sudah ada. Kemudian digunakan sebagai referensi untuk menyelesaikan masalah tersebut. Teorema Bayes memberikan cara untuk menghitung probabilitas berdasarkan hipotesis yang diberikan berdasarkan pemahaman terhadap data yang ingin diolah. Maka teorema bayes dapaat dinyatakan seperti pada persamaan \ref{eq: nbayes_basic}
@@ -326,7 +326,7 @@ Pada penelitian ini akan digunakan beberapa algoritma \textit{machine learning} 
 		\item $P(d)$ adalah probabilitas data secara keseluruhan terlepas dari hipotesis.
 	\end{enumerate}
 	
-	Dapat dilihat bahwa dalam menghitung probabilitas posterior $P(h|d)$ dari probabilitas sebelumnya $P(h)$ dengan $P(d)$ dan $P(d|h)$. Setelah menghitung probabilitas posterior dengan beberapa hipotesis, maka dapat dipilih hipotesis dengan probabilitas tertinggi. Ini adalah hipotesis dengan probabilitas paling tinggi biasanya disebut juga dengan $MAP$ (\textit{Maximum a Posteriori Probability}). Pada persamaan \ref{eq: nbayes1}, \ref{eq: nbayes2}, dan \ref{eq: nbayes3} dinyatakan bagamana persamaan untuk mencari $MAP$ dari seluruh probabilitas hasil \textit{naive bayes}.
+	Dapat dilihat bahwa dalam menghitung probabilitas posterior $P(h|d)$ dari probabilitas sebelumnya $P(h)$ dengan $P(d)$ dan $P(d|h)$. Setelah menghitung probabilitas posterior dengan beberapa hipotesis, maka dapat dipilih hipotesis dengan probabilitas tertinggi. Ini adalah hipotesis dengan probabilitas paling tinggi biasanya disebut juga dengan $MAP$ (\textit{Maximum a Posteriori Probability}). Pada persamaan \ref{eq: nbayes1}, \ref{eq: nbayes2}, dan \ref{eq: nbayes3} dinyatakan bagamana persamaan untuk mencari $MAP$ dari seluruh probabilitas hasil Naive Bayes.
 	\vspace{1ex}
 	
 	\begin{equation}\label{eq: nbayes1}
@@ -351,7 +351,7 @@ Pada penelitian ini akan digunakan beberapa algoritma \textit{machine learning} 
 	\end{split}
 	\end{equation}
 	
-	$P(d)$ adalah aturan normalisasi yang biasanya digunakan dalam perhitungan probabilitas. Hal tersebut dapat tidak berlaku saat sudah ditemukannya hipotesa yang paling mungkin selama hal tersebut hanya berupa aturan yang konstan dan digunakan saat normalisasi saja maka dari itu pada persamaan \ref{eq: nbayes3} dapat ditinggal atau tidak diperhitungkan. Sedangkan $h$ dalam $MAP(h)$ maksudnya adalah hipotesa dari seluruh hasil perhitungan dengan \textit{naive bayes} yang memiliki probabilitas yang paling besar.
+	$P(d)$ adalah aturan normalisasi yang biasanya digunakan dalam perhitungan probabilitas. Hal tersebut dapat tidak berlaku saat sudah ditemukannya hipotesa yang paling mungkin selama hal tersebut hanya berupa aturan yang konstan dan digunakan saat normalisasi saja maka dari itu pada persamaan \ref{eq: nbayes3} dapat ditinggal atau tidak diperhitungkan. Sedangkan $h$ dalam $MAP(h)$ maksudnya adalah hipotesa dari seluruh hasil perhitungan dengan Naive Bayes yang memiliki probabilitas yang paling besar.
 	\vspace{1ex}
 	
 	Kembali lagi ke klasifikasi, jika telah memiliki sejumlah \textit{instance} atau sekumpulan data dalam setiap kelas pada data \textit{training}, maka probabilitas masing-masing kelas $P(h)$ akan sama karena sudah terklasifikasi sebelumnya. Hal tersebut $P(h$) menjadi sebuah aturan yang bersifat konstan, sehingga dapat dihapus dari persamaan \ref{eq: nbayes3} menjadi persamaan \ref{eq: nbayes4}
@@ -366,7 +366,7 @@ Pada penelitian ini akan digunakan beberapa algoritma \textit{machine learning} 
 	\label{sec:sub_sec2_class_bayes}
 	\vspace{1ex}
 	
-	\textit{Naive Bayes} adalah algoritma yang dapat digunakan untuk menyelesaikan masalah klasifikasi biner (dua kelas) dan multi kelas. Teknik ini paling mudah dipahami ketika dijelaskan dengan menggunakan nilai masukan biner atau terkategorisasi.
+	Naive Bayes adalah algoritma yang dapat digunakan untuk menyelesaikan masalah klasifikasi biner (dua kelas) dan multi kelas. Teknik ini paling mudah dipahami ketika dijelaskan dengan menggunakan nilai masukan biner atau terkategorisasi.
 	\vspace{1ex}
 	
 	Metode ini dinamakan \textit{naive} karena perhitungan probabilitas untuk setiap hipotesis disederhanakan agar kalkulasi dapat dilakukan. Jika dibandingkan dengan menghitung nilai dari masing-masing atribut $P(d1,\ d2,\ d3)$ maka  diasumsikan masing-masing atribut saling independen dengan target nilai dan dihitung sebagai $P(d1|h) \times P(d2|h)$ dan seterusnya.
@@ -377,7 +377,7 @@ Pada penelitian ini akan digunakan beberapa algoritma \textit{machine learning} 
 		\item \textbf{Representasi dari Naive Bayes adalah Probabilitas}
 		\setlength{\parindent}{0.8cm}
 	
-		Representasi dari \textit{naive bayes} adalah probabilitas. Daftar probabilitas yang akan disimpan ke kesebuah variabel untuk dilakukan proses \textit{learning} dengan model \textit{naive bayes}. Berikut dua langkah yang biasanya dipakai dalam pengklasifikasian dengan \textit{naive bayes}.
+		Representasi dari Naive Bayes adalah probabilitas. Daftar probabilitas yang akan disimpan ke kesebuah variabel untuk dilakukan proses \textit{learning} dengan model Naive Bayes. Berikut dua langkah yang biasanya dipakai dalam pengklasifikasian dengan Naive Bayes.
 		
 		\begin{enumerate}[label=\textbf{\alph*.}]
 			\item \textbf{\textit{Class probabilities}}: Di carinya probabilitas untuk setiap kelas dalam \textit{dataset} \textit{training}, jadi tujuan dari langkah ini adalah diperolehnya probabilitas pada setiap kelas, sekelompok data atau data \textit{clusster}.
@@ -386,7 +386,7 @@ Pada penelitian ini akan digunakan beberapa algoritma \textit{machine learning} 
 	
 		\item \textbf{Proses Learning Data dengan Naive Bayes}
 	
-		Proses learning pada \textit{data training} dengan menggunakan model \textit{naive bayes} sangatlah cepat. Proses tersebut menjadi cepat karena hanya probabilitas pada masing-masing kelas dan probabilitas pada setiap kelas diberi nilai input $(x)$ yang berbeda kemudian dihitung. Selain itu tidak ada koefisien yang perlu dicocokkan dengan menggunakan prosedur optimasi.
+		Proses learning pada \textit{data training} dengan menggunakan model Naive Bayes sangatlah cepat. Proses tersebut menjadi cepat karena hanya probabilitas pada masing-masing kelas dan probabilitas pada setiap kelas diberi nilai input $(x)$ yang berbeda kemudian dihitung. Selain itu tidak ada koefisien yang perlu dicocokkan dengan menggunakan prosedur optimasi.
 	
 		\item \textbf{Perhitungan pada \textit{Class Probabilities}}
 	
@@ -434,7 +434,7 @@ Pada penelitian ini akan digunakan beberapa algoritma \textit{machine learning} 
 	
 		\item \textbf{Membuat Prediksi dengan Naive Bayes}
 	
-		Dengan didapatkannya model \textit{naive bayes}, maka dapat dilakukan prediksi data baru menggunakan teorema bayes. Dengan menggunkan persamaan \ref{eq: nbayes3}, di mana fokus dari persamaan tersebut adalah dipilihnya kelas dengan perhitungan probabilitas terbesar. Karena diperolehnya hipotesa ``cuaca" yang mungkin untuk ``jalan-jalan" adalah ``cuaca" berada pada atribut ``cerah".
+		Dengan didapatkannya model Naive Bayes, maka dapat dilakukan prediksi data baru menggunakan teorema bayes. Dengan menggunkan persamaan \ref{eq: nbayes3}, di mana fokus dari persamaan tersebut adalah dipilihnya kelas dengan perhitungan probabilitas terbesar. Karena diperolehnya hipotesa ``cuaca" yang mungkin untuk ``jalan-jalan" adalah ``cuaca" berada pada atribut ``cerah".
 		\vspace{1ex}
 	
 		Di gunakannya contoh kasus yang sama seperti pada Sub-Bab \ref{sec:sub_sec2_class_bayes} poin ke 4 dan dipilihnya atribut ``cerah" dimana cuaca adalah \textit{instance}. Kemudian dilakukan perhitungan untuk mencari nilai probabilitas maksimal dari ``jalan-jalan" atau ``tetap di rumah" yang merupakan bagian dari atribut kelas.
@@ -480,10 +480,10 @@ Pada penelitian ini akan digunakan beberapa algoritma \textit{machine learning} 
 	\label{sec:sub_sec2_gauss_bayes}
 	\vspace{1ex}
 	
-	Penggunaan \textit{Naive bayes} dapat diperluas ke atribut yang bernilai bilangan real, hal yang paling umum dilakukan adalah dengan membuat asumsi distribusi \textit{Gaussian}.
+	Penggunaan \textit{Naive bayes} dapat diperluas ke atribut yang bernilai bilangan real, hal yang paling umum dilakukan adalah dengan membuat asumsi distribusi .
 	\vspace{1ex}
 	
-	\textit{Gaussian Naive Bayes} adalah salah satu pengembangan dari \textit{naive bayes}. Salah satu kegunaanya adalah dapat digunakan untuk memperkirakan distribusi data, tetapi istilah \textit{Gaussian} (distribusi normal) adalah salah satu cara termudah untuk digunakan, karena hanya perlu memperkirakan rata-rata dan standar deviasi dari data \textit{training} yang ingin digunakan.
+	Gaussian Naive Bayes adalah salah satu pengembangan dari Naive Bayes. Salah satu kegunaanya adalah dapat digunakan untuk memperkirakan distribusi data, tetapi istilah  (distribusi normal) adalah salah satu cara termudah untuk digunakan, karena hanya perlu memperkirakan rata-rata dan standar deviasi dari data \textit{training} yang ingin digunakan.
 	\vspace{1ex}
 	
 	\begin{enumerate}[label=\textbf{\arabic*).}]
@@ -518,7 +518,7 @@ Pada penelitian ini akan digunakan beberapa algoritma \textit{machine learning} 
 	
 		\item \textbf{Prediksi dengan Model Gaussian Naive Bayes}
 	
-		Pada bagian ini akan dijelaskan prediksi nilai $x$ selanjutnya dengan menggunakan \textit{Gaussian} PDF (\textit{Probability Density Function}). Saat membuat prediksi, parameter ini dimasukan ke \textit{Gaussian} PDF dengan masukan baru untuk variabel, dan sebagai gantinya \textit{Gaussian} PDF akan memberikan perkiraan probabilitas nilai masukan baru untuk kelas tersebut.
+		Pada bagian ini akan dijelaskan prediksi nilai $x$ selanjutnya dengan menggunakan  PDF (\textit{Probability Density Function}). Saat membuat prediksi, parameter ini dimasukan ke  PDF dengan masukan baru untuk variabel, dan sebagai gantinya  PDF akan memberikan perkiraan probabilitas nilai masukan baru untuk kelas tersebut.
 		
 		\begin{equation}\label{eq: nbayes_gaus_pdf}
 		\begin{split}
@@ -526,7 +526,7 @@ Pada penelitian ini akan digunakan beberapa algoritma \textit{machine learning} 
 		\end{split}
 		\end{equation}
 		
-		Di mana maksud dari $PDF(x, \bar{x}, \sigma)$ pada persamaan \ref{eq: nbayes_gaus_pdf} adalah \textit{Gaussian} PDF dari $x$ yaitu nilai masukan untuk variabel masukan untuk prediksi, $\bar x$ atau rata-rata dan $\sigma$ adalah standar deviasi yang sudah dihitung pada bagian atau berdasarkan data-data sebelumnya, $\pi$ adalah konstanta numerik pada umumnya, kemudian fungsi $exp()$ atau $e$ adalah konstanta numerik yang betujuan untuk membentuk hasil prediksi dengan pendekatan exponensial.
+		Di mana maksud dari $PDF(x, \bar{x}, \sigma)$ pada persamaan \ref{eq: nbayes_gaus_pdf} adalah  PDF dari $x$ yaitu nilai masukan untuk variabel masukan untuk prediksi, $\bar x$ atau rata-rata dan $\sigma$ adalah standar deviasi yang sudah dihitung pada bagian atau berdasarkan data-data sebelumnya, $\pi$ adalah konstanta numerik pada umumnya, kemudian fungsi $exp()$ atau $e$ adalah konstanta numerik yang betujuan untuk membentuk hasil prediksi dengan pendekatan exponensial.
 		\vspace{1ex}
 		
 		Kemudian pada persamaan \ref{eq: nbayes_gaus_pdf} dapat dimasukan ke dalam persamaan \ref{eq: nbayes_pred_more} untuk membuat prediksi dengan masukan data baru. Sebagai contoh, dengan mengadaptasi salah satu perhitungan pada persamaan \ref{eq: nbayes_pred_more} untuk ``cuaca" dan ``car".

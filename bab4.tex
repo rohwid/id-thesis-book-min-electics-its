@@ -652,12 +652,12 @@ Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_dota2_method}, b
 \vspace{2ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.4]{img/callback_acc_chap4.png}
+	\includegraphics[scale=0.44]{img/callback_acc_chap4.png}
 	\caption{Akurasi saat \textit{training} pada \textit{hero} Dota 2.}
 	\label{fig:nn_dota2_acc_chap4}
 	\vspace{4ex}
 
-	\includegraphics[scale=0.4]{img/callback_loss_chap4.png}
+	\includegraphics[scale=0.44]{img/callback_loss_chap4.png}
 	\caption{\textit{Loss} saat \textit{training} pada \textit{hero} Dota 2.}
 	\label{fig:nn_dota2_loss_chap4}
 \end{figure}
@@ -665,26 +665,26 @@ Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_dota2_method}, b
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.4]{img/callback_lr_chap4.png}
-	\caption{Proses penurunan \textit{learning rate} saat \textit{training}.}
+	\caption{\textit{Learning rate} saat \textit{training} pada \textit{hero} Dota 2.}
 	\label{fig:nn_dota2_lr_chap4}
 	\vspace{4ex}
 
 	\includegraphics[scale=0.4]{img/callback_val_acc_chap4.png}
-	\caption{Akurasi pada saat proses validasi.}
+	\caption{Akurasi pada saat proses validasi pada \textit{hero} Dota 2.}
 	\label{fig:nn_dota2_val_acc_chap4}
 	\vspace{4ex}
 
 	\includegraphics[scale=0.4]{img/callback_val_loss_chap4.png}
-	\caption{\textit{Loss} saat proses validasi.}
+	\caption{\textit{Loss} saat proses validasi pada \textit{hero} Dota 2.}
 	\label{fig:nn_dota2_val_loss_chap4}
 \end{figure}
 \clearpage
 
-Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train}, \textit{training} berlangsung selama kurang lebih $1 \times 10^{4}$ sampai $11 \times 10^{3}$. Akurasi saat \textit{training} mampu mencapai 0.9 dan \textit{loss} sebesar 0.55, kemudian akurasi saat validasi mampu mencapai 0.75 dan \textit{loss} saat validasi sebesar 0.86. Hasil klasifikasi dari data \textit{stats} karakter atau \textit{hero} Dota 2 yang dijadikan sebagai data validasi dapat dilihat pada Tabel \ref{tb:dota2_hero_pt3} yang kemudian digunakan pada proses validasi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:dota2_valid_result}.
+Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train}, \textit{training} berlangsung selama 10.730 \textit{epoch}. Akurasi saat \textit{training} mampu mencapai 0.9 dan mengalami \textit{loss} sebesar 0.55, kemudian akurasi saat validasi mampu mencapai 0.75 dan mengalami \textit{loss} saat validasi sebesar 0.86 . Hasil klasifikasi dari data \textit{stats} karakter atau \textit{hero} Dota 2 yang dijadikan sebagai data validasi dapat dilihat pada Tabel \ref{tb:dota2_hero_pt3} yang kemudian digunakan pada proses validasi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:dota2_valid_result}.
 \vspace{-2ex}
 
 \begin{longtable}{|l|l|l|l|}
-	\caption{Hasil proses validasi atau testing dengan data validasi.}
+	\caption{Hasil proses \textit{testing} dengan data validasi pada \textit{hero} Dota 2.}
 	\vspace{1ex}
 	\label{tb:dota2_valid_result}\\
 	\hline
@@ -724,87 +724,260 @@ Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_se
 	\textbf{Invoker} & 0.053558 & 0.206809 & {\color[HTML]{036400} 0.739633} \\ \hline
 \end{longtable}
 
-Cara membaca hasil klasifikasi pada Tabel \ref{tb:dota2_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_dota2_arch} dan Sub-bab \ref{sec:sub_sec3_dota2_train}. Hasil ditampilkan pada Tabel \ref{tb:dota2_valid_result} terdapat empat \textit{hero} yang mengalami salah klasifikasi yang kemudian diberi warna merah, dengan beracuan pada Tabel \ref{tb:dota2_hero_pt3} pada bagian kolom \textit{type}. Maka dari 16 \textit{hero} terdapat 4 hero yang mengalami salah klasifikasi, bila dinyatakan dalam presentase menjadi 64\% \textit{hero} berhasil terklasifikasi.
+Cara membaca hasil klasifikasi pada Tabel \ref{tb:dota2_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_dota2_arch} dan Sub-bab \ref{sec:sub_sec3_dota2_train}. Hasil ditampilkan pada Tabel \ref{tb:dota2_valid_result} terdapat empat \textit{hero} yang mengalami salah klasifikasi yang kemudian diberi warna merah, dengan beracuan pada kolom \textit{type} dalam Tabel \ref{tb:dota2_hero_pt3} yang terlampir pada \nameref{chap:chap6_attachment}. Maka dari 16 \textit{hero} terdapat 4 hero yang mengalami salah klasifikasi, jadi presentasenya 64\% \textit{hero} berhasil terklasifikasi.
 \vspace{1ex}
 
 \section{Hasil Klasifikasi Karakter untuk Karakter Pemain}
 \label{sec:sec4_eval_player}
 \vspace{1ex}
 
-Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_dota2_method}, bila dijelaskan melalui diagram blok pada Gambar \ref{fig:dota2_class_proc} maka bagian yang akan dibahas pada Sub-bab ini adalah validasi. Grafik hasil training dapat dilihat pada Gambar \ref{fig:nn_player_acc_chap4}, \ref{fig:nn_player_loss_chap4}, \ref{fig:nn_player_lr_chap4}, \ref{fig:nn_player_val_acc_chap4}, dan Gambar \ref{fig:nn_player_val_loss_chap4}. Masing-masing dari Gambar tersebut secara berurutan diantaranya adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat validasi dan \textit{loss} saat validasi. 
+Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_player_method}, bila dijelaskan melalui diagram blok pada Gambar \ref{fig:player_class_proc} maka bagian yang akan dibahas pada Sub-bab ini adalah validasi. Grafik hasil training dapat dilihat pada Gambar \ref{fig:nn_player_acc_chap4}, \ref{fig:nn_player_loss_chap4}, \ref{fig:nn_player_lr_chap4}, \ref{fig:nn_player_val_acc_chap4}, dan Gambar \ref{fig:nn_player_val_loss_chap4}. Masing-masing dari Gambar tersebut secara berurutan diantaranya adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat validasi dan \textit{loss} saat validasi.
 \vspace{2ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.4]{img/callback_acc_chap4.png}
-	\caption{Akurasi saat \textit{training} pada \textit{hero} Dota 2.}
+	\includegraphics[scale=0.43]{img/player_acc_chap4.png}
+	\caption{Akurasi saat \textit{training} pada karakter pemain.}
 	\label{fig:nn_player_acc_chap4}
 	\vspace{4ex}
 	
-	\includegraphics[scale=0.4]{img/callback_loss_chap4.png}
-	\caption{\textit{Loss} saat \textit{training} pada \textit{hero} Dota 2.}
+	\includegraphics[scale=0.43]{img/player_loss_chap4.png}
+	\caption{\textit{Loss} saat \textit{training} pada karakter pemain.}
 	\label{fig:nn_player_loss_chap4}
 \end{figure}
 \clearpage
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.4]{img/callback_lr_chap4.png}
-	\caption{Proses penurunan \textit{learning rate} saat \textit{training}.}
+	\includegraphics[scale=0.44]{img/player_lr_chap4.png}
+	\caption{\textit{Learning rate} saat \textit{training} pada karakter pemain.}
 	\label{fig:nn_player_lr_chap4}
 	\vspace{4ex}
 	
-	\includegraphics[scale=0.4]{img/callback_val_acc_chap4.png}
-	\caption{Akurasi pada saat proses validasi.}
+	\includegraphics[scale=0.44]{img/player_val_acc_chap4.png}
+	\caption{Akurasi pada saat proses validasi pada karakter pemain.}
 	\label{fig:nn_player_val_acc_chap4}
 	\vspace{4ex}
 	
-	\includegraphics[scale=0.4]{img/callback_val_loss_chap4.png}
-	\caption{\textit{Loss} saat proses validasi.}
+	\includegraphics[scale=0.44]{img/player_val_loss_chap4.png}
+	\caption{\textit{Loss} saat proses validasi pada karakter pemain.}
 	\label{fig:nn_player_val_loss_chap4}
 \end{figure}
 \clearpage
 
-Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_player_char_train}, \textit{training} berlangsung selama kurang lebih $1 \times 10^{4}$ sampai $11 \times 10^{3}$. Akurasi saat \textit{training} mampu mencapai 0.9 dan \textit{loss} sebesar 0.55, kemudian akurasi saat validasi mampu mencapai 0.75 dan \textit{loss} saat validasi sebesar 0.86. Hasil klasifikasi dari data \textit{stats} karakter atau \textit{hero} Dota 2 yang dijadikan sebagai data validasi dapat dilihat pada Tabel \ref{tb:player_char_test} yang kemudian digunakan pada proses validasi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:player_valid_result}.
-\vspace{-2ex}
+Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_player_char_train}, \textit{training} berlangsung selama 425 \textit{epoch}. Akurasi saat \textit{training} tetap stabil pada 0.1667 dan mengalami \textit{loss} sebesar 1.533, kemudian akurasi saat validasi tetap stabil pada 0.5 dan mengalami \textit{loss} saat validasi sebesar 1.39. Hasil klasifikasi dari data \textit{stats} dari karakter pemain yang dijadikan sebagai data validasi dapat dilihat pada Tabel \ref{tb:player_char_test} yang kemudian digunakan pada proses validasi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:player_valid_result}.
+\vspace{-1ex}
 
-\begin{longtable}{|l|l|l|l|}
-	\caption{Hasil proses validasi atau testing dengan data validasi.}
+\begin{longtable}{|l|l|l|l|l|}
+	\caption{Hasil proses \textit{testing} dengan data validasi pada karakter pemain.}
 	\vspace{1ex}
 	\label{tb:player_valid_result}\\
 	\hline
 	\rowcolor[HTML]{C0C0C0} 
-	\textbf{Hero Name} & \textbf{Strength} & \textbf{Agility} & \textbf{Intelligent} \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{ArcWarden} & 0.053558 & 0.206808 & {\color[HTML]{FE0000} 0.739634} \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{Jakiro} & 0.205992 & 0.241550 & {\color[HTML]{036400} 0.552458} \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{WinterWyvern} & 0.205992 & 0.241552 & {\color[HTML]{036400} 0.552456} \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{Bloodseeker} & 0.161604 & {\color[HTML]{036400} 0.760779} & 0.077617 \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{Phoenix} & 0.053562 & 0.206812 & {\color[HTML]{FE0000} 0.739627} \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{Io} & 0.053558 & 0.206813 & {\color[HTML]{FE0000} 0.739629} \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{Leshrac} & 0.053559 & 0.206871 & {\color[HTML]{036400} 0.739570} \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{OutworldDevourer} & 0.205848 & 0.245712 & {\color[HTML]{036400} 0.548440} \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{Brewmaster} & {\color[HTML]{036400} 0.624197} & 0.189504 & 0.186300 \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{Tusk} & 0.377984 & {\color[HTML]{FE0000} 0.510914} & 0.111102 \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{Weaver} & 0.098899 & {\color[HTML]{036400} 0.560487} & 0.340614 \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{Undying} & {\color[HTML]{036400} 0.645770} & 0.127254 & 0.226976 \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{Alchemist} & {\color[HTML]{036400} 0.643663} & 0.126769 & 0.229569 \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{Phantom Lancer} & 0.154832 & {\color[HTML]{036400} 0.768835} & 0.076333 \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{CrystalMaiden} & 0.053558 & 0.206809 & {\color[HTML]{036400} 0.739633} \\ \hline
-	\rowcolor[HTML]{FFFFFF} 
-	\textbf{Invoker} & 0.053558 & 0.206809 & {\color[HTML]{036400} 0.739633} \\ \hline
+	\textbf{Type} & \textbf{Knight} & \textbf{Priest} & \textbf{Assassin} & \textbf{Magician} \\ \hline
+	\textbf{Assassin 2} & 0.122532 & 0.190597 & {\color[HTML]{009901} 0.579998} & 0.106873 \\ \hline
+	\textbf{Magician 2} & 0.122532 & 0.190597 & {\color[HTML]{FE0000} 0.579998} & 0.106873 \\ \hline
 \end{longtable}
+\vspace{1ex}
 
-Cara membaca hasil klasifikasi pada Tabel \ref{tb:player_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_arch} dan Sub-bab \ref{sec:sub_sec3_player_char_train}. Hasil ditampilkan pada Tabel \ref{tb:player_valid_result} terdapat empat \textit{hero} yang mengalami salah klasifikasi yang kemudian diberi warna merah, dengan beracuan pada Tabel \ref{tb:player_char_test} pada bagian kolom \textit{type}. Maka dari 16 \textit{hero} terdapat 4 hero yang mengalami salah klasifikasi, bila dinyatakan dalam presentase menjadi 64\% \textit{hero} berhasil terklasifikasi.
+Cara membaca hasil klasifikasi pada Tabel \ref{tb:player_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_arch} dan Sub-bab \ref{sec:sub_sec3_player_char_train}. Hasil ditampilkan pada Tabel \ref{tb:player_valid_result} terdapat satu karakter yang mengalami salah klasifikasi yang kemudian diberi warna merah, dengan beracuan pada Tabel \ref{tb:player_char_test} pada bagian kolom \textit{type}. Maka dari 2 karakter tersebut, terdapat 1 karakter yang mengalami salah klasifikasi, bila dinyatakan dalam presentase menjadi 50\% karakter pemain berhasil terklasifikasi.
+\vspace{1ex}
+
+\section{Hasil Klasifikasi Karakter untuk Karakter Musuh}
+\label{sec:sec4_eval_enemy}
+\vspace{1ex}
+
+Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_enemy_method}, bila dijelaskan melalui diagram blok pada Gambar \ref{fig:enemy_class_proc} maka bagian yang akan dibahas pada Sub-bab ini adalah validasi. Grafik hasil \textit{training} dapat dilihat pada Gambar \ref{fig:nn_enemy_acc_chap4}, \ref{fig:nn_enemy_loss_chap4}, \ref{fig:nn_enemy_lr_chap4}, \ref{fig:nn_enemy_val_acc_chap4}, dan Gambar \ref{fig:nn_enemy_val_loss_chap4}. Masing-masing dari Gambar tersebut secara berurutan diantaranya adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat validasi dan \textit{loss} saat validasi. Pada proses tersebut dijalankan dengan maksimum 20k \textit{epoch}, dengan optimasi sama seperti yang sudah dilakukan dan dijelaskan sebelumnya pada Sub-bab \ref{sec:sub_sec3_dota2_train} dan Sub-bab \ref{sec:sub_sec3_dota2_model}.
+\vspace{1ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.44]{img/enemy_acc_chap4.png}
+	\caption{Akurasi saat \textit{training} pada karakter musuh (20k \textit{epoch}).}
+	\label{fig:nn_enemy_acc_chap4}
+	\vspace{4ex}
+	
+	\includegraphics[scale=0.44]{img/enemy_loss_chap4.png}
+	\caption{\textit{Loss} saat \textit{training} pada karakter musuh (20k \textit{epoch}).}
+	\label{fig:nn_enemy_loss_chap4}
+	\vspace{4ex}
+	
+	\includegraphics[scale=0.44]{img/enemy_lr_chap4.png}
+	\caption{\textit{Learning rate} saat \textit{training} pada karakter musuh (20k \textit{epoch}).}
+	\label{fig:nn_enemy_lr_chap4}
+\end{figure}
+\clearpage
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.42]{img/enemy_val_acc_chap4.png}
+	\caption{Akurasi saat proses validasi pada karakter (20k \textit{epoch}).}
+	\label{fig:nn_enemy_val_acc_chap4}
+	\vspace{4ex}
+	
+	\includegraphics[scale=0.42]{img/enemy_val_loss_chap4.png}
+	\caption{\textit{Loss} proses validasi pada karakter pemain (20k \textit{epoch}).}
+	\label{fig:nn_enemy_val_loss_chap4}
+	\vspace{-1ex}
+\end{figure}
+
+Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_enemy_char_train}, \textit{training} berlangsung selama 20k \textit{epoch}. Akurasi saat \textit{training} mampu mencapai 0.4 dan mengalami \textit{loss} sebesar 1.194, kemudian akurasi saat \textit{training} mampu mencapai 0.3667 dan mengalami \textit{loss} saat validasi sebesar 1.266. Melihat kondisi ini maka dilakukan peningkatan \textit{epoch} menjadi 40k, hal tersebut bertujuan agar tercapainya kondisi optimum. Maksud dari kondisi tersebut adalah dicapainya nilai \textit{loss} terendah saat dilakukannya validasi. Grafik hasil \textit{training} dapat dilihat pada Gambar \ref{fig:nn_enemy_acc_40k_chap4}, \ref{fig:nn_enemy_loss_40k_chap4}, \ref{fig:nn_enemy_lr_40k_chap4}, \ref{fig:nn_enemy_val_acc_40k_chap4}, dan Gambar \ref{fig:nn_enemy_val_loss_40k_chap4}. Urutan dari gambar tersebut diantaranya adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat validasi dan \textit{loss} saat validasi dengan 40k \textit{epoch}.
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.44]{img/enemy_acc_40k_chap4.png}
+	\caption{Akurasi saat \textit{training} pada karakter musuh (40k \textit{epoch}).}
+	\label{fig:nn_enemy_acc_40k_chap4}
+	\vspace{4ex}
+	
+	\includegraphics[scale=0.44]{img/enemy_loss_40k_chap4.png}
+	\caption{\textit{Loss} saat \textit{training} pada karakter musuh (40k \textit{epoch}).}
+	\label{fig:nn_enemy_loss_40k_chap4}
+	\vspace{4ex}
+	
+	\includegraphics[scale=0.44]{img/enemy_lr_40k_chap4.png}
+	\caption{\textit{Learning rate} saat \textit{training} pada karakter musuh (40k \textit{epoch}).}
+	\label{fig:nn_enemy_lr_40k_chap4}
+\end{figure}
+\clearpage
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.42]{img/enemy_val_acc_40k_chap4.png}
+	\caption{Akurasi saat validasi pada karakter musuh (40k \textit{epoch}).}
+	\label{fig:nn_enemy_val_acc_40k_chap4}
+	\vspace{4ex}
+	
+	\includegraphics[scale=0.42]{img/enemy_val_loss_40k_chap4.png}
+	\caption{\textit{Loss} saat validasi pada karakter musuh (40k \textit{epoch}).}
+	\label{fig:nn_enemy_val_loss_40k_chap4}
+\end{figure}
+
+Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_enemy_char_train}, \textit{training} berlangsung selama 30.510 \textit{epoch} setelah dilakukan penambahan 20k \textit{epoch}, yang semula hanya 20k \textit{epoch} menjadi 40k \textit{epoch}. Hal tersebut diasumsikan bahwa kondisi optimum dapat dicapai dengan \textit{epoch} kurang dari 40k dan lebih dari 20k. Akurasi saat \textit{training} mampu mencapai 0.5 dan mengalami \textit{loss} sebesar 1.110, kemudian akurasi saat validasi mampu mencapai 0.425 dan mengalami \textit{loss} saat validasi sebesar 1.245. Hasil klasifikasi dari data \textit{stats} karakter musuh yang dijadikan sebagai data validasi dapat dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai 400, kemudian data tersebut digunakan pada proses validasi dan \textit{testing} dengan hasil yang dapat dilihat pada Tabel \ref{tb:enemy_valid_result}.
+\vspace{-2ex}
+
+\begin{longtable}{|l|l|l|l|l|l|l|}
+	\caption{Hasil proses \textit{testing} dengan data validasi pada karakter musuh.}
+	\vspace{1ex}
+	\label{tb:enemy_valid_result}\\
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	\textbf{Name} & \textbf{Type} & \textbf{Type 0} & \textbf{Type 1} & \textbf{Type 2} & \textbf{Type 3} & \textbf{Type 4} \\ \hline
+	Enemy 281 & 2 & 0.378368 & {\color[HTML]{FE0000} 0.168215} & 0.316104 & 0.058081 & 0.079233 \\ \hline
+	Enemy 282 & 0 & {\color[HTML]{FE0000} 0.527585} & 0.010544 & 0.046145 & 0.122267 & 0.293459 \\ \hline
+	Enemy 283 & 2 & 0.371143 & 0.13154 & {\color[HTML]{FE0000} 0.276541} & 0.092394 & 0.128382 \\ \hline
+	Enemy 284 & 1 & 0.374915 & {\color[HTML]{FE0000} 0.187169} & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 285 & 4 & 0.524063 & 0.010682 & 0.046597 & 0.123526 & {\color[HTML]{FE0000} 0.295132} \\ \hline
+	Enemy 286 & 0 & {\color[HTML]{009901} 0.374915} & 0.187169 & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 287 & 1 & 0.374915 & {\color[HTML]{FE0000} 0.187169} & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 288 & 0 & {\color[HTML]{FE0000} 0.374915} & 0.187169 & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 289 & 2 & 0.377502 & 0.175532 & {\color[HTML]{FE0000} 0.322636} & 0.0527 & 0.07163 \\ \hline
+	Enemy 290 & 0 & {\color[HTML]{009901} 0.37244} & 0.191845 & 0.329262 & 0.045204 & 0.06125 \\ \hline
+	Enemy 291 & 1 & 0.44503 & {\color[HTML]{FE0000} 0.158904} & 0.29768 & 0.039981 & 0.058406 \\ \hline
+	Enemy 292 & 0 & {\color[HTML]{009901} 0.527579} & 0.010545 & 0.046146 & 0.122269 & 0.293462 \\ \hline
+	Enemy 293 & 0 & {\color[HTML]{009901} 0.374915} & 0.187169 & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 294 & 2 & 0.375155 & 0.186315 & {\color[HTML]{FE0000} 0.331476} & 0.045518 & 0.061537 \\ \hline
+	Enemy 295 & 0 & {\color[HTML]{009901} 0.374915} & 0.187169 & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 296 & 0 & {\color[HTML]{009901} 0.39901} & 0.177068 & 0.320346 & 0.043361 & 0.060215 \\ \hline
+	Enemy 297 & 0 & {\color[HTML]{009901} 0.374915} & 0.187169 & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 298 & 1 & 0.779063 & {\color[HTML]{FE0000} 0.049134} & 0.121837 & 0.015684 & 0.034281 \\ \hline
+	Enemy 299 & 2 & 0.374915 & 0.187168 & {\color[HTML]{FE0000} 0.332138} & 0.044986 & 0.060793 \\ \hline
+	Enemy 300 & 3 & 0.19636 & 0.031101 & 0.097399 & {\color[HTML]{FE0000} 0.271855} & 0.403286 \\ \hline
+	Enemy 301 & 4 & 0.198122 & 0.030917 & 0.097056 & 0.270797 & {\color[HTML]{009901} 0.403107} \\ \hline
+	Enemy 302 & 0 & {\color[HTML]{009901} 0.360234} & 0.114637 & 0.254198 & 0.112808 & 0.158123 \\ \hline
+	Enemy 303 & 2 & 0.374915 & 0.187169 & {\color[HTML]{FE0000} 0.332138} & 0.044986 & 0.060792 \\ \hline
+	Enemy 304 & 0 & {\color[HTML]{009901} 0.374915} & 0.187169 & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 305 & 1 & 0.374915 & {\color[HTML]{FE0000} 0.187169} & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 306 & 0 & {\color[HTML]{009901} 0.431493} & 0.01471 & 0.059049 & 0.158573 & 0.336175 \\ \hline
+	Enemy 307 & 2 & 0.355833 & 0.109533 & {\color[HTML]{FE0000} 0.246909} & 0.119611 & 0.168114 \\ \hline
+	Enemy 308 & 1 & 0.247685 & {\color[HTML]{009901} 0.432672} & 0.201979 & 0.047006 & 0.070658 \\ \hline
+	Enemy 309 & 0 & {\color[HTML]{009901} 0.375144} & 0.187072 & 0.332027 & 0.04497 & 0.060786 \\ \hline
+	Enemy 310 & 0 & {\color[HTML]{009901} 0.489814} & 0.012073 & 0.051075 & 0.136044 & 0.310994 \\ \hline
+	Enemy 311 & 1 & 0.374915 & {\color[HTML]{FE0000} 0.187169} & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 312 & 0 & {\color[HTML]{FE0000} 0.196372} & 0.0311 & 0.097396 & 0.271848 & 0.403284 \\ \hline
+	Enemy 313 & 2 & 0.374975 & 0.186958 & {\color[HTML]{FE0000} 0.331975} & 0.045117 & 0.060975 \\ \hline
+	Enemy 314 & 4 & 0.196605 & 0.031075 & 0.097351 & 0.271708 & {\color[HTML]{009901} 0.403261} \\ \hline
+	Enemy 315 & 0 & {\color[HTML]{009901} 0.759012} & 0.053907 & 0.13179 & 0.017714 & 0.037577 \\ \hline
+	Enemy 316 & 2 & 0.300307 & 0.069685 & {\color[HTML]{FE0000} 0.180658} & 0.184301 & 0.26505 \\ \hline
+	Enemy 317 & 1 & 0.374915 & {\color[HTML]{FE0000} 0.187169} & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 318 & 0 & {\color[HTML]{009901} 0.37831} & 0.168413 & 0.316292 & 0.057946 & 0.079039 \\ \hline
+	Enemy 319 & 2 & 0.374928 & 0.187163 & {\color[HTML]{FE0000} 0.332131} & 0.044985 & 0.060792 \\ \hline
+	Enemy 320 & 3 & 0.19636 & 0.031101 & 0.097399 & {\color[HTML]{FE0000} 0.271855} & 0.403286 \\ \hline
+	Enemy 321 & 2 & 0.374915 & 0.187168 & {\color[HTML]{FE0000} 0.332138} & 0.044986 & 0.060793 \\ \hline
+	Enemy 322 & 0 & {\color[HTML]{009901} 0.527585} & 0.010544 & 0.046145 & 0.122267 & 0.293459 \\ \hline
+	Enemy 323 & 2 & 0.378495 & 0.162733 & {\color[HTML]{FE0000} 0.310932} & 0.062436 & 0.085403 \\ \hline
+	Enemy 324 & 4 & 0.197093 & 0.031301 & 0.097895 & 0.271315 & {\color[HTML]{009901} 0.402396} \\ \hline
+	Enemy 325 & 4 & 0.525411 & 0.010629 & 0.046424 & 0.123043 & {\color[HTML]{FE0000} 0.294493} \\ \hline
+	Enemy 326 & 3 & 0.196361 & 0.031101 & 0.097399 & {\color[HTML]{FE0000} 0.271854} & 0.403285 \\ \hline
+	Enemy 327 & 0 & {\color[HTML]{009901} 0.527585} & 0.010544 & 0.046145 & 0.122267 & 0.293459 \\ \hline
+	Enemy 328 & 2 & 0.37741 & 0.176108 & {\color[HTML]{FE0000} 0.323131} & 0.052294 & 0.071056 \\ \hline
+	Enemy 329 & 4 & 0.203998 & 0.033222 & 0.102619 & 0.266182 & {\color[HTML]{009901} 0.393979} \\ \hline
+	Enemy 330 & 2 & 0.377303 & 0.176747 & {\color[HTML]{FE0000} 0.323677} & 0.051846 & 0.070426 \\ \hline
+	Enemy 331 & 0 & {\color[HTML]{009901} 0.374915} & 0.187168 & 0.332138 & 0.044986 & 0.060793 \\ \hline
+	Enemy 332 & 1 & 0.374915 & 0.187169 & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 333 & 0 & {\color[HTML]{009901} 0.377455} & 0.175831 & 0.322893 & 0.052489 & 0.071332 \\ \hline
+	Enemy 334 & 1 & 0.374915 & {\color[HTML]{FE0000} 0.187169} & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 335 & 0 & {\color[HTML]{FE0000} 0.19636} & 0.031101 & 0.097399 & 0.271855 & 0.403286 \\ \hline
+	Enemy 336 & 4 & 0.196498 & 0.031087 & 0.097372 & 0.271772 & {\color[HTML]{009901} 0.403272} \\ \hline
+	Enemy 337 & 0 & {\color[HTML]{009901} 0.374915} & 0.187169 & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 338 & 4 & 0.288799 & 0.023111 & 0.080821 & 0.221746 & {\color[HTML]{009901} 0.385523} \\ \hline
+	Enemy 339 & 0 & {\color[HTML]{009901} 0.374915} & 0.187169 & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 340 & 0 & {\color[HTML]{009901} 0.527585} & 0.010544 & 0.046145 & 0.122267 & 0.293459 \\ \hline
+	Enemy 341 & 0 & {\color[HTML]{009901} 0.374915} & 0.187169 & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 342 & 2 & 0.339119 & 0.094142 & {\color[HTML]{FE0000} 0.223345} & 0.142054 & 0.20134 \\ \hline
+	Enemy 343 & 0 & {\color[HTML]{009901} 0.374915} & 0.187169 & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 344 & 3 & 0.19636 & 0.031101 & 0.097399 & {\color[HTML]{FE0000} 0.271855} & 0.403286 \\ \hline
+	Enemy 345 & 2 & 0.344267 & 0.098384 & {\color[HTML]{FE0000} 0.230083} & 0.135569 & 0.191696 \\ \hline
+	Enemy 346 & 2 & 0.374915 & 0.187169 & {\color[HTML]{FE0000} 0.332138} & 0.044986 & 0.060792 \\ \hline
+	Enemy 347 & 3 & 0.19636 & 0.031101 & 0.097399 & {\color[HTML]{FE0000} 0.271855} & 0.403286 \\ \hline
+	Enemy 348 & 0 & {\color[HTML]{009901} 0.389206} & 0.175524 & 0.320846 & 0.048171 & 0.066253 \\ \hline
+	Enemy 349 & 4 & 0.196971 & 0.031037 & 0.09728 & 0.271487 & {\color[HTML]{009901} 0.403225} \\ \hline
+	Enemy 350 & 2 & 0.376953 & 0.178691 & {\color[HTML]{FE0000} 0.325319} & 0.050502 & 0.068535 \\ \hline
+	Enemy 351 & 4 & 0.527585 & 0.010544 & 0.046145 & 0.122267 & {\color[HTML]{FE0000} 0.293459} \\ \hline
+	Enemy 352 & 2 & 0.343683 & 0.097884 & {\color[HTML]{FE0000} 0.229299} & 0.136321 & 0.192813 \\ \hline
+	Enemy 353 & 1 & {\color[HTML]{FE0000} 0.374915} & 0.187169 & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 354 & 0 & {\color[HTML]{009901} 0.375058} & 0.186662 & 0.331746 & 0.045301 & 0.061233 \\ \hline
+	Enemy 355 & 0 & {\color[HTML]{009901} 0.527585} & 0.010544 & 0.046145 & 0.122267 & 0.293459 \\ \hline
+	Enemy 356 & 2 & 0.374915 & 0.187169 & {\color[HTML]{FE0000} 0.332138} & 0.044986 & 0.060792 \\ \hline
+	Enemy 357 & 3 & 0.524283 & 0.010673 & 0.046569 & {\color[HTML]{FE0000} 0.123447} & 0.295028 \\ \hline
+	Enemy 358 & 0 & {\color[HTML]{FE0000} 0.19636} & 0.031101 & 0.097399 & 0.271855 & 0.403286 \\ \hline
+	Enemy 359 & 4 & 0.19636 & 0.031101 & 0.097399 & 0.271855 & {\color[HTML]{009901} 0.403286} \\ \hline
+	Enemy 360 & 0 & {\color[HTML]{FE0000} 0.22214} & 0.038611 & 0.115484 & 0.252301 & 0.371463 \\ \hline
+	Enemy 361 & 2 & 0.376041 & 0.182882 & {\color[HTML]{FE0000} 0.328761} & 0.047708 & 0.064608 \\ \hline
+	Enemy 362 & 2 & 0.374919 & 0.187166 & {\color[HTML]{FE0000} 0.332135} & 0.044987 & 0.060793 \\ \hline
+	Enemy 363 & 1 & 0.247685 & {\color[HTML]{009901} 0.432672} & 0.201979 & 0.047006 & 0.070658 \\ \hline
+	Enemy 364 & 0 & {\color[HTML]{FE0000} 0.19636} & 0.031101 & 0.097399 & 0.271855 & 0.403286 \\ \hline
+	Enemy 365 & 2 & 0.290789 & 0.064962 & {\color[HTML]{FE0000} 0.171607} & 0.193501 & 0.279142 \\ \hline
+	Enemy 366 & 4 & 0.377982 & 0.171986 & 0.319527 & 0.055262 & {\color[HTML]{FE0000} 0.075243} \\ \hline
+	Enemy 367 & 0 & {\color[HTML]{009901} 0.374912} & 0.187175 & 0.332134 & 0.044987 & 0.060793 \\ \hline
+	Enemy 368 & 3 & 0.523421 & 0.010707 & 0.04668 & {\color[HTML]{FE0000} 0.123756} & 0.295437 \\ \hline
+	Enemy 369 & 4 & 0.526284 & 0.010595 & 0.046312 & 0.122731 & {\color[HTML]{FE0000} 0.294078} \\ \hline
+	Enemy 370 & 4 & 0.527563 & 0.010545 & 0.046148 & 0.122274 & {\color[HTML]{FE0000} 0.293469} \\ \hline
+	Enemy 371 & 0 & {\color[HTML]{009901} 0.527623} & 0.010546 & 0.04615 & 0.122254 & 0.293427 \\ \hline
+	Enemy 372 & 0 & {\color[HTML]{009901} 0.380983} & 0.15926 & 0.307262 & 0.064246 & 0.08825 \\ \hline
+	Enemy 373 & 0 & {\color[HTML]{009901} 0.375367} & 0.185541 & 0.330872 & 0.046004 & 0.062218 \\ \hline
+	Enemy 374 & 1 & 0.374915 & {\color[HTML]{FE0000} 0.187169} & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 375 & 1 & 0.374915 & {\color[HTML]{FE0000} 0.187169} & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 376 & 0 & {\color[HTML]{009901} 0.4574} & 0.013494 & 0.05545 & 0.148368 & 0.325289 \\ \hline
+	Enemy 377 & 0 & {\color[HTML]{FE0000} 0.247685} & 0.432672 & 0.201979 & 0.047006 & 0.070658 \\ \hline
+	Enemy 378 & 4 & 0.201898 & 0.032631 & 0.101173 & 0.267752 & {\color[HTML]{009901} 0.396547} \\ \hline
+	Enemy 379 & 4 & 0.485689 & 0.012248 & 0.051624 & 0.137586 & {\color[HTML]{FE0000} 0.312853} \\ \hline
+	Enemy 380 & 2 & 0.378341 & 0.167954 & {\color[HTML]{FE0000} 0.315869} & 0.058299 & 0.079537 \\ \hline
+	Enemy 381 & 0 & {\color[HTML]{FE0000} 0.247685} & 0.432672 & 0.201979 & 0.047006 & 0.070658 \\ \hline
+	Enemy 382 & 2 & 0.373738 & 0.137479 & {\color[HTML]{FE0000} 0.283757} & 0.085953 & 0.119072 \\ \hline
+	Enemy 383 & 3 & 0.773596 & 0.046859 & 0.119864 & {\color[HTML]{FE0000} 0.018757} & 0.040924 \\ \hline
+	Enemy 384 & 0 & {\color[HTML]{009901} 0.46142} & 0.013312 & 0.0549 & 0.146813 & 0.323555 \\ \hline
+	Enemy 385 & 3 & 0.196482 & 0.031088 & 0.097375 & {\color[HTML]{FE0000} 0.271781} & 0.403274 \\ \hline
+	Enemy 386 & 3 & 0.19636 & 0.031101 & 0.097399 & {\color[HTML]{FE0000} 0.271855} & 0.403286 \\ \hline
+	Enemy 387 & 1 & 0.374915 & {\color[HTML]{FE0000} 0.187169} & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 388 & 3 & 0.196366 & 0.0311 & 0.097397 & {\color[HTML]{FE0000} 0.271851} & 0.403285 \\ \hline
+	Enemy 389 & 0 & {\color[HTML]{009901} 0.375897} & 0.183475 & 0.329236 & 0.047324 & 0.064068 \\ \hline
+	Enemy 390 & 1 & 0.247687 & {\color[HTML]{009901} 0.432668} & 0.201981 & 0.047006 & 0.070658 \\ \hline
+	Enemy 391 & 4 & 0.196473 & 0.031132 & 0.097475 & 0.271772 & {\color[HTML]{009901} 0.403148} \\ \hline
+	Enemy 392 & 1 & 0.374915 & {\color[HTML]{FE0000} 0.187169} & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 393 & 4 & 0.19636 & 0.031101 & 0.097399 & 0.271855 & {\color[HTML]{009901} 0.403286} \\ \hline
+	Enemy 394 & 4 & 0.19636 & 0.031101 & 0.097399 & 0.271855 & {\color[HTML]{009901} 0.403286} \\ \hline
+	Enemy 395 & 0 & {\color[HTML]{009901} 0.374914} & 0.18717 & 0.332137 & 0.044986 & 0.060793 \\ \hline
+	Enemy 396 & 0 & {\color[HTML]{FE0000} 0.242251} & 0.026766 & 0.088846 & 0.245748 & 0.39639 \\ \hline
+	Enemy 397 & 1 & 0.374915 & {\color[HTML]{FE0000} 0.187169} & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 398 & 1 & 0.374915 & {\color[HTML]{FE0000} 0.187169} & 0.332138 & 0.044986 & 0.060792 \\ \hline
+	Enemy 399 & 3 & 0.19636 & 0.031101 & 0.097399 & {\color[HTML]{FE0000} 0.271855} & 0.403286 \\ \hline
+	Enemy 400 & 3 & 0.19636 & 0.031101 & 0.097399 & {\color[HTML]{FE0000} 0.271855} & 0.403286 \\ \hline
+\end{longtable}
+\vspace{1ex}
+
+Cara membaca hasil klasifikasi pada Tabel \ref{tb:player_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_arch} dan Sub-bab \ref{sec:sub_sec3_enemy_char_train}. Hasil ditampilkan pada Tabel \ref{tb:enemy_valid_result} terdapat 51 karakter yang terklasifikasi dengan benar, kemudian pada angka presentase klasifikasi pada karakter musuh tersebut ditandai dengan warna hijau, dengan beracuan pada pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai 400 pada bagian kolom \textit{type}. Maka dari 120 karakter tersebut, terdapat 51 karakter yang berhasil terklasifikasi, bila dinyatakan dalam presentase maka menjadi 42.5\% karakter pemain berhasil terklasifikasi.

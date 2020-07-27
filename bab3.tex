@@ -223,10 +223,10 @@ Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk
 		
 		\begin{equation}
 		\label{eq: total_fight}
-		B_{total} = \sum_{n = 0}^{k} B_{n}
+		tB_{total} = \sum_{n = 0}^{B} tB_{n}
 		\end{equation}
 		
-		Merujuk ke persamaan \ref{eq: total_fight} bila dijabarkan maka $B_{total}$ adalah jumlah waktu melawan bos secara keseluruhan, jumlah bos dinyatakan dengan $k$ dan waktu yang dihabiskan untuk melawan satu bos dinyatakan dengan $B$ kemudian diiterasi oleh $n$ sejumlah $k$.
+		Merujuk ke persamaan \ref{eq: total_fight} bila dijabarkan maka $tB_{total}$ adalah jumlah waktu melawan bos secara keseluruhan, jumlah bos dinyatakan dengan $B$ dan waktu yang dihabiskan untuk melawan satu bos dinyatakan dengan $tB$ kemudian diiterasi oleh $n$ sejumlah $B$.
 		\vspace{1ex}
 		
 		Di perlukannya penyesuaian terhadap model distribusi, salah satunya waktu yang habis untuk melawan bos setara untuk melawan musuh yang mudah atau \textit{trash mobs}. Untung saja terdapat banyak cara untuk memodifikasi waktu yang akan dihabiskan saat bertarung melawan musuh yang mudah. Hal seperti menjelajah seluruh peta atau berpetualang menuju tempat-tempat sebelumnya juga tidak perlu dilakukan. Berikut adalah langkah-langkah yang dapat dilakukan:
@@ -300,10 +300,10 @@ Dalam menjelaskan proses pada BAB ini maka diambilah sebuah kasus dalam desain p
 \label{sec:sub_sec3_player_level_hp_mp}
 \vspace{1ex}
 
-Berdasarkan Tabel \ref{tb:player_input_variable} level untuk karakter pemain dimulai dari 1 dan level maksimalnya adalah 100, pada program ini level pemain akan terus naik satu demi satu level sampai ke tingkat maksimal. Selanjutnya adalah HP atau \textit{Health Point} yang diberi masukan berupa \textit{start} HP, bisa dinyatakan juga sebagai HP saat level satu. Kemudian variabel lanjutannya adalah \textit{next} HP atau HP pada level selanjutnya, misalkan level dua. Muncul sebuah pertanyaan berapa HP selanjutnya sampai dengan level ke 100. 
+Berdasarkan Tabel \ref{tb:player_input_variable} level untuk karakter pemain dimulai dari 1 dan level maksimalnya adalah 100, pada program ini level pemain akan terus naik satu demi satu level sampai ke tingkat maksimal. Selanjutnya adalah HP atau \textit{Health Point} yang diberi masukan berupa \textit{start} HP, bisa dinyatakan juga sebagai HP saat level satu. 
 \vspace{1ex}
 
-Cara semacam itu juga berlaku untuk perhitungan MP pada programm ini, dengan pola masukan yang sama dengan HP yaitu \textit{Start} MP dan \textit{Next} MP. Pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} adalah contoh persamaan yang digunakan untuk mencari nilai HP dan MP selanjutnya.
+Kemudian variabel lanjutannya adalah \textit{next} HP atau HP pada level selanjutnya, misalkan level dua. Muncul sebuah pertanyaan berapa HP selanjutnya sampai dengan level ke 100. Cara semacam itu juga berlaku untuk perhitungan MP pada program ini, dengan pola masukan yang sama dengan HP yaitu \textit{Start} MP dan \textit{Next} MP. Hal tersebut diwujudkan pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} yang digunakan untuk mencari nilai HP dan MP selanjutnya.
 \vspace{1ex}
 
 \begin{equation}\label{eq:hp_player}
@@ -318,7 +318,7 @@ Cara semacam itu juga berlaku untuk perhitungan MP pada programm ini, dengan pol
 	\end{split}
 \end{equation}
 
-Pada persamaan \ref{eq:hp_player} dan persamaan \ref{eq:mp_player} HP tetap dinyatakan sebagain HP, begitu juga dengan MP. Kemudian $HP(N)$ adalah nilai HP yang dicari, yang mana $N$ adalah level maksimum, $n$ adalah level mulai dan $n + 1$ adalah level selanjutnya. Jadi pada tahap ini seperti yang dijelaska pada Tabel \ref{tb:player_input_variable} yang mana nilai $n$ dan $n + 1$ sudah diketahui sebagai inisialisasi, masing-masing adalah $HP(n)$ dan $HP(n + 1)$. Penjelasan ini juga berlaku untuk mencari nilai $MP(N)$ yaitu nilai MP yang dicari.
+Pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player}, HP tetap dinyatakan sebagain HP, begitu juga dengan MP. Kemudian $HP(N)$ adalah nilai HP yang dicari, yang mana $N$ adalah level maksimum, $n$ adalah level mulai dan $n + 1$ adalah level selanjutnya. Jadi pada tahap ini seperti yang dijelaskan pada Tabel \ref{tb:player_input_variable} yang mana nilai $n$ dan $n + 1$ sudah diketahui sebagai inisialisasi, masing-masing adalah $HP(n)$ dan $HP(n + 1)$. Penjelasan ini juga berlaku untuk mencari nilai $MP(N)$ yaitu nilai MP yang dicari. Selanjutnya melalui persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dihasilkan data dan grafik seperti yang ditunjukan pada Sub-bab \ref{sec:sub_sec4_eval_dist_hp_mp_level_single-character} dan \ref{sec:sub_sec4_eval_dist_hp_mp_level_multi-character}.
 \vspace{1ex}
 
 \subsection{Distribusi Elemen dan Kelemahan Pemain}
@@ -346,7 +346,7 @@ Pada bagian selanjutnya adalah pembahasan mengenai pembagian \textit{stats} jika
 Pada bagian ini akan dibahas tentang pembagian \textit{stats} dengan beracuan pada Tabel \ref{tb:player_input_variable} dengan variabel \textit{List Stats Name} yang berisi nama atau info \textit{stats} dari pemain yang akan digunakan. Kemudian diikuti dengan variabel \textit{Max Stats Value} yang berisi nilai maksimum \textit{stats} yang akan dihasilkan. Pada tahap ini digunakannya metode $k-$Nearest Neighbor atau $k-$NN seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec2_knn} dan Naive Bayes yang juga sudah dijelaskan pada Sub-bab \ref{sec:sub_sec2_bayes}. 
 \vspace{1ex}
 
-Pada persamaan \ref{eq:KNN_distance_metrics} yang kemudian disesuaikan dengan pertambahan nilai \textit{Stats to Assign} dari Tabel \ref{tb:player_input_variable}, yang mana nilai tersebut ditambahkan secara acak antara 2 dan 1 dengan perhitungan \textit{class probability} pada persamaan \ref{eq:nbayes_class} yang disesuaikan menjadi persamaan \ref{eq:nbayes_class_stats_a} dan \ref{eq:nbayes_class_stats_b}. Hasil proses acak tersebut juga harus dibatasi jumlahnya dengan persamaan \ref{eq:KNN_distance_stats}. Maka hasil dari proses acak pada persamaan tersebut akan sangat menentukan perhitungan dari persamaan \ref{eq:KNN_bayes_player_stats}.
+Pada persamaan \ref{eq:KNN_distance_metrics} yang kemudian disesuaikan dengan pertambahan nilai \textit{Stats to Assign} dari Tabel \ref{tb:player_input_variable}, yang mana nilai tersebut ditambahkan secara acak antara 2 dan 1 dengan perhitungan \textit{class probability} pada persamaan \ref{eq:nbayes_class} yang disesuaikan menjadi persamaan \ref{eq:nbayes_class_stats_a} dan \ref{eq:nbayes_class_stats_b}. Hasil proses acak tersebut juga harus dibatasi jumlahnya dengan persamaan \ref{eq:KNN_distance_stats} yang akan sangat menentukan perhitungan pada persamaan \ref{eq:KNN_bayes_player_stats}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:nbayes_class_stats_a}
@@ -363,21 +363,21 @@ P(C_{St = 2}) = \frac{C_{St = 2}}{(C_{St = 1}\ +\ C_{St = 2})}
 
 \begin{equation}\label{eq:KNN_distance_stats}
 \begin{split}
-D(x,\ p) = \sqrt{(x - p)^2}
+D(MaxSt,\ St_{n}) = \sqrt{(MaxSt - St_{n})^2}
 \end{split}
 \end{equation}
 
 \begin{equation}\label{eq:KNN_bayes_player_stats}
 \begin{split}
 MaxSt = \left\{\begin{matrix}
-\sum_{n = 0}^{N}\ St_{(n)}, & saat\ D(x,\ p) \geqslant 2,\ St = 2 \\ 
-\sum_{n = 0}^{N}\ St_{(n)}, & saat\ D(x,\ p) \geqslant 1,\ St = 1 \\
-\hspace{4.5em} 0, 			& \hspace{-7.8em} lainnya
+\sum_{n = 0}^{N}\ St_{n}, & saat\ D(MaxSt,\ St_{n}) \geqslant 2,\ St = 2 \\ 
+\sum_{n = 0}^{N}\ St_{n}, & saat\ D(MaxSt,\ St_{n}) \geqslant 1,\ St = 1 \\
+\hspace{4.5em} 0, 		  & \hspace{-11.5em} lainnya
 \end{matrix}\right.
 \end{split}
 \end{equation}
 
-Pada persamaan \ref{eq:nbayes_class}, variabel $P(C_{St = 1})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 1 dan $P(C_{St = 2})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 2, kemudian $C_{St = 1}$ adalah jumlah angka satu dan $C_{St = 2}$ adalah jumlah angka satu pada \textit{Stats to Assign}. Setiap stats hasil pengacakan tentunya juga akan dibatasi jumlahnya dengan melakukan \textit{checking} pada maksimum stats, hal tersebut dijelaskan pada persamaan \ref{eq:KNN_distance_stats} yang mana $x$ adalah maksimum stats, $D$ adalah maksimum stats dan $p$ adalah stats saat ini. Kemudian nilai $MaxSt$ pada persamaan \ref{eq:KNN_bayes_player_stats} adalah nilai maksimum stats yang ingin dicapai dengan jumlah $St_{(n)}$ yang dihitung oleh persamaan \ref{eq:nbayes_class_stats_a}, \ref{eq:nbayes_class_stats_b} dan \ref{eq:KNN_distance_stats}.
+Pada persamaan \ref{eq:nbayes_class}, variabel $P(C_{St = 1})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 1 dan $P(C_{St = 2})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 2, kemudian $C_{St = 1}$ adalah jumlah angka satu dan $C_{St = 2}$ adalah jumlah angka dua pada \textit{Stats to Assign}. Pada dasarnya konsep munculnya \textit{Stats to Assign} adalah probabilitas yang merupakan dasar Naive Bayes seperti pada Sub-bab \ref{sec:sub_sec2_class_bayes}, kondisi tersebut menyatakan dengan probabilitas munculnya angka 0, 1, dan 2. Setiap \textit{stats} hasil pengacakan tentunya juga akan dibatasi jumlahnya dengan melakukan \textit{checking} pada maksimum \textit{stats}, hal tersebut dijelaskan pada persamaan \ref{eq:KNN_distance_stats}, yang mana $D$ adalah jarak antara $x$ maksimum \textit{stats} dan $p$ \textit{stats} saat ini. Kemudian nilai $MaxSt$ pada persamaan \ref{eq:KNN_bayes_player_stats} adalah nilai maksimum \textit{stats} yang ingin dicapai dengan jumlah $St_{n}$ yang dihitung oleh persamaan \ref{eq:nbayes_class_stats_a}, \ref{eq:nbayes_class_stats_b} dan \ref{eq:KNN_distance_stats}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:nbayes_class_stats_1}
@@ -388,23 +388,23 @@ P(C_{St = n}) = \frac{C_{St = n}}{(C_{St = 0}\ +\ C_{St = 1} +\ C_{St = n})}
 
 \begin{equation}\label{eq:KNN_distance_stats_1}
 \begin{split}
-D(x,\ p) = \sqrt{(x - p)^2}
+D(MaxSt,\ St_{n}) = \sqrt{(MaxSt - St_{n})^2}
 \end{split}
 \end{equation}
 
 \begin{equation}\label{eq:KNN_bayes_player_stats_1}
 \begin{split}
 MaxSt = \left\{\begin{matrix}
-\sum_{n = 0}^{N}\ St_{(n)}, & saat\ D(x,\ p) \geqslant n_{st},\ St = n_{st} \\
-\sum_{n = 0}^{N}\ St_{(n)}, & \hspace{-1.5em}saat\ D(x,\ p) \geqslant 2,\ St = 2 \\
-\sum_{n = 0}^{N}\ St_{(n)}, & \hspace{-1.5em}saat\ D(x,\ p) \geqslant 1,\ St = 1 \\
-\hspace{4.5em} 0, 			& \hspace{-9.3em} lainnya
+\sum_{n = 0}^{N}\ St_{n}, & saat\ D(MaxSt,\ St_{n}) \geqslant n_{st},\ St = n_{st} \\
+\sum_{n = 0}^{N}\ St_{n}, & \hspace{-1.5em}saat\ D(MaxSt,\ St_{n}) \geqslant 2,\ St = 2 \\
+\sum_{n = 0}^{N}\ St_{n}, & \hspace{-1.5em}saat\ D(MaxSt,\ St_{n}) \geqslant 1,\ St = 1 \\
+\hspace{4.5em} 0, 		  & \hspace{-12.5em} lainnya
 \end{matrix}\right.
 \end{split}
 \end{equation}
 \vspace{1ex}
 
-Sedangakan pada persamaan \ref{eq:nbayes_class_stats_1}, \ref{eq:KNN_distance_stats_1} dan \ref{eq:KNN_bayes_player_stats_1} digunakan saat jumlah atau dimensi \textit{Stats to Assign} lebih dari 2. Selanjutnya melalui persamaan \ref{eq:KNN_bayes_player_stats} dan beberapa persamaan yang digunakan sebelumnya pada Sub-bab \ref{sec:sub_sec3_stat_pemain} dihasilkan data seperti yang ditunjukan pada Sub-bab \ref{sec:sec4_eval_single-character_player} dan \ref{sec:sec4_eval_multi-character_player}.
+Sedangakan pada persamaan \ref{eq:nbayes_class_stats_1}, \ref{eq:KNN_distance_stats_1} dan \ref{eq:KNN_bayes_player_stats_1} digunakan saat jumlah atau dimensi \textit{Stats to Assign} lebih dari 2. Selanjutnya melalui persamaan \ref{eq:KNN_bayes_player_stats} dan beberapa persamaan yang digunakan sebelumnya pada Sub-bab \ref{sec:sub_sec3_stat_pemain} dihasilkan data seperti yang ditunjukan pada Sub-bab \ref{sec:sub_sec4_eval_single-character_stats} dan \ref{sec:sub_sec4_eval_multi-character_stats}. Pada persamaan \ref{eq:KNN_distance_stats} dan \ref{eq:KNN_distance_stats_1} adalah penggunaan perbandingan \textit{distance} atau jarak yang merupakan dasar dari $k$-NN, antara setiap kenaikan nilai \textit{stats} dan maksimum \textit{stats} yang kemudian menghasilkan grafik data berupa jumlah kenaikan \textit{stats} setiap levelnya seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec4_eval_single-character_stats}.
 \vspace{1ex}
 
 \section{Desain Level dan Stats pada Karakter Musuh}
@@ -415,28 +415,27 @@ Sama halnya dengan karakter pemain maka dibuatlah sebuah program yang secara oto
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.09]{img/enemy_stats_generator.png}
-	\caption{Proses pembuatan stats untuk karakter musuh.}
+	\includegraphics[scale=0.087]{img/enemy_stats_generator.png}
+	\caption{Proses pembuatan \textit{stats} untuk karakter musuh.}
 	\label{fig:enemy_stats_generator}
 \end{figure}
 
 Pada permainan bergenre RPG yang memiliki jumlah yang sangat banyak dan beragam, maka program yang ditunjukan melalui proses pada Gambar \ref{fig:enemy_stats_generator} dapat dijalankan satu kali saja, dan menghasilkan banyak musuh. Kecuali ingin menghasilkan kombinasi musuh yang berbeda, misalnya pada proses \textit{generate} yang pertama menghasilkan musuh yang memiliki kemampuan \textit{magic} dan kelemahan sedangkan pada kombinasi musuh selanjutnya tidak memiliki kemampuan \textit{magic}, hanya mengandalkan kemampuan fisik saja.
 \vspace{1ex}
 
-Pada Gambar \ref{fig:enemy_stats_generator} di sisi masukan program terdapat banyak sekali masukan variabel seperti \textit{Max Level} yang berupa maksimum level yang diinginkan, kemudian \textit{Min Level} yang berupa minimum level dari musuh, kemudian HP yang berupa \textit{range} atau jarak antara HP minimum dengan HP tertinggi. Sama halnya dengan HP, dalam perhitungan \textit{range} atau jarak, pada \textit{MP} juga menggunakan perhitungan dengan cara tersebut. Kemudian \textit{Enemy Type} yang berisi klasifikasi jenis stats musuh, tergolong musuh seperti apakah stats yang dihasilkan tersebut. 
+Pada Gambar \ref{fig:enemy_stats_generator} di sisi masukan program terdapat banyak sekali masukan variabel seperti \textit{Max Level} yang berupa maksimum level yang diinginkan, kemudian \textit{Min Level} yang berupa minimum level dari musuh, kemudian HP yang berupa \textit{range} atau jarak antara HP minimum dengan HP tertinggi. Sama halnya dengan HP, dalam perhitungan \textit{range} atau jarak, pada \textit{MP} juga menggunakan perhitungan dengan cara tersebut. Kemudian \textit{Enemy Type} yang berisi klasifikasi jenis \textit{stats} musuh, tergolong musuh seperti apakah \textit{stats} yang dihasilkan tersebut. 
 \vspace{1ex}
 
-Selanjutnya adalah \textit{Element Name} yang berisi daftar elemen apa saja yang dapat dipilih saat pembuatan karakter musuh, selanjutnya \textit{Element Weak} berisi tetang kelemahan dan keunggulan dari musuh tersebut ketika diserang, apakah saat diserang dengan menggunakan elemen tersebut akan mengalami kerusakan atau damage yang parah, normal atau tidak mempan sama sekali. Kemudian untuk \textit{Stats Name} berisikan nama \textit{stats} yang dipakai dalam membuat karakter musuh. Selanjutnya adalah isi atau data dari \textit{stats} itu sendiri yang menentukan karakter dari musuh itu sendiri, seberapa kuat musuh tersebut dalam menyerang atau bertahan dan lain sebagainya. Lebih detail tentang program yang dibuat dapat dilihat pada Gambar \ref{fig:enemy_uml}, yang merupakan \textit{class} diagram untuk membuat \textit{stats} pemain.
+Selanjutnya adalah \textit{Element Name} yang berisi daftar elemen apa saja yang dapat dipilih saat pembuatan karakter musuh, selanjutnya \textit{Element Weak} berisi tetang kelemahan dan keunggulan dari musuh tersebut ketika diserang, apakah saat diserang dengan menggunakan elemen tersebut akan mengalami kerusakan atau \textit{damage} yang parah, normal atau tidak mempan sama sekali. Kemudian untuk \textit{Stats Name} berisikan nama \textit{stats} yang dipakai dalam membuat karakter musuh. Selanjutnya adalah isi atau data dari \textit{stats} itu sendiri yang menentukan karakter dari musuh itu sendiri, seberapa kuat musuh tersebut dalam menyerang atau bertahan dan lain sebagainya. Lebih detail tentang program yang dibuat dapat dilihat pada Gambar \ref{fig:enemy_uml}, yang merupakan \textit{class} diagram untuk membuat \textit{stats} pemain.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.3]{img/enemy_uml.png}
+	\includegraphics[scale=0.25]{img/enemy_uml.png}
 	\caption{\textit{Class} diagram untuk \textit{stats} musuh.}
 	\label{fig:enemy_uml}
-	\vspace{1ex}
 \end{figure}
 
-Karena program ini dibangun menggunakan OOP (\textit{Object Oriented Programming}) maka program ini dapat dijabarkan menggunakan Gambar \ref{fig:enemy_uml}. Selain itu program ini juga dapat secara mudah dimodifikasi untuk keperluan pengembangan kedepannya, dengan fungsi-fungsi yang ada sangat memungkinkan dilakukan \textit{override} atau pembuatan fungsi yang sama dengan isi atau proses yang berbeda seperti pada penjelasan dibagian pemain pada Sub-bab \ref{sec:sec3_player_stats}. Seperti pada bagian sebelumnya maka dibuatlah Tabel \ref{tb:enemy_input_variable} yang berupa masukan untuk menguji program yang akan dijelaskan pada bagian-bagian selanjutnya, yang mana masukan pada tabel tersebut akan menghasilkan stats pada sebuah karakter untuk pemain. Sama seperti pada Sub-bab \ref{sec:sec3_player_stats} sebelumnya, yang mana pada bagian ini juga merupakan perwujudan teknis dari Sub-bab \ref{sec:sub_sec3_design_skenario} dalam bentuk yang lebih teknis.
+Karena program ini dibangun menggunakan OOP (\textit{Object Oriented Programming}) maka program ini dapat dijabarkan menggunakan Gambar \ref{fig:enemy_uml}. Selain itu program ini juga dapat secara mudah dimodifikasi untuk keperluan pengembangan kedepannya, dengan fungsi-fungsi yang ada sangat memungkinkan dilakukan \textit{override} atau pembuatan fungsi yang sama dengan isi atau proses yang berbeda seperti pada penjelasan dibagian pemain pada Sub-bab \ref{sec:sec3_player_stats}. Seperti pada bagian sebelumnya maka dibuatlah Tabel \ref{tb:enemy_input_variable} yang berupa masukan untuk menguji program yang akan dijelaskan pada bagian-bagian selanjutnya, yang mana masukan pada tabel tersebut akan menghasilkan \textit{stats} pada sebuah karakter untuk pemain. Sama seperti pada Sub-bab \ref{sec:sec3_player_stats} sebelumnya, yang mana pada bagian ini juga merupakan perwujudan teknis dari Sub-bab \ref{sec:sub_sec3_design_skenario} dalam bentuk yang lebih teknis.
 \vspace{-1ex}
 
 \begin{longtable}{|l|l|}
@@ -467,7 +466,7 @@ Karena program ini dibangun menggunakan OOP (\textit{Object Oriented Programming
 \label{sec:sub_sec3_enemy_level}
 \vspace{1ex}
 
-Pada bagian ini akan dijelaskan tentang pembagian level pada musuh, dengan masukan seperti yang disebutkan pada Tabel \ref{tb:enemy_input_variable}. Beracuan pada tabel tersebut beberapa variabel utama yang akan digunakan diantaranya adalah ``\textit{Enemy Numbers}" yang menentukan jumlah musuh yang akan dibuat, ``\textit{Max Level}" dan ``\textit{Min Level}" adalah nilai maksimum dan minimum level dari musuh yang ingin dibuat. Selanjutnya tingkat kesulitan dari musuh juga ditentukan disini, dengan variabel ``\textit{Level Class}" yang isinya dibagi menjadi ``\textit{Easy}", ``\textit{Medium}" dan ``\textit{Hard}". Musuh dengan \textit{``Level Class"} atau tingkat kesulitan \textit{``Easy"} akan menjadi yang paling mudah dikalahkan, diikuti daengan tingkat kesulitan \textit{``Medium"} dan ``\textit{Hard}" secara berurutan.
+Pada bagian ini akan dijelaskan tentang pembagian level pada musuh, dengan masukan seperti yang disebutkan pada Tabel \ref{tb:enemy_input_variable}. Beracuan pada tabel tersebut beberapa variabel utama yang akan digunakan diantaranya adalah ``\textit{Enemy Numbers}" yang menentukan jumlah musuh yang akan dibuat, ``\textit{Max Level}" dan ``\textit{Min Level}" adalah nilai maksimum dan minimum level musuh. Selanjutnya tingkat kesulitan dari musuh ditentukan dengan variabel ``\textit{Level Class}" yang isinya dibagi menjadi ``\textit{Easy}", ``\textit{Medium}" dan ``\textit{Hard}". Musuh dengan tingkat kesulitan \textit{``Easy"} akan menjadi yang paling mudah dikalahkan, diikuti dengan \textit{``Medium"} dan ``\textit{Hard}" secara berurutan.
 \vspace{1ex}
 
 Kemudian terdapat variabel pendukung yang akan menentukan data atau level yang ingin dihasilkan, yaitu \textit{scale}. Selaanjutnya dilakukan beberapa proses seperti pada persamaan \ref{eq:enemy_levels1}, \ref{eq:enemy_levels2}, \ref{eq:sub_enemy_levels1}, dan persamaan \ref{eq:sub_enemy_levels2} yang kemudian diperoleh hasil berupa level untuk banyak musuh sekaligus seperti yang ditunjukan pada persamaan \ref{eq:probability_enemy_levels}.
@@ -1113,7 +1112,7 @@ Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_se
 \vspace{1ex}
 
 \section{Klasifikasi Karakter Pemain dengan Neural Network Multiclass Classification}
-\label{sec:sec3_char_method}
+\label{sec:sec3_player_method}
 \vspace{1ex}
 
 Terdapat banyak sekali jenis permainan RPG seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sec2_rpg}, tidak semua karakter yang dapat dimainkan oleh pemain berjumlah sangat banyak. Hanya beberapa genre RPG saja yang dapat menggunakan karakter pemain dengan jumlah sangat banyak. Jika mengacu genre permainan pada Sub-bab \ref{sec:sec2_rpg} dan judul permainan dijumpai saat ini permainan dengan genre JRPG dan MMORPG yang memungkinkan untuk memainkan banyak karakter dari pemain.
@@ -1140,7 +1139,7 @@ Maka hal yang akan dilakukan disini adalah mencoba melakukan klasifikasi karakte
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.039]{img/player_char_nn_classification.png}
 	\caption{Proses klasifikasi Karakter Pemain.}
-	\label{fig:char_class_proc}
+	\label{fig:player_class_proc}
 \end{figure}
 
 Pada dasarnya Gambar \ref{fig:char_class_proc} mirip dengan Gambar \ref{fig:dota2_class_proc}, dikarenakan proses yang dilalui sama persis, hanya saja pada bagian proses \textit{training} dan pembuatan model yang ditandai dengan warna abu-abu penjelasannya akan banyak dilewati dikarenakan proses tersebut hampir sama dengan Gambar \ref{fig:dota2_class_proc} yang kemudian dijelaskan pada Sub-bab \ref{sec:sub_sec3_dota2_arch} dan Sub-bab \ref{sec:sub_sec3_dota2_model}. Kemudian pada Gambar \ref{fig:dota2_class_proc}, data \textit{pre-processing} diganti menjadi data \textit{preparation} dikarenakan data dibuat sesuai dengan masukan data dalam pembuatan karakter pemain yang sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}.
@@ -1232,7 +1231,7 @@ Pada dasarnya Gambar \ref{fig:enemy_class_proc} mirip dengan Gambar \ref{fig:dot
 \label{sec:sub_sec3_enemy_data_prep}
 \vspace{1ex}
 
-Dataset dari karakter musuh dapat dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 1 sampai 280 digunakan sebagai data \textit{training} dan Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai paling akhir digunakan sebagai data validasi dan \textit{testing}. Data tersebut diperoleh dari Tabel \ref{tb:enemy_input_variable} yang kemudian dijelaskan setiap proses pembuatan data tersebut pada Sub-bab \ref{sec:sec3_player_stats}. Kemudian untuk kelemahan dari musuh tidak diguanakan sebagai fitur sama seperti pada karakter pemain, hal tersebut dikarenakan nilainya yang cenderung kurang bervariasi yang mengakibatkan akan semakin mendekati nol saat dilakukan korelasi fitur.
+Dataset dari karakter musuh dapat dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 1 sampai 280 digunakan sebagai data \textit{training} dan Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai 400 digunakan sebagai data validasi dan \textit{testing}. Data tersebut diperoleh dari Tabel \ref{tb:enemy_input_variable} yang kemudian dijelaskan setiap proses pembuatan data tersebut pada Sub-bab \ref{sec:sec3_player_stats}. Kemudian untuk kelemahan dari musuh tidak diguanakan sebagai fitur sama seperti pada karakter pemain, hal tersebut dikarenakan nilainya yang cenderung kurang bervariasi yang mengakibatkan akan semakin mendekati nol saat dilakukan korelasi fitur.
 \vspace{1ex}
 
 Maka digunakanlah data masukan yang digunakan untuk membuat karakter musuh yang sebelumnya sudah dibahas pada Sub-bab \ref{sec:sec3_enemy_stats} pada Tabel \ref{tb:enemy_input_variable}. Data tersebut dibuat berdasarkan skenario seolah mendesain sebuah permainan. Pada permainan yang sebelumnya sempat dibahas pada Sub-bab \ref{sec:sub_sec3_story} pasti terdapat juga karakter musuh yang susah atau mudah dikalahkan, memiliki kemampuan \textit{magic} yang tinggi, sedang, atau rendah, memiliki kemampuan \textit{strength} yang tinggi, sedang, atau rendah, dan lain sebagainya. Berikut adalah contoh skenario yang digunakan untuk mendesain karakter musuh berdasarkan tipe pada penelitian ini:
