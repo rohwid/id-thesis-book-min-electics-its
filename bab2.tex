@@ -12,13 +12,13 @@ Demi mendukung penelitian ini, dibutuhkan beberapa teori penunjang sebagai bahan
 Beberapa penelitan sebelumnya yang berkaitan dengan penelitian ini dan mendukung penelitian ini antara lain:
 
 \begin{enumerate}
-	\item Paper dengan judul ``\textit{Measuring Level of Difficulty in Game Using Challenging Rate (CR) on 2D Real Time Strategy Line Defense Game}" yang ditulis oleh Christyowidiasmoro dan rekan-rekan tahun 2015. Meneliti tentang formula \textit{Challenging Rate} (CR) adalah formula yang menggunakan elemen dasar dalam permainan RTS (\textit{Real Time Strategy}) sebagai parameternya. Dalam tulisan ini dibuat sebuah \textit{prototipe} permainan dengan tingkat kesulitan yang diajukan untuk mencoba kemampuan formula \textit{Challenging Rate} untuk mengukur nilai tingkat kesulitan.
+	\item Paper dengan judul ``\textit{Measuring Level of Difficulty in Game Using Challenging Rate (CR) on 2D Real Time Strategy Line Defense Game}'' yang ditulis oleh Christyowidiasmoro dan rekan-rekan tahun 2015. Meneliti tentang formula \textit{Challenging Rate} (CR) adalah formula yang menggunakan elemen dasar dalam permainan RTS (\textit{Real Time Strategy}) sebagai parameternya. Dalam tulisan ini dibuat sebuah \textit{prototipe} permainan dengan tingkat kesulitan yang diajukan untuk mencoba kemampuan formula \textit{Challenging Rate} untuk mengukur nilai tingkat kesulitan.
 
-	\item Paper dengan judul ``\textit{A game engine to make games as multi-agent systems}" yang ditulis oleh Carlos Marín-Lora dan rekan-rekan tahun 2019. Pada tulisan ini meneliti tentang pengembangan \textit{game engine} yang berfokus pada multi-agen. Di mana pada setiap aktor atau agen-agen memiliki sejumlah properti dan aturan kebiasaan untuk berinteraksi dengan lingkungan dalam permainan. Tujuan dari engine tersebut adalah memenuhi kebutuhan dasar dari sistem multi agent dengan merubah karakteristik dari system tanpa adanya pengaruh terhadap potensi karakter.
+	\item Paper dengan judul ``\textit{A game engine to make games as multi-agent systems}'' yang ditulis oleh Carlos Marín-Lora dan rekan-rekan tahun 2019. Pada tulisan ini meneliti tentang pengembangan \textit{game engine} yang berfokus pada multi-agen. Di mana pada setiap aktor atau agen-agen memiliki sejumlah properti dan aturan kebiasaan untuk berinteraksi dengan lingkungan dalam permainan. Tujuan dari engine tersebut adalah memenuhi kebutuhan dasar dari sistem multi agent dengan merubah karakteristik dari system tanpa adanya pengaruh terhadap potensi karakter.
 
-	\item Paper dengan judul ``\textit{Procedurally Generating Game Level with Specified Difficulty}" yang ditulis oleh Zong-Han Wu dan rekan-rekan tahun 2018. Penelitian ini mencakup ranah pembuatan konten dalam sebuah permainan secara prosedural, hal tersebut bertujuan agar para pemain memperoleh pengalaman yang berbeda dalam bermmain. Pada paper ini yang paling banyak di ulas adalah permainan PAC-MAN, dengan labirin yang dapat berubah secara procedural.
+	\item Paper dengan judul ``\textit{Procedurally Generating Game Level with Specified Difficulty}'' yang ditulis oleh Zong-Han Wu dan rekan-rekan tahun 2018. Penelitian ini mencakup ranah pembuatan konten dalam sebuah permainan secara prosedural, hal tersebut bertujuan agar para pemain memperoleh pengalaman yang berbeda dalam bermmain. Pada paper ini yang paling banyak di ulas adalah permainan PAC-MAN, dengan labirin yang dapat berubah secara procedural.
 	
-	\item Paper dengan judul ``\textit{Generating an Attribute Space for analyzing Balance in Single Unit RTS Game Combat}" yang ditulis oleh Shaun Bangay dan Owen Makin tahun 2014. Fokus pada tulisan ini adalah tentang pencapaian keseimbangan dalam permainan \textit{Real Time Strategy} (RTS), dengan dibuatnya sebuah framework yang dinamakan dengan \textit{attribute space}. Pendekatan ini dievaluasi dan direpresentasikan untuk pertarungan \textit{single unit} atau satu lawan satu pada permainan RTS. Melalui proses tersebut kemudian dibuatlah model prediksi terhadap simulasi pertarungan tersebut, dengan menggunakan attribut atau data statistik pada permainan tersebut seperti halnya \textit{speed}, \textit{range}, \textit{health} dan \textit{damage}.
+	\item Paper dengan judul ``\textit{Generating an Attribute Space for analyzing Balance in Single Unit RTS Game Combat}'' yang ditulis oleh Shaun Bangay dan Owen Makin tahun 2014. Fokus pada tulisan ini adalah tentang pencapaian keseimbangan dalam permainan \textit{Real Time Strategy} (RTS), dengan dibuatnya sebuah framework yang dinamakan dengan \textit{attribute space}. Pendekatan ini dievaluasi dan direpresentasikan untuk pertarungan \textit{single unit} atau satu lawan satu pada permainan RTS. Melalui proses tersebut kemudian dibuatlah model prediksi terhadap simulasi pertarungan tersebut, dengan menggunakan attribut atau data statistik pada permainan tersebut seperti halnya \textit{speed}, \textit{range}, \textit{health} dan \textit{damage}.
 \end{enumerate}
 
 \section{Desain Permainan RPG dan Komponennya}
@@ -675,3 +675,101 @@ Pada dasarnya permainan dengan genre RPG (\textit{Role-Playing Game}) khususnya 
 	
 	Terakhir, permainan menyediakan fitur berupa pengembangan karakter dan perencanaan dari karakter yang dimainkan oleh para pemain, dan terlelih lagi mengharuskan pemain untuk melakukan perencanaan untuk bertarung bersama atau \textit{party} tetapi setiap pengguna hanya dapat memainkan satu karakter dalam \textit{party} tersebut, \textit{gameplay} tersebut sangat mirip dengan apa yang ditawarkan pada genre TRPG.
 \end{subs}
+
+\section{Artificial Neural Network}
+\label{sec:sec2_ann}
+\vspace{1ex}
+
+Terinspirasi dari cara kerja otak manusia dalam memproses informasi seperti yang ditunjukan pada Gambar \ref{fig:ann_neuron}, maka dibuatlah sebuah paradigma pemprosesan informasi yang biasanya digunakan untuk mempelajari tingkah laku sistem yang kompleks pada komputer, istilah ini biasa disebut dengan \textit{Artificial Neural Network}.
+\vspace{1ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.7]{img/ann_neuron.png}
+	\caption{Skruktur neuron dan deskripsi fungsinya \citep{buduma2017}.}
+	\label{fig:ann_neuron}
+\end{figure}
+
+Dengan mengiplementasikan cara kerja dari satu neuron dengan neuron yang lain yang diterapkan dalam program untuk komputer. Persamaan yang menyatakan perhitungan dari satu unit neuron adalah seperti yang ditujukan pada persamaan \ref{eq:ann_simple}.
+\vspace{1ex}
+
+\begin{equation}\label{eq:ann_simple}
+y_{out} = wx_{in} + b
+\end{equation}
+
+Masukan skalar $x$ ditransmisikan melalui koneksi yang nilainya dikalikan oleh skalar beban atau \textit{weight} dengan $w$. Hasil perkalian tersebut ditambahkan dengan skalar bias yang dinyatakan dengan $b$. Proses tersebut menghasilkan luaran skalar yang dinyatakan dengan $y$, yang mana nilainya akan diteruskan ke neuron selanjutnya.
+\vspace{1ex}
+
+\subsection{Activation Function}
+\label{sec:sub_sec2_activation_func}
+
+\textit{Activation function} pada bertugas untuk menentukan apakah neuron tersebut harus aktif atau tidak, seperti neuron dalam otak manusia. Aktifasi neuron tersebut dipengaruhi oleh jumlah $w$ dari masukan. Secara umum terdapat 2 jenis \textit{activation function} yaitu linear dan non-linear.
+\vspace{1ex}
+
+Pada dasarnya \textit{activation function} dari sebuah neuron adalah Linear. Jika sebuah neuron menggunakan fungsi linear, maka keluaran dari neuron tersebut adalah $w$ dari $x$ + $b$. Pada Gambar \ref{fig:ann_linear} adalah contoh keluaran dari sebuah fungsi linear.
+\vspace{1ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.35]{img/ann_linear.jpeg}
+	\caption{Output fungsi linear}
+	\label{fig:ann_linear}
+\end{figure}
+
+Fungsi sigmoid mempunyai rentang antara 0 hingga 1 sedangkan rentang dari Tanh adalah -1 hingga 1. Kedua fungsi ini biasanya digunakan untuk klasifikasi dua kelompok data. Kemudian pada ReLU biasanya dilakukan \textit{treshold} dari 0 sampai dengan tidak terhingga. Pada Gambar \ref{fig:ann_non_linear} adalah contoh keluaran dari sebuah fungsi non-linear.
+\vspace{1ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.68]{img/ann_non_linear.png}
+	\caption{Contoh fungsi aktivasi: (a). Sigmoid, (b). Tanh, dan (c). ReLU \citep{buduma2017}.}
+	\label{fig:ann_non_linear}
+\end{figure}
+
+Kemudian terdapat sebuah activation function lagi yang akan digunakan pada penelitian ini, yaitu Softmax. Pada suatu kondisi akan dibutuhkan hasil klasifikasi yang berupa vektor dengan label atau kategori yang masih saling berhubungan. Contohnya saat penggunaan Neural Network dalam mengenali tulisan tangan yang berupa angka pada dataset MNIST. Hasil prediksi yang berupa angka atau label (0 sampai 9) yang masih saling terhubung, seperti kecilnya kemungkinan sebuah tulisan tangan angka dikenali dengan tingkat keyakinan 100\%. Maka digunakanlah probabilitas distribusi sehingga setiap label masih memiliki tingkat keyakinan masing-masing \citep{buduma2017}.
+\vspace{1ex}
+
+\subsection{Arsitektur Neural Network}
+\label{sec:sub_sec2_nn_arch}
+
+Arsitektur pada Gambar \ref{fig:ann_arch} biasa disebut sebagai \textit{Multi Layer Perceptron} (MLP) atau \textit{Fully-Connected Layer}. Arsitektur tersebut mempunyai 3 buah neuron pada \textit{input} Layer dan 2 buah \textit{node} pada \textit{output Layer}. Di antara \textit{input} dan \textit{output}, terdapat 1 \textit{hidden layer} dengan 4 buah neuron.
+\vspace{1ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.9]{img/ann_arch.jpeg}
+	\caption{Contoh arsitektur sederhana \textit{Neural Network}.}
+	\label{fig:ann_arch}
+\end{figure}
+
+Setiap neuron pada MLP saling berhubungan yang ditandai dengan tanda panah pada gambar diatas. Tiap koneksi memiliki \textit{weight} yang nantinya nilai pada setiap \textit{weight} akan berbeda-beda. \textit{Hidden layer} dan \textit{output layer} memiliki tambahan \textit{input} yang biasa disebut dengan bias. Sehingga pada arsitektur pada Gambar \ref{fig:ann_arch} terdapat 3 $\times$ 4 \textit{weight} + 4 \textit{bias} dan 4 $\times$ 2 \textit{weight} + 2 \textit{bias}. Total keseluruhan terdapat 26 parameter yang pada proses \textit{training} akan mengalami perubahan demi memperoleh hasil yang terbaik.
+\vspace{1ex}
+
+Kemudian neuron pada \textit{input} layer tidak memiliki \textit{activation function}, sedangkan neuron pada \textit{hidden layer} dan \textit{output layer} memiliki \textit{activation function} yang kadang berbeda tergantung daripada data atau problem yang ingin diselesaikan.
+\vspace{1ex}
+
+\subsection{Training pada Neural Network}
+\label{sec:sub_sec2_nn_train}
+
+Pada \textit{Supervised Learning} menggunakan \textit{Neural Network}, pada umumnya proses \textit{learning} terdiri dari 2 tahap, yaitu \textit{training} dan \textit{evaluation}. Namun kadang terdapat tahap tambahan yaitu \textit{testing}, namun sifatnya tidak wajib. Dalam tahapan \textit{training} setiap \textit{weight} dan \textit{bias} pada tiap neuron akan diupdate terus menerus hingga \textit{output} yang dihasilkan sesuai dengan harapan. Pada tiap iterasi akan dilakukan proses \textit{evaluation} yang biasanya digunakan untuk menentukan kapan harus menghentikan proses \textit{training} atau stopping point. Secara garis besar proses training terdiri dari dua tahap sebagai berikut.
+\vspace{1ex}
+
+\begin{enumerate}[label=\textbf{\alph*.}]
+	\item \textbf{\textit{Forward Pass}}: \textit{Forward pass} atau biasa disebut \textit{forward propagation} adalah proses dimana data dibawa dari input melewati setiap neuron pada \textit{hidden layer} sampai kepada \textit{output layer} yang nanti akan dilakukan perhitungan \textit{error}.
+	\
+	\item \textbf{\textit{Backward Pass}}: \textit{Error} yang didapat pada \textit{forward pass} akan digunakan untuk mengupdate setiap \textit{weight} dan \textit{bias} dengan \textit{learning rate} tertentu.
+\end{enumerate}
+
+Kedua proses tersebut dilakukan secara berulang-ulang sampai didapatkan nilai \textit{weight} dan \textit{bias} yang dapat memberikan nilai \textit{error} sekecil mungkin pada \textit{output layer} (saat \textit{forward pass}). Bila digambarkan maka akan menjadi seperti pada Gambar \ref{fig:ann_backpro} dengan panah biru adalah \textit{forward pass} dan panah merah adalah \textit{backward pass}.
+\vspace{1ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.8]{img/ann_backpro.jpeg}
+	\caption{Alur training untuk saat \textit{forward pass} dan \textit{backward pass}.}
+	\label{fig:ann_backpro}
+\end{figure}
+
+Dalam \textit{Supervised Learning}, \textit{training data} terdiri dari \textit{input} dan \textit{output} atau target. Pada saat \textit{forward pass}, input akan dipropagasikan menuju \textit{output} layer dan hasil prediksi \textit{output} akan dibandingakan dengan target dengan menggunakan sebuah fungsi yang biasa disebut dengan \textit{Loss Function}. Maka untuk apa \textit{loss function} tersebut? Sederhananya loss function digunakan untuk mengukur seberapa baik performa dari \textit{Neural Network} yang dibuat saat melakukan prediksi terhadap target.
+\vspace{1ex}
+
+\begin{equation}\label{eq:ann_loss}
+Loss = (Target - Predict)^{2}
+\end{equation}
+
+Pada persamaan \ref{eq:ann_loss} terdapat variabel $Target$ yang merupakan hasil yang diinginkan kemudian dikurangin dengan hasil prediksi yang dinyatakan denga $Predict$, maka diperolehlah $Loss$ atau tingkat kegagalan saat prediksi. Terdapat berbagai macam \textit{loss function}, namun yang paling sering digunakan adalah \textit{Squared Error} (L2 Loss) untuk regresi. Sedangkan untuk klasifikasi biasanya digunakan adalah \textit{Cross Entropy}.

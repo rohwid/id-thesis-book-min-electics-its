@@ -308,17 +308,17 @@ Kemudian variabel lanjutannya adalah \textit{next} HP atau HP pada level selanju
 
 \begin{equation}\label{eq:hp_player}
 	\begin{split}
-		HP(N) = \sum_{n = 0}^{N} HP(n + 1) + \left(HP(n + 1) - HP(n) \right)
+		HP = \sum_{n = 0}^{N_{p}} HP_{(n + 1)} + \left(HP_{(n + 1)} - HP_{n} \right)
 	\end{split}
 \end{equation}
 
 \begin{equation}\label{eq:mp_player}
 	\begin{split}
-		MP(N) = \sum_{n = 0}^{N} MP(n + 1) + \left(MP(n + 1) - MP(n) \right)
+		MP = \sum_{n = 0}^{N_{p}} MP_{(n + 1)} + \left(MP_{(n + 1)} - MP_{n} \right)
 	\end{split}
 \end{equation}
 
-Pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player}, HP tetap dinyatakan sebagain HP, begitu juga dengan MP. Kemudian $HP(N)$ adalah nilai HP yang dicari, yang mana $N$ adalah level maksimum, $n$ adalah level mulai dan $n + 1$ adalah level selanjutnya. Jadi pada tahap ini seperti yang dijelaskan pada Tabel \ref{tb:player_input_variable} yang mana nilai $n$ dan $n + 1$ sudah diketahui sebagai inisialisasi, masing-masing adalah $HP(n)$ dan $HP(n + 1)$. Penjelasan ini juga berlaku untuk mencari nilai $MP(N)$ yaitu nilai MP yang dicari. Selanjutnya melalui persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dihasilkan data dan grafik seperti yang ditunjukan pada Sub-bab \ref{sec:sub_sec4_eval_dist_hp_mp_level_single-character} dan \ref{sec:sub_sec4_eval_dist_hp_mp_level_multi-character}.
+Pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player}, HP tetap dinyatakan sebagain HP, begitu juga dengan MP. Kemudian $HP$ adalah nilai HP yang dicari, yang mana $N$ adalah level maksimum, $n$ adalah level mulai dan $n + 1$ adalah level selanjutnya. Jadi pada tahap ini seperti yang dijelaskan pada Tabel \ref{tb:player_input_variable} yang mana nilai $n$ dan $n + 1$ sudah diketahui sebagai inisialisasi, masing-masing adalah $HP_{n}$ dan $HP_{(n + 1)}$. Penjelasan ini juga berlaku untuk mencari nilai $MP$ yaitu nilai MP yang dicari. Selanjutnya melalui persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dihasilkan data dan grafik seperti yang ditunjukan pada Sub-bab \ref{sec:sub_sec4_eval_dist_hp_mp_level_single-character} dan \ref{sec:sub_sec4_eval_dist_hp_mp_level_multi-character}.
 \vspace{1ex}
 
 \subsection{Distribusi Elemen dan Kelemahan Pemain}
@@ -370,14 +370,14 @@ D(MaxSt,\ St_{n}) = \sqrt{(MaxSt - St_{n})^2}
 \begin{equation}\label{eq:KNN_bayes_player_stats}
 \begin{split}
 MaxSt = \left\{\begin{matrix}
-\sum_{n = 0}^{N}\ St_{n}, & saat\ D(MaxSt,\ St_{n}) \geqslant 2,\ St = 2 \\ 
-\sum_{n = 0}^{N}\ St_{n}, & saat\ D(MaxSt,\ St_{n}) \geqslant 1,\ St = 1 \\
+\sum_{n = 0}^{N_{p}}\ St_{n}, & saat\ D(MaxSt,\ St_{n}) \geqslant 2,\ St = 2 \\ 
+\sum_{n = 0}^{N_{p}}\ St_{n}, & saat\ D(MaxSt,\ St_{n}) \geqslant 1,\ St = 1 \\
 \hspace{4.5em} 0, 		  & \hspace{-11.5em} lainnya
 \end{matrix}\right.
 \end{split}
 \end{equation}
 
-Pada persamaan \ref{eq:nbayes_class}, variabel $P(C_{St = 1})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 1 dan $P(C_{St = 2})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 2, kemudian $C_{St = 1}$ adalah jumlah angka satu dan $C_{St = 2}$ adalah jumlah angka dua pada \textit{Stats to Assign}. Pada dasarnya konsep munculnya \textit{Stats to Assign} adalah probabilitas yang merupakan dasar Naive Bayes seperti pada Sub-bab \ref{sec:sub_sec2_class_bayes}, kondisi tersebut menyatakan dengan probabilitas munculnya angka 0, 1, dan 2. Setiap \textit{stats} hasil pengacakan tentunya juga akan dibatasi jumlahnya dengan melakukan \textit{checking} pada maksimum \textit{stats}, hal tersebut dijelaskan pada persamaan \ref{eq:KNN_distance_stats}, yang mana $D$ adalah jarak antara $x$ maksimum \textit{stats} dan $p$ \textit{stats} saat ini. Kemudian nilai $MaxSt$ pada persamaan \ref{eq:KNN_bayes_player_stats} adalah nilai maksimum \textit{stats} yang ingin dicapai dengan jumlah $St_{n}$ yang dihitung oleh persamaan \ref{eq:nbayes_class_stats_a}, \ref{eq:nbayes_class_stats_b} dan \ref{eq:KNN_distance_stats}.
+Pada persamaan \ref{eq:nbayes_class}, variabel $P(C_{St = 1})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 1 dan $P(C_{St = 2})$ adalah probabilitas munculnya \textit{Stats to Assign} ke 2, kemudian $C_{St = 1}$ adalah jumlah angka satu dan $C_{St = 2}$ adalah jumlah angka dua pada \textit{Stats to Assign}. Pada dasarnya konsep munculnya \textit{Stats to Assign} adalah probabilitas yang merupakan dasar Naive Bayes seperti pada Sub-bab \ref{sec:sub_sec2_class_bayes}, kondisi tersebut menyatakan dengan probabilitas munculnya angka 0, 1, dan 2. Setiap \textit{stats} hasil pengacakan tentunya juga akan dibatasi jumlahnya dengan melakukan \textit{checking} pada maksimum \textit{stats}, hal tersebut dijelaskan pada persamaan \ref{eq:KNN_distance_stats}, yang mana $D$ adalah jarak antara $x$ maksimum \textit{stats} dan $p$ \textit{stats} saat ini. Kemudian nilai $MaxSt$ pada persamaan \ref{eq:KNN_bayes_player_stats} adalah nilai maksimum \textit{stats} yang ingin dicapai dengan jumlah $St_{n}$ sampai level maksimum atau $N_{p}$ yang dihitung oleh persamaan \ref{eq:nbayes_class_stats_a}, \ref{eq:nbayes_class_stats_b} dan \ref{eq:KNN_distance_stats}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:nbayes_class_stats_1}
@@ -395,9 +395,9 @@ D(MaxSt,\ St_{n}) = \sqrt{(MaxSt - St_{n})^2}
 \begin{equation}\label{eq:KNN_bayes_player_stats_1}
 \begin{split}
 MaxSt = \left\{\begin{matrix}
-\sum_{n = 0}^{N}\ St_{n}, & saat\ D(MaxSt,\ St_{n}) \geqslant n_{st},\ St = n_{st} \\
-\sum_{n = 0}^{N}\ St_{n}, & \hspace{-1.5em}saat\ D(MaxSt,\ St_{n}) \geqslant 2,\ St = 2 \\
-\sum_{n = 0}^{N}\ St_{n}, & \hspace{-1.5em}saat\ D(MaxSt,\ St_{n}) \geqslant 1,\ St = 1 \\
+\sum_{n = 0}^{N_{p}}\ St_{n}, & saat\ D(MaxSt,\ St_{n}) \geqslant n_{st},\ St = n_{st} \\
+\sum_{n = 0}^{N_{p}}\ St_{n}, & \hspace{-1.5em}saat\ D(MaxSt,\ St_{n}) \geqslant 2,\ St = 2 \\
+\sum_{n = 0}^{N_{p}}\ St_{n}, & \hspace{-1.5em}saat\ D(MaxSt,\ St_{n}) \geqslant 1,\ St = 1 \\
 \hspace{4.5em} 0, 		  & \hspace{-12.5em} lainnya
 \end{matrix}\right.
 \end{split}
@@ -469,145 +469,151 @@ Karena program ini dibangun menggunakan OOP (\textit{Object Oriented Programming
 Pada bagian ini akan dijelaskan tentang pembagian level pada musuh, dengan masukan seperti yang disebutkan pada Tabel \ref{tb:enemy_input_variable}. Beracuan pada tabel tersebut beberapa variabel utama yang akan digunakan diantaranya adalah ``\textit{Enemy Numbers}" yang menentukan jumlah musuh yang akan dibuat, ``\textit{Max Level}" dan ``\textit{Min Level}" adalah nilai maksimum dan minimum level musuh. Selanjutnya tingkat kesulitan dari musuh ditentukan dengan variabel ``\textit{Level Class}" yang isinya dibagi menjadi ``\textit{Easy}", ``\textit{Medium}" dan ``\textit{Hard}". Musuh dengan tingkat kesulitan \textit{``Easy"} akan menjadi yang paling mudah dikalahkan, diikuti dengan \textit{``Medium"} dan ``\textit{Hard}" secara berurutan.
 \vspace{1ex}
 
-Kemudian terdapat variabel pendukung yang akan menentukan data atau level yang ingin dihasilkan, yaitu \textit{scale}. Selaanjutnya dilakukan beberapa proses seperti pada persamaan \ref{eq:enemy_levels1}, \ref{eq:enemy_levels2}, \ref{eq:sub_enemy_levels1}, dan persamaan \ref{eq:sub_enemy_levels2} yang kemudian diperoleh hasil berupa level untuk banyak musuh sekaligus seperti yang ditunjukan pada persamaan \ref{eq:probability_enemy_levels}.
+Kemudian terdapat variabel pendukung yang akan menentukan data atau level yang ingin dihasilkan, yaitu \textit{scale} yang disebutkan pada Tabel \ref{tb:enemy_input_variable}. Selanjutnya dilakukan beberapa proses seperti pada persamaan \ref{eq:enemy_levels1}, \ref{eq:enemy_levels2}, \ref{eq:sub_enemy_levels1}, dan persamaan \ref{eq:sub_enemy_levels2} yang kemudian diperoleh hasil berupa level untuk banyak musuh sekaligus seperti yang ditunjukan pada persamaan \ref{eq:probability_enemy_levels}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_levels1}
 	\resizebox{\columnwidth}{!}{%
-		$SL_{N} = \left\{\begin{matrix}
-		\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{LN}{LC_{N}} & Saat\ 0 \equiv LN\ (mod\ LC_{N}) & \\
+		$SL = \left\{\begin{matrix}
+		\hspace{0.2em} \sum_{i = 0}^{N_{LC}}\ \frac{LN}{N_{LC}} & Saat\ 0 \equiv LN\ (mod\ LC_{N}) & \\
 		
-		\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{LN}{LC_{N}} & Saat\ 0 \not\equiv LN\ (mod\ LC_{N}), & \\
-		&\hspace{1.0em}  0 \not\equiv LC_{N}\ (mod\ 2) & \hspace{-3.5em} \Rightarrow\ SL_{(\left \lceil N/2 \right \rceil)}  = \left \lceil \frac{LN}{LC_{N}} \right \rceil &\\
+		\hspace{0.2em} \sum_{i = 0}^{N_{LC}}\ \frac{LN}{N_{LC}} & Saat\ 0 \not\equiv LN\ (mod\ LC_{N}), & \\
+		&\hspace{1.0em}  0 \not\equiv N_{LC}\ (mod\ 2) & \hspace{-3.5em} \Rightarrow\ SL_{(\left \lceil NL_{C}/2 \right \rceil)}  = \left \lceil \frac{LN}{N_{LC}} \right \rceil &\\
 		
-		& & \hspace{-6.0em} \Rightarrow\ SL_{i}  = \left \lfloor \frac{LN}{LC_{N}} \right \rfloor &\\
+		& & \hspace{-6.0em} \Rightarrow\ SL_{i}  = \left \lfloor \frac{LN}{N_{LC}} \right \rfloor &\\
 		
-		\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{LN}{LC_{N}} & Saat\ 0 \not\equiv LN\ (mod\ LC_{N}), & \\
-		&\hspace{1.0em}  0 \equiv LC_{N}\ (mod\ 2) & \Rightarrow\ SL_{N/2},\ SL_{(N/2) + 1}  = \left \lceil \frac{LN}{LC_{N}} \right \rceil &\\
+		\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{LN}{N_{LC}} & Saat\ 0 \not\equiv LN\ (mod\ N_{LC}), & \\
+		&\hspace{1.0em}  0 \equiv N_{LC}\ (mod\ 2) & \Rightarrow\ SL_{NL_{C}/2},\ SL_{(NL_{C}/2) + 1}  = \left \lceil \frac{LN}{N_{LC}} \right \rceil &\\
 		
-		& & \hspace{-6.0em} \Rightarrow\ SL_{i}  = \left \lfloor \frac{LN}{LC_{N}} \right \rfloor &\\
+		& & \hspace{-6.0em} \Rightarrow\ SL_{i}  = \left \lfloor \frac{LN}{N_{LC}} \right \rfloor &\\
 		\end{matrix}\right.$%
 	}
 \end{equation}
 
-Pada persamaan \ref{eq:enemy_levels1} adalah proses pembagian dari jumlah level dari musuh yang dijelaskan pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{Max Level} dan \textit{Min Level} sebagai \textit{range} yang merupakan level dari musuh yang disimbolkan dengan $LN$ yang kemudian dibagi dengan  $LC_{N}$ yang merupakan jumlah kelompok atau \textit{cluster} data dari \textit{level class}. Jika beracuan pada Tabel \ref{tb:enemy_input_variable} maka jumlah \textit{cluster} level adalah jumlah data atau level yang dimuat pada setiap variabel didalam ``\textit{Level Class}" seperti ``\textit{Easy}", ``\textit{Medium}" dan ``\textit{High}", jadi jumlah levelnya adalah 3 \textit{cluster} level. Jadi pada kasus yang dicontohkan ini $LC = \left \{1, 2, 3 \right \}$, kemudian jika jumlah \textit{cluster} level ingin dibuat lebih dari contoh maka $LC = \left \{1, 2, 3,..., LC_{N} \right \}$ dengan $N$ adalah jumlah \textit{cluster} level yang ingin dibuat.
+Pada persamaan \ref{eq:enemy_levels1} adalah proses pembagian \textit{range} atau banyaknya level yang dijelaskan pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{Max Level} dan \textit{Min Level} sebagai \textit{range} atau banyaknya level, disimbolkan dengan $LN$ yang kemudian dibagi dengan $N_{LC}$ yang merupakan jumlah kelompok atau \textit{cluster} dari jumlah data yang ada pada variabel \textit{Level Class}. Jika beracuan pada Tabel \ref{tb:enemy_input_variable}, maka jumlah \textit{cluster} adalah data yang ada pada varaibel ``\textit{Level Class}" seperti ``\textit{Easy}", ``\textit{Medium}" dan ``\textit{High}", jadi jumlahnya adalah 3 \textit{cluster}. Maka pada kasus yang dicontohkan ini $LC$ atau \textit{level cluster} menjadi $LC = \left \{1, 2, 3 \right \}$, saat jumlah \textit{cluster} yang ingin dibuat lebih dari contoh maka akan menjadi $LC = \left \{1, 2, 3,..., N_{LC} \right \}$ dengan $N_{LC}$ adalah jumlah \textit{cluster} yang ingin dibuat.
 \vspace{1ex}
 
-Dalam proses pencarian $SL_{N}$ atau \textit{cluster} level yang terbagi menjadi tiga tersebut, terdapat beberapa keputusan yang harus dijalankan. Seperti hanya hasil bagi antara $LN$ dan $LC_{N}$ harus bernilai bilangan tidak bulat, maka harus dilakukan proses pembulatan jumlah level terlebih dahulu dikarenakan nilai level tidak boleh bernilai angka yang tidak bulat. Sepeti pada persamaan \ref{eq:enemy_levels1} untuk dilakukan pengujian apakah dapat dibulatkan maka dilakukan operasi modulus atau $mod$, jika habis maka $SL_{N}$ akan diisi secara merata oleh hasil bagi antara $LN$ dan $LC_{N}$. Maka jumlah \textit{cluster} sebanyak $N$ pada $LC_{N}$ dan banyaknya level adalah sebesar $LN$ yang dibagi dengan $LC_{N}$ yang kemudian hasil akhir tersebut disimpan dalam variabel $SL_{N}$. 
+Dalam proses pencarian $SL$ atau set yang terdiri dari nilai pada setiap \textit{cluster} level atau banyaknya level dari setiap \textit{cluster} menjadi $SL = \left \{SL_{0}, SL_{1},... , SL_{i} \right\}$ yang dicontohkan terbagi menjadi tiga menjadi $SL = \left \{SL_{0}, SL_{1}, SL_{3} \right \}$, kemudian terdapat beberapa keputusan yang harus dijalankan. Seperti hasil bagi antara $LN$ dan $N_{LC}$ saat bernilai bilangan tidak bulat, maka harus dilakukan proses pembulatan dalam pembagian banyaknya level pada setiap cluster atau $SL_{i}$. Sepeti pada persamaan \ref{eq:enemy_levels1}, perlunya dilakukan pengujian, apakah hasil bagi antara $LN$ dan $N_{LC}$ berupa bilangan bulat atau tidak dengan menggunakan operasi modulus atau $mod$. Jika habis, maka setiap $SL_{i}$ akan diisi secara merata oleh hasil bagi antara $LN$ dan $N_{LC}$. Maka banyaknya level akan dibagi ke setaip \textit{cluster} adalah sebesar $LN$ dibagi dengan $LC_{N}$ yang kemudian hasil setiap \textit{cluster} disimpan dalam variabel $SL$.
 \vspace{1ex}
 
-Namun jika tidak dapat dibagi secara merata maka dilakukan terlebih dahulu proses pengecekkan apakah jumlah $LC_{N}$ apakah berjumlah ganjil atau genap, hal tersebut dilakukan dengan cara melakukan modulus dari $LC_{N}$ dengan angka 2. Jika ternyata $LC_{N}$ bernilai genap maka $SL_{N}$ atau jumlah \textit{cluster} akan dibagi menjadi dua bagian, kemudian dua nilai tengah setelah dibagi menjadi dua bagian tersebut diisi dengan jumlah level yang lebih tinggi jika dibandingkan dengan \textit{cluster} level yang lain. Kemudian jika $LC_{N}$ bernilai ganjil maka nilai tengah dari jumlah \textit{cluster} tersebutlah yang akan memiliki jumlah level lebih banyak jika dibandingkan dengan \textit{cluster} level yang lain.
+Namun jika tidak dapat dibagi secara merata, maka dilakukan terlebih dahulu proses pengecekkan apakah jumlah $N_{LC}$ berjumlah ganjil atau genap, hal tersebut dilakukan dengan cara melakukan modulus dari $N_{LC}$ dengan angka 2. Jika ternyata $N_{LC}$ bernilai genap, maka $LN$ atau \textit{range} level akan dibagi menjadi dua bagian, kemudian dua nilai tengah setelah dibagi menjadi dua bagian tersebut diisi dengan sebaran level yang lebih banyak jika dibandingkan dengan \textit{cluster} level yang lain. Kemudian jika $LC_{N}$ bernilai ganjil maka nilai tengah dari $LN$ tersebutlah yang akan memiliki sebaran level lebih banyak jika dibandingkan dengan \textit{cluster} level yang lain.
+\vspace{1ex}
+
+Munculah pertanyaan seperti berapa banyaknya level atau $SL_{i}$ pada dua \textit{cluster} level tengah pada kasus $N_{LC}$ dengan nilai genap, dan berapakah $SL_{i}$ pada \textit{cluster} level pada bagian tengah untuk kasus $N_{LC}$ dengan nilai ganjil. Seperti pada persamaan \ref{eq:enemy_levels1} jika pada kondisi genap maka dua \textit{cluster} level bagian tengah diisi dengan level sejumlah hasil pembagian $LN$ dengan $N_{LC}$ yang dibulatkan ke atas atau \textit{ceil}, sedangkan pada kondisi ganjil maka satu \textit{cluster} level bagian tengahlah yang diisi dengan hasil pembagian tersebut. Kemudian untuk banyaknya level pada \textit{cluster} yang lain diisi dengan pembagian $LN$ dengan $LC_{N}$ yang dibulatkan ke bawah atau \textit{floor}. Jika $SL$ adalah set \textit{cluster} level, maka perlu dicari juga jumlah cluster untuk musuh dengan menggunakan persamaan \ref{eq:enemy_levels2} dengan cara sama seperti pencarian jumlah \textit{cluster} level. 
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_levels2}
 \resizebox{\columnwidth}{!}{%
-	$SE_{N} = \left\{\begin{matrix}
-	\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{EN}{LC_{N}} & Saat\ 0 \equiv EN\ (mod\ LC_{N}) & \\
+	$SE = \left\{\begin{matrix}
+	\hspace{0.2em} \sum_{i = 0}^{LC_{N}}\ \frac{EN}{LC_{N}} & Saat\ 0 \equiv EN\ (mod\ LC_{N}) & \\
 	
-	\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{EN}{LC_{N}} & Saat\ 0 \not\equiv EN\ (mod\ LC_{N}), & \\
-	&\hspace{1.0em}  0 \not\equiv LC_{N}\ (mod\ 2) & \hspace{-4.0em} \Rightarrow\ SE_{(\left \lceil N/2 \right \rceil)}  = \left \lceil \frac{EN}{LC_{N}} \right \rceil &\\
+	\hspace{0.2em} \sum_{i = 0}^{LC_{N}}\ \frac{EN}{LC_{N}} & Saat\ 0 \not\equiv EN\ (mod\ LC_{N}), & \\
+	&\hspace{1.0em}  0 \not\equiv LC_{N}\ (mod\ 2) & \hspace{-4.0em} \Rightarrow\ SE_{(\left \lceil NL_{C}/2 \right \rceil)}  = \left \lceil \frac{EN}{LC_{N}} \right \rceil &\\
 	
 	& & \hspace{-6.2em} \Rightarrow\ SE_{i}  = \left \lfloor \frac{EN}{LC_{N}} \right \rfloor &\\
 	
-	\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{EN}{LC_{N}} & Saat\ 0 \not\equiv EN\ (mod\ LC_{N}), & \\
-	&\hspace{1.0em}  0 \equiv LC_{N}\ (mod\ 2) & \Rightarrow\ SE_{N/2},\ SE_{(N/2) + 1}  = \left \lceil \frac{EN}{LC_{N}} \right \rceil &\\
+	\hspace{0.2em} \sum_{i = 0}^{LC_{N}}\ \frac{EN}{LC_{N}} & Saat\ 0 \not\equiv EN\ (mod\ LC_{N}), & \\
+	&\hspace{1.0em}  0 \equiv LC_{N}\ (mod\ 2) & \Rightarrow\ SE_{NL_{C}/2},\ SE_{(NL_{C}/2) + 1}  = \left \lceil \frac{EN}{LC_{N}} \right \rceil &\\
 	
 	& & \hspace{-6.2em} \Rightarrow\ SE_{i}  = \left \lfloor \frac{EN}{LC_{N}} \right \rfloor &\\
 	\end{matrix}\right.$%
 }
 \end{equation}
 
-Munculah pertanyaan berapakah jumlah level pada dua \textit{cluster} level tengah pada kasus $LC_{N}$ dengan nilai genap, dan berapakah jumlah level pada \textit{cluster} level pada bagian tengah untuk kasus $LC_{N}$ dengan nilai ganjil. Seperti pada persamaan \ref{eq:enemy_levels1} jika pada kondisi genap maka dua \textit{cluster} level bagian tengah diisi dengan level sejumlah hasil pembagian $LN$ dengan $LC_{N}$ yang dibulatkan ke atas atau \textit{ceil}, sedangkan pada kondisi ganjil maka 1 \textit{cluster} level bagian tengahlah yang diisi dengan hasil pembagian tersebut. Kemudian untuk jumlah level pada \textit{cluster} yang lain diisi dengan pembagian $LN$ dengan $LC_{N}$ yang dibulatkan ke bawah atau \textit{floor}. Jika $SL_{N}$ adalah jumlah \textit{cluster} level, maka perlu dicari juga jumlah cluster untuk musuh dengan menggunakan persamaan \ref{eq:enemy_levels2} dengan cara yang sama dengan pencarian jumlah \textit{cluster} level. 
+Dalam proses pencarian $SE$ atau \textit{cluster} musuh pada persamaan \ref{eq:enemy_levels2} digunakan cara yang sama seperti cara perhitungan pada persamaan \ref{eq:enemy_levels1} dengan membagi banyaknya musuh kedalam \textit{cluster} menjadi $SE = \left \{SE_{0}, SE_{1},... , SL_{i} \right\}$, yang dicontohkan menjadi tiga bagian $SE = \left \{SE_{0}, SE_{1}, SE_{3} \right \}$, dan dilanjutkan dengan pengambilan beberapa keputusan yang harus dijalankan. Sama seperti pada perhitungan hasil bagi antara $LN$ dan $N_{LC}$ pada persamaan \ref{eq:enemy_levels1}, nilai pembagian $EN$ atau banyaknya musuh yang dibagi dengan $LC_{N}$ atau jumlah \textit{cluster} level yang ingin dibuat dengan tiga tingkatan ``\textit{Easy}", ``\textit{Medium}" dan ``\textit{Hard}" yang juga harus bernilai bilangan bulat positif, kemudian dilakukan juga proses pembulatan jumlah musuh terlebih dahulu dikarenakan jumlah musuh tidak boleh bernilai angka yang tidak bulat. 
 \vspace{1ex}
 
-Dalam proses pencarian $SE_{N}$ atau \textit{cluster} musuh pada persamaan \ref{eq:enemy_levels2} digunakan cara yang sama seperti cara perhitungan pada persamaan \ref{eq:enemy_levels1} dengan membagi jumlah musuh ke dalam tiga bagian, dan dilanjutkan dengan pengambilan beberapa keputusan yang harus dijalankan. Sama seperti pada perhitungan hasil bagi antara $LN$ dan $LC_{N}$ pada persamaan \ref{eq:enemy_levels1}, nilai pembagian $EN$ atau jumlah musuh yang ingin dihasilkan dengan $LC_{N}$ atau jumlah \textit{cluster} musuh yang ingin dibuat dengan tiga tingkatan ``\textit{Easy}", ``\textit{Medium}" dan ``\textit{Hard}" yang juga harus bernilai bilangan bulat positif, kemudian dilakukan juga proses pembulatan jumlah musuh terlebih dahulu dikarenakan jumlah musuh tidak boleh bernilai angka yang tidak bulat. 
-\vspace{1ex}
-
-Sepeti pada persamaan \ref{eq:enemy_levels1} pada persamaan \ref{eq:enemy_levels2} juga dilakukan pengujian apakah dapat dibulatkan atau tidak maka dilakukan operasi modulus atau $mod$, jika habis maka $SE_{N}$ akan diisi secara merata oleh hasil bagi antara $EN$ dan $LC_{N}$. Maka jumlah \textit{cluster} sebanyak $N$ pada $LC_{N}$ dan banyaknya musuh adalah sebesar $EN$ yang dibagi dengan $LC_{N}$, kemudian hasil akhir tersebut disimpan dalam variabel $SE_{N}$. Untuk penjelasan langkah selanjutnya pada persamaan \ref{eq:enemy_levels2} sama persis dengan persamaan \ref{eq:enemy_levels1} yang sudah dijelaskan pada bagian sebelumnya, hanya saja objek pada persamaan \ref{eq:enemy_levels1} adalah level sedangkan pada persamaan \ref{eq:enemy_levels2} adalah musuh. Setelah $SL_{N}$ dan $SE_{N}$ diperoleh maka saatnya menuju bagian yang lebih dalam dan detail lagi. Bagaimana dengan pemberian level untuk setiap musuh, maka digunakanlah persamaan \ref{eq:sub_enemy_levels1} dan persamaan \ref{eq:sub_enemy_levels2} dengan penjelasan sebagai berikut.
+Sepeti pada persamaan \ref{eq:enemy_levels1}, pada persamaan \ref{eq:enemy_levels2} juga dilakukan pengujian apakah dapat dibulatkan atau tidak maka dilakukan operasi modulus atau $mod$, jika habis maka $SE_{N}$ akan diisi secara merata oleh hasil bagi antara $EN$ dan $LC_{N}$. Maka jumlah \textit{cluster} sebanyak $N$ pada $LC_{N}$ dan banyaknya musuh adalah sebesar $EN$ yang dibagi dengan $LC_{N}$, kemudian hasil akhir tersebut disimpan dalam variabel $SE_{N}$. Untuk penjelasan langkah selanjutnya pada persamaan \ref{eq:enemy_levels2} sama persis dengan persamaan \ref{eq:enemy_levels1} yang sudah dijelaskan pada bagian sebelumnya, hanya saja objek pada persamaan \ref{eq:enemy_levels1} adalah level sedangkan pada persamaan \ref{eq:enemy_levels2} adalah musuh. Setelah $SL_{N}$ dan $SE_{N}$ diperoleh maka saatnya menuju bagian yang lebih dalam dan detail lagi. Bagaimana dengan pemberian level untuk setiap musuh, maka digunakanlah persamaan \ref{eq:sub_enemy_levels1} dan persamaan \ref{eq:sub_enemy_levels2} dengan penjelasan sebagai berikut.
 \vspace{1ex}
 
 \begin{equation}\label{eq:sub_enemy_levels1}
 \resizebox{\columnwidth}{!}{%
-	$SSL_{N} = \left\{\begin{matrix}
-	\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{SL}{Sc} & Saat\ 0 \equiv SL\ (mod\ Sc) & \\
+	$SSL = \left\{\begin{matrix}
+	\hspace{0.2em} \sum_{i = 0}^{N_{LC}}\ \sum_{j = 0}^{Sc}\ \frac{SL_{i}}{Sc} & Saat\ 0 \equiv SL_{i}\ (mod\ Sc) & \\
 	
-	\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{SL}{Sc} & Saat\ 0 \not\equiv SL\ (mod\ Sc), & \\
-	&\hspace{1.4em}  0 \not\equiv Sc\ (mod\ 2) & \hspace{-4.5em} \Rightarrow\ SSL_{(\left \lceil N/2 \right \rceil)}  = \left \lceil \frac{SL}{Sc} \right \rceil &\\
+	\hspace{0.2em} \sum_{i = 0}^{N_{LC}}\ \sum_{j = 0}^{Sc}\ \frac{SL_{i}}{Sc} & Saat\ 0 \not\equiv SL_{i}\ (mod\ Sc), & \\
+	&\hspace{1.4em}  0 \not\equiv Sc\ (mod\ 2) & \hspace{-4.5em} \Rightarrow\ SSL_{(\left \lceil Sc/2 \right \rceil)}  = \left \lceil \frac{SL_{i}}{Sc} \right \rceil &\\
 	
-	& & \hspace{-6.8em} \Rightarrow\ SSL_{i}  = \left \lfloor \frac{SL}{Sc} \right \rfloor &\\
+	& & \hspace{-6.8em} \Rightarrow\ SSL_{j}  = \left \lfloor \frac{SL_{i}}{Sc} \right \rfloor &\\
 	
-	\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{SL}{Sc} & Saat\ 0 \not\equiv SL\ (mod\ Sc), & \\
-	&\hspace{1.3em}  0 \equiv Sc\ (mod\ 2) & \Rightarrow\ SSL_{N/2},\ SSL_{(N/2) + 1}  = \left \lceil \frac{SL}{Sc} \right \rceil &\\
+	\hspace{0.2em} \sum_{i = 0}^{N_{LC}}\ \sum_{j = 0}^{Sc}\ \frac{SL_{i}}{Sc} & Saat\ 0 \not\equiv SL_{i}\ (mod\ Sc), & \\
+	&\hspace{1.3em}  0 \equiv Sc\ (mod\ 2) & \Rightarrow\ SSL_{Sc/2},\ SSL_{(Sc/2) + 1}  = \left \lceil \frac{SL_{i}}{Sc} \right \rceil &\\
 	
-	& & \hspace{-6.7em} \Rightarrow\ SSL_{i}  = \left \lfloor \frac{SL}{Sc} \right \rfloor &\\
+	& & \hspace{-6.7em} \Rightarrow\ SSL_{j}  = \left \lfloor \frac{SL_{i}}{Sc} \right \rfloor &\\
 	\end{matrix}\right.$%
 }
 \end{equation}
 
-Setelah diperolehnya $SL_{N}$ dan $SE_{N}$ yang masing-masing adalah cluster \textit{level} dan \textit{cluster} musuh, maka dicarilah $SSL_{N}$ atau \textit{sub-cluster} level pada persamaan \ref{eq:sub_enemy_levels1} hal ini betujuan untuk mempersempit \textit{range} dalam pembagian level musuh. Seperti pada penjelasan sebelumnya terdapat satu variabel lagi yang mempengaruhi proses ini, variabel tersebut adalah $SC$ atau skala yang mentukkan kerapatan pembagian level pada setiap musuh. 
+Setelah diperolehnya $SL$ dan $SE$ yang masing-masing adalah set \textit{cluster} level dan set \textit{cluster} musuh, maka dicarilah $SSL$ atau set \textit{sub-cluster} level pada persamaan \ref{eq:sub_enemy_levels1} hal ini betujuan untuk mempersempit \textit{range} dalam pembagian level musuh. Seperti pada penjelasan sebelumnya terdapat satu variabel lagi yang mempengaruhi proses ini, variabel tersebut adalah $Sc$ atau skala yang digunakan untuk mentukkan kerapatan pembagian level pada musuh. 
 \vspace{1ex}
 
-Pada kasus ini $SSL_{N}$ adalah jumlah \textit{sub-cluster} dari setiap level \textit{cluster} atau $SL_{N}$, jadi pada dasarnya persamaan \ref{eq:sub_enemy_levels1} dijalankan setelah nilai $SL_{N}$ diperoleh dan nilai $SSL_{N}$ selalu berubah-ubah mengikuti skala atau \textit{Sc} yang menjadi salah satu masukan untuk fungsi pada program ini. Perhitungan $SSL_{N}$ atau jumlah \textit{sub-cluster} level pada dasarnya sama dengan perhitungan dalam mencari $SL_{N}$ atau $SE_{N}$ pada bagian sebelumnya, hanya saja pada bagian sebelumnya jumlah \textit{cluster} level dan musuh dipengaruhi oleh $LC_{N}$ sedangkan pada $SSL_{N}$ jumlah \textit{sub-cluster} level dipengaruhi oleh $Sc$.
+Pada kasus ini $SSL$ adalah set \textit{sub-cluster} dari setiap set level \textit{cluster} atau $SL_{i}$, jadi pada dasarnya persamaan \ref{eq:sub_enemy_levels1} dijalankan setelah nilai $SL$ diperoleh dan nilai $SSL$ yang dapat berubah mengikuti nilai dari skala atau $Sc$ yang menjadi salah satu masukan pada program ini seperti yang ditulis pada persamaan \ref{eq:sub_enemy_levels1} dan \ref{eq:sub_enemy_levels2}. Perhitungan $SSL$ atau set \textit{sub-cluster} level pada dasarnya sama dengan perhitungan dalam mencari $SL$ atau $SE$ pada bagian sebelumnya, hanya saja pada bagian sebelumnya jumlah set \textit{cluster} level dan musuh dipengaruhi oleh $N_{LC}$ sedangkan pada $SSL$ jumlah set \textit{sub-cluster} level dipengaruhi oleh $Sc$.
+\vspace{1ex}
+
+Kemudian dilakukan juga pengecekan dengan operasi modulus atau $mod$ pada setiap $SL$ ke $i$ dengan $Sc$, apakah $SL_{i}$ akan habis jika dibagi dengan $Sc$. Jika ternyata $SL_{i}$ habis dibagi dengan $Sc$, maka level pada range $SSL$ atau \textit{sub-cluster} tersebut akan langsung dibagi secara merata. Sedangkan pada kondisi sebaliknya yaitu saat $SL_{i}$ tidak habis dibagi dengan $Sc$ maka akan dilakukan proses pembulatan ganjil dan genap yang dibulatkan ke atas atau \textit{ceil} seperti pada persamaan \ref{eq:enemy_levels1} dan persamaan \ref{eq:enemy_levels2}, kemudian untuk nilai yang lain dibulatkan ke bawah atau \textit{floor}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:sub_enemy_levels2}
 \resizebox{\columnwidth}{!}{%
-	$SSE_{N} = \left\{\begin{matrix}
-	\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{SE}{Sc} & Saat\ 0 \equiv SE\ (mod\ Sc) & \\
+	$SSE = \left\{\begin{matrix}
+	\hspace{0.2em} \sum_{i = 0}^{N_{LC}}\ \sum_{j = 0}^{Sc}\ \frac{SE_{i}}{Sc} & Saat\ 0 \equiv SE_{i}\ (mod\ Sc) & \\
 	
-	\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{SE}{Sc} & Saat\ 0 \hspace{0.3em} \not\equiv SE\ (mod\ Sc), & \\
-	&\hspace{1.3em}  0 \not\equiv Sc\ (mod\ 2) & \hspace{-4.5em} \Rightarrow\ SSE_{(\left \lceil N/2 \right \rceil)}  = \left \lceil \frac{SE}{Sc} \right \rceil &\\
+	\hspace{0.2em} \sum_{i = 0}^{N_{LC}}\ \sum_{j = 0}^{Sc}\ \frac{SE_{i}}{Sc} & Saat\ 0 \hspace{0.3em} \not\equiv SE_{i}\ (mod\ Sc), & \\
+	&\hspace{1.3em}  0 \not\equiv Sc\ (mod\ 2) & \hspace{-4.5em} \Rightarrow\ SSE_{(\left \lceil SL/2 \right \rceil)}  = \left \lceil \frac{SE_{i}}{Sc} \right \rceil &\\
 	
-	& & \hspace{-6.6em} \Rightarrow\ SSE_{i}  = \left \lfloor \frac{SE}{Sc} \right \rfloor &\\
+	& & \hspace{-6.6em} \Rightarrow\ SSE_{j}  = \left \lfloor \frac{SE_{i}}{Sc} \right \rfloor &\\
 	
-	\hspace{0.2em} \sum_{i = 0}^{N}\ \frac{SE}{Sc} & Saat\ 0 \not\equiv SE\ (mod\ Sc), & \\
-	&\hspace{1.2em}  0 \equiv Sc\ (mod\ 2) & \Rightarrow\ SSE_{N/2},\ SSE_{(N/2) + 1}  = \left \lceil \frac{SE}{Sc} \right \rceil &\\
+	\hspace{0.2em} \sum_{i = 0}^{N_{LC}}\ \sum_{j = 0}^{Sc}\ \frac{SE_{i}}{Sc} & Saat\ 0 \not\equiv SE_{i}\ (mod\ Sc), & \\
+	&\hspace{1.2em}  0 \equiv Sc\ (mod\ 2) & \Rightarrow\ SSE_{N/2},\ SSE_{(N/2) + 1}  = \left \lceil \frac{SE_{i}}{Sc} \right \rceil &\\
 	
-	& & \hspace{-6.6em} \Rightarrow\ SSE_{i}  = \left \lfloor \frac{SE}{Sc} \right \rfloor &\\
+	& & \hspace{-6.6em} \Rightarrow\ SSE_{j}  = \left \lfloor \frac{SE_{i}}{Sc} \right \rfloor &\\
 	\end{matrix}\right.$%
 }
 \end{equation}
 
-Kemudian dilakukan juga pengecekan dengan operasi modulus atau $mod$ antara $SL$ dengan $SC$, apakah $SL$ akan habis jika dibagi dengan $SC$. Jika ternyata $SL$ habis dibagi dengan $Sc$, maka level pada range $SSL$ atau \textit{sub-cluster} tersebut akan langsung dibagi secara merata. Sedangkan pada kondisi sebaliknya yaitu saat $SE$ tidak habis dibagi dengan $Sc$ maka akan dilakukan proses pembulatan ganjil dan genap yang dibulatkan ke atas atau \textit{ceil} seperti pada persamaan \ref{eq:enemy_levels1} dan persamaan \ref{eq:enemy_levels2}, kemudian untuk nilai yang lain dibulatkan ke bawah atau \textit{floor}.
+Kemudian untuk persamaan \ref{eq:sub_enemy_levels2} sama seperti persamaan \ref{eq:sub_enemy_levels1} hanya saja yang menjadi subjek disini adalah $SSE$ atau set \textit{sub-cluster} musuh dari setiap set level \textit{cluster} atau $SE_{i}$. Kemudian cara perhitungannya sama seperti persamaan \ref{eq:sub_enemy_levels1}, tetapi yang dibagi disini adalah setiap set \textit{cluster} atau $SE_{i}$ dari musuh dibagi dengan skala atau $Sc$. 
 \vspace{1ex}
 
-Kemudian untuk persamaan \ref{eq:sub_enemy_levels2} sama seperti persamaan \ref{eq:sub_enemy_levels2} hanya saja yang menjadi subjek disini adalah $SSE_{N}$ atau \textit{sub-cluster} jumlah musuh. Kemudian cara perhitungannya sama seperti persamaan \ref{eq:sub_enemy_levels1}, yang dibagi adalah \textit{cluster} $SE$ dari musuh dibagi dengan skala atau $Sc$. Saat semua sudah selesai dilakukan, khususnya yang ada pada persamaan \ref{eq:enemy_levels1} dan persamaan \ref{eq:enemy_levels1}. Kemudian dieksekusi setiap \textit{cluster} level dan musuh ke dalam setiap \textit{sub-cluster}, pada setiap \textit{sub-cluster} tersebutlah proses pemberian level pada setiap musuh dilakukan. Pada persamaan \ref{eq:probability_enemy_levels} adalah penjelasan tentang peluang diperolehnya level pada setiap musuh, yang beracuan pada metode \textit{Naive Bayes}, lebih tepatnya lagi adalah tentang peluang marginal.
+Kemudian dilakukan juga pengecekan dengan operasi modulus atau $mod$ pada setiap $SE_{i}$ dengan $Sc$, apakah $SE_{i}$ akan habis jika dibagi dengan $Sc$. Jika ternyata pada $SE$ ke $i$ habis dibagi dengan $Sc$, maka $SE$ atau banyaknya musuh dalam \textit{sub-cluster} ke $i$ akan langsung dibagi secara merata ke dalam set \textit{sub-cluster} . Sedangkan pada kondisi sebaliknya yaitu saat $SE_{i}$ tidak habis dibagi dengan $Sc$ maka akan dilakukan proses pembulatan ganjil dan genap yang dibulatkan ke atas atau \textit{ceil} seperti pada persamaan \ref{eq:enemy_levels1} dan persamaan \ref{eq:enemy_levels2}, kemudian untuk nilai yang lain dibulatkan ke bawah atau \textit{floor}.
+\vspace{1ex}
+
+Saat semua sudah selesai dilakukan, khususnya yang ada pada persamaan \ref{eq:enemy_levels1} dan persamaan \ref{eq:enemy_levels2} tentang eksekusi setiap set \textit{cluster} level dan musuh yang dilanjutkan dengan eksekusi setiap set \textit{sub-cluster} level dan musuh, pada proses tersebutlah distribusi level pada setiap musuh dilakukan. Pada persamaan \ref{eq:probability_enemy_levels} adalah penjelasan tentang peluang diperolehnya level pada setiap musuh, yang beracuan pada metode \textit{Naive Bayes} seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec2_class_bayes}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:probability_enemy_levels}
 \begin{split}
-P(Elv_{k}) = \sum_{i = 0}^{M} \sum_{j = 0}^{N} \sum_{k = 0}^{L}\ \frac{Elv_{k}}{Lv_{j} + SSL_{N}}
+P(Elv_{jk}) = \sum_{i = 0}^{SSL}\ \sum_{j = 0}^{SSE}\ \sum_{k = 0}^{SSE_{j}}\ \frac{Elv_{jk}}{SSL_{(i + 1)} - SSL_{i}}
 \end{split}
 \end{equation}
 
-Pada persamaan \ref{eq:probability_enemy_levels} $P(Elv_{k})$ adalah peluang munculnya $Elv$ ke $k$, sedangkan $Lv$ ke $j$ adalah batas bawah range level yang dapat diambil oleh musuh. Kemudian $SSL_{N}$ sepeerti yang sudah dijelaskan pada bagian sebelumnya, variabel itu adalah \textit{sub-cluster} dari level. Variabel tersebut dapat digunakan untuk mengubah jarak level saat terjadi perubahan nilai \textit{sub-cluster} yang juga menentukan nilai dari $Elv$ ke $k$.
+Pada persamaan \ref{eq:probability_enemy_levels} $P(Elv_{jk})$ adalah peluang munculnya level musuh yang dinyatakan dengan $Elv$, sedangkan $SSL$ adalah set dari \textit{sub-cluster} level yang merupakan alokasi persebaran level untuk musuh. Kemudian untuk $SSL$ ke $i$ dan $SSL$ ke $(i + 1)$ adalah range persebaran level untuk karakter musuh dengan alokasi setiap \textit{sub-cluster} banyaknya musuh atau $SSE_{j}$ yang kemudian setiap karakter musuh dalam \textit{sub-cluster} $SSE_{j}$ tersebut dinyatakan dengan $Elv$ ke $k$. Hasil dari proses ini kemudian dijelaskan pada Sub-bab \ref{sec:sub_sec4_eval_dist_enemy_level}.
 \vspace{1ex}
 
-Selanjutnya adalah validasi dari keseimbangan persebaran level musuh, hal ini dilakukan dengan menggunakkan persamaan melalui beberapa langkah seperti yang ditunjukan oleh persamaan \ref{eq:mean_enemy_levels}, \ref{eq:varian_enemy_levels}, \ref{eq:stdev_enemy_levels} dan persamaan \ref{eq:PDF_enemy_levels}. Konsep tersebut beracuan pada Sub-bab \ref{sec:sub_sec2_gauss_bayes} tentang \textit{Gaussian Naive bayes}, dengan harapan apakah setiap data yang dihasilkan sebelumnya sudah terdistribusi dengan normal atau tidak. Penjelasaan berikut ini adalah beberapa langkah untuk validasi keseimbangan persebaran level musuh.
+Selanjutnya adalah validasi dari keseimbangan persebaran level musuh, hal ini dilakukan dengan menggunakkan beberapa langkah seperti yang ditunjukan pada persamaan \ref{eq:mean_enemy_levels}, \ref{eq:varian_enemy_levels}, \ref{eq:stdev_enemy_levels} dan persamaan \ref{eq:PDF_enemy_levels}. Konsep tersebut beracuan pada Sub-bab \ref{sec:sub_sec2_gauss_bayes} tentang \textit{Gaussian Naive bayes}, dengan harapan apakah setiap data yang dihasilkan sebelumnya sudah terdistribusi dengan normal atau tidak. Penjelasaan berikut ini adalah beberapa langkah untuk validasi keseimbangan persebaran level musuh.
 \vspace{1ex}
 
 \begin{equation}\label{eq:mean_enemy_levels}
 \begin{split}
-\bar{E}lv = \frac{\sum_{i = 0}^{N}\ Elv_{i}}{N}
+\bar{E}lv = \frac{\sum_{i = 0}^{EN}\ Elv_{i}}{EN}
 \end{split}
 \end{equation}
 
-Adapun urutan metode dalam penggunaan \textit{Gaussian Naive Bayes} adalah dengan mencari rata-rata dari data tersebut, kemudian diikuti dengan perhitungan standar deviasi. Pada persamaan \ref{eq:mean_enemy_levels} adalah rata-rata dari level yang dihasilkan sama seperti pembahasan pada persamaan \ref{eq: mean} yang kemudian disimbolkan dengan variabel $\bar{E}lv$. Selanjutnya adalah $\bar{E}lv_{i}$ adalah setiap level dari musuh yang terus dijumlahkan sebanyak $N$, yang mana $N$ sendiri adalah banyaknya musuh yang sudah dibuat. Setelah diperoleh rata-rata level maka dapat dilanjutkan dengan pencarian nilai \textit{standar deviasi} seperti pada persamaan \ref{eq:stdev_enemy_levels}.
+Adapun urutan metode dalam penggunaan \textit{Gaussian Naive Bayes} adalah dengan mencari rata-rata dari data tersebut, kemudian diikuti dengan perhitungan standar deviasi. Pada persamaan \ref{eq:mean_enemy_levels} adalah rata-rata dari level yang dihasilkan sama seperti pembahasan pada persamaan \ref{eq: mean} yang kemudian disimbolkan dengan variabel $\bar{E}lv$. Selanjutnya adalah $\bar{E}lv_{i}$ adalah setiap level dari musuh yang terus dijumlahkan sebanyak $LE$, yang mana $EN$ sendiri adalah banyaknya karakter musuh yang sudah dibuat. Setelah diperoleh rata-rata level maka dapat dilanjutkan dengan pencarian nilai \textit{standar deviasi} seperti pada persamaan \ref{eq:stdev_enemy_levels}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:varian_enemy_levels}
 \begin{split}
-\sigma(Elv)^2 = \frac{\sum_{i = 0}^{N}\ (Elv_{i} - \bar{E}lv)^{2}}{N}
+\sigma(Elv)^2 = \frac{\sum_{i = 0}^{EN}\ (Elv_{i} - \bar{E}lv)^{2}}{EN}
 \end{split}
 \end{equation}
 
 \begin{equation}\label{eq:stdev_enemy_levels}
 \begin{split}
-\sigma(Elv) = \sqrt{\frac{\sum_{i = 0}^{N}\ (Elv_{i} - \bar{E}lv)^{2}}{N}}
+\sigma(Elv) = \sqrt{\frac{\sum_{i = 0}^{EN}\ (Elv_{i} - \bar{E}lv)^{2}}{EN}}
 \end{split}
 \end{equation}
 
-Pada persamaan \ref{eq:stdev_enemy_levels} adalah persamaan untuk mencari standar deviasi atau $\sigma(Elv)$ setelah diperolehnya rata-rata atau $\bar{E}lv$ melalui persamaan \ref{eq:mean_enemy_levels} yang kemudian dilanjutkan dengan pencarian varian atau $\sigma(Elv)^2$ melalui persamaan \ref{eq:varian_enemy_levels} yang selanjutnya diakar kuadratkan untuk memperoleh nilai standar deviasi. Jika standar deviasi, varian dan rata-rata sudah diperoleh maka dapat dilanjutkan menuju pencarian nilai distribusi normal melalui \textit{Gausian Naive Bayes} seperti pada persamaan \ref{eq:PDF_enemy_levels} berikut ini.
+Pada persamaan \ref{eq:stdev_enemy_levels} adalah persamaan untuk mencari standar deviasi atau $\sigma(Elv)$ setelah diperolehnya rata-rata dari persebaran karakter musuh yang dinyatakan dengan $\bar{E}lv$ melalui persamaan \ref{eq:mean_enemy_levels} yang kemudian dilanjutkan dengan pencarian varian atau $\sigma(Elv)^2$ melalui persamaan \ref{eq:varian_enemy_levels} yang selanjutnya diakar kuadratkan untuk memperoleh nilai standar deviasi. Jika standar deviasi, varian dan rata-rata sudah diperoleh maka dapat dilanjutkan menuju pencarian nilai distribusi normal melalui \textit{Gausian Naive Bayes} atau Gaussian PDF (\textit{Probability Density Function}) seperti pada persamaan \ref{eq:PDF_enemy_levels} berikut ini. Hasil dari proses ini kemudian juga dijelaskan pada Sub-bab \ref{sec:sub_sec4_eval_dist_enemy_level}, yang dibuktikan dengan persebaran musuh yang terdistribusi secara normal.
 \vspace{1ex}
 
 \begin{equation}\label{eq:PDF_enemy_levels}
@@ -616,23 +622,23 @@ PDF(ELv,\ \bar{E}lv,\ \sigma) = \frac{1}{\sqrt{2 \pi} \sigma}\ exp \left(-\frac{
 \end{split}
 \end{equation}
 
-Konsep pada persamaan \ref{eq:PDF_enemy_levels} sudah sangat dijelaskan pada Sub-bab \ref{sec:sub_sec2_gauss_bayes} poin ke 3. Hasil perhitungaan sebelumnya yang berupa varian $\sigma^2$, rata-rata $\bar{E}lv$ dan standar deviasi $\sigma$ menjadi masukan pada persamaan tersebut. Variabel $\pi$ adalah konstanta numerik pada umumnya, kemudian fungsi $exp()$ atau $e$ adalah konstanta numerik yang betujuan untuk membentuk hasil prediksi dengan pendekatan exponensial.
+Konsep pada persamaan \ref{eq:PDF_enemy_levels} sudah sangat dijelaskan pada Sub-bab \ref{sec:sub_sec2_gauss_bayes}. Hasil perhitungaan sebelumnya yang berupa varian $\sigma^2$, rata-rata $\bar{E}lv$ dan standar deviasi $\sigma$ menjadi masukan pada persamaan tersebut. Variabel $\pi$ adalah konstanta numerik pada umumnya, kemudian fungsi $exp()$ atau $e$ adalah konstanta numerik yang betujuan untuk membentuk hasil prediksi dengan pendekatan exponensial.
 \vspace{1ex}
 
 \subsection{Distribusi Tipe Musuh}
 \label{sec:sub_sec3_enemy_type}
 \vspace{1ex}
 
-Di bagian distribusi tipe musuh akan dijelaskan tentang pembagian tipe musuh, dengan masukan seperti yang disebutkan pada Tabel \ref{tb:enemy_input_variable}. Beracuan pada tabel tersebut beberapa variabel utama yang akan digunakan diantaranya adalah ``\textit{Enemy Type}" yang menentukan tipe apa saja musuh yang akan dibuat. Kemudian \textit{Distribute Percentage} adalah persentase distribusi tipe yang ingin dibuat. Kemudian variabel level musuh yang diambil dan dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_level} juga turut menentukan tipe musuh yang ingin dibuat.
+Di bagian distribusi tipe musuh akan dijelaskan tentang pembagian tipe musuh, dengan masukan seperti yang disebutkan pada Tabel \ref{tb:enemy_input_variable}. Beracuan pada tabel tersebut beberapa variabel utama yang akan digunakan diantaranya adalah \textit{Enemy Type} yang menjelaskan tipe musuh yang akan dibuat. Kemudian \textit{Distribute Percentage} adalah persentase distribusi tipe yang ingin dibuat atau prentase dari \textit{Enemy Type} secara berurutan. Kemudian variabel level musuh yang diambil dan dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_level} juga turut menentukan tipe musuh yang akan dibuat.
 \vspace{1ex}
 
-Terdapat juga variabel pendukung yang membantu proses distribusi tipe, diantaranya adalah \textit{Distribute Number}, \textit{Distribute Level}. Kemudian dilakukan beberapa proses seperti pada persamaan \ref{eq:enemy_types_percentage}, \ref{eq:enemy_types_dist_level}, \ref{eq:enemy_types_rest_dist_level}, dan \ref{eq:enemy_rest_types} yang kemudian diperolehlah hasil berupa probabilitas distribusi tipe musuh yang ditunjukan pada persamaan \ref{eq:enemy_types_probability} dan persamaan \ref{eq:enemy_types_rest_probability}.
+Terdapat juga variabel pendukung yang membantu proses distribusi tipe, diantaranya adalah \textit{Distribute Number} dan \textit{Distribute Level} yang keduanya perlu dicari nilainya melalui  persamaan \ref{eq:enemy_types_percentage} dan \ref{eq:enemy_types_dist_level}. Kemudian dilanjutkan denagn beberapa proses seperti pada persamaan \ref{eq:enemy_types_rest_dist_level}, dan \ref{eq:enemy_rest_types}, sehingga hal tersebut dapat direpresentasikan dengan probabilitas distribusi tipe musuh yang ditunjukan pada persamaan \ref{eq:enemy_types_probability} dan \ref{eq:enemy_types_rest_probability}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_percentage}
 \begin{split}
 	\resizebox{\columnwidth}{!}{%
-		$DN_{N} = \sum_{i = 0}^{M} \sum_{j = 0}^{N}\ EN_{N} \times \frac{DP_{j}}{100}\ 
+		$DN = \sum_{i = 0}^{N_{DP}}\ EN \times \frac{DP_{i}}{100}\ 
 		\left\{\begin{matrix} 
 		Saat\ \left \lceil DN_{i} \right \rceil - DN_{i} < DN_{i} - \left \lfloor DN_{i} \right \rfloor, & DN_{i} = \left \lceil DN_{i} \right \rceil \\ 
 		Saat\ \left \lceil DN_{i} \right \rceil - DN_{i} > DN_{i} - \left \lfloor DN_{i} \right \rfloor, & DN_{i} = \left \lfloor DN_{i} \right \rfloor
@@ -641,64 +647,64 @@ Terdapat juga variabel pendukung yang membantu proses distribusi tipe, diantaran
 \end{split}
 \end{equation}
 
-Pada persamaan \ref{eq:enemy_types_percentage} adalah persamaan untuk mencari \textit{distribute number} atau distribusi musuh $DN_{N}$ yang mana nilai dari variabel tersebut akan memiliki nilai sebenarnya yang diperoleh melalui jumlah musuh $EN_{N}$ yang sudah dibahas pada Sub-bab \ref{sec:sub_sec3_enemy_level}, yang kemudian dibandingan dengan presentase yang disiapkan sebelumnya melalui variabel masukan \textit{distribute percentage} atau $DP_{j}$ dengan nilai yang ditunjukan pada Tabel \ref{tb:enemy_input_variable}. Keluaran dari $DN_{N}$ sendiri berupa angaka bulat dan berupa \textit{cluster} angka, maka dari itu setiap angka yang membentuk \textit{cluster} jumlah musuh tersebut harus dilakukan operasi pembulatan seperti pada $DN_{N}$ dengan menggunakan syarat seperti pada persamaan \ref{eq:enemy_types_percentage}. Selain itu angka bulat yang dihasilkan jumlahnya tidak hanya berjumlah satu, pemecahan jumlah musuh pada bagian ini mengikuti jumlah angka yang ada dalam variabel $DP_{j}$. Secara berurutan jumlah angka tersebut merealisasikan persentase jumlah tipe musuh pada variabel $DP_{j}$.
+Pada persamaan \ref{eq:enemy_types_percentage} adalah persamaan untuk mencari \textit{Distribute Number} atau distribusi musuh yang dinyatakan dengan $DN$ yang berupa set. Dimana nilai dari variabel tersebut menyimpan jumlah musuh disetiap tipe yang diperoleh melalui jumlah musuh $EN$, yang sebelumnya sudah dibahas pada Sub-bab \ref{sec:sub_sec3_enemy_level}. Kemudian dibandingan dengan presentase yang disiapkan sebelumnya melalui variabel masukan \textit{Distribute Percentage} atau $DP$ ke $i$, dengan $i$ adalah indeks dari set tersebut yang totalnya dinyatakan dengan $N_{DP}$, secara berurutan memuat nilai pada variabel \textit{Distribute Percentage} dalam Tabel \ref{tb:enemy_input_variable}. Keluaran dari $DN$ sendiri berupa set angaka bulat, maka dari itu setiap angka yang membentuk \textit{cluster} jumlah musuh tersebut harus dilakukan operasi pembulatan seperti pada $DN$ dengan menggunakan syarat seperti pada persamaan \ref{eq:enemy_types_percentage}. Bisa dikatakan bahwa $DN$ adalah set jumlah musuh yang ditargetkan setiap tipenya. Pendistribusian jumlah musuh pada bagian ini mengikuti jumlah angka yang ada dalam set variabel $DP$, secara berurutan angka tersebut merealisasikan persentase jumlah tipe musuh.
+\vspace{1ex}
+
+Selanjutnya adalah operasi pembagian musuh dan tipenya setelah ditemukannya $DN$, Setelah digunakan sebagai batasan dalam membagi setiap musuh berdasarkan presentase setiap tipenya. $DP$ juga digunaan sebagai pembagi tipe musuh ke setiap musuh atau musuh pada setiap level seperti pada persamaan \ref{eq:enemy_types_dist_level}, padahal $DP$ adalah sebuah variabel yang bertujuan memuat presentase pembagian jumlah musuh dan level saja. Hal ini bersifat opsional dan dapat terus dikembangkan mungkin dengan menambah variabel baru untuk mendistribusikan jumlah musuh ke dalam level dengan tidak menggunakan variabel $DP_{N}$.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_dist_level}
 \begin{split}
-	DL_{N} = \sum_{i = 0}^{M} \sum_{j = 0}^{N} \left \lfloor \frac{DN_{j}}{DP_{i}} \right \rfloor\
-	\left\{\begin{matrix} 
-	Saat\ i = 0, & \hspace{-4.0em}DL_{i} = DN_{i} \\ 
-	\hspace{0.5em} Lainnya, & DL_{i - 1} < DL_{(i - 1) + DN}
-	\end{matrix}\right.
+DL = \sum_{j = 0}^{N_{DN}} \left \lfloor \frac{DN_{i}}{DP_{i}} \right \rfloor\
+\left\{\begin{matrix} 
+\hspace{0.5em} Saat\ i = 0, & \hspace{-4.0em}DL_{i} = DN_{i} \\ 
+\hspace{1.0em} Lainnya, & DL_{i - 1} < DL_{(i - 1) + DN}
+\end{matrix}\right.
 \end{split}
 \end{equation}
 
-Selanjutnya adalah operasi pembagian musuh dan levelnya setelah ditemukannya $DN_{N}$, sebagai batasan dalam membagi setiap musuh berdasarkan presentase tipe $DP_{N}$ pada persamaan \ref{eq:enemy_types_dist_level}. Dengan kata lain $DP_{N}$ digunaan sebagai pembagi jumlah musuh ke dalam level, padalah $DP_{N}$ adalah sebuah variabel yang bertujuan memuat presentase pembagian jumlah musuh dan level saja. Hal ini bersifat opsional dan dapat terus dikembangkan mungkin dengan menambah variabel baru untuk mendistribusikan jumlah musuh ke dalam level dengan tidak menggunakan variabel $DP_{N}$.
-\vspace{1ex}
-
-Kemudian pada persamaan \ref{eq:enemy_types_dist_level} dicarilah nilai $DL_{N}$ yang berisi urutan distribusi musuh $DN_{i}$ yang dibagi dengan jumlah presentase tipe $DP_{N}$ seperti pada persamaan \ref{eq:enemy_types_percentage}. Hal tersebut sejatinya akan membentu sebuah \textit{cluster} kecil yang berisi distribusi musuh dan tipenya. Bila membagi setiap musuh dengan jumlah presetase tipe maka tidak semua musuh dapat terbagi secara merata atau habis, maka dari itu juga dicari sisa hasil pembagian antara distribusi musuh $DN_{i}$ dengan jumlah presentase tipe $DP_{N}$ pada persamaan \ref{eq:enemy_types_rest_dist_level} pada persamaan \ref{eq:enemy_types_rest_dist_level}.
+Kemudian pada persamaan \ref{eq:enemy_types_dist_level} dicarilah nilai set $DL$ yang berisi set distribusi musuh $DN_{i}$ yang masing-masing dibagi dengan set presentase tipe $DP_{i}$ seperti pada persamaan \ref{eq:enemy_types_percentage}. Hal tersebut bertujuan membentuk sebuah set yang berisi distribusi musuh dan tipenya. Bila membagi setiap musuh ke dalam presetase tipe maka tidak semua musuh dapat terbagi secara merata atau habis, seperti halnya adanya proses pembulatan dalam pendistribusian tipe pada persamaan \ref{eq:enemy_types_percentage}. Maka dicarilah sisa hasil bagi antara distribusi musuh $DN_{i}$ dengan jumlah presentase tipe $DP_{i}$ dengan persamaan \ref{eq:enemy_types_dist_level}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_rest_dist_level}
-rDL_{N} \equiv \sum_{i = 0}^{N}\ DN_{i}\ (mod\ DP_{N})
+rDL \equiv \sum_{i = 0}^{N_{DP}}\ DN_{i}\ (mod\ DP_{i})
 \end{equation}
 
-Pada persamaan \ref{eq:enemy_types_rest_dist_level} diperolehlah sisa musuh yang tidak terdistribusi atau sisa dari jumlah musuh yang tidak habis saat dibagi dengan jumlah presentase tipe $DP_{N}$. Musuh yang belum terdistribusi nantinya akan ditambahan atau didistribusi ke tipe sesuai urutan hasil yang tersimpan pada variabel \ref{eq:enemy_types_rest_dist_level} pada persamaan \ref{eq:enemy_types_rest_dist_level}.
-\vspace{2ex}
+Pada persamaan \ref{eq:enemy_types_rest_dist_level} diperolehlah sisa musuh yang tidak terdistribusi yang dinyatakan dengan set $rDL$, saat dibagi setiap set jumlah musuh atau $DN_{i}$ dengan jumlah presentase tipe atau $DP_{i}$. Musuh yang belum terdistribusi nantinya akan ditambahkan atau didistribusi ke tipe sesuai hasil dari persamaan \ref{eq:enemy_types_rest_dist_level}, berupa set yang menjadi tanda bahwa terdapat musuh yang belum terdistribusi pada tipe dalam set tesebut atau $rDL_{i}$.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_probability}
-P(ET_{i}) = \sum_{i = 0}^{M} \sum_{j = 0}^{N}\ \frac{ET_{i}}{\sum_{k = 0}^{L}DL_{k}}\
+P(ET_{j}) = \sum_{i = 0}^{M_{DL}} \sum_{j = 0}^{N_{EN}}\ \frac{ET_{j}}{DL_{i}}\
 \left\{\begin{matrix}
-\hspace{-4.6em} Saat\ ET_{i} \leq DL_{j} \\ 
-Saat\ DL_{(j-1)} < ET_{i} \leq DL_{j}
+\hspace{-4.6em} Saat\ ET_{j} \leq DL_{i} \\ 
+Saat\ DL_{(j-1)} < ET_{j} \leq DL_{i}
 \end{matrix}\right.
 \end{equation}
 
-Dari jumlah musuh yang terdistribusi kedalam \textit{cluster} level tersebutlah kemudian dilakukan pemetaan tipe, pada kasus ini digunakanlah konsep probabilitas marginal seperti yang dijelaskan pada persamaan \ref{sec:sub_sec2_bayes} poin ke 1, bila disesuaikan dengan kasus ini maka persamaan yang diperoleh akan menjadi seperti pada persamaan \ref{eq:enemy_types_probability}. Pada setiap karakter musuh $ET_{i}$ akan meilih satu tipe yang akan digunakannya, tipe tersebut akan menentukan \textit{stats} atau data statistiknya yang akan dijelaskan pada bagian selanjutnya. Kemudian probabilitas tipe yang dipilih $ET_{i}$ dinyatakan dengan variabel $P(ET_{i})$, kisaran kemunculan nilai atau tipe musuh $ET_{i}$ diperoleh dari sekumpulan data distribusi level $DL_{N}$.
+Dari setiap musuh yang terdistribusi kedalam setiap set dari $DL$ yang dinyatakan dengan $M_{DL}$ tersebutlah kemudian dilakukan pemetaan tipe, pada kasus ini digunakanlah konsep probabilitas seperti yang dijelaskan pada persamaan \ref{sec:sub_sec2_bayes}, bila disesuaikan dengan kasus ini maka persamaan yang diperoleh akan menjadi seperti pada persamaan \ref{eq:enemy_types_probability}. Pada setiap karakter musuh $ET_{j}$ dengan $N_{EN}$ adalah jumlah musuh secara keseluruhan akan meilih satu tipe yang akan digunakannya, tipe tersebut akan menentukan \textit{stats} yang akan dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}. Kemudian probabilitas tipe yang dipilih $ET_{j}$ dinyatakan dengan variabel $P(ET_{i})$.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_rest_types}
-rET = \sum_{i = 0}^{M} \sum_{j = 0}^{N}\ EN_{M} - ET_{N}
+rET = \sum_{i = 0}^{M_{EN}} EN_{i}\ -\ \sum_{i = 0}^{N_{ET}} - ET_{i}
 \end{equation}
 
-Selanjutnya pada persamaan \ref{eq:enemy_rest_types} adalah langkah untuk melihat apakah ada sisa musuh yang belum terdistribusi $rET$ dengan cara melakukan pengurangaan antara jumlah musuh $EN_{M}$ yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_level}, yang mana $M$ pada variabel tersebut menandakan jumlah musuh sedangan $ET$ adalah tipe dengan  $N$ sebagai jumlah musuh yang sudah memiliki tipe. Pada persamaan \ref{eq:enemy_rest_types} variabel $rET$ dapat bernilai 0 saat semua musuh $DN$ habis terbagi kedalam jumlah presentase dari tipe $DP_{N}$ seperti pada persamaaan \ref{eq:enemy_types_dist_level} dengan sisa musuh yang belum terdistribusi atau memiliki level disimpan pada variabel $rDL_{N}$ pada persamaan \ref{eq:enemy_types_rest_dist_level}. Kemudian selanjutnya adalah mendistribusikan sisa musuh yang belum memilliki tipe tersebut, seperti yang dilakukan oleh persaman \ref{eq:enemy_types_rest_probability}.
+Selanjutnya pada persamaan \ref{eq:enemy_rest_types} adalah langkah untuk melihat apakah ada sisa musuh yang belum terdistribusi $rET$ dengan cara melakukan pengurangaan antara jumlah setiap musuh $EN_{i}$ yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_level}, yang mana $M_{EN}$ pada variabel tersebut menandakan jumlah musuh sedangan $ET_{i}$ adalah setiap musuh yang sudah memiliki tipe dengan $N_{ET}$ sebagai jumlah musuh yang sudah memiliki tipe. Pada persamaan \ref{eq:enemy_rest_types} variabel $rET$ dapat bernilai 0 saat jumlah tipe musuh $DN$ habis terbagi kedalam jumlah presentase dari tipe $DP$ seperti pada persamaaan \ref{eq:enemy_types_dist_level} dengan sisa musuh yang belum terdistribusi atau memiliki tipe yang kemudian disimpan pada variabel $rDL_{i}$ pada persamaan \ref{eq:enemy_types_rest_dist_level}. Kemudian selanjutnya adalah mendistribusikan sisa musuh yang belum memilliki tipe tersebut, seperti yang dilakukan oleh persaman \ref{eq:enemy_types_rest_probability}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_rest_probability}
 \begin{split}
 \resizebox{\columnwidth}{!}{%
-	$P(ET_{i}) = \sum_{i = 0}^{M} \sum_{j = 0}^{N}\ \frac{ET_{i}}{\sum_{k = 0}^{L}\ rDL_{k}}\
+	$P(rET_{j}) = \sum_{i = 0}^{M_{rDL}} \sum_{j = 0}^{N_{rET}}\ \frac{ET_{j}}{rDL_{i}}\
 	\left\{\begin{matrix}
-	\hspace{-5.0em} Saat\ ET_{i} \leq rDL_{j}, rET > 0\\
-	\hspace{0.5em} Saat\ rDL_{(j-1)} < ET_{i} \leq rDL_{j},\ rET > 0\\
+	\hspace{-5.0em} Saat\ ET_{j} \leq rDL_{i}, rET > 0\\
+	\hspace{0.5em} Saat\ rDL_{(i-1)} < ET_{j} \leq rDL_{i},\ rET > 0\\
 	\hspace{-12.5em} Lainnya\ 0
 	\end{matrix}\right.$%
 }
 \end{split}
 \end{equation}
 
-Melanjutkan persamaan \ref{eq:enemy_types_rest_probability}, yang mana didistribusikan sisa musuh yang belum terdistribusi $rDL_{N}$. Kemudian setelah didistribusikan atau memilih tipe $ET_{i}$ hasilnya digabung dengan tipe musuh yang sudah terdistribusi sebelumnya. Sama seperti pada persaamaan \ref{eq:enemy_types_probability} variabel $P(ET_{i})$ adaalah probabilitas tipe musuh yang dipilihh dari distribusi level $rDL_{k}$.
+Dilanjutkan pada persamaan \ref{eq:enemy_types_rest_probability}, dengan dilakukannya distribusi sisa musuh yang belum memilikitipe pada $rDL$ yang berupa set penyimpan setiap sisa musuh yang dinyatakan dengan $M_{rDL}$. Kemudian setiap musuh dengan tipenya yang dinyatakan dengan $ET_{i}$, kemudian terdapat jumlah musuh belum memiliki tipe pada $rET$ yang kemudian jumlah tersebut juga dinyatakan dengan $N_{rET}$ sebagai pembatas jumlah musuh yang belum memiliki tipe, hasil dari proses tersebut kemudian digabung dengan tipe musuh yang sudah terdistribusi sebelumnya yang disimpan pada variabel $DL$. Maka variabel $P(ET_{i})$ adalah probabilitas tipe musuh yang dipilih dari distribusi level $rDL_{j}$ pada persaamaan \ref{eq:enemy_types_probability}.
 \vspace{1ex}
 
 \subsection{Distribusi Elemen dan Kelemahan Musuh}
@@ -708,7 +714,7 @@ Melanjutkan persamaan \ref{eq:enemy_types_rest_probability}, yang mana didistrib
 Pada persamaan \ref{eq:enemy_element} adalah penjelasan elemen yang digunakan oleh musuh seperti dideskripsikan pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{List Element}, di mana pada elemen teresebut terdapat kelemahan atau \textit{weaknesses} dan kekebalan atau \textit{repel} seperti yang dideskripsikan pada variabel \textit{List Damage} pada Tabel \ref{tb:enemy_input_variable}.  Seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_design_skenario} poin ke dua tentang Elemen dan Efektifitas Serangan. 
 \vspace{1ex}
 
-Pada bagian ini elemen tersebut akan dibagi ke setiap musuh dengan kondisi yang berbeda, maksudnya nanti akan ada musuh yang memiliki kelemahan dan kekebalan yang berbeda antara musuh satu dengan musuh yang lain. Misalkan \textit{Enemy 1} memiliki kelemahan api atau \textit{fire} yang mana HP akan berkurang dua kali jika diserang dengan menggunakan elemen api dan memiliki kekebalan air atau \textit{water} yang mana karakter tersebut kebal saat diserang dengan \textit{skill} dari elemen air. Kemudian pada \textit{Enemy 2} berbeda dengan \textit{Enemy 1}, misalnya pada \textit{Enemy 1} memiliki kelemahan api sedangkan pada \textit{Enemy 2} memiliki kelemahan air misal dan kebal terhadap angin atau \textit{wind}.
+Pada bagian ini elemen tersebut akan dibagi ke setiap musuh dengan kondisi yang berbeda, maksudnya nanti akan ada musuh yang memiliki kelemahan dan kekebalan yang berbeda antara musuh satu dengan musuh yang lain. Misalkan \textit{Enemy 1} memiliki kelemahan api atau \textit{fire} yang mana HP akan berkurang dua kali jika diserang dengan menggunakan elemen api dan memiliki kekebalan air atau \textit{water} yang mana karakter tersebut kebal saat diserang dengan \textit{skill} dari elemen air. Kemudian pada \textit{Enemy 2} berbeda dengan \textit{Enemy 1}, misalnya pada \textit{Enemy 1} memiliki kelemahan api sedangkan pada \textit{Enemy 2} memiliki kelemahan air misal dan kebal terhadap angin atau \textit{wind}. Kemudian daftar elemen yang akan digunakan mengacu pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{List Element} yang berisi \textit{Phys} atau fisik, \textit{Water} atau air, \textit{Wind} atau angin, \textit{Earth} atau tanah dan \textit{Fire} atau api. Kemudian urutan efek serangan juga dinyatakan pada Tabel \ref{tb:enemy_input_variable} dengan variabel List Damage yang berisi \textit{Normal}, \textit{Repel} dan \textit{Weak}. Dimana penjelasan untuk setiap elemen dan efek serangan sudah dijelaskan sebelumnya pada Sub-bab \ref{sec:sub_sec3_design_skenario}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_element}
@@ -740,82 +746,80 @@ Pada dasarnya satu karakter musuh tidak akan menggunakan seluruh elemen yang ada
 }
 \end{equation}
 
-Sedangkan pada persamaan \ref{eq:damage_name_number} variabel $DmgNu$ adalah respon terhadap serangan yang yang dikonversi menjadi angka, yang pada mulanya berupa nama respon atau status setelah diserang. Kemudian hasil pemilihan tersebut disimpan pada variabel $DmgNu$ yang dapat dinyatakan dengan persamaan \ref{eq:damage_number_prob}.
+Kemudian pada persamaan \ref{eq:damage_name_number}, variabel $DmgNu$ adalah respon atau efek dari serangan yang yang dikonversi menjadi angka, yang pada mulanya berupa nama respon atau efek setelah diserang. Kemudian hasil pemilihan tersebut disimpan pada variabel $DmgNu$ yang dapat dinyatakan dengan persamaan \ref{eq:damage_number_prob}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:damage_number_prob}
-P(DmgNu) = \frac{DmgNu}{\sum_{i = 0}^{N}\ DmgNa_{(i - 1)}}
+P(DmgNu) = \frac{DmgNu}{\sum_{i = 0}^{N_{Na}}\ DmgNa_{i}}
 \end{equation}
 
-Pada persamaan \ref{eq:damage_name_number} variabel $DmgNa$ yang dipilih secara acak sebagai elemen yang memiliki respon khusus terhadap serangan yang kemudian disimpan pada variabel $DmgNu$, selanjutnya angka yang dipilih akan disimpan pada variabel $DmgNu$ yang selanjutnya dinyatakan dengan persamaan \ref{eq:damage_number_prob}. Jadi dari $DmgNa$ akan dipilih satu sampai dengan tiga elemen secara acak yang kemudian menjadi kelemahan atau kekebalan dari karakter musuh tersebut.
-\vspace{1ex}
+Pada persamaan \ref{eq:damage_name_number} terdapat set variabel $DmgNa$ yang dipilih secara acak sebagai elemen yang nantinya akan memiliki respon khusus terhadap serangan yang dinyatakan dengan $DmgNu$, selanjutnya angka yang deperoleh berupa indeks yang dipilih dari jumlah element atau $N_{Na}$ seperti yang dinyatakan dalam persamaan \ref{eq:damage_number_prob}. Jadi dari $DmgNa$ akan dipilih satu sampai dengan tiga elemen secara acak yang kemudian menjadi kelemahan atau kekebalan dari karakter musuh tersebut. Namun pada persamaan \ref{eq:damage_number_prob}, hanya merepresentasikan satu efek serangan saja. Maka dilanjutkan dengan persamaan \ref{eq:multi_damage_num_prob}, agar dalam satu karter musuh bisa memiliki lebih dari satu efek serangan.
 
 \begin{equation}\label{eq:multi_damage_num_prob}
-P(DmgNu)_{M} = \sum_{i = 0}^{M}\ \frac{DmgNu_{i}}{\sum_{j = 0}^{N}\ DmgNa_{j - 1}}
+P(DmgNu_{i}) = \sum_{i = 0}^{M_{Nu}}\ \frac{DmgNu_{i}}{\sum_{j = 0}^{N_{Na}}\ DmgNa_{j}}
 \end{equation}
 
-Sedangkan pada persamaan \ref{eq:multi_damage_num_prob} adalah penjelasan tentang proses munculnya setiap $DmgNu$ pada satu karakter musuh, sehingga variabel tersebut berubah menjadi $DmgNu_{i}$. Seperti penjelasan sebelumnya bahwa pada sebuah karakter musuh dapat memiliki lebih dari satu kelemahan atau kekebalan $DmgNu$ terhadap $DmgNa$ yang diset secara acak seperti yang sudah dijelaskan pada bagian sebelumnya.
+Sedangkan pada persamaan \ref{eq:multi_damage_num_prob} adalah penjelasan tentang proses munculnya setiap $DmgNu$ pada satu karakter musuh, sehingga variabel tersebut berubah menjadi $DmgNu_{i}$ dengan $M_{Nu}$ adalah jumlah dari respon atau efek saat musuh menerima serangan. Seperti penjelasan sebelumnya bahwa pada sebuah karakter musuh dapat memiliki lebih dari satu kelemahan atau kekebalan $DmgNu$ dari $DmgNa$ yang dipilih secara acak seperti yang sudah dijelaskan pada bagian sebelumnya. Berkaca pada persamaan \ref{eq:damage_number_prob} dan \ref{eq:multi_damage_num_prob}, penggunaan Naive bayes dengan dasar probabilitas diterapkan pada kedua persamaan tersebut yang mengacu dengan penjelasa pada Sub-bab \ref{sec:sub_sec2_class_bayes}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:all_enemies_damage}
-DmgEN_{M} = \sum_{i = 0}^{M}\sum_{j = 0}^{N} DmgNu_{ij}
+DmgEN = \sum_{i = 0}^{EN}\sum_{j = 0}^{N_{Nu}} DmgNu_{ij}
 \end{equation}
 
-Selanjutnya adalah proses penerapan persamaan \ref{eq:multi_damage_num_prob} ke seluruh karakter musuh $DmgEN_{M}$ seperti pada persamaan \ref{eq:all_enemies_damage}. Sesuai dengan persamaan \ref{eq:all_enemies_damage}, yang mana $M$ adalah jumlah musuh sedangkan $N$ adalah jumlah $DmgNu$ pada satu musuh yang berjumlah satu sampai dengan tiga seperti yang sudah dijelaskan pada paragraf sebelumnya pada Sub-bab ini.
+Selanjutnya adalah proses penerapan persamaan \ref{eq:multi_damage_num_prob} ke seluruh karakter musuh yang dinyatakan dengan variabel set $DmgEN$ seperti pada persamaan \ref{eq:all_enemies_damage}, $DmgEN$ berupa set variabel yang berisi persebaran $DmgNu$ dan elemennya $DmgNa$ pada setiap karakter musuh. Sesuai dengan persamaan \ref{eq:all_enemies_damage}, yang mana $EN$ adalah jumlah musuh sedangkan $N_{Nu}$ adalah jumlah $DmgNu$ pada satu musuh yang berjumlah satu sampai dengan tiga seperti yang sudah dijelaskan pada paragraf sebelumnya pada Sub-bab ini.
 \vspace{1ex}
 
-
-\subsection{Distribusi HP, MP dan Stats Musuh}
+\subsection{Distribusi HP, MP, dan Stats Musuh}
 \label{sec:sub_sec3_enemy_hp_mp_stats}
 \vspace{1ex}
 
-Bila melihat pada Tabel \ref{tb:enemy_input_variable} terdapat beberapa variabel seperti \textit{List Stats Name}, \textit{Max Stats Value}, dan \textit{Min Stats Value}. Variabel tersebut akan digunakan untuk membuat \textit{stats} dari musuh dengan basis algorima Naive Bayes. Di awali dengan persamaan \ref{eq:enemy_types_stats_ex} yang menjadi pembagi setiap operasi pembagian \textit{stats} berdasarkan tipenya $ET_{i}$.
+Bila melihat pada Tabel \ref{tb:enemy_input_variable} terdapat beberapa variabel seperti \textit{List Stats Name}, \textit{Max Stats Value}, dan \textit{Min Stats Value}. Variabel tersebut akan nantinya akan digunakan untuk membuat \textit{stats} untuk karakter musuh dengan basis algorima Naive Bayes. Di awali dengan persamaan \ref{eq:enemy_types_stats_ex} yang menjadi pembagi setiap operasi pembagian \textit{stats} berdasarkan tipe.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_stats_ex}
 \resizebox{0.4\textwidth}{!}{%	
-	$ET_{N} = \sum_{i= 0}^{N} ET_{i} \left\{\begin{matrix}
+	$ET = \sum_{i= 0}^{N} ET_{i} \left\{\begin{matrix}
 	ET_{i} = 0, & MX\\ 
 	ET_{i} = 1, & HM\\ 
 	ET_{i} = 2, & SM\\ 
-	ET_{i} = 3, & HS\\ 
+	ET_{i} = 3, & HS\\
 	ET_{i} = 4, & SS
 	\end{matrix}\right.$%
 }
 \end{equation}
 
-Pada persamaan \ref{eq:enemy_types_stats_ex} adalah persamaan yang disesuaikan untuk menyelesaikan masukan variabel pada Tabel \ref{tb:enemy_input_variable}, sedangkan pada persaamaan \ref{eq:enemy_types_stats_adv} adalah pengembangan jika jumlah tipe musuh dinaikkan lebih dari yang dicontohkan pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{Enemy Type}. Pada kedua persamaan tersebut terdaapat beberapa variabel diantaranya adalah $ET_{i}$ yang merupakan enemy tipe ke $i$, kemudian secara berurutan masing-masing $MX$, $HM$, $SM$, $HS$, dan $SS$ adalah musuh dengan tipe \textit{mixed}, \textit{hard magic}, \textit{soft magic}, \textit{hard strength}, dan \textit{soft strength}.
+Pada persamaan \ref{eq:enemy_types_stats_ex} yang merepresentasikan masukan variabel pada Tabel \ref{tb:enemy_input_variable}, sedangkan pada persaamaan \ref{eq:enemy_types_stats_adv} adalah pengembangan jika jumlah tipe musuh dinaikkan lebih dari yang dicontohkan pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{Enemy Type}. Pada kedua persamaan tersebut terdaapat beberapa variabel diantaranya adalah $ET_{i}$ yang yang menyatakan tipe musuh ke $i$, kemudian secara berurutan masing-masing $MX$, $HM$, $SM$, $HS$, dan $SS$ adalah musuh dengan tipe \textit{mixed}, \textit{hard magic}, \textit{soft magic}, \textit{hard strength}, dan \textit{soft strength}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_stats_adv}
 \resizebox{0.4\textwidth}{!}{%
-	$ET_{N} = \sum_{i= 0}^{N} ET_{i} \left\{\begin{matrix}
+	$ET_{i} = \sum_{i= 0}^{N} ET_{i} \left\{\begin{matrix}
 	ET_{i} = 0, & MX\\ 
 	ET_{i} = 1, & HM\\ 
 	ET_{i} = 2, & SM\\ 
 	ET_{i} = 3, & HS\\ 
 	ET_{i} = 4, & SS\\
 	... & ... \\
-	\hspace{0.2em} ET_{n} = n, & ST_{n}
+	\hspace{0.2em} ET_{N} = N, & ST_{N}
 	\end{matrix}\right.$%
 }
 \end{equation}
 
-Kemudian pada persamaan \ref{eq:enemy_types_stats_adv} secara spesifik terdapat variabel $ET_{n}$ yang merupakan variabel tipe musuh ke $n$ atau batas jumlah musuh. Variabel $n$ adalah urutan dari index tipe musuh yang dideskripsikan, berikut juga variabel $ST_{n}$, dengan variabel $ST$ adalah \textit{stats} dan $n$ adalah batas jumlah musuh. Selanjutnya adalah dilakukannya pembagian tipe musuh jika musuh tersebut memiliki tipe $MX$ atau \textit{mixed} seperti pada persamaan \ref{eq:enemy_types_stats_mixed_ex}.
+Kemudian pada persamaan \ref{eq:enemy_types_stats_adv} secara spesifik terdapat variabel $ET_{N}$ yang merupakan variabel tipe musuh ke $N$ atau batas jumlah musuh. Variabel $i$ adalah urutan dari indeks setiap tipe musuh yang dideskripsikan, berikut juga variabel $ST_{N}$, dengan variabel $ST$ adalah \textit{stats} dan $N$ adalah batas jumlah musuh. Selanjutnya adalah dilakukannya pembagian tipe musuh jika musuh tersebut memiliki tipe $MX$ atau \textit{mixed} seperti pada persamaan \ref{eq:enemy_types_stats_mixed_ex}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_stats_mixed_ex}
-MX_{N} = \sum_{i= 0}^{N} MX_{i} \left\{\begin{matrix}
+MX = \sum_{i= 0}^{N_{MX}} MX_{i} \left\{\begin{matrix}
 MX_{i} = 1, & MP\ Focused\\
 MX_{i} = 2, & HP\ Focused
 \end{matrix}\right.
 \end{equation}
 
-Pada persamaan \ref{eq:enemy_types_stats_mixed_ex} terdapat variabel $MX_{i}$ yang merupakan variabel satuan dari musuh yang bertipe \textit{mixed}. Kemudian pada variabel $MX_{N}$ adalah variabel yang bersifat jamak atau memuat banyak variabel musuh yang bertipe \textit{mixed}. Pada persamaan \ref{eq:enemy_types_stats_mixed_ex} sendiri dijelaskan bahwa pada tipe \textit{mixed} dipecah menjadi dua tipe lagi, yang satu berfokus pada $HP$ dan satu lagi pada $MP$. Jadi isi dari variabel $MX_{N}$ nantinya akan terdiri dari musuh bertipe \textit{mixed} dengan sub-tipe MP atau berfokus pada MP dan sub-tipe HP atau berfokus pada HP.
+Pada persamaan \ref{eq:enemy_types_stats_mixed_ex} terdapat variabel $MX_{i}$ yang merupakan variabel satuan dari musuh yang bertipe \textit{mixed} yang dinyatakan dengan $N_{MX}$. Kemudian pada variabel $MX$ yang berupa set atau memuat banyak variabel musuh yang bertipe \textit{mixed}. Pada persamaan \ref{eq:enemy_types_stats_mixed_ex} sendiri dijelaskan bahwa pada tipe \textit{mixed} dipecah menjadi dua tipe lagi, yang satu berfokus pada $HP$ dan satu lagi pada $MP$. Jadi isi dari variabel $MX$ nantinya akan terdiri dari musuh bertipe \textit{mixed} dengan bagian tipe MP atau berfokus pada MP dan sub-tipe HP atau berfokus pada HP.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_stats_mixed_adv}
-Mx_{N} = \sum_{i= 0}^{N} Mx_{i} \left\{\begin{matrix}
+Mx = \sum_{i= 0}^{N_{MX}} Mx_{i} \left\{\begin{matrix}
 \hspace{0.6em} Mx_{i} = 1, & MP\ Focused\\
 \hspace{0.6em} Mx_{i} = 2, & HP\ Focused\\
 \hspace{0.6em} ... & \hspace{-2.0em} ... \\
@@ -823,17 +827,17 @@ Mx_{N} = \sum_{i= 0}^{N} Mx_{i} \left\{\begin{matrix}
 \end{matrix}\right.
 \end{equation}
 
-Selanjutnya adalah perhitungan probabilitas diperolehnya tipe musuh dari keseluruhan tipe musuh yang berada pada variabel masukan. Misal pada kasus yang ditunjukan pada persamaan \ref{eq:enemy_types_prob_ex}, jumlah tipe musuh tentunya mengacu pada Tabel \ref{tb:enemy_input_variable}. Dalam menyelesaikan kasus tersebut digunakanlah Naive bayes yang berbasis pada \textit{conditional probability} seperti yangg dijelaskan pada Sub-bab \ref{sec:sub_sec2_class_bayes}, yang mana pada persamaan \ref{eq:enemy_types_prob_ex} proses kemunculan tipe musuh tertentu misal $ET_{0}$, $ET_{1}$, $ET_{2}$, $ET_{3}$, $ET_{4}$ yang mana seluruh tipe musuh dimuat pada variabel $ET_{N}$.
+Pada persamaan \ref{eq:enemy_types_stats_mixed_adv} adalah lajutan penjelasan dari persamaan \ref{eq:enemy_types_stats_mixed_ex} yang lebih detail tentang persebaran musuh dengan tipe $MX$. Selanjutnya adalah perhitungan probabilitas diperolehnya tipe musuh dari keseluruhan tipe musuh yang berada pada variabel masukan. Misal pada kasus yang ditunjukan pada persamaan \ref{eq:enemy_types_prob_ex}, jumlah tipe musuh tentunya mengacu pada Tabel \ref{tb:enemy_input_variable}. Dalam menyelesaikan kasus tersebut digunakanlah Naive bayes yang berbasis pada \textit{conditional probability} seperti yangg dijelaskan pada Sub-bab \ref{sec:sub_sec2_class_bayes}, yang mana pada persamaan \ref{eq:enemy_types_prob_ex} proses kemunculan tipe musuh tertentu misal $ET_{0}$, $ET_{1}$, $ET_{2}$, $ET_{3}$, $ET_{4}$ yang mana seluruh tipe musuh dimuat pada variabel $ET$ yang berbentuk set atau memiliki variabel lain didalamnya.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_ex}
 \resizebox{0.35\textwidth}{!}{%
 	$\begin{matrix}
-	ET_{0} = P(ET_{N}| ET_{0}) \times P(ET_{0})\\
-	ET_{1} = P(ET_{N}| ET_{1}) \times P(ET_{1})\\
-	ET_{2} = P(ET_{N}| ET_{2}) \times P(ET_{2})\\
-	ET_{3} = P(ET_{N}| ET_{3}) \times P(ET_{3})\\
-	ET_{4} = P(ET_{N}| ET_{4}) \times P(ET_{4})
+	ET_{0} = P(ET | ET_{0}) \times P(ET_{0})\\
+	ET_{1} = P(ET | ET_{1}) \times P(ET_{1})\\
+	ET_{2} = P(ET | ET_{2}) \times P(ET_{2})\\
+	ET_{3} = P(ET | ET_{3}) \times P(ET_{3})\\
+	ET_{4} = P(ET | ET_{4}) \times P(ET_{4})
 	\end{matrix}$%
 }
 \end{equation}
@@ -844,38 +848,37 @@ Sedangkan jika jumlah tipe musuh tidak beracuan pada Tabel \ref{tb:enemy_input_v
 \begin{equation}\label{eq:enemy_types_prob_adv}
 \resizebox{0.35\textwidth}{!}{%
 	$\begin{matrix}
-	ET_{0} = P(ET_{N}| ET_{0}) \times P(ET_{0})\\
-	ET_{1} = P(ET_{N}| ET_{1}) \times P(ET_{1})\\
-	ET_{2} = P(ET_{N}| ET_{2}) \times P(ET_{2})\\
+	ET_{0} = P(ET | ET_{0}) \times P(ET_{0})\\
+	ET_{1} = P(ET | ET_{1}) \times P(ET_{1})\\
+	ET_{2} = P(ET | ET_{2}) \times P(ET_{2})\\
 	...\\
-	ET_{n} = P(ET_{N}| ET_{n}) \times P(ET_{n})
+	ET_{N} = P(ET | ET_{N}) \times P(ET_{N})
 	\end{matrix}$%
 }
 \end{equation}
 
-Saat sudah diperolehnya tipe musuh pada seperti yang dijelaskan pada persamaan \ref{eq:enemy_types_prob_adv} maka selanjutnya yang harus dibuat adalah stats dari musuh itu sendiri, seperti halnya HP, MP, Strength, Magic dan lain sebagainya seperti yang tercantum pada Tabel \ref{tb:enemy_input_variable} pada variabel $List Stats Name$ yang ditambah dengan variabel HP dan MP.
+Saat sudah diperolehnya tipe musuh pada seperti yang dijelaskan pada persamaan \ref{eq:enemy_types_prob_ex} dan \ref{eq:enemy_types_prob_adv} maka selanjutnya yang harus dibuat adalah \textit{stats} dari musuh itu sendiri, seperti halnya HP, MP, \textit{Strength}, \textit{Magic} dan lain sebagainya seperti yang tercantum pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{List Stats Name} yang ditambah dengan variabel HP dan MP.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_bhp}
 bHP = minHP
 \end{equation}
 
-Pada persamaan \ref{eq:enemy_types_prob_bhp} adalah penentuan batas bawah untuk HP atau $bHP$, nilai $minHP$ juga dicontohkan dalam daftar variabel masukan dengan nama \textit{Min} HP pada Tabel \ref{tb:enemy_input_variable}.
+Pada persamaan \ref{eq:enemy_types_prob_bhp} adalah penentuan batas bawah untuk HP atau $bHP$, nilai pada variabel $minHP$ yang juga dicontohkan dalam daftar variabel masukan dengan nama \textit{Min HP} pada Tabel \ref{tb:enemy_input_variable}, yang merupakan nilai minimal dari HP.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_thp}
-tHP = \sum_{i=0}^{N}\ bHP + \left |\ \frac{Elv_{i}}{100} \times maxHP\ \right |
+tHP = \sum_{i=0}^{NE}\ bHP + \left |\ \frac{Elv_{i}}{100} \times maxHP\ \right |
 \end{equation}
 
-Selanjutnya dilanjutkan dengan pencarian batas atas untuk HP atau $tHP$. Pada persamaan \ref{eq:enemy_types_prob_thp} terdapat beberapa variabel yang berpengaruh terhadap nilai dari $tHP$ diantaranya adalah $bHP$ yang merupakan batas bawah dari $HP$, $Elv_{i}$ yang merupakan level dari setiap karakter musuh dengan tipenya masing-masing, dan $maxHP$ sendiri yang merupakan batas atas dicontohkan pada Tabel \ref{tb:enemy_input_variable} dengan nama variabel $max$ HP. Pencarian batas atas dilakukan dengan dilakukannya penjumlahan antara $bHP$ dengan presentase dari $maxHP$ yang disesuaikan dengan $Elv_{i}$. Jadi dari perhitungan tersebut, HP dari karakter musuh akan menyesuikan dengan levelnya. 
+Selanjutnya dilanjutkan dengan pencarian batas atas untuk HP atau $tHP$. Pada persamaan \ref{eq:enemy_types_prob_thp} terdapat beberapa variabel yang berpengaruh terhadap nilai dari $tHP$ diantaranya adalah $bHP$ yang merupakan batas bawah dari HP, $Elv_{i}$ yang merupakan level dari setiap karakter musuh sebanyak $NE$ dengan tipenya masing-masing, dan $maxHP$ sendiri yang merupakan nilai maksimum dari HP dicontohkan pada Tabel \ref{tb:enemy_input_variable} dengan nama variabel \textit{Max HP}. Pencarian batas atas dilakukan dengan dilakukannya penjumlahan antara $bHP$ dengan presentase dari $maxHP$ yang disesuaikan dengan $Elv_{i}$. Jadi dari perhitungan tersebut, HP dari karakter musuh akan menyesuikan dengan levelnya masing-masing. 
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_hp}
-P(HP_{i}) = \sum_{i=0}^{N}\ \frac{HP_{i}}{bHP_{i} - tHP_{i}}
+P(HP_{i}) = \sum_{i=0}^{NE}\ \frac{HP_{i}}{bHP_{i} - tHP_{i}}
 \end{equation}
 
-Kemdian dilanjutkan dengan perhitungan probabilitas $P(HP_{i})$ atau munculnya HP pada setiap karakter musuh pada persamaan \ref{eq:enemy_types_prob_hp}. HP dari setiap karakter musuh itu sendiri dinyatakan dengen $HP_{i}$. Kemudian range nilai dari $HP_{i}$ yang akan muncul terhitung mulai dari $bHP_{i}$ sampai dengan $tHP_{i}$ dari setiap karakter musuh. Variabel $i$ pada persamaan tersebut merepresentasikan setiap musuh dengan variabel $N$ yang menyatakan batas atau jumlah dari musuh yang ingin dibuat.
-\vspace{1ex}
+Kemdian dilanjutkan dengan perhitungan probabilitas $P(HP_{i})$ atau munculnya HP pada setiap karakter musuh pada persamaan \ref{eq:enemy_types_prob_hp}. HP dari setiap karakter musuh itu sendiri dinyatakan dengen $HP_{i}$. Kemudian range nilai dari $HP_{i}$ yang akan muncul terhitung mulai dari $bHP_{i}$ sampai dengan $tHP_{i}$ dari setiap karakter musuh. Variabel $i$ pada persamaan tersebut merepresentasikan setiap musuh dengan variabel $NE$ yang menyatakan batas atau jumlah dari musuh yang ingin dibuat. Pada proses ini tentunya menggambarkan penggunaan Naive Bayes dengn dasar probabilitas yang telah digunakan.
 
 \begin{equation}\label{eq:enemy_types_prob_bmp}
 bMP = minMP
@@ -885,14 +888,14 @@ Mengulang persamaan \ref{eq:enemy_types_prob_bhp} pada persamaan \ref{eq:enemy_t
 \vspace{2ex}
 
 \begin{equation}\label{eq:enemy_types_prob_tmp}
-tMP = \sum_{i=0}^{N}\ bMP + \left |\ \frac{Elv_{i}}{100} \times maxMP\ \right |
+tMP = \sum_{i=0}^{NE}\ bMP + \left |\ \frac{Elv_{i}}{100} \times maxMP\ \right |
 \end{equation}
 
 Masih sama seperti penjelasan sebelumnya dimana pada persaamaan \ref{eq:enemy_types_prob_bmp} pada persamaan \ref{eq:enemy_types_prob_tmp} juga sama dengan persamaan \ref{eq:enemy_types_prob_thp}. Di lakukannya penggantian variabel HP menjadi MP, sudah dijelaskan juga pada bagian sebelumnya tentang variabel $Elv_{i}$, dan pada variabel $maxMP$ yang merupakan variabel yang dicontohkan pada Tabel \ref{tb:enemy_input_variable} dengan nama \textit{Max} MP.
 \vspace{2ex}
 
 \begin{equation}\label{eq:enemy_types_prob_mp}
-P(MP_{i}) = \sum_{i=0}^{N}\ \frac{MP_{i}}{bMP_{i} - tMP_{i}}
+P(MP_{i}) = \sum_{i=0}^{NE}\ \frac{MP_{i}}{bMP_{i} - tMP_{i}}
 \end{equation}
 
 Pada persamaan \ref{eq:enemy_types_prob_mp} adalah probabilitas $P(MP_{i})$ atau munculnya MP pada setiap karakter musuh pada persamaan \ref{eq:enemy_types_prob_mp}. MP dari setiap karakter musuh itu sendiri dinyatakan dengen $MP_{i}$. Kemudian range nilai dari $MP_{i}$ yang akan muncul terhitung mulai dari $bMP_{i}$ sampai dengan $tMP_{i}$. Kasus ini sama seperti pada persamaan \ref{eq:enemy_types_prob_hp} hanya saja sama seperti pada pembahasan sebelumnya yang mana pada persamaan tersebut bertujuan untuk mencari $HP$, sedangkan pada kasus ini bertujuan untuk mencaru $MP$.
@@ -902,34 +905,34 @@ Pada bagian ini akan membahas secara khusus untuk kondisi \textit{mixed} melanju
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_mx1}
-Mx_{1} = P(Mx_{{N}}|Mx_{1}) \times P(Mx_{1})
+MX_{1} = P(MX | MX_{1}) \times P(MX_{1})
 \end{equation}
 
 \begin{equation}\label{eq:enemy_types_prob_mx2}
-Mx_{2} = P(Mx_{{N}}|Mx_{2}) \times P(Mx_{2})
+MX_{2} = P(MX | MX_{2}) \times P(MX_{2})
 \end{equation}
 
-Maka $Mx_{N}$ adalah seluruh musuh yang bertipe $mixed$, kemudian dipilihlah musuh dengan tipe mixed yang berfokus pada HP atau $Mx_{1}$. Beracuan pada konsep \textit{conditional probability} yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_bayes}. Jika $Mx_{1}$ adalah HP \textit{focused} maka  $Mx_{2}$ adalah MP \textit{focused} maka sama seperti persamaan \ref{eq:enemy_types_prob_mx1} dengan $Mx_{N}$ adalah seluruh musuh yang bertipe $mixed$, kemudian dipilihlah musuh dengan tipe \textit{mixed} yang berfokus pada MP atau $Mx_{2}$. Pembahasan secara khusus lainnya adalah penambahan \textit{stats} HP untuk musuh dengan tipe \textit{mixed} yang berfokus pada HP seperti yang dinyatakan pada persamaan \ref{eq:enemy_types_prob_thp_mix}. 
+Maka $Mx$ adalah sebuah set variabel yang berisi seluruh musuh yang bertipe \textit{mixed}, kemudian dipilihlah musuh dengan tipe \textit{mixed} yang berfokus pada HP atau $MX_{1}$. Beracuan pada konsep \textit{conditional probability} yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_bayes}. Jika $MX_{1}$ adalah HP \textit{focused} maka  $MX_{2}$ adalah MP \textit{focused} maka sama seperti persamaan \ref{eq:enemy_types_prob_mx1} yang sebelumnya juga dicontohkan pada persamaan \ref{eq:enemy_types_stats_mixed_ex}. Dengan $MX$ adalah seluruh musuh yang bertipe \textit{mixed}, kemudian dipilihlah musuh dengan tipe \textit{mixed} yang berfokus pada MP atau $MX_{2}$. Pembahasan secara khusus lainnya adalah penambahan \textit{stats} HP untuk musuh dengan tipe \textit{mixed} yang berfokus pada HP seperti yang dinyatakan pada persamaan \ref{eq:enemy_types_prob_thp_mix} dengan $NH_{hp}$ adalah jumlah musuh yang bertipe \textit{mixed} dan fokus ke HP. 
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_thp_mix}
-tHP = \sum_{i=0}^{N}\ bHP + bHP + \left | \frac{Elv_{i}}{100} \times maxHP \right |
+tHP = \sum_{i=0}^{NM_{hp}}\ bHP + bHP + \left |\ \frac{Elv_{i}}{100} \times maxHP\ \right |
 \end{equation}
 
-Sedangkan pada musuh dengan tipe \textit{mixed} yang berfokus pada MP tidak perlu diberi perlakuan khusus seperti tipe \textit{mixed} yang berfokus pada HP, hal tersebut dikarenakan dengan melihat nilai MP pada setiap karakter musuh dengan tipe tersebut sudah tergolong tinggi. Kondisi ini beracuan terhadap konsep keseimbangan dalam mendesain seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_keseimbangan} dan Sub-bab \ref{sec:sub_sec3_story} tentang penyesuaian keseimbangan dalam pertarungan antara pemain dengan musuh berikut juga dengan cerita dari permainan tersebut.
+Sedangkan pada musuh dengan tipe \textit{mixed} yang berfokus pada MP tidak perlu diberi perlakuan khusus seperti tipe \textit{mixed} yang berfokus pada HP, hal tersebut dikarenakan dengan melihat nilai MP pada setiap karakter musuh dengan tipe tersebut sudah tergolong tinggi. Kondisi ini beracuan terhadap konsep keseimbangan dalam mendesain seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_keseimbangan} dan Sub-bab \ref{sec:sub_sec3_story} tentang penyesuaian keseimbangan dalam pertarungan antara pemain dengan musuh.
 \vspace{1ex}
 
-Sedikit berbeda dengan persamaan \ref{eq:enemy_types_prob_hp} pada persaamaan \ref{eq:enemy_types_prob_thp_mix} dilakukan penambahan dua kali pada variabel $bHP$ atau batas bawah HP. Hal tersebut dilakukan agar angka \textit{stats} HP pada musuh dengan tipe \textit{mixed} yang berfokus terhadap HP memiliki nilai HP yang lebih tinggi jika dibandingkan dengan tipe \textit{mixed} yang berfokus MP.
+Sedikit berbeda dengan persamaan \ref{eq:enemy_types_prob_hp}, pada persaamaan \ref{eq:enemy_types_prob_thp_mix} dilakukan penambahan dua kali pada variabel $bHP$ atau batas bawah HP. Hal tersebut dilakukan agar angka \textit{stats} HP pada musuh dengan tipe \textit{mixed} yang berfokus terhadap HP memiliki nilai HP yang lebih tinggi jika dibandingkan dengan tipe \textit{mixed} yang berfokus MP.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_hp_mix}
-P(HP_{i}) = \sum_{i=0}^{N}\ \frac{HP_{i}}{bHP_{i} - tHP_{i}}
+P(HP_{i}) = \sum_{i=0}^{NM_{hp}}\ \frac{HP_{i}}{bHP_{i} - tHP_{i}}
 \end{equation}
 
 Kemudian perhitungan probabilitas $P(HP_{i})$ atau munculnya HP pada setiap karakter musuh pada persamaan \ref{eq:enemy_types_prob_hp_mix}. HP dari setiap karakter musuh itu sendiri dinyatakan dengen $HP_{i}$. Kemudian range nilai dari $HP_{i}$ yang akan muncul terhitung mulai dari $bHP_{i}$ sampai dengan $tHP_{i}$. Persamaan tersebut masih sama dengan probabilitas kemunculan HP dari \textit{range} antara $bHP$ dengan $tHP$ pada persamaan \ref{eq:enemy_types_prob_hp}.
 \vspace{1ex}
 
-Selain pembuatan \textit{stats} HP dan MP, \textit{stats} lain seperti halnya \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck} juga harus dicari. Daftar dari \textit{stats} tersebut dicontohkan pada Tabel \ref{tb:enemy_input_variable} dengan nama variabel \textit{List Stats Name}. Dalam kasus pembuatan \textit{stats} musuh terdapat beberapa variabel lain digunakan selain \textit{List Stats Name} diantaranya adalah \textit{Max Stats Value} dan \textit{Min Stats Value}, seperti yang ditunjukan pada Tabel \ref{tb:enemy_input_variable}. Dalam pembuatan \textit{stats} musuh tersebut digunakanlah persamaan yang mirip dengan persamaan \ref{eq:enemy_types_prob_bhp}, \ref{eq:enemy_types_prob_thp}, dan persamaan \ref{eq:enemy_types_prob_hp}, hanya saja dilakukan sedikit perubahan pada persamaan tersebut seperti yang dinyatakan pada persamaan \ref{eq:enemy_types_prob_bst1} sampai dengan persamaan \ref{eq:enemy_types_prob_st}.
+Selain pembuatan \textit{stats} HP dan MP, \textit{stats} lain seperti halnya \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck} juga harus dicari. Daftar dari \textit{stats} tersebut dicontohkan pada Tabel \ref{tb:enemy_input_variable} dengan nama variabel \textit{List Stats Name}. Dalam kasus pembuatan \textit{stats} musuh terdapat beberapa variabel lain digunakan selain \textit{List Stats Name} diantaranya adalah \textit{Max Stats Value} dan \textit{Min Stats Value}, seperti yang ditunjukan pada Tabel \ref{tb:enemy_input_variable}. Dalam pembuatan \textit{stats} musuh tersebut digunakanlah persamaan yang mirip dengan persamaan \ref{eq:enemy_types_prob_bhp}, \ref{eq:enemy_types_prob_thp}, dan \ref{eq:enemy_types_prob_hp}, hanya saja dilakukan sedikit perubahan pada persamaan tersebut seperti yang dinyatakan pada persamaan \ref{eq:enemy_types_prob_bst1} sampai dengan persamaan \ref{eq:enemy_types_prob_st}.
 \vspace{-1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_bst1}
@@ -940,30 +943,24 @@ Jika hanya berlaku satu \textit{stats} saja maka dapat digunakan persamaan \ref{
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_bst2}
-bSt_{i} = \sum_{i=0}^{N}\ minSt_{i}
+bSt = \sum_{i=0}^{NE}\ \sum_{j=0}^{N_{st}}\ minSt_{ij}
 \end{equation}
 
-Di karenakan \textit{stats} dari musuh berjumlah lebih dari satu maka persamaan \ref{eq:enemy_types_prob_bst1} harus disesuaikan dengan jumlah \textit{stats} tersebut. Jumlah stats dari musuh sendiri berjumlah lima buah seperti yang tertulis pada variabel \textit{List Stats Name}, maka persamaan \ref{eq:enemy_types_prob_bst1} disesuaikan menjadi seperti persamaan \ref{eq:enemy_types_prob_bst2}. Dengan variabel $N$ adalah batas maksimal dari jumlah \textit{stats}, dengan nilai minimum \textit{stats} atau $minSt$ yang jumlahnya mengikuti jumlah maksimal \textit{stats} menjadi $minSt_{i}$ dan disimpan dalam setiap variabel $bSt$ ke $i$. Kemudian selanjutnya adalah pencarian batas atas untuk masing-masing \textit{stats}, sama halnya dengan pencarian batas bawah dari setiap \textit{stats} dalam cara pencarian batas atas pada dasarnya juga sama dengan pencarian batas dari HP pada $tHP$ dan MP pada $tMP$.
+Di karenakan \textit{stats} dari musuh berjumlah lebih dari satu maka persamaan \ref{eq:enemy_types_prob_bst1} harus disesuaikan dengan jumlah \textit{stats} tersebut. Jumlah \textit{stats} dari musuh sendiri berjumlah lima buah seperti yang tertulis pada variabel \textit{List Stats Name}, maka persamaan \ref{eq:enemy_types_prob_bst1} disesuaikan menjadi seperti persamaan \ref{eq:enemy_types_prob_bst2}. Dengan variabel $N$ adalah batas maksimal dari jumlah \textit{stats}, dengan nilai minimum \textit{stats} atau $minSt$ yang jumlahnya mengikuti jumlah maksimal \textit{stats} menjadi $minSt_{i}$ dan disimpan dalam setiap variabel $bSt$ ke $i$. Kemudian selanjutnya adalah pencarian batas atas untuk masing-masing \textit{stats}, sama halnya dengan pencarian batas bawah dari setiap \textit{stats} dalam cara pencarian batas atas pada dasarnya juga sama dengan pencarian batas dari HP pada $tHP$ dan MP pada $tMP$.
 \vspace{1ex}
 
-\begin{equation}\label{eq:enemy_types_prob_tst1}
-tSt_{i} = \sum_{i=0}^{N}\ bSt + \left |\ \frac{Elv_{i}}{100} \times maxSt_{i}\ \right |
+\begin{equation}\label{eq:enemy_types_prob_tst}
+tSt = \sum_{i=0}^{NE}\ \sum_{i=0}^{N_{st}}\ bSt_{ij} + \left |\ \frac{Elv_{i}}{100} \times maxSt_{ij}\ \right |
 \end{equation}
 
-Pada persamaan \ref{eq:enemy_types_prob_tst1} batas atasnya adalah $tSt$ yang diisi dengan nilai maximum dari \textit{stats} atau $maxSt$. Namun pada kasus ini jumlah \textit{stats} musuh berjumlah lebih dari satu seperti yang sudah dibahas pada bagian sebelumnya. Sama seperti pada pembahasan sebelumnya bahwa variabel $N$ adalah jumlah \textit{stats} musuh, maka dari itu nilai maksimum $maxSt$ dan variabel penyimpan hasil batas maksimum $tSt$ dieksekusi sesuai satu-satu sesuai jumlah \textit{stats} maka masing-masing variabel tersebut secara berurutan menjadi $maxSt_{i}$ dan $tSt_{i}$.
-\vspace{1ex}
-
-\begin{equation}\label{eq:enemy_types_prob_tst2}
-tSt_{i} = \sum_{i=0}^{N}\ bSt_{i} + \left |\ \frac{Elv_{i}}{100} \times maxSt_{i}\ \right |
-\end{equation}
-
-Dalam pencarian nilai batas atas $tSt_{i}$ tentunya harus melibatkan batas bawah. Jika melihat pada persamaan \ref{eq:enemy_types_prob_tst1} maka terdapat variabel $bSt$, tapi pada variabel tersebut masih bersifat statis atau tidak menyesuaikan dengan jumlah \textit{stats} musuh. Digabunglah persamaan \ref{eq:enemy_types_prob_bst2} dengan persamaan \ref{eq:enemy_types_prob_tst1} sehingga diperolehnya persamaan \ref{eq:enemy_types_prob_tst2} dengan variabel $bSt$ yang mengikuti jumlah \textit{stats} musuh menjadi $bSt_{i}$ dengan variabel $N$ sebagai batasan maksimal jumlah \textit{stats}. Dengan varaiabel $i$ yang merepresentasikan urutan \textit{stats} musuh yang sedang diproeses. Penjelasan untuk persamaan ini sebenarnya sama seperti persamaan \ref{eq:enemy_types_prob_thp} hanya saja jumlah \textit{stats} yang dibuat berjumlah lebih banyak.
+Pada persamaan \ref{eq:enemy_types_prob_tst} adalah persamaan untuk mencari batas atas yang dinyatakan dengan $tSt$ yang diisi dengan nilai maximum dari \textit{stats} atau $maxSt$. Namun pada kasus ini jumlah \textit{stats} musuh berjumlah lebih dari satu seperti yang sudah dibahas pada bagian sebelumnya. Sama seperti pada pembahasan sebelumnya bahwa variabel $N_{st}$ adalah jumlah \textit{stats} musuh, maka dari itu nilai maksimum $maxSt$ dan variabel penyimpan hasil batas maksimum $tSt$ yang berupa set dieksekusi satu-satu sesuai jumlah \textit{stats}. Maka nilai maksimum pada setiap \textit{stats} menjadi $maxSt_{j}$. Dalam pencarian nilai batas atas atau $tSt$ tentunya harus melibatkan batas bawah. Jika melihat pada persamaan \ref{eq:enemy_types_prob_tst} maka terdapatlah variabel $bSt_{j}$. Karena musuh berjumlah tidak hanya satu maka variabel $NE$ digunakan sebagai batasan maksimal jumlah \textit{stats} pada setiap karakter musuh. Dengan varaiabel $i$ yang merepresentasikan urutan musuh yang sedang diproeses. Maka dari itu $bSt_{i}$ mejadi $bSt_{ij}$ dan $maxSt_{j}$ berubah menjadi $maxSt_{ij}$. Pada persamaan \ref{eq:enemy_types_prob_tst} juga sama seperti pencarian batas atas pada HP dan MP hanya saja jumlah \textit{stats} yang dibuat berjumlah lebih banyak. Kemudian level juga menjadi acuan presentase nilai \textit{stats} yang dinyatakan dengan $Elv_{i}$ untuk setiap musuh.
 
 \begin{equation}\label{eq:enemy_types_prob_st}
-P(St_{i}) = \sum_{i=0}^{N}\ \frac{St_{i}}{bSt_{i} - tSt_{i}}
+P(St_{ij}) = \sum_{i=0}^{NE}\ \sum_{j=0}^{N_{st}}\ \frac{St_{ij}}{bSt_{ij} - tSt_{ij}}
 \end{equation}
 
-Kemudian pada persamaan \ref{eq:enemy_types_prob_st} adalah probabilitas $P(St_{i})$ saat munculnya \textit{stats} $St_{i}$ dari batas bawah \textit{stats} $bSt_{i}$ sampai batas atas \textit{stats} $tSt_{i}$.
+Kemudian pada persamaan \ref{eq:enemy_types_prob_st} adalah probabilitas saat munculnya \textit{stats} $St_{ij}$ pada setiap musuh yang dinyatakan dengan $P(St_{ij})$ dari batas bawah \textit{stats} $bSt_{i}$ sampai batas atas \textit{stats} $tSt_{i}$ yang juga pada setiap musuh. Hal ini merujuk pada penggunaan Naive Bayes seperti yang ditunjukan pada persamaan \ref{sec:sub_sec2_class_bayes}, tentang penggunaan probabilitas dalam distribusi \textit{stats}. Untuk hasil keluaran pada proses ini akan dibahas dan ditunjukan pada Sub-bab \ref{sec:sub_sec4_eval_dist_enemy_HP_MP_Stats}, begitu juga dengan hasil dari Sub-bab sebelumnya seperti distribusi level musuh pada Sub-bab \ref{sec:sub_sec3_enemy_level}, distribusi tipe musuh pada Sub-bab \ref{sec:sub_sec3_enemy_type} dan distribusi elemen dan kelemahan musuh pada Sub-bab \ref{sec:sub_sec3_enemy_weak} yang secara berurutan ditunjukan dan dibahas pada Sub-bab \ref{sec:sub_sec4_eval_dist_enemy_level}, \ref{sec:sub_sec4_eval_dist_enemy_type}, dan Sub-bab \ref{sec:sub_sec4_eval_dist_enemy_element_and_weak}. 
+\vspace{1ex}
 
 \section{Klasifikasi Hero permainan Dota 2 dengan Neural Network Multiclass Classification}
 \label{sec:sec3_dota2_method}
@@ -972,14 +969,14 @@ Kemudian pada persamaan \ref{eq:enemy_types_prob_st} adalah probabilitas $P(St_{
 Pada permaian Dota 2, \textit{hero} (sebutan khusus untuk karakter pada Dota 2) terbagi menjadi 3 kelompok yaitu \textit{Strength} (STR), \textit{Agility} (AGI) dan \textit{Intelligent} (INT). Tiap \textit{hero} memiliki \textit{stats} yang berbeda-beda seperti \textit{Base} STR, \textit{Base} AGI, \textit{Base} INT, STR \textit{Growth}, Min DMG atau \textit{minimum damage}, Max DMG atau \textit{maximum damage}, \textit{Movement Speed}, dan lain-lain. Data tersebutlah yang nantinya yang akan digunakan pada penelitian ini, seluruh data tersebut terangkum dalam situs \textit{Table of Hero Attribute} \citep{dota2020}.
 \vspace{1ex}
 
-Dalam kasus ini diambil contoh Centaur, hero tersebut adalah bertipe STR, jika dilihat nilai \textit{Base} STR dan STR \textit{Growth} pada \textit{hero} ini sangat tinggi, namun ada cukup banyak hero lain yang mempunyai nilai \textit{stats} tinggi pada salah satu atribut tapi bukan merupakan \textit{hero} dengan tipe tersebut. Seperti Ogre Magi, \textit{hero} tersebut adalah type INT, tapi memililki nilai \textit{Base} STR, STR \textit{Growth} dan Max STR lebih tinggi dari pada \textit{stats} \textit{intelligent} seperti yang terlihat pada Gambar \ref{fig:centa}. 
-\vspace{1ex}
-
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.53]{img/centa.jpg}
 	\caption{\textit{Stats} pada \textit{hero} Centaur.}
 	\label{fig:centa}
 \end{figure}
+
+Dalam kasus ini diambil contoh Centaur, hero tersebut adalah bertipe STR, jika dilihat nilai \textit{Base} STR dan STR \textit{Growth} pada \textit{hero} ini sangat tinggi, namun ada cukup banyak hero lain yang mempunyai nilai \textit{stats} tinggi pada salah satu atribut tapi bukan merupakan \textit{hero} dengan tipe tersebut. Seperti Ogre Magi, \textit{hero} tersebut adalah type INT, tapi memililki nilai \textit{Base} STR, STR \textit{Growth} dan Max STR lebih tinggi dari pada \textit{stats} \textit{intelligent} seperti yang terlihat pada Gambar \ref{fig:centa}. 
+\vspace{1ex}
 
 Maka hal yang akan dilakukan disini adalah mencoba melakukan klasifikasi \textit{hero} berdasarkan \textit{stats} yang ada, dataset dari \textit{hero} Dota 2 dapat dilihat pada Tabel \ref{tb:dota2_hero_pt1} dan \ref{tb:dota2_hero_pt2} untuk data \textit{training} dan Tabel \ref{tb:dota2_hero_pt3} untuk data \textit{testing}. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:dota2_class_proc}.
 \vspace{1ex}
@@ -1044,7 +1041,6 @@ Dari 22 fitur yang dibahas pada Sub-bab \ref{sec:sub_sec3_dota2_pre_proc}, bisa 
 	\textbf{turnRate} & -0.034759 \\ \hline
 	\textbf{regeneration} & -0.090677 \\ \hline
 \end{longtable}
-\vspace{1ex}
 
 Berikut penjelasan sederhana mengenai \textit{korelasi matrix}, hal tersebut membahas tentang sebuah variabel yang memuat nilai antara $-1$ dan $+1$. Sebagai contoh jika ada korelasi antara variabel $X$ dan $Y$ yang benilai $-1$, maka pada saat nilai $X$ turun, nilai $Y$ akan naik. Jika bernilai $+1$, maka hubungan antara $X$ dan $Y$ adalah linear. Namun jika nilai korelasi semakin dekat dengan $0$, maka variabel tersebut bisa dikatakan tidak mempengaruhi satu dengan yang lain.
 \vspace{1ex}
@@ -1056,13 +1052,17 @@ Selanjutnya akan dibuang semua fitur yang memiliki nilai korelasi lebih kecil da
 \label{sec:sub_sec3_dota2_arch}
 \vspace{1ex}
 
-Arsitektur \textit{Neural Network} yang akan dibuat mempunyai enam belas \textit{neuron} pada layer masukan, delapan belas \textit{neuron} pada \textit{hidden layer} dengan fungsi aktivasi \textit{sigmoid} dan tiga \textit{neuron} yang mewakili (STR, AGI dan INT) pada layer keluaran seperti pada Gambar \ref{fig:nn_dota2} dengan fungsi aktivasi \textit{Softmax} karena keluaran dari model yang dibuat bersifat distribusi probabilitas dari seluruh nilai target. Misalkan model 100\% yakin jika \textit{hero} A adalah STR, maka keluaran dari model adalah $\left[1,\ 0,\ 0 \right]$ dan jika model tersenut 50\% yakin jika \textit{hero} B adalah AGI, 25\% yakin jika hero B adalah STR atau INT, maka keluaran dari model ini adalah $\left[0.25,\ 0.5,\ 0.25 \right]$. Harus diingat bahwa total nilai dari distribusi probabilitas untuk semua target adalah 1.
+Arsitektur \textit{Neural Network} yang akan dibuat mempunyai enam belas \textit{neuron} pada layer masukan, delapan belas \textit{neuron} pada \textit{hidden layer} dengan fungsi aktivasi \textit{sigmoid} dan tiga \textit{neuron} yang mewakili (STR, AGI dan INT) pada layer keluaran seperti pada Gambar \ref{fig:nn_dota2} dengan fungsi aktivasi \textit{Softmax} karena keluaran dari model yang dibuat bersifat distribusi probabilitas dari seluruh nilai target. 
+\vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.08]{img/nn_dota2.png}
+	\includegraphics[scale=0.075]{img/nn_dota2.png}
 	\caption{Arsitektur \textit{Neural Network} untuk klasifikasi \textit{hero} Dota 2.}
 	\label{fig:nn_dota2}
 \end{figure}
+
+Misalkan model 100\% yakin jika \textit{hero} A adalah STR, maka keluaran dari model adalah $\left[1,\ 0,\ 0 \right]$ dan jika model tersenut 50\% yakin jika \textit{hero} B adalah AGI, 25\% yakin jika hero B adalah STR atau INT, maka keluaran dari model ini adalah $\left[0.25,\ 0.5,\ 0.25 \right]$. Harus diingat bahwa total nilai dari distribusi probabilitas untuk semua target adalah 1.
+\vspace{1ex}
 
 Sedangkan untuk \textit{loss function} yang digunakan adalah \textit{Cross Entropy} dan \textit{Optimizer} yang digunakan adalah SGD (\textit{Stochasstic Gradient Descent}) dengan \textit{learning rate} sebesar 0.001. Sebagai catatan penambahkan \textit{metrics accuracy} bertujuan untuk melihat seberapa bagus model ini dalam melakukan klasifikasi.
 \vspace{1ex}
@@ -1081,25 +1081,24 @@ Penentuan nilai \textit{batch size} dan \textit{learning rate} berperan penting 
 \vspace{1ex}
 
 Proses \textit{training} akan dilakukan sebanyak $2 \times 10^{4}$ \textit{epoch}/iterasi. Untuk satu \textit{epoch} dataset akan dibagi menjadi 16 \textit{batch size} tiap \textit{batch} hingga semua data terproses. Nilai \textit{learning rate} sebesar $1 \times 10^{-3}$ dan jika nilai \textit{loss} tidak mengalami perubahan maka \textit{learning rate} akan diperkecil sampai dengan $1 \times 10^{-4}$ seperti pada Gambar \ref{fig:nn_dota2_lr}. Namun dalam kasus ini digunakannya optimasi untuk menurunkan \textit{learning rate} saat nilai \textit{loss} tidak terjadi penurunan dan pemberhentian proses \textit{training} tanpa menunggu keseluruhan \textit{epoch} selesai. Pada Gambar \ref{fig:nn_dota2_val_loss_20k} adalah hasil \textit{training} tanpa menggunakan perubahan learning rate secara otomatis, sedangkan pada Gambar \ref{fig:nn_dota2_val_loss_callback} adalah hasil \textit{training} dengan perubahan \textit{learning rate} otomatis.
-\clearpage
 
 \begin{figure} [!htb] \centering
 	\includegraphics[scale=0.4]{img/callback_lr_chap3.png}
 	\caption{Proses pengurangan \textit{learning rate} saat \textit{training}.}
 	\label{fig:nn_dota2_lr}
-	\vspace{4ex}
+\end{figure}
 
+\begin{figure} [!htb] \centering
 	\includegraphics[scale=0.4]{img/hyperparam_val_loss_chap3.png}
 	\caption{Validasi \textit{loss} saat $2 \times 10^{4}$ \textit{epoch}.}
 	\label{fig:nn_dota2_val_loss_20k}
-	\vspace{4ex}
+\end{figure}
 
+\begin{figure} [!htb] \centering	
 	\includegraphics[scale=0.4]{img/callback_val_loss_chap3.png}
 	\caption{Validasi \textit{loss} dengan pemberhentian otomatis.}
 	\label{fig:nn_dota2_val_loss_callback}
 \end{figure}
-
-\clearpage
 
 Pemberhentian proses \textit{training} tersebut dilakukan bukan tanpa alasan, jika terjadi kenaikan \textit{loss} khususnya pada proses validasi yang rawan terjadi kenaikan \textit{loss} atau \textit{loss validation} seperti pada Gambar \ref{fig:nn_dota2_val_loss_20k}. Saat terjadinya kenaikan \textit{loss} juga diberikan toleransi sebesar 1500 \textit{epoch}, hal tersebut bertujuan untuk mendeteksi apakah dalam \textit{range} 1500 \textit{epoch} akan terjadi penurunan \textit{loss} yang lebih kecil dari sebelumnya. Jika tidak terjadi penurunan dalam kurun 1500 \textit{epoch} tersebut, maka proses \textit{training} akan dihentikan seperti pada Gambar \ref{fig:nn_dota2_val_loss_callback}. Dapat dilihat pada Gambar \ref{fig:nn_dota2_val_loss_callback} \textit{training} dihentikan pada \textit{epoch} antara $7 \times 10^{3}$ dan $8 \times 10^{3}$.
 \vspace{1ex}
@@ -1133,16 +1132,16 @@ Maka digunakanlah data masukan yang digunakan untuk membuat karakter pemain yang
 	\item Terdapat juga karakter yang memiliki HP sedang, \textit{strength} yang rendah, mungkin dengan \textit{endurance} yang sedang juga, tetapi memiliki \textit{magic} dan \textit{agility} yang tinggi. Dalam skenario ini, karakter tersebut adalah \textbf{\textit{magician}} yang berperan sebagai penyerang dari \textit{party} dengan kemampuan \textit{magic}.
 \end{enumerate}
 
-Maka hal yang akan dilakukan disini adalah mencoba melakukan klasifikasi karakter berdasarkan \textit{stats} yang ada, dataset dari karakter pemain dapat dilihat pada Tabel \ref{tb:player_char_train} untuk data \textit{training} dan Tabel \ref{tb:player_char_test} untuk data validasi dan \textit{testing}. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:char_class_proc}. 
+Maka hal yang akan dilakukan disini adalah mencoba melakukan klasifikasi karakter berdasarkan \textit{stats} yang ada, dataset dari karakter pemain dapat dilihat pada Tabel \ref{tb:player_char_train} untuk data \textit{training} dan Tabel \ref{tb:player_char_test} untuk data validasi dan \textit{testing}. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:player_class_proc}. 
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.039]{img/player_char_nn_classification.png}
+	\includegraphics[scale=0.035]{img/player_char_nn_classification.png}
 	\caption{Proses klasifikasi Karakter Pemain.}
 	\label{fig:player_class_proc}
 \end{figure}
 
-Pada dasarnya Gambar \ref{fig:char_class_proc} mirip dengan Gambar \ref{fig:dota2_class_proc}, dikarenakan proses yang dilalui sama persis, hanya saja pada bagian proses \textit{training} dan pembuatan model yang ditandai dengan warna abu-abu penjelasannya akan banyak dilewati dikarenakan proses tersebut hampir sama dengan Gambar \ref{fig:dota2_class_proc} yang kemudian dijelaskan pada Sub-bab \ref{sec:sub_sec3_dota2_arch} dan Sub-bab \ref{sec:sub_sec3_dota2_model}. Kemudian pada Gambar \ref{fig:dota2_class_proc}, data \textit{pre-processing} diganti menjadi data \textit{preparation} dikarenakan data dibuat sesuai dengan masukan data dalam pembuatan karakter pemain yang sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}.
+Pada dasarnya Gambar \ref{fig:player_class_proc} mirip dengan Gambar \ref{fig:dota2_class_proc}, dikarenakan proses yang dilalui sama persis, hanya saja pada bagian proses \textit{training} dan pembuatan model yang ditandai dengan warna abu-abu penjelasannya akan banyak dilewati dikarenakan proses tersebut hampir sama dengan Gambar \ref{fig:dota2_class_proc} yang kemudian dijelaskan pada Sub-bab \ref{sec:sub_sec3_dota2_arch} dan Sub-bab \ref{sec:sub_sec3_dota2_model}. Kemudian pada Gambar \ref{fig:dota2_class_proc}, data \textit{pre-processing} diganti menjadi data \textit{preparation} dikarenakan data dibuat sesuai dengan masukan data dalam pembuatan karakter pemain yang sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}.
 \vspace{1ex}
 
 \subsection{Data Preparation}
@@ -1195,11 +1194,11 @@ Dilakukan proses korelasi fitur seperti yang dilakukan pada Sub-bab \ref{sec:sub
 \label{sec:sub_sec3_player_arch}
 \vspace{1ex}
 
-Arsitektur \textit{Neural Network} yang akan dibuat mempunyai enam belas \textit{neuron} pada layer masukan, delapan belas \textit{neuron} pada \textit{hidden layer} dengan fungsi aktivasi \textit{sigmoid} dan lima \textit{neuron} yang mewakili (\textit{Knight}, \textit{Priest}, \textit{Assassin}, dan \textit{Magician}) pada layer keluaran seperti pada Gambar \ref{fig:nn_player} dengan fungsi aktivasi \textit{Softmax} karena keluaran dari model yang dibuat bersifat distribusi probabilitas dari seluruh nilai target. Misalkan model kita 100\% yakin jika karakter A adalah \textit{Knight}, maka keluaran dari model adalah $\left[1,\ 0,\ 0,\ 0 \right]$ dan jika model kita 50\% yakin jika hero B adalah \textit{Priest}, 25\% yakin jika hero B adalah \textit{Knight} atau \textit{Magician}, maka output dari model ini adalah $\left[0.25,\ 0.5,\ 0.25, \ 0 \right]$. Harus diingat bahwa total nilai dari distribusi probabilitas untuk semua target adalah 1. Sedangkan untuk \textit{loss function} yang digunakan adalah \textit{Cross Entropy} dan \textit{Optimizer} yang digunakan adalah SGD (\textit{Stochasstic Gradient Descent}) dengan \textit{learning rate} sebesar 0.001. Sebagai catatan penambahkan \textit{metrics accuracy} bertujuan untuk melihat seberapa bagus model ini dalam melakukan klasifikasi.
+Arsitektur \textit{Neural Network} yang akan dibuat mempunyai enam belas \textit{neuron} pada layer masukan, delapan belas \textit{neuron} pada \textit{hidden layer} dengan fungsi aktivasi \textit{sigmoid} dan lima \textit{neuron} yang mewakili (\textit{Knight}, \textit{Priest}, \textit{Assassin}, dan \textit{Magician}) pada layer keluaran seperti pada Gambar \ref{fig:nn_player} dengan fungsi aktivasi \textit{Softmax} karena keluaran dari model yang dibuat bersifat distribusi probabilitas. Misalkan model kita 100\% yakin jika karakter A adalah \textit{Knight}, maka keluaran dari model adalah $\left[1,\ 0,\ 0,\ 0 \right]$ dan jika model kita 50\% yakin jika hero B adalah \textit{Priest}, 25\% yakin jika hero B adalah \textit{Knight} atau \textit{Magician}, maka output dari model ini adalah $\left[0.25,\ 0.5,\ 0.25, \ 0 \right]$. Harus diingat bahwa total nilai dari distribusi probabilitas untuk semua target adalah 1. Sedangkan untuk \textit{loss function} yang digunakan adalah \textit{Cross Entropy} dan \textit{Optimizer} yang digunakan adalah SGD (\textit{Stochasstic Gradient Descent}) dengan \textit{learning rate} sebesar 0.001. Sebagai catatan penambahkan \textit{metrics accuracy} bertujuan untuk melihat seberapa bagus model dalam melakukan klasifikasi.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.08]{img/nn_player_character.png}
+	\includegraphics[scale=0.07]{img/nn_player_character.png}
 	\caption{Arsitektur \textit{Neural Network} untuk klasifikasi karakter pemain.}
 	\label{fig:nn_player}
 \end{figure}
@@ -1219,7 +1218,7 @@ Hal yang akan dilakukan disini adalah langsung melakukan klasifikasi karakter mu
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.039]{img/player_char_nn_classification.png}
+	\includegraphics[scale=0.035]{img/player_char_nn_classification.png}
 	\caption{Proses klasifikasi Karakter Musuh.}
 	\label{fig:enemy_class_proc}
 \end{figure}
@@ -1273,7 +1272,7 @@ Dilakukan proses korelasi fitur seperti yang dilakukan pada Sub-bab \ref{sec:sub
 	\textbf{Luck} & 0.076972 \\ \hline
 \end{longtable}
 
-Selanjutnya akan dibuang semua fitur yang memiliki nilai korelasi lebih kecil dari $0.1$, $-0.1$ dan $NaN$ sehingga yang mampu dijadikan sebagai fitur hanya HP, MP dan \textit{Endurance}. Sehingga didapatkan 3 fitur yang akan digunakan sebagai masukan untuk \textit{Neural Network}.
+Selanjutnya akan dibuang semua fitur yang memiliki nilai korelasi lebih kecil dari $0.1$, $-0.1$ dan $NaN$ sehingga yang mampu dijadikan sebagai fitur hanya HP, MP dan \textit{Endurance}. Sehingga perolehlah tiga fitur yang akan digunakan sebagai masukan untuk \textit{Neural Network} diantaranya adalah HP, MP, dan \textit{Endurance}.
 \vspace{1ex}
 
 \subsection{Desain Arsitektur Neural Network}
@@ -1283,8 +1282,8 @@ Selanjutnya akan dibuang semua fitur yang memiliki nilai korelasi lebih kecil da
 Arsitektur \textit{Neural Network} yang akan dibuat mempunyai tiga \textit{neuron} pada layer masukan, enam \textit{neuron} pada \textit{hidden layer} dengan fungsi aktivasi \textit{sigmoid} dan lima \textit{neuron} yang mewakili (\textit{Knight}, \textit{Priest}, \textit{Assassin}, dan \textit{Magician}) pada layer keluaran seperti pada Gambar \ref{fig:nn_enemy} dengan fungsi aktivasi \textit{Softmax} karena keluaran dari model yang dibuat bersifat distribusi probabilitas dari seluruh nilai target.
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.08]{img/nn_enemy_character.png}
-	\caption{Arsitektur \textit{Neural Network} untuk klasifikasi karakter pemain.}
+	\includegraphics[scale=0.075]{img/nn_enemy_character.png}
+	\caption{Arsitektur \textit{Neural Network} untuk klasifikasi karakter musuh.}
 	\label{fig:nn_enemy}
 \end{figure}
 

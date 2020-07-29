@@ -2,7 +2,10 @@
 \large\textbf{NOMENKLATUR}
 \end{center}
 \vspace{1ex}
+
 \begin{conditions}
+	i & Urutan indeks atau iterasi.\\
+	n & Jumlah iterasi.\\
 	x &	Data x atau titik koordinat data.\\
 	x_{0} & Titik koordinat data ke 0.\\
 	x_{i} &	Data $x$ ke $i$.\\
@@ -10,7 +13,6 @@
 	\theta & Data $\theta$.\\
 	\theta_{i} & Data $\theta$ ke $i$.\\
 	min\ d & Jarak minimum\\
-	i & Urutan atau iterasi.\\
 	Y & Titik data Y.\\
 	y & Bagian dari Y dengan banyak data.\\
 	X & Titik data X.\\
@@ -30,22 +32,125 @@
 	P(C) & \textit{Class pobability}.\\
 	C_{(0, 1,.. n)} & \textit{Class} ke $n$ untuk dicari probabilitasnya.\\
 	W_{(0, 1,.. n)} & \textit{Weather} ke $n$ atau kondisi cuaca pada contoh kasus Naive Bayes.\\
-	n & Jumlah dalam iterasi.\\
 	\bar{x} & Rata-rata nilai $x$.\\
 	\sigma(x) & Standar deviasi.\\
 	PDF & Probability Density Function.\\
+	y_{out} & \textit{Output} pada \textit{Neural Network}.\\
+	w & \textit{Weight} pada \textit{Neural Network}.\\
+	x_{in} & \textit{Input} pada \textit{Neural Network}.\\
+	b & Bias pada \textit{Neural Network}.\\
+	Predict & Hasil prediksi dari \textit{Neural Network}.\\
+	Target & Target hasil prediksi dari \textit{Neural Network}.\\
+	Loss & Selisih antara $Target$ dan $Predict$.\\
 	B & Jumlah boss.\\
+\end{conditions}
+\newpage
+
+\begin{conditions}
 	tB & Waktu yang dibutuhkan untuk melawan boss.\\
 	tB_{total} & Jumlah waktu melawan bos secara keseluruhan.\\
-	HP(N) & Nilai HP yang dicari pada karakter pemain.\\
-	MP(N) & Nilai MP yang dicari pada karakter pemain.\\
-	N & Level maksimum dari karakter pemain.\\
+	HP & Nilai HP yang dicari pada karakter pemain.\\
+	MP & Nilai MP yang dicari pada karakter pemain.\\
+	N_{p} & Level maksimum dari karakter pemain.\\
 	P(C_{St=1}) & Probabilitas munculnya \textit{Stats to Assign} yang pertama.\\ 
-	P(C_{St=2}) & Probabilitas munculnya \textit{Stats to Assign} ke 2.\\
+	P(C_{St=2}) & Probabilitas munculnya \textit{Stats to Assign} yang kedua.\\
 	C_{St=1} & Jumlah angka pertama dalam \textit{Stats to Assign}.\\
 	C_{St=2} & Jumlah angka kedua dalam \textit{Stats to Assign}.\\
 	MaxSt & Jarak maksimum \textit{stats}.\\
-	D(MaxSt, p) & Jarak antara koordinat data MaxSt (maksimum \textit{stats}) dan p (jumlah stats saat ini).\\
-	St_{n} & Stats ke $i$.\
+	D(MaxSt, p) & Jarak antara koordinat data $MaxSt$ (maksimum \textit{stats}) dan $p$ (jumlah stats saat ini).\\
+	St_{n} & \textit{Stats} pada level ke $n$.\\
+	LN & Range antara \textit{Max Level} dan \textit{Min Level} atau banyaknya musuh.\\
+	N_{LC} & Jumlah kelompok atau \textit{cluster} dari \textit{level class} (\textit{Easy}, \textit{Medium}, \textit{Hard}).\\
+	SL & Set level pada setiap \textit{cluster} atau sebaran level musuh yang terbagi kedalam jumlah \textit{cluster} atau $N_{LC}$.\\
+	SL_{i} & Jumlah sebaran level musuh pada setiap \textit{cluster} dengan jumlah \textit{cluster} sebanyak $N_{LC}$.\\
+	EN & Banyaknya musuh.\\
+	N_{LC} & Jumlah kelompok atau \textit{cluster} dari \textit{level class} (\textit{Easy}, \textit{Medium}, \textit{Hard}).\\
+	SE & Set musuh pada setiap \textit{cluster} atau sebaran jumlah musuh yang terbagi kedalam jumlah \textit{cluster} atau $N_{LC}$.\\
+	SE_{i} & Jumlah sebaran musuh pada setiap \textit{cluster} dengan jumlah \textit{cluster} sebanyak $N_{LC}$.\\
+	SL & Banyaknya level dalam setiap satuan nilai SL.\\
+	Sc & Skala atau \textit{scale} untuk mempersempit persebaran level dan musuh.\\
+	SSL & Set level pada setiap \textit{cluster} atau sebaran jumlah level yang terbagi kedalam jumlah \textit{cluster} atau $N_{LC}$.\\
+	SSL_{i} & Jumlah sebaran level pada setiap \textit{cluster} dengan jumlah \textit{cluster} sebanyak $Sc$.\\
+	SSE & Set musuh pada setiap \textit{cluster} atau sebaran jumlah musuh yang terbagi kedalam jumlah \textit{cluster} atau $N_{LC}$.\\
+	SSE_{i} & Jumlah sebaran musuh pada setiap \textit{cluster} dengan jumlah \textit{cluster} sebanyak $Sc$.\\
+	ELv & Level dari setiap musuh.\\
+	ELv_{jk} & Level dari setiap musuh dalam $SSL$ dan $SSE$.\\
+	P(ELv_{jk}) & Probabilitas munculnya level pada setiap musuh dalam $SSL$ dan $SSE$.\\
+	\bar{E}lv & Rata-rata dari level setiap musuh.\\
+	\sigma(ELv) & Varian dari level setiap musuh.\\
+\end{conditions}
+\newpage
+
+\begin{conditions}
+	PDF(ELv, \bar{E}lv, \sigma) & Gaussian PDF dari level musuh.\\
+	DP & Set presentase distribusi persebaran tipe musuh.\\
+	N_{DP} & Jumlah set atau indeks presentse distribusi persebaran tipe musuh.\\
+	DP_{i} & Indeks presentse distribusi persebaran tipe musuh.\\
+	DN & Set target distribusi jumlah musuh setiap tipenya.\\
+	DN_{i} & Indeks target distribusi jumlah musuh setiap tipenya.\\
+	DL & Set distribusi jumlah musuh setiap tipenya.\\
+	DL_{i} & Indeks distribusi jumlah musuh setiap tipenya.\\
+	rDL & Set sisa musuh yang belum terdistribusi setiap tipenya.\\
+	rDL_{i} & Indeks sisa musuh yang belum terdistribusi setiap tipenya.\\
+	ET & Tipe Musuh.\\
+	M_{DL} & Jumlah set atau indeks presentse distribusi persebaran tipe musuh.\\
+	N_{EN} & Jumlah musuh.\\
+	ET_{j} & Tipe pada tiap satu musuh.\\
+	P(ET_{j}) & Probabilitas tipe pada tiap satu musuh.\\
+	M_{EN} & Jumlah musuh.\\
+	N_{ET} & Jumlah musuh yang memiliki tipe.\\
+	rDL_{i} & Indeks sisa musuh yang belum terdistribusi setiap tipenya.\\
+	M_{rDL} & Jumlah set untuk sisa musuh yang belum memiliki tipe pada $rDL$.\\
+	N_{rET} & Jumlah sisa musuh yang belum terdistribusi pada $rDL$ sebagai batas.\\
+	P(rET_{j}) & Probabilitas untuk tipe pada setiap musuh yang belum memiliki tipe.\\
+	ElN & Nama elemen yang dapat digunakan oleh karakter musuh.\\
+	DmgNa & Respon atau efek serangan terhadap $ElN$ pada musuh.\\
+	DmgNu & Penomoran pada $DmgNa$ atau efek serangan.\\
+	N_{Na} & Jumlah $DmgNa$ pada satu karakter musuh.\\
+	P(DmgNu) & Probabilitas diperolehnya $DmgNu$ dari $DmgNa$ dari $ElN$.\\
+	M_{Nu} & Jumlah respon atau efek serangan pada musuh.\\
+	P(DmgNu_{i}) & Probabilitas $DmgNu$ pada setiap karakter musuh.\\
+	DmgNu_{ij} & Respon atau efek serangan pada setiap karakter musuh.\\ 
+	N_{Nu} & Jumlah $DmgNu$ pada satu musuh.\\
+	DmgEN & Respon atau efek serangan pada semua karakter musuh.\\
+\end{conditions}
+\newpage
+
+\begin{conditions}
+	ET_{i} & Jenis tipe musuh untuk distribusi HP, MP, dan Stats.\\
+	N & Jumlah \textit{stats} yang ingin dibuat.\\
+	MX & Set variabel untuk musuh bertipe \textit{Mixed} pada $ET_{0}$.\\
+	HM & Set variabel untuk musuh bertipe \textit{Hard Magic} pada $ET_{1}$.\\
+	SM & Set variabel untuk musuh bertipe \textit{Soft Magic} pada $ET_{2}$ .\\
+	HS & Set variabel untuk musuh bertipe \textit{Hard Strength} pada $ET_{3}$.\\
+	SS & Set variabel untuk musuh bertipe \textit{Soft Strength} pada $ET_{4}$.\\
+	ET_{N} & Tipe musuh ke N.\\
+	ST_{N} & Nama variabel Tipe musuh pada $ET_{N}$.\\
+	N_{MX} & Jumlah dari musuh yang memiliki tipe \textit{Mixed}.\\
+	minHP & Nilai minimum HP untuk mencari \textit{stats} HP musuh.\\
+	bHP & Nilai batas bawah HP untuk mencari \textit{stats} HP musuh.\\
+	bHP_{i} & Nilai batas bawah HP untuk mencari \textit{stats} HP pada setiap musuh.\\
+	maxtHP & Nilai maximum HP untuk mencari \textit{stats} musuh.\\
+	tHP & Nilai batas atas HP untuk mencari \textit{stats} HP musuh.\\
+	tHP_{i} & Nilai batas atas HP untuk mencari \textit{stats} HP pada setiap musuh.\\
+	P(HP_{i}) & Probabilitas munculnya HP pada setiap karakter.\\
+	minMP & Nilai minimum MP untuk mencari \textit{stats} MP musuh.\\
+	bMP & Nilai batas bawah MP untuk mencari \textit{stats} MP musuh.\\
+	bMP_{i} & Nilai batas bawah HP untuk mencari \textit{stats} HP pada setiap musuh.\\
+	maxtMP & Nilai maximum MP untuk mencari \textit{stats} musuh.\\
+	tMP & Nilai batas atas MP untuk mencari \textit{stats} MP musuh.\\
+	tMP_{i} & Nilai batas atas MP untuk mencari \textit{stats} MP pada setiap musuh.\\
+	P(MP_{i}) & Probabilitas munculnya MP pada setiap karakter.\\
+	MX_{1} & Variabel untuk musuh bertipe \textit{Mixed} yang fokus dengan HP.\\
+	MX_{2} & Variabel untuk musuh bertipe \textit{Mixed} yang fokus dengan MP.\\
+	NM_{hp} & Jumlah musuh bertipe \textit{Mixed} yang fokus dengan HP.\\
+	minSt & Nilai minimum \textit{stats} untuk mencari \textit{stats} musuh.\\
+	bSt & Set variabel untuk nilai batas bawah \textit{stats} untuk mencari \textit{stats} musuh.\\
+	N_{st} & Jumlah stats dalam satu musuh.\\
+	bSt_{ij} & Set variabel untuk nilai batas bawah \textit{stats} pada setiap karakter musuh.\\
+	minSt_{ij} & Nilai minimum \textit{stats} pada setiap karakter musuh.\\
+	maxSt_{ij} & Nilai maximum \textit{stats} pada setiap karakter musuh.\\
+	tSt & Set variabel untuk nilai batas atas \textit{stats} untuk mencari \textit{stats} musuh.\\
+	tSt_{ij} & Set variabel untuk nilai batas atas pada setiap karakter musuh.\\
 \end{conditions}
 \newpage
