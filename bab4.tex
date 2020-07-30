@@ -410,7 +410,7 @@ Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_level}, diman
 \end{longtable}
 \vspace{1ex}
 
-Pada Tabel \ref{tb:enemy_level_distrib} adalah sebagian data dari level yang dihasilkan oleh program, untuk hasil lebih lengkapnya bisa dilihat pada Tabel \ref{tb:enemies_all_stats_1} sampai Tabel \ref{tb:enemies_all_stats_15} dalam BAB \nameref{chap:chap6_attachment} pada Tabel \ref{tb:enemies_all_stats_1} sampai dengan Tabel \ref{tb:enemies_all_stats_15} di kolom \textit{Levels}. Kemudian persebaran level yang dihasilkan tersebut bila divisualisasikan maka hasilnya akan seperti yang ditujukkkan pada Gambar \ref{fig:enemy_level_distrib}. Grafik atau histogram yang ditunjukan pada Gambar \ref{fig:enemy_level_distrib} tersebut sangatlah tidak merata, hal tersebut dikarenakan proses penentuan level yang ditentukan secara acak.
+Pada Tabel \ref{tb:enemy_level_distrib} adalah sebagian data dari level yang dihasilkan oleh program, untuk hasil lebih lengkapnya bisa dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai Tabel \ref{tb:enemy_all_stats_15} dalam BAB \nameref{chap:chap6_attachment} pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} di kolom \textit{Levels}. Kemudian persebaran level yang dihasilkan tersebut bila divisualisasikan maka hasilnya akan seperti yang ditujukkkan pada Gambar \ref{fig:enemy_level_distrib}. Grafik atau histogram yang ditunjukan pada Gambar \ref{fig:enemy_level_distrib} tersebut sangatlah tidak merata, hal tersebut dikarenakan proses penentuan level yang ditentukan secara acak.
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.45]{img/EnemyLevelDistrib.png}
@@ -648,7 +648,7 @@ Selanjutnya adalah penggambaran persebaran \textit{stats} yang disebutkan pada T
 \label{sec:sec4_eval_dota2}
 \vspace{1ex}
 
-Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_dota2_method}, bila dijelaskan melalui diagram blok pada Gambar \ref{fig:dota2_class_proc} maka bagian yang akan dibahas pada Sub-bab ini adalah validasi. Grafik hasil training dapat dilihat pada Gambar \ref{fig:nn_dota2_acc_chap4}, \ref{fig:nn_dota2_loss_chap4}, \ref{fig:nn_dota2_lr_chap4}, \ref{fig:nn_dota2_val_acc_chap4}, dan Gambar \ref{fig:nn_dota2_val_loss_chap4}. Masing-masing dari Gambar tersebut secara berurutan diantaranya adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat validasi dan \textit{loss} saat validasi. 
+Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_dota2_method}, bila dijelaskan melalui diagram blok pada Gambar \ref{fig:dota2_class_proc} maka bagian yang akan dibahas pada Sub-bab ini adalah proses saat klasifikasi. Grafik hasil \textit{training} dapat dilihat pada Gambar \ref{fig:nn_dota2_acc_chap4}, \ref{fig:nn_dota2_loss_chap4}, \ref{fig:nn_dota2_lr_chap4}, \ref{fig:nn_dota2_val_acc_chap4}, dan Gambar \ref{fig:nn_dota2_val_loss_chap4}. Masing-masing Gambar tersebut secara berurutan adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat evaluasi dan \textit{loss} saat evaluasi. 
 \vspace{2ex}
 
 \begin{figure} [!h] \centering
@@ -670,21 +670,21 @@ Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_dota2_method}, b
 	\vspace{4ex}
 
 	\includegraphics[scale=0.4]{img/callback_val_acc_chap4.png}
-	\caption{Akurasi pada saat proses validasi pada \textit{hero} Dota 2.}
+	\caption{Akurasi pada saat proses evaluasi pada \textit{hero} Dota 2.}
 	\label{fig:nn_dota2_val_acc_chap4}
 	\vspace{4ex}
 
 	\includegraphics[scale=0.4]{img/callback_val_loss_chap4.png}
-	\caption{\textit{Loss} saat proses validasi pada \textit{hero} Dota 2.}
+	\caption{\textit{Loss} saat proses evaluasi pada \textit{hero} Dota 2.}
 	\label{fig:nn_dota2_val_loss_chap4}
 \end{figure}
 \clearpage
 
-Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train}, \textit{training} berlangsung selama 10.730 \textit{epoch}. Akurasi saat \textit{training} mampu mencapai 0.9 dan mengalami \textit{loss} sebesar 0.55, kemudian akurasi saat validasi mampu mencapai 0.75 dan mengalami \textit{loss} saat validasi sebesar 0.86 . Hasil klasifikasi dari data \textit{stats} karakter atau \textit{hero} Dota 2 yang dijadikan sebagai data validasi dapat dilihat pada Tabel \ref{tb:dota2_hero_pt3} yang kemudian digunakan pada proses validasi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:dota2_valid_result}.
+Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train}, \textit{training} berlangsung selama 10.730 \textit{epoch}. Akurasi saat \textit{training} mampu mencapai 0.9 dan mengalami \textit{loss} sebesar 0.55, kemudian akurasi saat evaluasi mampu mencapai 0.75 dan mengalami \textit{loss} saat evaluasi sebesar 0.86 . Hasil klasifikasi dari data \textit{stats} karakter atau \textit{hero} Dota 2 yang dijadikan sebagai data \textit{testing} dapat dilihat pada Tabel \ref{tb:dota2_hero_pt3} yang kemudian digunakan pada proses evalusi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:dota2_valid_result}.
 \vspace{-2ex}
 
 \begin{longtable}{|l|l|l|l|}
-	\caption{Hasil proses \textit{testing} dengan data validasi pada \textit{hero} Dota 2.}
+	\caption{Hasil proses \textit{testing} dengan data \textit{testing} pada \textit{hero} Dota 2.}
 	\vspace{1ex}
 	\label{tb:dota2_valid_result}\\
 	\hline
@@ -724,14 +724,14 @@ Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_se
 	\textbf{Invoker} & 0.053558 & 0.206809 & {\color[HTML]{036400} 0.739633} \\ \hline
 \end{longtable}
 
-Cara membaca hasil klasifikasi pada Tabel \ref{tb:dota2_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_dota2_arch} dan Sub-bab \ref{sec:sub_sec3_dota2_train}. Hasil ditampilkan pada Tabel \ref{tb:dota2_valid_result} terdapat empat \textit{hero} yang mengalami salah klasifikasi yang kemudian diberi warna merah, dengan beracuan pada kolom \textit{type} dalam Tabel \ref{tb:dota2_hero_pt3} yang terlampir pada \nameref{chap:chap6_attachment}. Maka dari 16 \textit{hero} terdapat 4 hero yang mengalami salah klasifikasi, jadi presentasenya 64\% \textit{hero} berhasil terklasifikasi.
+Cara membaca hasil klasifikasi pada Tabel \ref{tb:dota2_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_dota2_arch} dan Sub-bab \ref{sec:sub_sec3_dota2_train}. Hasil ditampilkan pada Tabel \ref{tb:dota2_valid_result} terdapat 4 \textit{hero} yang mengalami salah klasifikasi yang kemudian diberi warna merah, dengan beracuan pada kolom \textit{type} dalam Tabel \ref{tb:dota2_hero_pt3} yang terlampir pada \nameref{chap:chap6_attachment}. Maka dari 16 \textit{hero} terdapat 4 hero yang mengalami salah klasifikasi, jadi presentasenya 64\% \textit{hero} berhasil terklasifikasi.
 \vspace{1ex}
 
 \section{Hasil Klasifikasi Karakter untuk Karakter Pemain}
 \label{sec:sec4_eval_player}
 \vspace{1ex}
 
-Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_player_method}, bila dijelaskan melalui diagram blok pada Gambar \ref{fig:player_class_proc} maka bagian yang akan dibahas pada Sub-bab ini adalah validasi. Grafik hasil training dapat dilihat pada Gambar \ref{fig:nn_player_acc_chap4}, \ref{fig:nn_player_loss_chap4}, \ref{fig:nn_player_lr_chap4}, \ref{fig:nn_player_val_acc_chap4}, dan Gambar \ref{fig:nn_player_val_loss_chap4}. Masing-masing dari Gambar tersebut secara berurutan diantaranya adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat validasi dan \textit{loss} saat validasi.
+Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_player_method}, bila dijelaskan melalui diagram blok pada Gambar \ref{fig:player_class_proc} maka bagian yang akan dibahas pada Sub-bab ini adalah klasifikasi. Grafik hasil \textit{training} dapat dilihat pada Gambar \ref{fig:nn_player_acc_chap4}, \ref{fig:nn_player_loss_chap4}, \ref{fig:nn_player_lr_chap4}, \ref{fig:nn_player_val_acc_chap4}, dan Gambar \ref{fig:nn_player_val_loss_chap4}. Masing-masing dari Gambar tersebut secara berurutan adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat evaluasi dan \textit{loss} saat evaluasi.
 \vspace{2ex}
 
 \begin{figure} [!h] \centering
@@ -753,17 +753,17 @@ Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_player_method}, 
 	\vspace{4ex}
 	
 	\includegraphics[scale=0.44]{img/player_val_acc_chap4.png}
-	\caption{Akurasi pada saat proses validasi pada karakter pemain.}
+	\caption{Akurasi pada saat proses evaluasi pada karakter pemain.}
 	\label{fig:nn_player_val_acc_chap4}
 	\vspace{4ex}
 	
 	\includegraphics[scale=0.44]{img/player_val_loss_chap4.png}
-	\caption{\textit{Loss} saat proses validasi pada karakter pemain.}
+	\caption{\textit{Loss} saat proses evaluasi pada karakter pemain.}
 	\label{fig:nn_player_val_loss_chap4}
 \end{figure}
 \clearpage
 
-Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_player_char_train}, \textit{training} berlangsung selama 425 \textit{epoch}. Akurasi saat \textit{training} tetap stabil pada 0.1667 dan mengalami \textit{loss} sebesar 1.533, kemudian akurasi saat validasi tetap stabil pada 0.5 dan mengalami \textit{loss} saat validasi sebesar 1.39. Hasil klasifikasi dari data \textit{stats} dari karakter pemain yang dijadikan sebagai data validasi dapat dilihat pada Tabel \ref{tb:player_char_test} yang kemudian digunakan pada proses validasi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:player_valid_result}.
+Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_player_char_train}, \textit{training} berlangsung selama 425 \textit{epoch}. Akurasi saat \textit{training} tetap stabil pada 0.1667 dan mengalami \textit{loss} sebesar 1.533, kemudian akurasi saat evaluasi tetap stabil pada 0.5 dan mengalami \textit{loss} saat evaluasisebesar 1.39. Hasil klasifikasi dari data \textit{stats} dari karakter pemain yang dijadikan sebagai data \textit{testing} dapat dilihat pada Tabel \ref{tb:player_char_test} yang kemudian digunakan pada proses evaluasi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:player_valid_result}.
 \vspace{-1ex}
 
 \begin{longtable}{|l|l|l|l|l|}
@@ -778,14 +778,14 @@ Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_se
 \end{longtable}
 \vspace{1ex}
 
-Cara membaca hasil klasifikasi pada Tabel \ref{tb:player_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_arch} dan Sub-bab \ref{sec:sub_sec3_player_char_train}. Hasil ditampilkan pada Tabel \ref{tb:player_valid_result} terdapat satu karakter yang mengalami salah klasifikasi yang kemudian diberi warna merah, dengan beracuan pada Tabel \ref{tb:player_char_test} pada bagian kolom \textit{type}. Maka dari 2 karakter tersebut, terdapat 1 karakter yang mengalami salah klasifikasi, bila dinyatakan dalam presentase menjadi 50\% karakter pemain berhasil terklasifikasi.
+Cara membaca hasil klasifikasi pada Tabel \ref{tb:player_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_arch} dan Sub-bab \ref{sec:sub_sec3_player_char_train}. Hasil ditampilkan pada Tabel \ref{tb:player_valid_result} terdapat satu karakter yang mengalami salah klasifikasi yang kemudian diberi warna merah, dengan beracuan pada Tabel \ref{tb:player_char_test} pada bagian kolom \textit{type}. Maka dari 2 karakter tersebut, terdapat 1 karakter yang mengalami salah klasifikasi atau dianggap tidak sesuai dengan tipenya, bila dinyatakan dalam presentase menjadi 50\% karakter pemain berhasil terklasifikasi.
 \vspace{1ex}
 
 \section{Hasil Klasifikasi Karakter untuk Karakter Musuh}
 \label{sec:sec4_eval_enemy}
 \vspace{1ex}
 
-Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_enemy_method}, bila dijelaskan melalui diagram blok pada Gambar \ref{fig:enemy_class_proc} maka bagian yang akan dibahas pada Sub-bab ini adalah validasi. Grafik hasil \textit{training} dapat dilihat pada Gambar \ref{fig:nn_enemy_acc_chap4}, \ref{fig:nn_enemy_loss_chap4}, \ref{fig:nn_enemy_lr_chap4}, \ref{fig:nn_enemy_val_acc_chap4}, dan Gambar \ref{fig:nn_enemy_val_loss_chap4}. Masing-masing dari Gambar tersebut secara berurutan diantaranya adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat validasi dan \textit{loss} saat validasi. Pada proses tersebut dijalankan dengan maksimum 20k \textit{epoch}, dengan optimasi sama seperti yang sudah dilakukan dan dijelaskan sebelumnya pada Sub-bab \ref{sec:sub_sec3_dota2_train} dan Sub-bab \ref{sec:sub_sec3_dota2_model}.
+Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_enemy_method}, bila dijelaskan melalui diagram blok pada Gambar \ref{fig:enemy_class_proc} maka bagian yang akan dibahas pada Sub-bab ini adalah klasifikasi. Grafik hasil \textit{training} dapat dilihat pada Gambar \ref{fig:nn_enemy_acc_chap4}, \ref{fig:nn_enemy_loss_chap4}, \ref{fig:nn_enemy_lr_chap4}, \ref{fig:nn_enemy_val_acc_chap4}, dan Gambar \ref{fig:nn_enemy_val_loss_chap4}. Masing-masing dari Gambar tersebut secara berurutan diantaranya adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat evaluasu dan \textit{loss} saat evaluasi. Pada proses tersebut dijalankan dengan maksimum 20k \textit{epoch}, dengan optimasi sama seperti yang sudah dilakukan dan dijelaskan sebelumnya pada Sub-bab \ref{sec:sub_sec3_dota2_train} dan Sub-bab \ref{sec:sub_sec3_dota2_model}.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
@@ -807,17 +807,17 @@ Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_enemy_method}, b
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.42]{img/enemy_val_acc_chap4.png}
-	\caption{Akurasi saat proses validasi pada karakter (20k \textit{epoch}).}
+	\caption{Akurasi saat proses evaluasi pada karakter (20k \textit{epoch}).}
 	\label{fig:nn_enemy_val_acc_chap4}
 	\vspace{4ex}
 	
 	\includegraphics[scale=0.42]{img/enemy_val_loss_chap4.png}
-	\caption{\textit{Loss} proses validasi pada karakter pemain (20k \textit{epoch}).}
+	\caption{\textit{Loss} proses evaluasi pada karakter pemain (20k \textit{epoch}).}
 	\label{fig:nn_enemy_val_loss_chap4}
 	\vspace{-1ex}
 \end{figure}
 
-Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_enemy_char_train}, \textit{training} berlangsung selama 20k \textit{epoch}. Akurasi saat \textit{training} mampu mencapai 0.4 dan mengalami \textit{loss} sebesar 1.194, kemudian akurasi saat \textit{training} mampu mencapai 0.3667 dan mengalami \textit{loss} saat validasi sebesar 1.266. Melihat kondisi ini maka dilakukan peningkatan \textit{epoch} menjadi 40k, hal tersebut bertujuan agar tercapainya kondisi optimum. Maksud dari kondisi tersebut adalah dicapainya nilai \textit{loss} terendah saat dilakukannya validasi. Grafik hasil \textit{training} dapat dilihat pada Gambar \ref{fig:nn_enemy_acc_40k_chap4}, \ref{fig:nn_enemy_loss_40k_chap4}, \ref{fig:nn_enemy_lr_40k_chap4}, \ref{fig:nn_enemy_val_acc_40k_chap4}, dan Gambar \ref{fig:nn_enemy_val_loss_40k_chap4}. Urutan dari gambar tersebut diantaranya adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat validasi dan \textit{loss} saat validasi dengan 40k \textit{epoch}.
+Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_enemy_char_train}, \textit{training} berlangsung selama 20k \textit{epoch}. Akurasi saat \textit{training} mampu mencapai 0.4 dan mengalami \textit{loss} sebesar 1.194, kemudian akurasi saat \textit{training} mampu mencapai 0.3667 dan mengalami \textit{loss} saat evaluasi sebesar 1.266. Melihat kondisi ini maka dilakukan peningkatan \textit{epoch} menjadi 40k, hal tersebut bertujuan agar tercapainya kondisi optimum. Maksud dari kondisi tersebut adalah dicapainya nilai \textit{loss} terendah saat dilakukannya evaluasi. Grafik hasil \textit{training} dapat dilihat pada Gambar \ref{fig:nn_enemy_acc_40k_chap4}, \ref{fig:nn_enemy_loss_40k_chap4}, \ref{fig:nn_enemy_lr_40k_chap4}, \ref{fig:nn_enemy_val_acc_40k_chap4}, dan Gambar \ref{fig:nn_enemy_val_loss_40k_chap4}. Urutan dari gambar tersebut diantaranya adalah akurasi saat \textit{training}, \textit{loss} saat \textit{training}, \textit{learning rate} saat \textit{training}, akurasi saat evaluasi dan \textit{loss} saat evaluasi dengan 40k \textit{epoch}.
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.44]{img/enemy_acc_40k_chap4.png}
@@ -838,20 +838,20 @@ Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_se
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.42]{img/enemy_val_acc_40k_chap4.png}
-	\caption{Akurasi saat validasi pada karakter musuh (40k \textit{epoch}).}
+	\caption{Akurasi saat evaluasi pada karakter musuh (40k \textit{epoch}).}
 	\label{fig:nn_enemy_val_acc_40k_chap4}
 	\vspace{4ex}
 	
 	\includegraphics[scale=0.42]{img/enemy_val_loss_40k_chap4.png}
-	\caption{\textit{Loss} saat validasi pada karakter musuh (40k \textit{epoch}).}
+	\caption{\textit{Loss} saat evaluasi pada karakter musuh (40k \textit{epoch}).}
 	\label{fig:nn_enemy_val_loss_40k_chap4}
 \end{figure}
 
-Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_enemy_char_train}, \textit{training} berlangsung selama 30.510 \textit{epoch} setelah dilakukan penambahan 20k \textit{epoch}, yang semula hanya 20k \textit{epoch} menjadi 40k \textit{epoch}. Hal tersebut diasumsikan bahwa kondisi optimum dapat dicapai dengan \textit{epoch} kurang dari 40k dan lebih dari 20k. Akurasi saat \textit{training} mampu mencapai 0.5 dan mengalami \textit{loss} sebesar 1.110, kemudian akurasi saat validasi mampu mencapai 0.425 dan mengalami \textit{loss} saat validasi sebesar 1.245. Hasil klasifikasi dari data \textit{stats} karakter musuh yang dijadikan sebagai data validasi dapat dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai 400, kemudian data tersebut digunakan pada proses validasi dan \textit{testing} dengan hasil yang dapat dilihat pada Tabel \ref{tb:enemy_valid_result}.
+Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_enemy_char_train}, \textit{training} berlangsung selama 30.510 \textit{epoch} setelah dilakukan penambahan 20k \textit{epoch}, yang semula hanya 20k \textit{epoch} menjadi 40k \textit{epoch}. Hal tersebut diasumsikan bahwa kondisi optimum dapat dicapai dengan \textit{epoch} kurang dari 40k dan lebih dari 20k. Akurasi saat \textit{training} mampu mencapai 0.5 dan mengalami \textit{loss} sebesar 1.110, kemudian akurasi saat evaluasi mampu mencapai 0.425 dan mengalami \textit{loss} saat evaluasi sebesar 1.245. Hasil klasifikasi dari data \textit{stats} karakter musuh yang dijadikan sebagai data evaluasi dapat dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai 400, kemudian data tersebut digunakan pada proses evaluasi dan \textit{testing} dengan hasil yang dapat dilihat pada Tabel \ref{tb:enemy_valid_result}.
 \vspace{-2ex}
 
 \begin{longtable}{|l|l|l|l|l|l|l|}
-	\caption{Hasil proses \textit{testing} dengan data validasi pada karakter musuh.}
+	\caption{Hasil proses \textit{testing} dengan data testing pada karakter musuh.}
 	\vspace{1ex}
 	\label{tb:enemy_valid_result}\\
 	\hline
@@ -980,4 +980,4 @@ Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_se
 \end{longtable}
 \vspace{1ex}
 
-Cara membaca hasil klasifikasi pada Tabel \ref{tb:player_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_arch} dan Sub-bab \ref{sec:sub_sec3_enemy_char_train}. Hasil ditampilkan pada Tabel \ref{tb:enemy_valid_result} terdapat 51 karakter yang terklasifikasi dengan benar, kemudian pada angka presentase klasifikasi pada karakter musuh tersebut ditandai dengan warna hijau, dengan beracuan pada pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai 400 pada bagian kolom \textit{type}. Maka dari 120 karakter tersebut, terdapat 51 karakter yang berhasil terklasifikasi, bila dinyatakan dalam presentase maka menjadi 42.5\% karakter pemain berhasil terklasifikasi.
+Cara membaca hasil klasifikasi pada Tabel \ref{tb:player_valid_result} sebelumnya sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_arch} dan Sub-bab \ref{sec:sub_sec3_enemy_char_train}. Hasil ditampilkan pada Tabel \ref{tb:enemy_valid_result} terdapat 51 karakter yang terklasifikasi dengan benar atau sesuai dengan tipe saat karakter musuh dibuat. Kemudian pada karakter tersebut setiap angka tingkat keyakinan ditandai dengan warna hijau, dengan beracuan pada pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai 400 pada bagian kolom \textit{type}. Maka dari 120 karakter tersebut, terdapat 51 karakter yang berhasil terklasifikasi, bila dinyatakan dalam presentase maka menjadi 42.5\% karakter pemain berhasil terklasifikasi.

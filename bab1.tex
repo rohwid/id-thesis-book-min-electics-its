@@ -14,9 +14,12 @@ Pada Gambar \ref{fig:rpg_turn_based} adalah representasi dari JRPG, yang mana pe
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.45]{img/turn_based.png}
-	\caption{Ilustrasi \textit{Turned-based} JRPG}
+	\caption{Ilustrasi \textit{turned-based} JRPG}
 	\label{fig:rpg_turn_based}
 \end{figure}
+
+Dalam sebuah karakter permainan terdapat dua atribut yang berpengaruh yaitu atribut \textit{gameplay} dan atribut estetika. Pada atribut gameplay atau yang biasa disbut dengan \textit{stats} biasanya bersifat non-visual yang menyajikan informasi tentang sebuah karakter dalam sebuah permainan. Sehingga setiap permainan memiliki tipe karakteristik dapat dideskripsikan. Contohnya pada salah satu papan permainan bergenre RPG yang terkenal yaitu Dungeons and Dragons \citep{heinsoo2008}, yang memiliki enam \textit{stats} seperti \textit{Strength}, \textit{Constitution}, \textit{Dexterity}, \textit{Intelligence}, \textit{Wisdom}, dan \textit{Charisma}. Sedangkan atribut estetika adalah berupa tampilan dari karakter permainan yang meliputi penampilan, warna kulit, pakaian, dan lain sebagainya \citep{camelo2014}.
+\vspace{1ex}
 
 Pada permainan dengan genre RPG yang terdiri dari banyak karakter baik itu karakter pemain dan musuh. Di mana \textit{stats} tersebutlah yang akan menentukan jalannya pertarungan antara pemain dan musuh. Kemudian \textit{stats} juga menunjukan tingkat kesulitan dari musuh, kelemahan dari musuh, daya tahan musuh terhadap serangan dan lain-lain. Hal ini juga merupakan bagian utama dari desain permainan, yang mana nominal pada \textit{stats}, jumlah pemain dan musuh dapat menentukan beberapa faktor penting lain seperti halnya lamanya permainan dan alur cerita. 
 \vspace{1ex}
@@ -33,7 +36,7 @@ Penggunaan berbagai metode seperti $k-$NN, Distribusi Normal dan Naive bayes yan
 \section{Rumusan Masalah}
 \vspace{1ex}
 
-Pembuatan statistik untuk karakter yang akan dimainkan oleh pemain dan juga karakter musuh pada permainan dengan genre RPG yang terkadang masih dilakukan secara manual, terlebih lagi jika karakter dari pemain dan musuh pada permainan tersebut sangat banyak maka diperlukannya sebuah program yang mampu menyusun hal tersebut secara otomatis.
+Pembuatan \textit{stats} untuk karakter yang akan dimainkan oleh pemain dan karakter musuh pada permainan dengan genre RPG yang terkadang masih dilakukan secara manual, terlebih lagi jika karakter dari pemain dan musuh pada permainan tersebut sangat banyak maka diperlukannya sebuah program yang mampu menyusun hal tersebut secara otomatis.
 \vspace{1ex}
 
 \section{Tujuan}
@@ -42,9 +45,9 @@ Pembuatan statistik untuk karakter yang akan dimainkan oleh pemain dan juga kara
 Dari permasalahan yang dirumuskan sebelumnya,maka penelitian ini memiliki tujuan sebagai berikut: 
 
 \begin{enumerate}
-	\item Mempercepat proses desain permainan dengan menggunakan program yang dapat menghasilkan data statistik untuk karakter dari pemain dan musuh.
+	\item Mempercepat proses desain permainan dengan menggunakan program yang dapat menghasilkan atribut \textit{gameplay} atau \textit{stats} yang berupa data statistik untuk karakter dari pemain dan musuh.
 
-	\item Terujinya data statistik untuk karakter pemain dan musuh yang dihasilkan secara otomatis oleh program.
+	\item Terujinya \textit{stats} untuk karakter pemain dan musuh yang dihasilkan secara otomatis oleh program.
 \end{enumerate}
 
 \section{Batasan Masalah}
@@ -53,13 +56,13 @@ Dari permasalahan yang dirumuskan sebelumnya,maka penelitian ini memiliki tujuan
 Berdasrkan fokus permasalahan pada bagian sebelumnyaa, kemudian diambilah beberapa pembatasa masalah. Berikut adalah batasan-batasan masalah tersebut.
 
 \begin{enumerate}
-	\item Data statistik yang dihasilkan oleh program hanya dapat dipakai oleh permainan dengan genre RPG.
+	\item Atribut \textit{gameplay} atau \textit{stats} yang dihasilkan oleh program hanya dapat dipakai oleh permainan dengan genre RPG.
 	
-	\item Program yang dibuat untuk menghasilkan data statistik dapat dipakai oleh lebih sama dengan satu karakter pemain dan musuh.
+	\item Program yang dibuat untuk menghasilkan \textit{stats} dapat dipakai oleh lebih sama dengan satu karakter pemain dan musuh.
 
-	\item Metode yang digunakan dalam proses pembuatan data statistik pemain dan musuh diantaranya adalah $k-$NN, Distribusi Normal dan Naive Bayes.
+	\item Metode yang digunakan dalam proses perhitungan \textit{stats} pemain dan musuh diantaranya adalah $k-$NN, Distribusi Normal dan Naive Bayes.
 	
-	\item Sedangkan metode yang digunakan untuk menguji tingkat ke validitas data yang dibuat, maka digunakanlah metode \textit{Neural Network Multiclass Classification}.
+	\item Perhitungan tingkat keseuaian \textit{stats} dari karakter pemain dan musuh yang dihasilkan dilakukan dengan cara klasifikasi menggunakan \textit{Neural Network Multiclass Classification}.
 \end{enumerate}
 
 \section{Kontribusi}

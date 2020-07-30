@@ -2,17 +2,17 @@
 \label{chap:chap3_metodologi}
 
 \section*{}
-Pada penelitian ini nantinya akan terdiri dari lima langkah utama yaitu analisa komponen permainan RPG, desain level dan \textit{stats} atau data statisktik pada karakter pemain, desain level dan \textit{stats} pada setiap karakter musuh, dilanjutkan pengujian hasil \textit{stats} pada karakter pemain dan musuh, kemudian dilakukan validasi dengan \textit{Neural Network Mullticlass Classification}. Setiap langkah yang dilakukan dibawahnya merupakan detail dalam pengerjaan seperti yang direpresentasikan pada Gambar \ref{fig:metodologi}.
+Pada penelitian ini nantinya akan terdiri dari lima langkah utama yaitu analisa komponen permainan RPG, desain level dan \textit{stats} atau atribut gameplay pada karakter pemain, desain level dan \textit{stats} pada setiap karakter musuh, dilanjutkan pengujian hasil \textit{stats} pada karakter pemain dan musuh, kemudian dilakukan klasifikasi dengan \textit{Neural Network Mullticlass Classification}. Setiap langkah yang dilakukan dibawahnya merupakan detail dalam pengerjaan seperti yang direpresentasikan pada Gambar \ref{fig:metodologi}.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.12]{img/metodologi_4.png}
+	\includegraphics[scale=0.12]{img/metodologi_5.png}
 	\caption{Urutan metodologi.}
 	\label{fig:metodologi}
 \end{figure}
 \vspace{1ex}
 
-Tujuan umum dari penelitian ini adalah membuat \textit{stats} atau statistik untuk pemain dan musuh, sehingga dalam pembuatan permaian. Tujuan khusus dan fokus pada penelitian ini adalah untuk membuat data statistik untuk karakter pemain dan musuh dengan menggunakan metode $k-$NN dan \textit{Naive Bayes} yang kemudian dilakukan validasi dengan menggunakan metode \textit{Neural Network} \textit{Multiclass Classification}.
+Tujuan umum dari penelitian ini adalah membuat \textit{stats} atau statistik untuk pemain dan musuh, sehingga dalam pembuatan permaian. Tujuan khusus dan fokus pada penelitian ini adalah untuk membuat \textit{stats} untuk karakter pemain dan musuh dengan menggunakan metode $k-$NN dan \textit{Naive Bayes} yang kemudian dilakukan klasifikasi dengan menggunakan metode \textit{Neural Network} \textit{Multiclass Classification}.
 \vspace{1ex}
 
 \section{Analisa Komponen Permainan RPG}
@@ -28,218 +28,211 @@ Di lanjutkan dengan desain level dan \textit{stats} dari pemain, selain itu digu
 Bagian selanjutnya adalah penambahan elemen pada pemain dan musuh yang membentuk kelebihan atau kekurangan pada masing-masing karakter. Pembagian elemen pada karakter yang dapat dimainkan oleh pemain dilakukan sesuai dengan cerita, sedangkan pembagian elemen pada musuh disebar secara acak berdasarkan \textit{stats} yang telah dibuat. Hal ini berkaitan erat dengan penjelasan pada Sub-bab \ref{sec:sub_sec2_kesempatan} tentang meningkatnya keberagaman, yang dibuktikan dengan banyaknya variasi musuh berikut dengan kelemahan dan kelebihannya.
 \vspace{1ex}
 
-\begin{subs}
-	\subsection{Desain Skenario Pertarungan}
-	\label{sec:sub_sec3_design_skenario}
+\subsection{Desain Skenario Pertarungan}
+\label{sec:sub_sec3_design_skenario}
+\vspace{1ex}
+
+Di umpamakan jumlah karakter yang rencananya akan digunakan berjumlah tunggal atau \textit{single-character} (WRPG, ARPG, SRPG, dan MMORPG) sampai tiga karakter atau jamak atau \textit{multi-character} (TRPG dan JRPG) bergantung dengan alur cerita dari permainan dan jumlah musuh juga dimisalkan berjumlah antara satu sampai dengan enam, bergantung kepada tingkat kesulitannya seperti pada Gambar \ref{fig:battle_player}. 
+\vspace{1ex}
+
+\begin{figure} [!h] \centering
+	\includegraphics[scale=0.48]{img/battle_player_new.png}
+	\caption{Skema pertarungan antar pemain.}
+	\label{fig:battle_player}
+\end{figure}
+
+Sebelumnya pernah dijelaskan pada Sub-bab \ref{sec:sub_sec2_kesempatan} tentang meningkatnya pengambilan keputusan, pada kondisi semakin banyak musuh makan semakin banyak keputusan yang harus diambil oleh pemain. Selain itu setiap pemain memiliki elemen dan \textit{skill}, setiap elemen dapat menjadi kelemahan dan kelebihan dari setiap karakter. Hal tersebut akan membangun sebuah momen dramatis berdasarkan kompleksitas kombinasi dari musuh, hal tersebut dibahas pada Sub-bab \ref{sec:sub_sec2_kesempatan} tentang momen dramatis pada desain permainan.
+\vspace{1ex}
+
+Pada bagian ini dijelaskan contoh perancangan dari skenario pertarungan dengan jumlah karakter tunggal dan karakter pemain yang berjumlah lebih dari satu dengan dibandingkan secara langsung. Pada Gambar \ref{fig:battle_player} jika dipecah dan dijelaskan lebih lanjut maka setiap karakter yang dimainkan oleh pemain atau musuh dalam bentuk NPC (\textit{Non Playable Character}) maka bagian-bagian tersebut akan menjadi seperti beberapa poin dibawah ini.
+\vspace{1ex}
+
+\begin{enumerate}[label=\textbf{\arabic*).}]
+	
+	\item \textbf{Stats}
+	\setlength{\parindent}{0.8cm}
+	
+	Atribut \textit{gameplay} yang biasa disebut dengan \textit{stats} memiliki ciri non-visual dan menyajikan informasi tentang sebuah karakter dalam permainan. Setiap permainan memiliki tipe karakteristik dapat dideskripsikan. Contohnya pada salah satu papan permainan bergenre RPG yang terkenal yaitu Dungeons and Dragons \citep{heinsoo2008}, yang memiliki enam \textit{stats} atau atribut \textit{gameplay} seperti \textit{Strength} (kemampuan fisik), \textit{Constitution} (kebugaran dan stamina), \textit{Dexterity} (Koordinasi tangan dan mata, kelincahan, reflek, dan keseimbangan), \textit{Intelligence} (Kemampuan untuk belajar dan bernalar), \textit{Wisdom} (kemampuan umum, presepsi, kedisiplinan individu), dan \textit{Charisma} (Kepribadian, kemampuan persuasif, kepemimpinan).
 	\vspace{1ex}
 	
-	Di umpamakan jumlah karakter yang rencananya akan digunakan berjumlah tunggal atau \textit{single-character} (WRPG, ARPG, SRPG, dan MMORPG) sampai tiga karakter atau jamak atau \textit{multi-character} (TRPG dan JRPG) bergantung dengan alur cerita dari permainan dan jumlah musuh juga dimisalkan berjumlah antara satu sampai dengan enam, bergantung kepada tingkat kesulitannya seperti pada Gambar \ref{fig:battle_player}. 
+	\textit{Stats} dalam RPG sangatlah diperhitungkan dan berpengaruh dalam proses pertarungan. Pada Gambar \ref{fig:rpg_turn_based} ditunjukan tidak hanya karakter pemain saja, melainkan status dari pemain saat melakukan pertarungan. Pada Gambar \ref{fig:player_stats} adalah penggambaran dari komponen atau \textit{stats} pemain yang lebih detail seperti \textit{Health Point} (HP), \textit{Attack} atau serangan, \textit{Defense} atau pertahanan, \textit{Speed} atau kecepatan.
 	\vspace{1ex}
 	
 	\begin{figure} [!h] \centering
-		\includegraphics[scale=0.48]{img/battle_player_new.png}
-		\caption{Skema pertarungan antar pemain.}
-		\label{fig:battle_player}
+		\includegraphics[scale=0.6]{img/player_stats.png}
+		\caption{Status dari pemain pada permainan bergenre RPG.}
+		\label{fig:player_stats}
 	\end{figure}
 	
-	Sebelumnya pernah dijelaskan pada Sub-bab \ref{sec:sub_sec2_kesempatan} tentang meningkatnya pengambilan keputusan, pada kondisi semakin banyak musuh makan semakin banyak keputusan yang harus diambil oleh pemain. Selain itu setiap pemain memiliki elemen dan \textit{skill}, setiap elemen dapat menjadi kelemahan dan kelebihan dari setiap karakter. Hal tersebut akan membangun sebuah momen dramatis berdasarkan kompleksitas kombinasi dari musuh, hal tersebut dibahas pada Sub-bab \ref{sec:sub_sec2_kesempatan} tentang momen dramatis pada desain permainan.
-	\vspace{1ex}
+	Berikut adalah penjabaran lebih dari beberapa komponen seperti HP, \textit{Attack}, \textit{Defense}, \textit{Speed} yang terdapat pada Gambar \ref{fig:rpg_turn_based}.
 	
-	Pada bagian ini dijelaskan contoh perancangan dari skenario pertarungan dengan jumlah karakter tunggal dan karakter pemain yang berjumlah lebih dari satu dengan dibandingkan secara langsung. Pada Gambar \ref{fig:battle_player} jika dipecah dan dijelaskan lebih lanjut maka setiap karakter yang dimainkan oleh pemain atau musuh dalam bentuk NPC (\textit{Non Playable Character}) maka bagian-bagian tersebut akan menjadi seperti beberapa poin dibawah ini.
-	\vspace{1ex}
-	
-	\begin{enumerate}[label=\textbf{\arabic*).}]
+	\begin{enumerate}[label=\alph*).]
+		\item \textbf{Health Point (HP)} adalah indikator nyawa atau kehidupan dari pemain, jika HP bernilai 0 maka karakter tersebut akan mati atu kalah.
 		
-		\item \textbf{Stats}
-		\setlength{\parindent}{0.8cm}
+		\item \textbf{Magic Point (MP)} adalah indikator jumlah dari jurus yang dapat dikeluarkan oleh pemain, jika MP bernilai 0 maka karakter tersebut tidak bisa mengeluarkan jurus atau kemampuan khusus.
 		
-		\textit{Stats} atau statistik yang diperhitungkan dan berpengaruh dalam proses pertarungan. Pada Gambar \ref{fig:rpg_turn_based} ditunjukan tidak hanya karakter pemain saja, melainkan status dari pemain saat melakukan pertarungan. Pada Gambar \ref{fig:player_stats} adalah penggambaran dari komponen atau \textit{stats} pemain yang lebih detail seperti \textit{Health Point} (HP), \textit{Attack} atau serangan, \textit{Defense} atau pertahanan, \textit{Speed} atau kecepatan.
-		\vspace{1ex}
+		\item \textbf{Strength} adalah jumlah atau nilai serangan yang akan dilakukan untuk mengalahkan pemain lawan. Angka tersebut akan berlawanan atau dibandingkan dengan jumlah \textit{endurance} musuh. Hal tersebut bertujuan untuk mengurangi HP dari musuh.
 		
-		\begin{figure} [!h] \centering
-			\includegraphics[scale=0.6]{img/player_stats.png}
-			\caption{Status dari pemain pada permainan bergenre RPG.}
-			\label{fig:player_stats}
-		\end{figure}
+		\item \textbf{Magic} atau \textit{Special Attack} biasanya tidak dimiliki oleh semua karakter pada permainan berbasis \textit{turn-based}. \textit{Special Attack} biasanya menjadi pembeda dalam setiap karakter berdasarkan jenis serangannya. Misalkan pada \textit{strength} biasanya berupa serangan fisik sedangkan pada \textit{special attack} berupa serangan \textit{magic} atau sihir.
 		
-		Berikut adalah penjabaran lebih dari beberapa komponen seperti HP, \textit{Attack}, \textit{Defense}, \textit{Speed} yang terdapat pada Gambar \ref{fig:rpg_turn_based}.
+		\item \textbf{Endurance} adalah jumlah atau nilai ketahanan yang digunakan oleh pemain atau musuh dalam menerima serangan. Hal ini bertujuan agar mencegah penurunan HP secara segnifikan, dengan membandingkan nilai serangan dengan nilai pertahanan.
 		
-		\begin{enumerate}[label=\alph*).]
-			\item \textbf{Health Point (HP)} adalah indikator nyawa atau kehidupan dari pemain, jika HP bernilai 0 maka karakter tersebut akan mati atu kalah.
-			
-			\item \textbf{Magic Point (MP)} adalah indikator jumlah dari jurus yang dapat dikeluarkan oleh pemain, jika MP bernilai 0 maka karakter tersebut tidak bisa mengeluarkan jurus atau kemampuan khusus.
-			
-			\item \textbf{Strength} adalah jumlah atau nilai serangan yang akan dilakukan untuk mengalahkan pemain lawan. Angka tersebut akan berlawanan atau dibandingkan dengan jumlah \textit{endurance} musuh. Hal tersebut bertujuan untuk mengurangi HP dari musuh.
-			
-			\item \textbf{Magic} atau \textit{Special Attack} biasanya tidak dimiliki oleh semua karakter pada permainan berbasis \textit{turn-based}. \textit{Special Attack} biasanya menjadi pembeda dalam setiap karakter berdasarkan jenis serangannya. Misalkan pada \textit{strength} biasanya berupa serangan fisik sedangkan pada \textit{special attack} berupa serangan \textit{magic} atau sihir.
-			
-			\item \textbf{Endurance} adalah jumlah atau nilai ketahanan yang digunakan oleh pemain atau musuh dalam menerima serangan. Hal ini bertujuan agar mencegah penurunan HP secara segnifikan, dengan membandingkan nilai serangan dengan nilai pertahanan.
-			
-			\item \textbf{Speed} atau kecepatan ada juga yang menyebutnya dengan \textit{agility} bertujuan dalam menentukan giliran dan keberhasilan dalam melakukan serangan. Semakin tinggi nilai \textit{speed}, biasanya semakin cepat melakukan serangan atau dapat mulai melakukan serangan lebih awal dibandingkan pemain atau musuh dengan nilai \textit{speed} yang lebih kecil.
-			
-			\item \textbf{Luck} atau keberuntungan adalah sebuah variabel yang digunakan menentukan hal yang bersifat acak, seperti bonus serangan atau \textit{critical attack}, kesempatan saat melakukan serangan balik atau \textit{counter attack} setelah diserang.
-		\end{enumerate}
+		\item \textbf{Speed} atau kecepatan ada juga yang menyebutnya dengan \textit{agility} bertujuan dalam menentukan giliran dan keberhasilan dalam melakukan serangan. Semakin tinggi nilai \textit{speed}, biasanya semakin cepat melakukan serangan atau dapat mulai melakukan serangan lebih awal dibandingkan pemain atau musuh dengan nilai \textit{speed} yang lebih kecil.
 		
-		Sementara itu skenario pertarungan dengan melibatkan \textit{stats} dijelaskan pada Gambar \ref{fig:battle_system} yang mana pemain atau musuh melakukan serangan berdasarkan \textit{speed}. Semakin tinggi \textit{speed} maka akan memperoleh giliran pertama untuk menyerang.
-		\vspace{1ex}
-		
-		Di lanjutkan lagi dengan perhitungan dengan membandingkan \textit{Speed}, dan \textit{Luck} antara karakter pemain dengan musuh, pada proses tersebutlah yang menentukan apakah serangan dari pemain dapat diterima atau meleset terhadap musuh dan sebaliknya. Tingginya \textit{Speed} pada masing-masing karakter dapat diartikan perbandingn antara kecepatan untuk menyerang dan menghindar, sedangkan \textit{Luck} adalah faktor keberuntungan yang mempengaruhi serangan tersebut. Kemudian dilanjutkan lagi dengan kalkulasi \textit{attack} dan \textit{defense} antara karakter yang menyerang dan target. Dari hasil kalkulasi tersebut akan berpengaruh pada jumlah HP dari karakter yang menjadi target.
-		\vspace{1ex}
-		
-		Baik pada permainan RPG yang dimainkan secara \textit{real-time} atau \textit{turn-based}, keduanya melakukan mekanisme sama seperti yang dijelaskan dengan kondisi di atas. Hanya saja permainan RPG secara \textit{real-time} lebih mengandalkan ketangkasan dari pemain dalam memainkan karakter yang ingin dimainkan sepeti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_strategi} pada bagian Peran dari keterampilan pada permainan. Maka terjadilah momen saling serang secara langsung antara pemain dan musuh.
-		\vspace{1ex}
-		
-		\begin{figure} [!h] 
-			\includegraphics[scale=0.105]{img/battle_system_new_new.png}
-			\caption{Skenario pertarungan \textit{turn-based}.}
-			\label{fig:battle_system}
-		\end{figure}
-		\vspace{1ex}
-		
-		\item \textbf{Elemen dan Efektifitas Serangan}
-		
-		Pada Gambar \ref{fig:elemen} adalah contoh elemen yang biasa digunakan dalam permainan RPG. Jumlah dari elemen dapat ditambah atau dikurangi sesuai dengan kebutuhan. Biasanya jumlah dari elemen ditentukan berdasarkan cerita. Mengapa terdapat elemen tersebut, bagaimana asal-usulnya dan sebagainya seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_story}.
-		\vspace{1ex}
-		
-		\begin{figure} [!h] \centering
-			\includegraphics[scale=0.40]{img/element.png}
-			\caption{Elemen pada permainan RPG.}
-			\label{fig:elemen}
-		\end{figure}
-		
-		Pembahasan ini mengacu kepada Gambar \ref{fig:battle_system} pada bagian ``efektifitas serangan berdasarkan elemen". Sedangkan pada Gambar \ref{fig:efektifitas} adalah perbandingan pengaruh atau keterkaitan sebuah elemen dengan elemen yang lain. Di mana setiap elemen memiliki kelemahan yang berupa elemen lain dan sebaliknya. Elemen-elemen tersebut saling berlawanan satu dengan yang lainnya sehingga mampu membentuk sebuah permainan yang membutuhkan strategi khusus. Kemudian dilanjutkan dengan perhitungan \textit{stats} seperti bagian sebelumnya.
-		\vspace{1ex}
-		
-		\begin{figure} [!h] \centering
-			\includegraphics[scale=0.62]{img/efektifitas.png}
-			\caption{Pengaruh elemen pada efektifitas serangan.}
-			\label{fig:efektifitas}
-		\end{figure}
-		
-		Jika melihat pada Gambar \ref{fig:efektifitas} dapat disimpukan bahwa beberapa element yang saling berlawanan kemudian efektifitas menjadi 2 kali lipat, contohnya pada elemen air terhadap api dan tanah terhadap angin begitu juga sebaliknya. Jika elemen yang sama saling bertarung maka efektifitasnya berkurang $1/2$ dari yang seharunya. Kemudian pada elemen lain yang belum disebutkan berlaku efektifitas normal atau 1 kali. Pembagian elemen pada pemain dan musuh akan dibahas lebih detail pada Sub-bab \ref{sec:sec3_player_stats}.
-		\vspace{1ex}
-		
-		Kebanyakan elemen dan efektifitas serangan berlaku pada permainan RPG yang tergolong \textit{turn-based}, berbeda halnya dengan \textit{real-time} yang lebih mengandalkan keterampilan dari pemain dalam memaikan karakternya seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_strategi} pada bagian pemain berbasis keterampilan sepenuhnya.
-		\vspace{1ex}
-		
-		\item \textbf{Efek Status}
-		
-		Pada Gambar \ref{fig:battle_system} terdapat bagian ``efek status", maksud dari proses tersebut adalah penambahan efek yang merugikan terhadap pemain setelah diserang. Efek kerusakan dapat membawa kesan lebih taktis pada pertempuran. Berikut adalah efek status yang akan diterapkan pada sistem pertarungan.
-		
-		\begin{enumerate}[label=\alph*).]
-			\item \textbf{Infected:} Karakter kehilangan 10\% dari total HP setiap giliran.
-			
-			\item \textbf{Confused:} Karakter tidak dapat dikendalikan dan mungkin akan bertahan, menyerang dan tidak melakukan apa-apa. Ada juga kemungkinan mereka akan berbalik menyerang \textit{party member} mereka sendiri.
-			
-			\item \textbf{Silence:} Karakter tidak dapat mengubah Personae atau menggunakan keterampilan Persona.
-			
-			\item \textbf{Tired:} Karakter kehilangan SP untuk setiap tindakan yang diambil, dan menerima lebih banyak \textit{damage} dari musuh ketika diserang.
-			
-			\item \textbf{Hacked:} Efek yang muncul setelah target diserang sesuai dengan kelemahannya. Target kemudian akan menerima lebih banyak \textit{damage} dan tidak dapat menghindar. Jika target diserang lagi, maka statusnya akan berubah menjadi disabled.
-			
-			\item \textbf{Disabled:} Target akan hilang 1 giliran untuk mengambil tindakan, kemudian mendapat lebih banyak kerusakan dan serangan tidak dapat dihindari.
-		\end{enumerate}
-		
-		Tidak semua kemampuan pemain dapat memberi efek status, hal tersebut mengacu pada desain permainan yang mengatur keseluruhan \textit{skill}, tidak hanya pada karakter utama melainkan juga pada musuh. Tetapi dalam penelitian ini, hal tersebut masih belum terpakai dikarenakan masih menyelesaikan perihal desain \textit{stats} dari pemain dan musuh. Hal ini baru semacam perkiraan saja saat mendesain sebuah permainan.
-		\vspace{1ex}
-		
-		Pada bagian efek status juga berlaku pada permainan RPG dengan jumlah karakter tunggal, setelah berlangsungnya pertarungan antara pemain dan musuh. Di mana pada sisi pemain dapat memhangun karakternya sedemikian hingga demi memberi efek status ke pada musuh saat berlangsunnya pertarungan seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_strategi} tentang peran dan keterampilan pemain serta strategi dan taktik.
-		\vspace{1ex}
-		
-		\item \textbf{Kondisi Kritis pada Serangan}
-		
-		Selain \textit{attack}, elemen dan efek status, masih terdapat \textit{damage} yang dapat ditimbulkan oleh penyerang kepada target yaitu kondisi kritis pada serangan. Dengan jumlah \textit{attack} ditambah dengan jumlah \textit{attack} yang dikalikan dengan presentase tingkat kondisi kritis (\textit{critical rate}) pada \textit{skill} yang dipilih untuk menyerang lawan. Kondisi tersebut didapat dengan membandingkan nilai \textit{stats} dari \textit{Strength} atau \textit{Magic} dan \textit{luck} milik penyerang dan target, pada proses tersebutlah yang menentukan apakah serangan tersebut diperoleh kondisi kritis atau tidak. Hal tersebut juga membangun sebuah momen dramatis berdasarkan peluang terjadinya kondisi kritis saat terjadinya serangan dari pemain terlebih lagi dari musuh seperti yang dibahas pada Sub-bab \ref{sec:sub_sec2_kesempatan} tentang momen dramatis.
-		\vspace{1ex}
-		
-		\item \textbf{Kalkulasi HP dan MP}
-		
-		Pada akhirnya jumlah kerusakan yang ditimbulkan oleh penyerang dan HP dari target akan dikalkulasikan. Jika HP target habis atau sama dengan 0, maka terget tersebut dinyatakan mati. Dan jika HP target masih bersisa, maka pertarunggan akan dilanjutkan oleh giliran karakter dari pemain atau musuh selanjutnya. Kemudian pada sisi penyerang juga ada yang dikorbankan dalam upaya melakukan serangan. Saat penyerang memilih serangan fisik makan pemain akan mengorbanakan sebagian HP yang dimiliki, jika yang dipilih adalah serangan \textit{magic} maka yang dikorbankan adalah MP.
+		\item \textbf{Luck} atau keberuntungan adalah sebuah variabel yang digunakan menentukan hal yang bersifat acak, seperti bonus serangan atau \textit{critical attack}, kesempatan saat melakukan serangan balik atau \textit{counter attack} setelah diserang.
 	\end{enumerate}
 	
-	\subsection{Hubungan Sistem Pertarungan dengan Cerita}
-	\label{sec:sub_sec3_story}
+	Sementara itu skenario pertarungan dengan melibatkan \textit{stats} dijelaskan pada Gambar \ref{fig:battle_system} yang mana pemain atau musuh melakukan serangan berdasarkan \textit{speed}. Semakin tinggi \textit{speed} maka akan memperoleh giliran pertama untuk menyerang.
 	\vspace{1ex}
 	
-	Pada setiap permainan RPG khususnya \textit{real-time} dan \textit{turn-based} RPG pasti memiliki cerita yang menjadi latar belakang permainan seperti yang dijelaskan pada Sub-bab \ref{sec:sec2_rpg}. Tentunya cerita tersebut juga memiliki pengaruh penting terhadap jumlah karakter yang dapat dimainkan oleh pemain, jumlah musuh, elemen apa saja yang akan dipakai, total waktu permainan, jumlah musuh yang harus dilawan dan lain sebagainya. Pada penelitian ini hal semacam itu akan dibuat menjadi sebuah estimasi yang kemudian disimulasikan ke dalam mode pertarungan dengan berbagai macam estimasi sebagaimana penjelasan berikut.
+	\begin{figure} [!h] 
+		\includegraphics[scale=0.105]{img/battle_system_new_new.png}
+		\caption{Skenario pertarungan \textit{turn-based}.}
+		\label{fig:battle_system}
+	\end{figure}
+	
+	Di lanjutkan lagi dengan perhitungan dengan membandingkan \textit{Speed}, dan \textit{Luck} antara karakter pemain dengan musuh, pada proses tersebutlah yang menentukan apakah serangan dari pemain dapat diterima atau meleset terhadap musuh dan sebaliknya. Tingginya \textit{Speed} pada masing-masing karakter dapat diartikan perbandingn antara kecepatan untuk menyerang dan menghindar, sedangkan \textit{Luck} adalah faktor keberuntungan yang mempengaruhi serangan tersebut. Kemudian dilanjutkan lagi dengan kalkulasi \textit{attack} dan \textit{defense} antara karakter yang menyerang dan target. Dari hasil kalkulasi tersebut akan berpengaruh pada jumlah HP dari karakter yang menjadi target.
 	\vspace{1ex}
 	
-	\begin{enumerate}[label=\textbf{\arabic*).}]
-		
-		\item \textbf{Tingkat Kesulitan Musuh}
-		\setlength{\parindent}{0.8cm}
+	Baik pada permainan RPG yang dimainkan secara \textit{real-time} atau \textit{turn-based}, keduanya melakukan mekanisme sama seperti yang dijelaskan dengan kondisi di atas. Hanya saja permainan RPG secara \textit{real-time} lebih mengandalkan ketangkasan dari pemain dalam memainkan karakter yang ingin dimainkan sepeti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_strategi} pada bagian Peran dari keterampilan pada permainan. Maka terjadilah momen saling serang secara langsung antara pemain dan musuh.
 	
-		Berikut adalah beberapa pertanyaan yang harus ditanyakan kepada setiap pembuat desain permainan:
-		
-		\begin{enumerate}[label=\alph*).]
-			\item Haruskah kebanyakan pemain nantinya dapat menyelesaikan permainan tanpa melakukan \textit{side quest} (misi sampingan) atau melakukan \textit{grinding} (menaikan kemampuan karakter) diluar standar perkembangannya?
-			\item Berapa banyak bos yang akan dilawan oleh pemain, dan seberapa jauh jaraknya? Dan bagaimana dengan penambahan bos?
-			\item Berapa banyak \textit{dungeon} (tempat muncul dan bertemu dengan musuh) yang akan disajikan, dan seberapa besar \textit{dungeon} tersebut?
-			\item Akankah pemain bisa menyimpan progres permainan kapan saja, atau hanya di titik penyimpanan tertentu yang sudah ditentukan?
-		\end{enumerate}
-		\vspace{1ex}
+	\item \textbf{Elemen dan Efektifitas Serangan}
 	
-		Biasanya pada permaianan RPG terdapat sebuah peta besar tentang lokasi yang merupakan latar dari cerita, tersebarlah berbagai jenis musuh yang relatif mudah dikalahkan. Kemudian ditampilkan juga beberapa \textit{dungeon} yang akan terbuka satu demi satu, yang mana \textit{dungeon} tersebut memiliki tingkat kesulitan dan kerumitan yang terus meningkat sampai dengan bertemu dengan Bos. Secara keseluruhan tingkat kesulitan juga akan terus meningkat sampai dengan akhir permaian seperti yang dicontohkan oleh Gambar \ref{fig:story_dungeon}.
-		
-		\begin{figure} [!h] \centering
-			\includegraphics[scale=0.7]{img/story_dungeon.png}
-			\caption{Pengaruh cerita terhadap tingkat kesulitan.}
-			\label{fig:story_dungeon}
-		\end{figure}
-		
-		Adapun beberapa cara untuk meminimalisir \textit{grinding} dan lamanya waktu permainan, dengan diberikan Exp (\textit{Experience} adalah sebuah variabel untuk pemain agar naik level) kepada pemain untuk menyelesaikan misi dan mengalahkan musuh yang lebih sulit dari pada mengalahkan musuh yang relatif mudah ditaklukan yang tersebar pada peta. Tentu saja musuh yang tersebar di peta juga memberikan Exp bagi pemain, namun seiring bertambahnya level pemain maka Exp yang diperoleh saat melawan musuh dengan level rendah akan semakin kecil.
-		\vspace{1ex}
-		
-		Pada penelitian ini tingkat kesulitan langsung disimulasikan dengan pertarungan antara karakter-karakter yang dimainkan oleh pemain melawan musuh, dengan kondisi tingkat kesulitan musuh yang terus naik lalu turun kemudian naik lagi dan turun lagi, naik lagi dan seterusnya sampai dengan kondisi puncak. Hal ini mensimulasikan kondisi yang dilalui oleh pemain saat melawan \textit{trash mobs}, memasuki \textit{dungeon}, saat bertarung melawan bos dan kemudian pada akhirnya bertarung melawan bos terakhir. Lebih detailnya akan dijelaskan pada poin selanjutnya.
-		\vspace{1ex}
+	Pada Gambar \ref{fig:elemen} adalah contoh elemen yang biasa digunakan dalam permainan RPG. Jumlah dari elemen dapat ditambah atau dikurangi sesuai dengan kebutuhan. Biasanya jumlah dari elemen ditentukan berdasarkan cerita. Mengapa terdapat elemen tersebut, bagaimana asal-usulnya dan sebagainya seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_story}.
+	\vspace{1ex}
 	
-		\item \textbf{Waktu yang Diperlukan untuk Kalahkan Musuh}
+	\begin{figure} [!h] \centering
+		\includegraphics[scale=0.40]{img/element.png}
+		\caption{Elemen pada permainan RPG.}
+		\label{fig:elemen}
+	\end{figure}
 	
-		Musuh pada permainan RPG umumnya terbagi menjadi empat kategori diantaranya adalah:
-		
-		\begin{enumerate}[label=\Alph*).]
-			\item \textit{Trash Mobs} adalah musuh yang tersebar pada seluruh area atau map.
-			\item \textit{Dungeon Mobs} dapat dibagi menjadi dua sub-kategori:
-			\begin{enumerate}[label=\alph*).]
-				\item \textit{Dungeon Trash} atau sama seperti \textit{Trash Mobs} yang sebagian besar ditemukan awal sampai tengah \textit{dungeon}.
-				\item \textit{Difficult Dungeon Trash} atau yang lebih sulit terletak lebih dekat ke bos atau dari tengah ke akhir \textit{dungeon}.
-			\end{enumerate}
-			\item \textit{Mini-Boss}/\textit{Boss Mobs}.
-			\item \textit{End-Game Boss}/\textit{Secret Boss} (Bos yang bersifat opsional).
-		\end{enumerate}
-		
-		Pada penelitian ini keseimbangan permainan dirancang terus meningkat seperti yang dibahas pada bagian sebelumnya, dalam permainan ini sebagian besar waktu (asumsikan saja 80\%) akan dihabiskan bertarung di dalam \textit{dungeon}. Kemudian 20\% dari waktu pertempuran akan digunakan untuk bertarung melawan bos. Sedangkan sisanya 60\% dari waktu bertarung akan dibagi antara pertarungan melawan musuh yang lemah dan juga kuat, bila digambarkan pembagian tersebut akan seperti pada Gambar \ref{fig:enemy_difficulty_percentage}.
-		\vspace{1ex}
-		
-		\begin{figure} [!h] \centering
-			\includegraphics[scale=0.15]{img/enemy_type_distribution.png}
-			\caption{Distribusi jenis musuh sesuai dengan cerita.}
-			\label{fig:enemy_difficulty_percentage}
-		\end{figure}
-		
-		Perhatikan bahwa dalam distribusi yang dibuat, jumlah waktu yang dihabiskan untuk melawan bos sama seperti waktu yang dibutuhkan untuk memerangi \textit{Thrash Mobs}. Dalam proses replikasi distribusi dalam permainan, pertama tentukan jumlah total waktu yang dibutuhkan oleh pemain untuk mengalahkan naga, raksasa atau apa pun yang biasanya disebut dengan bos.
-		\vspace{1ex}
-		
-		Misalnya, dalam permaian RPG, bos pertama idealnya akan membutuhkan 3 menit bagi pemain yang kompeten untuk mengalahkan, dan bos terakhir menghabiskan waktu 20 menit. Kemudian terjadi peningkatan kompleksitas pada bos di level menengah, untuk terdapat dua bos yang masing-masing membutuhkan waktu sekitar 10 menit untuk dikalahkan, dan bos kedua membutuhkan waktu 7 menit.
-		
-		\begin{equation}
-		\label{eq: total_fight}
-		tB_{total} = \sum_{n = 0}^{B} tB_{n}
-		\end{equation}
-		
-		Merujuk ke persamaan \ref{eq: total_fight} bila dijabarkan maka $tB_{total}$ adalah jumlah waktu melawan bos secara keseluruhan, jumlah bos dinyatakan dengan $B$ dan waktu yang dihabiskan untuk melawan satu bos dinyatakan dengan $tB$ kemudian diiterasi oleh $n$ sejumlah $B$.
-		\vspace{1ex}
-		
-		Di perlukannya penyesuaian terhadap model distribusi, salah satunya waktu yang habis untuk melawan bos setara untuk melawan musuh yang mudah atau \textit{trash mobs}. Untung saja terdapat banyak cara untuk memodifikasi waktu yang akan dihabiskan saat bertarung melawan musuh yang mudah. Hal seperti menjelajah seluruh peta atau berpetualang menuju tempat-tempat sebelumnya juga tidak perlu dilakukan. Berikut adalah langkah-langkah yang dapat dilakukan:
+	Pembahasan ini mengacu kepada Gambar \ref{fig:battle_system} pada bagian ``efektifitas serangan berdasarkan elemen''. Sedangkan pada Gambar \ref{fig:efektifitas} adalah perbandingan pengaruh atau keterkaitan sebuah elemen dengan elemen yang lain. Di mana setiap elemen memiliki kelemahan yang berupa elemen lain dan sebaliknya. Elemen-elemen tersebut saling berlawanan satu dengan yang lainnya sehingga mampu membentuk sebuah permainan yang membutuhkan strategi khusus. Kemudian dilanjutkan dengan perhitungan \textit{stats} seperti bagian sebelumnya.
+	\vspace{1ex}
 	
-		\begin{enumerate} [label=\alph*).]
-			\item  Mengurangi atau meningkatkan tingkat pertemuan dengan musuh yang mucul secara acak atau yang biasa disebut dengan \textit{random encounter rate}. Bisa juga dengan tingkat \textit{spawn} (muncul lagi setelah mati).
-			\item Menambah atau mengurangi jumlah musuh saat pertempuran.
-			\item Membatasi kemampuan musuh yang menimbulkan efek status yang menyulitkan dan menghabiskan waktu seperti \textit{confused}, \textit{silence}, \textit{tired} dan lain-lain.
-			\item Menambah atau mengurangi kekuatan musuh.
-			\item Menambah atau mengurangi kekuatan dari \textit{party member}.
-		\end{enumerate}
+	\begin{figure} [!h] \centering
+		\includegraphics[scale=0.58]{img/efektifitas.png}
+		\caption{Pengaruh elemen pada efektifitas serangan.}
+		\label{fig:efektifitas}
+	\end{figure}
+	
+	Jika melihat pada Gambar \ref{fig:efektifitas} dapat disimpukan bahwa beberapa element yang saling berlawanan kemudian efektifitas menjadi 2 kali lipat, contohnya pada elemen air terhadap api dan tanah terhadap angin begitu juga sebaliknya. Jika elemen yang sama saling bertarung maka efektifitasnya berkurang $1/2$ dari yang seharunya. Kemudian pada elemen lain yang belum disebutkan berlaku efektifitas normal atau 1 kali. Pembagian elemen pada pemain dan musuh akan dibahas lebih detail pada Sub-bab \ref{sec:sec3_player_stats}.
+	\vspace{1ex}
+	
+	Kebanyakan elemen dan efektifitas serangan berlaku pada permainan RPG yang tergolong \textit{turn-based}, berbeda halnya dengan \textit{real-time} yang lebih mengandalkan keterampilan dari pemain dalam memaikan karakternya seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_strategi} pada bagian pemain berbasis keterampilan sepenuhnya.
+	
+	\item \textbf{Efek Status}
+	
+	Pada Gambar \ref{fig:battle_system} terdapat bagian ``efek status'', maksud dari proses tersebut adalah penambahan efek yang merugikan terhadap pemain setelah diserang. Efek kerusakan dapat membawa kesan lebih taktis pada pertempuran. Berikut adalah efek status yang akan diterapkan pada sistem pertarungan.
+	
+	\begin{enumerate}[label=\alph*).]
+		\item \textbf{Infected:} Karakter kehilangan 10\% dari total HP setiap giliran.
+		
+		\item \textbf{Confused:} Karakter tidak dapat dikendalikan dan mungkin akan bertahan, menyerang dan tidak melakukan apa-apa. Ada juga kemungkinan mereka akan berbalik menyerang \textit{party member} mereka sendiri.
+		
+		\item \textbf{Silence:} Karakter tidak dapat mengubah Personae atau menggunakan keterampilan Persona.
+		
+		\item \textbf{Tired:} Karakter kehilangan SP untuk setiap tindakan yang diambil, dan menerima lebih banyak \textit{damage} dari musuh ketika diserang.
+		
+		\item \textbf{Hacked:} Efek yang muncul setelah target diserang sesuai dengan kelemahannya. Target kemudian akan menerima lebih banyak \textit{damage} dan tidak dapat menghindar. Jika target diserang lagi, maka statusnya akan berubah menjadi disabled.
+		
+		\item \textbf{Disabled:} Target akan hilang 1 giliran untuk mengambil tindakan, kemudian mendapat lebih banyak kerusakan dan serangan tidak dapat dihindari.
 	\end{enumerate}
-\end{subs}
+	
+	Tidak semua kemampuan pemain dapat memberi efek status, hal tersebut mengacu pada desain permainan yang mengatur keseluruhan \textit{skill}, tidak hanya pada karakter utama melainkan juga pada musuh. Tetapi dalam penelitian ini, hal tersebut masih belum terpakai dikarenakan masih menyelesaikan perihal desain \textit{stats} dari pemain dan musuh. Hal ini baru semacam perkiraan saja saat mendesain sebuah permainan.
+	\vspace{1ex}
+	
+	Pada bagian efek status juga berlaku pada permainan RPG dengan jumlah karakter tunggal, setelah berlangsungnya pertarungan antara pemain dan musuh. Di mana pada sisi pemain dapat memhangun karakternya sedemikian hingga demi memberi efek status ke pada musuh saat berlangsunnya pertarungan seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec2_strategi} tentang peran dan keterampilan pemain serta strategi dan taktik.
+	
+	\item \textbf{Kondisi Kritis pada Serangan}
+	
+	Selain \textit{attack}, elemen dan efek status, masih terdapat \textit{damage} yang dapat ditimbulkan oleh penyerang kepada target yaitu kondisi kritis pada serangan. Dengan jumlah \textit{attack} ditambah dengan jumlah \textit{attack} yang dikalikan dengan presentase tingkat kondisi kritis (\textit{critical rate}) pada \textit{skill} yang dipilih untuk menyerang lawan. Kondisi tersebut didapat dengan membandingkan nilai \textit{stats} dari \textit{Strength} atau \textit{Magic} dan \textit{luck} milik penyerang dan target, pada proses tersebutlah yang menentukan apakah serangan tersebut diperoleh kondisi kritis atau tidak. Hal tersebut juga membangun sebuah momen dramatis berdasarkan peluang terjadinya kondisi kritis saat terjadinya serangan dari pemain terlebih lagi dari musuh seperti yang dibahas pada Sub-bab \ref{sec:sub_sec2_kesempatan} tentang momen dramatis.
+	
+	\item \textbf{Kalkulasi HP dan MP}
+	
+	Pada akhirnya jumlah kerusakan yang ditimbulkan oleh penyerang dan HP dari target akan dikalkulasikan. Jika HP target habis atau sama dengan 0, maka terget tersebut dinyatakan mati. Dan jika HP target masih bersisa, maka pertarunggan akan dilanjutkan oleh giliran karakter dari pemain atau musuh selanjutnya. Kemudian pada sisi penyerang juga ada yang dikorbankan dalam upaya melakukan serangan. Saat penyerang memilih serangan fisik makan pemain akan mengorbanakan sebagian HP yang dimiliki, jika yang dipilih adalah serangan \textit{magic} maka yang dikorbankan adalah MP.
+\end{enumerate}
+
+\subsection{Hubungan Sistem Pertarungan dengan Cerita}
+\label{sec:sub_sec3_story}
+\vspace{1ex}
+
+Pada setiap permainan RPG khususnya \textit{real-time} dan \textit{turn-based} RPG pasti memiliki cerita yang menjadi latar belakang permainan seperti yang dijelaskan pada Sub-bab \ref{sec:sec2_rpg}. Tentunya cerita tersebut juga memiliki pengaruh penting terhadap jumlah karakter yang dapat dimainkan oleh pemain, jumlah musuh, elemen apa saja yang akan dipakai, total waktu permainan, jumlah musuh yang harus dilawan dan lain sebagainya. Pada penelitian ini hal semacam itu akan dibuat menjadi sebuah estimasi yang kemudian disimulasikan ke dalam mode pertarungan dengan berbagai macam estimasi sebagaimana penjelasan berikut.
+
+\begin{enumerate}[label=\textbf{\arabic*).}]
+	\item \textbf{Tingkat Kesulitan Musuh}
+	\setlength{\parindent}{0.8cm}
+
+	Berikut adalah beberapa pertanyaan yang harus ditanyakan kepada setiap pembuat desain permainan:
+	
+	\begin{enumerate}[label=\alph*).]
+		\item Haruskah kebanyakan pemain nantinya dapat menyelesaikan permainan tanpa melakukan \textit{side quest} (misi sampingan) atau melakukan \textit{grinding} (menaikan kemampuan karakter) diluar standar perkembangannya?
+		\item Berapa banyak bos yang akan dilawan oleh pemain, dan seberapa jauh jaraknya? Dan bagaimana dengan penambahan bos?
+		\item Berapa banyak \textit{dungeon} (tempat muncul dan bertemu dengan musuh) yang akan disajikan, dan seberapa besar \textit{dungeon} tersebut?
+		\item Akankah pemain bisa menyimpan progres permainan kapan saja, atau hanya di titik penyimpanan tertentu yang sudah ditentukan?
+	\end{enumerate}
+
+	Biasanya pada permaianan RPG terdapat sebuah peta besar tentang lokasi yang merupakan latar dari cerita, tersebarlah berbagai jenis musuh yang relatif mudah dikalahkan. Kemudian ditampilkan juga beberapa \textit{dungeon} yang akan terbuka satu demi satu, yang mana \textit{dungeon} tersebut memiliki tingkat kesulitan dan kerumitan yang terus meningkat sampai dengan bertemu dengan Bos. Secara keseluruhan tingkat kesulitan juga akan terus meningkat sampai dengan akhir permaian seperti yang dicontohkan oleh Gambar \ref{fig:story_dungeon}.
+	\vspace{1ex}
+	
+	\begin{figure} [!h] \centering
+		\includegraphics[scale=0.7]{img/story_dungeon.png}
+		\caption{Pengaruh cerita terhadap tingkat kesulitan.}
+		\label{fig:story_dungeon}
+	\end{figure}
+	
+	Adapun beberapa cara untuk meminimalisir \textit{grinding} dan lamanya waktu permainan, dengan diberikan Exp (\textit{Experience} adalah sebuah variabel untuk pemain agar naik level) kepada pemain untuk menyelesaikan misi dan mengalahkan musuh yang lebih sulit dari pada mengalahkan musuh yang relatif mudah ditaklukan yang tersebar pada peta. Tentu saja musuh yang tersebar di peta juga memberikan Exp bagi pemain, namun seiring bertambahnya level pemain maka Exp yang diperoleh saat melawan musuh dengan level rendah akan semakin kecil.
+	\vspace{1ex}
+	
+	Pada penelitian ini tingkat kesulitan langsung disimulasikan dengan pertarungan antara karakter-karakter yang dimainkan oleh pemain melawan musuh, dengan kondisi tingkat kesulitan musuh yang terus naik lalu turun kemudian naik lagi dan turun lagi, naik lagi dan seterusnya sampai dengan kondisi puncak. Hal ini mensimulasikan kondisi yang dilalui oleh pemain saat melawan \textit{trash mobs}, memasuki \textit{dungeon}, saat bertarung melawan bos dan kemudian pada akhirnya bertarung melawan bos terakhir. Lebih detailnya akan dijelaskan pada poin selanjutnya.
+
+	\item \textbf{Waktu yang Diperlukan untuk Kalahkan Musuh}
+
+	Musuh pada permainan RPG umumnya terbagi menjadi empat kategori diantaranya adalah:
+	
+	\begin{enumerate}[label=\Alph*).]
+		\item \textit{Trash Mobs} adalah musuh yang tersebar pada seluruh area atau map.
+		\item \textit{Dungeon Mobs} dapat dibagi menjadi dua sub-kategori:
+		\begin{enumerate}[label=\alph*).]
+			\item \textit{Dungeon Trash} atau sama seperti \textit{Trash Mobs} yang sebagian besar ditemukan awal sampai tengah \textit{dungeon}.
+			\item \textit{Difficult Dungeon Trash} atau yang lebih sulit terletak lebih dekat ke bos atau dari tengah ke akhir \textit{dungeon}.
+		\end{enumerate}
+		\item \textit{Mini-Boss}/\textit{Boss Mobs}.
+		\item \textit{End-Game Boss}/\textit{Secret Boss} (Bos yang bersifat opsional).
+	\end{enumerate}
+	
+	Pada penelitian ini keseimbangan permainan dirancang terus meningkat seperti yang dibahas pada bagian sebelumnya, dalam permainan ini sebagian besar waktu (asumsikan saja 80\%) akan dihabiskan bertarung di dalam \textit{dungeon}. Kemudian 20\% dari waktu pertempuran akan digunakan untuk bertarung melawan bos. Sedangkan sisanya 60\% dari waktu bertarung akan dibagi antara pertarungan melawan musuh yang lemah dan juga kuat, bila digambarkan pembagian tersebut akan seperti pada Gambar \ref{fig:enemy_difficulty_percentage}.
+	\vspace{1ex}
+	
+	\begin{figure} [!h] \centering
+		\includegraphics[scale=0.15]{img/enemy_type_distribution.png}
+		\caption{Distribusi jenis musuh sesuai dengan cerita.}
+		\label{fig:enemy_difficulty_percentage}
+	\end{figure}
+	
+	Perhatikan bahwa dalam distribusi yang dibuat, jumlah waktu yang dihabiskan untuk melawan bos sama seperti waktu yang dibutuhkan untuk memerangi \textit{Thrash Mobs}. Dalam proses replikasi distribusi dalam permainan, pertama tentukan jumlah total waktu yang dibutuhkan oleh pemain untuk mengalahkan naga, raksasa atau apa pun yang biasanya disebut dengan bos.
+	\vspace{1ex}
+	
+	Misalnya, dalam permaian RPG, bos pertama idealnya akan membutuhkan 3 menit bagi pemain yang kompeten untuk mengalahkan, dan bos terakhir menghabiskan waktu 20 menit. Kemudian terjadi peningkatan kompleksitas pada bos di level menengah, untuk terdapat dua bos yang masing-masing membutuhkan waktu sekitar 10 menit untuk dikalahkan, dan bos kedua membutuhkan waktu 7 menit.
+	
+	\begin{equation}
+	\label{eq: total_fight}
+	tB_{total} = \sum_{n = 0}^{B} tB_{n}
+	\end{equation}
+	
+	Merujuk ke persamaan \ref{eq: total_fight} bila dijabarkan maka $tB_{total}$ adalah jumlah waktu melawan bos secara keseluruhan, jumlah bos dinyatakan dengan $B$ dan waktu yang dihabiskan untuk melawan satu bos dinyatakan dengan $tB$ kemudian diiterasi oleh $n$ sejumlah $B$.
+	\vspace{1ex}
+	
+	Di perlukannya penyesuaian terhadap model distribusi, salah satunya waktu yang habis untuk melawan bos setara untuk melawan musuh yang mudah atau \textit{trash mobs}. Untung saja terdapat banyak cara untuk memodifikasi waktu yang akan dihabiskan saat bertarung melawan musuh yang mudah. Hal seperti menjelajah seluruh peta atau berpetualang menuju tempat-tempat sebelumnya juga tidak perlu dilakukan. Berikut adalah langkah-langkah yang dapat dilakukan:
+
+	\begin{enumerate} [label=\alph*).]
+		\item  Mengurangi atau meningkatkan tingkat pertemuan dengan musuh yang mucul secara acak atau yang biasa disebut dengan \textit{random encounter rate}. Bisa juga dengan tingkat \textit{spawn} (muncul lagi setelah mati).
+		\item Menambah atau mengurangi jumlah musuh saat pertempuran.
+		\item Membatasi kemampuan musuh yang menimbulkan efek status yang menyulitkan dan menghabiskan waktu seperti \textit{confused}, \textit{silence}, \textit{tired} dan lain-lain.
+		\item Menambah atau mengurangi kekuatan musuh.
+		\item Menambah atau mengurangi kekuatan dari \textit{party member}.
+	\end{enumerate}
+\end{enumerate}
 
 Terdapat banyak fleksibilitas di sini, developer dapat mengisi daftar musuh yang akan muncul secara acak dengan musuh yang sulit dikalahkan dengan tingkat probabilitas kemunculan yang kecil, atau lebih sering memunculkan musuh yang mudah dikalahkan. Alternatif lain adalah dengan meningkatkan kekuatan \textit{party member} atau jumlah rata-rata musuh yang bertarung dalam satu kali pertarungan. Kebebasan desain semacam ini yang nantinya akan memudahkan penyeimbangan permainan. Sedangkan jumlah musuh dan panjangnya level dari pemain atau musuh sendiri menggambarkan akan lamanya permainan tersebut. Pada dasarnya semua proses diatas mengacu pada pokok pembahasan dari referensi yang dibahas pada Sub-bab \ref{sec:sub_sec2_keseimbangan} tentang menemukan keseimbangan.
 \vspace{1ex}
@@ -264,7 +257,7 @@ Pada Gambar \ref{fig:player_stats_generator} disisi masukan program terdapat ban
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.28]{img/player_uml.png}
+	\includegraphics[scale=0.25]{img/player_uml.png}
 	\caption{\textit{Class} diagram untuk \textit{stats} pemain.}
 	\label{fig:player_uml}
 \end{figure}
@@ -466,7 +459,7 @@ Karena program ini dibangun menggunakan OOP (\textit{Object Oriented Programming
 \label{sec:sub_sec3_enemy_level}
 \vspace{1ex}
 
-Pada bagian ini akan dijelaskan tentang pembagian level pada musuh, dengan masukan seperti yang disebutkan pada Tabel \ref{tb:enemy_input_variable}. Beracuan pada tabel tersebut beberapa variabel utama yang akan digunakan diantaranya adalah ``\textit{Enemy Numbers}" yang menentukan jumlah musuh yang akan dibuat, ``\textit{Max Level}" dan ``\textit{Min Level}" adalah nilai maksimum dan minimum level musuh. Selanjutnya tingkat kesulitan dari musuh ditentukan dengan variabel ``\textit{Level Class}" yang isinya dibagi menjadi ``\textit{Easy}", ``\textit{Medium}" dan ``\textit{Hard}". Musuh dengan tingkat kesulitan \textit{``Easy"} akan menjadi yang paling mudah dikalahkan, diikuti dengan \textit{``Medium"} dan ``\textit{Hard}" secara berurutan.
+Pada bagian ini akan dijelaskan tentang pembagian level pada musuh, dengan masukan seperti yang disebutkan pada Tabel \ref{tb:enemy_input_variable}. Beracuan pada tabel tersebut beberapa variabel utama yang akan digunakan diantaranya adalah ``\textit{Enemy Numbers}'' yang menentukan jumlah musuh yang akan dibuat, ``\textit{Max Level}'' dan ``\textit{Min Level}'' adalah nilai maksimum dan minimum level musuh. Selanjutnya tingkat kesulitan dari musuh ditentukan dengan variabel ``\textit{Level Class}'' yang isinya dibagi menjadi ``\textit{Easy}'', ``\textit{Medium}'' dan ``\textit{Hard}''. Musuh dengan tingkat kesulitan \textit{``Easy''} akan menjadi yang paling mudah dikalahkan, diikuti dengan \textit{``Medium''} dan ``\textit{Hard}'' secara berurutan.
 \vspace{1ex}
 
 Kemudian terdapat variabel pendukung yang akan menentukan data atau level yang ingin dihasilkan, yaitu \textit{scale} yang disebutkan pada Tabel \ref{tb:enemy_input_variable}. Selanjutnya dilakukan beberapa proses seperti pada persamaan \ref{eq:enemy_levels1}, \ref{eq:enemy_levels2}, \ref{eq:sub_enemy_levels1}, dan persamaan \ref{eq:sub_enemy_levels2} yang kemudian diperoleh hasil berupa level untuk banyak musuh sekaligus seperti yang ditunjukan pada persamaan \ref{eq:probability_enemy_levels}.
@@ -490,7 +483,7 @@ Kemudian terdapat variabel pendukung yang akan menentukan data atau level yang i
 	}
 \end{equation}
 
-Pada persamaan \ref{eq:enemy_levels1} adalah proses pembagian \textit{range} atau banyaknya level yang dijelaskan pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{Max Level} dan \textit{Min Level} sebagai \textit{range} atau banyaknya level, disimbolkan dengan $LN$ yang kemudian dibagi dengan $N_{LC}$ yang merupakan jumlah kelompok atau \textit{cluster} dari jumlah data yang ada pada variabel \textit{Level Class}. Jika beracuan pada Tabel \ref{tb:enemy_input_variable}, maka jumlah \textit{cluster} adalah data yang ada pada varaibel ``\textit{Level Class}" seperti ``\textit{Easy}", ``\textit{Medium}" dan ``\textit{High}", jadi jumlahnya adalah 3 \textit{cluster}. Maka pada kasus yang dicontohkan ini $LC$ atau \textit{level cluster} menjadi $LC = \left \{1, 2, 3 \right \}$, saat jumlah \textit{cluster} yang ingin dibuat lebih dari contoh maka akan menjadi $LC = \left \{1, 2, 3,..., N_{LC} \right \}$ dengan $N_{LC}$ adalah jumlah \textit{cluster} yang ingin dibuat.
+Pada persamaan \ref{eq:enemy_levels1} adalah proses pembagian \textit{range} atau banyaknya level yang dijelaskan pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{Max Level} dan \textit{Min Level} sebagai \textit{range} atau banyaknya level, disimbolkan dengan $LN$ yang kemudian dibagi dengan $N_{LC}$ yang merupakan jumlah kelompok atau \textit{cluster} dari jumlah data yang ada pada variabel \textit{Level Class}. Jika beracuan pada Tabel \ref{tb:enemy_input_variable}, maka jumlah \textit{cluster} adalah data yang ada pada varaibel ``\textit{Level Class}'' seperti ``\textit{Easy}'', ``\textit{Medium}'' dan ``\textit{High}'', jadi jumlahnya adalah 3 \textit{cluster}. Maka pada kasus yang dicontohkan ini $LC$ atau \textit{level cluster} menjadi $LC = \left \{1, 2, 3 \right \}$, saat jumlah \textit{cluster} yang ingin dibuat lebih dari contoh maka akan menjadi $LC = \left \{1, 2, 3,..., N_{LC} \right \}$ dengan $N_{LC}$ adalah jumlah \textit{cluster} yang ingin dibuat.
 \vspace{1ex}
 
 Dalam proses pencarian $SL$ atau set yang terdiri dari nilai pada setiap \textit{cluster} level atau banyaknya level dari setiap \textit{cluster} menjadi $SL = \left \{SL_{0}, SL_{1},... , SL_{i} \right\}$ yang dicontohkan terbagi menjadi tiga menjadi $SL = \left \{SL_{0}, SL_{1}, SL_{3} \right \}$, kemudian terdapat beberapa keputusan yang harus dijalankan. Seperti hasil bagi antara $LN$ dan $N_{LC}$ saat bernilai bilangan tidak bulat, maka harus dilakukan proses pembulatan dalam pembagian banyaknya level pada setiap cluster atau $SL_{i}$. Sepeti pada persamaan \ref{eq:enemy_levels1}, perlunya dilakukan pengujian, apakah hasil bagi antara $LN$ dan $N_{LC}$ berupa bilangan bulat atau tidak dengan menggunakan operasi modulus atau $mod$. Jika habis, maka setiap $SL_{i}$ akan diisi secara merata oleh hasil bagi antara $LN$ dan $N_{LC}$. Maka banyaknya level akan dibagi ke setaip \textit{cluster} adalah sebesar $LN$ dibagi dengan $LC_{N}$ yang kemudian hasil setiap \textit{cluster} disimpan dalam variabel $SL$.
@@ -520,7 +513,7 @@ Munculah pertanyaan seperti berapa banyaknya level atau $SL_{i}$ pada dua \texti
 }
 \end{equation}
 
-Dalam proses pencarian $SE$ atau \textit{cluster} musuh pada persamaan \ref{eq:enemy_levels2} digunakan cara yang sama seperti cara perhitungan pada persamaan \ref{eq:enemy_levels1} dengan membagi banyaknya musuh kedalam \textit{cluster} menjadi $SE = \left \{SE_{0}, SE_{1},... , SL_{i} \right\}$, yang dicontohkan menjadi tiga bagian $SE = \left \{SE_{0}, SE_{1}, SE_{3} \right \}$, dan dilanjutkan dengan pengambilan beberapa keputusan yang harus dijalankan. Sama seperti pada perhitungan hasil bagi antara $LN$ dan $N_{LC}$ pada persamaan \ref{eq:enemy_levels1}, nilai pembagian $EN$ atau banyaknya musuh yang dibagi dengan $LC_{N}$ atau jumlah \textit{cluster} level yang ingin dibuat dengan tiga tingkatan ``\textit{Easy}", ``\textit{Medium}" dan ``\textit{Hard}" yang juga harus bernilai bilangan bulat positif, kemudian dilakukan juga proses pembulatan jumlah musuh terlebih dahulu dikarenakan jumlah musuh tidak boleh bernilai angka yang tidak bulat. 
+Dalam proses pencarian $SE$ atau \textit{cluster} musuh pada persamaan \ref{eq:enemy_levels2} digunakan cara yang sama seperti cara perhitungan pada persamaan \ref{eq:enemy_levels1} dengan membagi banyaknya musuh kedalam \textit{cluster} menjadi $SE = \left \{SE_{0}, SE_{1},... , SL_{i} \right\}$, yang dicontohkan menjadi tiga bagian $SE = \left \{SE_{0}, SE_{1}, SE_{3} \right \}$, dan dilanjutkan dengan pengambilan beberapa keputusan yang harus dijalankan. Sama seperti pada perhitungan hasil bagi antara $LN$ dan $N_{LC}$ pada persamaan \ref{eq:enemy_levels1}, nilai pembagian $EN$ atau banyaknya musuh yang dibagi dengan $LC_{N}$ atau jumlah \textit{cluster} level yang ingin dibuat dengan tiga tingkatan ``\textit{Easy}'', ``\textit{Medium}'' dan ``\textit{Hard}'' yang juga harus bernilai bilangan bulat positif, kemudian dilakukan juga proses pembulatan jumlah musuh terlebih dahulu dikarenakan jumlah musuh tidak boleh bernilai angka yang tidak bulat. 
 \vspace{1ex}
 
 Sepeti pada persamaan \ref{eq:enemy_levels1}, pada persamaan \ref{eq:enemy_levels2} juga dilakukan pengujian apakah dapat dibulatkan atau tidak maka dilakukan operasi modulus atau $mod$, jika habis maka $SE_{N}$ akan diisi secara merata oleh hasil bagi antara $EN$ dan $LC_{N}$. Maka jumlah \textit{cluster} sebanyak $N$ pada $LC_{N}$ dan banyaknya musuh adalah sebesar $EN$ yang dibagi dengan $LC_{N}$, kemudian hasil akhir tersebut disimpan dalam variabel $SE_{N}$. Untuk penjelasan langkah selanjutnya pada persamaan \ref{eq:enemy_levels2} sama persis dengan persamaan \ref{eq:enemy_levels1} yang sudah dijelaskan pada bagian sebelumnya, hanya saja objek pada persamaan \ref{eq:enemy_levels1} adalah level sedangkan pada persamaan \ref{eq:enemy_levels2} adalah musuh. Setelah $SL_{N}$ dan $SE_{N}$ diperoleh maka saatnya menuju bagian yang lebih dalam dan detail lagi. Bagaimana dengan pemberian level untuk setiap musuh, maka digunakanlah persamaan \ref{eq:sub_enemy_levels1} dan persamaan \ref{eq:sub_enemy_levels2} dengan penjelasan sebagai berikut.
@@ -1000,7 +993,7 @@ Di lakukan \textit{parsing} halaman tersebut \citep{dota2020} dan dilakukan konv
 	\label{fig:dota2_gameplay}
 \end{figure}
 
-Dari seluruh data \textit{hero} tersebut, enam belas \textit{hero} nantinya akan diambil sebagai data validasi yang tercantum pada Tabel \ref{tb:dota2_hero_pt3} dan sisanya digunakan sebagai data \textit{training} pada Tabel \ref{tb:dota2_hero_pt1} dan Tabel \ref{tb:dota2_hero_pt2} yang semua terlampir dalam \nameref{chap:chap6_attachment}. Untuk data validasi pada Tabel \ref{tb:dota2_hero_pt3}, diambilah beberapa \textit{hero} yang memiliki \textit{stats} aneh seperti Jakiro, Winter Wyvern (STR tinggi tetapi masuk ke dalam kategori INT \textit{hero}), Phoenix, IO (STR rendah tetapi termasuk ke dalam kategori STR hero), Bloodseeker, Undying, dan lain-lain.
+Dari seluruh data \textit{hero} tersebut, enam belas \textit{hero} nantinya akan diambil sebagai data \textit{testing} yang tercantum pada Tabel \ref{tb:dota2_hero_pt3} dan sisanya digunakan sebagai data \textit{training} pada Tabel \ref{tb:dota2_hero_pt1} dan Tabel \ref{tb:dota2_hero_pt2} yang semua terlampir dalam \nameref{chap:chap6_attachment}. Untuk data \textit{testing} pada Tabel \ref{tb:dota2_hero_pt3}, diambilah beberapa \textit{hero} yang memiliki \textit{stats} aneh seperti Jakiro, Winter Wyvern (STR tinggi tetapi masuk ke dalam kategori INT \textit{hero}), Phoenix, IO (STR rendah tetapi termasuk ke dalam kategori STR hero), Bloodseeker, Undying, dan lain-lain.
 \vspace{1ex}
 
 \subsection{Korelasi Fitur}
@@ -1071,10 +1064,10 @@ Sedangkan untuk \textit{loss function} yang digunakan adalah \textit{Cross Entro
 \label{sec:sub_sec3_dota2_train}
 \vspace{1ex}
 
-Data hasil dari korelasi fitur pada Sub-bab \ref{sec:sub_sec3_dota2_feature_corel}, karena tipe yang ditunjukan pada kolom ke satu dengan kepala yang bertuliskan ``Fitur" adalah pedoman hasil prediksi maka tidak akan diikutkan proses \textit{training}. Pada kolom \textit{type} tipe karakter dinyatakan dengan 0, 1, dan 2 yang menyatakan STR, AGI, dan INT. Nantinya keluaran dari hasil \textit{training} yang menunjukan prediksi tipe dari karakter dinyatakan dalam bentuk \textit{one-hot vector}: STR $\rightarrow [1, 0, 0]$, AGI $\rightarrow [0, 1, 0]$ dan INT $\rightarrow [0, 0, 1]$. 
+Data hasil dari korelasi fitur pada Sub-bab \ref{sec:sub_sec3_dota2_feature_corel}, karena tipe yang ditunjukan pada kolom ke satu dengan kepala yang bertuliskan ``Fitur'' adalah pedoman hasil prediksi maka tidak akan diikutkan proses \textit{training}. Pada kolom \textit{type} tipe karakter dinyatakan dengan 0, 1, dan 2 yang menyatakan STR, AGI, dan INT. Nantinya keluaran dari hasil \textit{training} yang menunjukan prediksi tipe dari karakter dinyatakan dalam bentuk \textit{one-hot vector}: STR $\rightarrow [1, 0, 0]$, AGI $\rightarrow [0, 1, 0]$ dan INT $\rightarrow [0, 0, 1]$. 
 \vspace{1ex}
 
-Pada proses \textit{training} hasil prediksi akan dibandingkan dengan data validasi untuk mendapatkan nilai \textit{loss}/\textit{error} dan validasi untuk melihat performa model \textit{neural network} yang dibuat. Nilai \textit{loss} kemudian digunakan untuk meningkatkan akurasi model. Proses \textit{training} dilakukan untuk mendapatkan model dengan akurasi optimal dan tidak \textit{overfitting}.
+Pada proses \textit{training} hasil prediksi akan dibandingkan dengan data \textit{testing} untuk mendapatkan nilai \textit{loss}/\textit{error} dan validasi untuk melihat performa model \textit{Neural Network} yang dibuat. Nilai \textit{loss} kemudian digunakan untuk meningkatkan akurasi model. Proses \textit{training} dilakukan untuk mendapatkan model dengan akurasi optimal dan tidak \textit{overfitting}.
 \vspace{1ex}
 
 Penentuan nilai \textit{batch size} dan \textit{learning rate} berperan penting dalam peningkatan akurasi hal ini biasa disebut dengan \textit{hyperparameter tuning}. Dengan \textit{Batch size} yang besar akan dapat memberikan jenis data yang bervariasi sehingga saat dilakukan perhitungan \textit{loss}, nilai perhitungan \textit{loss} yang diperoleh dapat mewakili variasi dataset secara keseluruhan. Sebaliknya \textit{batch size} yang kecil hanya dapat memberikan perwakilan sedikit dataset sehingga nilai perubahan \textit{loss} untuk memperoleh nilai yang stabil akan semakin sulit. Karena itu \textit{batch size} yang besar dapat diberikan \textit{learning rate} yang besar karena arah perpindahan \textit{loss} yang lebih stabil. Sedangkan \textit{batch size} yang kecil harus diberikan \textit{learning rate} yang kecil juga agar perpindahannya tidak berpindah pindah terlalu jauh.
@@ -1107,7 +1100,7 @@ Pemberhentian proses \textit{training} tersebut dilakukan bukan tanpa alasan, ji
 \label{sec:sub_sec3_dota2_model}
 \vspace{1ex}
 
-Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train} dapat digunakan untuk menguji atau menampilkan hasil klasifikasi pada data validasi, hasil tersebut akan ditampilkan dan dibahas pada Sub-bab \ref{sec:sec4_eval_dota2}. Pada Sub-bab ini akan lebih membahas mengenai model terbaik yang dihasilkan dari proses \textit{training}. Melanjutkan pembahasan sebelumnya pada Sub-bab \ref{sec:sec4_eval_dota2} tentang \textit{training} yang telah dilakukan meliputi penurunan \textit{learning rate}, pemberhentian \textit{training}, toleransi \textit{epoch} saat tidak terjadinya penurunan \textit{learing rate} dan yang paling berkataitan dengan Sub-bab ini pengambilan model terbaik. Pengambilan tersebut dilakukan pada saat \textit{epoch} dikurangi dengan 1500, dengan asumsi model terbaik diperoleh saat presentase \textit{validation loss} paling rendah dan 1500 tersebut adalah toleransi \textit{epoch}. Selama 1500 \textit{epoch} tersebut, kemudian \textit{training} berhenti, berarti tidak ditemukannya \textit{validation loss} yang lebih rendah dalam \textit{range} 1500 \textit{epoch} tersebut.
+Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train} dapat digunakan untuk menguji atau menampilkan hasil klasifikasi pada data \textit{testing}, hasil tersebut akan ditampilkan dan dibahas pada Sub-bab \ref{sec:sec4_eval_dota2}. Pada Sub-bab ini akan lebih membahas mengenai model terbaik yang dihasilkan dari proses \textit{training}. Melanjutkan pembahasan sebelumnya pada Sub-bab \ref{sec:sec4_eval_dota2} tentang \textit{training} yang telah dilakukan meliputi penurunan \textit{learning rate}, pemberhentian \textit{training}, toleransi \textit{epoch} saat tidak terjadinya penurunan \textit{learing rate} dan yang paling berkataitan dengan Sub-bab ini pengambilan model terbaik. Pengambilan tersebut dilakukan pada saat \textit{epoch} dikurangi dengan 1500, dengan asumsi model terbaik diperoleh saat presentase \textit{validation loss} paling rendah dan 1500 tersebut adalah toleransi \textit{epoch}. Selama 1500 \textit{epoch} tersebut, kemudian \textit{training} berhenti, berarti tidak ditemukannya \textit{validation loss} yang lebih rendah dalam \textit{range} 1500 \textit{epoch} tersebut.
 \vspace{1ex}
 
 \section{Klasifikasi Karakter Pemain dengan Neural Network Multiclass Classification}
@@ -1117,7 +1110,7 @@ Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_se
 Terdapat banyak sekali jenis permainan RPG seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sec2_rpg}, tidak semua karakter yang dapat dimainkan oleh pemain berjumlah sangat banyak. Hanya beberapa genre RPG saja yang dapat menggunakan karakter pemain dengan jumlah sangat banyak. Jika mengacu genre permainan pada Sub-bab \ref{sec:sec2_rpg} dan judul permainan dijumpai saat ini permainan dengan genre JRPG dan MMORPG yang memungkinkan untuk memainkan banyak karakter dari pemain.
 \vspace{1ex}
 
-Pada pembahasan sebelumnya pada Sub-bab \ref{sec:sec3_dota2_method}, Dota 2 adalah permainan dengan genre MOBA (\textit{Multiplayer Online Battle Arena}) dengan beraneka karakter yang masing-masing dapat dipilih dan dimainkan oleh pemain. Jika dibandingkan dengan RPG yang dibahas pada Sub-bab \ref{sec:sec2_rpg}, mungkin RPG dengan banyak karakter yang dapat dilakukan proses validasi. Maka genre yang memungkinkan dilakukan proses validasi adalah JRPG, TRPG dan MMORPG dengan \textit{gameplay} yang mirip dengan JRPG. Sedangkan untuk WRPG, ARPG, SRPG, dan MMORPG dengan \textit{gameplay} karakter tunggal yang tidak mirip dengan JRPG atau TRPG.
+Pada pembahasan sebelumnya pada Sub-bab \ref{sec:sec3_dota2_method}, Dota 2 adalah permainan dengan genre MOBA (\textit{Multiplayer Online Battle Arena}) dengan beraneka karakter yang masing-masing dapat dipilih dan dimainkan oleh pemain. Jika dibandingkan dengan RPG yang dibahas pada Sub-bab \ref{sec:sec2_rpg}, mungkin RPG dengan banyak karakter yang dapat dilakukan proses klasifikasi. Maka genre yang memungkinkan dilakukan proses klasifikasi adalah JRPG, TRPG dan MMORPG dengan \textit{gameplay} yang mirip dengan JRPG. Sedangkan untuk WRPG, ARPG, SRPG, dan MMORPG dengan \textit{gameplay} karakter tunggal yang tidak mirip dengan JRPG atau TRPG.
 \vspace{1ex}
 
 Maka digunakanlah data masukan yang digunakan untuk membuat karakter pemain yang sebelumnya sudah dibahas pada Sub-bab \ref{sec:sec3_player_stats} pada Tabel \ref{tb:player_input_variable}. Data tersebut dibuat berdsarkan skenario seolah mendesain sebuah permainan. Pada permainan yang sebelumnya sempat dibahas pada Sub-bab \ref{sec:sec2_rpg} pasti terdapat juga karakter yang memiliki HP, \textit{strength} yang tinggi dan biasa diikuti dengan \textit{vitality} yang lumayan tinggi tetapi memiliki kecepatan atau \textit{agility} rendah. Kemudian mungkin terdapat juga karakter yang memiliki HP sedang, \textit{strength} yang rendah memiliki \textit{magic} dan \textit{agility} yang tinggi. Berikut adalah contoh skenario yang digunakan untuk mendesain karakter pemain berdasarkan tipe pada penelitian ini:
@@ -1132,7 +1125,7 @@ Maka digunakanlah data masukan yang digunakan untuk membuat karakter pemain yang
 	\item Terdapat juga karakter yang memiliki HP sedang, \textit{strength} yang rendah, mungkin dengan \textit{endurance} yang sedang juga, tetapi memiliki \textit{magic} dan \textit{agility} yang tinggi. Dalam skenario ini, karakter tersebut adalah \textbf{\textit{magician}} yang berperan sebagai penyerang dari \textit{party} dengan kemampuan \textit{magic}.
 \end{enumerate}
 
-Maka hal yang akan dilakukan disini adalah mencoba melakukan klasifikasi karakter berdasarkan \textit{stats} yang ada, dataset dari karakter pemain dapat dilihat pada Tabel \ref{tb:player_char_train} untuk data \textit{training} dan Tabel \ref{tb:player_char_test} untuk data validasi dan \textit{testing}. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:player_class_proc}. 
+Maka hal yang akan dilakukan disini adalah mencoba melakukan klasifikasi karakter berdasarkan \textit{stats} yang ada, dataset dari karakter pemain dapat dilihat pada Tabel \ref{tb:player_char_train} untuk data \textit{training} dan Tabel \ref{tb:player_char_test} untuk \textit{testing}. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:player_class_proc}. 
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
@@ -1148,7 +1141,10 @@ Pada dasarnya Gambar \ref{fig:player_class_proc} mirip dengan Gambar \ref{fig:do
 \label{sec:sub_sec3_player_data_prep}
 \vspace{1ex}
 
-Dataset dari karakter pemain dapat dilihat pada Tabel \ref{tb:player_char_train} untuk data \textit{training} dan Tabel \ref{tb:player_char_test} untuk data validasi dan \textit{testing}. Data tersebut diperoleh dari Tabel \ref{tb:player_input_variable} dengan kenaikan pada masing-masing variabel misalkan pada HP yang diawali dengan \textit{Start HP} yang kemudian akan naik sebesar \textit{Next HP} begitu juga dengan MP. Sedangkan untuk kenaikan \textit{stats} seperti \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck} diperoleh berdasarkan penambahan sejumlah variabel \textit{Stats to Assign} dangan hasil akhir sejumlah variabel \textit{Max Stats Value}. Bila dijabarkan dalam proses kenaikan \textit{stats} setiap level maka hasilnya akan seperti Tabel \ref{tb:player_all_stats_1} sampai dengan Tabel \ref{tb:player_all_stats_4} yang diperoleh dari proses yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dan bila setiap kenaikan \textit{stats} dirata-rata maka hasilnya akan seperti Tabel \ref{tb:player_char_train} untuk data \textit{training} dan Tabel \ref{tb:player_char_test} yang semua terlampir dalam \nameref{chap:chap6_attachment}. Kemudian untuk kelemahan dari pemain tidak diguanakan sebagai fitur, dikarenakan nilainya yang cenderung kurang bervariasi yang mengakibatkan akan semakin mendekati nol saat dilakukan korelasi fitur.
+Dataset dari karakter pemain dapat dilihat pada Tabel \ref{tb:player_char_train} untuk data \textit{training} dan Tabel \ref{tb:player_char_test} untuk data \textit{testing}. Data tersebut diperoleh dari Tabel \ref{tb:player_input_variable} dengan kenaikan pada masing-masing variabel misalkan pada HP yang diawali dengan \textit{Start HP} yang kemudian akan naik sebesar \textit{Next HP} begitu juga dengan MP. Sedangkan untuk kenaikan \textit{stats} seperti \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck} diperoleh berdasarkan penambahan sejumlah variabel \textit{Stats to Assign} dangan hasil akhir sejumlah variabel \textit{Max Stats Value}. Bila dijabarkan dalam proses kenaikan \textit{stats} setiap level maka hasilnya akan seperti Tabel \ref{tb:player_all_stats_1} sampai dengan Tabel \ref{tb:player_all_stats_4} yang diperoleh dari proses yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dan bila setiap kenaikan \textit{stats} dirata-rata maka hasilnya akan seperti data di baris pertama pada Tabel \ref{tb:player_char_train} terlampir dalam \nameref{chap:chap6_attachment}. 
+\vspace{1ex}
+
+Sedangkan untuk baris lain pada Tabel \ref{tb:player_char_train} dan Tabel \ref{tb:player_char_test} dibuat satu-satu dengan variabel masukan seperti pada Tabel \ref{tb:player_input_variable}, namun dengan nilai yang berbeda. Nilai tersebut menyesuaikan dengan skenario yang dijelaskan diawal Sub-bab \ref{sec:sec3_player_method}. Jumlah karakter pemain yang dibuat berjumlah 8 karakter yang dibagi menjadi 6 data \textit{training} dan 2 data \textit{testing}.  Kemudian untuk kelemahan dari pemain tidak diguanakan sebagai fitur, dikarenakan nilainya yang cenderung kurang bervariasi yang mengakibatkan akan semakin mendekati nol saat dilakukan korelasi fitur.
 \vspace{1ex}
 
 \subsection{Korelasi Fitur}
@@ -1198,23 +1194,24 @@ Arsitektur \textit{Neural Network} yang akan dibuat mempunyai enam belas \textit
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.07]{img/nn_player_character.png}
+	\includegraphics[scale=0.08]{img/nn_player_character.png}
 	\caption{Arsitektur \textit{Neural Network} untuk klasifikasi karakter pemain.}
 	\label{fig:nn_player}
+	\vspace{1ex}
 \end{figure}
 
 \subsection{Training dan Pembuatan Model}
 \label{sec:sub_sec3_player_char_train}
 \vspace{1ex}
 
-Data hasil dari korelasi fitur pada Sub-bab \ref{sec:sub_sec3_player_feature_corel}, karena tipe yang ditunjukan pada kolom ke satu dengan kepala bertuliskan ``Fitur" adalah pedoman hasil prediksi maka tidak akan diikutkan proses \textit{training}. Pada kolom \textit{type} tipe karakter dinyatakan dengan 0, 1, 2, dan 3 yang menyatakan \textit{Knight}, \textit{Priest}, \textit{Assassin} dan \textit{Magician}. Nantinya keluaran dari hasil \textit{training} yang menunjukan prediksi tipe dari karakter dinyatakan dalam bentuk \textit{one-hot vector}: \textit{Knight} $\rightarrow [1, 0, 0, 0]$, \textit{Priest} $\rightarrow [0, 1, 0, 0]$, \textit{Assassin} $\rightarrow [0, 0, 1, 0]$ dan \textit{Magician} $\rightarrow [0, 0, 0, 1]$. Kemudian untuk optimasi dan pembuatan model sama seperti Sub-bab \ref{sec:sub_sec3_dota2_model}. Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_player_char_train} dapat digunakan untuk menguji atau menampilkan hasil klasifikasi pada data validasi yang dibahas pada Sub-bab \ref{sec:sec4_eval_dota2}.
+Data hasil dari korelasi fitur pada Sub-bab \ref{sec:sub_sec3_player_feature_corel}, karena tipe yang ditunjukan pada kolom ke satu dengan kepala bertuliskan ``Fitur'' adalah pedoman hasil prediksi maka tidak akan diikutkan proses \textit{training}. Pada kolom \textit{type} tipe karakter dinyatakan dengan 0, 1, 2, dan 3 yang menyatakan \textit{Knight}, \textit{Priest}, \textit{Assassin} dan \textit{Magician}. Nantinya keluaran dari hasil \textit{training} yang menunjukan prediksi tipe dari karakter dinyatakan dalam bentuk \textit{one-hot vector}: \textit{Knight} $\rightarrow [1, 0, 0, 0]$, \textit{Priest} $\rightarrow [0, 1, 0, 0]$, \textit{Assassin} $\rightarrow [0, 0, 1, 0]$ dan \textit{Magician} $\rightarrow [0, 0, 0, 1]$. Kemudian untuk optimasi dan pembuatan model sama seperti Sub-bab \ref{sec:sub_sec3_dota2_model}. Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_player_char_train} dapat digunakan untuk menguji atau menampilkan hasil klasifikasi pada data \textit{testing} yang dibahas pada Sub-bab \ref{sec:sec4_eval_dota2}.
 \vspace{1ex}
 
 \section{Klasifikasi Karakter Musuh dengan Neural Network Multiclass Classification}
 \label{sec:sec3_enemy_method}
 \vspace{1ex}
 
-Hal yang akan dilakukan disini adalah langsung melakukan klasifikasi karakter musuh berdasarkan \textit{stats} yang ada, dataset dari karakter musuh dapat dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 1 sampai 280 digunakan sebagai data \textit{training} dan Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai paling akhir digunakan sebagai data validasi dan \textit{testing}. Tanpa perlu adanya skenario dikarenakan jumlah musuh yang tentunya sudah sangat banyak dan bermacam-macam yang telah dibuat melalui serangkaian proses pada Sub-bab \ref{sec:sec3_enemy_stats}. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:enemy_class_proc}.
+Hal yang akan dilakukan disini adalah langsung melakukan klasifikasi karakter musuh berdasarkan \textit{stats} yang ada, dataset dari karakter musuh dapat dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 1 sampai 280 digunakan sebagai data \textit{training} dan Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai paling akhir digunakan sebagai data \textit{testing}. Tanpa perlu adanya skenario dikarenakan jumlah musuh yang tentunya sudah sangat banyak dan bermacam-macam yang telah dibuat melalui serangkaian proses pada Sub-bab \ref{sec:sec3_enemy_stats}. Selanjutnya adalah tahapan klasifikasinya seperti yang direpresentasikan pada Gambar \ref{fig:enemy_class_proc}.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
@@ -1230,7 +1227,7 @@ Pada dasarnya Gambar \ref{fig:enemy_class_proc} mirip dengan Gambar \ref{fig:dot
 \label{sec:sub_sec3_enemy_data_prep}
 \vspace{1ex}
 
-Dataset dari karakter musuh dapat dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 1 sampai 280 digunakan sebagai data \textit{training} dan Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai 400 digunakan sebagai data validasi dan \textit{testing}. Data tersebut diperoleh dari Tabel \ref{tb:enemy_input_variable} yang kemudian dijelaskan setiap proses pembuatan data tersebut pada Sub-bab \ref{sec:sec3_player_stats}. Kemudian untuk kelemahan dari musuh tidak diguanakan sebagai fitur sama seperti pada karakter pemain, hal tersebut dikarenakan nilainya yang cenderung kurang bervariasi yang mengakibatkan akan semakin mendekati nol saat dilakukan korelasi fitur.
+Dataset dari karakter musuh dapat dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 1 sampai 280 digunakan sebagai data \textit{training} dan Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai 400 digunakan sebagai data \textit{testing} dan \textit{testing}. Data tersebut diperoleh dari Tabel \ref{tb:enemy_input_variable} yang kemudian dijelaskan setiap proses pembuatan data tersebut pada Sub-bab \ref{sec:sec3_player_stats}. Kemudian untuk kelemahan dari musuh tidak diguanakan sebagai fitur sama seperti pada karakter pemain, hal tersebut dikarenakan nilainya yang cenderung kurang bervariasi yang mengakibatkan akan semakin mendekati nol saat dilakukan korelasi fitur.
 \vspace{1ex}
 
 Maka digunakanlah data masukan yang digunakan untuk membuat karakter musuh yang sebelumnya sudah dibahas pada Sub-bab \ref{sec:sec3_enemy_stats} pada Tabel \ref{tb:enemy_input_variable}. Data tersebut dibuat berdasarkan skenario seolah mendesain sebuah permainan. Pada permainan yang sebelumnya sempat dibahas pada Sub-bab \ref{sec:sub_sec3_story} pasti terdapat juga karakter musuh yang susah atau mudah dikalahkan, memiliki kemampuan \textit{magic} yang tinggi, sedang, atau rendah, memiliki kemampuan \textit{strength} yang tinggi, sedang, atau rendah, dan lain sebagainya. Berikut adalah contoh skenario yang digunakan untuk mendesain karakter musuh berdasarkan tipe pada penelitian ini:
@@ -1282,9 +1279,10 @@ Selanjutnya akan dibuang semua fitur yang memiliki nilai korelasi lebih kecil da
 Arsitektur \textit{Neural Network} yang akan dibuat mempunyai tiga \textit{neuron} pada layer masukan, enam \textit{neuron} pada \textit{hidden layer} dengan fungsi aktivasi \textit{sigmoid} dan lima \textit{neuron} yang mewakili (\textit{Knight}, \textit{Priest}, \textit{Assassin}, dan \textit{Magician}) pada layer keluaran seperti pada Gambar \ref{fig:nn_enemy} dengan fungsi aktivasi \textit{Softmax} karena keluaran dari model yang dibuat bersifat distribusi probabilitas dari seluruh nilai target.
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.075]{img/nn_enemy_character.png}
+	\includegraphics[scale=0.08]{img/nn_enemy_character.png}
 	\caption{Arsitektur \textit{Neural Network} untuk klasifikasi karakter musuh.}
 	\label{fig:nn_enemy}
+	\vspace{1ex}
 \end{figure}
 
 Misalkan model kita 100\% yakin jika karakter A adalah \textit{Hard Strength}, maka keluaran dari model adalah $\left[1,\ 0,\ 0,\ 0,\ 0 \right]$ dan jika model kita 50\% yakin jika hero B adalah \textit{Soft Strength}, 25\% yakin jika hero B adalah \textit{Hard Strength} atau \textit{Hard Magic}, maka keluaran dari model ini adalah $\left[0.25,\ 0.5,\ 0.25, \ 0, \ 0 \right]$. Harus diingat bahwa total nilai dari distribusi probabilitas untuk semua target adalah 1.
@@ -1297,5 +1295,5 @@ Sedangkan untuk \textit{loss function} yang digunakan adalah \textit{Cross Entro
 \label{sec:sub_sec3_enemy_char_train}
 \vspace{1ex}
 
-Data hasil dari korelasi fitur pada Sub-bab \ref{sec:sub_sec3_enemy_feature_corel}, karena tipe yang ditunjukan pada kolom ke satu dengan kepala bertuliskan ``Fitur" adalah pedoman hasil prediksi maka tidak akan diikutkan proses \textit{training}. Pada kolom \textit{type} tipe karakter dinyatakan dengan 0, 1, 2, 3, dan 4 yang menyatakan \textit{Mixed}, \textit{Hard Strength}, \textit{Soft Strength}, \textit{Hard Magic} dan \textit{Soft Magic}. Nantinya keluaran dari hasil \textit{training} yang menunjukan prediksi tipe dari karakter dinyatakan dalam bentuk \textit{one-hot vector}: \textit{Mixed} $\rightarrow [1, 0, 0, 0, 0]$, \textit{Hard Strength} $\rightarrow [0, 1, 0, 0, 0]$, \textit{Soft Strength} $\rightarrow [0, 0, 1, 0, 0]$, \textit{Hard Magic} $\rightarrow [0, 0, 0, 1, 0]$, dan \textit{Soft Magic} $\rightarrow [0, 0, 0, 0, 1]$. Kemudian untuk optimasi dan pembuatan model sama seperti Sub-bab \ref{sec:sub_sec3_dota2_model}. Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_enemy_char_train} dapat digunakan untuk menguji atau menampilkan hasil klasifikasi pada data validasi yang dibahas pada Sub-bab \ref{sec:sec4_eval_dota2}.
+Data hasil dari korelasi fitur pada Sub-bab \ref{sec:sub_sec3_enemy_feature_corel}, karena tipe yang ditunjukan pada kolom ke satu dengan kepala bertuliskan ``Fitur'' adalah pedoman hasil prediksi maka tidak akan diikutkan proses \textit{training}. Pada kolom \textit{type} tipe karakter dinyatakan dengan 0, 1, 2, 3, dan 4 yang menyatakan \textit{Mixed}, \textit{Hard Strength}, \textit{Soft Strength}, \textit{Hard Magic} dan \textit{Soft Magic}. Nantinya keluaran dari hasil \textit{training} yang menunjukan prediksi tipe dari karakter dinyatakan dalam bentuk \textit{one-hot vector}: \textit{Mixed} $\rightarrow [1, 0, 0, 0, 0]$, \textit{Hard Strength} $\rightarrow [0, 1, 0, 0, 0]$, \textit{Soft Strength} $\rightarrow [0, 0, 1, 0, 0]$, \textit{Hard Magic} $\rightarrow [0, 0, 0, 1, 0]$, dan \textit{Soft Magic} $\rightarrow [0, 0, 0, 0, 1]$. Kemudian untuk optimasi dan pembuatan model sama seperti Sub-bab \ref{sec:sub_sec3_dota2_model}. Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_enemy_char_train} dapat digunakan untuk menguji atau menampilkan hasil klasifikasi pada data testing yang dibahas pada Sub-bab \ref{sec:sec4_eval_dota2}.
 \vspace{1ex}
