@@ -675,12 +675,12 @@ Terakhir, permainan menyediakan fitur berupa pengembangan karakter dan perencana
 \label{sec:sec2_ann}
 \vspace{1ex}
 
-Terinspirasi dari cara kerja otak manusia dalam memproses informasi seperti yang ditunjukan pada Gambar \ref{fig:ann_neuron}, maka dibuatlah sebuah paradigma pemprosesan informasi yang biasanya digunakan untuk mempelajari tingkah laku sistem yang kompleks pada komputer, istilah ini biasa disebut dengan \textit{Artificial Neural Network}.
+Terinspirasi dari cara kerja otak manusia dalam memproses informasi seperti yang ditunjukan pada Gambar \ref{fig:ann_neuron} \citep{buduma2017}, maka dibuatlah sebuah paradigma pemprosesan informasi yang biasanya digunakan untuk mempelajari tingkah laku sistem yang kompleks pada komputer, istilah ini biasa disebut dengan \textit{Artificial Neural Network}.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.65]{img/ann_neuron.png}
-	\caption{Skruktur neuron dan deskripsi fungsinya \citep{buduma2017}.}
+	\caption{Skruktur neuron dan deskripsi fungsinya.}
 	\label{fig:ann_neuron}
 \end{figure}
 
@@ -709,12 +709,12 @@ Pada dasarnya \textit{activation function} dari sebuah neuron adalah Linear. Jik
 	\label{fig:ann_linear}
 \end{figure}
 
-Fungsi sigmoid mempunyai rentang antara 0 hingga 1 sedangkan rentang dari Tanh adalah -1 hingga 1. Kedua fungsi ini biasanya digunakan untuk klasifikasi dua kelompok data. Kemudian pada ReLU biasanya dilakukan \textit{treshold} dari 0 sampai dengan tidak terhingga. Pada Gambar \ref{fig:ann_non_linear} adalah contoh keluaran dari sebuah fungsi non-linear.
+Fungsi sigmoid mempunyai rentang antara 0 hingga 1 sedangkan rentang dari Tanh adalah -1 hingga 1. Kedua fungsi ini biasanya digunakan untuk klasifikasi dua kelompok data. Kemudian pada ReLU biasanya dilakukan \textit{treshold} dari 0 sampai dengan tidak terhingga. Pada Gambar \ref{fig:ann_non_linear} \citep{buduma2017} adalah contoh keluaran dari sebuah fungsi non-linear, yang masing-masing secara berurutan dengan (a) adalah Sigmoid, (b) adalah Tanh, dan (c) adalah ReLU.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.68]{img/ann_non_linear.png}
-	\caption{Contoh fungsi aktivasi: (a). Sigmoid, (b). Tanh, dan (c). ReLU \citep{buduma2017}.}
+	\caption{Contoh fungsi aktivasi.}
 	\label{fig:ann_non_linear}
 \end{figure}
 
@@ -725,10 +725,9 @@ Kemudian terdapat sebuah activation function lagi yang akan digunakan pada penel
 \label{sec:sub_sec2_nn_arch}
 
 Arsitektur pada Gambar \ref{fig:ann_arch} biasa disebut sebagai \textit{Multi Layer Perceptron} (MLP) atau \textit{Fully-Connected Layer}. Arsitektur tersebut mempunyai 3 buah neuron pada \textit{input} Layer dan 2 buah \textit{node} pada \textit{output Layer}. Di antara \textit{input} dan \textit{output}, terdapat 1 \textit{hidden layer} dengan 4 buah neuron seperti yang ditunjukan pada Gambar \ref{fig:ann_arch}. Setiap neuron pada MLP saling berhubungan yang ditandai dengan tanda panah pada gambar diatas. Tiap koneksi memiliki \textit{weight} yang nantinya nilai pada setiap \textit{weight} akan berbeda-beda. \textit{Hidden layer} dan \textit{output layer} memiliki tambahan \textit{input} yang biasa disebut dengan bias. Sehingga pada arsitektur pada Gambar \ref{fig:ann_arch} terdapat 3 $\times$ 4 \textit{weight} + 4 \textit{bias} dan 4 $\times$ 2 \textit{weight} + 2 \textit{bias}. Total keseluruhan terdapat 26 parameter yang pada proses \textit{training} akan mengalami perubahan demi memperoleh hasil yang terbaik.
-\vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.9]{img/ann_arch.jpeg}
+	\includegraphics[scale=0.7]{img/ann_arch.jpeg}
 	\caption{Contoh arsitektur sederhana \textit{Neural Network}.}
 	\label{fig:ann_arch}
 \end{figure}
