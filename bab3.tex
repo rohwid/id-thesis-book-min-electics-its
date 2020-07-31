@@ -301,17 +301,17 @@ Kemudian variabel lanjutannya adalah \textit{next} HP atau HP pada level selanju
 
 \begin{equation}\label{eq:hp_player}
 	\begin{split}
-		HP = \sum_{n = 0}^{N_{p}} HP_{(n + 1)} + \left(HP_{(n + 1)} - HP_{n} \right)
+		HP = \sum_{i = 0}^{N_{p}} HP_{(i + 1)} + \left(HP_{(i + 1)} - HP_{i} \right)
 	\end{split}
 \end{equation}
 
 \begin{equation}\label{eq:mp_player}
 	\begin{split}
-		MP = \sum_{n = 0}^{N_{p}} MP_{(n + 1)} + \left(MP_{(n + 1)} - MP_{n} \right)
+		MP = \sum_{i = 0}^{N_{p}} MP_{(i + 1)} + \left(MP_{(i + 1)} - MP_{i} \right)
 	\end{split}
 \end{equation}
 
-Pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player}, HP tetap dinyatakan sebagain HP, begitu juga dengan MP. Kemudian $HP$ adalah nilai HP yang dicari, yang mana $N$ adalah level maksimum, $n$ adalah level mulai dan $n + 1$ adalah level selanjutnya. Jadi pada tahap ini seperti yang dijelaskan pada Tabel \ref{tb:player_input_variable} yang mana nilai $n$ dan $n + 1$ sudah diketahui sebagai inisialisasi, masing-masing adalah $HP_{n}$ dan $HP_{(n + 1)}$. Penjelasan ini juga berlaku untuk mencari nilai $MP$ yaitu nilai MP yang dicari. Selanjutnya melalui persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dihasilkan data dan grafik seperti yang ditunjukan pada Sub-bab \ref{sec:sub_sec4_eval_dist_hp_mp_level_single-character} dan \ref{sec:sub_sec4_eval_dist_hp_mp_level_multi-character}.
+Pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player}, HP tetap dinyatakan sebagain HP, begitu juga dengan MP. Kemudian $HP$ adalah nilai HP yang dicari, yang mana $N_{p}$ adalah level maksimum, $i$ adalah level mulai dan $i + 1$ adalah level selanjutnya. Jadi pada tahap ini seperti yang dijelaskan pada Tabel \ref{tb:player_input_variable} yang mana nilai $i$ dan $i + 1$ sudah diketahui sebagai inisialisasi, masing-masing adalah $HP_{i}$ dan $HP_{(i + 1)}$. Penjelasan ini juga berlaku untuk mencari nilai $MP$ yaitu nilai MP yang dicari. Selanjutnya melalui persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dihasilkan data dan grafik seperti yang ditunjukan pada Sub-bab \ref{sec:sub_sec4_eval_dist_hp_mp_level_single-character} dan \ref{sec:sub_sec4_eval_dist_hp_mp_level_multi-character}.
 \vspace{1ex}
 
 \subsection{Distribusi Elemen dan Kelemahan Pemain}
@@ -989,11 +989,11 @@ Di lakukan \textit{parsing} halaman tersebut \citep{dota2020} dan dilakukan konv
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.13]{img/dota2_gameplay.jpg}
-	\caption{Proses klasifikasi \textit{hero} pada permainan Dota 2.}
+	\caption{\textit{Gameplay} pada permainan Dota 2.}
 	\label{fig:dota2_gameplay}
 \end{figure}
 
-Dari seluruh data \textit{hero} tersebut, enam belas \textit{hero} nantinya akan diambil sebagai data \textit{testing} yang tercantum pada Tabel \ref{tb:dota2_hero_pt3} dan sisanya digunakan sebagai data \textit{training} pada Tabel \ref{tb:dota2_hero_pt1} dan Tabel \ref{tb:dota2_hero_pt2} yang semua terlampir dalam \nameref{chap:chap6_attachment}. Untuk data \textit{testing} pada Tabel \ref{tb:dota2_hero_pt3}, diambilah beberapa \textit{hero} yang memiliki \textit{stats} aneh seperti Jakiro, Winter Wyvern (STR tinggi tetapi masuk ke dalam kategori INT \textit{hero}), Phoenix, IO (STR rendah tetapi termasuk ke dalam kategori STR hero), Bloodseeker, Undying, dan lain-lain.
+Dari seluruh data \textit{hero} tersebut, enam belas \textit{hero} nantinya akan diambil sebagai data \textit{testing} yang tercantum pada Tabel \ref{tb:dota2_hero_pt3} dan sisanya digunakan sebagai data \textit{training} pada Tabel \ref{tb:dota2_hero_pt1} dan Tabel \ref{tb:dota2_hero_pt2} yang semua terlampir dalam \nameref{chap:chap6_attachment}. Untuk data \textit{testing} pada Tabel \ref{tb:dota2_hero_pt3}, diambilah beberapa \textit{hero} yang memiliki \textit{stats} aneh seperti Jakiro, Winter Wyvern (STR tinggi tetapi masuk ke dalam kategori INT \textit{hero}), Phoenix, IO (STR rendah tetapi termasuk ke dalam kategori STR \textit{hero}), Bloodseeker, Undying, dan lain-lain.
 \vspace{1ex}
 
 \subsection{Korelasi Fitur}
@@ -1093,14 +1093,14 @@ Proses \textit{training} akan dilakukan sebanyak $2 \times 10^{4}$ \textit{epoch
 	\label{fig:nn_dota2_val_loss_callback}
 \end{figure}
 
-Pemberhentian proses \textit{training} tersebut dilakukan bukan tanpa alasan, jika terjadi kenaikan \textit{loss} khususnya pada proses validasi yang rawan terjadi kenaikan \textit{loss} atau \textit{loss validation} seperti pada Gambar \ref{fig:nn_dota2_val_loss_20k}. Saat terjadinya kenaikan \textit{loss} juga diberikan toleransi sebesar 1500 \textit{epoch}, hal tersebut bertujuan untuk mendeteksi apakah dalam \textit{range} 1500 \textit{epoch} akan terjadi penurunan \textit{loss} yang lebih kecil dari sebelumnya. Jika tidak terjadi penurunan dalam kurun 1500 \textit{epoch} tersebut, maka proses \textit{training} akan dihentikan seperti pada Gambar \ref{fig:nn_dota2_val_loss_callback}. Dapat dilihat pada Gambar \ref{fig:nn_dota2_val_loss_callback} \textit{training} dihentikan pada \textit{epoch} antara $7 \times 10^{3}$ dan $8 \times 10^{3}$.
+Pemberhentian proses \textit{training} tersebut dilakukan bukan tanpa alasan, jika terjadi kenaikan \textit{loss} khususnya pada proses validasi yang rawan terjadi kenaikan \textit{loss} atau \textit{loss validation} seperti pada Gambar \ref{fig:nn_dota2_val_loss_20k}. Saat terjadinya kenaikan \textit{loss} juga diberikan toleransi sebesar 1.5 $\times$ $10^{3}$ \textit{epoch}, hal tersebut bertujuan untuk mendeteksi apakah dalam \textit{range} 1.5 $\times$ $10^{3}$ \textit{epoch} akan terjadi penurunan \textit{loss} yang lebih kecil dari sebelumnya. Jika tidak terjadi penurunan dalam kurun 1.5 $\times$ $10^{3}$ \textit{epoch} tersebut, maka proses \textit{training} akan dihentikan seperti pada Gambar \ref{fig:nn_dota2_val_loss_callback}. Dapat dilihat pada Gambar \ref{fig:nn_dota2_val_loss_callback} \textit{training} dihentikan pada \textit{epoch} antara $7 \times 10^{3}$ dan $8 \times 10^{3}$.
 \vspace{1ex}
 
 \subsection{Pembuatan Model}
 \label{sec:sub_sec3_dota2_model}
 \vspace{1ex}
 
-Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train} dapat digunakan untuk menguji atau menampilkan hasil klasifikasi pada data \textit{testing}, hasil tersebut akan ditampilkan dan dibahas pada Sub-bab \ref{sec:sec4_eval_dota2}. Pada Sub-bab ini akan lebih membahas mengenai model terbaik yang dihasilkan dari proses \textit{training}. Melanjutkan pembahasan sebelumnya pada Sub-bab \ref{sec:sec4_eval_dota2} tentang \textit{training} yang telah dilakukan meliputi penurunan \textit{learning rate}, pemberhentian \textit{training}, toleransi \textit{epoch} saat tidak terjadinya penurunan \textit{learing rate} dan yang paling berkataitan dengan Sub-bab ini pengambilan model terbaik. Pengambilan tersebut dilakukan pada saat \textit{epoch} dikurangi dengan 1500, dengan asumsi model terbaik diperoleh saat presentase \textit{validation loss} paling rendah dan 1500 tersebut adalah toleransi \textit{epoch}. Selama 1500 \textit{epoch} tersebut, kemudian \textit{training} berhenti, berarti tidak ditemukannya \textit{validation loss} yang lebih rendah dalam \textit{range} 1500 \textit{epoch} tersebut.
+Model yang dihasilkan dari proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train} dapat digunakan untuk menguji atau menampilkan hasil klasifikasi pada data \textit{testing}, hasil tersebut akan ditampilkan dan dibahas pada Sub-bab \ref{sec:sec4_eval_dota2}. Pada Sub-bab ini akan lebih membahas mengenai model terbaik yang dihasilkan dari proses \textit{training}. Melanjutkan pembahasan sebelumnya pada Sub-bab \ref{sec:sec4_eval_dota2} tentang \textit{training} yang telah dilakukan meliputi penurunan \textit{learning rate}, pemberhentian \textit{training}, toleransi \textit{epoch} saat tidak terjadinya penurunan \textit{learing rate} dan yang paling berkataitan dengan Sub-bab ini pengambilan model terbaik. Pengambilan tersebut dilakukan pada saat \textit{epoch} dikurangi dengan 1.5 $\times$ $10^{3}$, dengan asumsi model terbaik diperoleh saat presentase \textit{validation loss} paling rendah dan 1.5 $\times$ $10^{3}$ tersebut adalah toleransi \textit{epoch}. Selama 1.5 $\times$ $10^{3}$ \textit{epoch} tersebut, kemudian \textit{training} berhenti, berarti tidak ditemukannya \textit{validation loss} yang lebih rendah dalam \textit{range} 1.5 $\times$ $10^{3}$ \textit{epoch} tersebut.
 \vspace{1ex}
 
 \section{Klasifikasi Karakter Pemain dengan Neural Network Multiclass Classification}
