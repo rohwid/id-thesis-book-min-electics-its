@@ -2,26 +2,25 @@
 \label{chap:chap4_eval}
 \vspace{1ex}
 
-
 \section*{}
-Inti dari BAB \ref{chap:chap4_eval} pada penelitian ini adalah pengujian dengan berbagai parameter \textit{stats} yang dihasilkan untuk pemain dan musuh. Jika pada BAB \ref{chap:chap3_metodologi} dalam proses analisan desain permainan RPG, permainan RPG digolongkan berdasarkan pertarungan menjadi \textit{real-time} dan \textit{turn-based}.
+Inti dari BAB \ref{chap:chap4_eval} pada penelitian ini adalah pengujian dengan berbagai parameter atribut \textit{gameplay} yang dihasilkan untuk pemain dan musuh. Jika pada BAB \ref{chap:chap3_metodologi} dalam proses analisan desain permainan RPG, permainan RPG digolongkan berdasarkan pertarungan menjadi \textit{real-time} dan \textit{turn-based}.
 \vspace{1ex}
 
-Kemudian jika melihat jumlah karakter yang dimainkan oleh pemain maka permainan RPG dapat digolongkan menjadi \textit{single-character} dan \textit{multi-character}. Hal ini diperlukan dalam pengujian pembuatan \textit{stats} yang dihasilkan, permainan RPG yang termasuk \textit{single-character} adalah WRPG, ARPG, SRPG dan MMORPG, sedangkan yang termasuk \textit{multi-character} adalah TRPG dan JRPG. Sedangkan untuk karakter musuh dianggap sama, hanya saja dalam beberapa permainan bergenre RPG pemain dan musuh tidak menggunakan sistem elemen sebagai kelemahan. Biasanya pada permainan RPG dengan genre ARPG, SRPG dan sebagian WRPG, sedangkan untuk TRPG dan JRPG hampir sebagian besar memakai sistem elemen sebagai kelemahan dalam sistem pertarungan.
+Kemudian jika melihat jumlah karakter yang dimainkan oleh pemain maka permainan RPG dapat digolongkan menjadi \textit{single-character} dan \textit{multi-character}. Hal ini diperlukan dalam pengujian pembuatan atribut \textit{gameplay} yang dihasilkan, genre dari RPG yang termasuk \textit{single-character} adalah WRPG, ARPG, SRPG dan MMORPG, sedangkan yang termasuk \textit{multi-character} adalah TRPG dan JRPG. Sedangkan untuk karakter musuh dianggap sama. Dalam beberapa permainan bergenre RPG, pemain dan musuh tidak menggunakan sistem elemen sebagai kelemahan. Biasanya pada permainan RPG dengan genre ARPG, SRPG dan sebagian WRPG, sedangkan untuk TRPG dan JRPG hampir sebagian besar memakai sistem elemen sebagai kelemahan dalam sistem pertarungan.
 \vspace{1ex}
 
-\section{Pembuatan Stats Single-Character untuk Pemain}
+\section{Hasil Atribut Gameplay Pemain (Single-Character)}
 \label{sec:sec4_eval_single-character_player}
 \vspace{1ex}
 
-Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian bergenre RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya. Maksud dari \textit{single-character} disini adalah pemain hanya menjalankan satu buah karakter saja selama permainan, contoh dari RPG jenis ini biasanya ada pada WRPG, SRPG, ARPG, dan MMORPG.
+Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dimana pada bagian ini membahas tentang pembuatan atribut \textit{gameplay} pemain untuk permaian bergenre RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya. Maksud dari \textit{single-character} disini adalah pemain hanya menjalankan satu buah karakter saja selama permainan, contoh dari RPG jenis ini biasanya ada pada WRPG, SRPG, ARPG, dan MMORPG.
 \vspace{1ex}
 
-\subsection{Distibusi Level, HP, dan MP Pemain}
+\subsection{Hasil Distibusi Level, HP, dan MP Pemain}
 \label{sec:sub_sec4_eval_dist_hp_mp_level_single-character}
 \vspace{1ex}
 
-Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_level_hp_mp}, dimana pada bagian ini membahas tentang pembuatan level, HP dan MP pemain untuk permaian dengan genre RPG. Berikut adalah hasil dari prosess pembuatan Level, HP, dan MP yang diperoleh dari perhitungan pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dengan data masukan pada Tabel \ref{tb:player_input_variable} yang kemudian menghasilkan data seperti yang ditunjukkan pada Tabel \ref{tb:player_hp_mp}.
+Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_level_hp_mp}, yang membahas tentang pembuatan level, HP dan MP pemain untuk permaian dengan genre RPG. Berikut adalah hasil dari prosess pembuatan Level, HP, dan MP yang diperoleh dari perhitungan pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dengan data masukan pada Tabel \ref{tb:player_input_variable} yang kemudian menghasilkan data seperti yang ditunjukkan pada Tabel \ref{tb:player_hp_mp}.
 
 \begin{longtable}{|l|l|l|}
 	\caption{Hasil Perhitungan HP dan MP}
@@ -42,7 +41,7 @@ Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_level_hp_mp}
 \end{longtable}
 \vspace{1ex}
 
-Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP dan MP terus naik secara konstan ke atas sesuai dengan kenaikan levelnya seperti yang direpresentasikan pada Gambar \ref{fig:hp_player} dan Gambar \ref{fig:mp_player}. Jika melihat Gambar \ref{fig:hp_player} dengan jumlah HP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} HP dan \textit{Next} HP. Variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:hp_player} agar membentuk pola kenaikan HP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:hp_player}. Sama seperti pada Gambar \ref{fig:hp_player}, pada Gambar \ref{fig:mp_player} dengan jumlah MP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start} MP dan \textit{Next} MP. Kemudian variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:mp_player} agar membentuk pola kenaikan MP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:mp_player}. 
+Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP dan MP terus naik secara konstan ke atas sesuai dengan kenaikan levelnya seperti yang direpresentasikan pada Gambar \ref{fig:hp_player} dan Gambar \ref{fig:mp_player}. Jika melihat Gambar \ref{fig:hp_player} dengan jumlah HP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start HP} dan \textit{Next HP}. Variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:hp_player} agar membentuk pola kenaikan HP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:hp_player}. Sama seperti pada Gambar \ref{fig:hp_player}, pada Gambar \ref{fig:mp_player} dengan jumlah MP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable} yaitu \textit{Max Level}, \textit{Start MP} dan \textit{Next MP}. Kemudian variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:mp_player} agar membentuk pola kenaikan MP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:mp_player}. 
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
@@ -60,7 +59,7 @@ Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP da
 Pada setiap proses pengujian dalam Sub-bab ini, yang dihasilkan pada Tabel \ref{tb:player_hp_mp} menyajikan sebagian data saja. Hasil selengkapnya dapat dilihat pada Tabel \ref{tb:player_hp_mp_all} dalam \nameref{chap:chap6_attachment} yang kemudian keseluruhan hasil tersebut divisualisasikan pada Gambar \ref{fig:hp_player}.
 \vspace{1ex}
 
-\subsection{Distibusi Elemen dan Kelemahan Pemain}
+\subsection{Hasil Distibusi Elemen dan Kelemahan Pemain}
 \label{sec:sub_sec4_eval_dist_element_single-character}
 \vspace{1ex}
 
@@ -88,15 +87,15 @@ Pada bagian ini hanya akan mengulas tentang distribusi elemen dan kelemahan pema
 Pada setiap proses pengujian dalam Sub-bab ini, yang dihasilkan pada Tabel \ref{tb:player_element} menyajikan sebagian data saja. Hasil selengkapnya dapat dilihat pada Tabel \ref{tb:player_all_stats_1} sampai dengan Tabel \ref{tb:player_all_stats_4} dalam \nameref{chap:chap6_attachment}. Hal seperti penggunaan elemen pada pemain seperti pembahasan pada Sub-bab ini an sebelumnya, biasanya dijumpai pada permain RPG dengan Sub-genre JRPG, TRPG, WRPG dan MMORPG. Namun itu juga tidak semua permainan RPG dengan genre tersebut menggunakannya, hanya yang sering dijumpai saja.
 \vspace{1ex}
 
-\subsection{Pengujian Distibusi Stats Pemain}
+\subsection{Hasil Distibusi Atribut Gameplay Pemain}
 \label{sec:sub_sec4_eval_single-character_stats}
 \vspace{1ex}
 
-Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, melalui data masukan pada Tabel \ref{tb:player_input_variable} kemudian persamaan \ref{eq:KNN_bayes_player_stats} dan beberapa persamaan lain yang disebutkan pada Sub-bab \ref{sec:sub_sec3_stat_pemain} dihasilkan data seperti yang ditunjukan pada Tabel \ref{tb:player_battle_stats}.
+Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, dimana pada bagian ini membahas tentang pembuatan atribut \textit{gameplay} pemain untuk permaian RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, melalui data masukan pada Tabel \ref{tb:player_input_variable} kemudian persamaan \ref{eq:KNN_bayes_player_stats} dan beberapa persamaan lain yang disebutkan pada Sub-bab \ref{sec:sub_sec3_stat_pemain} dihasilkan data seperti yang ditunjukan pada Tabel \ref{tb:player_battle_stats}.
 \vspace{-1ex}
 
 \begin{longtable}{|l|l|l|l|l|l|}
-	\caption{Distribusi stats pada karakter pemain}
+	\caption{Distribusi atribut \textit{gameplay} pada karakter pemain}
 	\vspace{1ex}
 	\label{tb:player_battle_stats}\\
 	\hline
@@ -114,27 +113,27 @@ Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \re
 \end{longtable}
 \vspace{1ex}
 
-Pada Tabel \ref{tb:player_battle_stats} adalah data \textit{stats} dari pemain yang dihasilakn melalui penambahan nilai pada \textit{stats} secara acak pada setiap \textit{stats}. Seperti yang dijelaskan pada persaamaan \ref{eq:nbayes_class}, \ref{eq:KNN_distance_stats}, dan persamaan \ref{eq:KNN_bayes_player_stats} saat nilai \textit{stats} di tambahkan secara acak dari 1 sampai dengan 2 pada level yang berjarak antara 1 sampai dengan 100. Selanjutnya representasi dari hasil penambahan \textit{stats} tersebut yang ditunjukan melalui Gambar \ref{fig:stats_player} yang mana nilai dari setiap \textit{stats} terus naik sesuai dengan level pemain yang juga terus naik. 
+Pada Tabel \ref{tb:player_battle_stats} adalah data distribusi atribut \textit{gameplay} dari pemain yang dihasilakn melalui penambahan nilai pada atribut \textit{gameplay} secara acak pada setiap atribut \textit{gameplay}. Seperti yang dijelaskan pada persaamaan \ref{eq:nbayes_class}, \ref{eq:KNN_distance_stats}, dan persamaan \ref{eq:KNN_bayes_player_stats} saat nilai atribut \textit{gameplay} ditambahkan secara acak dari 1 sampai dengan 2 pada level yang berjarak antara 1 sampai dengan 100. Selanjutnya representasi dari hasil penambahan atribut \textit{gameplay} tersebut yang ditunjukan melalui Gambar \ref{fig:stats_player} yang mana nilai dari setiap atribut \textit{gameplay} terus naik sesuai dengan level pemain yang juga terus naik. 
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.50]{img/PlayerStatsDistrib.png}
-	\caption{Kenaikan stats pemain setiap levelnya.}
+	\includegraphics[scale=0.45]{img/PlayerStatsDistrib.png}
+	\caption{Kenaikan atribut \textit{gameplay} pemain setiap levelnya.}
 	\label{fig:stats_player}
 \end{figure}
 
 Pada setiap proses pengujian dalam Sub-bab ini, yang dihasilkan pada Tabel \ref{tb:player_battle_stats} menyajikan sebagian data saja. Hasil selengkapnya dapat dilihat pada Tabel \ref{tb:player_all_stats_1} sampai dengan Tabel \ref{tb:player_all_stats_4} dalam \nameref{chap:chap6_attachment} yang kemudian keseluruhan hasil tersebut divisualisasikan pada Gambar \ref{fig:stats_player}.
 \vspace{1ex}
 
-\section{Pembuatan Stats Multi-Character untuk Pemain}
+\section{Hasil Atribut Gameplay Pemain (Multi-Character)}
 \label{sec:sec4_eval_multi-character_player}
 \vspace{1ex}
 
-Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian dengan genre RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya. Maksud dari Multi-Character disini adalah pemain dapat menjalankan beberapa karakter sekaligus, menjalankan dengan mode \textit{turn-based} atau \textit{switch} antar karakter seperti yang dijelaskan pada Sub-Bab \ref{sec:sub_sec2_jrpg}. Maka dari itu dibuatlah Tabel masukan baru pada Tabel \ref{tb:player_input_variable_eval_1} dan \ref{tb:player_input_variable_eval_2} yang mirip seperti Tabel \ref{tb:player_input_variable}. Hal ini bertujuan membandingkan perbedaan \textit{stats} yang dihasilkan pada tiga karakter pemain.
-\vspace{-1ex}
+Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, dimana pada bagian ini membahas tentang pembuatan atribut \textit{gameplay} pemain untuk permaian dengan genre RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya. Maksud dari Multi-Character disini adalah pemain dapat menjalankan beberapa karakter sekaligus, menjalankan dengan mode \textit{turn-based} atau \textit{switch} antar karakter seperti yang dijelaskan pada Sub-Bab \ref{sec:sub_sec2_jrpg}. Maka dari itu dibuatlah Tabel masukan baru pada Tabel \ref{tb:player_input_variable_eval_1} dan \ref{tb:player_input_variable_eval_2} yang mirip seperti Tabel \ref{tb:player_input_variable}. Hal ini bertujuan membandingkan perbedaan atribut \textit{gameplay} yang dihasilkan pada tiga karakter pemain.
+\vspace{-2ex}
 
 \begin{longtable}{|l|l|}
-	\caption{Data masukan untuk pembuatan \textit{stats} karakter pertama.}
+	\caption{Data masukan untuk pembuatan atribut \textit{gameplay} karakter pertama.}
 	\vspace{1ex}
 	\label{tb:player_input_variable_eval_1}\\
 	\hline
@@ -148,14 +147,14 @@ Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \re
 	\textit{Next} MP & 102 \\ \hline
 	\textit{List Element} & {[} `Phys', `Water', `Wind', `Earth', `Fire' {]} \\ \hline
 	\textit{List Weaknesess} & {[} 0, 0, 2, 1, 0 {]} \\ \hline
-	\textit{List Stats Name} & {[} `Strength', `Magic', `Endurance', `Speed', `Luck' {]} \\ \hline
-	\textit{Max Stats Value} & {[} 88, 32, 81, 43, 56 {]} \\ \hline
-	\textit{Stats to Assign} & {[} 2, 1 {]} \\ \hline
+	\textit{List Attributes Name} & {[} `Strength', `Magic', `Endurance', `Speed', `Luck' {]} \\ \hline
+	\textit{Max Attributes Value} & {[} 88, 32, 81, 43, 56 {]} \\ \hline
+	\textit{Attributes to Assign} & {[} 2, 1 {]} \\ \hline
 \end{longtable}
-\vspace{-1ex}
+\vspace{-2ex}
 
 \begin{longtable}{|l|l|}
-	\caption{Data masukan untuk pembuatan \textit{stats} karakter kedua.}
+	\caption{Data masukan untuk pembuatan atribut \textit{gameplay} karakter kedua.}
 	\vspace{1ex}
 	\label{tb:player_input_variable_eval_2}\\
 	\hline
@@ -169,20 +168,20 @@ Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \re
 	\textit{Next} MP & 158 \\ \hline
 	\textit{List Element} & {[} `Phys', `Water', `Wind', `Earth', `Fire' {]} \\ \hline
 	\textit{List Weaknesess} & {[} 0, 1, 0, 0, 2 {]} \\ \hline
-	\textit{List Stats Name} & {[} `Strength', `Magic', `Endurance', `Speed', `Luck' {]} \\ \hline
-	\textit{Max Stats Value} & {[} 60, 68, 57, 58, 57 {]} \\ \hline
-	\textit{Stats to Assign} & {[} 2, 1 {]} \\ \hline
+	\textit{List Attributes Name} & {[} `Strength', `Magic', `Endurance', `Speed', `Luck' {]} \\ \hline
+	\textit{Max Attributes Value} & {[} 60, 68, 57, 58, 57 {]} \\ \hline
+	\textit{Attributes to Assign} & {[} 2, 1 {]} \\ \hline
 \end{longtable}
 \vspace{1ex}
 
-Kemudian dari Tabel \ref{tb:player_input_variable_eval_1} dan \ref{tb:player_input_variable_eval_2} dihasilkan dua \textit{stats} yang berbeda untuk dua karakter dari pemain. Pada mulanya pemilihan \textit{stats} pemain yang dinyatakan pada ke dua Table tersebut bukanlah tidak beralasan, bila melihat pada Tabel yang sebelumnya dipakai untuk pengujian \textit{single-character} pada Sub-bab \ref{sec:sec4_eval_single-character_player} dan penjabaran metodologi pembuatan \textit{stats} karakter pemain pada Sub-bab \ref{sec:sec3_player_stats} tentu saja masih berkaitan. Ketiga \textit{stats} tersebut membentuk sebuah \textit{party member} dalam permainan JRPG atau bahkan TRPG, hal ini sengaja dibuat dikarenakan hanya genre permainan RPG tersebut yang memungkinkan pemain menggunakan lebih dari satu karakter. Penjelasaan dan penggunaan dari ke empat \textit{stats} tersebut akan diperjelas pada beberapa Sub-bab berikut ini.
+Kemudian dari Tabel \ref{tb:player_input_variable_eval_1} dan Tabel \ref{tb:player_input_variable_eval_2} dihasilkan dua atribut \textit{gameplay} yang berbeda untuk dua karakter dari pemain. Pada mulanya pemilihan atribut \textit{gameplay} pemain yang dinyatakan pada ke dua Table tersebut bukanlah tidak beralasan, bila melihat pada Tabel yang sebelumnya dipakai untuk pengujian \textit{single-character} pada Sub-bab \ref{sec:sec4_eval_single-character_player} dan penjabaran metodologi pembuatan atribut \textit{gameplay} karakter pemain pada Sub-bab \ref{sec:sec3_player_stats} tentu saja masih berkaitan. Ketiga atribut \textit{gameplay} tersebut membentuk sebuah \textit{party member} dalam permainan JRPG atau bahkan TRPG, hal ini sengaja dibuat dikarenakan hanya genre permainan RPG tersebut yang memungkinkan pemain menggunakan lebih dari satu karakter. Penjelasaan dan penggunaan dari ke empat atribut \textit{gameplay} tersebut akan diperjelas pada beberapa Sub-bab berikut ini.
 \vspace{1ex}
 
-\subsection{Distibusi Level, HP, dan MP Pemain}
+\subsection{Hasil Distibusi Level, HP, dan MP Pemain}
 \label{sec:sub_sec4_eval_dist_hp_mp_level_multi-character}
 \vspace{1ex}
 
-Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_level_hp_mp}, dimana pada bagian ini membahas tentang pembuatan level, HP dan MP pemain untuk permaian dengan genre RPG. Sama seperti pembahasan pada Sub-bab \ref{sec:sub_sec4_eval_dist_hp_mp_level_single-character}, hanya saja pada bagian ini, karakter pemain berjumlah lebih banyak dari pembahasan sebelumnya. Berikut adalah hasil dari prosess pembuatan Level, HP, dan MP yang diperoleh dari perhitungan pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dengan data masukan pada Tabel \ref{tb:player_input_variable_eval_1} dan \ref{tb:player_input_variable_eval_2} yang kemudian menghasilkan data seperti yang ditunjukkan pada Tabel \ref{tb:player_hp_mp_1} dan \ref{tb:player_hp_mp_2}.
+Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_level_hp_mp}, dimana pada bagian ini membahas tentang pembuatan level, HP dan MP pemain untuk permaian dengan genre RPG. Sama seperti pembahasan pada Sub-bab \ref{sec:sub_sec4_eval_dist_hp_mp_level_single-character}, hanya saja pada bagian ini, karakter pemain berjumlah lebih banyak dari pembahasan sebelumnya. Berikut adalah hasil dari prosess pembuatan Level, HP, dan MP yang diperoleh dari perhitungan pada persamaan \ref{eq:hp_player} dan \ref{eq:mp_player} dengan data masukan pada Tabel \ref{tb:player_input_variable_eval_1} dan Tabel \ref{tb:player_input_variable_eval_2} yang kemudian menghasilkan data seperti yang ditunjukkan pada Tabel \ref{tb:player_hp_mp_1} dan Tabel \ref{tb:player_hp_mp_2}.
 \vspace{-1ex}
 
 \begin{longtable}{|l|l|l|}
@@ -202,7 +201,7 @@ Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_level_hp_mp}
 	... & ... & ... \\ \hline
 	\textbf{100} & \textbf{620} & \textbf{298} \\ \hline
 \end{longtable}
-\vspace{-1ex}
+\vspace{1ex}
 
 \begin{longtable}{|l|l|l|}
 	\caption{Hasil Perhitungan HP dan MP karakter kedua}
@@ -223,18 +222,17 @@ Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_player_level_hp_mp}
 \end{longtable}
 \vspace{1ex}
 
-Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP terus naik secara konstan ke atas sesuai dengan kenaikan levelnya seperti yang direpresentasikan pada Gambar \ref{fig:hp_player_1}, dan \ref{fig:hp_player_2}. Jika melihat Gambar \ref{fig:hp_player_1} dan Gambar \ref{fig:hp_player_2} dengan jumlah HP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp_1} dan Tabel \ref{tb:player_hp_mp_2}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable_eval_1} dan Tabel \ref{tb:player_input_variable_eval_2} yaitu \textit{Max Level}, \textit{Start} HP dan \textit{Next} HP. Variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:hp_player} agar membentuk pola kenaikan HP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:hp_player_1} dan Gambar \ref{fig:hp_player_2}. 
+Hasil perhitungan tersebut terlihat membentuk pola linier, yang mana nilai HP terus naik secara konstan ke atas sesuai dengan kenaikan levelnya seperti yang direpresentasikan pada Gambar \ref{fig:hp_player_1}, dan Gambaer \ref{fig:hp_player_2}. Jika melihat Gambar \ref{fig:hp_player_1} dan Gambar \ref{fig:hp_player_2} dengan jumlah HP dari pemain yang terus naik mengikuti pola yang dihasilkan pada Tabel \ref{tb:player_hp_mp_1} dan Tabel \ref{tb:player_hp_mp_2}, yang mana nilai tersebut diperoleh dari inisiasi variabel pada Tabel \ref{tb:player_input_variable_eval_1} dan Tabel \ref{tb:player_input_variable_eval_2} yaitu \textit{Max Level}, \textit{Start} HP dan \textit{Next} HP. Variabel-variabel tersebut dihitung dengan menggunakan persamaan \ref{eq:hp_player} agar membentuk pola kenaikan HP setiap levelnya seperti yang ditunjukan pada Gambar \ref{fig:hp_player_1} dan Gambar \ref{fig:hp_player_2}. 
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.45]{img/PlayerHpDistrib1.png}
+	\includegraphics[scale=0.42]{img/PlayerHpDistrib1.png}
 	\caption{Kenaikan HP setiap levelnya pada karakter pertama.}
 	\label{fig:hp_player_1}
 \end{figure}
-\vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.45]{img/PlayerHpDistrib2.png}
+	\includegraphics[scale=0.42]{img/PlayerHpDistrib2.png}
 	\caption{Kenaikan HP setiap levelnya pada karakter kedua.}
 	\vspace{1ex}
 	\label{fig:hp_player_2}
@@ -248,7 +246,6 @@ Sama seperti pada Gambar \ref{fig:mp_player_1} dan Gambar \ref{fig:mp_player_2} 
 	\caption{Kenaikan MP setiap levelnya pada karakter pertama.}
 	\label{fig:mp_player_1}
 \end{figure}
-\vspace{1ex}
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.42]{img/PlayerMpDistrib2.png}
@@ -259,7 +256,7 @@ Sama seperti pada Gambar \ref{fig:mp_player_1} dan Gambar \ref{fig:mp_player_2} 
 Pada setiap proses pengujian dalam Sub-bab ini, yang dihasilkan pada Tabel \ref{tb:player_hp_mp_1} dan \ref{tb:player_hp_mp_2} menyajikan sebagian data saja. Hasil selengkapnya dapat dilihat pada Tabel \ref{tb:player_hp_mp_all_1} untuk karakter pertama dan pada \ref{tb:player_hp_mp_all_2} untuk karakter kedua yang terlampir dalam \nameref{chap:chap6_attachment}. Kemudian keseluruhan hasil tersebut divisualisasikan pada Gambar \ref{fig:hp_player_1}, dan Gambar \ref{fig:hp_player_2} untuk HP, Gambar \ref{fig:mp_player_1}, dan Gambar \ref{fig:mp_player_2} untuk MP.
 \vspace{1ex}
 
-\subsection{Distibusi Elemen dan Kelemahan Pemain}
+\subsection{Hasil Distibusi Elemen dan Kelemahan Pemain}
 \label{sec:sub_sec4_eval_dist_element_multi-character}
 \vspace{1ex}
 
@@ -305,15 +302,15 @@ Sama seperti penjelasan pada Sub-bab \ref{sec:sub_sec4_eval_dist_element_single-
 Pada setiap proses pengujian dalam Sub-bab ini, yang dihasilkan pada Tabel \ref{tb:player_element_1} dan \ref{tb:player_element_2} menyajikan sebagian data saja. Hasil selengkapnya dapat dilihat pada Tabel \ref{tb:player_all_stats_1} sampai dengan Tabel \ref{tb:player_all_stats_4} dalam \nameref{chap:chap6_attachment}. Hal seperti penggunaan elemen pada pemain seperti pembahasan pada Sub-bab ini an sebelumnya, biasanya dijumpai pada permain RPG dengan Sub-genre JRPG, TRPG, WRPG dan MMORPG. Namun itu juga tidak semua permainan RPG dengan genre tersebut menggunakannya, hanya yang sering dijumpai saja.
 \vspace{1ex}
 
-\subsection{Pengujian Distibusi Stats Pemain}
+\subsection{Hasil Distibusi Atribut Gameplay Pemain}
 \label{sec:sub_sec4_eval_multi-character_stats}
 \vspace{1ex}
 
-Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} pemain untuk permaian RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, melalui data masukan pada Tabel \ref{tb:player_input_variable_eval_1} untuk karakter pertama dan Tabel \ref{tb:player_input_variable_eval_1} untuk karakter kedua, kemudian persamaan \ref{eq:KNN_bayes_player_stats} dan beberapa persamaan lain yang disebutkan pada Sub-bab \ref{sec:sub_sec3_stat_pemain} dihasilkan data seperti yang ditunjukan pada Tabel \ref{tb:player_battle_stats_1} dan \ref{tb:player_battle_stats_2}.
+Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, dimana pada bagian ini membahas tentang pembuatan atribut \textit{gameplay} pemain untuk permaian RPG. Melalui berbagai proses seperti yang dijelaskan pada Sub-bab \ref{sec:sub_sec3_stat_pemain}, melalui data masukan pada Tabel \ref{tb:player_input_variable_eval_1} untuk karakter pertama dan Tabel \ref{tb:player_input_variable_eval_1} untuk karakter kedua, kemudian persamaan \ref{eq:KNN_bayes_player_stats} dan beberapa persamaan lain yang disebutkan pada Sub-bab \ref{sec:sub_sec3_stat_pemain} dihasilkan data seperti yang ditunjukan pada Tabel \ref{tb:player_battle_stats_1} dan Tabel \ref{tb:player_battle_stats_2}.
 \vspace{-1ex}
 
 \begin{longtable}{|l|l|l|l|l|l|}
-	\caption{Distribusi \textit{stats} pada karakter pertama pemain}
+	\caption{Distribusi atribut \textit{gameplay} pada karakter pertama pemain}
 	\vspace{1ex}
 	\label{tb:player_battle_stats_1}\\
 	\hline
@@ -326,13 +323,14 @@ Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \re
 	5 & 0 & 0 & 0 & 0 & 0 \\ \hline
 	6 & 2 & 0 & 0 & 1 & 0 \\ \hline
 	7 & 0 & 0 & 0 & 1 & 0 \\ \hline
-	8 & 0 & 0 & 0 & 0 & 0 \\ \hline
+	%8 & 0 & 0 & 0 & 0 & 0 \\ \hline
 	... & ... & ... & ... & ... & ... \\ \hline
 	\textbf{100} & \textbf{74} & \textbf{38} & \textbf{63} & \textbf{65} & \textbf{60} \\ \hline
 \end{longtable}
+\vspace{-1ex}
 
 \begin{longtable}{|l|l|l|l|l|l|}
-	\caption{Distribusi stats pada karakter pemain}
+	\caption{Distribusi atribut \textit{gameplay} pada karakter pemain}
 	\vspace{1ex}
 	\label{tb:player_battle_stats_2}\\
 	\hline
@@ -350,33 +348,34 @@ Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Sub-bab \re
 \end{longtable}
 \vspace{1ex}
 
-Pada Tabel \ref{tb:player_battle_stats_1} dan \ref{tb:player_battle_stats_2} yang masing-masing adalah data \textit{stats} dari karakter pemain pertama dan kedua yang dihasilakn melalui penambahan nilai pada \textit{stats} secara acak pada setiap \textit{stats}. Seperti yang dijelaskan pada persaamaan \ref{eq:nbayes_class}, \ref{eq:KNN_distance_stats}, dan persamaan \ref{eq:KNN_bayes_player_stats} saat nilai \textit{stats} di tambahkan secara acak dari 1 sampai dengan 2 pada level yang berjarak antara 1 sampai dengan 100. Selanjutnya representasi dari hasil penambahan \textit{stats} tersebut yang ditunjukan melalui Gambar \ref{fig:stats_player_1} dan Gambar \ref{fig:stats_player_2} yang masing-masing adalah karakter pertama dan kedua dari pemain secara berurutan, nilai dari setiap \textit{stats} pada masing-masing karakter terus naik sesuai dengan level dari masing-masing karakter yang juga terus naik. 
+Pada Tabel \ref{tb:player_battle_stats_1} dan Tabel \ref{tb:player_battle_stats_2} yang masing-masing adalah data atribut \textit{gameplay} dari karakter pemain pertama dan kedua yang dihasilakn melalui penambahan nilai pada atribut \textit{gameplay} secara acak pada setiap atribut \textit{gameplay}. Seperti yang dijelaskan pada persaamaan \ref{eq:nbayes_class}, \ref{eq:KNN_distance_stats}, dan persamaan \ref{eq:KNN_bayes_player_stats} saat nilai atribut \textit{gameplay} di tambahkan secara acak dari 1 sampai dengan 2 pada level yang berjarak antara 1 sampai dengan 100. Selanjutnya representasi dari hasil penambahan atribut \textit{gameplay} tersebut yang ditunjukan melalui Gambar \ref{fig:stats_player_1} dan Gambar \ref{fig:stats_player_2} yang masing-masing adalah karakter pertama dan kedua dari pemain secara berurutan, nilai dari setiap atribut \textit{gameplay} pada masing-masing karakter terus naik sesuai dengan level dari masing-masing karakter yang juga terus naik. 
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.52]{img/PlayerStatsDistrib1.png}
-	\caption{Kenaikan stats karakter pertama dari pemain setiap levelnya.}
+	\includegraphics[scale=0.47]{img/PlayerStatsDistrib1.png}
+	\caption{Kenaikan atribut \textit{gameplay} karakter pertama pemain setiap levelnya.}
 	\label{fig:stats_player_1}
 \end{figure}
+\vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.52]{img/PlayerStatsDistrib2.png}
-	\caption{Kenaikan stats karakter kedua dari pemain setiap levelnya.}
+	\includegraphics[scale=0.47]{img/PlayerStatsDistrib2.png}
+	\caption{Kenaikan atribut \textit{gameplay} karakter kedua pemain setiap levelnya.}
 	\label{fig:stats_player_2}
 \end{figure}
 
 Pada setiap proses pengujian dalam Sub-bab ini, yang dihasilkan pada Tabel \ref{tb:player_battle_stats} menyajikan sebagian data saja. Hasil selengkapnya dapat dilihat pada Tabel \ref{tb:player_all_stats_1} sampai dengan Tabel \ref{tb:player_all_stats_4} dalam \nameref{chap:chap6_attachment} yang keseluruhan hasil tersebut divisualisasikan pada Gambar \ref{fig:stats_player_1} dan Gambar \ref{fig:stats_player_1}.
 \vspace{1ex}
 
-\section{Pembuatan Stats Musuh}
+\section{Hasil Atribut Gameplay Musuh}
 \label{sec:sec4_eval_turn-based_enemy}
 \vspace{1ex}
 
-Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Bagian \ref{sec:sec3_enemy_stats}, dimana pada bagian ini membahas tentang pembuatan \textit{stats} musuh untuk permaian dengan genre RPG. Melalui berbagai proses seperti yang dijelaskan pada Bagian \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya.
+Pada bagian ini setiap langkah yang akan diuji sudah dijelaskan pada Bagian \ref{sec:sec3_enemy_stats}, dimana pada bagian ini membahas tentang pembuatan atribut \textit{gameplay} musuh untuk permaian dengan genre RPG. Melalui berbagai proses seperti yang dijelaskan pada Bagian \ref{sec:sec3_player_stats}, maka pada beberapa Sub-bab dibawah ini adalah langkah-langkah dalam proses pengujiannya.
 \vspace{1ex}
 
 
-\subsection{Distibusi Level Musuh}
+\subsection{Hasil Distibusi Level Musuh}
 \label{sec:sub_sec4_eval_dist_enemy_level}
 \vspace{1ex}
 
@@ -422,7 +421,7 @@ Di lanjutkan dengan validasi dari keseimbangan persebaran level musuh, hal ini d
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.45]{img/EnemyLevelDistribNdist.png}
+	\includegraphics[scale=0.5]{img/EnemyLevelDistribNdist.png}
 	\caption{Distribusi level musuh dalam bentuk distribusi normal.}
 	\label{fig:enemy_level_distrib_ndist}
 \end{figure}
@@ -431,7 +430,7 @@ Pada Gambar \ref{fig:enemy_level_distrib_ndist} jika dilihat persebaran datanya 
 \vspace{1ex}
 
 
-\subsection{Distibusi Tipe Musuh}
+\subsection{Hasil Distibusi Tipe Musuh}
 \label{sec:sub_sec4_eval_dist_enemy_type}
 \vspace{1ex}
 
@@ -475,7 +474,7 @@ Dari data yang tedapat pada Tabel \ref{tb:enemy_type_distrib} hanya sebagian dat
 Kemudian pada Gambar \ref{fig:enemy_type_distrib} adalah hasil dari proses pembuatan dan pengelompokan musuh berdasarkan tipe yang sudah sesuai dengan variabel masukan pada Tabel \ref{tb:enemy_input_variable}. Dengan musuh bertipe \textit{Mixed} berjumlah yang paling banyak, diikuti \textit{soft magic} dan \textit{soft strength} dengan harapan bahwa ini adalah musuh yang memiliki karakter \textit{magic} dan \textit{strength} namun masih mudah dikalahkan, dilanjutkan dengan yang paling sedikit adalah \textit{hard magic} dan \textit{hard strength} dengan harapan menjadi musuh berkarakter strength dan magic yang sulit dikalahkan.
 \vspace{1ex}
 
-\subsection{Distribusi Element dan Kelemahan pada Musuh}
+\subsection{Hasil Distribusi Element dan Kelemahan Musuh}
 \label{sec:sub_sec4_eval_dist_enemy_element_and_weak}
 \vspace{1ex}
 
@@ -508,7 +507,7 @@ Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_weak}, dimana
 \end{longtable}
 \vspace{1ex}
 
-Jika melihat Tabel \ref{tb:enemy_weak_distrib} dengan melihat pada kolom \textit{Phys}, \textit{Water}, \textit{Wind}, \textit{Earth}, dan \textit{Fire}, isi dari kolom tersebut berupa angka nol sampai dengan dua adalah hasil dari pembuatan \textit{stats} kelemahan musuh pada variabel $DmgEN_{M}$ atau untuk $DmgEN_{M} = \left \{ DmgNu_{0}, DmgNu_{1}, DmgNu_{2},..., DmgNu_{M} \right \}$ jika jumlah kelemahan musuh lebih dari tiga atau yang dicontohkan pada Tabel \ref{tb:enemy_input_variable} dalam variabel \textit{List Damage}. Hasil dari proses yang sebelumnya dijelaskan pada Sub-bab ini menghasilkan persebaran kelemahan dan kekebalan musuh yang ditunjukkan pada Gambar \ref{fig:enemy_weak_distrib} dibawah ini.
+Jika melihat Tabel \ref{tb:enemy_weak_distrib} dengan melihat pada kolom \textit{Phys}, \textit{Water}, \textit{Wind}, \textit{Earth}, dan \textit{Fire}, isi dari kolom tersebut berupa angka nol sampai dengan dua adalah hasil dari pembuatan atribut \textit{gameplay} kelemahan musuh pada variabel $DmgEN_{M} = \left \{ DmgNu_{0}, DmgNu_{1}, DmgNu_{2}, ..., DmgNu_{M} \right \}$ jika jumlah kelemahan musuh lebih dari tiga atau yang dicontohkan pada Tabel \ref{tb:enemy_input_variable} dalam variabel \textit{List Damage}. Hasil dari proses yang sebelumnya dijelaskan pada Sub-bab ini menghasilkan persebaran kelemahan dan kekebalan musuh yang ditunjukkan pada Gambar \ref{fig:enemy_weak_distrib} dibawah ini.
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.50]{img/EnemyWeakDistrib.png}
@@ -522,8 +521,7 @@ Pada Gambar \ref{fig:enemy_weak_distrib} dapat dilihat distribusi musuh dengan k
 Sedangkan pada persamaan \ref{eq:multi_damage_num_prob} adalah penjelasan tentang proses munculnya setiap $DmgNu$ pada satu karakter musuh, sehingga variabel tersebut berubah menjadi $DmgNu_{i}$. Seperti penjelasan sebelumnya bahwa pada sebuah karakter musuh dapat memiliki lebih dari satu kelemahan atau kekebalan $DmgNu$ terhadap $DmgNa$ yang diset secara acak seperti yang sudah dijelaskan pada bagian sebelumnya. 
 \vspace{1ex}
 
-
-\subsection{Distribusi HP, MP, dan Stats Musuh}
+\subsection{Hasil Distribusi HP, MP, dan Atribut Gameplay pada Musuh}
 \label{sec:sub_sec4_eval_dist_enemy_HP_MP_Stats}
 \vspace{1ex}
 
@@ -531,7 +529,7 @@ pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}, dimana pada bagian ini membah
 \vspace{-1ex}
 
 \begin{longtable}{|l|l|l|l|l|}
-	\caption{Distribusi \textit{Stats} HP dan MP musuh.}
+	\caption{Distribusi atribut \textit{gameplay} HP dan MP musuh.}
 	\vspace{1ex}
 	\label{tb:enemy_weak_stats}\\
 	\hline
@@ -557,29 +555,32 @@ pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}, dimana pada bagian ini membah
 \end{longtable}
 \vspace{1ex}
 
-Pada Tabel \ref{tb:enemy_weak_stats} hanya sebagian data saja yang ditampilkan, untuk selengkapnya dapat dilihat pada \nameref{chap:chap6_attachment} dalam Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} pada kolom HP dan MP. Selanjutnya adalah penggambaran persebaran \textit{stats} HP dan MP yang masing-masing digambarkan pada Gambar \ref{fig:enemy_hp_distrib} dan Gambar \ref{fig:enemy_mp_distrib}.
+Pada Tabel \ref{tb:enemy_weak_stats} hanya sebagian data saja yang ditampilkan, untuk selengkapnya dapat dilihat pada \nameref{chap:chap6_attachment} dalam Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} pada kolom HP dan MP. Selanjutnya adalah penggambaran persebaran HP dan MP yang masing-masing digambarkan pada Gambar \ref{fig:enemy_hp_distrib} dan Gambar \ref{fig:enemy_mp_distrib}.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
 	\centering
-	\includegraphics[scale=0.57]{img/EnemyHpDistrib.png}
-	\caption{Distribusi \textit{stats} HP musuh.}
+	\includegraphics[scale=0.52]{img/EnemyHpDistrib.png}
+	\caption{Distribusi atribut \textit{gameplay} HP musuh.}
 	\label{fig:enemy_hp_distrib}
 \end{figure}
 
 \begin{figure} [!h] \centering
 	\centering
-	\includegraphics[scale=0.57]{img/EnemyMpDistrib.png}
-	\caption{Distribusi \textit{stats} MP musuh.}
+	\includegraphics[scale=0.52]{img/EnemyMpDistrib.png}
+	\caption{Distribusi atribut \textit{gameplay} MP musuh.}
 	\label{fig:enemy_mp_distrib}
 \end{figure}
 \vspace{1ex}
 
-Masih pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}, dimana pada bagian ini membahas tentang pendistribusian \textit{stats} musuh untuk permaian dengan genre \textit{turn-based} RPG. Berikut adalah hasil dari proses distribusi tipe musuh yang diperoleh dari perhitungan mulai dari persamaan \ref{eq:enemy_types_stats_ex} secara berurutan sampai dengan persamaan \ref{eq:enemy_types_prob_adv} yang digunakan untuk penentuan tipe musuh yang ingin dipakai. Sedangkan proses kalkulasi untuk menentukan \textit{stats} musuh dimulai dari persamaan \ref{eq:enemy_types_prob_bst1} sampai dengan persamaan \ref{eq:enemy_types_prob_st}. Setelah melalui tahapan tersebut dengan variabel masukan pada Tabel \ref{tb:enemy_input_variable} maka hasil persebaran \textit{stats} musuh dengan komposisi \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed}, dan \textit{Luck} ditunjukkan pada Tabel \ref{tb:enemy_stats}.
+Masih pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}, dimana pada bagian ini membahas tentang pendistribusian atribut \textit{gameplay} musuh untuk permaian dengan genre \textit{turn-based} RPG. Berikut adalah hasil dari proses distribusi tipe musuh yang diperoleh dari perhitungan mulai dari persamaan \ref{eq:enemy_types_stats_ex} secara berurutan sampai dengan persamaan \ref{eq:enemy_types_prob_adv} yang digunakan untuk penentuan tipe musuh yang ingin dipakai. 
+\vspace{1ex}
+
+Sedangkan proses kalkulasi untuk menentukan atribut \textit{gameplay} musuh dimulai dari persamaan \ref{eq:enemy_types_prob_bst1} sampai dengan persamaan \ref{eq:enemy_types_prob_st}. Setelah melalui tahapan tersebut dengan variabel masukan pada Tabel \ref{tb:enemy_input_variable} maka hasil persebaran atribut \textit{gameplay} musuh dengan komposisi \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed}, dan \textit{Luck} ditunjukkan pada Tabel \ref{tb:enemy_stats}.
 \vspace{-1ex}
 
 \begin{longtable}{|l|l|l|l|l|l|l|l|}
-	\caption{Distribusi \textit{Stats} musuh.}
+	\caption{Distribusi atribut \textit{gameplay} musuh.}
 	\vspace{1ex}
 	\label{tb:enemy_stats}\\
 	\hline
@@ -606,12 +607,12 @@ Masih pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}, dimana pada bagian ini 
 \end{longtable}
 \vspace{1ex}
 
-Selanjutnya adalah penggambaran persebaran \textit{stats} yang disebutkan pada Tabel \ref{tb:enemy_stats} yang digambarkan pada Gambar \ref{fig:enemy_stats_distrib}. Pada Gambar \ref{fig:enemy_str_distrib}, \ref{fig:enemy_mag_distrib}, \ref{fig:enemy_endr_distrib}, \ref{fig:enemy_spd_distrib} dan Gambar \ref{fig:enemy_luck_distrib} adalah pecahan dari Gambar \ref{fig:enemy_stats_distrib} secara berurutan diantaranya adalah \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck}. Data \textit{Stats} selengkapnya dapat dilihat pada \nameref{chap:chap6_attachment} dalam Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} pada kolom \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed}, \textit{Luck} dan \textit{stats} yang lain jika dilakukan penambahan \textit{stats} pada program. 
+Selanjutnya adalah penggambaran persebaran atribut \textit{gameplay} yang disebutkan pada Tabel \ref{tb:enemy_stats} yang digambarkan pada Gambar \ref{fig:enemy_stats_distrib}. Pada Gambar \ref{fig:enemy_str_distrib}, \ref{fig:enemy_mag_distrib}, \ref{fig:enemy_endr_distrib}, \ref{fig:enemy_spd_distrib} dan Gambar \ref{fig:enemy_luck_distrib} adalah pecahan dari Gambar \ref{fig:enemy_stats_distrib} secara berurutan diantaranya adalah \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed} dan \textit{Luck}. Data atribut \textit{gameplay} selengkapnya dapat dilihat pada \nameref{chap:chap6_attachment} dalam Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} pada kolom \textit{Strength}, \textit{Magic}, \textit{Endurance}, \textit{Speed}, \textit{Luck} dan atribut \textit{gameplay} yang lain jika dilakukan penambahan atribut \textit{gameplay} pada program. 
 \clearpage
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.6]{img/EnemyStatsDistrib.png}
-	\caption{Distribusi \textit{stats} musuh secara keseluruhan.}
+	\caption{Distribusi atribut \textit{gameplay} musuh secara keseluruhan.}
 	\label{fig:enemy_stats_distrib}
 	\vspace{5ex}
 
@@ -680,7 +681,7 @@ Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_dota2_method}, b
 \end{figure}
 \clearpage
 
-Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train}, \textit{training} berlangsung selama 10.730 \textit{epoch}. Akurasi saat \textit{training} mampu mencapai 0.9 dan mengalami \textit{loss} sebesar 0.55, kemudian akurasi saat evaluasi mampu mencapai 0.75 dan mengalami \textit{loss} saat evaluasi sebesar 0.86 . Hasil klasifikasi dari data \textit{stats} karakter atau \textit{hero} Dota 2 yang dijadikan sebagai data \textit{testing} dapat dilihat pada Tabel \ref{tb:dota2_hero_pt3} yang kemudian digunakan pada proses evalusi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:dota2_valid_result}.
+Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_dota2_train}, \textit{training} berlangsung selama 10.730 \textit{epoch}. Akurasi saat \textit{training} mampu mencapai 0.9 dan mengalami \textit{loss} sebesar 0.55, kemudian akurasi saat evaluasi mampu mencapai 0.75 dan mengalami \textit{loss} saat evaluasi sebesar 0.86 . Hasil klasifikasi dari data atribut \textit{gameplay} karakter atau \textit{hero} Dota 2 yang dijadikan sebagai data \textit{testing} dapat dilihat pada Tabel \ref{tb:dota2_hero_pt3} yang kemudian digunakan pada proses evalusi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:dota2_valid_result}.
 \vspace{-2ex}
 
 \begin{longtable}{|l|l|l|l|}
@@ -763,11 +764,11 @@ Pada Sub-bab ini akan membahas hasil dari Sub-bab \ref{sec:sec3_player_method}, 
 \end{figure}
 \clearpage
 
-Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_player_char_train}, \textit{training} berlangsung selama 425 \textit{epoch}. Akurasi saat \textit{training} tetap stabil pada 0.1667 dan mengalami \textit{loss} sebesar 1.533, kemudian akurasi saat evaluasi tetap stabil pada 0.5 dan mengalami \textit{loss} saat evaluasisebesar 1.39. Hasil klasifikasi dari data \textit{stats} dari karakter pemain yang dijadikan sebagai data \textit{testing} dapat dilihat pada Tabel \ref{tb:player_char_test} yang kemudian digunakan pada proses evaluasi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:player_valid_result}.
+Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_player_char_train}, \textit{training} berlangsung selama 425 \textit{epoch}. Akurasi saat \textit{training} tetap stabil pada 0.1667 dan mengalami \textit{loss} sebesar 1.533, kemudian akurasi saat evaluasi tetap stabil pada 0.5 dan mengalami \textit{loss} saat evaluasisebesar 1.39. Hasil klasifikasi dari data atribut \textit{gameplay} dari karakter pemain yang dijadikan sebagai data \textit{testing} dapat dilihat pada Tabel \ref{tb:player_char_test} yang kemudian digunakan pada proses evaluasi dan \textit{testing} dengan hasil yang ditampilkan pada Tabel \ref{tb:player_valid_result}.
 \vspace{-1ex}
 
 \begin{longtable}{|l|l|l|l|l|}
-	\caption{Hasil proses \textit{testing} dengan data validasi pada karakter pemain.}
+	\caption{Hasil proses \textit{testing} dengan data \textit{testing} pada karakter pemain.}
 	\vspace{1ex}
 	\label{tb:player_valid_result}\\
 	\hline
@@ -847,11 +848,11 @@ Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_se
 	\label{fig:nn_enemy_val_loss_40k_chap4}
 \end{figure}
 
-Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_enemy_char_train}, \textit{training} berlangsung selama 30.510 \textit{epoch} setelah dilakukan penambahan 20k \textit{epoch}, yang semula hanya 20k \textit{epoch} menjadi 40k \textit{epoch}. Hal tersebut diasumsikan bahwa kondisi optimum dapat dicapai dengan \textit{epoch} kurang dari 40k dan lebih dari 20k. Akurasi saat \textit{training} mampu mencapai 0.5 dan mengalami \textit{loss} sebesar 1.110, kemudian akurasi saat evaluasi mampu mencapai 0.425 dan mengalami \textit{loss} saat evaluasi sebesar 1.245. Hasil klasifikasi dari data \textit{stats} karakter musuh yang dijadikan sebagai data evaluasi dapat dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai 400, kemudian data tersebut digunakan pada proses evaluasi dan \textit{testing} dengan hasil yang dapat dilihat pada Tabel \ref{tb:enemy_valid_result}.
+Seperti penjelasan tentang proses \textit{training} pada Sub-bab \ref{sec:sub_sec3_enemy_char_train}, \textit{training} berlangsung selama 30.510 \textit{epoch} setelah dilakukan penambahan 20k \textit{epoch}, yang semula hanya 20k \textit{epoch} menjadi 40k \textit{epoch}. Hal tersebut diasumsikan bahwa kondisi optimum dapat dicapai dengan \textit{epoch} kurang dari 40k dan lebih dari 20k. Akurasi saat \textit{training} mampu mencapai 0.5 dan mengalami \textit{loss} sebesar 1.110, kemudian akurasi saat evaluasi mampu mencapai 0.425 dan mengalami \textit{loss} saat evaluasi sebesar 1.245. Hasil klasifikasi dari data atribut \textit{gameplay} karakter musuh yang dijadikan sebagai data evaluasi dapat dilihat pada Tabel \ref{tb:enemy_all_stats_1} sampai dengan Tabel \ref{tb:enemy_all_stats_15} untuk musuh dengan urutan ke 281 sampai 400, kemudian data tersebut digunakan pada proses evaluasi dan \textit{testing} dengan hasil yang dapat dilihat pada Tabel \ref{tb:enemy_valid_result}.
 \vspace{-2ex}
 
 \begin{longtable}{|l|l|l|l|l|l|l|}
-	\caption{Hasil proses \textit{testing} dengan data testing pada karakter musuh.}
+	\caption{Hasil proses \textit{testing} dengan data \textit{testing} pada karakter musuh.}
 	\vspace{1ex}
 	\label{tb:enemy_valid_result}\\
 	\hline

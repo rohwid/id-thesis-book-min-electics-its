@@ -2,23 +2,25 @@
 \label{chap:chap2_kajian_pustaka}
 
 \section*{}
-Demi mendukung penelitian ini, dibutuhkan beberapa teori penunjang sebagai bahan acuan dan referensi. Berikut adalah paparan teori dasar meliputi komponen desain permainan, \textit{machine learning}, dan penjelasan permainan genre RPG (\textit{Role-Playing Game}).
+Demi mendukung penelitian ini, dibutuhkan beberapa teori penunjang sebagai bahan acuan dan referensi. Berikut adalah paparan teori dasar meliputi komponen desain permainan, \textit{machine learning}, penjelasan permainan genre RPG, dan Artificial Neural Network.
 \vspace{1ex}
 
 \section{Kajian penelitian terkait}
 \label{sec:sec2_kajian}
 \vspace{1ex}
 
-Beberapa penelitan sebelumnya yang berkaitan dengan penelitian ini dan mendukung penelitian ini antara lain:
+Beberapa penelitan sebelumnya yang berkaitan, menjadi acuan dan pendukung dalam penelitian ini diantaranya adalah sebagai berikut:
 
 \begin{enumerate}
-	\item Paper dengan judul ``\textit{Measuring Level of Difficulty in Game Using Challenging Rate (CR) on 2D Real Time Strategy Line Defense Game}'' yang ditulis oleh Christyowidiasmoro dan rekan-rekan tahun 2015. Meneliti tentang formula \textit{Challenging Rate} (CR) adalah formula yang menggunakan elemen dasar dalam permainan RTS (\textit{Real Time Strategy}) sebagai parameternya. Dalam tulisan ini dibuat sebuah \textit{prototipe} permainan dengan tingkat kesulitan yang diajukan untuk mencoba kemampuan formula \textit{Challenging Rate} untuk mengukur nilai tingkat kesulitan.
-
-	\item Paper dengan judul ``\textit{A game engine to make games as multi-agent systems}'' yang ditulis oleh Carlos Marín-Lora dan rekan-rekan tahun 2019. Pada tulisan ini meneliti tentang pengembangan \textit{game engine} yang berfokus pada multi-agen. Di mana pada setiap aktor atau agen-agen memiliki sejumlah properti dan aturan kebiasaan untuk berinteraksi dengan lingkungan dalam permainan. Tujuan dari engine tersebut adalah memenuhi kebutuhan dasar dari sistem multi agent dengan merubah karakteristik dari system tanpa adanya pengaruh terhadap potensi karakter.
-
-	\item Paper dengan judul ``\textit{Procedurally Generating Game Level with Specified Difficulty}'' yang ditulis oleh Zong-Han Wu dan rekan-rekan tahun 2018. Penelitian ini mencakup ranah pembuatan konten dalam sebuah permainan secara prosedural, hal tersebut bertujuan agar para pemain memperoleh pengalaman yang berbeda dalam bermmain. Pada paper ini yang paling banyak di ulas adalah permainan PAC-MAN, dengan labirin yang dapat berubah secara procedural.
+	\item Publikasi dengan judul ``\textit{A game engine to make games as multi-agent systems}'' yang ditulis oleh Carlos Marín-Lora dan rekan-rekan tahun 2020. Pada tulisan ini meneliti tentang pengembangan \textit{game engine} yang berfokus pada multi-agen. Di mana pada setiap aktor atau agen-agen memiliki sejumlah properti dan aturan kebiasaan untuk berinteraksi dengan lingkungan dalam permainan. Tujuan dari \textit{engine} tersebut adalah memenuhi kebutuhan dasar dari sistem multi-agen dengan merubah karakteristik dari sistem tanpa adanya pengaruh terhadap potensi karakter.
 	
-	\item Paper dengan judul ``\textit{Generating an Attribute Space for analyzing Balance in Single Unit RTS Game Combat}'' yang ditulis oleh Shaun Bangay dan Owen Makin tahun 2014. Fokus pada tulisan ini adalah tentang pencapaian keseimbangan dalam permainan \textit{Real Time Strategy} (RTS), dengan dibuatnya sebuah \textit{framework} yang dinamakan dengan \textit{attribute space}. Pendekatan ini dievaluasi dan direpresentasikan untuk pertarungan \textit{single unit} atau satu lawan satu pada permainan RTS. Melalui proses tersebut kemudian dibuatlah model prediksi terhadap simulasi pertarungan tersebut, dengan menggunakan attribut atau data statistik pada permainan tersebut seperti halnya \textit{speed}, \textit{range}, \textit{health} dan \textit{damage}.
+	\item Publikasi dengan judul ``\textit{Procedurally Generating Game Level with Specified Difficulty}'' yang ditulis oleh Zong-Han Wu dan rekan-rekan tahun 2018. Penelitian ini mencakup ranah pembuatan konten dalam sebuah permainan secara prosedural, hal tersebut bertujuan agar para pemain memperoleh pengalaman yang berbeda dalam bermmain. Pada paper ini yang paling banyak dibahas adalah permainan PAC-MAN, dengan labirin yang dapat berubah secara prosedural.
+	
+	\item Publikasi dengan judul ``\textit{Measuring Level of Difficulty in Game Using Challenging Rate (CR) on 2D Real Time Strategy Line Defense Game}'' yang ditulis oleh Christyowidiasmoro dan rekan-rekan tahun 2015. Meneliti tentang formula \textit{Challenging Rate} (CR) adalah formula yang menggunakan elemen dasar dalam permainan RTS (\textit{Real Time Strategy}) sebagai parameternya. Dalam tulisan ini dibuat sebuah \textit{prototipe} permainan dengan tingkat kesulitan yang diajukan untuk mencoba kemampuan formula \textit{Challenging Rate} untuk mengukur nilai tingkat kesulitan.
+	
+	\item Publikasi dengan judul ``\textit{Automatic Mapping Between Gameplay And Aesthetics RPG Character Attributes Through Fuzzy System}'' yang ditulis oleh Jefferson Henrique Camelo dan rekan-rekan tahun 2014. Meneliti tentang pemetaan atribut \textit{gameplay} untuk menentukan estetika karakter secara otomatis dengan menggunakan algoritma fuzzy, dalam pemilihan atribut \textit{gameplay} yang dilakukan oleh pemain.
+	
+	\item Publikasi dengan judul ``\textit{Generating an Attribute Space for analyzing Balance in Single Unit RTS Game Combat}'' yang ditulis oleh Shaun Bangay dan Owen Makin tahun 2014. Fokus pada tulisan ini adalah tentang pencapaian keseimbangan dalam permainan \textit{Real Time Strategy} (RTS), dengan dibuatnya sebuah \textit{framework} yang dinamakan dengan \textit{attribute space}. Pendekatan ini dievaluasi dan direpresentasikan untuk pertarungan \textit{single unit} atau satu lawan satu pada permainan RTS. Melalui proses tersebut kemudian dibuatlah model prediksi terhadap simulasi pertarungan tersebut, dengan menggunakan atribut atau data statistik pada permainan tersebut seperti halnya \textit{speed}, \textit{range}, \textit{health} dan \textit{damage}.
 \end{enumerate}
 
 \section{Desain Permainan RPG dan Komponennya}
@@ -36,36 +38,28 @@ Sebagian besar permainan setidaknya mengandung beberapa faktor acak. Misalnya, b
 \vspace{1ex}
 
 Pada dasarnya permainan yang memasukan unsur keberuntungan dapat dimainkan dan dimenangkan oleh khalayak luas. Bila dicari alasan penggunaannya, hasilnya sangatlah banyak. Pada akhirnya harus diakui bahwa hal-hal tersebut adalah keputusan dari desainer permaninan untuk menciptakan dinamika yang dikehendakinya. Berikut adalah contoh-contoh penerapan penempatan peluang pada permainan yang biasanya diterapkan.
-\vspace{1ex}
 
 \begin{enumerate}[label=\textbf{\alph*).}]
 
 	\item \textbf{Menunda atau Mencegah Penyelesaian Masalah}
-	\setlength{\parindent}{0.8cm}
 
-	Untuk permainan yang memiliki sedikit cara penyelesaian saat dipecahkan oleh komputer dan terutama manusia. Maka sesuatu harus dilakukan untuk menjaga permainan agar tetap \textit{fresh} dan menyenangkan. Di tambahkanlah elemen acak untuk mencapai tujuan tersebut. Hal tersebut bertujuan agak pemain tidak terlalu menguasai permainan, karena saat pemain membuat keputusan yang sama persis dapat memberi hasil yang berbeda. Hal tersebut tentunya juga berpengaruh pada tingkat rasa bosan pemain dalam memainkan sebuah permainan, jika pola yang sama terus muncul.
-	\vspace{1ex}
+	Dalam permainan yang memiliki sedikit cara penyelesaian saat dipecahkan oleh komputer dan terutama manusia. Maka sesuatu harus dilakukan untuk menjaga permainan agar tetap \textit{fresh} dan menyenangkan. Maka ditambahkan elemen acak dengan tujuan agar pemain tidak terlalu menguasai permainan, karena saat pemain membuat keputusan yang sama persis dapat memberi hasil yang berbeda. Hal tersebut juga berpengaruh pada tingkat rasa bosan pemain dalam memainkan sebuah permainan, jika pola yang sama terus muncul.
 
 	\item \textbf{Membuat Permainan Lebih Kompetitif}
 
 	Elemen acak yang sesekali memungkinkan pemain yang kurang berpengalaman untuk menang atau setidaknya menawarkan keuntungan yang membuat permainan ini bertahan lebih lama dengan menggunakan dua cara. Pertama adalah selalu ada peluang kemenangan bagi setiap pemain. Kemudian yang kedua adalah efek dari kekalahan berkurang ketika seorang pemain bisa menyalahkan nasib buruknya sendiri atas kekalahannya. Hal tersebut tentunya juga dapat memunculkan rasa tidak terima akan sebuah kekalahan dan dimulainya permainan baru lagi.
-	\vspace{1ex}
 	
 	\item \textbf{Meningkatkan Keberagaman}
-
+	
 	Permainan tanpa elemen acak selalu dimulai dengan cara yang sama dan pola-pola tertentu seperti langkah awal pada permainan Catur. Akibatnya, pemain dapat memiliki pengalaman yang sama dari satu pertandingan ke pertandingan yang lain, dan para pemain dapat mejatuhkan pilihannya untuk selalu memakai strategi yang sama.
-	\vspace{1ex}
 
 	\item \textbf{Menciptakan Momen Dramatis}
-
+	
 	Ketika seorang pemain dengan hati-hati menyusun strategi dan kemudian harus bergantung pada lemparan dadu atau apa pun yang bersifat acak untuk melihat apakah rencana tersebut berhasil, momen tersebut bisa menjadi sangat menegangkan. \textit{Role-Playing Games} (RPG), \textit{Real-Time Strategy} (RTS) dan banyak \textit{board game} yang mengandalkan kondisi ini saat bermain. Akankah \textit{healing spell} (mantra penyembuhan) yang digunakan akan sampai ke rekan bermainmu yang terluka sebelum monster menyerang? Apakah AI akan memberi pemain dua monster untuk bertempur ataukah hanya satu?
-	\vspace{1ex}
 
 	\item \textbf{Meningkatkan Pengambilan Keputusan}
-
-	Inti dari sebagian besar permainan adalah keputusan yang dibuat para pemain. Dalam permainan strategi, pemain memiliki informasi lengkap dan tahu hasil pasti dari setiap gerakan yang mereka lakukan. Karena semua variabel diketahui, beberapa keputusan menjadi tidak terlalu menarik, jika ada kesempatan untuk membunuh ratu lawan pada permainan catur secara cuma-cuma tanpa ada yang perlu dikorbankan, hal tersebut bukan merupakan keputusan yang menarik karena adanya jawaban ``benar" yang jelas. Ketika elemen acak ada dalam permainan, tidak ada lagi strategi yang selalu benar. Beberapa gerakan mungkin memiliki peluang kegagalan yang tinggi tetapi juga potensi hasil yang besar, hal tersebut menjadikannya sebuah pilihan berisiko, gerakan lainnya mungkin aman tetapi menghasilkan sedikit keuntungan. Hal tersebut menjadikan pemain akan melakukan analisis gerakan dengan cara yang berbeda berikut risiko dan keutungan yang akan didapat, kemudian tidak lupa mempertimbangkan posisi pemain tersebut dalam permainan atau langkah selanjutnya.
-	\vspace{1ex}
 	
+	Inti dari sebagian besar permainan adalah keputusan yang dibuat para pemain. Dalam permainan strategi, pemain memiliki informasi lengkap dan tahu hasil pasti dari setiap gerakan yang mereka lakukan. Karena semua variabel diketahui, beberapa keputusan menjadi tidak terlalu menarik, jika ada kesempatan untuk membunuh ratu lawan pada permainan catur secara cuma-cuma tanpa ada yang perlu dikorbankan, hal tersebut bukan merupakan keputusan yang menarik karena adanya jawaban ``benar'' yang jelas. Ketika elemen acak ada dalam permainan, tidak ada lagi strategi yang selalu benar. Beberapa gerakan mungkin memiliki peluang kegagalan yang tinggi tetapi juga potensi hasil yang besar, hal tersebut menjadikannya sebuah pilihan berisiko, gerakan lainnya mungkin aman tetapi menghasilkan sedikit keuntungan. Hal tersebut menjadikan pemain akan melakukan analisis gerakan dengan cara yang berbeda berikut risiko dan keutungan yang akan didapat, kemudian tidak lupa mempertimbangkan posisi pemain tersebut dalam permainan atau langkah selanjutnya.
 \end{enumerate}
 
 \subsection{Elemen Keterampilan Strategi}
@@ -75,14 +69,13 @@ Pada dasarnya permainan yang memasukan unsur keberuntungan dapat dimainkan dan d
 Strategi adalah salah satu kekuatan yang dapat dilakukan oleh para pemain. Karena hal tersebutlah yang membuat para pemain tetap bermain. Pemain bermain \textit{game} dan menikmati setiap prosesnya karena mereka berusaha untuk menguasai pola dalamnya \citep{Koster2013}. Saat pola berhasil dikuasai, maka selanjutnya pemain akan terus bersenang-senang. Mereka juga membentuk strategi berdasarkan pemahaman mereka tentang dinamika permainan. Penguasaan, pengembangan strategi, hal tersebut terjadi bukan karena ketidak sengajaan. 
 \vspace{1ex}
 
-Hal ini adalah tujuan dari desainer permainan atas penggunaan mekanika untuk menciptakan strategi dan taktik dalam permainan yang mereka buat \cite{Brathwaite2009}. Berikut beberapa poin penting pada penelitian ini yang mengacu tentang pentingnya Elemen Keterampilan Strategi.
-\vspace{1ex}
+Hal ini adalah tujuan dari desainer permainan atas penggunaan mekanika untuk menciptakan strategi dan taktik dalam permainan yang mereka buat \citep{Brathwaite2009}. Berikut beberapa poin penting pada penelitian ini yang mengacu tentang pentingnya hal tersebut.
 
 \begin{enumerate}[label=\textbf{\alph*).}]
 	
 	\item \textbf{Peran dari Keterampilan pada Permainan}
 	\setlength{\parindent}{0.8cm}
-
+	
 	Permainan yang bagus dibangun dari serangkaian keputusan menarik, membangun unit untuk menyerang atau bertahan, mencari tahu apa yang harus dilakukan oleh unit tersebut selanjutnya, apa saja kelemahannya dan lain sebagainya. Keberhasilan keputusan tersebut juga didasari oleh reaksi dari mental atau fisik pemain, karena hal tersebut adalah ukuran keterampilan dari seorang pemain.
 	\vspace{1ex}
 
@@ -90,7 +83,6 @@ Hal ini adalah tujuan dari desainer permainan atas penggunaan mekanika untuk men
 	\vspace{1ex}
 	
 	Ketika pemain terus-menerus membuat keputusan, secara tidak sadar mereka telah memasuki kondisi yang oleh psikolog dan peneliti terkenal Mihaly Csikszentmihalyi disebut ``\textit{flow}". Hal tersebut adalah keadaan permainan yang optimal dan merupakan hasil kerja keras dari seorang desainer pemainan. Csikszentmihalyi menulis seluruh buku tentang topik, \textit{Flow: The Psychology of Optimal Experience}. Buku ini tidak terbatas pada permainan saja, tetapi mencakup keadaan semacam ini dari perspektif yang lebih luas.
-	\vspace{1ex}
 	
 	\item \textbf{Strategi dan Taktik}
 	
@@ -98,7 +90,6 @@ Hal ini adalah tujuan dari desainer permainan atas penggunaan mekanika untuk men
 	\vspace{1ex}
 	
 	Pengorbanan mejadikan pengambilan keputusan atau pembuatan taktik menjadi lebih menarik. Keputusan yang diambil secara cepat atau \textit{twitch mechanics}, bisa disebut juga dengan ketangkasan memiliki keterbatasan pada taktik. Hal ini menunjukkan bahwa permainan yang lebih fokus pada strategi, umumnya bersifat giliran atau \textit{turn-based} seperti Catur dan \textit{Go}, yang mana lebih terfokus pada keputusan yang melibatkan pengorbanan.
-	\vspace{1ex}
 	
 	\item \textbf{Game Berbasis Keterampilan Sepenuhnya}
 	
@@ -106,7 +97,6 @@ Hal ini adalah tujuan dari desainer permainan atas penggunaan mekanika untuk men
 	\vspace{1ex}
 	
 	Sebagian besar game yang sepenuhnya berupa keterampilan adalah game aksi berbasis fisik. Mungkin hal inilah sebabnya, tidak seperti pada pengorbanan yang bukan tentang mendapatkan jawaban yang benar atau terbaik melainkan mendapatkannya dengan cepat. Waktu reaksi atau tindakan manusia dapat terus meningkat dari waktu ke waktu selamanya, terutama pada permainan dimana manusia saling berlawanan satu dengan yang lain atau \textit{multiplayer}.
-	\vspace{1ex}
 \end{enumerate}
 
 \subsection{Menemukan Keseimbangan}
@@ -193,7 +183,7 @@ Aturan \textit{nearest neighbor} menentukan, apakah $x$ termasuk dalam kategori 
 		\label{fig:k-nn_sinosoid}
 	\end{figure}
 	
-	Kemudian ditandai dengan kotak jingga yang dlianjutkan dengan penerapan $k-$\textit{nearest neighbor} untuk memprediksi hasil keluaran yang ditandai dengan $X$. Kemudian direpresentasikan juga dengan kotak jingga. Di mulai dengan mempertimbangkan metode 1-\textit{nearest neighbor} sebagai data sampel. Dalam kasus ini akan dicari data sample (kotak jingga) yang paling dekat dengan titik X. Pada Gambar \ref{fig:k-nn_sinosoid} yang dicari dinyatakan dalam koordinat $(X, Y)$ sedangkan koordinat data yang paling mendekati adalah $(x_{4}, y_{4})$. Maka dapat disimpulkan bahawa tetangga terdekatnya atau \textit{nearest neighbor} adalah $(x_{4}, y_{4})$ untuk 1-\textit{nearest neighbor}.
+	Kemudian ditandai dengan kotak jingga yang dlianjutkan dengan penerapan $k-$\textit{nearest neighbor} untuk memprediksi hasil keluaran yang ditandai dengan $X$. Kemudian direpresentasikan juga dengan kotak jingga. Di mulai dengan mempertimbangkan metode 1-\textit{nearest neighbor} sebagai data sampel. Dalam kasus ini akan dicari data sample (kotak jingga) yang paling dekat dengan titik X. Pada Gambar \ref{fig:k-nn_sinosoid} yang dicari dinyatakan dalam koordinat $(X, Y)$ sedangkan koordinat data yang paling mendekati adalah $(x_{4}, y_{4})$. Maka dapat disimpulkan bahawa tetangga terdekatnya adalah $(x_{4}, y_{4})$ untuk 1-\textit{nearest neighbor}.
 	\vspace{1ex}
 	
 	Langkah selanjutnya adalah mencari 2-\textit{nearest neighbor} seperti pada Gambar \ref{fig:k-nn_sinosoid}. Pada kasus ini ditemukan dua titik terdekat dengan X atau 2-\textit{nearest neighbor}, yang kebetulan ditunjukan pada Gambar \ref{fig:k-nn_sinosoid} adalah $y3$ dan $y4$. Maka diambil rata-rata dari masing-masing nilai pada data tersebut yang dinyatkan pada persamaan \ref{eq: KNN_regresi_mean}.
@@ -205,7 +195,6 @@ Aturan \textit{nearest neighbor} menentukan, apakah $x$ termasuk dalam kategori 
 	\end{equation}
 	
 	Pada metode $k-$\textit{nearest neighbor} hasil Y dari titik X dianggap sebagai hasil rata-rata dari nilai $k-$\textit{nearest neighbor} dari tetangga terdekatnya.
-	\vspace{1ex}
 	
 	\item \textbf{Cross-Validation}
 	
@@ -241,7 +230,6 @@ Aturan \textit{nearest neighbor} menentukan, apakah $x$ termasuk dalam kategori 
 	\end{equation}
 	
 	Di mana pada persamaan \ref{eq:KNN_distance_metrics} variabel $x$ dan $p$ masing-masing adalah titik koordinat data yang dicari dan data sampel. Kemudian yand dimasud dengan D adalah \textit{distance} atau jarak antara data sampel dengan koordinat data yang dicari.
-	\vspace{1ex}
 	
 	\item \textbf{Prediksi}
 	
@@ -257,7 +245,6 @@ Aturan \textit{nearest neighbor} menentukan, apakah $x$ termasuk dalam kategori 
 	\vspace{1ex}
 	
 	Untuk klasifikasi biasanya nilai ganjil seperti $y_{pred} = 1, 3, 5, dan$ $seterusnya$ sering digunakan untuk menghindari terjadinya \textit{ties condition}, yaitu kondisi dimana terdapat dua label kelas yang mencapai skor yang sama.
-	\vspace{1ex}
 	
 	\item \textbf{Pembobotan Jarak}
 	
@@ -296,7 +283,6 @@ Aturan \textit{nearest neighbor} menentukan, apakah $x$ termasuk dalam kategori 
 	error\ bar = \mp\ \sqrt{\frac{1}{k - 1}}\ \sum_{i = 1}^{k}\ (y - y_{1})^2
 	\end{split}
 	\end{equation}
-	
 \end{enumerate}
 
 \subsection{Naive Bayes}
@@ -400,7 +386,7 @@ Metode ini dinamakan \textit{naive} karena perhitungan probabilitas untuk setiap
 
 	\item \textbf{Perhitungan \textit{Conditional Probability}}
 
-	Probabilitas bersyarat atau \textit{Conditional probability} adalah frekuensi dari setiap atribut nilai terhadap setiap nilai pada sebuah kelas dibagi dengan frekuensi dari \textit{instances} atau nilai-nilai pada kelas itu. Misalkan terdapat sebuah atribut ``cuaca" atau ``\textit{weather}" memiliki nilai ``cerah" dan ``hujan" kemudian akan diklasifikasikan berdasarkan atribut dari kelas yang memiliki nilai ``jalan-jalan" dan ``tetap di rumah" yang akan digunakan untuk mengklasifikasikan atribut dari ``cuaca", maka probabilitas bersyarat dari setiap atribut pada ``cuaca" dapat dirumuskan dengan persamaan \ref{eq: nbayes_cond1}, \ref{eq: nbayes_cond2}, \ref{eq: nbayes_cond3}, dan \ref{eq: nbayes_cond4}.
+	Probabilitas bersyarat atau \textit{Conditional probability} adalah frekuensi dari setiap atribut nilai terhadap setiap nilai pada sebuah kelas dibagi dengan frekuensi dari \textit{instances} atau nilai-nilai pada kelas itu. Misalkan terdapat sebuah atribut ``cuaca'' atau ``\textit{weather}'' memiliki nilai ``cerah'' dan ``hujan'' kemudian akan diklasifikasikan berdasarkan atribut dari kelas yang memiliki nilai ``jalan-jalan'' dan ``tetap di rumah'' yang akan digunakan untuk mengklasifikasikan atribut dari ``cuaca'', maka probabilitas bersyarat dari setiap atribut pada ``cuaca'' dapat dirumuskan dengan persamaan \ref{eq: nbayes_cond1}, \ref{eq: nbayes_cond2}, \ref{eq: nbayes_cond3}, dan persamaan \ref{eq: nbayes_cond4}.
 
 	\begin{equation}\label{eq: nbayes_cond1}
 	\begin{split}
@@ -431,10 +417,10 @@ Metode ini dinamakan \textit{naive} karena perhitungan probabilitas untuk setiap
 
 	\item \textbf{Membuat Prediksi dengan Naive Bayes}
 
-	Dengan didapatkannya model Naive Bayes, maka dapat dilakukan prediksi data baru menggunakan teorema bayes. Dengan menggunkan persamaan \ref{eq: nbayes3}, di mana fokus dari persamaan tersebut adalah dipilihnya kelas dengan perhitungan probabilitas terbesar. Karena diperolehnya hipotesa ``cuaca" yang mungkin untuk ``jalan-jalan" adalah ``cuaca" berada pada atribut ``cerah".
+	Dengan didapatkannya model Naive Bayes, maka dapat dilakukan prediksi data baru menggunakan teorema bayes. Dengan menggunkan persamaan \ref{eq: nbayes3}, di mana fokus dari persamaan tersebut adalah dipilihnya kelas dengan perhitungan probabilitas terbesar. Karena diperolehnya hipotesa ``cuaca'' yang mungkin untuk ``jalan-jalan'' adalah ``cuaca'' berada pada atribut ``cerah''.
 	\vspace{1ex}
 
-	Di gunakannya contoh kasus yang sama seperti pada Sub-Bab \ref{sec:sub_sec2_class_bayes} poin ke 4 dan dipilihnya atribut ``cerah" dimana cuaca adalah \textit{instance}. Kemudian dilakukan perhitungan untuk mencari nilai probabilitas maksimal dari ``jalan-jalan" atau ``tetap di rumah" yang merupakan bagian dari atribut kelas.
+	Di gunakannya contoh kasus yang sama seperti pada Sub-Bab \ref{sec:sub_sec2_class_bayes} poin ke 4 dan dipilihnya atribut ``cerah'' dimana cuaca adalah \textit{instance}. Kemudian dilakukan perhitungan untuk mencari nilai probabilitas maksimal dari ``jalan-jalan'' atau ``tetap di rumah'' yang merupakan bagian dari atribut kelas.
 
 	\begin{equation}\label{eq: nbayes_pred1}
 	\begin{split}
@@ -542,29 +528,28 @@ Gaussian Naive Bayes adalah salah satu pengembangan dari Naive Bayes. Salah satu
 \vspace{1ex}
 
 \textit{Role-playing Game} (RPG) \citep{Panumate2015} adalah jenis permainan yang mana pemain memainkan peran karakter dalam latar fiktif. Selain itu pemain juga bertanggung jawab untuk memainkan peran sesuai narasi cerita, baik melalui adegan secara literal atau melalui proses pembuatan keputusan dalam setiap adegannya yang berujung pada pengembangan karakter. Salah satu contoh permainan digital bagian dari genre RPG yang populer adalah \textit{Western} RPG yang mana pemain memerankan sebuah karakter dan menjalankan cerita dari permainan tersebut seperti pada Gambar \ref{fig:action_rpg}.
-\vspace{2ex}
+\vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.20]{img/whitcher.jpg}
+	\includegraphics[scale=0.16]{img/whitcher.jpg}
 	\caption{Contoh \textit{video game} dengan genre \textit{RPG}.}
 	\label{fig:action_rpg}
 \end{figure}
-\vspace{1ex}
 
-Pada dasarnya permainan dengan genre RPG (\textit{Role-Playing Game}) khususnya video game terbagi menjadi banyak kategori diantaranya adalah WRPG, JRPG, ARPG, TRPG, SRPG, dan MMORPG \citep{stenstrom2012}. Berikut adalah penjelasan selengkapnya:
+Pada dasarnya permainan dengan genre RPG (\textit{Role-Playing Game}) khususnya video game terbagi menjadi banyak kategori diantaranya adalah WRPG, JRPG, ARPG, TRPG, SRPG, dan MMORPG \citep{stenstrom2012}. Penjelasan selengkapnya akan dijelaskan pada Sub-bab selanjutnya dari Sub-bab \ref{sec:sub_sec2_wrpg} sampai dengan Sub-bab \ref{sec:sub_sec2_mmorpg} berikut ini.
 \vspace{1ex}
 
 \subsection{WRPG}
 \label{sec:sub_sec2_wrpg}
 
-Deskripsi tentang genre WRPG (\textit{Western Role-Playing Game}) ini diambil dari \textit{Dungeons and Desktops: The History of Computer-Role-playing Games} oleh Barton. Namun seperti yang direpresenatasikan oleh Barton menggunakan istilah CRPG, sedangkan dalam penelitian ini istilah WRPG yang akan digunakan.
+Deskripsi tentang genre WRPG (\textit{Western Role-Playing Game}) ini diambil dari \textit{Dungeons and Desktops: The History of Computer-Role-playing Games} oleh Barton. Namun seperti yang direpresenatasikan oleh Barton menggunakan istilah CRPG, sedangkan dalam penelitian ini istilah WRPG yang akan digunakan \citep{barton2019}.
 \vspace{1ex}
 
-Pada WRPG pemain dapat bebas mengkostumisasi karakternya dengan leluasa seperti jenis kelamin, wajah dan lain sebagainya. Kemudian pemain juga dapat memilih kemampuannya yang direalisasikan dalam bentuk atribut atau stats dari karakter pemain tersebut \citep{barton2019}. Pada umumnya hal yang dipilih oleh pemain biasanya berupa suku atau fraksi seperti pada \textit{video game} berjudul \textit{The Elder Scroll V: Skyrim}, Bethesda (2011) seperti pada Gambar \ref{fig:skyrim}.
+Pada WRPG pemain dapat bebas mengkostumisasi karakternya dengan leluasa seperti jenis kelamin, wajah dan lain sebagainya. Kemudian pemain juga dapat memilih kemampuannya yang direalisasikan dalam bentuk atribut \textit{gameplay} dari karakter pemain tersebut \citep{barton2019}. Pada umumnya hal yang dipilih oleh pemain biasanya berupa suku atau fraksi seperti pada \textit{video game} berjudul \textit{The Elder Scroll V: Skyrim}, Bethesda (2011) seperti pada Gambar \ref{fig:skyrim}.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.20]{img/skyrim.jpg}
+	\includegraphics[scale=0.16]{img/skyrim.jpg}
 	\caption{Contoh kustomisasi karakter pada WRPG.}
 	\label{fig:skyrim}
 \end{figure}
@@ -578,12 +563,12 @@ Biasanya juga pada WRPG terapat banyak \textit{side quest} atau cerita sampingan
 \subsection{JRPG}
 \label{sec:sub_sec2_jrpg}
 
-Pada mulanya permaian dengan genre JRPG (\textit{Japanese Role-Playing Game}) tidak begitu banyak mengandung kustomisasi karakter layaknya WRPG. Tetapi pada permainan RPG dengan genre ini berfokus pada beberapa karakter atau biasa disebut dengan istilah \textit{party member} yang dapat disusun oleh pemain. Sama seperti pada WRPG dimana pemain dapat mengkustomisasi kemampuan dari setiap \textit{party member} sesuai dengan peran masing-masing dengan tujuan untuk mengalahkan musuh. Dalam kostumisasi karakter pemain, biasanya diwujudkan dalam penambahan \textit{stats} dan penambahan jurus seperti pada \textit{video game} berjudul \textit{Shin Megami Tensei: Digital Devil Saga 1} dan \textit{2}, Atlus (2004, 2005) seperti yang ditunjukan pada Gambar \ref{fig:dds}.
+Pada mulanya permaian dengan genre JRPG (\textit{Japanese Role-Playing Game}) tidak begitu banyak mengandung kustomisasi karakter layaknya WRPG. Tetapi pada permainan RPG dengan genre ini berfokus pada beberapa karakter atau biasa disebut dengan istilah \textit{party member} yang dapat disusun oleh pemain. Sama seperti pada WRPG dimana pemain dapat mengkustomisasi kemampuan dari setiap \textit{party member} sesuai dengan peran masing-masing dengan tujuan untuk mengalahkan musuh. Dalam kostumisasi karakter pemain, biasanya diwujudkan dalam penambahan atribut \textit{gameplay} dan jurus seperti pada \textit{video game} berjudul \textit{Shin Megami Tensei: Digital Devil Saga 1} dan \textit{2}, Atlus (2004, 2005) seperti yang ditunjukan pada Gambar \ref{fig:dds}.
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
 	\includegraphics[scale=0.48]{img/dds.jpg}
-	\caption{Contoh kustomisasi \textit{stats} pada JRPG.}
+	\caption{Contoh kustomisasi atribut \textit{gameplay} pada JRPG.}
 	\label{fig:dds}
 \end{figure}
 
@@ -597,10 +582,10 @@ Penataan strategi pada \textit{genre} JRPG bersifat sangat krusial, jika pada ge
 \vspace{1ex}
 
 Permainan berbasis \textit{turn-based} \citep{Panumate2015} adalah permainan yang memanfaatkan waktu secara diskrit, yang mana alur dari permainan khususnya pertarungan terbagi menjadi beberapa bagian yang disebut dengan giliran. Pada setiap giliran, pemain akan memiliki waktu yang terbatas atau tidak terbatas dalam berpikir dalam membuat keputusan setiap langkahnya. Kemudian sistem dari permainan akan memproses tindakan dari pemain. Kemudian permainan dilanjutkan oleh pemain berikutnya atau musuh yang berupa AI akan melakukan giliran selanjutnya seperti pada Gambar \ref{fig:turn_based}.
-\vspace{2ex}
+\vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.48]{img/duelyst.png}
+	\includegraphics[scale=0.42]{img/duelyst.png}
 	\caption{Contoh permainan digital dengan genre \textit{turn-based}.}
 	\label{fig:turn_based}
 \end{figure}
@@ -609,7 +594,7 @@ Pada Gambar \ref{fig:persona4} adalah mode pertarungan JRPG secara \textit{turn-
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.38]{img/persona4.jpg}
+	\includegraphics[scale=0.33]{img/persona4.jpg}
 	\caption{Mode pertarungan \textit{turn-based} pada JRPG.}
 	\label{fig:persona4}
 \end{figure}
@@ -618,7 +603,7 @@ Pada Gambar \ref{fig:tales} adalah mode pertarungan JRPG secara \textit{real-tim
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.29]{img/tales.png}
+	\includegraphics[scale=0.25]{img/tales.png}
 	\caption{Mode pertarungan \textit{real-time} pada JRPG.}
 	\label{fig:tales}
 \end{figure}
@@ -629,7 +614,7 @@ Sama seperti dengan WRPG pada JRPG juga memiliki \textit{side-quest} tetapi bias
 \subsection{ARPG}
 \label{sec:sub_sec2_arpg}
 
-Biasanya genre ini disebut juga dengan ``\textit{Hack and Slash}'' atau ``\textit{Dungeon crawl RPG's}'' \citep{moore2016}. Kenapa sampai diberi sebutan ``\textit{Hack and Slash}'', hal ini mengacu dari kesederhanaan dari beberapa permainan ARPG. Pada permainan RPG jenis ini (khususnya \textit{video game}) berfokus pada aksi atau ketangkasan seperti memukul, menghindar, mengeluarkan jurus dan lain sebagainya dibandingkan dengan pengaturan strategi atau penyusunan \textit{stats}. Jika melihat cara bertarung pada permainan jenis ini, maka akan sangat mirip sekali dengan WRPG yang mana pemain fokus dalam bertarung dan berekplorasi. Contoh genre ini adalah \textit{Diablo}, Blizzard (1997) dan \textit{Final Fantasy 12}, Square Enix (2006).
+Biasanya genre ini disebut juga dengan ``\textit{Hack and Slash}'' atau ``\textit{Dungeon crawl RPG's}'' \citep{moore2016}. Kenapa sampai diberi sebutan ``\textit{Hack and Slash}'', hal ini mengacu dari kesederhanaan dari beberapa permainan ARPG. Pada permainan RPG jenis ini (khususnya \textit{video game}) berfokus pada aksi atau ketangkasan seperti memukul, menghindar, mengeluarkan jurus dan lain sebagainya dibandingkan dengan pengaturan strategi atau penyusunan atribut \textit{gameplay}. Jika melihat cara bertarung pada permainan jenis ini, maka akan sangat mirip sekali dengan WRPG yang mana pemain fokus dalam bertarung dan berekplorasi. Contoh genre ini adalah \textit{Diablo}, Blizzard (1997) dan \textit{Final Fantasy 12}, Square Enix (2006).
 \vspace{1ex}
 
 \subsection{TRPG}
@@ -663,7 +648,7 @@ Sistem pertarungannya adalah gabungan dari WRPG, JRPG, ARPG, dan TRPG. Namun pad
 \vspace{1ex}
 
 \begin{figure} [!h] \centering
-	\includegraphics[scale=0.26]{img/sw.jpg}
+	\includegraphics[scale=0.28]{img/sw.jpg}
 	\caption{MMORPG yang menyerupai JRPG.}
 	\label{fig:sw}
 \end{figure}
