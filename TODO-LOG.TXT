@@ -109,8 +109,8 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
 + Format Buku (v)
   - Benarkan antara "Halaman sengaja dikosongkan" dan halaman kosong setelah cover (v)
 + Grafik metodologi betulkan untuk single-character dan multi-character (v)
-+ Nomenklatur perbaiki
-  - Perjelas variabel huruf M, N, L, i, j dan k pada persamaan dan perjelas pada paragraf isi
++ Nomenklatur perbaiki (v)
+  - Perjelas variabel huruf M, N, L, i, j dan k pada persamaan dan perjelas pada paragraf isi (v)
 + Tambahkan inflict damage, jika sempat (Edit Program)
 + Tambahkan dynamic HP/MP player assign with K-NN, jika sempat (Edit Program)
 
@@ -119,19 +119,19 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
 + Desain permainan dan beberapa komponennya (v)
 + K-Nearest Neighbour (KNN) -> Level balancing -> Threshold (v)
 + Naive Bayes -> Random enemy level and stats distribution -> Threshold (v)
-  - Tambahkan citasi
+  - Tambahkan citasi (v)
   - Tambahkan marjinal probability
 + RPG
   - Penjelasan Permainan RPG (v)
   - Tipe Permainan RPG -> Baca buku tesis dari chalmers university (v)
   - Penjelasan Turn-Based RPG (v)
   - Penjelasan Real-Time RPG (v)
-  - Stats player -> Level balancing -> Nearest Max Level Threshold
-  - Stats enemy -> Random enemy level and stats distribution -> Threshold number of enemy
-  - Player and Enemy skill
-  - Level distribution -> Player meet enemy
-+ Fitur Corelation
-+ Neural Network Multiclass Classification
+  - Stats player -> Level balancing -> Nearest Max Level Threshold (v)
+  - Stats enemy -> Random enemy level and stats distribution -> Threshold number of enemy (v)
+  - Player and Enemy skill (v)
+  - Level distribution -> Player meet enemy (v)
++ Artifial Neural Network (v)
++ Multiclass Classification (v)
 
 
 [BAB 3]
@@ -207,8 +207,8 @@ c). Game Berbasis Keterampilan Sepenuhnya: Tic-Tac-Toe atau sebagian besar video
 
 
 [BAB 5]
-+ Simpulkan dari yang Dikerjakan!
-+ Sarankan apa yang Nanti Perlu Di kerjakan!
++ Simpulkan dari yang Dikerjakan! (v)
++ Sarankan apa yang Nanti Perlu Di kerjakan! (v)
 
 
 #
