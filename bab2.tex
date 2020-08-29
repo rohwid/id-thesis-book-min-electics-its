@@ -141,7 +141,7 @@ Pada penelitian ini akan digunakan beberapa algoritma \textit{machine learning} 
 Di asumsikan terdapat sampel $(x_{i}, \theta_{i})$ yang didistribusikan secara sesuai dengan distribusi $(x, \theta)$ argumen heuristik tertentu yang memungkinkan dalam prosedur pengambilan keputusan. Contohnya saat pengasumsian tentang jarak dari beberapa data, metrik atau koordinat yang sesuai akan diklasifikasi berdasarkan kesamaannya atau setidaknya memiliki kesamaan distribusi pada setiap datanya. Maka dalam klasifikasi sampel $x$, dipertimbangkan berdasarkan $x_{i}$ terdekat yang diasumsikan sebagai kemungkinan terbesar. Sehingga prosedur pengambilan keputusan paling sederhana adalah aturan \textit{nearest neighbor} (NN) dengan mengklasifikasikan $x$ sebagai tetangga terdekat.
 \vspace{1ex}
 
-Di buatlah satu set $n$ pasangan $(x_{1}, \theta_{2}), ..., (x_{n}, \theta_{n})$, yang mana $x_{i}$'s mengambil nilai dalam metrik $X$ yang didefinisikan sebagai metrik $d$, dan $O_{i}$ nilai yang diambil di set $\{1, 2, ..., M\}$ seperti pada persamaan \ref{eq: KNN_all_x_data} dan \ref{eq: KNN_distance}. Setiap $\theta_{i}$ dianggap sebagai indeks dari kategori yang dimiliki oleh data ke-$i$, dan setiap $x_{i}$ adalah hasil dari pengukuran setiap data. Lebih singkatnya pada ``$x_{i}$ bagian dari $\theta_{i}"$ adalah saat data ke-$i$ yang menjadi dasar pengukuran $x_{i}$ yang telah diamati dan diukur, termasuk juga pada kategori $\theta_{i}$.
+Di buatlah satu set $n$ pasangan $(x_{1}, \theta_{2}), ..., (x_{n}, \theta_{n})$, yang mana $x_{i}$ mengambil nilai dalam metrik $X$ yang didefinisikan sebagai metrik $d$, dan $O_{i}$ nilai yang diambil di set $\{1, 2, ..., M\}$ seperti pada persamaan \ref{eq: KNN_all_x_data} dan \ref{eq: KNN_distance}. Setiap $\theta_{i}$ dianggap sebagai indeks dari kategori yang dimiliki oleh data ke-$i$, dan setiap $x_{i}$ adalah hasil dari pengukuran setiap data. Lebih singkatnya pada ``$x_{i}$ bagian dari $\theta_{i}$'' adalah saat data ke-$i$ yang menjadi dasar pengukuran $x_{i}$ yang telah diamati dan diukur, termasuk juga pada kategori $\theta_{i}$.
 \vspace{1ex}
 
 Di lakukan beberapa penambahan pasangan baru $(x,$ $\theta)$, yang mana pengukuran $x$ yang akan dilakukan, dan digunakan hasilnya digunakan untuk memperkirakan $\theta$ dengan memanfaatkan hasil pengukuran atau klasifikasi sebelumnya. Pada persamaan \ref{eq: KNN_all_x_data} dinyatakan bahwa seluruh data $x$ atau $x_{n}$ yang akan diguanakan untuk mecari nilai $\theta$.
@@ -229,7 +229,7 @@ Aturan \textit{nearest neighbor} menentukan, apakah $x$ termasuk dalam kategori 
 	\end{split}
 	\end{equation}
 	
-	Di mana pada persamaan \ref{eq:KNN_distance_metrics} variabel $x$ dan $p$ masing-masing adalah titik koordinat data yang dicari dan data sampel. Kemudian yand dimasud dengan D adalah \textit{distance} atau jarak antara data sampel dengan koordinat data yang dicari.
+	Di mana pada persamaan \ref{eq:KNN_distance_metrics} variabel $x$ dan $p$ masing-masing adalah titik koordinat data yang dicari dan data sampel. Kemudian yand dimasud dengan $D$ adalah \textit{distance} atau jarak antara data sampel dengan koordinat data yang dicari.
 	
 	\item \textbf{Prediksi}
 	

@@ -246,7 +246,7 @@ Di buatlah sebuah program yang secara otomatis dapat membuat atribut \textit{gam
 	\includegraphics[scale=0.08]{img/player_stats_generator.png}
 	\caption{Proses pembuatan atribut \textit{gameplay} untuk karakter pemain.}
 	\label{fig:player_stats_generator}
-\end{figure}
+\end{figure} 
 
 Pada permainan dengan genre RPG dengan jumlah karakter yang dapat dimainkan berjumlah lebih dari satu, maka program yang ditunjukan melalui proses pada Gambar \ref{fig:player_stats_generator} akan dijalankan lebih dari satu kali. Hal tersebut dilakukan dengan tujuan agar karakter utama atau yang dapat dimainkan oleh pemain berjumlah lebih dari satu. Lain halnya dengan \textit{action} RPG, cukup hanya dengan satu kali menjalankan program maka sudah diperolehnya atribut \textit{gameplay} dari karakter yang dibuat. Hal tersebut dikarenakan biasanya permainan dengan genre action RPG, jumlah karakternya hanya satu.
 \vspace{1ex}
@@ -469,7 +469,7 @@ Seperti pada bagian sebelumnya pada Sub-bab \ref{sec:sec3_player_stats} dalam pe
 Pada bagian ini akan dijelaskan tentang pembagian level pada musuh, dengan masukan seperti yang disebutkan pada Tabel \ref{tb:enemy_input_variable}. Beracuan pada tabel tersebut beberapa variabel utama yang akan digunakan diantaranya adalah ``\textit{Enemy Numbers}'' yang menentukan jumlah musuh yang akan dibuat, ``\textit{Max Level}'' dan ``\textit{Min Level}'' adalah nilai maksimum dan minimum level musuh. Selanjutnya tingkat kesulitan dari musuh ditentukan dengan variabel ``\textit{Level Class}'' yang isinya dibagi menjadi ``\textit{Easy}'', ``\textit{Medium}'' dan ``\textit{Hard}''. Musuh dengan tingkat kesulitan \textit{``Easy''} akan menjadi yang paling mudah dikalahkan, diikuti dengan \textit{``Medium''} dan ``\textit{Hard}'' secara berurutan.
 \vspace{1ex}
 
-Kemudian terdapat variabel pendukung yang akan menentukan data atau level yang ingin dihasilkan, yaitu \textit{scale} yang disebutkan pada Tabel \ref{tb:enemy_input_variable}. Selanjutnya dilakukan beberapa proses seperti pada persamaan \ref{eq:enemy_levels1}, \ref{eq:enemy_levels2}, \ref{eq:sub_enemy_levels1}, dan persamaan \ref{eq:sub_enemy_levels2} yang kemudian diperoleh hasil berupa level untuk banyak musuh sekaligus seperti yang ditunjukan pada persamaan \ref{eq:probability_enemy_levels}.
+Kemudian terdapat variabel pendukung yang akan menentukan data atau level yang ingin dihasilkan, yaitu \textit{scale} yang tidak disebutkan pada Tabel \ref{tb:enemy_input_variable}. Selanjutnya dilakukan beberapa proses seperti pada persamaan \ref{eq:enemy_levels1}, \ref{eq:enemy_levels2}, \ref{eq:sub_enemy_levels1}, dan persamaan \ref{eq:sub_enemy_levels2} yang kemudian diperoleh hasil berupa level untuk banyak musuh sekaligus seperti yang ditunjukan pada persamaan \ref{eq:probability_enemy_levels}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_levels1}
@@ -586,7 +586,7 @@ P(Elv_{jk}) = \sum_{i = 0}^{SSL}\ \sum_{j = 0}^{SSE}\ \sum_{k = 0}^{SSE_{j}}\ \f
 \end{split}
 \end{equation}
 
-Pada persamaan \ref{eq:probability_enemy_levels} $P(Elv_{jk})$ adalah peluang munculnya level musuh yang dinyatakan dengan $Elv$, sedangkan $SSL$ adalah set dari \textit{sub-cluster} level yang merupakan alokasi persebaran level untuk musuh. Kemudian untuk $SSL$ ke $i$ dan $SSL$ ke $(i + 1)$ adalah range persebaran level untuk karakter musuh dengan alokasi setiap \textit{sub-cluster} banyaknya musuh atau $SSE_{j}$ yang kemudian setiap karakter musuh dalam \textit{sub-cluster} $SSE_{j}$ tersebut dinyatakan dengan $Elv$ ke $k$. Hasil dari proses ini kemudian dijelaskan pada Sub-bab \ref{sec:sub_sec4_eval_dist_enemy_level}.
+Pada persamaan \ref{eq:probability_enemy_levels}, peluang munculnya level musuh ($Elv$) yang dinyatakan dengan $P(Elv_{jk})$, sedangkan $SSL$ adalah set vektor dari \textit{sub-cluster} level yang merupakan alokasi persebaran level untuk musuh. Kemudian untuk $SSL$ ke $i$ dan $SSL$ ke $(i + 1)$ adalah range persebaran level untuk karakter musuh dengan alokasi setiap \textit{sub-cluster} banyaknya musuh atau $SSE_{j}$. Kemudian setiap karakter musuh dalam \textit{sub-cluster} $SSE_{j}$ tersebut dinyatakan dengan $Elv$ ke $k$. Hasil dari proses ini akan dijelaskan pada Sub-bab \ref{sec:sub_sec4_eval_dist_enemy_level}.
 \vspace{1ex}
 
 Selanjutnya adalah validasi dari keseimbangan persebaran level musuh, hal ini dilakukan dengan menggunakkan beberapa langkah seperti yang ditunjukan pada persamaan \ref{eq:mean_enemy_levels}, \ref{eq:varian_enemy_levels}, \ref{eq:stdev_enemy_levels} dan persamaan \ref{eq:PDF_enemy_levels}. Konsep tersebut beracuan pada Sub-bab \ref{sec:sub_sec2_gauss_bayes} tentang \textit{Gaussian Naive bayes}, dengan harapan apakah setiap data yang dihasilkan sebelumnya sudah terdistribusi dengan normal atau tidak. Penjelasaan berikut ini adalah beberapa langkah untuk validasi keseimbangan persebaran level musuh.
@@ -681,7 +681,7 @@ Saat\ DL_{(j-1)} < ET_{j} \leq DL_{i}
 \end{matrix}\right.
 \end{equation}
 
-Dari setiap musuh yang terdistribusi dan disimpan dalam variabel vektor $DL'$, dimensi vektor tersebut kemudian dinyatakan dengan $M_{DL}$ yang kemudian dilakukan pemetaan tipe, pada kasus ini digunakanlah konsep probabilitas seperti yang dijelaskan pada persamaan \ref{sec:sub_sec2_bayes}, bila disesuaikan dengan kasus ini maka persamaan yang diperoleh akan menjadi seperti pada persamaan \ref{eq:enemy_types_probability}. Pada setiap karakter musuh $ET_{j}$ dengan $N_{EN}$ adalah jumlah musuh secara keseluruhan akan meilih satu tipe yang akan digunakannya, tipe tersebut akan menentukan atribut \textit{gameplay} yang akan dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}. Kemudian probabilitas tipe yang dipilih $ET_{j}$ dinyatakan dengan variabel $P(ET_{i})$.
+Dari setiap musuh yang terdistribusi dan disimpan dalam variabel vektor $DL'$, dimensi vektor tersebut kemudian dinyatakan dengan $M_{DL}$ yang kemudian dilakukan pemetaan tipe, pada kasus ini digunakanlah konsep probabilitas seperti yang dijelaskan pada persamaan \ref{sec:sub_sec2_bayes}, bila disesuaikan dengan kasus ini maka persamaan yang diperoleh akan menjadi seperti pada persamaan \ref{eq:enemy_types_probability}. Pada setiap karakter musuh $ET_{j}$ dengan $N_{EN}$ adalah jumlah musuh secara keseluruhan akan meilih satu tipe yang akan digunakannya, tipe tersebut akan menentukan atribut \textit{gameplay} yang akan dijelaskan pada Sub-bab \ref{sec:sub_sec3_enemy_hp_mp_stats}. Kemudian probabilitas tipe yang dipilih atau $ET_{j}$ dinyatakan dengan $P(ET_{i})$.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_rest_types}
@@ -709,16 +709,17 @@ Dilanjutkan pada persamaan \ref{eq:enemy_types_rest_probability}, dengan dilakuk
 \label{sec:sub_sec3_enemy_weak}
 \vspace{1ex}
 
-Pada persamaan \ref{eq:enemy_element} adalah penjelasan elemen yang digunakan oleh musuh seperti dideskripsikan pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{List Element}, di mana pada elemen teresebut terdapat kelemahan atau \textit{weaknesses} dan kekebalan atau \textit{repel} seperti yang dideskripsikan pada variabel \textit{List Damage} pada Tabel \ref{tb:enemy_input_variable}.  Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_design_skenario} tentang Elemen dan Efektifitas Serangan. 
+Pada persamaan \ref{eq:enemy_element} adalah penjelasan elemen yang digunakan oleh musuh seperti dideskripsikan pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{List Element}, di mana pada elemen teresebut terdapat kelemahan atau \textit{weaknesses} dan kekebalan atau \textit{repel} seperti yang dideskripsikan pada variabel \textit{List Damage} pada Tabel \ref{tb:enemy_input_variable}. Seperti yang sudah dijelaskan pada Sub-bab \ref{sec:sub_sec3_design_skenario} tentang Elemen dan Efektifitas Serangan. 
 \vspace{1ex}
 
 Pada bagian ini elemen tersebut akan dibagi ke setiap musuh dengan kondisi yang berbeda, maksudnya nanti akan ada musuh yang memiliki kelemahan dan kekebalan yang berbeda antara musuh satu dengan musuh yang lain. Misalkan \textit{Enemy 1} memiliki kelemahan api atau \textit{fire} yang mana HP akan berkurang dua kali jika diserang dengan menggunakan elemen api dan memiliki kekebalan air atau \textit{water} yang mana karakter tersebut kebal saat diserang dengan \textit{skill} dari elemen air. Kemudian pada \textit{Enemy 2} berbeda dengan \textit{Enemy 1}, misalnya pada \textit{Enemy 1} memiliki kelemahan api sedangkan pada \textit{Enemy 2} memiliki kelemahan air misal dan kebal terhadap angin atau \textit{wind}. 
 \vspace{1ex}
 
-Kemudian daftar elemen yang akan digunakan mengacu pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{List Element} yang berisi \textit{Phys} atau fisik, \textit{Water} atau air, \textit{Wind} atau angin, \textit{Earth} atau tanah dan \textit{Fire} atau api. Kemudian urutan efek serangan juga dinyatakan pada Tabel \ref{tb:enemy_input_variable} dengan variabel List Damage yang berisi \textit{Normal}, \textit{Repel} dan \textit{Weak}. Dimana penjelasan untuk setiap elemen dan efek serangan sudah dijelaskan sebelumnya pada Sub-bab \ref{sec:sub_sec3_design_skenario}.
+Kemudian daftar elemen yang akan digunakan mengacu pada Tabel \ref{tb:enemy_input_variable} pada variabel \textit{List Element} yang berisi \textit{Phys} atau fisik, \textit{Water} atau air, \textit{Wind} atau angin, \textit{Earth} atau tanah dan \textit{Fire} atau api. Kemudian urutan efek serangan juga dinyatakan pada Tabel \ref{tb:enemy_input_variable} dengan variabel \textit{List Damage} yang berisi \textit{Normal}, \textit{Repel} dan \textit{Weak}. Dimana penjelasan untuk setiap elemen dan efek serangan sudah dijelaskan sebelumnya pada Sub-bab \ref{sec:sub_sec3_design_skenario}.
+\vspace{1ex}
 
 \begin{equation}\label{eq:enemy_element}
-\resizebox{0.20\textwidth}{!}{%
+\resizebox{0.21\textwidth}{!}{%
 	$ElN = \left\{\begin{matrix}
 	\hspace{-0.34em} Phys \\ 
 	\hspace{0.3em} Water \\
@@ -731,7 +732,7 @@ Kemudian daftar elemen yang akan digunakan mengacu pada Tabel \ref{tb:enemy_inpu
 }
 \end{equation}
 
-Pada dasarnya satu karakter musuh tidak akan menggunakan seluruh elemen yang ada pada persamaan \ref{eq:enemy_element}, yang merupakan penggambaran dari varaibel \textit{List Element} pada Tabel \ref{tb:enemy_input_variable}, mungkin hanya sekitar satu sampai dengan tiga elemen. Maka dari itu kondisi tersebut dapat dinyatakan dengan kondisi $DmgNa \in ElN$, yang mana seluruh elemen bisa menjadi kelemahan atau kekebalan dari musuh. Sama seperti pada persamaan \ref{eq:enemy_element} yang mana $ElN$ adalah nama elemen, sedangkan $DmgNa$ adalah \textit{damage name} atau nama dari efek serangan yang dilakukan. Di mana pada persamaan \ref{eq:damage_name_number} $DmgNa$ akan dipilih secara acak dengan persamaan \ref{eq:damage_number_prob}, yang akan menjadi respon terhadap serangan dari pemain seperti pada persamaan \ref{eq:damage_name_number}. Pada persamaan \ref{eq:damage_name_number} adalah penggambaran dari variabel \textit{List Damage} pada Tabel \ref{tb:enemy_input_variable}.
+Pada dasarnya satu karakter musuh tidak akan menggunakan seluruh elemen yang ada pada persamaan \ref{eq:enemy_element}, yang merupakan penggambaran dari varaibel \textit{List Element} pada Tabel \ref{tb:enemy_input_variable}, mungkin hanya sekitar satu sampai dengan tiga elemen. Maka dari itu kondisi tersebut dapat dinyatakan dengan kondisi $DmgNa \in ElN$, yang mana seluruh elemen bisa menjadi kelemahan atau kekebalan dari musuh. Sama seperti pada persamaan \ref{eq:enemy_element} yang mana $ElN$ adalah nama elemen, sedangkan $DmgNa$ adalah \textit{List Element} atau nama elemen yang memiliki efek saat serangan. Pada persamaan \ref{eq:damage_name_number}, isi variabel $DmgNa$ dipilih secara acak dengan persamaan \ref{eq:damage_number_prob}, yang akan memiliki respon terhadap serangan dari pemain. Sedangkan persamaan \ref{eq:damage_name_number} adalah penggambaran variabel \textit{List Damage} pada Tabel \ref{tb:enemy_input_variable}.
 \vspace{1ex}
 
 \begin{equation}\label{eq:damage_name_number}
@@ -746,7 +747,7 @@ Pada dasarnya satu karakter musuh tidak akan menggunakan seluruh elemen yang ada
 }
 \end{equation}
 
-Kemudian pada persamaan \ref{eq:damage_name_number}, variabel $DmgNu'$ adalah variabel vektor yang menyimpan respon atau efek dari serangan yang yang dikonversi menjadi angka, yang pada mulanya berupa nama respon atau efek setelah diserang. Kemudian hasil pemilihan tersebut disimpan pada variabel $DmgNu_{0}$ yang digunakan dalam persamaan \ref{eq:damage_number_prob}, maksud dari variabel $DmgNu_{0}$ ini adalah mewakili satu respon atau efek serangan yang terpilih.
+Kemudian pada persamaan \ref{eq:damage_name_number}, variabel $DmgNu'$ adalah variabel vektor yang menyimpan respon atau efek dari serangan yang dikonversi menjadi angka, yang pada mulanya berupa nama efek setelah diserang. Kemudian hasil pemilihan tersebut disimpan pada variabel $DmgNu_{0}$ yang digunakan dalam persamaan \ref{eq:damage_number_prob}, maksud dari variabel $DmgNu_{0}$ ini adalah mewakili satu respon atau efek serangan yang terpilih.
 \vspace{1ex}
 
 \begin{equation}\label{eq:damage_number_prob}
@@ -767,7 +768,7 @@ Sedangkan pada persamaan \ref{eq:multi_damage_num_prob} adalah penjelasan tentan
 DmgEN' = \sum_{i = 0}^{EN}\sum_{j = 0}^{N_{Nu}} DmgNu'_{ij}
 \end{equation}
 
-Selanjutnya adalah proses penerapan persamaan \ref{eq:multi_damage_num_prob} ke seluruh karakter musuh yang dinyatakan dengan $DmgEN'$ yang berupa vektor seperti $DmgEN'$ $= \left (DmgNu'_{0}, DmgNu'_{1}, ..., DmgNu'_{n} \right )$. Seperti pada persamaan \ref{eq:all_enemies_damage}, $DmgEN'$ berupa variabel vektor yang berisi persebaran $DmgNu'$ dan elemennya $DmgNa$ pada setiap karakter musuh. Sesuai dengan persamaan \ref{eq:all_enemies_damage}, yang mana $EN$ adalah jumlah musuh sedangkan $N_{Nu}$ adalah jumlah dari $DmgNu'$ pada satu karakter musuh yang berjumlah satu sampai dengan tiga, masing-masing dinyatakan dengan $i$ dan $j$ sehingga terbentuklah $DmgNu'_{ij}$ 
+Selanjutnya adalah proses penerapan persamaan \ref{eq:multi_damage_num_prob} ke seluruh karakter musuh yang dinyatakan dengan $DmgEN'$ yang berupa vektor seperti $DmgEN'$ $= \left (DmgNu'_{0}, DmgNu'_{1}, ..., DmgNu'_{n} \right )$. Seperti pada persamaan \ref{eq:all_enemies_damage}, $DmgEN'$ berupa variabel vektor yang berisi persebaran $DmgNu'$ dan elemennya $DmgNa$ pada setiap karakter musuh. Sesuai dengan persamaan \ref{eq:all_enemies_damage}, yang mana $EN$ adalah jumlah musuh sedangkan $N_{Nu}$ adalah jumlah dari $DmgNu'$ pada satu karakter musuh yang berjumlah satu sampai dengan tiga, masing-masing dinyatakan dengan $i$ dan $j$ sehingga terbentuklah $DmgNu'_{ij}$.
 \vspace{1ex}
 
 \subsection{Distribusi HP, MP, dan Atribut Gameplay Musuh}
@@ -952,7 +953,7 @@ Jika hanya berlaku satu atribut \textit{gameplay} saja maka dapat digunakan pers
 bSt = \sum_{i=0}^{NE}\ \sum_{j=0}^{N_{st}}\ minSt_{ij}
 \end{equation}
 
-Di karenakan atribut \textit{gameplay} dari musuh berjumlah lebih dari satu maka persamaan \ref{eq:enemy_types_prob_bst1} harus disesuaikan dengan jumlah atribut \textit{gameplay} tersebut. Jumlah atribut \textit{gameplay} dari musuh sendiri berjumlah lima seperti yang tertulis pada variabel \textit{List Attributes Name}, maka persamaan \ref{eq:enemy_types_prob_bst1} disesuaikan menjadi seperti persamaan \ref{eq:enemy_types_prob_bst2}. Dengan variabel $N$ adalah batas maksimal dari jumlah atribut \textit{gameplay}, dengan nilai minimum atribut \textit{gameplay} atau $minSt$ yang jumlahnya mengikuti jumlah maksimal atribut \textit{gameplay} menjadi $minSt_{i}$ dan disimpan dalam setiap variabel $bSt$ ke $i$. Kemudian selanjutnya adalah pencarian batas atas untuk masing-masing atribut \textit{gameplay}, sama halnya dengan pencarian batas bawah dari setiap atribut \textit{gameplay} dalam cara pencarian batas atas pada dasarnya juga sama dengan pencarian batas dari HP pada $tHP$ dan MP pada $tMP$.
+Di karenakan atribut \textit{gameplay} dari musuh berjumlah lebih dari satu maka persamaan \ref{eq:enemy_types_prob_bst1} harus disesuaikan dengan jumlah atribut \textit{gameplay} tersebut. Jumlah atribut \textit{gameplay} dari musuh sendiri berjumlah lima seperti yang tertulis pada variabel \textit{List Attributes Name}, maka persamaan \ref{eq:enemy_types_prob_bst1} disesuaikan menjadi seperti persamaan \ref{eq:enemy_types_prob_bst2}. Dengan variabel $N_{st}$ adalah batas maksimal dari jumlah atribut \textit{gameplay}, dengan nilai minimum atribut \textit{gameplay} atau $minSt$ yang jumlahnya mengikuti jumlah maksimal atribut \textit{gameplay} menjadi $minSt_{i}$ dan disimpan dalam setiap variabel $bSt$ ke $i$. Kemudian selanjutnya adalah pencarian batas atas untuk masing-masing atribut \textit{gameplay}, sama halnya dengan pencarian batas bawah dari setiap atribut \textit{gameplay} dalam cara pencarian batas atas pada dasarnya juga sama dengan pencarian batas dari HP pada $tHP$ dan MP pada $tMP$.
 \vspace{1ex}
 
 \begin{equation}\label{eq:enemy_types_prob_tst}
